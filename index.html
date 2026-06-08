@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coschool Pipeline Studio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --purple:#7464CE;--orange:#FF9302;--lavender:#E7E5F3;
+      --pale:#9495D7;--dark:#1a1635;--mid:#3d3572;
+      --text:#2d2660;--radius:14px;
+      --shadow:0 4px 24px rgba(116,100,206,.13);
+      --shadow-lg:0 8px 40px rgba(116,100,206,.22);
+      --trans:.22s cubic-bezier(.4,0,.2,1);
+      --mono:'Fira Code','Consolas','Courier New',monospace;
+      --sans:'Segoe UI','Inter',Arial,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--lavender);color:var(--text);min-height:100vh;overflow-x:hidden}
+    #mathBg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35}
+    .hdr{background:linear-gradient(135deg,var(--dark),var(--purple));position:sticky;top:0;z-index:999;box-shadow:0 2px 20px rgba(26,22,53,.4)}
+    .hdr-inner{max-width:1500px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:56px;gap:12px}
+    .logo{display:flex;align-items:center;gap:9px}
+    .logo-icon{width:34px;height:34px;background:var(--orange);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff}
+    .logo-txt{font-size:16px;font-weight:700;color:#fff}.logo-txt span{color:var(--orange)}
+    .hdr-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .badge{background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px}
+    .spill{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);border-radius:20px;padding:4px 11px;font-size:12px;color:rgba(255,255,255,.8)}
+    .sdot{width:7px;height:7px;border-radius:50%;background:#ef4444;flex-shrink:0}
+    .sdot.ok{background:#22c55e}
+    .info-bar{background:rgba(26,22,53,.85);border-bottom:1px solid rgba(116,100,206,.3);padding:6px 24px;text-align:center;font-size:12px;color:rgba(255,255,255,.6);z-index:1;position:relative}
+    .info-bar strong{color:var(--orange)}
+    .layout{max-width:1500px;margin:0 auto;padding:20px 18px 60px;display:grid;grid-template-columns:1fr 390px;gap:18px;align-items:start;position:relative;z-index:1}
+    .left-col{display:flex;flex-direction:column;gap:14px}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:var(--trans)}
+    .card:hover{box-shadow:var(--shadow-lg)}
+    .card-hdr{display:flex;align-items:center;justify-content:space-between;padding:13px 16px 10px;border-bottom:1.5px solid var(--lavender);gap:8px;flex-wrap:wrap}
+    .card-tb{display:flex;align-items:center;gap:9px}
+    .step-badge{background:var(--purple);color:#fff;font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px;white-space:nowrap}
+    .step-badge.orange{background:var(--orange)}
+    .card-title{font-size:14px;font-weight:700;color:var(--dark)}
+    .card-desc{font-size:12px;color:var(--pale);margin-top:1px}
+    .card-body{padding:14px 16px}
+    .format-accepted{background:linear-gradient(135deg,#f0fdf4,#f0eeff);border:2px solid rgba(34,197,94,.3);border-radius:11px;padding:13px 15px;margin-bottom:13px}
+    .fa-title{font-size:12px;font-weight:800;color:#15803d;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+    .fa-formats{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    .fa-fmt{background:#fff;border-radius:7px;padding:9px;border:1.5px solid #ddd8f8}
+    .fa-fmt-title{font-size:11px;font-weight:700;color:var(--purple);margin-bottom:4px}
+    .fa-code{font-family:var(--mono);font-size:11px;line-height:1.8;color:var(--text);white-space:pre}
+    .fa-code .fk{color:var(--orange);font-weight:700}.fa-code .fv{color:#166534}
+    .paste-zone{border:2px solid #ddd8f8;border-radius:11px;overflow:hidden}
+    .paste-zone-tabs{display:flex;border-bottom:1.5px solid #ddd8f8;background:var(--lavender)}
+    .pzt{padding:9px 15px;font-size:12px;font-weight:700;color:var(--pale);cursor:pointer;border-bottom:2px solid transparent;transition:var(--trans)}
+    .pzt.active{color:var(--purple);border-bottom-color:var(--purple);background:#fff}
+    .paste-zone-body{padding:14px;background:#fff}
+    .drop-area{border:2px dashed #c4bdeb;border-radius:9px;padding:24px 16px;text-align:center;cursor:pointer;transition:var(--trans);background:var(--lavender);position:relative}
+    .drop-area:hover,.drop-area.drag{border-color:var(--purple);background:rgba(116,100,206,.05)}
+    .drop-area input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+    .drop-icon{font-size:28px;margin-bottom:6px}
+    .drop-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px}
+    .drop-sub{font-size:12px;color:var(--pale)}
+    .drop-formats{display:flex;justify-content:center;gap:6px;margin-top:7px;flex-wrap:wrap}
+    .fmt-tag{background:rgba(116,100,206,.1);color:var(--purple);font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px}
+    .fmt-tag.green{background:rgba(34,197,94,.1);color:#15803d}
+    .text-paste{width:100%;min-height:160px;padding:11px;border:1.5px solid #ddd8f8;border-radius:8px;font-family:var(--mono);font-size:12px;line-height:1.8;resize:vertical;outline:none;color:var(--text);background:#fafafa;transition:var(--trans)}
+    .text-paste:focus{border-color:var(--purple);background:#fff;box-shadow:0 0 0 3px rgba(116,100,206,.1)}
+    .upload-progress{margin-top:9px;display:none}
+    .upload-progress.show{display:block}
+    .up-label{font-size:12px;color:var(--pale);margin-bottom:3px;font-family:var(--mono)}
+    .up-bar-wrap{background:#ddd8f8;border-radius:20px;height:5px;overflow:hidden}
+    .up-bar{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .4s ease;width:0%}
+    .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+    .form-field{display:flex;flex-direction:column;gap:4px}
+    .form-label{font-size:11px;font-weight:600;color:var(--pale);text-transform:uppercase;letter-spacing:.7px}
+    .form-input,.form-select{width:100%;padding:8px 10px;border:1.5px solid #ddd8f8;border-radius:8px;font-size:13px;font-family:var(--sans);color:var(--text);background:var(--lavender);transition:var(--trans);outline:none}
+    .form-input:focus,.form-select:focus{border-color:var(--purple);background:#fff;box-shadow:0 0 0 3px rgba(116,100,206,.12)}
+    .parsed-list{display:flex;flex-direction:column;gap:8px}
+    .pt-item{background:var(--lavender);border-radius:10px;border:1.5px solid #ddd8f8;overflow:hidden;transition:var(--trans)}
+    .pt-item:hover{border-color:var(--purple)}
+    .pt-hdr{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer}
+    .pt-num{width:28px;height:28px;border-radius:7px;background:var(--purple);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .pt-num.running{background:var(--orange);animation:pulse 1s ease-in-out infinite}
+    .pt-num.done{background:#22c55e}.pt-num.error{background:#ef4444}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .pt-info{flex:1;min-width:0}
+    .pt-title{font-size:13px;font-weight:700;color:var(--text)}
+    .pt-meta{display:flex;gap:5px;margin-top:3px;flex-wrap:wrap}
+    .pt-tag{font-size:11px;padding:2px 6px;border-radius:4px;font-weight:600}
+    .pt-tag.grade{background:rgba(116,100,206,.1);color:var(--purple)}
+    .pt-tag.topic{background:rgba(255,147,2,.1);color:var(--orange)}
+    .pt-tag.dur{background:rgba(148,149,215,.15);color:var(--pale)}
+    .pt-status{font-size:11px;color:var(--pale);margin-top:2px;font-family:var(--mono)}
+    .pt-status.running{color:var(--orange)}.pt-status.done{color:#22c55e;font-weight:700}.pt-status.error{color:#ef4444}
+    .pt-actions{display:flex;gap:4px;flex-shrink:0}
+    .pt-body{padding:0 12px 10px;display:none;border-top:1.5px solid #ddd8f8}
+    .pt-body.open{display:block}
+    .pt-preview{background:#fff;border-radius:7px;padding:8px;font-size:11.5px;line-height:1.7;color:var(--text);max-height:110px;overflow-y:auto;white-space:pre-wrap;margin-top:8px;border:1.5px solid #ddd8f8}
+    .pt-edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+    .pt-progress{margin-top:4px;display:none}
+    .pt-progress.show{display:block}
+    .pt-pb-wrap{background:#ddd8f8;border-radius:20px;height:4px;overflow:hidden}
+    .pt-pb{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .4s ease;width:0%}
+    .process-panel{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-top:14px;display:none}
+    .process-panel.show{display:block}
+    .process-panel-hdr{padding:12px 16px 10px;background:linear-gradient(135deg,var(--dark),var(--mid));display:flex;align-items:center;justify-content:space-between}
+    .process-panel-title{font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:7px}
+    .process-item-name{font-size:11px;color:rgba(255,255,255,.5);font-family:var(--mono);margin-top:2px}
+    .step-track{display:flex;align-items:flex-start;padding:12px 16px 7px;overflow-x:auto;border-bottom:1.5px solid var(--lavender)}
+    .track-step{display:flex;flex-direction:column;align-items:center;min-width:58px;position:relative;flex:1}
+    .track-step:not(:last-child)::after{content:'';position:absolute;top:12px;left:calc(50% + 12px);right:calc(-50% + 12px);height:2px;background:#ddd8f8;z-index:0}
+    .track-step:not(:last-child).ts-done::after{background:var(--purple)}
+    .ts-circle{width:24px;height:24px;border-radius:50%;background:#ddd8f8;color:var(--pale);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:var(--trans)}
+    .track-step.ts-active .ts-circle{background:var(--orange);color:#fff;box-shadow:0 0 0 4px rgba(255,147,2,.2);animation:pulse .9s ease-in-out infinite}
+    .track-step.ts-done .ts-circle{background:var(--purple);color:#fff}
+    .track-step.ts-error .ts-circle{background:#ef4444;color:#fff}
+    .ts-label{font-size:9px;font-weight:700;color:var(--pale);margin-top:3px;text-align:center;line-height:1.3}
+    .track-step.ts-active .ts-label{color:var(--orange)}.track-step.ts-done .ts-label{color:var(--purple)}
+    .step-tabs{display:flex;border-bottom:1.5px solid var(--lavender);overflow-x:auto;padding:0 16px}
+    .step-tab{padding:8px 11px;font-size:11px;font-weight:600;color:var(--pale);cursor:pointer;white-space:nowrap;border-bottom:2.5px solid transparent;transition:var(--trans);display:flex;align-items:center;gap:4px}
+    .step-tab.active{color:var(--purple);border-bottom-color:var(--purple)}
+    .step-tab .tab-dot{width:6px;height:6px;border-radius:50%;background:#ddd8f8;flex-shrink:0}
+    .step-tab.active .tab-dot{background:var(--purple)}.step-tab.tab-done .tab-dot{background:#22c55e}
+    .step-tab.tab-running .tab-dot{background:var(--orange);animation:pulse .9s ease-in-out infinite}
+    .step-tab.tab-error .tab-dot{background:#ef4444}
+    .tab-panel{display:none;padding:14px 16px}.tab-panel.active{display:block}
+    .directors-note{background:linear-gradient(135deg,#f0eeff,#fff7ed);border:1.5px solid rgba(116,100,206,.25);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.8;color:var(--text)}
+    .dn-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--purple);margin-bottom:6px}
+    .category-badge{display:inline-flex;align-items:center;gap:5px;background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:7px}
+    .transcript-summary{display:flex;flex-direction:column;gap:6px}
+    .ts-segment{background:var(--lavender);border-radius:7px;padding:8px 10px;border-left:3px solid var(--purple)}
+    .ts-seg-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.7px;color:var(--purple);margin-bottom:3px}
+    .ts-seg-content{font-size:12px;line-height:1.7;color:var(--text)}
+    .audio-script{background:#0a0918;border-radius:8px;padding:12px;font-family:var(--mono);font-size:11.5px;line-height:2;color:#a8b2d8;max-height:240px;overflow-y:auto;white-space:pre-wrap}
+    .as-bookmark{color:#ff9302;font-weight:700}.as-pause{color:#7464CE}
+    .storyboard-wrap{overflow-x:auto;border-radius:8px;border:1.5px solid #ddd8f8}
+    .storyboard-table{width:100%;border-collapse:collapse;font-size:12px}
+    .storyboard-table th{background:var(--dark);color:#fff;padding:6px 10px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;white-space:nowrap}
+    .storyboard-table td{padding:6px 10px;border-bottom:1px solid var(--lavender);vertical-align:top;line-height:1.5}
+    .storyboard-table tr:last-child td{border-bottom:none}
+    .storyboard-table tr:nth-child(even) td{background:rgba(231,229,243,.3)}
+    .sb-time{font-family:var(--mono);color:var(--purple);font-weight:700;white-space:nowrap}
+    .sb-anim{color:var(--orange);font-weight:600}
+    .code-toolbar{display:flex;align-items:center;justify-content:space-between;background:#0a0918;border-radius:8px 8px 0 0;padding:6px 12px;border-bottom:1px solid #1e1a40}
+    .code-filename{font-family:var(--mono);font-size:12px;color:#7c8ab8}
+    .code-block{background:#0a0918;border-radius:0 0 8px 8px;padding:12px;font-family:var(--mono);font-size:11px;line-height:1.75;color:#a8b2d8;max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
+    .code-block::-webkit-scrollbar,.audio-script::-webkit-scrollbar{width:4px}
+    .code-block::-webkit-scrollbar-thumb,.audio-script::-webkit-scrollbar-thumb{background:#3d3572;border-radius:2px}
+    .ck-kw{color:#c792ea}.ck-fn{color:#82aaff}.ck-st{color:#c3e88d}.ck-cm{color:#546e7a;font-style:italic}.ck-nm{color:#f78c6c}
+    .review-list{display:flex;flex-direction:column;gap:5px}
+    .review-item{display:flex;align-items:flex-start;gap:6px;background:var(--lavender);border-radius:7px;padding:6px 9px;font-size:12px}
+    .review-item.pass{border-left:3px solid #22c55e}.review-item.fail{border-left:3px solid #ef4444}.review-item.warn{border-left:3px solid var(--orange)}
+    .render-cmd{background:#0a0918;border-radius:7px;padding:10px;font-family:var(--mono);font-size:12px;line-height:2;color:#22c55e;margin-bottom:6px}
+    .live-log-panel{background:#0a0918;border-radius:8px;padding:10px;font-family:var(--mono);font-size:11px;line-height:1.8;color:#7c8ab8;max-height:260px;overflow-y:auto}
+    .live-log-panel::-webkit-scrollbar{width:4px}
+    .live-log-panel::-webkit-scrollbar-thumb{background:#3d3572;border-radius:2px}
+    .ll-ok{color:#22c55e}.ll-err{color:#ff6b6b}.ll-warn{color:#ff9302}.ll-info{color:#82aaff}.ll-step{color:#c792ea;font-weight:700}
+    .log-ts{color:#3d3572;margin-right:5px}
+    .pending-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;text-align:center}
+    .pending-placeholder .pp-icon{font-size:28px;margin-bottom:5px;opacity:.5}
+    .pending-placeholder .pp-title{font-size:13px;font-weight:600;color:var(--pale)}
+    .pending-placeholder .pp-sub{font-size:12px;color:var(--pale);opacity:.7;margin-top:2px}
+    .right-col{display:flex;flex-direction:column;gap:14px;position:sticky;top:64px}
+    .rpanel{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .rpanel-hdr{padding:11px 14px 8px;border-bottom:1.5px solid var(--lavender)}
+    .rpanel-title{font-size:13px;font-weight:700;color:var(--dark);display:flex;align-items:center;gap:6px}
+    .rpanel-body{padding:11px 14px}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+    .stat-box{background:var(--lavender);border-radius:7px;padding:8px;text-align:center;border:1.5px solid #ddd8f8}
+    .stat-num{font-size:18px;font-weight:800;color:var(--purple)}
+    .stat-num.orange{color:var(--orange)}.stat-num.green{color:#22c55e}.stat-num.red{color:#ef4444}
+    .prog-wrap{background:#ddd8f8;border-radius:20px;height:5px;overflow:hidden;margin-bottom:4px}
+    .prog-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .6s cubic-bezier(.4,0,.2,1)}
+    .mini-pipeline{display:flex;flex-direction:column;gap:3px}
+    .mp-step{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;background:var(--lavender);border:1.5px solid #ddd8f8;transition:var(--trans)}
+    .mp-step.mp-active{background:rgba(255,147,2,.08);border-color:var(--orange)}
+    .mp-step.mp-done{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.3)}
+    .mp-step.mp-error{background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.3)}
+    .mp-dot{width:7px;height:7px;border-radius:50%;background:#ddd8f8;flex-shrink:0}
+    .mp-step.mp-active .mp-dot{background:var(--orange);animation:pulse .9s ease-in-out infinite}
+    .mp-step.mp-done .mp-dot{background:#22c55e}.mp-step.mp-error .mp-dot{background:#ef4444}
+    .mp-name{font-size:11px;font-weight:600;color:var(--pale);flex:1}
+    .mp-step.mp-active .mp-name{color:var(--orange)}.mp-step.mp-done .mp-name{color:#15803d}
+    .mp-time{font-size:10px;color:var(--pale);font-family:var(--mono)}
+    .cur-job{background:var(--dark);border-radius:9px;padding:10px;margin-bottom:8px;display:none}
+    .cur-job.show{display:block}
+    .cj-lbl{font-size:10px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+    .cj-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .cj-step{font-size:11px;color:var(--orange);font-family:var(--mono);margin-bottom:4px}
+    .cj-pb-wrap{background:rgba(255,255,255,.1);border-radius:20px;height:4px;overflow:hidden}
+    .cj-pb{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .4s ease;width:0%}
+    .vi{background:var(--lavender);border-radius:8px;padding:9px;border:1.5px solid #ddd8f8;transition:var(--trans);margin-bottom:5px}
+    .vi:hover{border-color:#22c55e;background:#fff}
+    .vi-name{font-size:12px;font-weight:700;color:var(--text)}
+    .vi-path{font-size:10px;color:var(--pale);margin-top:2px;font-family:var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .vi-btns{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+    .video-wrap-inner{display:flex;flex-direction:column;max-height:400px;overflow-y:auto}
+    .server-warn{background:rgba(255,147,2,.08);border:1.5px solid rgba(255,147,2,.3);border-radius:9px;padding:11px 13px;font-size:12px;line-height:1.7;margin-bottom:9px;display:none}
+    .server-warn.show{display:block}
+    .server-warn strong{color:var(--orange)}
+    .sysrow{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--lavender);font-size:12px}
+    .sysrow:last-child{border-bottom:none}
+    .render-setup{background:linear-gradient(135deg,#1a1635,#2d1f6e);border-radius:10px;padding:13px;margin-top:10px}
+    .rs-title{font-size:12px;font-weight:800;color:var(--orange);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+    .rs-step{display:flex;align-items:flex-start;gap:8px;margin-bottom:9px}
+    .rs-num{width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .rs-body{font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;flex:1}
+    .rs-cmd{background:#000;border:1px solid #333;border-radius:5px;padding:6px 9px;font-family:var(--mono);font-size:11px;color:#22c55e;cursor:pointer;margin-top:4px;display:block;white-space:pre-wrap;line-height:1.7;transition:border-color .2s}
+    .rs-cmd:hover{border-color:#22c55e}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;transition:var(--trans);border:none;outline:none;font-family:var(--sans)}
+    .btn-primary{background:linear-gradient(135deg,var(--purple),#5a4ab5);color:#fff;box-shadow:0 4px 14px rgba(116,100,206,.3)}
+    .btn-primary:hover{transform:translateY(-2px)}.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .btn-orange{background:linear-gradient(135deg,var(--orange),#e08000);color:#fff;box-shadow:0 4px 14px rgba(255,147,2,.3)}
+    .btn-orange:hover{transform:translateY(-2px)}.btn-orange:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .btn-red{background:#ef4444;color:#fff}.btn-red:hover{background:#dc2626}
+    .btn-sm{padding:4px 9px;font-size:12px;border-radius:6px;font-weight:700;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:4px;font-family:var(--sans)}
+    .btn-ghost{background:var(--lavender);color:var(--purple);border:1.5px solid #ddd8f8;font-size:12px;padding:5px 10px;border-radius:7px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-family:var(--sans);transition:var(--trans)}
+    .btn-ghost:hover{border-color:var(--purple);background:#fff}
+    .ibtn{width:27px;height:27px;border-radius:6px;border:1.5px solid #ddd8f8;background:#fff;color:var(--purple);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--trans);flex-shrink:0}
+    .ibtn:hover{background:var(--lavender);border-color:var(--purple)}
+    .tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700}
+    .tag-p{background:rgba(116,100,206,.12);color:var(--purple)}.tag-o{background:rgba(255,147,2,.12);color:var(--orange)}.tag-g{background:rgba(34,197,94,.12);color:#15803d}
+    .toast-ct{position:fixed;bottom:20px;right:20px;display:flex;flex-direction:column;gap:5px;z-index:9999;pointer-events:none}
+    .toast{background:var(--dark);color:#fff;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(0,0,0,.3);animation:slideUp .3s cubic-bezier(.4,0,.2,1) forwards;pointer-events:auto;max-width:340px;transition:opacity .3s,transform .3s}
+    .toast.ok{border-left:4px solid #22c55e}.toast.err{border-left:4px solid #ef4444}.toast.info{border-left:4px solid var(--orange)}
+    @keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;flex-shrink:0}
+    @keyframes sp{to{transform:rotate(360deg)}}
+    /* ── VIDEO GALLERY ── */
+    .vgallery-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-top:0}
+    .vgallery-hdr{background:linear-gradient(135deg,var(--dark),var(--mid));padding:13px 16px;display:flex;align-items:center;justify-content:space-between}
+    .vgallery-title{font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px}
+    .vgallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:16px}
+    .vcard{background:var(--lavender);border-radius:10px;border:1.5px solid #ddd8f8;overflow:hidden;transition:var(--trans)}
+    .vcard:hover{border-color:var(--purple);box-shadow:var(--shadow)}
+    .vcard-video{width:100%;aspect-ratio:16/9;background:#0a0918;display:block}
+    .vcard-info{padding:10px 12px}
+    .vcard-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px}
+    .vcard-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+    .vcard-path{font-size:10px;color:var(--pale);font-family:var(--mono);margin-bottom:7px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .vcard-btns{display:flex;gap:5px;flex-wrap:wrap}
+    .vcard-empty{text-align:center;padding:40px 20px;color:var(--pale);grid-column:1/-1}
+    .vcard-empty-icon{font-size:40px;margin-bottom:8px;opacity:.4}
+    /* ── PY FILE QUEUE ── */
+    .pyfile-item{border-radius:10px;border:1.5px solid #ddd8f8;padding:12px;transition:var(--trans);background:#fff}
+    .pyfile-item:hover{border-color:var(--purple)}
+    .pyfile-item.pf-saved{border-color:#ddd8f8;background:#fff}
+    .pyfile-item.pf-running{border-color:var(--orange);background:rgba(255,147,2,.04)}
+    .pyfile-item.pf-done{border-color:#22c55e;background:rgba(34,197,94,.04)}
+    .pyfile-item.pf-error{border-color:#ef4444;background:rgba(239,68,68,.04)}
+    @media(max-width:1100px){.layout{grid-template-columns:1fr}.right-col{position:static}}
+    @media(max-width:640px){.settings-grid,.pt-edit-grid,.fa-formats{grid-template-columns:1fr}.vgallery-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<canvas id="mathBg"></canvas>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="logo">
+      <div class="logo-icon">C</div>
+      <div class="logo-txt">Co<span>School</span> Studio</div>
+    </div>
+    <div class="hdr-right">
+      <div class="spill"><div class="sdot" id="apiDot"></div><span id="apiLabel">Keys…</span></div>
+      <div class="spill"><div class="sdot" id="serverDot"></div><span id="serverLabel">Server…</span></div>
+      <span class="badge">Pipeline v12</span>
+    </div>
+  </div>
+</header>
+
+<div class="info-bar">
+  ✅ <strong>AUTO MODE</strong> — Upload transcript → Claude generates → renders &nbsp;|&nbsp;
+  🐍 <strong>MANUAL MODE</strong> — Drop your .py files → save → render when YOU decide
+</div>
+
+<div class="layout">
+<div class="left-col">
+
+  <!-- ══ AUTO MODE ══ -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-tb">
+        <span class="step-badge">AUTO</span>
+        <div>
+          <div class="card-title">Upload or Paste Transcripts</div>
+          <div class="card-desc">Claude generates .py → renders automatically</div>
+        </div>
+      </div>
+      <button class="btn-ghost" onclick="loadDemo()">📋 Demo</button>
+    </div>
+    <div class="card-body">
+      <div class="format-accepted">
+        <div class="fa-title">✅ Accepted Formats</div>
+        <div class="fa-formats">
+          <div class="fa-fmt">
+            <div class="fa-fmt-title">TAB separator ✅</div>
+            <div class="fa-code"><span class="fk">Subject</span>	<span class="fv">Mathematics</span>
+<span class="fk">Grade</span>	<span class="fv">6</span>
+<span class="fk">Topic</span>	<span class="fv">Perimeter</span>
+<span class="fk">Estimated Duration</span>	<span class="fv">01:55</span>
+Hello students! ...</div>
+          </div>
+          <div class="fa-fmt">
+            <div class="fa-fmt-title">Colon / Space ✅</div>
+            <div class="fa-code"><span class="fk">Subject:</span> <span class="fv">Mathematics</span>
+<span class="fk">Grade:</span> <span class="fv">6</span>
+<span class="fk">Topic:</span> <span class="fv">Perimeter</span>
+<span class="fk">Estimated Duration:</span> <span class="fv">01:55</span>
+Hello students! ...</div>
+          </div>
+        </div>
+      </div>
+      <div class="paste-zone">
+        <div class="paste-zone-tabs">
+          <div class="pzt active" id="tab-file" onclick="switchInputTab('file')">📁 Upload File (.txt/.docx/.pdf)</div>
+          <div class="pzt" id="tab-paste" onclick="switchInputTab('paste')">✏️ Paste Text</div>
+        </div>
+        <div class="paste-zone-body">
+          <div id="input-file">
+            <div class="drop-area" id="dropArea"
+                 ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+              <input type="file" id="fileInput" accept=".txt,.docx,.pdf,.text" onchange="onFileSelect(event)"/>
+              <div class="drop-icon">📄</div>
+              <div class="drop-title">Drop file here or click to browse</div>
+              <div class="drop-sub">Parses instantly in browser</div>
+              <div class="drop-formats">
+                <span class="fmt-tag green">📃 .txt</span>
+                <span class="fmt-tag green">📝 .docx</span>
+                <span class="fmt-tag green">📕 .pdf</span>
+              </div>
+            </div>
+          </div>
+          <div id="input-paste" style="display:none;">
+            <textarea class="text-paste" id="pasteArea"
+placeholder="Subject	Mathematics
+Grade	6
+Topic	Perimeter and Area
+Estimated Duration	01:55
+Hello students! Today we learn about perimeter..."></textarea>
+            <div style="display:flex;gap:6px;margin-top:7px;flex-wrap:wrap;">
+              <button class="btn-ghost" onclick="parsePastedText()">🔍 Parse</button>
+              <button class="btn-ghost" onclick="loadDemoIntoPaste()">📋 Demo</button>
+              <button class="btn-ghost" onclick="document.getElementById('pasteArea').value=''">🗑 Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="upload-progress" id="uploadProgress">
+        <div class="up-label" id="uploadLabel">Parsing…</div>
+        <div class="up-bar-wrap"><div class="up-bar" id="uploadBar"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SETTINGS ══ -->
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-tb">
+        <span class="step-badge">SETTINGS</span>
+        <div>
+          <div class="card-title">Pipeline Settings</div>
+          <div class="card-desc">Applies to both Auto and Manual modes</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="settings-grid">
+        <div class="form-field"><label class="form-label">Default Subject</label>
+          <input class="form-input" id="defSubject" value="Mathematics"/></div>
+        <div class="form-field"><label class="form-label">Default Grade</label>
+          <select class="form-select" id="defGrade">
+            <option>Grade 6</option><option selected>Grade 7</option>
+            <option>Grade 8</option><option>Grade 9</option><option>Grade 10</option>
+          </select></div>
+        <div class="form-field"><label class="form-label">Default Render Quality</label>
+          <select class="form-select" id="defQuality">
+            <option value="l">Low — 480p (fastest)</option>
+            <option value="m" selected>Medium — 720p</option>
+            <option value="h">High — 1080p</option>
+          </select></div>
+        <div class="form-field"><label class="form-label">Auto-Render Videos</label>
+          <select class="form-select" id="defAutoRender">
+            <option value="yes" selected>Yes — render after generate</option>
+            <option value="no">No — generate code only</option>
+          </select></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ AUTO QUEUE ══ -->
+  <div class="card" id="parsedCard" style="display:none;">
+    <div class="card-hdr">
+      <div class="card-tb">
+        <span class="step-badge">QUEUE</span>
+        <div>
+          <div class="card-title">Auto-Generate Queue</div>
+          <div class="card-desc" id="parsedDesc">0 transcripts</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <span class="tag tag-p" id="parsedCount">0</span>
+        <button class="btn-ghost" onclick="clearAll()">🗑️ Clear</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="server-warn" id="serverWarn">
+        <strong>⚠️ Server Offline</strong> — Code generation ✅ works!
+        .py files will auto-download. Start server to render.
+      </div>
+      <div id="parsedList" class="parsed-list"></div>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center;">
+        <button class="btn btn-primary" id="runAllBtn" onclick="runAll()">
+          <span id="runAllIcon">🚀</span><span id="runAllTxt">Run All</span>
+        </button>
+        <button class="btn-ghost" id="pauseBtn" onclick="togglePause()" style="display:none;">⏸ Pause</button>
+        <button class="btn btn-red btn-sm" id="stopBtn" onclick="stopAll()" style="display:none;">⏹ Stop</button>
+        <span style="font-size:12px;color:var(--pale);" id="etaLabel"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PROCESS PANEL ══ -->
+  <div class="process-panel" id="processPanel">
+    <div class="process-panel-hdr">
+      <div>
+        <div class="process-panel-title">
+          <span id="ppStatusIcon">⚙️</span> Detailed Process View
+          <span class="tag tag-o" id="ppStatusBadge" style="font-size:11px;padding:2px 8px;">Idle</span>
+        </div>
+        <div class="process-item-name" id="ppItemName">Run a transcript to see all steps</div>
+      </div>
+      <div style="display:flex;gap:5px;">
+        <button class="btn-ghost" onclick="exportAllSteps()">⬇ Export</button>
+        <button class="btn-ghost" onclick="clearProcessPanel()">🗑 Clear</button>
+      </div>
+    </div>
+    <div class="step-track">
+      <div class="track-step" id="ts-0"><div class="ts-circle">0</div><div class="ts-label">Director's<br/>Note</div></div>
+      <div class="track-step" id="ts-1"><div class="ts-circle">1</div><div class="ts-label">Summary</div></div>
+      <div class="track-step" id="ts-2"><div class="ts-circle">2</div><div class="ts-label">Audio<br/>Script</div></div>
+      <div class="track-step" id="ts-3"><div class="ts-circle">3</div><div class="ts-label">Story<br/>board</div></div>
+      <div class="track-step" id="ts-4"><div class="ts-circle">4</div><div class="ts-label">Manim<br/>Code</div></div>
+      <div class="track-step" id="ts-5"><div class="ts-circle">5</div><div class="ts-label">Review</div></div>
+      <div class="track-step" id="ts-6"><div class="ts-circle">6</div><div class="ts-label">Render<br/>Cmd</div></div>
+      <div class="track-step" id="ts-r"><div class="ts-circle">▶</div><div class="ts-label">Live<br/>Render</div></div>
+    </div>
+    <div class="step-tabs">
+      <div class="step-tab active" data-tab="tab-s0" onclick="switchTab('tab-s0',this)"><span class="tab-dot" id="td-s0"></span>Step 0</div>
+      <div class="step-tab" data-tab="tab-s1" onclick="switchTab('tab-s1',this)"><span class="tab-dot" id="td-s1"></span>Step 1</div>
+      <div class="step-tab" data-tab="tab-s2" onclick="switchTab('tab-s2',this)"><span class="tab-dot" id="td-s2"></span>Step 2</div>
+      <div class="step-tab" data-tab="tab-s3" onclick="switchTab('tab-s3',this)"><span class="tab-dot" id="td-s3"></span>Step 3</div>
+      <div class="step-tab" data-tab="tab-s4" onclick="switchTab('tab-s4',this)"><span class="tab-dot" id="td-s4"></span>Step 4·Code</div>
+      <div class="step-tab" data-tab="tab-s5" onclick="switchTab('tab-s5',this)"><span class="tab-dot" id="td-s5"></span>Step 5</div>
+      <div class="step-tab" data-tab="tab-s6" onclick="switchTab('tab-s6',this)"><span class="tab-dot" id="td-s6"></span>Step 6</div>
+      <div class="step-tab" data-tab="tab-sr" onclick="switchTab('tab-sr',this)"><span class="tab-dot" id="td-sr"></span>Live Log</div>
+    </div>
+    <div>
+      <div class="tab-panel active" id="tab-s0"><div id="s0-content"><div class="pending-placeholder"><div class="pp-icon">🎬</div><div class="pp-title">Director's Note</div><div class="pp-sub">Appears after running</div></div></div></div>
+      <div class="tab-panel" id="tab-s1"><div id="s1-content"><div class="pending-placeholder"><div class="pp-icon">📝</div><div class="pp-title">Summary</div></div></div></div>
+      <div class="tab-panel" id="tab-s2"><div id="s2-content"><div class="pending-placeholder"><div class="pp-icon">🎙️</div><div class="pp-title">Audio Script</div></div></div></div>
+      <div class="tab-panel" id="tab-s3"><div id="s3-content"><div class="pending-placeholder"><div class="pp-icon">🎬</div><div class="pp-title">Storyboard</div></div></div></div>
+      <div class="tab-panel" id="tab-s4"><div id="s4-content"><div class="pending-placeholder"><div class="pp-icon">💻</div><div class="pp-title">Manim Code</div></div></div></div>
+      <div class="tab-panel" id="tab-s5"><div id="s5-content"><div class="pending-placeholder"><div class="pp-icon">✅</div><div class="pp-title">Self Review</div></div></div></div>
+      <div class="tab-panel" id="tab-s6"><div id="s6-content"><div class="pending-placeholder"><div class="pp-icon">⚙️</div><div class="pp-title">Render Commands</div></div></div></div>
+      <div class="tab-panel" id="tab-sr">
+        <div style="margin-bottom:6px;font-size:12px;color:var(--pale);">Real-time render output</div>
+        <div class="live-log-panel" id="liveLogPanel"><div style="color:#3d3572;font-style:italic;">Render output streams here…</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       MANUAL MODE — Python File Renderer
+       Each .py file = one complete video
+       Save first, render on YOUR permission
+  ══════════════════════════════════════════ -->
+  <div class="card" id="manualCard">
+    <div class="card-hdr">
+      <div class="card-tb">
+        <span class="step-badge orange">MANUAL</span>
+        <div>
+          <div class="card-title">Python File Renderer</div>
+          <div class="card-desc">Each .py file = one video · Save first · Render when YOU decide</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;">
+        <button class="btn-ghost" onclick="refreshFileList()">🔄 Refresh</button>
+        <button class="btn btn-orange" onclick="renderAllFiles()" id="renderAllFilesBtn">
+          <span id="rafIcon">🎬</span> Render All
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <!-- How it works -->
+      <div style="background:linear-gradient(135deg,#f0eeff,#fff7ed);border:2px solid rgba(116,100,206,.2);border-radius:10px;padding:12px 14px;margin-bottom:14px;">
+        <div style="font-size:12px;font-weight:800;color:var(--purple);margin-bottom:8px;">⚡ How This Works</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+          <div style="background:#fff;border-radius:7px;padding:9px;border:1.5px solid #ddd8f8;text-align:center;">
+            <div style="font-size:20px;margin-bottom:4px;">📤</div>
+            <div style="font-size:11px;font-weight:700;color:var(--purple);">STEP 1</div>
+            <div style="font-size:11px;color:var(--text);margin-top:2px;">Drop your .py files here</div>
+          </div>
+          <div style="background:#fff;border-radius:7px;padding:9px;border:1.5px solid #ddd8f8;text-align:center;">
+            <div style="font-size:20px;margin-bottom:4px;">💾</div>
+            <div style="font-size:11px;font-weight:700;color:var(--purple);">STEP 2</div>
+            <div style="font-size:11px;color:var(--text);margin-top:2px;">Auto-saved to <code style="background:rgba(116,100,206,.1);color:var(--purple);padding:1px 4px;border-radius:3px;font-size:10px;">scripts/</code></div>
+          </div>
+          <div style="background:#fff;border-radius:7px;padding:9px;border:1.5px solid #ddd8f8;text-align:center;">
+            <div style="font-size:20px;margin-bottom:4px;">▶</div>
+            <div style="font-size:11px;font-weight:700;color:var(--orange);">STEP 3</div>
+            <div style="font-size:11px;color:var(--text);margin-top:2px;">Click ▶ to render when ready</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drop zone for .py files -->
+      <div style="background:var(--lavender);border-radius:10px;padding:12px;margin-bottom:14px;border:1.5px solid #ddd8f8;">
+        <div style="font-size:12px;font-weight:800;color:var(--purple);margin-bottom:8px;">📤 Upload Python Files</div>
+        <div id="pyDropZone"
+             style="border:2px dashed #c4bdeb;border-radius:9px;padding:20px;text-align:center;cursor:pointer;background:#fff;position:relative;transition:var(--trans);"
+             ondragover="event.preventDefault();document.getElementById('pyDropZone').style.borderColor='var(--purple)';document.getElementById('pyDropZone').style.background='rgba(116,100,206,.04)'"
+             ondragleave="document.getElementById('pyDropZone').style.borderColor='#c4bdeb';document.getElementById('pyDropZone').style.background='#fff'"
+             ondrop="onPyDrop(event)">
+          <input type="file" accept=".py" multiple
+                 style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;"
+                 onchange="onPyFileSelect(event)"/>
+          <div style="font-size:28px;margin-bottom:5px;">🐍</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);">Drop .py files here or click to browse</div>
+          <div style="font-size:12px;color:var(--pale);margin-top:3px;">Multiple files supported · Each file = one complete video</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;">
+          <div class="form-field">
+            <label class="form-label">Default Quality for uploads</label>
+            <select class="form-select" id="uploadQuality">
+              <option value="l">Low 480p</option>
+              <option value="m" selected>Medium 720p</option>
+              <option value="h">High 1080p</option>
+              <option value="k">4K</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Class Name Override (optional)</label>
+            <input class="form-input" id="uploadClassName" placeholder="Auto-detected from code"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- File queue header -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <div style="font-size:13px;font-weight:800;color:var(--dark);display:flex;align-items:center;gap:8px;">
+          📋 Python Files Queue
+          <span class="tag tag-p" id="fileQueueCount">0 files</span>
+        </div>
+        <div style="display:flex;gap:6px;">
+          <button class="btn-ghost" onclick="clearFileQueue()" style="font-size:11px;padding:4px 9px;">🗑 Clear All</button>
+          <button class="btn-ghost" onclick="saveAllToServer()" style="font-size:11px;padding:4px 9px;">💾 Save All</button>
+        </div>
+      </div>
+
+      <!-- File queue list -->
+      <div id="fileQueueList" style="display:flex;flex-direction:column;gap:8px;">
+        <div id="fileQueueEmpty" style="text-align:center;padding:28px;color:var(--pale);font-size:13px;background:var(--lavender);border-radius:9px;border:1.5px dashed #ddd8f8;">
+          <div style="font-size:28px;margin-bottom:6px;opacity:.5;">📂</div>
+          <div style="font-weight:600;">No Python files yet</div>
+          <div style="font-size:12px;opacity:.7;margin-top:3px;">Upload .py files above or click Refresh to load from scripts/ folder</div>
+        </div>
+      </div>
+
+      <!-- Render log -->
+      <div style="margin-top:12px;display:none;" id="fileRenderLogWrap">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+          <div style="font-size:12px;font-weight:700;color:var(--purple);">📋 Render Log</div>
+          <button class="btn-ghost" onclick="document.getElementById('fileRenderLog').innerHTML='<div style=color:#3d3572;font-style:italic;>Cleared…</div>'" style="font-size:11px;padding:3px 7px;">🗑</button>
+        </div>
+        <div class="live-log-panel" id="fileRenderLog" style="max-height:200px;">
+          <div style="color:#3d3572;font-style:italic;">Render log appears here…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ VIDEO GALLERY ══ -->
+  <div class="vgallery-card">
+    <div class="vgallery-hdr">
+      <div class="vgallery-title">
+        🎬 Video Gallery
+        <span class="tag tag-g" id="galleryCount" style="background:rgba(34,197,94,.2);color:#15803d;">0 videos</span>
+      </div>
+      <button class="btn-ghost" onclick="clearGallery()" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff;font-size:11px;">🗑 Clear</button>
+    </div>
+    <div class="vgallery-grid" id="galleryGrid">
+      <div class="vcard-empty" id="galleryEmpty">
+        <div class="vcard-empty-icon">🎞️</div>
+        <div style="font-size:13px;font-weight:600;">No videos yet</div>
+        <div style="font-size:12px;margin-top:4px;opacity:.7;">Videos appear here after rendering</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ RIGHT COL ══ -->
+<div class="right-col">
+  <div class="rpanel">
+    <div class="rpanel-hdr"><div class="rpanel-title">📊 Overall Progress</div></div>
+    <div class="rpanel-body">
+      <div class="stats-grid">
+        <div class="stat-box"><div class="stat-num" id="stTotal">0</div><div class="stat-label">Total</div></div>
+        <div class="stat-box"><div class="stat-num orange" id="stRunning">0</div><div class="stat-label">Running</div></div>
+        <div class="stat-box"><div class="stat-num green" id="stDone">0</div><div class="stat-label">Done</div></div>
+        <div class="stat-box"><div class="stat-num red" id="stError">0</div><div class="stat-label">Errors</div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--pale);margin-bottom:3px;">
+        <span>Progress</span><span id="overallPct">0%</span>
+      </div>
+      <div class="prog-wrap"><div class="prog-fill" id="overallBar" style="width:0%"></div></div>
+      <div class="cur-job" id="curJob">
+        <div class="cj-lbl">Currently Processing</div>
+        <div class="cj-name" id="cjName">—</div>
+        <div class="cj-step" id="cjStep">—</div>
+        <div class="cj-pb-wrap"><div class="cj-pb" id="cjPb"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rpanel">
+    <div class="rpanel-hdr"><div class="rpanel-title">🔄 Current Job Steps</div></div>
+    <div class="rpanel-body">
+      <div class="mini-pipeline">
+        <div class="mp-step" id="mp-calling"><div class="mp-dot"></div><div class="mp-name">Calling Claude API</div><div class="mp-time" id="mpt-calling">—</div></div>
+        <div class="mp-step" id="mp-parsing"><div class="mp-dot"></div><div class="mp-name">Parsing JSON</div><div class="mp-time" id="mpt-parsing">—</div></div>
+        <div class="mp-step" id="mp-s0"><div class="mp-dot"></div><div class="mp-name">Step 0 · Director's Note</div><div class="mp-time" id="mpt-s0">—</div></div>
+        <div class="mp-step" id="mp-s1"><div class="mp-dot"></div><div class="mp-name">Step 1 · Summary</div><div class="mp-time" id="mpt-s1">—</div></div>
+        <div class="mp-step" id="mp-s2"><div class="mp-dot"></div><div class="mp-name">Step 2 · Audio Script</div><div class="mp-time" id="mpt-s2">—</div></div>
+        <div class="mp-step" id="mp-s3"><div class="mp-dot"></div><div class="mp-name">Step 3 · Storyboard</div><div class="mp-time" id="mpt-s3">—</div></div>
+        <div class="mp-step" id="mp-s4"><div class="mp-dot"></div><div class="mp-name">Step 4 · Manim Code</div><div class="mp-time" id="mpt-s4">—</div></div>
+        <div class="mp-step" id="mp-s5"><div class="mp-dot"></div><div class="mp-name">Step 5 · Review</div><div class="mp-time" id="mpt-s5">—</div></div>
+        <div class="mp-step" id="mp-saving"><div class="mp-dot"></div><div class="mp-name">Save / Download Script</div><div class="mp-time" id="mpt-saving">—</div></div>
+        <div class="mp-step" id="mp-rendering"><div class="mp-dot"></div><div class="mp-name">Manim Rendering</div><div class="mp-time" id="mpt-rendering">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rpanel">
+    <div class="rpanel-hdr">
+      <div class="rpanel-title">🎞️ Completed Videos <span class="tag tag-g" id="videoCount">0</span></div>
+    </div>
+    <div class="rpanel-body">
+      <div class="video-wrap-inner" id="videoList">
+        <div style="color:var(--pale);font-style:italic;font-size:13px;text-align:center;padding:12px 0;" id="videoPlaceholder">Videos appear here after rendering…</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rpanel">
+    <div class="rpanel-hdr"><div class="rpanel-title">⚙️ System Status</div></div>
+    <div class="rpanel-body">
+      <div>
+        <div class="sysrow"><span style="color:var(--pale);">Backend Server</span><span id="sysServer" style="font-weight:600;">…</span></div>
+        <div class="sysrow"><span style="color:var(--pale);">Manim</span><span id="sysManim" style="font-weight:600;">…</span></div>
+        <div class="sysrow"><span style="color:var(--pale);">Anthropic API</span><span id="sysAnthropic" style="font-weight:600;">…</span></div>
+        <div class="sysrow"><span style="color:var(--pale);">OpenAI API</span><span id="sysOpenAI" style="font-weight:600;">…</span></div>
+        <div class="sysrow"><span style="color:var(--pale);">Browser Parsing</span><span style="font-weight:600;color:#22c55e;">✅ Always works</span></div>
+        <div class="sysrow"><span style="color:var(--pale);">Mammoth.js</span><span id="sysMammoth" style="font-weight:600;">…</span></div>
+        <div class="sysrow"><span style="color:var(--pale);">PDF.js</span><span id="sysPdfjs" style="font-weight:600;">…</span></div>
+      </div>
+      <button class="btn-ghost" style="width:100%;justify-content:center;margin-top:9px;display:flex;" onclick="checkHealth()">🔄 Refresh Status</button>
+      <div class="render-setup">
+        <div class="rs-title">🖥️ Setup</div>
+        <div class="rs-step">
+          <div class="rs-num">1</div>
+          <div class="rs-body">
+            <strong style="color:#fff;">Download server</strong>
+            <button class="btn-ghost" style="width:100%;justify-content:center;margin-top:5px;" onclick="downloadServerFile()">⬇️ coschool_server.py</button>
+          </div>
+        </div>
+        <div class="rs-step">
+          <div class="rs-num">2</div>
+          <div class="rs-body">
+            <strong style="color:#fff;">Install</strong>
+            <div class="rs-cmd" onclick="copyCmd(this)">pip install flask flask-cors manim manim-voiceover</div>
+          </div>
+        </div>
+        <div class="rs-step">
+          <div class="rs-num">3</div>
+          <div class="rs-body">
+            <strong style="color:#fff;">Start server</strong>
+            <div class="rs-cmd" onclick="copyCmd(this)">python coschool_server.py</div>
+          </div>
+        </div>
+        <div class="rs-step">
+          <div class="rs-num">4</div>
+          <div class="rs-body" style="color:rgba(255,255,255,.75);">
+            Drop .py files in <strong style="color:var(--orange);">Manual Mode</strong> above →
+            saved to <code style="background:rgba(255,255,255,.1);padding:1px 5px;border-radius:3px;font-family:var(--mono);font-size:10px;">scripts/</code> →
+            click ▶ to render
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="toast-ct" id="toastCt"></div>
+
+<script>
+/* ══ TOAST ══ */
+function toast(msg,type='info',dur=3500){
+  const ct=document.getElementById('toastCt');
+  const t=document.createElement('div');
+  t.className=`toast ${type==='success'?'ok':type==='error'?'err':'info'}`;
+  t.innerHTML=`<span>${type==='success'?'✅':type==='error'?'❌':'ℹ️'}</span><span>${String(msg).slice(0,260)}</span>`;
+  ct.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';t.style.transform='translateY(8px)';setTimeout(()=>t.remove(),310);},dur);
+}
+
+/* ══ CONFIG ══ */
+const CONFIG={
+  ANTHROPIC_API_KEY:"", // Add your API key here or set via environment variable
+  OPENAI_API_KEY:"", // Add your API key here or set via environment variable
+  ANTHROPIC_MODEL:"claude-sonnet-4-5",
+  MAX_TOKENS:16000,
+  SERVER_URL:"http://127.0.0.1:5000",
+};
+
+if(typeof pdfjsLib!=='undefined'){
+  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+const MASTER_PROMPT=`You are the Coschool Animated Explainer pipeline v12.
+Generate all 7 steps for a complete Manim CE v0.19.0 math animation.
+STEP 0 DIRECTORS NOTE max 120 words. Identify Category 1 Geometric 2 Proportional 3 Algebraic.
+STEP 1 RAW TRANSCRIPT SUMMARY verbatim numbered sentences grouped by SEGMENT.
+STEP 2 AUDIO SCRIPT convert symbols to speech add pacing marks embed bookmarks.
+STEP 3 STORYBOARD 5-column table: Time | Visual | Audio | Animation | Notes.
+STEP 4 COMPLETE MANIM PYTHON CODE starting with:
+  import os
+  os.environ["OPENAI_API_KEY"] = "%%OPENAI_KEY%%"
+  from manim import *
+  from manim_voiceover import VoiceoverScene
+  from manim_voiceover.services.openai import OpenAIService
+Colors: LAVENDER_BG #E7E5F3 PURPLE #7464CE ORANGE_HL #FF9302. Voice shimmer model gpt-4o-mini-tts.
+All Text() must use font="Poppins".
+FORBIDDEN: weight= on non-Text Mobjects. FORBIDDEN: .get_center().animate
+BOOKMARK RULES: Every wait_until_bookmark("X") MUST have matching <bookmark mark='X'/> in same with block.
+STEP 5 SELF-REVIEW. STEP 6 RENDER COMMANDS.
+Return ONLY raw JSON no markdown no fences.
+{"step0":"...","step1":"...","step2":"...","step3":"...","step4":"...","step5":"...","step6":"...","filename":"...","classname":"..."}`;
+
+/* ══ STATE ══ */
+let Q=[],running=false,paused=false,stopped=false,serverOk=false;
+let galleryVideos=[];
+let currentParsed=null;
+let fileQueue=[];
+let fileRenderStop=false;
+
+/* ══════════════════════════════════════════
+   PYTHON FILE QUEUE
+   Each .py = one complete video
+   Save FIRST, render on YOUR permission
+══════════════════════════════════════════ */
+
+function detectClassName(code){
+  const m=code.match(/^class\s+(\w+)\s*\(/m);
+  return m?m[1]:'';
+}
+
+function onPyDrop(e){
+  e.preventDefault();
+  const dz=document.getElementById('pyDropZone');
+  dz.style.borderColor='#c4bdeb';dz.style.background='#fff';
+  const files=Array.from(e.dataTransfer.files).filter(f=>f.name.endsWith('.py'));
+  if(!files.length){toast('Only .py files allowed!','error');return;}
+  files.forEach(f=>uploadPyFile(f));
+}
+
+function onPyFileSelect(e){
+  Array.from(e.target.files).filter(f=>f.name.endsWith('.py')).forEach(f=>uploadPyFile(f));
+  e.target.value='';
+}
+
+async function uploadPyFile(file){
+  if(fileQueue.find(f=>f.filename===file.name)){toast(`${file.name} already in queue!`,'info');return;}
+  const code=await file.text();
+  const overrideClass=document.getElementById('uploadClassName').value.trim();
+  const className=overrideClass||detectClassName(code)||file.name.replace('.py','');
+  const quality=document.getElementById('uploadQuality').value;
+  const item={
+    id:'pf_'+Date.now()+Math.random(),
+    filename:file.name,
+    classname:className,
+    code:code,
+    quality:quality,
+    state:'saved',
+    status:'✅ Saved — click ▶ to render',
+    progress:0,
+    videoUrl:'',
+    videoPath:'',
+    savedToServer:false,
+  };
+  fileQueue.push(item);
+  renderFileQueue();
+  updateStats();
+  // Auto-save to server if online
+  if(serverOk){
+    await saveOneToServer(item);
+  } else {
+    // Download to computer
+    downloadScript(code,file.name);
+    item.status='📥 Downloaded (server offline) — start server then Refresh';
+    renderFileQueue();
+    toast(`📥 ${file.name} downloaded (server offline)`,'info',5000);
+  }
+  toast(`✅ ${file.name} added`,'success');
+}
+
+async function saveOneToServer(item){
+  try{
+    const r=await fetch(`${CONFIG.SERVER_URL}/api/save-script`,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({code:item.code,filename:item.filename})
+    });
+    const d=await r.json();
+    if(d.success){
+      item.savedToServer=true;
+      item.status='✅ Saved to scripts/ — click ▶ to render';
+      appendFileLog(`💾 Saved: ${item.filename}`,'ll-ok');
+      renderFileQueue();
+    }
+  }catch(e){
+    appendFileLog(`⚠️ Save failed: ${item.filename} — ${e.message}`,'ll-warn');
+  }
+}
+
+async function saveAllToServer(){
+  if(!serverOk){toast('Server offline!','error');return;}
+  let saved=0;
+  for(const item of fileQueue){
+    if(!item.savedToServer){
+      await saveOneToServer(item);
+      saved++;
+    }
+  }
+  toast(saved>0?`✅ Saved ${saved} file(s) to server`:'All files already saved','info');
+}
+
+/* ── Render ONE file ── */
+async function renderOneFile(id){
+  const item=fileQueue.find(f=>f.id===id);
+  if(!item) return;
+  if(!serverOk){toast('Server offline! Start coschool_server.py first','error',5000);return;}
+  if(item.state==='running'){toast('Already rendering!','error');return;}
+  // Save first if not saved
+  if(!item.savedToServer) await saveOneToServer(item);
+  fileRenderStop=false;
+  document.getElementById('fileRenderLogWrap').style.display='block';
+  appendFileLog(`▶ Rendering: ${item.filename} → class: ${item.classname}`,'ll-step');
+  setCurrent(item.filename,'Rendering…',5);
+  item.state='running';item.status='Starting render…';item.progress=5;
+  renderFileQueue();updateStats();
+  const jobId=`${item.id}_r`;
+  try{
+    const rr=await fetch(`${CONFIG.SERVER_URL}/api/render`,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({filename:item.filename,classname:item.classname,quality:item.quality,job_id:jobId})
+    });
+    const rd=await rr.json();
+    if(!rd.success) throw new Error(rd.error||'Render failed');
+    appendFileLog(`Job started ✅`,'ll-ok');
+  }catch(e){
+    item.state='error';item.status=`❌ ${e.message}`;
+    appendFileLog(`❌ ${item.filename}: ${e.message}`,'ll-err');
+    renderFileQueue();updateStats();clearCurrent();return;
+  }
+  const t0=Date.now();
+  await new Promise(resolve=>{
+    const timer=setInterval(async()=>{
+      if(fileRenderStop){
+        clearInterval(timer);
+        item.state='saved';item.status='⏹ Stopped — click ▶ to retry';
+        renderFileQueue();clearCurrent();resolve();return;
+      }
+      try{
+        const sr=await fetch(`${CONFIG.SERVER_URL}/api/render-status/${jobId}`);
+        const sd=await sr.json();
+        const pct=5+Math.round((sd.percent||0)*.93);
+        item.progress=pct;
+        item.status=`Rendering ${sd.percent||0}%…`;
+        setCurrent(item.filename,`${sd.percent||0}%`,pct);
+        (sd.log||[]).slice(-1).forEach(l=>appendFileLog(l));
+        renderFileQueue();updateStats();
+        if(sd.state==='done'){
+          clearInterval(timer);
+          const elapsed=((Date.now()-t0)/1000).toFixed(1);
+          item.state='done';item.status=`✅ Done in ${elapsed}s`;item.progress=100;
+          item.videoPath=sd.output||'';item.videoUrl=sd.video_url||'';
+          appendFileLog(`✅ ${item.filename} done in ${elapsed}s`,'ll-ok');
+          renderFileQueue();updateStats();
+          addToGallery({id:item.id,title:item.filename.replace('.py',''),grade:'',topic:item.classname,videoPath:item.videoPath,videoUrl:item.videoUrl});
+          addToSidebarVideos({id:item.id,title:item.filename.replace('.py',''),videoPath:item.videoPath,videoUrl:item.videoUrl});
+          clearCurrent();
+          toast(`✅ ${item.filename} rendered!`,'success',5000);
+          resolve();
+        }else if(sd.state==='error'){
+          clearInterval(timer);
+          item.state='error';item.status=`❌ ${sd.error||'Unknown'}`;
+          appendFileLog(`❌ ${item.filename}: ${sd.error}`,'ll-err');
+          renderFileQueue();updateStats();clearCurrent();resolve();
+        }
+      }catch(e){console.error('Poll:',e);}
+    },2000);
+  });
+}
+
+/* ── Render ALL files one by one ── */
+async function renderAllFiles(){
+  if(!serverOk){toast('Server offline!','error');return;}
+  const pending=fileQueue.filter(f=>f.state==='saved'||f.state==='error');
+  if(!pending.length){toast('No files ready to render!','error');return;}
+  fileRenderStop=false;
+  document.getElementById('rafIcon').innerHTML='<div class="spin"></div>';
+  document.getElementById('renderAllFilesBtn').disabled=true;
+  document.getElementById('fileRenderLogWrap').style.display='block';
+  appendFileLog(`▶ Batch render: ${pending.length} file(s)`,'ll-step');
+  for(const item of pending){
+    if(fileRenderStop) break;
+    await renderOneFile(item.id);
+    if(!fileRenderStop) await new Promise(r=>setTimeout(r,600));
+  }
+  document.getElementById('rafIcon').textContent='🎬';
+  document.getElementById('renderAllFilesBtn').disabled=false;
+  const done=fileQueue.filter(f=>f.state==='done').length;
+  const errors=fileQueue.filter(f=>f.state==='error').length;
+  appendFileLog(`✅ Batch complete: ${done} done, ${errors} errors`,'ll-ok');
+  toast(`Batch done! ${done} ✅ ${errors} ❌`,errors===0?'success':'info',6000);
+}
+
+/* ── Render queue UI ── */
+function renderFileQueue(){
+  const list=document.getElementById('fileQueueList');
+  document.getElementById('fileQueueCount').textContent=`${fileQueue.length} file${fileQueue.length!==1?'s':''}`;
+  if(fileQueue.length===0){
+    list.innerHTML=`<div id="fileQueueEmpty" style="text-align:center;padding:28px;color:var(--pale);font-size:13px;background:var(--lavender);border-radius:9px;border:1.5px dashed #ddd8f8;">
+      <div style="font-size:28px;margin-bottom:6px;opacity:.5;">📂</div>
+      <div style="font-weight:600;">No Python files yet</div>
+      <div style="font-size:12px;opacity:.7;margin-top:3px;">Upload .py files above or click Refresh</div>
+    </div>`;
+    return;
+  }
+  list.innerHTML=fileQueue.map((item,i)=>`
+    <div class="pyfile-item pf-${item.state}">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <!-- Icon -->
+        <div style="width:42px;height:42px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;
+                    background:${item.state==='done'?'#22c55e':item.state==='error'?'#ef4444':item.state==='running'?'var(--orange)':'var(--purple)'};color:#fff;">
+          ${item.state==='running'?'<div class="spin"></div>':item.state==='done'?'✓':item.state==='error'?'✗':'🐍'}
+        </div>
+        <!-- Info -->
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);">📄 ${esc(item.filename)}</div>
+          <div style="font-size:11px;color:var(--pale);font-family:var(--mono);margin-top:1px;">
+            🏷 ${esc(item.classname)} · ${item.quality==='l'?'480p':item.quality==='m'?'720p':item.quality==='h'?'1080p':'4K'}
+            · ${item.savedToServer?'<span style="color:#22c55e;">✅ Saved</span>':'<span style="color:var(--orange);">⚠️ Not saved</span>'}
+          </div>
+          <div style="font-size:11px;margin-top:3px;font-family:var(--mono);
+                      color:${item.state==='done'?'#22c55e':item.state==='error'?'#ef4444':item.state==='running'?'var(--orange)':'var(--pale)'};">
+            ${esc(item.status)}
+          </div>
+          ${item.state==='running'?`
+          <div style="background:#ddd8f8;border-radius:20px;height:3px;overflow:hidden;margin-top:5px;">
+            <div style="height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .4s ease;width:${item.progress}%;"></div>
+          </div>`:''}
+        </div>
+        <!-- Controls -->
+        <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0;">
+          ${item.state!=='running'?`
+          <select style="padding:4px 7px;border:1.5px solid #ddd8f8;border-radius:6px;font-size:11px;color:var(--text);background:#fff;outline:none;cursor:pointer;"
+                  onchange="fileQueue[${i}].quality=this.value">
+            <option value="l" ${item.quality==='l'?'selected':''}>480p</option>
+            <option value="m" ${item.quality==='m'?'selected':''}>720p</option>
+            <option value="h" ${item.quality==='h'?'selected':''}>1080p</option>
+            <option value="k" ${item.quality==='k'?'selected':''}>4K</option>
+          </select>`:''}
+          <div style="display:flex;gap:4px;">
+            ${item.state!=='running'?`
+              <button class="ibtn" onclick="renderOneFile('${item.id}')"
+                      title="Render this file now"
+                      style="background:var(--orange);color:#fff;border-color:var(--orange);font-size:15px;width:32px;height:32px;">
+                ▶
+              </button>`:
+              `<button class="ibtn" onclick="fileRenderStop=true"
+                       title="Stop render"
+                       style="background:#ef4444;color:#fff;border-color:#ef4444;">⏹</button>`}
+            ${!item.savedToServer&&item.state!=='running'?`
+              <button class="ibtn" onclick="saveOneToServer(fileQueue[${i}]).then(()=>renderFileQueue())"
+                      title="Save to server scripts/ folder"
+                      style="color:var(--orange);border-color:var(--orange);">💾</button>`:''}
+            ${item.state==='done'&&item.videoUrl?`
+              <button class="ibtn" onclick="window.open('${CONFIG.SERVER_URL}/media/${item.videoUrl}','_blank')"
+                      title="Watch video"
+                      style="background:#22c55e;color:#fff;border-color:#22c55e;">👁</button>`:''}
+            ${item.state!=='running'?`
+              <button class="ibtn" onclick="removeFromFileQueue(${i})"
+                      title="Remove from queue"
+                      style="color:#ef4444;">✕</button>`:''}
+          </div>
+        </div>
+      </div>
+      ${item.state==='done'&&item.videoUrl?`
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(34,197,94,.2);">
+        <video controls preload="metadata"
+               style="width:100%;border-radius:8px;background:#0a0918;max-height:180px;display:block;">
+          <source src="${CONFIG.SERVER_URL}/media/${esc(item.videoUrl)}" type="video/mp4">
+        </video>
+        <div style="display:flex;gap:6px;margin-top:7px;flex-wrap:wrap;">
+          <a class="btn-ghost" href="${CONFIG.SERVER_URL}/media/${esc(item.videoUrl)}"
+             download="${esc(item.filename.replace('.py','.mp4'))}"
+             style="font-size:11px;padding:4px 9px;">⬇️ Download</a>
+          <button class="btn-ghost" onclick="copyText('${CONFIG.SERVER_URL}/media/${esc(item.videoUrl)}')"
+                  style="font-size:11px;padding:4px 9px;">📋 Copy URL</button>
+          <button class="btn-ghost" onclick="window.open('${CONFIG.SERVER_URL}/media/${esc(item.videoUrl)}','_blank')"
+                  style="font-size:11px;padding:4px 9px;">⛶ Fullscreen</button>
+        </div>
+      </div>`:''}
+    </div>`).join('');
+}
+
+function removeFromFileQueue(i){
+  if(fileQueue[i]?.state==='running'){toast('Stop render first!','error');return;}
+  const name=fileQueue[i].filename;
+  fileQueue.splice(i,1);
+  renderFileQueue();updateStats();
+  toast(`Removed: ${name}`,'info');
+}
+
+function clearFileQueue(){
+  if(fileQueue.some(f=>f.state==='running')){toast('Stop rendering first!','error');return;}
+  fileQueue=[];renderFileQueue();updateStats();toast('Queue cleared','info');
+}
+
+function appendFileLog(line,type=''){
+  const log=document.getElementById('fileRenderLog');if(!log) return;
+  if(log.querySelector('[style*="font-style:italic"]')) log.innerHTML='';
+  const div=document.createElement('div');
+  const ts=new Date().toLocaleTimeString('en-US',{hour12:false});
+  const cls=type||(/ERROR|error/.test(line)?'ll-err':/✅|done/i.test(line)?'ll-ok':/WARNING/i.test(line)?'ll-warn':'ll-info');
+  div.innerHTML=`<span class="log-ts">[${ts}]</span><span class="${cls}">${esc(line)}</span>`;
+  log.appendChild(div);log.scrollTop=log.scrollHeight;
+  while(log.children.length>200) log.removeChild(log.firstChild);
+}
+
+async function refreshFileList(){
+  if(!serverOk){toast('Server offline!','error');return;}
+  try{
+    const r=await fetch(`${CONFIG.SERVER_URL}/api/list-scripts`);
+    const d=await r.json();
+    if(d.scripts&&d.scripts.length>0){
+      let added=0;
+      for(const fn of d.scripts){
+        if(!fileQueue.find(f=>f.filename===fn)){
+          // Try to get code
+          let code='',className=fn.replace('.py','');
+          try{
+            const cr=await fetch(`${CONFIG.SERVER_URL}/api/get-script/${fn}`);
+            const cd=await cr.json();
+            code=cd.code||'';
+            if(code) className=detectClassName(code)||className;
+          }catch(e){}
+          fileQueue.push({
+            id:'pf_'+Date.now()+Math.random(),
+            filename:fn,classname:className,code:code,quality:'m',
+            state:'saved',status:'✅ Found in scripts/ — click ▶ to render',
+            progress:0,videoUrl:'',videoPath:'',savedToServer:true,
+          });
+          added++;
+        }
+      }
+      renderFileQueue();updateStats();
+      toast(added>0?`✅ Loaded ${added} file(s) from scripts/`:'No new files found',added>0?'success':'info');
+    }else{
+      toast('No .py files in scripts/ folder','info');
+    }
+  }catch(e){toast('Cannot reach server: '+e.message,'error');}
+}
+
+/* ══ GALLERY ══ */
+function addToGallery(item){
+  const src=item.videoUrl?`${CONFIG.SERVER_URL}/media/${item.videoUrl}`:'';
+  galleryVideos.push({id:item.id,title:item.title,grade:item.grade||'',topic:item.topic||'',path:item.videoPath||'',src});
+  renderGallery();
+}
+
+function addToSidebarVideos(item){
+  const src=item.videoUrl?`${CONFIG.SERVER_URL}/media/${item.videoUrl}`:'';
+  const cnt=document.getElementById('videoCount');
+  cnt.textContent=parseInt(cnt.textContent||'0')+1;
+  document.getElementById('videoPlaceholder')?.remove();
+  const div=document.createElement('div');div.className='vi';
+  div.innerHTML=`
+    <div class="vi-name">🎬 ${esc(item.title)}</div>
+    <div class="vi-path">${esc(item.videoPath||'Rendered ✅')}</div>
+    ${src?`<video controls preload="metadata" style="width:100%;border-radius:6px;margin-top:6px;background:#000;max-height:120px;"><source src="${src}" type="video/mp4"></video>`:''}
+    <div class="vi-btns">
+      ${src?`<a class="btn-ghost" href="${src}" download="${esc(item.title)}.mp4" style="font-size:11px;padding:3px 7px;">⬇️</a>
+             <button class="btn-ghost" onclick="window.open('${src}','_blank')" style="font-size:11px;padding:3px 7px;">⛶</button>`:''}
+    </div>`;
+  document.getElementById('videoList').prepend(div);
+}
+
+function renderGallery(){
+  const grid=document.getElementById('galleryGrid');
+  document.getElementById('galleryCount').textContent=`${galleryVideos.length} video${galleryVideos.length!==1?'s':''}`;
+  if(galleryVideos.length===0){
+    grid.innerHTML=`<div class="vcard-empty"><div class="vcard-empty-icon">🎞️</div><div style="font-size:13px;font-weight:600;">No videos yet</div><div style="font-size:12px;margin-top:4px;opacity:.7;">Videos appear here after rendering</div></div>`;
+    return;
+  }
+  grid.innerHTML=galleryVideos.map((v,i)=>`
+    <div class="vcard">
+      ${v.src?`<video class="vcard-video" controls preload="metadata"><source src="${esc(v.src)}" type="video/mp4"></video>`
+             :`<div class="vcard-video" style="display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.3);font-size:13px;">🎬 No preview</div>`}
+      <div class="vcard-info">
+        <div class="vcard-title">${esc(v.title)}</div>
+        <div class="vcard-meta">
+          ${v.grade?`<span class="tag tag-p">${esc(v.grade)}</span>`:''}
+          ${v.topic?`<span class="tag tag-o">${esc(v.topic)}</span>`:''}
+        </div>
+        <div class="vcard-path">${esc(v.path||v.src)}</div>
+        <div class="vcard-btns">
+          ${v.src?`<a class="btn-ghost" href="${esc(v.src)}" download="${esc(v.title)}.mp4" style="font-size:11px;padding:4px 8px;">⬇️</a>
+                   <button class="btn-ghost" onclick="window.open('${esc(v.src)}','_blank')" style="font-size:11px;padding:4px 8px;">⛶</button>`:''}
+          <button class="btn-ghost" onclick="removeFromGallery(${i})" style="font-size:11px;padding:4px 8px;color:#ef4444;border-color:#ef4444;">✕</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function removeFromGallery(i){galleryVideos.splice(i,1);renderGallery();toast('Removed','info');}
+function clearGallery(){galleryVideos=[];renderGallery();toast('Gallery cleared','info');}
+
+/* ══ UNIVERSAL PARSER ══ */
+function parseTranscriptText(rawText){
+  if(!rawText||!rawText.trim()) return{error:'Empty'};
+  const text=rawText.replace(/\r\n/g,'\n').replace(/\r/g,'\n');
+  const META_FIELDS='Subject|Grade|Topic|Subtopic|Learning\\s*Outcomes?|Estimated\\s*Duration|Duration|Outcomes?';
+  function isMetaLine(line){
+    const t=line.trim();if(!t) return false;
+    if(new RegExp('^('+META_FIELDS+')\\s*[:\\t]','i').test(t)) return true;
+    const m=t.match(new RegExp('^('+META_FIELDS+')\\s+(\\S.*)','i'));
+    if(m){const val=m[2].trim(),lc=val.slice(-1);if(lc!=='.'&&lc!=='!'&&lc!=='?') return true;if(val.length<30) return true;}
+    return false;
+  }
+  function extractField(lines,...pats){
+    for(const pat of pats){
+      const r1=new RegExp('^('+pat+')\\s*[:\\t]\\s*(.+)','i');
+      for(const l of lines){const m=l.trim().match(r1);if(m&&m[2].trim()) return m[2].trim();}
+      const r2=new RegExp('^('+pat+')\\s+(.+)','i');
+      for(const l of lines){const m=l.trim().match(r2);if(m&&m[2].trim()) return m[2].trim();}
+    }
+    return'';
+  }
+  function isSubjectLine(line){
+    const t=line.trim();
+    if(/^Subject\s*[:\t]/i.test(t)) return true;
+    const m=t.match(/^Subject\s+(\S.*)/i);
+    if(m){const v=m[1].trim(),lc=v.slice(-1);return v.length>0&&v.length<80&&lc!=='.'&&lc!=='!'&&lc!=='?';}
+    return false;
+  }
+  const allLines=text.split('\n');
+  const blocks=[];let cur=[];
+  for(const line of allLines){
+    if(isSubjectLine(line)&&cur.length>0){blocks.push(cur.join('\n'));cur=[line];}
+    else cur.push(line);
+  }
+  if(cur.length>0) blocks.push(cur.join('\n'));
+  const validBlocks=blocks.filter(b=>{const first=b.trim().split('\n').find(l=>l.trim())||'';return isSubjectLine(first);});
+  if(validBlocks.length===0) return{error:'No transcripts found. Each must start with "Subject" line.'};
+  const transcripts=[];
+  validBlocks.forEach((block,idx)=>{
+    const lines=block.split('\n').filter(l=>l.trim());
+    const subject=extractField(lines,'Subject');
+    const grade=extractField(lines,'Grade');
+    const topic=extractField(lines,'Topic');
+    const subtopic=extractField(lines,'Subtopic');
+    const outcomes=extractField(lines,'Learning\\s*Outcomes?','Outcomes?');
+    const durRaw=extractField(lines,'Estimated\\s*Duration','Duration');
+    let duration='90';
+    if(durRaw){const mm=durRaw.match(/(\d+):(\d+)/);if(mm) duration=String(parseInt(mm[1])*60+parseInt(mm[2]));else if(/^\d+$/.test(durRaw.trim())) duration=durRaw.trim();}
+    let bodyStart=0;
+    for(let i=0;i<lines.length;i++){if(isMetaLine(lines[i])) bodyStart=i+1;else{bodyStart=i;break;}}
+    const transcript=lines.slice(bodyStart).join('\n').trim();
+    if(!transcript) return;
+    const gNum=grade.match(/\d+/);
+    transcripts.push({title:topic||subtopic||subject||`Transcript ${idx+1}`,subject:subject||'Mathematics',grade:gNum?`Grade ${gNum[0]}`:(grade||'Grade 7'),topic:topic||'',subtopic:subtopic||'',outcomes:outcomes||'',duration,transcript});
+  });
+  if(transcripts.length===0) return{error:'Found Subject blocks but no body text.'};
+  return{transcripts};
+}
+
+/* ══ BROWSER PARSERS ══ */
+async function parseDocxBrowser(ab){
+  if(typeof mammoth==='undefined') throw new Error('Mammoth.js not loaded');
+  const r=await mammoth.extractRawText({arrayBuffer:ab});
+  if(!r.value.trim()) throw new Error('No text in .docx');
+  return r.value;
+}
+async function parsePDFBrowser(ab){
+  if(typeof pdfjsLib==='undefined') throw new Error('PDF.js not loaded');
+  const pdf=await pdfjsLib.getDocument({data:new Uint8Array(ab)}).promise;
+  let fullText='';
+  for(let p=1;p<=pdf.numPages;p++){
+    const page=await pdf.getPage(p);
+    const content=await page.getTextContent();
+    const lineMap=new Map();
+    for(const item of content.items){
+      if(!item.str||!item.str.trim()) continue;
+      const y=Math.round(item.transform[5]);
+      if(!lineMap.has(y)) lineMap.set(y,[]);
+      lineMap.get(y).push({x:item.transform[4],str:item.str,w:item.width||0});
+    }
+    const sortedYs=[...lineMap.keys()].sort((a,b)=>b-a);
+    for(const y of sortedYs){
+      const items=lineMap.get(y).sort((a,b)=>a.x-b.x);
+      let lineStr='';let prevEndX=null;
+      for(const item of items){
+        if(prevEndX===null) lineStr=item.str;
+        else lineStr+=(item.x-prevEndX>15?'\t':' ')+item.str;
+        prevEndX=item.x+item.w;
+      }
+      lineStr=lineStr.trim();if(lineStr) fullText+=lineStr+'\n';
+    }
+    fullText+='\n';
+  }
+  if(!fullText.trim()) throw new Error('No text extracted');
+  return fullText;
+}
+
+/* ══ UI HELPERS ══ */
+function esc(s){if(!s) return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');}
+function switchInputTab(tab){
+  document.getElementById('input-file').style.display=tab==='file'?'block':'none';
+  document.getElementById('input-paste').style.display=tab==='paste'?'block':'none';
+  document.getElementById('tab-file').classList.toggle('active',tab==='file');
+  document.getElementById('tab-paste').classList.toggle('active',tab==='paste');
+}
+function copyCmd(el){navigator.clipboard.writeText(el.innerText.trim()).then(()=>toast('Copied!','success')).catch(()=>toast('Copy failed','error'));}
+function copyText(t){navigator.clipboard.writeText(t).then(()=>toast('Copied!','success')).catch(()=>toast('Copy failed','error'));}
+function nowTime(){return new Date().toLocaleTimeString('en-US',{hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});}
+
+/* ══ DEMO ══ */
+function getDemoText(){
+  return`Subject\tMathematics\nGrade\t6\nTopic\tPerimeter and Area\nSubtopic\tPerimeter and Area\nLearning Outcomes\tStudents will determine missing dimensions\nEstimated Duration\t01:55\nHello students! Imagine arranging chairs around a rectangular classroom table.\nThe perimeter is the total length around a shape.\nFor a rectangle: P equals 2 times open bracket l plus w close bracket.\nQuestion: The perimeter of a rectangular notebook is 34 cm. Length is 11 cm. Find the width.\nSolution: 2 times 11 plus w equals 34. Width equals 6 centimetres.\n\nSubject\tMathematics\nGrade\t7\nTopic\tNumber Play\nSubtopic\tParity\nLearning Outcomes\tStudents will classify numbers as even or odd\nEstimated Duration\t01:50\nHello students! Imagine arranging your pencils into pairs.\nParity tells us whether a whole number can be split into two equal groups.\nQuestion: A teacher has 47 students. How many pairs and how many left over?\nSolution: 47 divided by 2 equals 23 remainder 1.`;
+}
+function loadDemo(){const r=parseTranscriptText(getDemoText());if(r.error){toast(r.error,'error',5000);return;}loadTranscripts(r.transcripts);toast(`Demo: ${r.transcripts.length} transcripts!`,'success');}
+function loadDemoIntoPaste(){document.getElementById('pasteArea').value=getDemoText();toast('Demo loaded!','info');}
+function parsePastedText(){
+  const text=document.getElementById('pasteArea').value.trim();
+  if(!text){toast('Paste some text first!','error');return;}
+  const r=parseTranscriptText(text);
+  if(r.error){toast(r.error,'error',7000);return;}
+  loadTranscripts(r.transcripts);
+}
+
+/* ══ FILE UPLOAD (transcripts) ══ */
+function onDragOver(e){e.preventDefault();document.getElementById('dropArea').classList.add('drag');}
+function onDragLeave(){document.getElementById('dropArea').classList.remove('drag');}
+function onDrop(e){e.preventDefault();document.getElementById('dropArea').classList.remove('drag');const f=Array.from(e.dataTransfer.files);if(f.length) uploadFile(f[0]);}
+function onFileSelect(e){if(e.target.files.length) uploadFile(e.target.files[0]);e.target.value='';}
+
+async function uploadFile(file){
+  const ext=file.name.split('.').pop().toLowerCase();
+  const sp=(msg,pct)=>{document.getElementById('uploadProgress').classList.add('show');document.getElementById('uploadLabel').textContent=msg;document.getElementById('uploadBar').style.width=pct+'%';};
+  const hp=()=>setTimeout(()=>document.getElementById('uploadProgress').classList.remove('show'),2500);
+  try{
+    let rawText='';
+    if(ext==='txt'||ext==='text'){sp('Reading…',30);rawText=await file.text();sp('Parsing…',70);}
+    else if(ext==='docx'){sp('Extracting…',20);rawText=await parseDocxBrowser(await file.arrayBuffer());sp('Done',75);}
+    else if(ext==='pdf'){sp('Extracting…',15);rawText=await parsePDFBrowser(await file.arrayBuffer());sp('Done',75);}
+    else{toast(`Unsupported: .${ext}`,'error');return;}
+    sp('Detecting…',88);
+    const result=parseTranscriptText(rawText);
+    sp('Done!',100);hp();
+    if(result.error){document.getElementById('uploadProgress').classList.remove('show');toast(result.error,'error',8000);return;}
+    loadTranscripts(result.transcripts);
+  }catch(e){document.getElementById('uploadProgress').classList.remove('show');toast(`Error: ${e.message}`,'error',8000);}
+}
+
+/* ══ LOAD TRANSCRIPTS ══ */
+function loadTranscripts(ts){
+  Q=ts.map((t,i)=>({
+    id:Date.now()+i+Math.random(),
+    title:t.title,subject:t.subject||document.getElementById('defSubject').value,
+    grade:t.grade||document.getElementById('defGrade').value,
+    topic:t.topic,subtopic:t.subtopic,duration:t.duration||'90',
+    type:'Concept Video',transcript:t.transcript,
+    state:'pending',status:'Waiting…',
+    code:'',filename:'',classname:'',videoPath:'',videoUrl:'',
+    progress:0,expanded:false,
+  }));
+  renderParsedList();updateStats();
+  document.getElementById('parsedCard').style.display='block';
+  if(!serverOk) document.getElementById('serverWarn').classList.add('show');
+  document.getElementById('parsedCard').scrollIntoView({behavior:'smooth',block:'start'});
+  toast(`✅ ${Q.length} transcript${Q.length!==1?'s':''} ready!`,'success',4000);
+}
+
+function renderParsedList(){
+  document.getElementById('parsedCount').textContent=Q.length;
+  document.getElementById('parsedDesc').textContent=`${Q.length} transcript${Q.length!==1?'s':''}`;
+  document.getElementById('parsedList').innerHTML=Q.map((item,i)=>`
+    <div class="pt-item" id="pti-${item.id}">
+      <div class="pt-hdr" onclick="toggleExpand(${i})">
+        <div class="pt-num ${item.state}" id="ptnum-${item.id}">
+          ${item.state==='running'?'<div class="spin" style="width:11px;height:11px;border-width:2px"></div>':item.state==='done'?'✓':item.state==='error'?'✗':(i+1)}
+        </div>
+        <div class="pt-info">
+          <div class="pt-title">${esc(item.title)}</div>
+          <div class="pt-meta">
+            <span class="pt-tag grade">${esc(item.grade)}</span>
+            <span class="pt-tag topic">${esc(item.topic||item.subject)}</span>
+            <span class="pt-tag dur">${item.duration}s</span>
+          </div>
+          <div class="pt-status ${item.state}" id="ptstat-${item.id}">${item.status}</div>
+          <div class="pt-progress ${item.progress>0?'show':''}" id="ptprog-${item.id}">
+            <div class="pt-pb-wrap"><div class="pt-pb" id="ptpb-${item.id}" style="width:${item.progress}%"></div></div>
+          </div>
+        </div>
+        <div class="pt-actions" onclick="event.stopPropagation()">
+          ${item.state==='pending'||item.state==='error'?`
+            <button class="ibtn" onclick="runOne(${i})" title="Run">▶️</button>
+            <button class="ibtn" onclick="removeItem(${i})" title="Remove">✕</button>`:''}
+          ${item.code?`<button class="ibtn" onclick="dlCode(${i})" title="Download .py">⬇</button>`:''}
+        </div>
+      </div>
+      <div class="pt-body ${item.expanded?'open':''}" id="ptbody-${item.id}">
+        <div class="pt-edit-grid">
+          <div class="form-field"><label class="form-label">Title</label>
+            <input class="form-input" value="${esc(item.title)}" onchange="Q[${i}].title=this.value"/></div>
+          <div class="form-field"><label class="form-label">Grade</label>
+            <select class="form-select" onchange="Q[${i}].grade=this.value">
+              ${['Grade 6','Grade 7','Grade 8','Grade 9','Grade 10'].map(g=>`<option ${g===item.grade?'selected':''}>${g}</option>`).join('')}
+            </select></div>
+          <div class="form-field"><label class="form-label">Duration (sec)</label>
+            <input class="form-input" type="number" value="${item.duration}" onchange="Q[${i}].duration=this.value"/></div>
+          <div class="form-field"><label class="form-label">Type</label>
+            <select class="form-select" onchange="Q[${i}].type=this.value">
+              <option>Concept Video</option><option>Microlearning</option><option>Problem Walkthrough</option>
+            </select></div>
+        </div>
+        <div class="pt-preview">${esc(item.transcript.slice(0,400))}${item.transcript.length>400?'…':''}</div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleExpand(i){Q[i].expanded=!Q[i].expanded;document.getElementById(`ptbody-${Q[i].id}`)?.classList.toggle('open',Q[i].expanded);}
+function dlCode(i){const it=Q[i];if(!it?.code) return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([it.code],{type:'text/plain'}));a.download=it.filename||'scene.py';a.click();toast(`Downloaded ${it.filename}`,'success');}
+
+/* ══ ITEM STATE ══ */
+function setItemState(id,state,status,progress=null){
+  const item=Q.find(q=>q.id===id);if(!item) return;
+  item.state=state;item.status=status;
+  if(progress!==null) item.progress=progress;
+  const ne=document.getElementById(`ptnum-${id}`);
+  const se=document.getElementById(`ptstat-${id}`);
+  const pe=document.getElementById(`ptpb-${id}`);
+  const pre=document.getElementById(`ptprog-${id}`);
+  if(ne){ne.className=`pt-num ${state}`;
+    if(state==='running') ne.innerHTML='<div class="spin" style="width:11px;height:11px;border-width:2px"></div>';
+    else if(state==='done') ne.innerHTML='✓';
+    else if(state==='error') ne.innerHTML='✗';
+    else ne.innerHTML=(Q.indexOf(item)+1).toString();}
+  if(se){se.className=`pt-status ${state}`;se.textContent=status;}
+  if(pe&&progress!==null) pe.style.width=progress+'%';
+  if(pre&&progress!==null) pre.classList.toggle('show',progress>0);
+  updateStats();
+}
+
+function updateStats(){
+  const allItems=[...Q,...fileQueue];
+  const total=allItems.length,done=allItems.filter(q=>q.state==='done').length;
+  const err=allItems.filter(q=>q.state==='error').length,run=allItems.filter(q=>q.state==='running').length;
+  const pct=total?Math.round((done/total)*100):0;
+  document.getElementById('stTotal').textContent=total;
+  document.getElementById('stRunning').textContent=run;
+  document.getElementById('stDone').textContent=done;
+  document.getElementById('stError').textContent=err;
+  document.getElementById('overallPct').textContent=pct+'%';
+  document.getElementById('overallBar').style.width=pct+'%';
+  const pending=allItems.filter(q=>q.state==='pending'||q.state==='saved').length;
+  document.getElementById('etaLabel').textContent=pending+run>0?`~${pending+run} remaining`:done>0?'All complete! ✅':'';
+}
+
+function setCurrent(name,step,pct){
+  document.getElementById('curJob').classList.add('show');
+  document.getElementById('cjName').textContent=name;
+  document.getElementById('cjStep').textContent=step;
+  document.getElementById('cjPb').style.width=(pct||0)+'%';
+}
+function clearCurrent(){document.getElementById('curJob').classList.remove('show');}
+
+/* ══ PROCESS PANEL ══ */
+function showProcessPanel(name){
+  const panel=document.getElementById('processPanel');
+  panel.classList.add('show');
+  document.getElementById('ppItemName').textContent=name;
+  document.getElementById('ppStatusBadge').textContent='Running';
+  document.getElementById('ppStatusBadge').style.background='var(--orange)';
+  document.getElementById('ppStatusIcon').textContent='⚙️';
+  for(let i=0;i<=6;i++) setTrackStep(i,'');
+  setTrackStep('r','');
+  ['s0','s1','s2','s3','s4','s5','s6','sr'].forEach(k=>{
+    const dot=document.getElementById(`td-${k}`);
+    if(dot){dot.className='tab-dot';dot.closest('.step-tab')?.classList.remove('tab-done','tab-running','tab-error');}
+  });
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function finishProcessPanel(ok){
+  const b=document.getElementById('ppStatusBadge'),ic=document.getElementById('ppStatusIcon');
+  if(ok){b.textContent='Complete ✅';b.style.background='#22c55e';ic.textContent='✅';}
+  else{b.textContent='Error ❌';b.style.background='#ef4444';ic.textContent='❌';}
+}
+function setTrackStep(idx,state){
+  const el=document.getElementById(`ts-${idx}`);if(!el) return;
+  el.className='track-step'+(state==='active'?' ts-active':state==='done'?' ts-done':state==='error'?' ts-error':'');
+}
+function setTabDotState(key,state){
+  const dot=document.getElementById(`td-${key}`);if(!dot) return;
+  const tab=dot.closest('.step-tab');
+  if(tab){tab.classList.remove('tab-done','tab-running','tab-error');
+    if(state==='running') tab.classList.add('tab-running');
+    else if(state==='done') tab.classList.add('tab-done');
+    else if(state==='error') tab.classList.add('tab-error');}
+}
+function switchTab(tabId,el){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.step-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(tabId)?.classList.add('active');el?.classList.add('active');
+}
+function setMiniStep(id,state,t=''){
+  const el=document.getElementById(`mp-${id}`);const tel=document.getElementById(`mpt-${id}`);
+  if(el) el.className='mp-step'+(state==='active'?' mp-active':state==='done'?' mp-done':state==='error'?' mp-error':'');
+  if(tel&&t) tel.textContent=t;
+}
+function resetMiniPipeline(){['calling','parsing','s0','s1','s2','s3','s4','s5','saving','rendering'].forEach(id=>setMiniStep(id,'','—'));}
+
+function appendLiveLog(line,type=''){
+  const log=document.getElementById('liveLogPanel');if(!log) return;
+  if(log.querySelector('[style*="font-style:italic"]')) log.innerHTML='';
+  const div=document.createElement('div');
+  const ts=new Date().toLocaleTimeString('en-US',{hour12:false});
+  const cls=type||(/ERROR|error/.test(line)?'ll-err':/✅|done/i.test(line)?'ll-ok':/WARNING/i.test(line)?'ll-warn':/─ Step/.test(line)?'ll-step':'ll-info');
+  div.innerHTML=`<span class="log-ts">[${ts}]</span><span class="${cls}">${esc(line)}</span>`;
+  log.appendChild(div);log.scrollTop=log.scrollHeight;
+  while(log.children.length>150) log.removeChild(log.firstChild);
+}
+
+/* ══ STEP RENDERERS ══ */
+function segB(label,lines){return`<div class="ts-segment"><div class="ts-seg-label">${esc(label||'Content')}</div><div class="ts-seg-content">${lines.map(l=>`<div>• ${esc(l.replace(/^\d+[.)]\s*/,''))}</div>`).join('')}</div></div>`;}
+function renderStep0(text){
+  setTrackStep(0,'done');setTabDotState('s0','done');setMiniStep('s0','done',nowTime());
+  const cat=text.match(/[Cc]ategory\s*[:\-]?\s*(\d)/);const catN={1:'Geometric',2:'Proportional',3:'Algebraic'};
+  document.getElementById('s0-content').innerHTML=`<div class="directors-note"><div class="dn-label">🎬 Director's Note</div><div style="font-size:13px;line-height:1.8;">${esc(text)}</div>${cat?`<div class="category-badge">📐 Category ${cat[1]}: ${catN[cat[1]]||''}</div>`:''}</div>`;
+}
+function renderStep1(text){
+  setTrackStep(1,'done');setTabDotState('s1','done');setMiniStep('s1','done',nowTime());
+  const lines=text.split('\n').filter(l=>l.trim());
+  let html='<div class="transcript-summary">',seg=null,items=[];
+  lines.forEach(l=>{if(/^(SEGMENT|Segment)\s+/i.test(l)){if(items.length) html+=segB(seg,items);seg=l.trim();items=[];}else if(l.trim()) items.push(l.trim());});
+  if(items.length) html+=segB(seg,items);
+  document.getElementById('s1-content').innerHTML=html+'</div>';
+}
+function renderStep2(text){
+  setTrackStep(2,'done');setTabDotState('s2','done');setMiniStep('s2','done',nowTime());
+  let h=esc(text).replace(/\[BOOKMARK:[^\]]+\]/g,m=>`<span class="as-bookmark">${m}</span>`).replace(/\[PAUSE[^\]]*\]/g,m=>`<span class="as-pause">${m}</span>`);
+  document.getElementById('s2-content').innerHTML=`<div class="audio-script">${h}</div>`;
+}
+function renderStep3(text){
+  setTrackStep(3,'done');setTabDotState('s3','done');setMiniStep('s3','done',nowTime());
+  const rows=[];
+  text.split('\n').forEach(line=>{if(line.includes('|')){const cells=line.split('|').map(c=>c.trim()).filter(c=>c&&!/^-+$/.test(c));if(cells.length>=2) rows.push(cells);}});
+  let html;
+  if(rows.length>1){
+    const isHdr=r=>/time|scene|#|frame|visual/i.test(r[0]+r[1]);
+    const hdr=isHdr(rows[0])?rows.shift():['Time','Visual','Audio','Animation','Notes'];
+    html=`<div class="storyboard-wrap"><table class="storyboard-table"><thead><tr>${hdr.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr><td class="sb-time">${esc(r[0]||'')}</td><td>${esc(r[1]||'')}</td><td style="color:var(--pale);font-style:italic;">${esc(r[2]||'')}</td>${r[3]!==undefined?`<td class="sb-anim">${esc(r[3])}</td>`:''}${r[4]!==undefined?`<td>${esc(r[4])}</td>`:''}</tr>`).join('')}</tbody></table></div>`;
+  }else{html=`<div class="storyboard-wrap" style="padding:12px;"><pre style="white-space:pre-wrap;font-size:12px;line-height:1.75;font-family:var(--mono);">${esc(text)}</pre></div>`;}
+  document.getElementById('s3-content').innerHTML=html;
+}
+function renderStep4(code,filename,classname){
+  setTrackStep(4,'done');setTabDotState('s4','done');setMiniStep('s4','done',nowTime());
+  const sid='c_'+filename.replace(/\W/g,'');const lc=code.split('\n').length;
+  document.getElementById('s4-content').innerHTML=`
+    <div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap;align-items:center;">
+      <span class="tag tag-p">💻 ${lc} lines</span>
+      <span class="tag tag-g">${(code.length/1024).toFixed(1)} KB</span>
+      <span style="font-size:11px;color:var(--pale);font-family:var(--mono);">${esc(filename)}</span>
+    </div>
+    <div class="code-toolbar"><div class="code-filename">🐍 ${esc(filename)}</div>
+      <div style="display:flex;gap:5px;">
+        <button class="btn-ghost" onclick="dlCodeById('${sid}','${esc(filename)}')">⬇ Download</button>
+        <button class="btn-ghost" onclick="copyText(document.getElementById('${sid}').textContent)">📋 Copy</button>
+      </div>
+    </div>
+    <div class="code-block" id="${sid}">${syntaxHL(code)}</div>`;
+}
+function dlCodeById(elemId,filename){
+  const code=document.getElementById(elemId)?.textContent||'';
+  if(!code) return;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([code],{type:'text/plain'}));a.download=filename;a.click();
+  toast(`Downloaded ${filename}`,'success');
+}
+function renderStep5(text){
+  setTrackStep(5,'done');setTabDotState('s5','done');setMiniStep('s5','done',nowTime());
+  const lines=text.split('\n').filter(l=>l.trim());
+  const viol=lines.filter(l=>/fail|error|violation|❌|missing/i.test(l)).length;
+  const pass=lines.filter(l=>/pass|ok|✓|✅|no violation/i.test(l)).length;
+  let html=`<div style="display:flex;gap:6px;margin-bottom:8px;"><span class="tag tag-g">✅ ${pass}</span><span class="tag" style="background:rgba(239,68,68,.1);color:#ef4444;">❌ ${viol}</span></div><div class="review-list">`;
+  lines.forEach(l=>{const f=/fail|error|violation|❌|missing/i.test(l);const w=/warn|⚠|caution/i.test(l);html+=`<div class="review-item ${f?'fail':w?'warn':'pass'}"><span>${f?'❌':w?'⚠️':'✅'}</span><span>${esc(l.trim())}</span></div>`;});
+  document.getElementById('s5-content').innerHTML=html+'</div>';
+}
+function renderStep6(text,fn,cn){
+  setTrackStep(6,'done');setTabDotState('s6','done');
+  document.getElementById('s6-content').innerHTML=
+    `${['ql','qm','qh'].map((q,i)=>`<div class="render-cmd"># ${['480p','720p','1080p'][i]}\nmanim render -${q} ${esc(fn)} ${esc(cn)}</div>`).join('')}
+    <div style="margin-top:8px;background:rgba(116,100,206,.07);border:1.5px solid rgba(116,100,206,.2);border-radius:8px;padding:10px;">
+      <pre style="white-space:pre-wrap;font-family:var(--mono);font-size:11px;">${esc(text)}</pre>
+    </div>`;
+}
+function syntaxHL(code){
+  if(!code) return'';
+  return esc(code)
+    .replace(/(#[^\n]*)/g,'<span class="ck-cm">$1</span>')
+    .replace(/\b(import|from|class|def|return|if|else|elif|for|while|in|not|and|or|True|False|None|self|super|try|except|with|as|pass|lambda)\b/g,'<span class="ck-kw">$1</span>')
+    .replace(/\b(Scene|VoiceoverScene|Text|MathTex|VGroup|Square|Rectangle|Circle|Line|Arrow|FadeIn|FadeOut|Write|Create|Transform)\b/g,'<span class="ck-fn">$1</span>')
+    .replace(/("""[\s\S]*?"""|'''[\s\S]*?'''|"[^"\n]*"|'[^'\n]*')/g,'<span class="ck-st">$1</span>')
+    .replace(/\b(\d+\.?\d*)\b/g,'<span class="ck-nm">$1</span>');
+}
+function clearProcessPanel(){
+  ['s0','s1','s2','s3','s4','s5','s6'].forEach(k=>{const el=document.getElementById(`${k}-content`);if(el) el.innerHTML=`<div class="pending-placeholder"><div class="pp-icon">⏳</div><div class="pp-title">Cleared</div></div>`;});
+  document.getElementById('liveLogPanel').innerHTML='<div style="color:#3d3572;font-style:italic;">Cleared…</div>';
+  resetMiniPipeline();for(let i=0;i<=6;i++) setTrackStep(i,'');setTrackStep('r','');
+}
+function exportAllSteps(){
+  if(!currentParsed){toast('Nothing to export','error');return;}
+  const c=Object.entries(currentParsed).filter(([k])=>k.startsWith('step')).map(([k,v])=>`=== ${k.toUpperCase()} ===\n${v}`).join('\n\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([c],{type:'text/plain'}));
+  a.download=`pipeline_${Date.now()}.txt`;a.click();
+  toast('Exported!','success');
+}
+
+/* ══ JSON PARSER ══ */
+function parseClaudeJSON(raw){
+  let text=raw.replace(/^```(?:json)?\s*/im,'').replace(/```\s*$/im,'').trim();
+  const f=text.indexOf('{'),l=text.lastIndexOf('}');
+  if(f===-1||l===-1) throw new Error('No JSON found');
+  text=text.slice(f,l+1);
+  text=text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'');
+  try{return JSON.parse(text);}catch(e1){}
+  const res={};
+  ['step0','step1','step2','step3','step4','step5','step6','filename','classname'].forEach(k=>{
+    const m=text.match(new RegExp(`"${k}"\\s*:\\s*"((?:[^"\\\\]|\\\\[\\s\\S])*)"`, 's'));
+    if(m){try{res[k]=JSON.parse(`"${m[1]}"`);}catch{res[k]=m[1].replace(/\\n/g,'\n').replace(/\\"/g,'"').replace(/\\\\/g,'\\').replace(/\\t/g,'\t');}}
+    else res[k]='';
+  });
+  if(!res.step4) throw new Error('Could not extract step4');
+  return res;
+}
+
+/* ══ AUTO-FIXERS ══ */
+function fixWeightArgument(code){
+  if(!code) return{code,fixes:[]};
+  const fixes=[];
+  const newLines=code.split('\n').map((line,idx)=>{
+    if(/\b(?:MarkupText|Text)\s*\(/.test(line)) return line;
+    if(/\bweight\s*=/.test(line)){
+      const fixed=line
+        .replace(/,\s*weight\s*=\s*(?:"[^"]*"|'[^']*'|[A-Z_][A-Z_0-9]*|\d+)/g,'')
+        .replace(/\bweight\s*=\s*(?:"[^"]*"|'[^']*'|[A-Z_][A-Z_0-9]*|\d+)\s*,\s*/g,'')
+        .replace(/\bweight\s*=\s*(?:"[^"]*"|'[^']*'|[A-Z_][A-Z_0-9]*|\d+)/g,'');
+      if(fixed!==line) fixes.push(`Line ${idx+1}: removed weight=`);
+      return fixed;
+    }
+    return line;
+  });
+  return{code:newLines.join('\n'),fixes};
+}
+
+function validateAndFixBookmarks(code){
+  if(!code) return{code,errors:[],fixes:[]};
+  const fixes=[],errors=[];
+  let result=code;
+  for(let iter=0;iter<60;iter++){
+    const existing=new Set([...result.matchAll(/<bookmark\s+mark=['"]([^'"]+)['"]\s*\/?>/g)].map(m=>m[1]));
+    const allWaits=[...result.matchAll(/self\.wait_until_bookmark\s*\(\s*["']([^"']+)["']\s*\)/g)];
+    const missing=allWaits.find(m=>!existing.has(m[1]));
+    if(!missing) break;
+    const bmName=missing[1];
+    const waitIdx=missing.index;
+    const codeBefore=result.slice(0,waitIdx);
+    const tripleRe=/"""([\s\S]*?)"""/g;
+    let lastTriple=null,m;
+    while((m=tripleRe.exec(codeBefore))!==null) lastTriple={innerStart:m.index+3,innerEnd:m.index+3+m[1].length,inner:m[1]};
+    if(lastTriple){
+      const words=lastTriple.inner.trimStart().split(/\s+/);
+      const offset=Math.min(3,Math.max(0,words.length-1));
+      const before3=words.slice(0,offset).join(' ');
+      const after3=words.slice(offset).join(' ');
+      const prefix=lastTriple.inner.match(/^\s*/)[0];
+      const newInner=`${prefix}${before3}${before3?' ':''}<bookmark mark='${bmName}' /> ${after3}`;
+      result=result.slice(0,lastTriple.innerStart)+newInner+result.slice(lastTriple.innerEnd);
+      fixes.push(bmName);continue;
+    }
+    errors.push(`'${bmName}' — no voiceover text found`);break;
+  }
+  return{code:result,errors,fixes};
+}
+
+function bookmarkReport(code){
+  const tags=new Set([...code.matchAll(/<bookmark\s+mark=['"]([^'"]+)['"]\s*\/?>/g)].map(m=>m[1]));
+  const waits=[...code.matchAll(/self\.wait_until_bookmark\s*\(\s*["']([^"']+)["']\s*\)/g)].map(m=>m[1]);
+  const missing=waits.filter(n=>!tags.has(n));
+  return{missing,total:waits.length,ok:missing.length===0};
+}
+
+function downloadScript(code,filename){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([code],{type:'text/plain'}));
+  a.download=filename||'scene.py';a.click();
+}
+
+/* ══ PROCESS ONE AUTO TRANSCRIPT ══ */
+async function processItem(item){
+  const aKey=CONFIG.ANTHROPIC_API_KEY;
+  const oKey=CONFIG.OPENAI_API_KEY;
+  const slug=item.title.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'').slice(0,28);
+  const rid=Math.random().toString(36).slice(2,7);
+  item.filename=`${slug}_${rid}.py`;
+  item.classname=item.title.split(/\s+/).map(w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase()).join('')+'Scene';
+
+  showProcessPanel(item.title);
+  resetMiniPipeline();
+  setItemState(item.id,'running','Calling Claude…',5);
+  setCurrent(item.title,'Calling Claude…',10);
+  appendLiveLog(`▶ Starting: ${item.title}`,'ll-step');
+  setMiniStep('calling','active');
+  setTrackStep(0,'active');setTabDotState('s0','running');
+
+  const userMsg=`INPUT TRANSCRIPT:\n"""\n${item.transcript}\n"""\nTitle: ${item.title}\nSubject: ${item.subject}\nGrade: ${item.grade}\nDuration: ${item.duration}s\nType: ${item.type}\nFilename: ${item.filename}\nClassname: ${item.classname}\nReplace %%OPENAI_KEY%% with: ${oKey}\nReturn ONLY raw JSON.`;
+
+  let parsed;
+  try{
+    const t0=Date.now();
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':aKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:CONFIG.ANTHROPIC_MODEL,max_tokens:CONFIG.MAX_TOKENS,system:MASTER_PROMPT,messages:[{role:'user',content:userMsg}]})
+    });
+    const elapsed=((Date.now()-t0)/1000).toFixed(1);
+    setMiniStep('calling','done',`${elapsed}s`);
+    appendLiveLog(`Claude responded in ${elapsed}s ✅`,'ll-ok');
+    if(!resp.ok){const e=await resp.json().catch(()=>({}));throw new Error(`API ${resp.status}: ${e.error?.message||resp.statusText}`);}
+    const api=await resp.json();
+    const rawContent=api.content?.[0]?.text||'';
+    setMiniStep('parsing','active');setItemState(item.id,'running','Parsing…',50);
+    parsed=parseClaudeJSON(rawContent);
+    currentParsed=parsed;
+    setMiniStep('parsing','done',nowTime());appendLiveLog('JSON parsed ✅','ll-ok');
+
+    setMiniStep('s0','active');if(parsed.step0) renderStep0(parsed.step0);
+    setMiniStep('s1','active');if(parsed.step1) renderStep1(parsed.step1);
+    setMiniStep('s2','active');if(parsed.step2) renderStep2(parsed.step2);
+    setMiniStep('s3','active');if(parsed.step3) renderStep3(parsed.step3);
+
+    setMiniStep('s4','active');setItemState(item.id,'running','Step 4…',70);
+    if(parsed.step4){
+      let code=parsed.step4;
+      if(code.includes('%%OPENAI_KEY%%')) code=code.replaceAll('%%OPENAI_KEY%%',oKey);
+      if(!code.includes(oKey)) code=code.replace(/os\.environ\["OPENAI_API_KEY"\]\s*=\s*["'][^"']*["']/,`os.environ["OPENAI_API_KEY"] = "${oKey}"`);
+      if(!code.includes(oKey)) code=`import os\nos.environ["OPENAI_API_KEY"] = "${oKey}"\n`+code;
+
+      const{code:wFixed,fixes:wFixes}=fixWeightArgument(code);
+      code=wFixed;
+      if(wFixes.length>0){wFixes.forEach(f=>appendLiveLog(`⚠️ Fixed: ${f}`,'ll-warn'));toast(`Auto-fixed ${wFixes.length} weight= error(s)`,'info',4000);}
+
+      const preReport=bookmarkReport(code);
+      if(!preReport.ok){
+        const{code:bFixed,fixes:bFixes}=validateAndFixBookmarks(code);
+        code=bFixed;
+        if(bFixes.length>0){appendLiveLog(`✅ Fixed bookmarks: ${bFixes.join(', ')}`,'ll-ok');toast(`Auto-fixed ${bFixes.length} bookmark(s)`,'info',3000);}
+        const postReport=bookmarkReport(code);
+        if(postReport.ok) appendLiveLog(`✅ All ${postReport.total} bookmarks validated`,'ll-ok');
+        else appendLiveLog(`❌ Still missing: ${postReport.missing.join(', ')}`,'ll-err');
+      }else{
+        appendLiveLog(`✅ All ${preReport.total} bookmarks matched`,'ll-ok');
+      }
+
+      parsed.step4=code;
+      if(parsed.filename) item.filename=parsed.filename;
+      if(parsed.classname) item.classname=parsed.classname;
+      renderStep4(code,item.filename,item.classname);
+      appendLiveLog(`Code: ${code.split('\n').length} lines ✅`,'ll-ok');
+
+      // ── Also add generated file to Manual file queue ──
+      const genItem={
+        id:'pf_gen_'+Date.now()+Math.random(),
+        filename:item.filename,classname:item.classname,code:code,quality:'m',
+        state:'saved',status:'✅ Auto-generated — click ▶ to re-render if needed',
+        progress:0,videoUrl:'',videoPath:'',savedToServer:serverOk,
+      };
+      if(!fileQueue.find(f=>f.filename===item.filename)){
+        fileQueue.push(genItem);
+        renderFileQueue();
+      }
+    }
+
+    setMiniStep('s5','active');if(parsed.step5) renderStep5(parsed.step5);
+    if(parsed.step6) renderStep6(parsed.step6,item.filename,item.classname);
+    appendLiveLog('All 7 steps generated ✅','ll-ok');
+
+  }catch(e){
+    setItemState(item.id,'error',`Error: ${e.message}`,0);
+    appendLiveLog(`ERROR: ${e.message}`,'ll-err');
+    setMiniStep('calling','error');
+    finishProcessPanel(false);
+    return false;
+  }
+
+  item.code=parsed.step4||'';
+  setItemState(item.id,'running','Saving…',80);
+  setMiniStep('saving','active');
+
+  if(serverOk){
+    try{
+      const sr=await fetch(`${CONFIG.SERVER_URL}/api/save-script`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:item.code,filename:item.filename})});
+      const sd=await sr.json();
+      if(!sd.success) throw new Error('Save failed');
+      setMiniStep('saving','done',nowTime());appendLiveLog('Saved to server ✅','ll-ok');
+      // Mark in file queue as saved
+      const fq=fileQueue.find(f=>f.filename===item.filename);
+      if(fq){fq.savedToServer=true;renderFileQueue();}
+    }catch(e){
+      downloadScript(item.code,item.filename);
+      setMiniStep('saving','done',nowTime());
+      appendLiveLog(`Server save failed — downloaded instead`,'ll-warn');
+    }
+  }else{
+    downloadScript(item.code,item.filename);
+    setMiniStep('saving','done',nowTime());
+    appendLiveLog(`Downloaded ${item.filename} ✅`,'ll-ok');
+    setItemState(item.id,'done','✅ Downloaded!',100);
+    toast(`📥 ${item.filename} downloaded!`,'info',8000);
+    finishProcessPanel(true);
+    return true;
+  }
+
+  const autoRender=document.getElementById('defAutoRender').value==='yes';
+  if(!autoRender){
+    setItemState(item.id,'done','✅ Code generated!',100);
+    finishProcessPanel(true);return true;
+  }
+
+  setItemState(item.id,'running','Rendering…',82);
+  setMiniStep('rendering','active');setTrackStep('r','active');setTabDotState('sr','running');
+  appendLiveLog('Starting Manim render…','ll-step');
+  const srTab=document.querySelector('[data-tab="tab-sr"]');
+  if(srTab) switchTab('tab-sr',srTab);
+
+  const jobId=`${item.id}_render`;
+  try{
+    const rr=await fetch(`${CONFIG.SERVER_URL}/api/render`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({filename:item.filename,classname:item.classname,quality:document.getElementById('defQuality').value||'m',job_id:jobId})});
+    const rd=await rr.json();
+    if(!rd.success) throw new Error(rd.error||'Render failed');
+  }catch(e){
+    setItemState(item.id,'error',`Render failed: ${e.message}`,82);
+    setMiniStep('rendering','error');
+    appendLiveLog(`Render ERROR: ${e.message}`,'ll-err');
+    finishProcessPanel(false);return false;
+  }
+
+  const renderStart=Date.now();
+  await new Promise(resolve=>{
+    const timer=setInterval(async()=>{
+      if(stopped){clearInterval(timer);resolve();return;}
+      try{
+        const sr=await fetch(`${CONFIG.SERVER_URL}/api/render-status/${jobId}`);
+        const sd=await sr.json();
+        const pct=82+Math.round((sd.percent||0)*.18);
+        setItemState(item.id,'running',`Rendering ${sd.percent||0}%…`,pct);
+        setCurrent(item.title,`Rendering ${sd.percent||0}%`,pct);
+        (sd.log||[]).slice(-2).forEach(l=>appendLiveLog(l));
+        if(sd.state==='done'){
+          clearInterval(timer);
+          const elapsed=((Date.now()-renderStart)/1000).toFixed(1);
+          item.videoPath=sd.output||'';item.videoUrl=sd.video_url||'';
+          setItemState(item.id,'done','✅ Video ready!',100);
+          setMiniStep('rendering','done',`${elapsed}s`);
+          setTrackStep('r','done');setTabDotState('sr','done');
+          appendLiveLog(`✅ Render complete in ${elapsed}s`,'ll-ok');
+          addToGallery(item);addToSidebarVideos(item);
+          // Update file queue item too
+          const fq=fileQueue.find(f=>f.filename===item.filename);
+          if(fq){fq.state='done';fq.status=`✅ Done in ${elapsed}s`;fq.progress=100;fq.videoUrl=item.videoUrl;fq.videoPath=item.videoPath;renderFileQueue();}
+          finishProcessPanel(true);clearCurrent();resolve();
+        }else if(sd.state==='error'){
+          clearInterval(timer);
+          setItemState(item.id,'error',`Render error: ${sd.error||'Unknown'}`,82);
+          setMiniStep('rendering','error');
+          appendLiveLog(`Render ERROR: ${sd.error}`,'ll-err');
+          finishProcessPanel(false);resolve();
+        }
+      }catch(e){console.error('Poll:',e);}
+    },2000);
+  });
+  return item.state==='done';
+}
+
+/* ══ RUN CONTROLS (AUTO) ══ */
+async function runOne(i){
+  const item=Q[i];if(!item) return;
+  if(item.state==='running'){toast('Already running!','error');return;}
+  stopped=false;
+  document.getElementById('pauseBtn').style.display='inline-flex';
+  document.getElementById('stopBtn').style.display='inline-flex';
+  await processItem(item);
+  clearCurrent();
+  document.getElementById('pauseBtn').style.display='none';
+  document.getElementById('stopBtn').style.display='none';
+}
+
+async function runAll(){
+  if(running){toast('Already running!','error');return;}
+  const pending=Q.filter(q=>q.state==='pending'||q.state==='error');
+  if(!pending.length){toast('No pending transcripts!','error');return;}
+  running=true;stopped=false;paused=false;
+  const btn=document.getElementById('runAllBtn');
+  document.getElementById('runAllIcon').innerHTML='<div class="spin"></div>';
+  document.getElementById('runAllTxt').textContent='Running…';
+  btn.disabled=true;
+  document.getElementById('pauseBtn').style.display='inline-flex';
+  document.getElementById('stopBtn').style.display='inline-flex';
+  for(const item of pending){
+    if(stopped) break;
+    while(paused&&!stopped) await new Promise(r=>setTimeout(r,400));
+    if(stopped) break;
+    await processItem(item);
+    if(!stopped) await new Promise(r=>setTimeout(r,1200));
+  }
+  running=false;clearCurrent();
+  document.getElementById('runAllIcon').textContent='🚀';
+  document.getElementById('runAllTxt').textContent='Run All';
+  btn.disabled=false;
+  document.getElementById('pauseBtn').style.display='none';
+  document.getElementById('stopBtn').style.display='none';
+  const d=Q.filter(q=>q.state==='done').length,e=Q.filter(q=>q.state==='error').length;
+  toast(`Done! ${d} ✅ ${e} ❌`,e===0?'success':'info',6000);
+  updateStats();
+}
+
+function togglePause(){paused=!paused;document.getElementById('pauseBtn').textContent=paused?'▶ Resume':'⏸ Pause';toast(paused?'⏸ Paused':'▶ Resumed','info');}
+function stopAll(){stopped=true;paused=false;running=false;toast('⏹ Stopping…','info');}
+function removeItem(i){if(Q[i]?.state==='running'){toast('Cannot remove running item','error');return;}Q.splice(i,1);renderParsedList();updateStats();}
+function clearAll(){if(running){toast('Stop first!','error');return;}Q=[];renderParsedList();updateStats();document.getElementById('parsedCard').style.display='none';clearCurrent();toast('Cleared','info');}
+
+/* ══ SERVER FILE DOWNLOAD ══ */
+function downloadServerFile(){
+  const code=`#!/usr/bin/env python3
+"""Coschool Server v12"""
+import os, subprocess, threading, uuid
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
+SCRIPTS_DIR = os.path.join(BASE_DIR, 'scripts')
+MEDIA_DIR   = os.path.join(BASE_DIR, 'media')
+os.makedirs(SCRIPTS_DIR, exist_ok=True)
+os.makedirs(MEDIA_DIR,   exist_ok=True)
+
+jobs = {}
+
+@app.route('/api/health')
+def health():
+    import shutil
+    manim_path = shutil.which('manim')
+    ver = ''
+    if manim_path:
+        try:
+            r = subprocess.run(['manim','--version'],capture_output=True,text=True,timeout=5)
+            ver = (r.stdout or r.stderr).strip().split('\\n')[0]
+        except: pass
+    return jsonify({'status':'ok','manim_ok':bool(manim_path),'manim_version':ver})
+
+@app.route('/api/list-scripts')
+def list_scripts():
+    scripts = sorted([f for f in os.listdir(SCRIPTS_DIR) if f.endswith('.py')])
+    return jsonify({'scripts': scripts})
+
+@app.route('/api/get-script/<filename>')
+def get_script(filename):
+    filename = os.path.basename(filename)
+    path = os.path.join(SCRIPTS_DIR, filename)
+    if not os.path.exists(path):
+        return jsonify({'success':False,'error':'Not found'}), 404
+    with open(path,'r',encoding='utf-8') as f:
+        code = f.read()
+    return jsonify({'success':True,'code':code,'filename':filename})
+
+@app.route('/api/save-script', methods=['POST'])
+def save_script():
+    data = request.json or {}
+    filename = os.path.basename(data.get('filename','scene.py'))
+    path = os.path.join(SCRIPTS_DIR, filename)
+    with open(path,'w',encoding='utf-8') as f:
+        f.write(data.get('code',''))
+    print(f'[Server] Saved: {path}')
+    return jsonify({'success':True,'path':path})
+
+@app.route('/api/render', methods=['POST'])
+def render():
+    data      = request.json or {}
+    filename  = os.path.basename(data.get('filename',''))
+    classname = data.get('classname','')
+    quality   = data.get('quality','m')
+    job_id    = data.get('job_id', str(uuid.uuid4()))
+    script_path = os.path.join(SCRIPTS_DIR, filename)
+    if not os.path.exists(script_path):
+        return jsonify({'success':False,'error':f'Script not found: {filename}'}), 400
+    jobs[job_id] = {'state':'running','percent':0,'log':[],'output':'','video_url':'','error':''}
+    def run():
+        cmd = ['manim',f'-q{quality}','--media_dir',MEDIA_DIR,script_path,classname]
+        proc = subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,cwd=SCRIPTS_DIR)
+        lines = []
+        for line in proc.stdout:
+            line = line.rstrip()
+            lines.append(line)
+            jobs[job_id]['log'] = lines[-50:]
+            if 'Animation' in line or 'Scene' in line:
+                jobs[job_id]['percent'] = min(jobs[job_id]['percent']+8,90)
+            print(f'[Manim] {line}')
+        proc.wait()
+        if proc.returncode == 0:
+            out = ''
+            for root,dirs,files in os.walk(MEDIA_DIR):
+                for f in files:
+                    if f.endswith('.mp4') and classname in f:
+                        candidate = os.path.join(root,f)
+                        if not out or os.path.getmtime(candidate)>os.path.getmtime(out):
+                            out = candidate
+            video_url = os.path.relpath(out,MEDIA_DIR).replace(os.sep,'/') if out else ''
+            jobs[job_id].update({'state':'done','percent':100,'output':out,'video_url':video_url})
+            print(f'[Server] Done: {out}')
+        else:
+            err = '\\n'.join(lines[-15:])
+            jobs[job_id].update({'state':'error','error':err})
+    threading.Thread(target=run,daemon=True).start()
+    return jsonify({'success':True,'job_id':job_id})
+
+@app.route('/api/render-status/<job_id>')
+def render_status(job_id):
+    return jsonify(jobs.get(job_id,{'state':'unknown','percent':0,'log':[],'error':'Not found'}))
+
+@app.route('/media/<path:filename>')
+def serve_media(filename):
+    return send_from_directory(MEDIA_DIR,filename)
+
+if __name__ == '__main__':
+    print('='*55)
+    print('  Coschool Server v12  —  http://127.0.0.1:5000')
+    print(f'  scripts/ → {SCRIPTS_DIR}')
+    print(f'  media/   → {MEDIA_DIR}')
+    print('  Drop .py files in scripts/ then render from browser!')
+    print('='*55)
+    app.run(host='0.0.0.0',port=5000,debug=False)
+`;
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([code],{type:'text/plain'}));
+  a.download='coschool_server.py';a.click();
+  toast('✅ coschool_server.py downloaded!','success',5000);
+}
+
+/* ══ HEALTH CHECK ══ */
+async function checkHealth(){
+  const aOk=!!(CONFIG.ANTHROPIC_API_KEY&&!CONFIG.ANTHROPIC_API_KEY.includes('PASTE'));
+  const oOk=!!(CONFIG.OPENAI_API_KEY&&!CONFIG.OPENAI_API_KEY.includes('PASTE'));
+  document.getElementById('apiDot').classList.toggle('ok',aOk&&oOk);
+  document.getElementById('apiLabel').textContent=aOk&&oOk?'Keys OK ✓':'⚠️ Key missing';
+  document.getElementById('sysAnthropic').textContent=aOk?'✅ Set':'❌ Missing';
+  document.getElementById('sysAnthropic').style.color=aOk?'#22c55e':'#ef4444';
+  document.getElementById('sysOpenAI').textContent=oOk?'✅ Set':'❌ Missing';
+  document.getElementById('sysOpenAI').style.color=oOk?'#22c55e':'#ef4444';
+  const mOk=typeof mammoth!=='undefined';
+  const pOk=typeof pdfjsLib!=='undefined';
+  document.getElementById('sysMammoth').textContent=mOk?'✅ Loaded':'❌ Failed';
+  document.getElementById('sysMammoth').style.color=mOk?'#22c55e':'#ef4444';
+  document.getElementById('sysPdfjs').textContent=pOk?'✅ Loaded':'❌ Failed';
+  document.getElementById('sysPdfjs').style.color=pOk?'#22c55e':'#ef4444';
+  try{
+    const r=await fetch(`${CONFIG.SERVER_URL}/api/health`,{signal:AbortSignal.timeout(3000)});
+    const d=await r.json();
+    serverOk=d.status==='ok';
+    document.getElementById('serverDot').classList.toggle('ok',serverOk);
+    document.getElementById('serverLabel').textContent=serverOk?'Server ✓':'Server error';
+    document.getElementById('sysServer').textContent=serverOk?'✅ Running':'❌ Error';
+    document.getElementById('sysServer').style.color=serverOk?'#22c55e':'#ef4444';
+    document.getElementById('sysManim').textContent=d.manim_ok?`✅ ${d.manim_version||'Found'}`:'❌ Not found';
+    document.getElementById('sysManim').style.color=d.manim_ok?'#22c55e':'#ef4444';
+    if(serverOk){
+      document.getElementById('serverWarn').classList.remove('show');
+      refreshFileList();
+    }
+  }catch{
+    serverOk=false;
+    document.getElementById('serverDot').classList.remove('ok');
+    document.getElementById('serverLabel').textContent='❌ Offline';
+    document.getElementById('sysServer').textContent='❌ Offline';
+    document.getElementById('sysServer').style.color='#ef4444';
+    document.getElementById('sysManim').textContent='— (start server)';
+    document.getElementById('sysManim').style.color='var(--pale)';
+  }
+}
+
+/* ══ MATH BACKGROUND ══ */
+(function(){
+  const canvas=document.getElementById('mathBg');
+  const ctx=canvas.getContext('2d');
+  const EQ=['A = l × w','P = 2(l + w)','a² + b² = c²','A = πr²','sin²θ + cos²θ = 1','y = mx + c','C = 2πr','∑ i = n(n+1)/2','π ≈ 3.14159','(a+b)² = a²+2ab+b²','∞','∫ f(x) dx','E = mc²'];
+  const COLORS=['rgba(116,100,206,','rgba(148,149,215,','rgba(255,147,2,','rgba(61,53,114,'];
+  let P=[],W,H;
+  const resize=()=>{W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;};
+  const rand=(a,b)=>Math.random()*(b-a)+a;
+  const cp=()=>{const c=COLORS[Math.floor(Math.random()*COLORS.length)];const a=rand(.04,.14);return{x:rand(0,W),y:rand(0,H),vx:rand(-.12,.12),vy:rand(-.08,.08),text:EQ[Math.floor(Math.random()*EQ.length)],fontSize:rand(11,21),color:c+a+')',alpha:a,rotation:rand(-.3,.3),vrot:rand(-.0005,.0005),life:rand(.003,.007),fade:rand(0,Math.PI*2)};};
+  function init(){resize();P=[];for(let i=0;i<Math.floor((W*H)/32000);i++) P.push(cp());}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    P.forEach(p=>{
+      p.fade+=p.life;const a=p.alpha*(0.5+0.5*Math.sin(p.fade));
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation);
+      ctx.font=`${p.fontSize}px 'Segoe UI',Arial,sans-serif`;
+      const cb=p.color.substring(0,p.color.lastIndexOf(','));
+      ctx.fillStyle=cb+','+a+')';ctx.fillText(p.text,0,0);ctx.restore();
+      p.x+=p.vx;p.y+=p.vy;p.rotation+=p.vrot;
+      if(p.x<-200)p.x=W+100;if(p.x>W+200)p.x=-100;
+      if(p.y<-50)p.y=H+20;if(p.y>H+50)p.y=-20;
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',()=>{resize();P.forEach(p=>{if(p.x>W)p.x=rand(0,W);if(p.y>H)p.y=rand(0,H);});});
+  init();draw();
+})();
+
+document.addEventListener('DOMContentLoaded',()=>{
+  checkHealth();
+  setInterval(checkHealth,25000);
+});
+</script>
+</body>
+</html>
