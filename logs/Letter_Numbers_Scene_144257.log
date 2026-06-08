@@ -1,0 +1,1345 @@
+Manim Community v0.20.1
+
+[06/08/26 14:43:15] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:43:23] INFO     Transcription:  The notion of letter    base.py:98
+                             numbers.                                          
+[06/08/26 14:43:24] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -notion-of-letter-numbers                         
+                             -154c8603.mp3 to .wav                             
+[06/08/26 14:43:50] INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\668060172_1594                         
+                             206488_223132457.mp4'                             
+                    INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\1263443165_356                         
+                             8013374_3894609050.mp4'                           
+[06/08/26 14:43:51] INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\1263443165_358                         
+                             5970359_780773719.mp4'                            
+[06/08/26 14:43:52] INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\1263443165_390                         
+                             8134973_4257952920.mp4'                           
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\1263443165_251                         
+                             4011427_3278671325.mp4'                           
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_3968961708.mp4'                            
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_9521                         
+                             67764_690584945.mp4'                              
+[06/08/26 14:43:53] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:44:02] INFO     Transcription:  Imagine you know that   base.py:98
+                             your friend is always three years older           
+                             than you. When you were 10, your friend           
+                             was 13. When you were 15, your friend             
+                             was 18. Every single time, it is your             
+                             age plus three. But writing that out              
+                             again and again is slow. There has to             
+                             be a shorter way.                                 
+[06/08/26 14:44:03] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\ima                         
+                             gine-you-know-that-your-f                         
+                             riend-is-always-three-93e                         
+                             08684.mp3 to .wav                                 
+[06/08/26 14:44:09] INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3122                         
+                             406543_3998591752.mp4'                            
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_5504                         
+                             58643_3192513545.mp4'                             
+[06/08/26 14:44:19] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1853                         
+                             92435_2890506234.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '10' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}13\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d5027c3d5b02                        
+                             eb99.tex                                          
+[06/08/26 14:44:23] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '13' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1794                         
+                             94155_1863652166.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '15' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '18' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:44:24] INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2583                         
+                             416899_3553657027.mp4'                            
+[06/08/26 14:44:25] INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3947                         
+                             565012_186962863.mp4'                             
+[06/08/26 14:44:31] INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2287                         
+                             350890_2398917181.mp4'                            
+[06/08/26 14:44:32] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1750                         
+                             242979_754935979.mp4'                             
+[06/08/26 14:44:38] INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3073                         
+                             549550_962327590.mp4'                             
+[06/08/26 14:44:39] INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1868                         
+                             679593_1227783775.mp4'                            
+[06/08/26 14:44:40] INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3585                         
+                             970359_3109873314.mp4'                            
+[06/08/26 14:44:42] INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1179                         
+                             749245_388679315.mp4'                             
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_1547975806.mp4'                            
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_1781992728.mp4'                            
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_9521                         
+                             67764_1038799757.mp4'                             
+[06/08/26 14:44:44] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:44:52] INFO     Transcription:  A letter number is a    base.py:98
+                             symbol, usually a letter, that                    
+                             represents a number or an unknown                 
+                             quantity. Instead of writing the phrase           
+                             your age every time, we simply use a              
+                             letter, say A. Then your friend's age             
+                             is always A plus 3. This single short             
+                             expression works for every possible               
+                             value of A.                                       
+[06/08/26 14:44:53] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-l                         
+                             etter-number-is-a-symbol-                         
+                             usually-a-letter-that-386                         
+                             62b20.mp3 to .wav                                 
+[06/08/26 14:45:00] INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3223                         
+                             237929_4189597759.mp4'                            
+                    INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_5303                         
+                             12345_3238527280.mp4'                             
+[06/08/26 14:45:05] INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2377                         
+                             270245_2235268629.mp4'                            
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:45:06] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2505                         
+                             084995_525379255.mp4'                             
+[06/08/26 14:45:08] INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3813                         
+                             36409_1438212705.mp4'                             
+[06/08/26 14:45:10] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:45:11] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_7161                         
+                             27492_119868934.mp4'                              
+[06/08/26 14:45:12] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2679                         
+                             050759_641388186.mp4'                             
+[06/08/26 14:45:16] INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2941                         
+                             31448_2996223278.mp4'                             
+[06/08/26 14:45:17] INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2604                         
+                             847952_2239545219.mp4'                            
+[06/08/26 14:45:18] INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3585                         
+                             970359_3497916000.mp4'                            
+[06/08/26 14:45:20] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1601                         
+                             945228_3528866511.mp4'                            
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_517939000.mp4'                             
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_4180480787.mp4'                            
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_9521                         
+                             67764_2651153749.mp4'                             
+[06/08/26 14:45:22] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:45:26] INFO     Transcription:  This is what makes      base.py:98
+                             letter numbers so powerful. They let us           
+                             express general relationships in a                
+                             concise form. Mathematical relations              
+                             written this way are often called                 
+                             formulas.                                         
+[06/08/26 14:45:27] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\thi                         
+                             s-is-what-makes-letter-nu                         
+                             mbers-so-powerful-they-a1                         
+                             6ed949.mp3 to .wav                                
+                    INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_4093                         
+                             498621_3774944810.mp4'                            
+[06/08/26 14:45:31] INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3280                         
+                             916305_3842061360.mp4'                            
+[06/08/26 14:45:34] INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2700                         
+                             342473_3491773332.mp4'                            
+[06/08/26 14:45:35] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}f\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\6f25e26608f1                        
+                             a533.tex                                          
+[06/08/26 14:45:38] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'f' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:45:39] INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2436                         
+                             285408_2911080628.mp4'                            
+[06/08/26 14:45:40] INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1465                         
+                             357161_2269898120.mp4'                            
+[06/08/26 14:45:47] INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3278                         
+                             714163_3300180649.mp4'                            
+[06/08/26 14:45:48] INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3166                         
+                             255176_318327244.mp4'                             
+                    INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3585                         
+                             970359_2021747347.mp4'                            
+[06/08/26 14:45:51] INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3943                         
+                             491253_2019142434.mp4'                            
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_91963716.mp4'                              
+                    INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_1997678986.mp4'                            
+                    INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_9521                         
+                             67764_657202309.mp4'                              
+[06/08/26 14:45:53] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:45:58] INFO     Transcription:  We can also             base.py:98
+                             reformulate. If we know your friend's             
+                             age, we can work backwards. Your                  
+                             friend's age is S. Since S equals A               
+                             plus three, your age is S minus three.            
+                             The same relationship, express the                
+                             other way around.                                 
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\we-                         
+                             can-also-reformulate-if-w                         
+                             e-know-your-friend-s-1b44                         
+                             4fb8.mp3 to .wav                                  
+                    INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2251                         
+                             585074_3809162165.mp4'                            
+[06/08/26 14:46:04] INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1542                         
+                             327193_4127860135.mp4'                            
+[06/08/26 14:46:05] INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2730                         
+                             86370_984387035.mp4'                              
+[06/08/26 14:46:09] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 's' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:46:10] INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3598                         
+                             34240_3353507767.mp4'                             
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_4256                         
+                             054694_2696041065.mp4'                            
+[06/08/26 14:46:12] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 's' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:46:13] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3497                         
+                             378407_4041040564.mp4'                            
+                    INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2710                         
+                             453522_1886780310.mp4'                            
+[06/08/26 14:46:14] INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_9756                         
+                             30276_4067615192.mp4'                             
+[06/08/26 14:46:17] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2890                         
+                             558725_2097621936.mp4'                            
+[06/08/26 14:46:18] INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3860                         
+                             430575_965593665.mp4'                             
+                    INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3585                         
+                             970359_985432401.mp4'                             
+[06/08/26 14:46:20] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3483                         
+                             648398_2734161968.mp4'                            
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_1170691571.mp4'                            
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_3574810141.mp4'                            
+                    INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1546                         
+                             636312_3522709232.mp4'                            
+[06/08/26 14:46:22] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:46:28] INFO     Transcription:  Priya has some marbles. base.py:98
+                             Rohan has eight more marbles than                 
+                             Priya. Write an expression for Rohan's            
+                             number of marbles. If Priya has 15                
+                             marbles, how many does Rohan have?                
+[06/08/26 14:46:29] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\pri                         
+                             ya-has-some-marbles-rohan                         
+                             -has-eight-more-971b9406.                         
+                             mp3 to .wav                                       
+                    INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1251                         
+                             304281_3171836192.mp4'                            
+[06/08/26 14:46:31] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3618                         
+                             937522_4194359941.mp4'                            
+[06/08/26 14:46:34] INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_4087                         
+                             362733_1279964670.mp4'                            
+[06/08/26 14:46:35] INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3948                         
+                             35466_3811592898.mp4'                             
+[06/08/26 14:46:38] INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_5523                         
+                             0993_106987659.mp4'                               
+[06/08/26 14:46:39] INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1735                         
+                             473225_1280504509.mp4'                            
+[06/08/26 14:46:40] INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3585                         
+                             970359_3700999904.mp4'                            
+[06/08/26 14:46:41] INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3982                         
+                             259676_259704153.mp4'                             
+[06/08/26 14:46:42] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_4147                         
+                             62237_2824366509.mp4'                             
+                    INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_3769867115.mp4'                            
+[06/08/26 14:46:45] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:46:48] INFO     Transcription:  Let P represent Priya's base.py:98
+                             number of marbles. Rohan's marbles                
+                             equals P plus 8. Substitute P equals              
+                             15. 15 plus 8 equals 23. Rohan has 23             
+                             marbles.                                          
+[06/08/26 14:46:49] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\let                         
+                             -p-represent-priya-s-numb                         
+                             er-of-marbles-rohan-s-7cf                         
+                             08d45.mp3 to .wav                                 
+                    INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_4195                         
+                             239928_4123257505.mp4'                            
+[06/08/26 14:46:52] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'p' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:46:53] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3991                         
+                             727915_2536441660.mp4'                            
+                    INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2918                         
+                             660762_511180631.mp4'                             
+[06/08/26 14:46:57] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'p' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:46:58] INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2697                         
+                             042505_2718268568.mp4'                            
+                    INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3218                         
+                             28470_953441354.mp4'                              
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '15' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '23' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:46:59] INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3135                         
+                             697566_566962668.mp4'                             
+[06/08/26 14:47:00] INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3099                         
+                             685717_558511708.mp4'                             
+[06/08/26 14:47:02] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '23' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:47:05] INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2042                         
+                             421621_67593771.mp4'                              
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1488                         
+                             583580_646097288.mp4'                             
+[06/08/26 14:47:06] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_5768                         
+                             2050_1281163373.mp4'                              
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3932                         
+                             249147_2074544360.mp4'                            
+[06/08/26 14:47:07] INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_6515                         
+                             24482_2503836380.mp4'                             
+                    INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_2097878870.mp4'                            
+                    INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_1039256740.mp4'                            
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1117                         
+                             470482_809759277.mp4'                             
+[06/08/26 14:47:08] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:47:13] INFO     Transcription:  A letter number is a    base.py:98
+                             symbol representing a number or unknown           
+                             quantity. Letter numbers let us write             
+                             general relationships as concise                  
+                             expressions. The same relationship can            
+                             be reformulated to express either                 
+                             quantity in terms of the other.                   
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-l                         
+                             etter-number-is-a-symbol-                         
+                             representing-a-number-e72                         
+                             b8a2d.mp3 to .wav                                 
+[06/08/26 14:47:14] INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1044                         
+                             164624_1279749124.mp4'                            
+[06/08/26 14:47:15] INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_7954                         
+                             96726_1165136442.mp4'                             
+[06/08/26 14:47:18] INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2796                         
+                             223559_907334378.mp4'                             
+[06/08/26 14:47:19] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2879                         
+                             230119_24133633.mp4'                              
+[06/08/26 14:47:21] INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_1974                         
+                             849413_2666916044.mp4'                            
+[06/08/26 14:47:23] INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_5113                         
+                             19115_62520401.mp4'                               
+[06/08/26 14:47:24] INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3932                         
+                             249147_4083620658.mp4'                            
+[06/08/26 14:47:26] INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2103                         
+                             586626_2172739357.mp4'                            
+                    INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_2514                         
+                             011427_3502444114.mp4'                            
+                    INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\par                         
+                             tial_movie_files\LetterNu                         
+                             mbersScene\948293694_3052                         
+                             040169_1275458213.mp4'                            
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 14:47:35] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Letter                         
+                             _Numbers_Scene\480p15\Let                         
+                             terNumbersScene.mp4'                              
+                                                                               
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Letter_                         
+                             Numbers_Scene\480p15\Lett                         
+                             erNumbersScene.srt                                
+                    INFO     Rendered LetterNumbersScene           scene.py:278
+                             Played 98 animations                              
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/3.05 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/3.05 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 3.05/3.05 [00:07<00:00,  2.31s/sec]
+Transcribe: 100%|##########| 3.05/3.05 [00:07<00:00,  2.31s/sec]
+
+Animation 0: FadeIn(Text('The Notion of\nLetter-Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 0: FadeIn(Text('The Notion of\nLetter-Numbers')):  17%|#6        | 2/12 [00:00<00:00, 17.80it/s]
+Animation 0: FadeIn(Text('The Notion of\nLetter-Numbers')):  50%|#####     | 6/12 [00:00<00:00, 26.77it/s]
+Animation 0: FadeIn(Text('The Notion of\nLetter-Numbers')): 100%|##########| 12/12 [00:00<00:00, 38.73it/s]
+                                                                                                           
+
+Animation 3: FadeOut(Text('The Notion of\nLetter-Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 3: FadeOut(Text('The Notion of\nLetter-Numbers')):  58%|#####8    | 7/12 [00:00<00:00, 65.42it/s]
+                                                                                                           
+
+Animation 6: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/19.61 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/19.61 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 19.61/19.61 [00:05<00:00,  3.66sec/s]
+Transcribe: 100%|##########| 19.61/19.61 [00:05<00:00,  3.66sec/s]
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 7: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 57.76it/s]
+                                                                                            
+
+Animation 9: FadeIn(Text('Your age')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 10: FadeIn(MathTex('10')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                
+
+Animation 11: FadeIn(MathTex('15')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                
+
+Animation 13: FadeIn(Text('Always: your age + 3')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 15: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 15: FadeIn(VGroup of 2 submobjects):  78%|#######7  | 7/9 [00:00<00:00, 61.17it/s]
+                                                                                            
+
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:  17%|#6        | 2/12 [00:00<00:00, 17.24it/s]
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 17.23it/s]
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 17.93it/s]
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 18.19it/s]
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:  92%|#########1| 11/12 [00:00<00:00, 20.26it/s]
+                                                                                                     
+
+Animation 21: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/18.82 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/18.82 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 18.82/18.82 [00:05<00:00,  3.49sec/s]
+Transcribe: 100%|##########| 18.82/18.82 [00:05<00:00,  3.49sec/s]
+
+Animation 22: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 22: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 40.58it/s]
+Animation 22: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 43.10it/s]
+                                                                                              
+
+Animation 24: FadeIn(Text('your age')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                             
+
+Animation 25: Create(Arrow), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                         
+
+Animation 27: FadeIn(VGroup of 2 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 27: FadeIn(VGroup of 2 submobjects):  75%|#######5  | 9/12 [00:00<00:00, 83.14it/s]
+                                                                                             
+
+Animation 28: _MethodAnimation(MathTex('a')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 29: FadeIn(Text('Works for every value of a')):   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 29: FadeIn(Text('Works for every value of a')):  75%|#######5  | 6/8 [00:00<00:00, 52.84it/s]
+                                                                                                       
+
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 25.21it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 28.11it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 20.77it/s]
+                                                                                                     
+
+Animation 35: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.57 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/11.57 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 11.57/11.57 [00:02<00:00,  3.89sec/s]
+Transcribe: 100%|##########| 11.57/11.57 [00:02<00:00,  3.89sec/s]
+
+Animation 37: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 37: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 43.84it/s]
+Animation 37: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 44.59it/s]
+                                                                                              
+
+Animation 38: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 38: FadeIn(VGroup of 2 submobjects):  73%|#######2  | 8/11 [00:00<00:00, 79.89it/s]
+                                                                                             
+
+Animation 39: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 41: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 41: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 66.73it/s]
+                                                                                             
+
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 23.97it/s]
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 23.48it/s]
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 23.45it/s]
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 25.18it/s]
+                                                                                                     
+
+Animation 47: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/13.51 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/13.51 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.51/13.51 [00:03<00:00,  3.95sec/s]
+Transcribe: 100%|##########| 13.51/13.51 [00:03<00:00,  3.95sec/s]
+
+Animation 49: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 49: FadeIn(VGroup of 2 submobjects):  27%|##7       | 3/11 [00:00<00:00, 25.37it/s]
+Animation 49: FadeIn(VGroup of 2 submobjects):  73%|#######2  | 8/11 [00:00<00:00, 35.69it/s]
+                                                                                             
+
+Animation 51: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 53: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 54: Create(Arrow):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                  
+
+Animation 56: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 56: FadeIn(VGroup of 2 submobjects):  89%|########8 | 8/9 [00:00<00:00, 72.05it/s]
+                                                                                            
+
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 27.65it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 28.10it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 27.00it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 27.51it/s]
+                                                                                                     
+
+Animation 62: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.35 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/11.35 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 11.35/11.35 [00:02<00:00,  3.87sec/s]
+Transcribe: 100%|##########| 11.35/11.35 [00:02<00:00,  3.87sec/s]
+
+Animation 64: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 64: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 48.01it/s]
+Animation 64: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 47.05it/s]
+                                                                                              
+
+Animation 65: FadeIn(Text("Write an expression for Rohan's marbles.")):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 65: FadeIn(Text("Write an expression for Rohan's marbles.")): 100%|##########| 9/9 [00:00<00:00, 75.39it/s]
+                                                                                                                     
+
+Animation 67: FadeIn(Text('If Priya has 15 marbles, how many does Rohan have?')):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 67: FadeIn(Text('If Priya has 15 marbles, how many does Rohan have?')):  67%|######6   | 6/9 [00:00<00:00, 54.62it/s]
+                                                                                                                               
+
+Animation 70: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 70: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 4/8 [00:00<00:00, 33.35it/s]
+Animation 70: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 8/8 [00:00<00:00, 32.13it/s]
+                                                                                                   
+
+Animation 71: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 71: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 3/9 [00:00<00:00, 28.28it/s]
+Animation 71: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 6/9 [00:00<00:00, 28.03it/s]
+Animation 71: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 9/9 [00:00<00:00, 26.35it/s]
+                                                                                                   
+
+Transcribe:   0%|          | 0/12.91 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.91 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.91/12.91 [00:02<00:00,  4.68sec/s]
+Transcribe: 100%|##########| 12.91/12.91 [00:02<00:00,  4.68sec/s]
+
+Animation 74: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 76: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 76: _MethodAnimation(VGroup of 3 submobjects), etc.:  55%|#####4    | 6/11 [00:00<00:00, 53.18it/s]
+                                                                                                             
+
+Animation 78: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 78: _MethodAnimation(VGroup of 3 submobjects), etc.:  64%|######3   | 7/11 [00:00<00:00, 63.33it/s]
+                                                                                                             
+
+Animation 80: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 80: _MethodAnimation(VGroup of 3 submobjects), etc.:  64%|######3   | 7/11 [00:00<00:00, 69.04it/s]
+                                                                                                             
+
+Animation 81: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 84: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 84: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 72.51it/s]
+                                                                                                    
+
+Animation 87: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/15.26 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/15.26 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 15.26/15.26 [00:02<00:00,  6.23sec/s]
+Transcribe: 100%|##########| 15.26/15.26 [00:02<00:00,  6.23sec/s]
+
+Animation 88: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 88: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 62.05it/s]
+                                                                                             
+
+Animation 90: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 90: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 52.65it/s]
+                                                                                             
+
+Animation 92: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 92: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 45.18it/s]
+Animation 92: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 46.33it/s]
+                                                                                              
+
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 22.06it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 20.48it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 20.34it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 20.10it/s]
+                                                                                                     

@@ -1,0 +1,1721 @@
+Manim Community v0.20.1
+
+[06/08/26 14:39:39] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:39:45] INFO     Transcription:  Evaluating expressions. base.py:98
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\eva                         
+                             luating-expressions-4d5a7                         
+                             c45.mp3 to .wav                                   
+[06/08/26 14:39:53] INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\6680                         
+                             60172_1206340904_22313245                         
+                             7.mp4'                                            
+                    INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\1263                         
+                             443165_167028225_26019408                         
+                             7.mp4'                                            
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\1263                         
+                             443165_3585970359_9376019                         
+                             52.mp4'                                           
+[06/08/26 14:39:54] INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\1263                         
+                             443165_3116403451_2315169                         
+                             754.mp4'                                          
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\1263                         
+                             443165_2514011427_3278671                         
+                             325.mp4'                                          
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_39689617                         
+                             08.mp4'                                           
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_952167764_690584945                         
+                             .mp4'                                             
+[06/08/26 14:39:56] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:40:02] INFO     Transcription:  Imagine your teacher    base.py:98
+                             announces that every student's total              
+                             score is calculated as five times the             
+                             number of correct answers, plus three             
+                             bonus marks. Use scored eight correct             
+                             answers. To find your title, you simply           
+                             replace the unknown with eight and                
+                             calculate. This process, replacing a              
+                             letter number with a specific value to            
+                             find the result, is called evaluation.            
+[06/08/26 14:40:03] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\ima                         
+                             gine-your-teacher-announc                         
+                             es-that-every-student-6d8                         
+                             8bcb1.mp3 to .wav                                 
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2204198666_16447480                         
+                             42.mp4'                                           
+[06/08/26 14:40:05] INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2559514530_30663781                         
+                             37.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_170070900_301728822                         
+                             .mp4'                                             
+[06/08/26 14:40:06] INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2336368866_75865285                         
+                             7.mp4'                                            
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3634341645_93053135                         
+                             5.mp4'                                            
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5 \times                          
+                             8\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\b81d368fbf82                        
+                             744a.tex                                          
+[06/08/26 14:40:09] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5 \times 8'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}43\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\1cd863c65861                        
+                             6f10.tex                                          
+[06/08/26 14:40:12] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '43' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2667001266_23403806                         
+                             98.mp4'                                           
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3703680534_37122584                         
+                             04.mp4'                                           
+[06/08/26 14:40:15] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3628970206_30492778                         
+                             75.mp4'                                           
+                    INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_4104372264_44511566                         
+                             4.mp4'                                            
+[06/08/26 14:40:16] INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3585970359_20355567                         
+                             78.mp4'                                           
+[06/08/26 14:40:17] INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_357936654_193474776                         
+                             1.mp4'                                            
+                    INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_15479758                         
+                             06.mp4'                                           
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_17819927                         
+                             28.mp4'                                           
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_952167764_103879975                         
+                             7.mp4'                                            
+[06/08/26 14:40:19] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:40:23] INFO     Transcription:  To evaluate an          base.py:98
+                             expression, write it clearly, replace             
+                             every letter number with its given                
+                             value, and then simplify using the                
+                             correct order of operations,                      
+                             multiplication before addition, and               
+                             brackets first.                                   
+[06/08/26 14:40:24] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\to-                         
+                             evaluate-an-expression-wr                         
+                             ite-it-clearly-replace-44                         
+                             7e89d1.mp3 to .wav                                
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2495665651_23635318                         
+                             17.mp4'                                           
+[06/08/26 14:40:27] INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1710886339_58009147                         
+                             1.mp4'                                            
+[06/08/26 14:40:30] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3080992209_36725329                         
+                             01.mp4'                                           
+                    INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2164437431_29944683                         
+                             64.mp4'                                           
+[06/08/26 14:40:33] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1731847889_36578875                         
+                             51.mp4'                                           
+[06/08/26 14:40:37] INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2493146018_35098614                         
+                             84.mp4'                                           
+[06/08/26 14:40:38] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_7613227_3587011629.                         
+                             mp4'                                              
+[06/08/26 14:40:40] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3585970359_38243664                         
+                             05.mp4'                                           
+[06/08/26 14:40:42] INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_232779630_312738865                         
+                             6.mp4'                                            
+                    INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_51793900                         
+                             0.mp4'                                            
+                    INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_41804807                         
+                             87.mp4'                                           
+                    INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_952167764_265115374                         
+                             9.mp4'                                            
+[06/08/26 14:40:44] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:40:48] INFO     Transcription:  For example, if the     base.py:98
+                             expression is 3a plus 7 and a equals 5,           
+                             we replace a with 5. 3 times 5 plus 7             
+                             gives 15 plus 7, which equals 22.                 
+[06/08/26 14:40:49] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\for                         
+                             -example-if-the-expressio                         
+                             n-is-three-a-plus-93703a7                         
+                             9.mp3 to .wav                                     
+[06/08/26 14:40:50] INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3638076132_38430751                         
+                             82.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:40:51] INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_268886958_110254072                         
+                             8.mp4'                                            
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_909951105_287792155                         
+                             2.mp4'                                            
+[06/08/26 14:40:52] INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1093888340_25569994                         
+                             39.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3 \times                          
+                             5\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e6911f23f85e                        
+                             eec2.tex                                          
+[06/08/26 14:40:54] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3 \times 5'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_4146804262_28770461                         
+                             27.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:40:55] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '15' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2182472588_16602066                         
+                             48.mp4'                                           
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_4078456181_28014239                         
+                             40.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}22\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\6da8899e00de                        
+                             f9bb.tex                                          
+[06/08/26 14:40:58] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '22' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1229774580_17797523                         
+                             22.mp4'                                           
+                    INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2330456491_18311387                         
+                             68.mp4'                                           
+                    INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1955999437_11063327                         
+                             43.mp4'                                           
+[06/08/26 14:40:59] INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3585970359_42209569                         
+                             41.mp4'                                           
+                    INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3842364334_28476053                         
+                             01.mp4'                                           
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_91963716                         
+                             .mp4'                                             
+                    INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_19976789                         
+                             86.mp4'                                           
+[06/08/26 14:41:00] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_952167764_657202309                         
+                             .mp4'                                             
+[06/08/26 14:41:03] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:41:07] INFO     Transcription:  Be careful with         base.py:98
+                             brackets. If the expression is 2 times            
+                             the quantity b plus 4 and b equals 3,             
+                             work inside the bracket first, 3 plus 4           
+                             equals 7, then multiply 2 times 7                 
+                             equals 14.                                        
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\be-                         
+                             careful-with-brackets-if-                         
+                             the-expression-is-two-7ab                         
+                             2976f.mp3 to .wav                                 
+[06/08/26 14:41:08] INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2068234496_38091621                         
+                             65.mp4'                                           
+[06/08/26 14:41:10] INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3634204600_41278601                         
+                             35.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'b' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2600260993_31791793                         
+                             75.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'b' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:41:11] INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_4022276718_55901791                         
+                             4.mp4'                                            
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_60944572_3255784755                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:41:12] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1010231252_42640763                         
+                             16.mp4'                                           
+[06/08/26 14:41:13] INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1072803152_37702159                         
+                             43.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '14' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1677933251_24013980                         
+                             70.mp4'                                           
+[06/08/26 14:41:14] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1400488353_30493741                         
+                             56.mp4'                                           
+[06/08/26 14:41:15] INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1055438668_15809893                         
+                             83.mp4'                                           
+                    INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3585970359_29721263                         
+                             5.mp4'                                            
+[06/08/26 14:41:17] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_287571917_107004153                         
+                             7.mp4'                                            
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_34076349                         
+                             43.mp4'                                           
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_11706915                         
+                             71.mp4'                                           
+[06/08/26 14:41:18] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_952167764_378939012                         
+                             5.mp4'                                            
+[06/08/26 14:41:20] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:41:23] INFO     Transcription:  The rule is always the  base.py:98
+                             same. Substitute first, then calculate            
+                             step by step.                                     
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -rule-is-always-the-same-                         
+                             substitute-first-then-98c                         
+                             03d6a.mp3 to .wav                                 
+[06/08/26 14:41:28] INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2271449586_75875709                         
+                             5.mp4'                                            
+[06/08/26 14:41:29] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1460960969_37304238                         
+                             05.mp4'                                           
+[06/08/26 14:41:30] INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3394500337_12925285                         
+                             60.mp4'                                           
+                    INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1811286585_27823552                         
+                             03.mp4'                                           
+                    INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_13328230                         
+                             72.mp4'                                           
+[06/08/26 14:41:31] INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_38801552                         
+                             20.mp4'                                           
+                    INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1546636312_39676552                         
+                             33.mp4'                                           
+[06/08/26 14:41:33] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:41:36] INFO     Transcription:  The expression for a    base.py:98
+                             student score is 4 times M minus 5,               
+                             where M is the number of questions                
+                             answered correctly. Find the score when           
+                             M equals 8.                                       
+[06/08/26 14:41:37] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -expression-for-a-student                         
+                             -s-score-is-four-m-8843bb                         
+                             5c.mp3 to .wav                                    
+                    INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2251585074_35030044                         
+                             44.mp4'                                           
+[06/08/26 14:41:40] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2309076186_25068799                         
+                             41.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4m' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:41:41] INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2244812939_36272526                         
+                             15.mp4'                                           
+[06/08/26 14:41:43] INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3727933850_39780634                         
+                             93.mp4'                                           
+[06/08/26 14:41:44] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2039494071_73996781                         
+                             6.mp4'                                            
+[06/08/26 14:41:51] INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2745965480_36576838                         
+                             09.mp4'                                           
+                    INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_4251586949_23256733                         
+                             29.mp4'                                           
+[06/08/26 14:41:52] INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3585970359_24773961                         
+                             44.mp4'                                           
+[06/08/26 14:41:53] INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3982259676_25633940                         
+                             63.mp4'                                           
+[06/08/26 14:41:54] INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3646852570_28413714                         
+                             1.mp4'                                            
+                    INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_37104075                         
+                             43.mp4'                                           
+[06/08/26 14:41:56] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:42:01] INFO     Transcription:  Replace M with 8, 4     base.py:98
+                             times 8 minus 5, 32 minus 5. The score            
+                             is 27. This same process is used by               
+                             engineers and scientists when applying            
+                             formulas to real measurements.                    
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\rep                         
+                             lace-m-with-eight-four-ti                         
+                             mes-eight-minus-five-f3d4                         
+                             b873.mp3 to .wav                                  
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2251585074_42532112                         
+                             68.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'm' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:42:02] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3439932867_10673323                         
+                             86.mp4'                                           
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3982732103_36591580                         
+                             88.mp4'                                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times                          
+                             8\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\237cc4a7ea21                        
+                             2304.tex                                          
+[06/08/26 14:42:06] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times 8'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1120081706_41027468                         
+                             27.mp4'                                           
+                    INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_63816815_422412645.                         
+                             mp4'                                              
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:42:07] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '32' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2837852136_14826568                         
+                             32.mp4'                                           
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3402918763_24473963                         
+                             21.mp4'                                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}27\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\fd4080234d01                        
+                             fda9.tex                                          
+[06/08/26 14:42:10] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '27' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_241034947_301427118                         
+                             8.mp4'                                            
+[06/08/26 14:42:11] INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_671398187_115165902                         
+                             5.mp4'                                            
+                    INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2029332074_34134078                         
+                             45.mp4'                                           
+[06/08/26 14:42:15] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_248635800_256171322                         
+                             5.mp4'                                            
+[06/08/26 14:42:16] INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3140207269_61076341                         
+                             3.mp4'                                            
+[06/08/26 14:42:17] INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3932249147_10194772                         
+                             53.mp4'                                           
+[06/08/26 14:42:19] INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1440604178_34845515                         
+                             99.mp4'                                           
+                    INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_30268165                         
+                             48.mp4'                                           
+                    INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_11313182                         
+                             39.mp4'                                           
+                    INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1117470482_30757901                         
+                             73.mp4'                                           
+[06/08/26 14:42:20] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:42:25] INFO     Transcription:  Evaluation means        base.py:98
+                             replacing each letter number with its             
+                             given value. Apply the correct order of           
+                             operations after substituting.                    
+                             Substitute first. Then calculate                  
+                             carefully, step by step.                          
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\eva                         
+                             luation-means-replacing-e                         
+                             ach-letter-number-with-0b                         
+                             f3109b.mp3 to .wav                                
+[06/08/26 14:42:30] INFO     Animation 98 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3782930247_28497939                         
+                             98.mp4'                                           
+                    INFO     Animation 99 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3804447005_61871163                         
+                             6.mp4'                                            
+[06/08/26 14:42:35] INFO     Animation 100 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1747986194_17622837                         
+                             35.mp4'                                           
+[06/08/26 14:42:36] INFO     Animation 101 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2836216631_26747745                         
+                             64.mp4'                                           
+[06/08/26 14:42:39] INFO     Animation 102 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3903442345_37935706                         
+                             65.mp4'                                           
+[06/08/26 14:42:40] INFO     Animation 103 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_1233229615_31333707                         
+                             04.mp4'                                           
+[06/08/26 14:42:41] INFO     Animation 104 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3932249147_30776224                         
+                             28.mp4'                                           
+[06/08/26 14:42:42] INFO     Animation 105 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2448506082_42699773                         
+                             85.mp4'                                           
+                    INFO     Animation 106 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_2514011427_18842169                         
+                             54.mp4'                                           
+                    INFO     Animation 107 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\p                         
+                             artial_movie_files\Evalua                         
+                             tingExpressionsScene\9482                         
+                             93694_3052040169_37147058                         
+                             37.mp4'                                           
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 14:42:52] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Evalua                         
+                             ting_Expressions\480p15\E                         
+                             valuatingExpressionsScene                         
+                             .mp4'                                             
+                                                                               
+                    INFO     The partial movie         scene_file_writer.py:874
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 9 oldest                          
+                             file(s). You can change                           
+                             this behaviour by                                 
+                             changing max_files_cached                         
+                             in config.                                        
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Evaluat                         
+                             ing_Expressions\480p15\Ev                         
+                             aluatingExpressionsScene.                         
+                             srt                                               
+                    INFO     Rendered EvaluatingExpressionsScene   scene.py:278
+                             Played 108 animations                             
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/2.3 [00:00<?, ?sec/s]
+                                                    
+
+Transcribe:   0%|          | 0/2.3 [00:02<?, ?sec/s]
+Transcribe: 100%|##########| 2.3/2.3 [00:05<00:00,  2.51s/sec]
+Transcribe: 100%|##########| 2.3/2.3 [00:05<00:00,  2.51s/sec]
+
+Animation 0: FadeIn(Text('Evaluating Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 3: FadeOut(Text('Evaluating Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 6: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/22.75 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/22.75 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 22.75/22.75 [00:03<00:00,  5.75sec/s]
+Transcribe: 100%|##########| 22.75/22.75 [00:03<00:00,  5.75sec/s]
+
+Animation 8: FadeIn(Text('Score formula:')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 9: FadeIn(VGroup of 5 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 11: Create(Arrow), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                         
+
+Animation 12: FadeIn(VGroup of 5 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 14: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 14: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 85.15it/s]
+                                                                                            
+
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 47.46it/s]
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 50.66it/s]
+                                                                                                     
+
+Animation 20: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/13.8 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/13.8 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.8/13.8 [00:02<00:00,  5.07sec/s]
+Transcribe: 100%|##########| 13.8/13.8 [00:02<00:00,  5.06sec/s]
+
+Animation 22: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 23: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 23: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 84.37it/s]
+                                                                                            
+
+Animation 25: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 25: FadeIn(VGroup of 2 submobjects):  89%|########8 | 8/9 [00:00<00:00, 78.80it/s]
+                                                                                            
+
+Animation 26: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 26: FadeIn(VGroup of 2 submobjects):  67%|######6   | 6/9 [00:00<00:00, 59.80it/s]
+                                                                                            
+
+Animation 29: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 29: FadeOut(VGroup of 2 submobjects), etc.:  17%|#6        | 2/12 [00:00<00:00, 16.06it/s]
+Animation 29: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 17.85it/s]
+Animation 29: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 16.69it/s]
+Animation 29: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 18.69it/s]
+Animation 29: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 19.25it/s]
+                                                                                                     
+
+Animation 32: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/12.6 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/12.6 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.6/12.6 [00:03<00:00,  4.14sec/s]
+Transcribe: 100%|##########| 12.6/12.6 [00:03<00:00,  4.14sec/s]
+
+Animation 33: FadeIn(Text('Expression:')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                
+
+Animation 34: FadeIn(VGroup of 3 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 35: Create(Arrow), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 37: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 38: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 40: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 41: Create(SurroundingRectangle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 44: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 90.15it/s]
+                                                                                                     
+
+Animation 47: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/12.86 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.86 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.86/12.86 [00:02<00:00,  4.41sec/s]
+Transcribe: 100%|##########| 12.86/12.86 [00:02<00:00,  4.41sec/s]
+
+Animation 49: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 49: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 86.50it/s]
+                                                                                            
+
+Animation 50: FadeIn(VGroup of 6 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 51: Create(Arrow), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 53: FadeIn(VGroup of 12 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 55: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 56: Create(SurroundingRectangle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 33.71it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 32.95it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 33.88it/s]
+                                                                                                     
+
+Animation 62: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/6.12 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/6.12 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 6.12/6.12 [00:02<00:00,  2.56sec/s]
+Transcribe: 100%|##########| 6.12/6.12 [00:02<00:00,  2.56sec/s]
+
+Animation 63: FadeIn(VGroup of 2 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 63: FadeIn(VGroup of 2 submobjects):  50%|#####     | 6/12 [00:00<00:00, 54.63it/s]
+Animation 63: FadeIn(VGroup of 2 submobjects): 100%|##########| 12/12 [00:00<00:00, 53.73it/s]
+                                                                                              
+
+Animation 66: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 66: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 51.46it/s]
+Animation 66: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 50.86it/s]
+                                                                                                     
+
+Animation 69: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/10.01 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/10.01 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 10.01/10.01 [00:02<00:00,  3.52sec/s]
+Transcribe: 100%|##########| 10.01/10.01 [00:02<00:00,  3.52sec/s]
+
+Animation 71: FadeIn(Text("Student's score expression:")):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                                
+
+Animation 72: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 73: FadeIn(Text('where m = number of correct answers')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                                        
+
+Animation 75: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 78: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 78: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 4/8 [00:00<00:00, 39.62it/s]
+Animation 78: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 8/8 [00:00<00:00, 38.03it/s]
+                                                                                                   
+
+Animation 79: FadeOut(Text("Student's score expression:")), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 79: FadeOut(Text("Student's score expression:")), etc.:  56%|#####5    | 5/9 [00:00<00:00, 41.01it/s]
+                                                                                                               
+
+Transcribe:   0%|          | 0/15.77 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/15.77 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 15.77/15.77 [00:02<00:00,  5.63sec/s]
+Transcribe: 100%|##########| 15.77/15.77 [00:02<00:00,  5.63sec/s]
+
+Animation 82: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 84: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 86: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 88: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 88: _MethodAnimation(VGroup of 3 submobjects), etc.:  82%|########1 | 9/11 [00:00<00:00, 87.42it/s]
+                                                                                                             
+
+Animation 89: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 91: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 91: FadeIn(VGroup of 2 submobjects):  67%|######6   | 6/9 [00:00<00:00, 53.78it/s]
+                                                                                            
+
+Animation 94: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 94: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 26.30it/s]
+Animation 94: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 26.31it/s]
+Animation 94: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 23.98it/s]
+Animation 94: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 23.68it/s]
+                                                                                                     
+
+Animation 97: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/12.55 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.55 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.55/12.55 [00:02<00:00,  4.37sec/s]
+Transcribe: 100%|##########| 12.55/12.55 [00:02<00:00,  4.37sec/s]
+
+Animation 98: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 98: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 46.52it/s]
+                                                                                             
+
+Animation 100: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 100: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 65.34it/s]
+                                                                                              
+
+Animation 102: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 102: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 66.93it/s]
+                                                                                              
+
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 28.67it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 27.84it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 28.28it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 27.91it/s]
+                                                                                                      

@@ -206,3 +206,22 @@
     "log": "C:\\Users\\Coschool\\manimations\\logs\\Equ_Fractions_143406.log",
     "error": ""
   },
+  "Evaluating_Expressions.py": {
+    "file": "Evaluating_Expressions.py",
+    "class": "EvaluatingExpressionsScene",
+    "status": "success",
+    "elapsed": 211.6,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Evaluating_Expressions\\480p15\\EvaluatingExpressionsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Evaluating_Expressions_143923.log",
+    "error": ""
+  },
+  "Letter_Numbers_Scene.py": {
+    "file": "Letter_Numbers_Scene.py",
+    "class": "LetterNumbersScene",
+    "status": "success",
+    "elapsed": 280.9,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Letter_Numbers_Scene\\480p15\\LetterNumbersScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Letter_Numbers_Scene_144257.log",
+    "error": ""
+  }
+}
