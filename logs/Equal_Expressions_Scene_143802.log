@@ -1,0 +1,1208 @@
+Manim Community v0.20.1
+
+[06/08/26 14:38:17] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sim                         
+                             plification-of-algebraic-                         
+                             expressions-05ebfa70.mp3                          
+                             to .wav                                           
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\66806017                         
+                             2_1673952342_631829896.mp                         
+                             4'                                                
+[06/08/26 14:38:20] INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\66806017                         
+                             2_1736268565_1666280314.m                         
+                             p4'                                               
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\12634431                         
+                             65_2559751136_4012731371.                         
+                             mp4'                                              
+[06/08/26 14:38:21] INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\12634431                         
+                             65_3585970359_757012760.m                         
+                             p4'                                               
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\12634431                         
+                             65_131190976_3356244212.m                         
+                             p4'                                               
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\12634431                         
+                             65_2514011427_3968961708.                         
+                             mp4'                                              
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_3052040169_3196764103.m                         
+                             p4'                                               
+[06/08/26 14:38:22] INFO     Animation 7 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_952167764_181444476                     
+                             2)                                                
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sup                         
+                             pose-two-friends-each-wor                         
+                             k-out-a-different-99dbafa                         
+                             f.mp3 to .wav                                     
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1896953575_2513012035.m                         
+                             p4'                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:38:23] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1274473658_3345306079.m                         
+                             p4'                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 10 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_341417758_273024786                     
+                             1)                                                
+[06/08/26 14:38:24] INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_867704021_3758451527.mp                         
+                             4'                                                
+                    INFO     Animation 12 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_4105956350_24666930                     
+                             75)                                               
+[06/08/26 14:38:25] INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_3345830210_1750514306.m                         
+                             p4'                                               
+[06/08/26 14:38:26] INFO     Animation 14 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3585970359_42151515                     
+                             60)                                               
+[06/08/26 14:38:27] INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_2213820364_2968668534.m                         
+                             p4'                                               
+                    INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_2514011427_1547975806.m                         
+                             p4'                                               
+                    INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_3052040169_1781992728.m                         
+                             p4'                                               
+                    INFO     Animation 18 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_952167764_103879975                     
+                             7)                                                
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\one                         
+                             -useful-method-is-to-subs                         
+                             titute-the-same-value-e0f                         
+                             fc0f9.mp3 to .wav                                 
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1429950791_2363531817.m                         
+                             p4'                                               
+[06/08/26 14:38:28] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n = k' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 20 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3887307463_58009147                     
+                             1)                                                
+                    INFO     Animation 21 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3963452851_71618487                     
+                             3)                                                
+                    INFO     Animation 22 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_746860121_253031278                     
+                             7)                                                
+[06/08/26 14:38:29] INFO     Animation 23 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3363849815_22256999                     
+                             79)                                               
+                    INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1337411727_4231654605.m                         
+                             p4'                                               
+[06/08/26 14:38:30] INFO     Animation 25 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_600904691_243194394                     
+                             5)                                                
+[06/08/26 14:38:31] INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_902260558_1037906895.mp                         
+                             4'                                                
+[06/08/26 14:38:32] INFO     Animation 27 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3585970359_14604278                     
+                             29)                                               
+                    INFO     Animation 28 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_930400466_383618723                     
+                             7)                                                
+                    INFO     Animation 29 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2514011427_51793900                     
+                             0)                                                
+                    INFO     Animation 30 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3052040169_41804807                     
+                             87)                                               
+[06/08/26 14:38:33] INFO     Animation 31 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_952167764_265115374                     
+                             9)                                                
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\let                         
+                             -us-test-three-n-plus-six                         
+                             -and-three-times-the-9d6e                         
+                             1992.mp3 to .wav                                  
+                    INFO     Animation 32 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1429950791_37749448                     
+                             10)                                               
+                    INFO     Animation 33 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2406622985_38420613                     
+                             60)                                               
+                    INFO     Animation 34 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_83730592_3702807942                     
+                             )                                                 
+[06/08/26 14:38:34] INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_679080715_496872645.mp4                         
+                             '                                                 
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=4:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 36 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_60482444_55714470)                      
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(4)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '18' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 37 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3430144005_27731525                     
+                             03)                                               
+[06/08/26 14:38:35] INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1300534531_1169935965.m                         
+                             p4'                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(6)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '18' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 39 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_281000706_302340201                     
+                             4)                                                
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_254382013_3190041383.mp                         
+                             4'                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 41 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_567277915_729008895                     
+                             )                                                 
+[06/08/26 14:38:36] INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_798242962_1276347621.mp                         
+                             4'                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=1:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 43 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2625001558_35980251                     
+                             2)                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(1)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '9' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(3)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '9' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 44 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3771603378_39282521                     
+                             27)                                               
+[06/08/26 14:38:37] INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_4008158784_1255033478.m                         
+                             p4'                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 46 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2757018795_26916857                     
+                             68)                                               
+[06/08/26 14:38:38] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_3448229909_1129094961.m                         
+                             p4'                                               
+                    INFO     Animation 48 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3585970359_34591024                     
+                             39)                                               
+                    INFO     Animation 49 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1374839858_58036847                     
+                             8)                                                
+                    INFO     Animation 50 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2514011427_17334046                     
+                             15)                                               
+                    INFO     Animation 51 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3052040169_92650353                     
+                             1)                                                
+                    INFO     Animation 52 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_952167764_171065228                     
+                             7)                                                
+[06/08/26 14:38:39] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\now                         
+                             -substitution-gives-us-a-                         
+                             useful-check-but-it-53b44                         
+                             0ab.mp3 to .wav                                   
+                    INFO     Animation 53 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2687218822_78873887                     
+                             9)                                                
+[06/08/26 14:38:40] INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_4135340801_4261121014.m                         
+                             p4'                                               
+[06/08/26 14:38:41] INFO     Animation 55 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3408366366_49435701                     
+                             8)                                                
+[06/08/26 14:38:42] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_995339099_3636643811.mp                         
+                             4'                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 57 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3418689667_16609600                     
+                             58)                                               
+                    INFO     Animation 58 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_754798956_162550525                     
+                             6)                                                
+[06/08/26 14:38:43] INFO     Animation 59 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_571123020_237789324                     
+                             5)                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 60 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3530387944_19779647                     
+                             03)                                               
+[06/08/26 14:38:44] INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1181648636_2066675301.m                         
+                             p4'                                               
+[06/08/26 14:38:45] INFO     Animation 62 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3452704893_21237733                     
+                             43)                                               
+[06/08/26 14:38:46] INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_2621473365_1143080436.m                         
+                             p4'                                               
+                    INFO     Animation 64 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3394500337_28876091                     
+                             9)                                                
+[06/08/26 14:38:47] INFO     Animation 65 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2940433545_23568974                     
+                             3)                                                
+[06/08/26 14:38:48] INFO     Animation 66 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2514011427_13328230                     
+                             72)                                               
+                    INFO     Animation 67 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3052040169_38801552                     
+                             20)                                               
+                    INFO     Animation 68 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1546636312_39676552                     
+                             33)                                               
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\che                         
+                             ck-whether-two-x-plus-eig                         
+                             ht-and-two-times-the-a350                         
+                             8bce.mp3 to .wav                                  
+                    INFO     Animation 69 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2251585074_35030044                     
+                             44)                                               
+[06/08/26 14:38:49] INFO     Animation 70 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3588787723_28733081                     
+                             77)                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 71 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_37845444_4225212365                     
+                             )                                                 
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 72 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_527265461_267010792                     
+                             9)                                                
+[06/08/26 14:38:50] INFO     Animation 73 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3832212073_24739419                     
+                             37)                                               
+[06/08/26 14:38:51] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_4008107420_1381182204.m                         
+                             p4'                                               
+[06/08/26 14:38:52] INFO     Animation 75 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3585970359_20433131                     
+                             10)                                               
+                    INFO     Animation 76 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3982259676_14848706                     
+                             07)                                               
+[06/08/26 14:38:53] INFO     Animation 77 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1140766546_42008729                     
+                             51)                                               
+                    INFO     Animation 78 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2514011427_23638582                     
+                             54)                                               
+[06/08/26 14:38:54] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\for                         
+                             -x-equals-three-six-plus-                         
+                             eight-equals-fourteen-893                         
+                             8b340.mp3 to .wav                                 
+                    INFO     Animation 79 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1416307998_21499371                     
+                             74)                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x=3:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 80 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_950810670_364930496                     
+                             9)                                                
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_3261846279_276439461.mp                         
+                             4'                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(3)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '14' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\quad' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(7)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '14' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:38:55] INFO     Animation 82 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_840606847_103382992                     
+                             9)                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 83 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3340368249_17207825                     
+                             77)                                               
+                    INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_270599748_902916891.mp4                         
+                             '                                                 
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x=5:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 85 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_310084208_232405547                     
+                             5)                                                
+[06/08/26 14:38:56] INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_328475495_2277215164.mp                         
+                             4'                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(5)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '18' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\quad' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(9)' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '18' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 87 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2814503089_39247055                     
+                             17)                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 14:38:57] INFO     Animation 88 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_594397541_111147078                     
+                             8)                                                
+                    INFO     Animation 89 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2318836581_19621832                     
+                             6)                                                
+                    INFO     Animation 90 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_845789473_916925012                     
+                             )                                                 
+[06/08/26 14:38:58] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1255204248_924450249.mp                         
+                             4'                                                
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(x+4)'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 92 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1024748556_23506435                     
+                             78)                                               
+                    INFO     Animation 93 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2804109863_11467793                     
+                             99)                                               
+[06/08/26 14:38:59] INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_3953035553_2807552019.m                         
+                             p4'                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2x+8' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(x+4)'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 95 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2907804361_33904019                     
+                             85)                                               
+[06/08/26 14:39:00] INFO     Animation 96 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_899056536_147604976                     
+                             2)                                                
+                    INFO     Animation 97 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3932249147_48947674                     
+                             2)                                                
+                    INFO     Animation 98 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3680755476_11342053                     
+                             71)                                               
+                    INFO     Animation 99 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2514011427_21130477                     
+                             93)                                               
+                    INFO     Animation 100 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3052040169_26044527                     
+                             2)                                                
+                    INFO     Animation 101 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1117470482_15978776                     
+                             49)                                               
+[06/08/26 14:39:01] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sub                         
+                             stitute-the-same-value-in                         
+                             to-both-expressions-ba07d                         
+                             fb3.mp3 to .wav                                   
+                    INFO     Animation 102 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1416307998_23738198                     
+                             4)                                                
+[06/08/26 14:39:02] INFO     Animation 103 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3947550553_41757761                     
+                             88)                                               
+                    INFO     Animation 104 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_1104690968_1845213028.m                         
+                             p4'                                               
+[06/08/26 14:39:03] INFO     Animation 105 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1266817750_11856206                     
+                             00)                                               
+[06/08/26 14:39:04] INFO     Animation 106 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_890149084_3134208860.mp                         
+                             4'                                                
+[06/08/26 14:39:05] INFO     Animation 107 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1016802094_25488821                     
+                             81)                                               
+[06/08/26 14:39:06] INFO     Animation 108 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             partial_movie_files\Equal                         
+                             ExpressionsScene\94829369                         
+                             4_2623094981_3142742633.m                         
+                             p4'                                               
+[06/08/26 14:39:07] INFO     Animation 109 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3932249147_37256184                     
+                             84)                                               
+                    INFO     Animation 110 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_1006560427_13899542                     
+                             17)                                               
+[06/08/26 14:39:08] INFO     Animation 111 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_2514011427_25461695                     
+                             87)                                               
+                    INFO     Animation 112 : Using cached  cairo_renderer.py:94
+                             data (hash :                                      
+                             948293694_3052040169_27178359                     
+                             34)                                               
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 14:39:18] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Equal_                         
+                             Expressions_Scene\480p15\                         
+                             EqualExpressionsScene.mp4                         
+                             '                                                 
+                                                                               
+                    INFO     The partial movie         scene_file_writer.py:874
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 37 oldest                         
+                             file(s). You can change                           
+                             this behaviour by                                 
+                             changing max_files_cached                         
+                             in config.                                        
+[06/08/26 14:39:19] INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Equal_E                         
+                             xpressions_Scene\480p15\E                         
+                             qualExpressionsScene.srt                          
+                    INFO     Rendered EqualExpressionsScene        scene.py:278
+                             Played 113 animations                             
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+Animation 1: FadeIn(Text('Simplification of\nAlgebraic Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 1: FadeIn(Text('Simplification of\nAlgebraic Expressions')):  50%|#####     | 6/12 [00:00<00:00, 56.70it/s]
+                                                                                                                     
+
+Animation 4: FadeOut(Text('Simplification of\nAlgebraic Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 4: FadeOut(Text('Simplification of\nAlgebraic Expressions')):  67%|######6   | 8/12 [00:00<00:00, 79.87it/s]
+                                                                                                                      
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 9: FadeIn(VGroup of 2 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 9: FadeIn(VGroup of 2 submobjects):  92%|#########1| 11/12 [00:00<00:00, 107.71it/s]
+                                                                                              
+
+Animation 10: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 12: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 15: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 15: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 51.77it/s]
+Animation 15: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 49.19it/s]
+                                                                                                     
+
+Animation 18: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 20: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 21: FadeIn(VGroup of 1 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 22: Create(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                        
+
+Animation 23: Create(Arrow), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                        
+
+Animation 25: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 28: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 31: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 33: FadeIn(Text('3n + 6')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 34: Create(Line):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                 
+
+Animation 36: FadeIn(VGroup of 1 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 37: FadeIn(VGroup of 5 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 39: FadeIn(VGroup of 3 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 41: FadeIn(MathTex('\\checkmark')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 43: FadeIn(VGroup of 1 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 44: FadeIn(VGroup of 5 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 46: FadeIn(MathTex('\\checkmark')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 49: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 52: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 53: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 55: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 57: FadeIn(VGroup of 6 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 58: _MethodAnimation(MathTex('3')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 59: _MethodAnimation(MathTex('n')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 60: FadeIn(VGroup of 4 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 62: FadeIn(Text('Identical to the first expression!')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                       
+
+Animation 65: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 68: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 70: FadeIn(Text('Check:')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                           
+
+Animation 71: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 72: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 73: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 76: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 77: FadeOut(Text('Check:')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 80: FadeIn(VGroup of 1 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 82: _MethodAnimation(VGroup of 1 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 83: FadeIn(MathTex('\\checkmark')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 85: _MethodAnimation(VGroup of 1 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 87: _MethodAnimation(VGroup of 1 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 88: FadeIn(MathTex('\\checkmark')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 90: FadeOut(VGroup of 1 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 92: FadeIn(VGroup of 5 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 93: FadeIn(Text('Identical!')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                               
+
+Animation 95: _MethodAnimation(VGroup of 5 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                    
+
+Animation 96: Create(SurroundingRectangle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 98: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 101: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 103: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 105: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 107: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 110: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                            

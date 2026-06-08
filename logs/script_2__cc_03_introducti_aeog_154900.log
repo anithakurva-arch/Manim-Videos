@@ -1,0 +1,1976 @@
+Manim Community v0.20.1
+
+[06/04/26 15:49:08] WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\hel                         
+                             lo-students-imagine-you-r                         
+                             e-standing-between-two-5d                         
+                             88ec27.mp3 to .wav                                
+                    INFO     Animation 0 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             3723463965_1626733839_2231324                     
+                             57)                                               
+                    INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2940036                         
+                             854_4233388849.mp4'                               
+                    INFO     Animation 2 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_164100571_40437536                     
+                             03)                                               
+[06/04/26 15:49:09] INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3519936                         
+                             473_1233630235.mp4'                               
+                    INFO     Animation 4 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2583124785_1923237                     
+                             441)                                              
+                    INFO     Animation 5 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3151066816_2183118                     
+                             744)                                              
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3461527                         
+                             557_3057887176.mp4'                               
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2359773                         
+                             3_2535250448.mp4'                                 
+[06/04/26 15:49:10] WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\now                         
+                             -what-about-numbers-on-a-                         
+                             number-line-can-we-b82cca                         
+                             73.mp3 to .wav                                    
+                    INFO     Animation 8 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1008680354_2884597                     
+                             573)                                              
+                    INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2096700                         
+                             157_3196764103.mp4'                               
+                    INFO     Animation 10 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4259472272_1814444                     
+                             762)                                              
+[06/04/26 15:49:11] INFO     Animation 11 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2116542513_1672683                     
+                             227)                                              
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3813843                         
+                             34_928426249.mp4'                                 
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3125397                         
+                             9_3375921568.mp4'                                 
+                    INFO     Animation 14 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4098419117_2635317                     
+                             915)                                              
+[06/04/26 15:49:12] WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+[06/04/26 15:49:13] WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-r                         
+                             ational-number-is-any-num                         
+                             ber-that-can-be-30445eac.                         
+                             mp3 to .wav                                       
+                    INFO     Animation 15 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1617144533_3844250                     
+                             536)                                              
+                    INFO     Animation 16 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2828751614_3621047                     
+                             232)                                              
+[06/04/26 15:49:14] INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2635169                         
+                             268_1982243111.mp4'                               
+                    INFO     Animation 18 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3075335007_9717955                     
+                             43)                                               
+[06/04/26 15:49:15] INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3842443                         
+                             573_531120066.mp4'                                
+                    INFO     Animation 20 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_592457509_30713528                     
+                             34)                                               
+[06/04/26 15:49:16] INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3112461                         
+                             94_913479475.mp4'                                 
+                    INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_8209467                         
+                             0_4197932691.mp4'                                 
+[06/04/26 15:49:17] INFO     Animation 23 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3944543728_1922027                     
+                             669)                                              
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\now                         
+                             -let-s-see-how-this-works                         
+                             -with-an-example-let-s-e0                         
+                             336931.mp3 to .wav                                
+                    INFO     Animation 24 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2436735063_1038799                     
+                             757)                                              
+                    INFO     Animation 25 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_726100661_80922325                     
+                             7)                                                
+                    INFO     Animation 26 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_547707742_18432740                     
+                             68)                                               
+[06/04/26 15:49:18] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_9865013                         
+                             14_4170031959.mp4'                                
+[06/04/26 15:49:19] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1309304                         
+                             579_3210218625.mp4'                               
+                    INFO     Animation 29 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3740135420_3082912                     
+                             997)                                              
+                    INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3977922                         
+                             435_1597576583.mp4'                               
+[06/04/26 15:49:20] WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\add                         
+                             -the-two-numbers-and-divi                         
+                             de-by-two-one-half-6a9065                         
+                             8f.mp3 to .wav                                    
+                    INFO     Animation 31 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1344818949_5200953                     
+                             33)                                               
+                    INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2925284                         
+                             679_2642752260.mp4'                               
+[06/04/26 15:49:21] INFO     Animation 33 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_46551237_119209669                     
+                             1)                                                
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1437142                         
+                             457_3341548146.mp4'                               
+                    INFO     Animation 35 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_754299514_19222000                     
+                             0)                                                
+[06/04/26 15:49:22] INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1162370                         
+                             415_3228898134.mp4'                               
+                    INFO     Animation 37 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2394922729_8745673                     
+                             11)                                               
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\whe                         
+                             n-we-divide-a-fraction-by                         
+                             -two-we-multiply-the-b4db                         
+                             387d.mp3 to .wav                                  
+[06/04/26 15:49:23] INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1141010                         
+                             333_288942264.mp4'                                
+[06/04/26 15:49:24] INFO     Animation 39 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4186126458_5167804                     
+                             11)                                               
+                    INFO     Animation 40 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2192942625_2109401                     
+                             398)                                              
+[06/04/26 15:49:25] INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_4111657                         
+                             500_3044102520.mp4'                               
+                    INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_9242987                         
+                             06_515672283.mp4'                                 
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\thi                         
+                             s-is-because-the-average-                         
+                             always-lies-exactly-b51d5                         
+                             f5b.mp3 to .wav                                   
+[06/04/26 15:49:26] INFO     Animation 43 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1881838532_2037004                     
+                             33)                                               
+                    INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3530090                         
+                             098_656246676.mp4'                                
+                    INFO     Animation 45 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1160094339_7808387                     
+                             99)                                               
+                    INFO     Animation 46 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4164980538_5636643                     
+                             95)                                               
+[06/04/26 15:49:27] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_4436613                         
+                             44_3413091046.mp4'                                
+                    INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_6805337                         
+                             4_1008392267.mp4'                                 
+[06/04/26 15:49:28] INFO     Animation 49 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3038976095_2543467                     
+                             110)                                              
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\but                         
+                             -here-s-something-fascina                         
+                             ting-we-can-repeat-259d94                         
+                             0c.mp3 to .wav                                    
+                    INFO     Animation 50 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3634626828_2077959                     
+                             188)                                              
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3698510                         
+                             417_799321403.mp4'                                
+[06/04/26 15:49:29] INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1838537                         
+                             100_3340341082.mp4'                               
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\bet                         
+                             ween-one-half-and-five-ei                         
+                             ghths-we-can-find-acbf349                         
+                             6.mp3 to .wav                                     
+                    INFO     Animation 53 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_3198455961_3124071                     
+                             346)                                              
+[06/04/26 15:49:30] INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3387206                         
+                             547_2421908982.mp4'                               
+                    INFO     Animation 55 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4214548333_3654559                     
+                             067)                                              
+[06/04/26 15:49:31] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3313054                         
+                             500_1894672829.mp4'                               
+                    INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3208848                         
+                             087_1692144705.mp4'                               
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\thi                         
+                             s-process-never-stops-f14                         
+                             0d5a4.mp3 to .wav                                 
+                    INFO     Animation 58 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1707179240_4649046                     
+                             73)                                               
+                    INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2495665                         
+                             651_590389573.mp4'                                
+[06/04/26 15:49:32] INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_7037211                         
+                             06_1114023746.mp4'                                
+                    WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             refore-there-are-infinite                         
+                             ly-many-rational-a197dbd0                         
+                             .mp3 to .wav                                      
+                    INFO     Animation 61 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4095752777_5346234                     
+                             76)                                               
+[06/04/26 15:49:33] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3245205                         
+                             16_2313589325.mp4'                                
+                    INFO     Animation 63 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2045453556_7740059                     
+                             43)                                               
+                    INFO     Animation 64 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_233240416_66815065                     
+                             6)                                                
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1816547                         
+                             169_1959485005.mp4'                               
+[06/04/26 15:49:34] INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3214504                         
+                             108_2609384021.mp4'                               
+                    INFO     Animation 67 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_4004256564_4017824                     
+                             455)                                              
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+[06/04/26 15:49:35] WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sum                         
+                             mary-find-rational-number                         
+                             s-between-two-given-4e5d4                         
+                             1a1.mp3 to .wav                                   
+                    INFO     Animation 68 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_67605489_396880543                     
+                             4)                                                
+                    INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_7447178                         
+                             16_1448819276.mp4'                                
+                    INFO     Animation 70 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_863190707_31000716                     
+                             78)                                               
+[06/04/26 15:49:36] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3626313                         
+                             299_2239780940.mp4'                               
+[06/04/26 15:49:37] INFO     Animation 72 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_1441199729_2488551                     
+                             280)                                              
+[06/04/26 15:49:38] INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_1726995                         
+                             03_2393504837.mp4'                                
+[06/04/26 15:49:39] INFO     Animation 74 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2166190719_3728340                     
+                             704)                                              
+[06/04/26 15:49:40] INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_3347184                         
+                             963_2925848430.mp4'                               
+[06/04/26 15:49:41] INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\partial_movie_fil                         
+                             es\Script2Cc03Introductio                         
+                             nScene\2135156192_2878399                         
+                             735_1934395500.mp4'                               
+[06/04/26 15:49:42] INFO     Animation 77 : Using cached   cairo_renderer.py:94
+                             data (hash :                                      
+                             2135156192_2844360058_2970549                     
+                             354)                                              
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/04/26 15:49:55] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+[06/04/26 15:49:56] INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_03_introducti_aeog                         
+                             \720p30\Script2Cc03Introd                         
+                             uctionScene.mp4'                                  
+                                                                               
+                    INFO     The partial movie         scene_file_writer.py:874
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 17 oldest                         
+                             file(s). You can change                           
+                             this behaviour by                                 
+                             changing max_files_cached                         
+                             in config.                                        
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\script_                         
+                             2__cc_03_introducti_aeog\                         
+                             720p30\Script2Cc03Introdu                         
+                             ctionScene.srt                                    
+                    INFO     Rendered Script2Cc03IntroductionScene scene.py:278
+                             Played 78 animations                              
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+Animation 0: FadeIn(VGroup of 3 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 2: Indicate(Circle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                    
+
+Animation 4: _MethodAnimation(Circle):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                            
+
+Animation 5: _MethodAnimation(Circle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 8: FadeOut(VGroup of 3 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 10: Create(NumberLine):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                       
+
+Animation 11: FadeIn(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                      
+
+Animation 14: FadeOut(NumberLine), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                              
+
+Animation 15: Write(Text('Rational Number')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 16: Write(MathTex('\\frac{p}{q}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 18: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 20: FadeIn(VGroup of 3 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 23: FadeOut(Text('Rational Number')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 24: Create(NumberLine):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                       
+
+Animation 26: FadeIn(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                      
+
+Animation 29: Create(Rectangle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                            
+
+Animation 31: Write(MathTex('\\frac{\\frac{1}{2} + \\frac{3}{4}}{2}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                             
+
+Animation 33: Write(MathTex('\\frac{1}{2} + \\frac{3}{4} = \\frac{2}{4} + \\frac{3}{4}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                                
+
+Animation 35: Write(MathTex('= \\frac{5}{4}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 37: Write(MathTex('\\frac{5}{4} \\div 2 = \\frac{5}{4} \\times \\frac{1}{2}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                                                               
+
+Animation 39: Write(MathTex('= \\frac{5}{8}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 40: Indicate(MathTex('= \\frac{5}{8}')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                        
+
+Animation 43: FadeOut(Rectangle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                             
+
+Animation 45: FadeIn(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                      
+
+Animation 46: GrowFromCenter(BraceBetweenPoints), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                             
+
+Animation 49: FadeOut(BraceBetweenPoints), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 53: Transform(NumberLine), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                
+
+Animation 55: FadeIn(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                      
+
+Animation 58: FadeIn(VGroup of 8 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 61: FadeOut(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                       
+
+Animation 63: FadeIn(VGroup of 50 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 64: Flash(VGroup of 12 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 67: FadeOut(NumberLine), etc.:   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                              
+
+Animation 68: Write(Text('Summary')):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                           
+
+Animation 70: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 72: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 74: FadeIn(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]
+                                                                                    

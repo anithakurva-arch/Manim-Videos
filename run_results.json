@@ -1,0 +1,208 @@
+{
+  "script_1__cc_03_introducti_jtjn.py": {
+    "file": "script_1__cc_03_introducti_jtjn.py",
+    "class": "Script1Cc03IntroductionScene",
+    "status": "error",
+    "elapsed": 12.1,
+    "video": "",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_1__cc_03_introducti_jtjn_160341.log",
+    "error": "|    257         self.setup()                                                 |\n|    258         try:                                                         |\n| >  259             self.construct()                                         |\n|    260         except EndSceneEarlyException:                               |\n|    261             pass                                                     |\n|    262         except RerunSceneException:                                  |\n|                                                                             |\n| C:\\Users\\Coschool\\manimations\\scripts\\script_1__cc_03_introducti_jtjn.py:50 |\n| in construct                                                                |\n|                                                                             |\n|    47             for i, num in enumerate([1, 2, 3]):                       |\n|    48                 n = Text(str(num), font=\"Poppins\", color=\"#7464CE\").s |\n|    49                 angle = PI/2 - i * PI/3                               |\n| >  50                 n.move_to(nat_circle.point_from_proportion(angle/(2*P |\n|    51                 numbers.add(n)                                        |\n|    52                 self.play(FadeIn(n), run_time=0.3)                    |\n|    53                                                                       |\n|                                                                             |\n| C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\manim\\mobject\\type |\n| s\\vectorized_mobject.py:1565 in point_from_proportion                       |\n|                                                                             |\n|   1562                         ))                                           |\n|   1563         \"\"\"                                                          |\n|   1564         if alpha < 0 or alpha > 1:                                   |\n| > 1565             raise ValueError(f\"Alpha {alpha} not between 0 and 1.\")  |\n|   1566                                                                      |\n|   1567         self.throw_error_if_no_points()                              |\n|   1568         if alpha == 1:                                               |\n+-----------------------------------------------------------------------------+\nValueError: Alpha -0.08333333333333331 not between 0 and 1."
+  },
+  "script_2__cc_03_introducti_aeog.py": {
+    "file": "script_2__cc_03_introducti_aeog.py",
+    "class": "Script2Cc03IntroductionScene",
+    "status": "success",
+    "elapsed": 63.1,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\script_2__cc_03_introducti_aeog\\720p30\\Script2Cc03IntroductionScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_2__cc_03_introducti_aeog_160355.log",
+    "error": ""
+  },
+  "script_3__cc_01_laws_of_ex_pac0.py": {
+    "file": "script_3__cc_01_laws_of_ex_pac0.py",
+    "class": "Script3Cc01LawsOfExponentsForRealNumbersScene",
+    "status": "error",
+    "elapsed": 180.6,
+    "video": "",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_3__cc_01_laws_of_ex_pac0_160501.log",
+    "error": "|                                                                             |\n|   751             return                                                    |\n|   752                                                                       |\n|   753         logger.info(\"Combining to Movie file.\")                       |\n| > 754         self.combine_files(                                           |\n|   755             partial_movie_files,                                      |\n|   756             movie_file_path,                                          |\n|   757             is_gif_format(),                                          |\n|                                                                             |\n| C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\manim\\scene\\scene_ |\n| file_writer.py:718 in combine_files                                         |\n|                                                                             |\n|   715             )                                                         |\n|   716             if config.transparent and config.movie_file_extension ==  |\n|   717                 output_stream.pix_fmt = \"yuva420p\"                    |\n| > 718             for packet in partial_movies_input.demux(partial_movies_s |\n|   719                 # We need to skip the \"flushing\" packets that `demux` |\n|   720                 if packet.dts is None:                                |\n|   721                     continue                                          |\n|                                                                             |\n| in av.container.input.InputContainer.demux:183                              |\n|                                                                             |\n| in av.container.core.Container.err_check:369                                |\n|                                                                             |\n| in av.error.err_check:411                                                   |\n+-----------------------------------------------------------------------------+\nInvalidDataError: [Errno 1094995529] Invalid data found when processing input: \n'C:\\\\Users\\\\Coschool\\\\manimations\\\\media\\\\videos\\\\script_3__cc_01_laws_of_ex_pa\nc0\\\\720p30\\\\partial_movie_files\\\\Script3Cc01LawsOfExponentsForRealNumbersScene\\\n\\partial_movie_file_list.txt'"
+  },
+  "script_1__cc_01_9457190_v1cf (1).py": {
+    "file": "script_1__cc_01_9457190_v1cf (1).py",
+    "class": "Script1Cc019457190Scene",
+    "status": "error",
+    "elapsed": 2.6,
+    "video": "",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_1__cc_01_9457190_v1cf (1)_170631.log",
+    "error": "    return self.main(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\click\\core.py\", line 1082, in main\n    rv = self.invoke(ctx)\n         ^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\click\\core.py\", line 1697, in invoke\n    return _process_result(sub_ctx.command.invoke(sub_ctx))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\click\\core.py\", line 1443, in invoke\n    return ctx.invoke(self.callback, **ctx.params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\click\\core.py\", line 788, in invoke\n    return __callback(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\manim\\cli\\render\\commands.py\", line 121, in render\n    for SceneClass in scene_classes_from_file(file):\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\manim\\utils\\module_ops.py\", line 171, in scene_classes_from_file\n    module = get_module(file_path)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Coschool\\manimations\\.venv311\\Lib\\site-packages\\manim\\utils\\module_ops.py\", line 65, in get_module\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 936, in exec_module\n  File \"<frozen importlib._bootstrap_external>\", line 1074, in get_code\n  File \"<frozen importlib._bootstrap_external>\", line 1004, in source_to_code\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\Coschool\\manimations\\scripts\\script_1__cc_01_9457190_v1cf (1).py\", line 68\n    with self.voiceover(text=\"\"\"Writing out \n                             ^\nSyntaxError: unterminated triple-quoted string literal (detected at line 68)"
+  },
+  "script_2__cc_01_9457190_r95h.py": {
+    "file": "script_2__cc_01_9457190_r95h.py",
+    "class": "Script2Cc019457190Scene",
+    "status": "error",
+    "elapsed": 16.4,
+    "video": "",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_2__cc_01_9457190_r95h_170636.log",
+    "error": "|   201         # Create a temporary svg file to dump modified svg to be pars |\n|   202         modified_file_path = file_path.with_name(f\"{file_path.stem}_{ |\n|                                                                             |\n| C:\\Users\\Coschool\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\etree\\Ele |\n| mentTree.py:1219 in parse                                                   |\n|                                                                             |\n|   1216                                                                      |\n|   1217     \"\"\"                                                              |\n|   1218     tree = ElementTree()                                             |\n| > 1219     tree.parse(source, parser)                                       |\n|   1220     return tree                                                      |\n|   1221                                                                      |\n|   1222                                                                      |\n|                                                                             |\n| C:\\Users\\Coschool\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\etree\\Ele |\n| mentTree.py:581 in parse                                                    |\n|                                                                             |\n|    578                     # can define an internal _parse_whole API for ef |\n|    579                     # It can be used to parse the whole source witho |\n|    580                     # it with chunks.                                |\n| >  581                     self._root = parser._parse_whole(source)         |\n|    582                     return self._root                                |\n|    583             while True:                                              |\n|    584                 data = source.read(65536)                            |\n+-----------------------------------------------------------------------------+\n+-----------------------------------------------------------------------------+\n|                                                                             |\n| \\u25b2                                                                           |\n+-----------------------------------------------------------------------------+\nParseError: no element found: line 1, column 0"
+  },
+  "script_3__cc_02_9457192_i7gf (1).py": {
+    "file": "script_3__cc_02_9457192_i7gf (1).py",
+    "class": "Script3Cc029457192Scene",
+    "status": "success",
+    "elapsed": 246.7,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\script_3__cc_02_9457192_i7gf (1)\\720p30\\Script3Cc029457192Scene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_3__cc_02_9457192_i7gf (1)_170655.log",
+    "error": ""
+  },
+  "script_4__cc_02_9457192_m2in (1).py": {
+    "file": "script_4__cc_02_9457192_m2in (1).py",
+    "class": "Script4Cc029457192Scene",
+    "status": "success",
+    "elapsed": 191.0,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\script_4__cc_02_9457192_m2in (1)\\720p30\\Script4Cc029457192Scene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\script_4__cc_02_9457192_m2in (1)_171104.log",
+    "error": ""
+  },
+  "distributive.py": {
+    "file": "distributive.py",
+    "class": "DistributivePropertyScene",
+    "status": "success",
+    "elapsed": 274.5,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\distributive\\480p15\\DistributivePropertyScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\distributive_130120.log",
+    "error": ""
+  },
+  "evaluation.py": {
+    "file": "evaluation.py",
+    "class": "EvaluationScene",
+    "status": "error",
+    "elapsed": 85.2,
+    "video": "",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\evaluation_102640.log",
+    "error": "|   288         self.show_title()                                             |\n|   289         self.show_concept_a()                                         |\n|   290         self.show_concept_b()                                         |\n| > 291         self.show_concept_c()                                         |\n|   292         self.show_concept_d()                                         |\n|   293         self.show_concept_e()                                         |\n|   294         self.show_question()                                          |\n|                                                                             |\n| C:\\Users\\Coschool\\manimations\\scripts\\evaluation.py:537 in show_concept_c   |\n|                                                                             |\n|   534             self.wait_until_bookmark(\"bk_calc_a\")                     |\n|   535                                                                       |\n|   536             # 2 steps, font_size=32, buff=0.4 \\u2192 limit 3 \\u2705            |\n| > 537             mgr = StepManager(                                        |\n|   538                 self,                                                 |\n|   539                 start_anchor=DOWN * 0.1,                              |\n|   540                 font_size=32, buff=0.4                                |\n|                                                                             |\n| C:\\Users\\Coschool\\manimations\\scripts\\evaluation.py:247 in __init__         |\n|                                                                             |\n|   244         self.fs     = font_size                                       |\n|   245         self.buff   = buff                                            |\n|   246         self.max    = self.LIMITS.get((font_size, buff), 4)           |\n| > 247         self.anchor = start_anchor or (UP * 2.0 + LEFT * 3.5)         |\n|   248                                                                       |\n|   249     def add_step(self, mob, run_time=0.7):                            |\n|   250         if len(self.steps) >= self.max:                               |\n+-----------------------------------------------------------------------------+\nValueError: The truth value of an array with more than one element is \nambiguous. Use a.any() or a.all()"
+  },
+  "algebraic_products.py": {
+    "file": "algebraic_products.py",
+    "class": "AlgebraicProductsScene",
+    "status": "success",
+    "elapsed": 200.5,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\algebraic_products\\480p15\\AlgebraicProductsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\algebraic_products_125459.log",
+    "error": ""
+  },
+  "Arithmetic_Expressions_Scene.py": {
+    "file": "Arithmetic_Expressions_Scene.py",
+    "class": "ArithmeticExpressionsScene",
+    "status": "success",
+    "elapsed": 175.6,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Arithmetic_Expressions_Scene\\480p15\\ArithmeticExpressionsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Arithmetic_Expressions_Scene_125822.log",
+    "error": ""
+  },
+  "Equal_Expressions_Scene.py": {
+    "file": "Equal_Expressions_Scene.py",
+    "class": "EqualExpressionsScene",
+    "status": "success",
+    "elapsed": 78.4,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Equal_Expressions_Scene\\480p15\\EqualExpressionsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Equal_Expressions_Scene_143802.log",
+    "error": ""
+  },
+  "expressions_scene.py": {
+    "file": "expressions_scene.py",
+    "class": "ExpressionsScene",
+    "status": "success",
+    "elapsed": 130.5,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\expressions_scene\\480p15\\ExpressionsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\expressions_scene_130846.log",
+    "error": ""
+  },
+  "general_term.py": {
+    "file": "general_term.py",
+    "class": "GeneralTermScene",
+    "status": "success",
+    "elapsed": 264.2,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\general_term\\480p15\\GeneralTermScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\general_term_131059.log",
+    "error": ""
+  },
+  "input_output_scene.py": {
+    "file": "input_output_scene.py",
+    "class": "InputOutputScene",
+    "status": "success",
+    "elapsed": 128.9,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\input_output_scene\\480p15\\InputOutputScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\input_output_scene_131525.log",
+    "error": ""
+  },
+  "repeating_patterns.py": {
+    "file": "repeating_patterns.py",
+    "class": "RepeatingPatternsScene",
+    "status": "success",
+    "elapsed": 109.7,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\repeating_patterns\\480p15\\RepeatingPatternsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\repeating_patterns_131736.log",
+    "error": ""
+  },
+  "simplification.py": {
+    "file": "simplification.py",
+    "class": "SimplificationScene",
+    "status": "success",
+    "elapsed": 1294.8,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\simplification\\480p15\\SimplificationScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\simplification_131928.log",
+    "error": ""
+  },
+  "simplify_brackets.py": {
+    "file": "simplify_brackets.py",
+    "class": "SimplifyBracketsScene",
+    "status": "success",
+    "elapsed": 132.4,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\simplify_brackets\\480p15\\SimplifyBracketsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\simplify_brackets_134106.log",
+    "error": ""
+  },
+  "substitution.py": {
+    "file": "substitution.py",
+    "class": "SubstitutionScene",
+    "status": "success",
+    "elapsed": 353.9,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\substitution\\480p15\\SubstitutionScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\substitution_134321.log",
+    "error": ""
+  },
+  "Calendar_Patterns.py": {
+    "file": "Calendar_Patterns.py",
+    "class": "CalendarPatternsScene",
+    "status": "success",
+    "elapsed": 357.9,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Calendar_Patterns\\480p15\\CalendarPatternsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Calendar_Patterns_141846.log",
+    "error": ""
+  },
+  "Consecutive_Numbers.py": {
+    "file": "Consecutive_Numbers.py",
+    "class": "ConsecutiveNumbersScene",
+    "status": "success",
+    "elapsed": 321.4,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Consecutive_Numbers\\480p15\\ConsecutiveNumbersScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Consecutive_Numbers_142446.log",
+    "error": ""
+  },
+  "days_pattern.py": {
+    "file": "days_pattern.py",
+    "class": "RepeatingPatternsDaysScene",
+    "status": "success",
+    "elapsed": 233.6,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\days_pattern\\480p15\\RepeatingPatternsDaysScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\days_pattern_143010.log",
+    "error": ""
+  },
+  "Equ_Fractions.py": {
+    "file": "Equ_Fractions.py",
+    "class": "EquivalentExpressionsScene",
+    "status": "success",
+    "elapsed": 233.2,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Equ_Fractions\\480p15\\EquivalentExpressionsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Equ_Fractions_143406.log",
+    "error": ""
+  },

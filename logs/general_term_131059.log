@@ -1,0 +1,1326 @@
+Manim Community v0.20.1
+
+[06/08/26 13:11:10] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\hel                         
+                             lo-students-e058bfc4.mp3                          
+                             to .wav                                           
+WARNING: bookmark 'bk_hello' not found
+[06/08/26 13:11:14] INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \668060172_1782497772_223                         
+                             132457.mp4'                                       
+                    INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \1263443165_749635571_159                         
+                             5151034.mp4'                                      
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \1263443165_3585970359_11                         
+                             96494952.mp4'                                     
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \1263443165_2214620193_41                         
+                             93797393.mp4'                                     
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \1263443165_2514011427_32                         
+                             78671325.mp4'                                     
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3052040169_396                         
+                             8961708.mp4'                                      
+MARGIN WARNING: badge_concept
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3798881226_690                         
+                             584945.mp4'                                       
+[06/08/26 13:11:17] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:12:16] INFO     Transcription:  Look at this sequence.  base.py:98
+                             5, 10, 15, 20. Each term is 5 more than           
+                             the previous one. If someone asked for            
+                             the hundredth term, you would not want            
+                             to keep adding 5 all the way. There is            
+                             a much smarter way. We use the position           
+                             number of a term to describe it with a            
+                             letter number. Let n represent the                
+                             position number, so n equals 1 for the            
+                             first term, n equals 2 for the second,            
+                             and so on. In this sequence, the first            
+                             term is 5 times 1, the second is 5                
+                             times 2, the third is 5 times 3. The              
+                             pattern is clear. Every term is 5 times           
+                             its position number. So the general               
+                             term is 5n, for the hundredth term,               
+                             substitute n equals 100, 5 times 100              
+                             equals 500.                                       
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\loo                         
+                             k-at-this-sequence-five-t                         
+                             en-fifteen-twenty-each-c6                         
+                             b8d026.mp3 to .wav                                
+[06/08/26 13:12:19] INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2615220185_542                         
+                             369123.mp4'                                       
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_789001737_3549                         
+                             775796.mp4'                                       
+                    INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2418191116_231                         
+                             0386677.mp4'                                      
+[06/08/26 13:12:22] INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2811516204_281                         
+                             6904708.mp4'                                      
+                    INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_245977883_2070                         
+                             147909.mp4'                                       
+[06/08/26 13:12:24] INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1572981218_134                         
+                             5312174.mp4'                                      
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_883898800_2426                         
+                             724377.mp4'                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5 \times                          
+                             1\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\9c02327064f0                        
+                             70b7.tex                                          
+[06/08/26 13:12:26] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5 \times 1'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5 \times                          
+                             2\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\7dbd4b22e618                        
+                             c9f0.tex                                          
+[06/08/26 13:12:27] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5 \times 2'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5 \times                          
+                             3\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\4b25c025937c                        
+                             bc4f.tex                                          
+[06/08/26 13:12:28] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5 \times 3'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5 \times                          
+                             4\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e78d181d4bf1                        
+                             3337.tex                                          
+[06/08/26 13:12:30] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5 \times 4'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3458510932_901                         
+                             997649.mp4'                                       
+[06/08/26 13:12:31] INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1516358075_298                         
+                             8708027.mp4'                                      
+                    INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3774578863_327                         
+                             5177780.mp4'                                      
+                    INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3688045676_352                         
+                             8706446.mp4'                                      
+                    INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3774578863_193                         
+                             6696490.mp4'                                      
+[06/08/26 13:12:32] INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1270549454_132                         
+                             3379418.mp4'                                      
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3774578863_365                         
+                             8902544.mp4'                                      
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1928690997_231                         
+                             2741484.mp4'                                      
+                    INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3380490690_331                         
+                             7870282.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Gene                        
+                             ral                                               
+                             term:}\special{dvisvgm:raw                        
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\1f5449885bcd                        
+                             7aa7.tex                                          
+[06/08/26 13:12:34] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{General term:}' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5n\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\1067063300de                        
+                             4681.tex                                          
+[06/08/26 13:12:35] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_436948528_2865                         
+                             239402.mp4'                                       
+[06/08/26 13:12:36] INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_344891438_3837                         
+                             975079.mp4'                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\times                            
+                             100\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\ccb3bab3596e                        
+                             115b.tex                                          
+[06/08/26 13:12:37] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times 100'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}500\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\6204efd116f6                        
+                             2517.tex                                          
+[06/08/26 13:12:38] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '500' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:12:39] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1251427744_177                         
+                             7502989.mp4'                                      
+                    INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2006554796_856                         
+                             308293.mp4'                                       
+[06/08/26 13:12:41] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:13:10] INFO     Transcription:  Now consider the        base.py:98
+                             sequence 3, 7, 11, 15. The terms                  
+                             increase by 4 each time. We multiply              
+                             the common difference 4 by n, then                
+                             adjust. Check 4 times 1 gives 4, but we           
+                             need 3, so we subtract 1. The general             
+                             term is 4n-1. Check 4 times 2-1 equals            
+                             7.                                                
+[06/08/26 13:13:11] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\now                         
+                             -consider-the-sequence-th                         
+                             ree-seven-eleven-80e673cf                         
+                             .mp3 to .wav                                      
+                    INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1779932709_252                         
+                             4731589.mp4'                                      
+[06/08/26 13:13:12] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3648233704_425                         
+                             4344958.mp4'                                      
+                    INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1558019528_911                         
+                             553034.mp4'                                       
+                    INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1236807836_319                         
+                             8094674.mp4'                                      
+                    INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_529037061_3476                         
+                             539558.mp4'                                       
+[06/08/26 13:13:13] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1767376894_393                         
+                             2296638.mp4'                                      
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3091171623_307                         
+                             7674024.mp4'                                      
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_251940445_4058                         
+                             141999.mp4'                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times                          
+                             1\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\143883f2865f                        
+                             9104.tex                                          
+[06/08/26 13:13:15] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times 1'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>},\text{                           
+                             need }                                            
+                             3\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d3b03b2571d8                        
+                             0b84.tex                                          
+[06/08/26 13:13:16] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ',\text{                       
+                             need } 3' (id: unique000).                        
+                             Using fallback to root group.                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\Rightarro                        
+                             w -1\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\30dcfaa655db                        
+                             865a.tex                                          
+[06/08/26 13:13:17] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\Rightarrow                   
+                             -1' (id: unique000). Using                        
+                             fallback to root group.                           
+[06/08/26 13:13:18] INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_955583731_4198                         
+                             856566.mp4'                                       
+                    INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_83049478_41155                         
+                             96300.mp4'                                        
+                    INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2569178596_534                         
+                             044607.mp4'                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{General term:}' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4n -                              
+                             1\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\919fabaa43c0                        
+                             64db.tex                                          
+[06/08/26 13:13:19] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4n - 1'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 13:13:20] INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_741383472_2656                         
+                             085562.mp4'                                       
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2108343418_295                         
+                             9244844.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times 2                        
+                             - 1\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\8818dff9d035                        
+                             4f5c.tex                                          
+[06/08/26 13:13:21] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times 2                    
+                             - 1' (id: unique000). Using                       
+                             fallback to root group.                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1200142773_127                         
+                             906682.mp4'                                       
+                    INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_315023512_1274                         
+                             503969.mp4'                                       
+[06/08/26 13:13:22] INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3369370910_304                         
+                             789965.mp4'                                       
+                    INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2514011427_229                         
+                             0873885.mp4'                                      
+                    INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3052040169_919                         
+                             63716.mp4'                                        
+MARGIN WARNING: badge_q
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2812216769_206                         
+                             6424876.mp4'                                      
+[06/08/26 13:13:24] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:13:44] INFO     Transcription:  A sequence is 7, 10,    base.py:98
+                             13, 16. Write the general term and find           
+                             the 20th term.                                    
+[06/08/26 13:13:45] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-s                         
+                             equence-is-seven-ten-thir                         
+                             teen-sixteen-write-the-a8                         
+                             6cd292.mp3 to .wav                                
+[06/08/26 13:13:46] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1203849376_244                         
+                             9850611.mp4'                                      
+                    INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3642878595_400                         
+                             0540627.mp4'                                      
+[06/08/26 13:13:48] INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2297170621_330                         
+                             8156247.mp4'                                      
+                    INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_278932736_2263                         
+                             68334.mp4'                                        
+[06/08/26 13:13:49] INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3264853895_307                         
+                             3897475.mp4'                                      
+[06/08/26 13:13:50] INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1918250812_231                         
+                             1160841.mp4'                                      
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2568390631_197                         
+                             7800484.mp4'                                      
+[06/08/26 13:13:51] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_384613381_1213                         
+                             891773.mp4'                                       
+[06/08/26 13:13:53] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:14:20] INFO     Transcription:  Common difference is 3. base.py:98
+                             Try 3n and adjust. 3 times 1 equals 3,            
+                             but the first term is 7, so add 4.                
+                             General term is 3n plus 4. Check. 3               
+                             times 1 plus 4 equals 7. Correct. For             
+                             the 20th term, 3 times 20 plus 4 equals           
+                             64.                                               
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\com                         
+                             mon-difference-is-three-t                         
+                             ry-three-n-and-adjust-e9f                         
+                             32457.mp3 to .wav                                 
+                    INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1416307998_414                         
+                             7409809.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Comm                        
+                             on difference} =                                  
+                             3\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\2ceafcd3488c                        
+                             bc4b.tex                                          
+[06/08/26 13:14:22] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{Common difference} = 3'                    
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2498327924_383                         
+                             7650768.mp4'                                      
+[06/08/26 13:14:23] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2377968236_388                         
+                             3652859.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Try:                        
+                             } 3n, \text{                                      
+                             adjust}\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d938540ea9c8                        
+                             9d0c.tex                                          
+[06/08/26 13:14:24] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\text{Try:                    
+                             } 3n, \text{ adjust}' (id:                        
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3300640091_152                         
+                             1363605.mp4'                                      
+[06/08/26 13:14:25] INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1484373424_415                         
+                             4783960.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3 \times 1                        
+                             = 3, \text{ need }                                
+                             7\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d3679f842288                        
+                             3253.tex                                          
+[06/08/26 13:14:26] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3 \times 1                    
+                             = 3, \text{ need } 7' (id:                        
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:14:27] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2220165652_216                         
+                             267979.mp4'                                       
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3675155254_303                         
+                             8308374.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Adju                        
+                             stment: }                                         
+                             +4\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a8ec830fa511                        
+                             8e1f.tex                                          
+[06/08/26 13:14:29] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{Adjustment: } +4' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_127836681_3694                         
+                             368170.mp4'                                       
+[06/08/26 13:14:30] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_4079300629_103                         
+                             9363932.mp4'                                      
+                    INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_160427599_1349                         
+                             306726.mp4'                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Gene                        
+                             ral term: } 3n +                                  
+                             4\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\50519f3cd9de                        
+                             a707.tex                                          
+[06/08/26 13:14:32] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{General term: } 3n + 4'                    
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_137325440_1174                         
+                             095788.mp4'                                       
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2970140192_294                         
+                             4964792.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3(1) + 4 =                        
+                             7\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\1a4ed03c28ec                        
+                             d452.tex                                          
+[06/08/26 13:14:34] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(1) + 4 =                    
+                             7' (id: unique000). Using                         
+                             fallback to root group.                           
+                    INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1515746832_144                         
+                             8543132.mp4'                                      
+[06/08/26 13:14:35] INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_4253228081_350                         
+                             1464763.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\checkmark                        
+                             \text{                                            
+                             Correct}\special{dvisvgm:r                        
+                             aw </g>} to                                       
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\0a33f12da646                        
+                             1fa3.tex                                          
+[06/08/26 13:14:36] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark                    
+                             \text{ Correct}' (id:                             
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:14:37] INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2130540848_277                         
+                             0188871.mp4'                                      
+                    INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1752806347_184                         
+                             7623161.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3(20) + 4                         
+                             = 64\special{dvisvgm:raw                          
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\eace46fd0930                        
+                             b9d2.tex                                          
+[06/08/26 13:14:38] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(20) + 4 =                   
+                             64' (id: unique000). Using                        
+                             fallback to root group.                           
+[06/08/26 13:14:39] INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3569116744_488                         
+                             591190.mp4'                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+MARGIN WARNING: legend
+[06/08/26 13:14:40] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3258548643_617                         
+                             16803.mp4'                                        
+[06/08/26 13:14:41] INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1879299972_286                         
+                             6240903.mp4'                                      
+                    INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3932249147_163                         
+                             2336319.mp4'                                      
+[06/08/26 13:14:42] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_4157600622_388                         
+                             1486888.mp4'                                      
+                    INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2514011427_388                         
+                             0155220.mp4'                                      
+                    INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3052040169_157                         
+                             2572698.mp4'                                      
+MARGIN WARNING: badge_sum
+                    INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3518250448_396                         
+                             8805434.mp4'                                      
+[06/08/26 13:14:44] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:15:09] INFO     Transcription:  Let n represent the     base.py:98
+                             position number of a term in the                  
+                             sequence. Use the common difference and           
+                             adjustment to build the general term.             
+                             Substitute any position number n to               
+                             find that term directly.                          
+[06/08/26 13:15:10] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\let                         
+                             -n-represent-the-position                         
+                             -number-of-a-term-in-543d                         
+                             f584.mp3 to .wav                                  
+[06/08/26 13:15:11] INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_4117096140_748                         
+                             914322.mp4'                                       
+                    INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_143963270_9529                         
+                             59876.mp4'                                        
+[06/08/26 13:15:12] INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2856724010_261                         
+                             0736253.mp4'                                      
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1077999781_154                         
+                             9201940.mp4'                                      
+[06/08/26 13:15:14] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3246388595_307                         
+                             5098793.mp4'                                      
+[06/08/26 13:15:15] INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_1186581001_306                         
+                             7487544.mp4'                                      
+                    INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3932249147_243                         
+                             1038567.mp4'                                      
+[06/08/26 13:15:16] INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_160826331_2205                         
+                             080705.mp4'                                       
+                    INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_2514011427_396                         
+                             2858055.mp4'                                      
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\partial_mov                         
+                             ie_files\GeneralTermScene                         
+                             \948293694_3052040169_366                         
+                             6718337.mp4'                                      
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 13:15:22] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\genera                         
+                             l_term\480p15\GeneralTerm                         
+                             Scene.mp4'                                        
+                                                                               
+                    INFO     Rendered GeneralTermScene             scene.py:278
+                             Played 88 animations                              
+
+FAILED BOOKMARKS: ['bk_hello']
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+Animation 0: FadeIn(Text('General Terms for Sequences')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                
+
+Animation 3: FadeOut(Text('General Terms for Sequences')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                 
+
+Animation 6: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/46.25 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/46.25 [00:07<?, ?sec/s]
+Transcribe:  54%|#####3    | 24.88/46.25 [00:31<00:27,  1.28s/sec]
+Transcribe: 100%|##########| 46.25/46.25 [00:53<00:00,  1.13s/sec]
+Transcribe: 100%|##########| 46.25/46.25 [00:53<00:00,  1.15s/sec]
+
+Animation 7: Create(VGroup of 4 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 8: FadeIn(VGroup of 4 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 10: FadeIn(VGroup of 4 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 12: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 15: _MethodAnimation(Rectangle), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 17: _MethodAnimation(Rectangle), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 19: _MethodAnimation(Rectangle), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 22: _MethodAnimation(Rectangle), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 23: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 25: FadeIn(VGroup of 7 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/23.06 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/23.06 [00:06<?, ?sec/s]
+Transcribe: 100%|##########| 23.06/23.06 [00:26<00:00,  1.15s/sec]
+Transcribe: 100%|##########| 23.06/23.06 [00:26<00:00,  1.15s/sec]
+
+Animation 27: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 28: Create(VGroup of 4 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 29: FadeIn(VGroup of 4 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 31: Create(VGroup of 6 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 33: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 35: FadeIn(VGroup of 5 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 37: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 38: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 40: FadeIn(VGroup of 4 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 42: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 45: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/6.86 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/6.86 [00:07<?, ?sec/s]
+Transcribe: 100%|##########| 6.86/6.86 [00:20<00:00,  2.94s/sec]
+Transcribe: 100%|##########| 6.86/6.86 [00:20<00:00,  2.94s/sec]
+
+Animation 46: FadeIn(Text('Sequence: 7, 10, 13, 16  —  Find the general term and the 20th term.')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                                          
+
+Animation 48: Create(VGroup of 4 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 49: FadeIn(VGroup of 4 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 50: FadeIn(VGroup of 4 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 51: FadeIn(Text('n = 20  =  ?')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 52: _MethodAnimation(VGroup of 2 submobjects), etc.:   0%|          | 0/15 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 53: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                           
+
+Transcribe:   0%|          | 0/20.4 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/20.4 [00:06<?, ?sec/s]
+Transcribe: 100%|##########| 20.4/20.4 [00:24<00:00,  1.22s/sec]
+Transcribe: 100%|##########| 20.4/20.4 [00:24<00:00,  1.22s/sec]
+
+Animation 55: FadeIn(MathTex('\\text{Common difference} = 3')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 57: _MethodAnimation(MathTex('\\text{Common difference} = 3')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                      
+
+Animation 59: _MethodAnimation(MathTex('\\text{Common difference} = 3')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                      
+
+Animation 61: _MethodAnimation(MathTex('\\text{Common difference} = 3')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                      
+
+Animation 63: FadeOut(MathTex('\\text{Common difference} = 3')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                             
+
+Animation 64: FadeIn(MathTex('\\text{General term: } 3n + 4')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 66: _MethodAnimation(MathTex('\\text{General term: } 3n + 4')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                      
+
+Animation 68: _MethodAnimation(MathTex('\\text{General term: } 3n + 4')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                      
+
+Animation 70: _MethodAnimation(MathTex('\\text{General term: } 3n + 4')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                      
+
+Animation 71: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 74: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 74: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 59.86it/s]
+                                                                                                    
+
+Animation 77: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.9 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/11.9 [00:07<?, ?sec/s]
+Transcribe: 100%|##########| 11.9/11.9 [00:23<00:00,  2.02s/sec]
+Transcribe: 100%|##########| 11.9/11.9 [00:23<00:00,  2.02s/sec]
+
+Animation 78: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 80: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 80: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 90.79it/s]
+                                                                                              
+
+Animation 82: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 85: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 85: FadeOut(VGroup of 2 submobjects), etc.:  42%|####1     | 5/12 [00:00<00:00, 44.20it/s]
+Animation 85: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 46.58it/s]
+                                                                                                     

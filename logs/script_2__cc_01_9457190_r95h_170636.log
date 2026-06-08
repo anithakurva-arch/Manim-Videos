@@ -1,0 +1,235 @@
+Manim Community v0.20.1
+
+[06/05/26 17:06:44] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\hel                         
+                             lo-students-imagine-you-r                         
+                             e-helping-organise-a-625d                         
+                             fe2c.mp3 to .wav                                  
+                    WARNING  Font Poppins not in ['Agency   text_mobject.py:464
+                             FB', 'Algerian', 'Arial',                         
+                             'Arial Rounded MT',                               
+                             'Bahnschrift', 'Baskerville                       
+                             Old Face', 'Bauhaus 93', 'Bell                    
+                             MT', 'Berlin Sans FB',                            
+                             'Bernard MT', 'Blackadder                         
+                             ITC', 'Bodoni MT', 'Bodoni MT                     
+                             Poster', 'Book Antiqua',                          
+                             'Bookman Old Style', 'Bradley                     
+                             Hand ITC', 'Britannic',                           
+                             'Broadway', 'Brush Script MT',                    
+                             'Calibri', 'Californian FB',                      
+                             'Calisto MT', 'Cambria',                          
+                             'Cambria Math', 'Candara',                        
+                             'Cascadia Code', 'Cascadia                        
+                             Mono', 'Castellar', 'Centaur',                    
+                             'Century', 'Century Gothic',                      
+                             'Century Schoolbook',                             
+                             'Chiller', 'Colonna MT',                          
+                             'Comic Sans MS', 'Consolas',                      
+                             'Constantia', 'Cooper',                           
+                             'Copperplate Gothic',                             
+                             'Corbel', 'Courier New',                          
+                             'Curlz MT', 'Cursive',                            
+                             'Dubai', 'Ebrima', 'Edwardian                     
+                             Script ITC', 'Elephant',                          
+                             'Engravers MT', 'Eras ITC',                       
+                             'Fantasy', 'Felix Titling',                       
+                             'Footlight MT', 'Forte',                          
+                             'Franklin Gothic', 'Franklin                      
+                             Gothic Book', 'Freestyle                          
+                             Script', 'French Script MT',                      
+                             'Gabriola', 'Gadugi',                             
+                             'Garamond', 'Georgia', 'Gigi',                    
+                             'Gill Sans', 'Gill Sans MT',                      
+                             'Gloucester MT', 'Goudy Old                       
+                             Style', 'Goudy Stout',                            
+                             'Haettenschweiler', 'Harlow                       
+                             Solid', 'Harrington', 'High                       
+                             Tower Text', 'Impact',                            
+                             'Imprint MT Shadow', 'Informal                    
+                             Roman', 'Ink Free', 'Javanese                     
+                             Text', 'Jokerman', 'Juice                         
+                             ITC', 'Kristen ITC', 'Kunstler                    
+                             Script', 'Leelawadee',                            
+                             'Leelawadee UI', 'Lucida                          
+                             Bright', 'Lucida Calligraphy',                    
+                             'Lucida Console', 'Lucida                         
+                             Fax', 'Lucida Handwriting',                       
+                             'Lucida Sans', 'Lucida Sans                       
+                             Typewriter', 'Lucida Sans                         
+                             Unicode', 'MS Gothic', 'MS                        
+                             PGothic', 'MS Reference Sans                      
+                             Serif', 'MS UI Gothic', 'MV                       
+                             Boli', 'Magneto', 'Maiandra                       
+                             GD', 'Malgun Gothic', 'Matura                     
+                             MT Script Capitals',                              
+                             'Microsoft Himalaya',                             
+                             'Microsoft JhengHei',                             
+                             'Microsoft JhengHei UI',                          
+                             'Microsoft New Tai Lue',                          
+                             'Microsoft PhagsPa',                              
+                             'Microsoft Sans Serif',                           
+                             'Microsoft Tai Le', 'Microsoft                    
+                             Uighur', 'Microsoft YaHei',                       
+                             'Microsoft YaHei UI',                             
+                             'Microsoft Yi Baiti',                             
+                             'MingLiU-ExtB',                                   
+                             'MingLiU_HKSCS-ExtB',                             
+                             'MingLiU_MSCS-ExtB',                              
+                             'Mistral', 'Modern No. 20',                       
+                             'Mongolian Baiti',                                
+                             'Monospace', 'Monotype                            
+                             Corsiva', 'Myanmar Text',                         
+                             'NSimSun', 'Niagara Engraved',                    
+                             'Niagara Solid', 'Nirmala                         
+                             Text', 'Nirmala UI', 'OCR A',                     
+                             'Old English Text MT', 'Onyx',                    
+                             'PMingLiU-ExtB', 'Palace                          
+                             Script MT', 'Palatino                             
+                             Linotype', 'Papyrus',                             
+                             'Parchment', 'Perpetua',                          
+                             'Perpetua Titling MT',                            
+                             'Playbill', 'Poor Richard',                       
+                             'Pristina', 'Rage', 'Ravie',                      
+                             'Rockwell', 'Sans', 'Sans                         
+                             Serif Collection',                                
+                             'Sans-Serif', 'Script MT',                        
+                             'Segoe Print', 'Segoe Script',                    
+                             'Segoe UI', 'Segoe UI Emoji',                     
+                             'Segoe UI Historic', 'Segoe UI                    
+                             Symbol', 'Segoe UI Variable                       
+                             Display', 'Segoe UI Variable                      
+                             Small', 'Segoe UI Variable                        
+                             Text', 'Serif', 'Showcard                         
+                             Gothic', 'SimSun',                                
+                             'SimSun-ExtB', 'SimSun-ExtG',                     
+                             'Sitka Banner', 'Sitka                            
+                             Display', 'Sitka Heading',                        
+                             'Sitka Small', 'Sitka                             
+                             Subheading', 'Sitka Text',                        
+                             'Snap ITC', 'Stencil',                            
+                             'Sylfaen', 'System-ui',                           
+                             'Tahoma', 'Tempus Sans ITC',                      
+                             'Times New Roman', 'Trebuchet                     
+                             MS', 'Tw Cen MT', 'Verdana',                      
+                             'Viner Hand ITC', 'Vivaldi',                      
+                             'Vladimir Script', 'Wide                          
+                             Latin', 'Yu Gothic', 'Yu                          
+                             Gothic UI'].                                      
+[06/05/26 17:06:52] INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\script                         
+                             _2__cc_01_9457190_r95h\72                         
+                             0p30\partial_movie_files\                         
+                             Script2Cc019457190Scene\2                         
+                             156817712_1502748954_6318                         
+                             29896.mp4'                                        
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
++--------------------- Traceback (most recent call last) ---------------------+
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\cli\render\c |
+| ommands.py:125 in render                                                    |
+|                                                                             |
+|   122             try:                                                      |
+|   123                 with tempconfig({}):                                  |
+|   124                     scene = SceneClass()                              |
+| > 125                     scene.render()                                    |
+|   126             except Exception:                                         |
+|   127                 error_console.print_exception()                       |
+|   128                 sys.exit(1)                                           |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\scene\scene. |
+| py:259 in render                                                            |
+|                                                                             |
+|    256         """                                                          |
+|    257         self.setup()                                                 |
+|    258         try:                                                         |
+| >  259             self.construct()                                         |
+|    260         except EndSceneEarlyException:                               |
+|    261             pass                                                     |
+|    262         except RerunSceneException:                                  |
+|                                                                             |
+| C:\Users\Coschool\manimations\scripts\script_2__cc_01_9457190_r95h.py:25 in |
+| construct                                                                   |
+|                                                                             |
+|    22         with self.voiceover(text="<bookmark mark='intro'/> Hello stud |
+|    23                                                                       |
+|    24             # Title and simple icons                                  |
+| >  25             title = Text("Evaluating Algebraic Expressions", font="Po |
+|    26             title.to_edge(UP)                                         |
+|    27                                                                       |
+|    28             # Simple table icon (rectangle)                           |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\text |
+| \text_mobject.py:516 in __init__                                            |
+|                                                                             |
+|    513         parsed_color: ManimColor = ManimColor(color) if color else V |
+|    514         file_name = self._text2svg(parsed_color.to_hex())            |
+|    515         PangoUtils.remove_last_M(file_name)                          |
+| >  516         super().__init__(                                            |
+|    517             file_name,                                               |
+|    518             fill_opacity=fill_opacity,                               |
+|    519             stroke_width=stroke_width,                               |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:150 in __init__                                              |
+|                                                                             |
+|   147             path_string_config = {}                                   |
+|   148         self.path_string_config = path_string_config                  |
+|   149                                                                       |
+| > 150         self.init_svg_mobject(use_svg_cache=use_svg_cache)            |
+|   151                                                                       |
+|   152         self.set_style(                                               |
+|   153             fill_color=fill_color,                                    |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:177 in init_svg_mobject                                      |
+|                                                                             |
+|   174                 self.id_to_vgroup_dict = mob.id_to_vgroup_dict        |
+|   175                 return                                                |
+|   176                                                                       |
+| > 177         self.generate_mobject()                                       |
+|   178         if use_svg_cache:                                             |
+|   179             SVG_HASH_TO_MOB_MAP[hash_val] = self.copy()               |
+|   180                                                                       |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:199 in generate_mobject                                      |
+|                                                                             |
+|   196     def generate_mobject(self) -> None:                               |
+|   197         """Parse the SVG and translate its elements to submobjects."" |
+|   198         file_path = self.get_file_path()                              |
+| > 199         element_tree = ET.parse(file_path)                            |
+|   200         new_tree = self.modify_xml_tree(element_tree)  # type: ignore |
+|   201         # Create a temporary svg file to dump modified svg to be pars |
+|   202         modified_file_path = file_path.with_name(f"{file_path.stem}_{ |
+|                                                                             |
+| C:\Users\Coschool\AppData\Local\Programs\Python\Python311\Lib\xml\etree\Ele |
+| mentTree.py:1219 in parse                                                   |
+|                                                                             |
+|   1216                                                                      |
+|   1217     """                                                              |
+|   1218     tree = ElementTree()                                             |
+| > 1219     tree.parse(source, parser)                                       |
+|   1220     return tree                                                      |
+|   1221                                                                      |
+|   1222                                                                      |
+|                                                                             |
+| C:\Users\Coschool\AppData\Local\Programs\Python\Python311\Lib\xml\etree\Ele |
+| mentTree.py:581 in parse                                                    |
+|                                                                             |
+|    578                     # can define an internal _parse_whole API for ef |
+|    579                     # It can be used to parse the whole source witho |
+|    580                     # it with chunks.                                |
+| >  581                     self._root = parser._parse_whole(source)         |
+|    582                     return self._root                                |
+|    583             while True:                                              |
+|    584                 data = source.read(65536)                            |
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+|                                                                             |
+| \u25b2                                                                           |
++-----------------------------------------------------------------------------+
+ParseError: no element found: line 1, column 0

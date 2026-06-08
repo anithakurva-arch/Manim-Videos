@@ -1,0 +1,1765 @@
+Manim Community v0.20.1
+
+[06/08/26 12:55:09] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:55:14] INFO     Transcription:  Expressions using       base.py:98
+                             letter numbers.                                   
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\exp                         
+                             ressions-using-letter-num                         
+                             bers-33cf64a1.mp3 to .wav                         
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\668060172_43                         
+                             0456556_631829896.mp4'                            
+[06/08/26 12:55:23] INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\668060172_28                         
+                             41753122_1666280314.mp4'                          
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\1263443165_1                         
+                             538943981_3998609284.mp4'                         
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\1263443165_3                         
+                             585970359_3559707137.mp4'                         
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\1263443165_1                         
+                             911705711_1218899341.mp4'                         
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\1263443165_2                         
+                             514011427_3968961708.mp4'                         
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_3196764103.mp4'                          
+[06/08/26 12:55:24] INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_95                         
+                             2167764_1814444762.mp4'                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\times\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\c31e11d831a6                        
+                             6789.tex                                          
+[06/08/26 12:55:29] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\1204719ca01a                        
+                             be8a.tex                                          
+[06/08/26 12:55:31] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:55:33] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:55:39] INFO     Transcription:  In arithmetic, we write base.py:98
+                             three times five with the                         
+                             multiplication symbol clearly between             
+                             them. But in algebra, once a letter               
+                             number is involved, we use a much                 
+                             cleaner convention. We simply leave out           
+                             the multiplication symbol all together.           
+                             Three times n is written as three n.              
+                             This is the standard way algebraic                
+                             products are written.                             
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\in-                         
+                             arithmetic-we-write-three                         
+                             -times-five-with-the-6f23                         
+                             e4c5.mp3 to .wav                                  
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_17                         
+                             87272962_1484250433.mp4'                          
+[06/08/26 12:55:40] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             49218481_2091712107.mp4'                          
+[06/08/26 12:55:41] INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_38                         
+                             02237796_3430031565.mp4'                          
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_14                         
+                             1734047_1026014323.mp4'                           
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_22                         
+                             11528242_1070617144.mp4'                          
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_64                         
+                             6091817_603063424.mp4'                            
+[06/08/26 12:55:42] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_35                         
+                             85970359_1187830106.mp4'                          
+                    INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_31                         
+                             67836764_1909268659.mp4'                          
+                    INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_35                         
+                             6836740_2940563908.mp4'                           
+[06/08/26 12:55:46] INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_34                         
+                             6614419_1783537360.mp4'                           
+                    INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_34                         
+                             41540949_4006724333.mp4'                          
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_35                         
+                             85970359_3616580684.mp4'                          
+[06/08/26 12:55:47] INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_29                         
+                             42646000_3788779354.mp4'                          
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_826264514.mp4'                           
+                    INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_3459823501.mp4'                          
+[06/08/26 12:55:48] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_95                         
+                             2167764_784826624.mp4'                            
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}7\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\6661f7046456                        
+                             d1d6.tex                                          
+[06/08/26 12:55:49] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}x\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\47f10d0ee4f5                        
+                             b90a.tex                                          
+[06/08/26 12:55:50] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:55:52] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:55:57] INFO     Transcription:  When we write a number  base.py:98
+                             directly next to a letter number, with            
+                             no symbol between them, it means they             
+                             are multiplied. The number in front is            
+                             called the coefficient. The letter                
+                             number is called the variable. So in              
+                             the term 7x, 7 is the coefficient, and            
+                             x is the variable.                                
+[06/08/26 12:55:58] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\whe                         
+                             n-we-write-a-number-direc                         
+                             tly-next-to-a-letter-85f1                         
+                             2cb8.mp3 to .wav                                  
+                    INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_18                         
+                             85441001_1928394092.mp4'                          
+[06/08/26 12:55:59] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_41                         
+                             17318927_2684099753.mp4'                          
+                    INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_22                         
+                             68728766_2312424552.mp4'                          
+[06/08/26 12:56:02] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_87                         
+                             4668451_3995399621.mp4'                           
+[06/08/26 12:56:03] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_32                         
+                             36780575_4254982331.mp4'                          
+                    INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_14                         
+                             58615460_2507844250.mp4'                          
+[06/08/26 12:56:06] INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_38                         
+                             07235516_2908031560.mp4'                          
+                    INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_21                         
+                             39962215_2888210100.mp4'                          
+                    INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_32                         
+                             48746377_3895592872.mp4'                          
+[06/08/26 12:56:07] INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_1428243731.mp4'                          
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_62                         
+                             5365474_2421800275.mp4'                           
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_1896951854.mp4'                          
+                    INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_63                         
+                             173206_3402984012.mp4'                            
+[06/08/26 12:56:08] INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             04789691_1862919623.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}= 7 \times                        
+                             x\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\b44f4d39130d                        
+                             6452.tex                                          
+[06/08/26 12:56:09] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '= 7 \times                    
+                             x' (id: unique000). Using                         
+                             fallback to root group.                           
+[06/08/26 12:56:10] INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_17                         
+                             17694643_127700290.mp4'                           
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_35                         
+                             20454070_3826007665.mp4'                          
+[06/08/26 12:56:11] INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_33                         
+                             94500337_2802660981.mp4'                          
+                    INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_13                         
+                             15420522_1987046012.mp4'                          
+                    INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_91963716.mp4'                            
+                    INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_1997678986.mp4'                          
+[06/08/26 12:56:12] INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_95                         
+                             2167764_657202309.mp4'                            
+[06/08/26 12:56:14] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:56:17] INFO     Transcription:  The coefficient always  base.py:98
+                             comes first. We write 5y, not y5.                 
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -coefficient-always-comes                         
+                             -first-we-write-five-y-11                         
+                             322c82.mp3 to .wav                                
+[06/08/26 12:56:20] INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_18                         
+                             57852906_2583885042.mp4'                          
+[06/08/26 12:56:21] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_10                         
+                             01750266_3476867310.mp4'                          
+[06/08/26 12:56:23] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}y\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\1803ff2fb3e9                        
+                             a13f.tex                                          
+[06/08/26 12:56:24] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'y' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:56:27] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'y' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_38                         
+                             07121158_1498480218.mp4'                          
+[06/08/26 12:56:28] INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_40                         
+                             37501494_2712201543.mp4'                          
+                    INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_54                         
+                             2646962_4090633378.mp4'                           
+[06/08/26 12:56:29] INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_33                         
+                             94500337_3248026643.mp4'                          
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_36                         
+                             64241806_2499853321.mp4'                          
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_926503531.mp4'                           
+                    INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_1136192596.mp4'                          
+[06/08/26 12:56:30] INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_95                         
+                             2167764_22364073.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-1\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\fccfec806ecd                        
+                             b4d2.tex                                          
+[06/08/26 12:56:31] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-1' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:56:35] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:56:39] INFO     Transcription:  By convention, when the base.py:98
+                             coefficient is 1, we do not write it.             
+                             So x means 1 times x. And negative 1              
+                             times x is written simply as negative             
+                             x.                                                
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\by-                         
+                             convention-when-the-coeff                         
+                             icient-is-one-we-do-26dcc                         
+                             0e0.mp3 to .wav                                   
+                    INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_28                         
+                             19106647_3901634525.mp4'                          
+                    INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_3311416828.mp4'                          
+[06/08/26 12:56:40] INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_94                         
+                             7449750_2818763112.mp4'                           
+                    INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_3247200250.mp4'                          
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_29                         
+                             42553831_2340913362.mp4'                          
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_2454595039.mp4'                          
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_28                         
+                             60249495_3885575534.mp4'                          
+[06/08/26 12:56:41] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_35                         
+                             36083600_732721951.mp4'                           
+                    INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_15                         
+                             88101040_137557714.mp4'                           
+                    INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_709535251.mp4'                           
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_13                         
+                             26868016_3161493259.mp4'                          
+                    INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_4277372599.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-x\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a325072c819b                        
+                             a510.tex                                          
+[06/08/26 12:56:43] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_32                         
+                             29299054_2305075363.mp4'                          
+                    INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_1307951730.mp4'                          
+                    INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_28                         
+                             58859059_1707310992.mp4'                          
+[06/08/26 12:56:44] INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             22820065_253126463.mp4'                           
+                    INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_33                         
+                             94500337_1798529027.mp4'                          
+                    INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_38                         
+                             30163158_1943815219.mp4'                          
+                    INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_473394158.mp4'                           
+                    INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_3910809440.mp4'                          
+                    INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_95                         
+                             2167764_2772608750.mp4'                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 12:56:45] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'b' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:56:47] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:56:51] INFO     Transcription:  This also applies to    base.py:98
+                             products of two letter numbers. When we           
+                             write A, B, it means A times B. No                
+                             multiplication symbol is needed.                  
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\thi                         
+                             s-also-applies-to-product                         
+                             s-of-two-letter-aa4d4609.                         
+                             mp3 to .wav                                       
+                    INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_22                         
+                             51585074_2062487699.mp4'                          
+[06/08/26 12:56:53] INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_85                         
+                             0289911_1087697488.mp4'                           
+                    INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_21                         
+                             47754355_3897640525.mp4'                          
+                    INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_60                         
+                             381514_3877207566.mp4'                            
+                    INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_38                         
+                             78363363_3427230439.mp4'                          
+[06/08/26 12:56:54] INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_17                         
+                             5905628_397737179.mp4'                            
+                    INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_3325377230.mp4'                          
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'b' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_11                         
+                             25379083_1233139986.mp4'                          
+                    INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             18836581_1277940978.mp4'                          
+                    INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             40788466_1299777370.mp4'                          
+[06/08/26 12:56:55] INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_21                         
+                             7218845_1795351262.mp4'                           
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_33                         
+                             94500337_4019820287.mp4'                          
+[06/08/26 12:56:56] INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             85439788_3333145168.mp4'                          
+                    INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_3026816548.mp4'                          
+                    INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_1131318239.mp4'                          
+[06/08/26 12:56:59] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_15                         
+                             46636312_3075790173.mp4'                          
+[06/08/26 12:57:01] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:57:04] INFO     Transcription:  rewrite the following   base.py:98
+                             using standard algebraic notation, 4              
+                             times m, 1 times p, negative 1 times q,           
+                             and a times b.                                    
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\rew                         
+                             rite-the-following-using-                         
+                             standard-algebraic-0effb8                         
+                             ca.mp3 to .wav                                    
+                    INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_11                         
+                             03605567_2615606643.mp4'                          
+[06/08/26 12:57:09] INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_41                         
+                             36679618_2637207174.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times                          
+                             m\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\233329f16676                        
+                             ecb6.tex                                          
+[06/08/26 12:57:10] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times m'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1 \times                          
+                             p\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\82d35cfd9813                        
+                             a402.tex                                          
+[06/08/26 12:57:12] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1 \times p'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-1 \times                         
+                             q\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a6f84c54ce5a                        
+                             394a.tex                                          
+[06/08/26 12:57:14] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-1 \times                     
+                             q' (id: unique000). Using                         
+                             fallback to root group.                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}a \times                          
+                             b\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\555b0509125c                        
+                             0fdd.tex                                          
+[06/08/26 12:57:15] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a \times b'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_18                         
+                             25391041_3357483662.mp4'                          
+[06/08/26 12:57:16] INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_20                         
+                             13852120_4211897746.mp4'                          
+[06/08/26 12:57:17] INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_39                         
+                             82259676_1129701362.mp4'                          
+[06/08/26 12:57:18] INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_26                         
+                             1419319_3895539752.mp4'                           
+[06/08/26 12:57:19] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:57:23] INFO     Transcription:  4 times m is written as base.py:98
+                             4m. 1 times p is written simply as p.             
+                             Negative 1 times q is written as                  
+                             negative q. A times b is written as a             
+                             b.                                                
+[06/08/26 12:57:24] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\fou                         
+                             r-times-m-is-written-as-f                         
+                             our-m-one-times-p-is-d532                         
+                             29cb.mp3 to .wav                                  
+                    INFO     Animation 98 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             51705409_2103560870.mp4'                          
+                    INFO     Animation 99 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_16                         
+                             0075242_187855021.mp4'                            
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times m                        
+                             \;\rightarrow\;                                   
+                             4m\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a28f7e2a8987                        
+                             924f.tex                                          
+[06/08/26 12:57:26] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times m                    
+                             \;\rightarrow\; 4m' (id:                          
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:57:27] INFO     Animation 100 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_24                         
+                             30264261_762556815.mp4'                           
+[06/08/26 12:57:28] INFO     Animation 101 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_27                         
+                             79182779_3365402862.mp4'                          
+                    INFO     Animation 102 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             72438783_1234983314.mp4'                          
+[06/08/26 12:57:29] INFO     Animation 103 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_18                         
+                             39938860_2173148959.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}1 \times p                        
+                             \;\rightarrow\;                                   
+                             p\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\27005c44fe07                        
+                             ec50.tex                                          
+[06/08/26 12:57:31] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1 \times p                    
+                             \;\rightarrow\; p' (id:                           
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 104 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_19                         
+                             02825038_3600251439.mp4'                          
+[06/08/26 12:57:32] INFO     Animation 105 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_23                         
+                             68649881_451991069.mp4'                           
+[06/08/26 12:57:33] INFO     Animation 106 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_22                         
+                             57537631_3498911912.mp4'                          
+                    INFO     Animation 107 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_49                         
+                             4668376_2317214775.mp4'                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-1 \times                         
+                             q \;\rightarrow\;                                 
+                             -q\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\4fc2bd969c2d                        
+                             b3c2.tex                                          
+[06/08/26 12:57:36] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-1 \times q                   
+                             \;\rightarrow\; -q' (id:                          
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:57:37] INFO     Animation 108 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_35                         
+                             3775388_1877636842.mp4'                           
+                    INFO     Animation 109 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_41                         
+                             35939624_4152323252.mp4'                          
+[06/08/26 12:57:38] INFO     Animation 110 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_32                         
+                             68334870_1562613855.mp4'                          
+[06/08/26 12:57:39] INFO     Animation 111 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_28                         
+                             6071551_2609991696.mp4'                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}a \times b                        
+                             \;\rightarrow\;                                   
+                             ab\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\bd49ed0a8934                        
+                             85b8.tex                                          
+[06/08/26 12:57:40] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'a \times b                    
+                             \;\rightarrow\; ab' (id:                          
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:57:41] INFO     Animation 112 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_37                         
+                             77693272_1918640100.mp4'                          
+                    INFO     Animation 113 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_32                         
+                             46795986_3998374411.mp4'                          
+[06/08/26 12:57:42] INFO     Animation 114 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_65                         
+                             5596533_3888476077.mp4'                           
+                    INFO     Animation 115 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_14                         
+                             33877407_2736810726.mp4'                          
+[06/08/26 12:57:43] INFO     Animation 116 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_73                         
+                             5682994_910649313.mp4'                            
+                    INFO     Animation 117 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_492175178.mp4'                           
+                    INFO     Animation 118 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_3102459559.mp4'                          
+[06/08/26 12:57:46] INFO     Animation 119 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_11                         
+                             17470482_2555462578.mp4'                          
+[06/08/26 12:57:48] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:57:51] INFO     Transcription:  In algebra, the         base.py:98
+                             multiplication symbol is omitted                  
+                             between a number and a variable. The              
+                             coefficient comes first, followed by              
+                             the variable. A coefficient of one is             
+                             not written. Negative one is shown only           
+                             as a negative sign.                               
+[06/08/26 12:57:52] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\in-                         
+                             algebra-the-multiplicatio                         
+                             n-symbol-is-omitted-a3a16                         
+                             57d.mp3 to .wav                                   
+[06/08/26 12:57:59] INFO     Animation 120 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_49                         
+                             2026067_901698360.mp4'                            
+[06/08/26 12:58:00] INFO     Animation 121 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_12                         
+                             62834853_1877003882.mp4'                          
+[06/08/26 12:58:03] INFO     Animation 122 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_40                         
+                             59457553_890281932.mp4'                           
+[06/08/26 12:58:04] INFO     Animation 123 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_39                         
+                             76123472_283271239.mp4'                           
+[06/08/26 12:58:07] INFO     Animation 124 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_39                         
+                             96364520_2878226108.mp4'                          
+[06/08/26 12:58:08] INFO     Animation 125 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_19                         
+                             37577312_1758715461.mp4'                          
+[06/08/26 12:58:09] INFO     Animation 126 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_39                         
+                             32249147_899702378.mp4'                           
+[06/08/26 12:58:11] INFO     Animation 127 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_14                         
+                             143812_2875979682.mp4'                            
+                    INFO     Animation 128 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_25                         
+                             14011427_3593821956.mp4'                          
+                    INFO     Animation 129 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\parti                         
+                             al_movie_files\AlgebraicP                         
+                             roductsScene\948293694_30                         
+                             52040169_604261672.mp4'                           
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 12:58:18] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+[06/08/26 12:58:19] INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\algebr                         
+                             aic_products\480p15\Algeb                         
+                             raicProductsScene.mp4'                            
+                                                                               
+                    INFO     The partial movie         scene_file_writer.py:874
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 31 oldest                         
+                             file(s). You can change                           
+                             this behaviour by                                 
+                             changing max_files_cached                         
+                             in config.                                        
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\algebra                         
+                             ic_products\480p15\Algebr                         
+                             aicProductsScene.srt                              
+                    INFO     Rendered AlgebraicProductsScene       scene.py:278
+                             Played 130 animations                             
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/2.71 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/2.71 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 2.71/2.71 [00:03<00:00,  1.47s/sec]
+Transcribe: 100%|##########| 2.71/2.71 [00:03<00:00,  1.47s/sec]
+
+Animation 1: FadeIn(Text('Expressions Using Letter Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 4: FadeOut(Text('Expressions Using Letter Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/21.55 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/21.55 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 21.55/21.55 [00:03<00:00,  6.27sec/s]
+Transcribe: 100%|##########| 21.55/21.55 [00:03<00:00,  6.27sec/s]
+
+Animation 8: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 9: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 11: FadeOut(MathTex('\\times')), etc.:   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 13: _MethodAnimation(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 15: _MethodAnimation(VGroup of 2 submobjects):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 17: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 17: FadeIn(VGroup of 2 submobjects): 100%|##########| 11/11 [00:00<00:00, 106.52it/s]
+                                                                                               
+
+Animation 20: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 20: FadeOut(VGroup of 2 submobjects), etc.:  42%|####1     | 5/12 [00:00<00:00, 42.79it/s]
+Animation 20: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 39.54it/s]
+                                                                                                     
+
+Animation 23: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/18.46 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/18.46 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 18.46/18.46 [00:03<00:00,  5.74sec/s]
+Transcribe: 100%|##########| 18.46/18.46 [00:03<00:00,  5.74sec/s]
+
+Animation 24: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 26: _MethodAnimation(MathTex('7')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 27: FadeIn(Arrow), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 29: _MethodAnimation(MathTex('x')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 30: FadeIn(Arrow), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 32: _MethodAnimation(MathTex('7')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 34: _MethodAnimation(MathTex('7')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 36: _MethodAnimation(MathTex('x')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 38: FadeIn(Arrow), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                         
+
+Animation 41: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 41: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 89.83it/s]
+                                                                                                     
+
+Animation 44: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/6.0 [00:00<?, ?sec/s]
+                                                    
+
+Transcribe:   0%|          | 0/6.0 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 6.0/6.0 [00:02<00:00,  2.97sec/s]
+Transcribe: 100%|##########| 6.0/6.0 [00:02<00:00,  2.97sec/s]
+
+Animation 45: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 45: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 90.02it/s]
+                                                                                              
+
+Animation 47: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 48: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 51: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 51: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 72.05it/s]
+                                                                                                    
+
+Animation 54: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.35 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/11.35 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 11.35/11.35 [00:02<00:00,  4.59sec/s]
+Transcribe: 100%|##########| 11.35/11.35 [00:02<00:00,  4.59sec/s]
+
+Animation 55: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 57: _MethodAnimation(MathTex('1')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 59: FadeOut(MathTex('1')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 61: _MethodAnimation(MathTex('x')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 63: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 65: _MethodAnimation(MathTex('-1')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 67: FadeOut(MathTex('-1')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 69: _MethodAnimation(MathTex('-x')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 72: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 75: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/9.72 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/9.72 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 9.72/9.72 [00:02<00:00,  3.74sec/s]
+Transcribe: 100%|##########| 9.72/9.72 [00:02<00:00,  3.74sec/s]
+
+Animation 77: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 79: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 81: _MethodAnimation(MathTex('\\times')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 83: FadeOut(MathTex('\\times')), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 85: _MethodAnimation(VGroup of 2 submobjects):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 63.05it/s]
+                                                                                                    
+
+Animation 91: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/9.12 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/9.12 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 9.12/9.12 [00:02<00:00,  3.84sec/s]
+Transcribe: 100%|##########| 9.12/9.12 [00:02<00:00,  3.84sec/s]
+
+Animation 93: FadeIn(Text('Rewrite using standard algebraic notation:')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                               
+
+Animation 94: FadeIn(VGroup of 4 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 96: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 97: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 97: _MethodAnimation(VGroup of 4 submobjects), etc.:  73%|#######3  | 11/15 [00:00<00:00, 109.96it/s]
+                                                                                                               
+
+Transcribe:   0%|          | 0/12.65 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.65 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.65/12.65 [00:02<00:00,  4.55sec/s]
+Transcribe: 100%|##########| 12.65/12.65 [00:02<00:00,  4.55sec/s]
+
+Animation 99: _MethodAnimation(MathTex('4 \\times m')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                             
+
+Animation 100: FadeIn(MathTex('4 \\times m \\;\\rightarrow\\; 4m')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                           
+
+Animation 101: _MethodAnimation(MathTex('4 \\times m')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 103: _MethodAnimation(MathTex('1 \\times p')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 104: _MethodAnimation(MathTex('4 \\times m \\;\\rightarrow\\; 4m')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                           
+
+Animation 105: _MethodAnimation(MathTex('1 \\times p')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 107: _MethodAnimation(MathTex('-1 \\times q')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 108: _MethodAnimation(MathTex('4 \\times m \\;\\rightarrow\\; 4m')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                           
+
+Animation 109: _MethodAnimation(MathTex('-1 \\times q')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 111: _MethodAnimation(MathTex('a \\times b')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 112: _MethodAnimation(MathTex('4 \\times m \\;\\rightarrow\\; 4m')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                           
+
+Animation 113: _MethodAnimation(MathTex('a \\times b')):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 116: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 116: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 90.42it/s]
+                                                                                                      
+
+Animation 119: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                     
+
+Transcribe:   0%|          | 0/14.21 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/14.21 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 14.21/14.21 [00:02<00:00,  5.48sec/s]
+Transcribe: 100%|##########| 14.21/14.21 [00:02<00:00,  5.48sec/s]
+
+Animation 120: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 120: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 52.33it/s]
+                                                                                              
+
+Animation 122: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 122: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 63.98it/s]
+                                                                                              
+
+Animation 124: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 124: FadeIn(VGroup of 2 submobjects):  82%|########1 | 9/11 [00:00<00:00, 88.50it/s]
+                                                                                              
+
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.:  17%|#6        | 2/12 [00:00<00:00, 13.47it/s]
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 13.88it/s]
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 14.90it/s]
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 15.80it/s]
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 16.16it/s]
+Animation 127: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 16.56it/s]
+                                                                                                      

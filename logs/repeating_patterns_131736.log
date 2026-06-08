@@ -1,0 +1,1400 @@
+Manim Community v0.20.1
+
+[06/08/26 13:17:42] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\exp                         
+                             ressions-using-letter-num                         
+                             bers-33cf64a1.mp3 to .wav                         
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\668060172_43                         
+                             0456556_631829896.mp4'                            
+                    INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\668060172_28                         
+                             41753122_1666280314.mp4'                          
+[06/08/26 13:17:43] INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\1263443165_1                         
+                             538943981_3998609284.mp4'                         
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\1263443165_3                         
+                             585970359_3559707137.mp4'                         
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\1263443165_1                         
+                             911705711_1218899341.mp4'                         
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\1263443165_2                         
+                             514011427_3968961708.mp4'                         
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_3196764103.mp4'                          
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_95                         
+                             2167764_1814444762.mp4'                           
+[06/08/26 13:17:47] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:17:52] INFO     Transcription:  Think about traffic     base.py:98
+                             lights. They cycle through red, amber             
+                             and green. Then repeat. If someone asks           
+                             what color is showing at the 40th                 
+                             change, you would not count all 40. You           
+                             would spot the repeating cycle and use            
+                             it cleverly.                                      
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\thi                         
+                             nk-about-traffic-lights-t                         
+                             hey-cycle-through-red-71a                         
+                             534fa.mp3 to .wav                                 
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_18                         
+                             34270682_2513012035.mp4'                          
+[06/08/26 13:17:53] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_15                         
+                             51251526_3345306079.mp4'                          
+                    INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_338481077.mp4'                           
+                    INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_79                         
+                             7966740_1690941674.mp4'                           
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_1199614764.mp4'                          
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_14                         
+                             58942414_975617801.mp4'                           
+                    INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_97                         
+                             8105254_2932804653.mp4'                           
+                    INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_41                         
+                             57875647_2697068173.mp4'                          
+[06/08/26 13:17:54] INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_47                         
+                             0269204_437065221.mp4'                            
+                    INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_11                         
+                             52638894_2712870158.mp4'                          
+[06/08/26 13:17:55] INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_14                         
+                             6593186_2924632880.mp4'                           
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_21                         
+                             66574054_1695215373.mp4'                          
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_35                         
+                             85970359_4053787475.mp4'                          
+[06/08/26 13:17:56] INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_23                         
+                             60674907_2949933316.mp4'                          
+                    INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_3459823501.mp4'                          
+                    INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_36849975.mp4'                            
+                    INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_95                         
+                             2167764_2870174442.mp4'                           
+[06/08/26 13:18:01] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:18:04] INFO     Transcription:  a repeating pattern     base.py:98
+                             cycles through a fixed set of elements            
+                             before starting again. The number of              
+                             elements in one complete cycle is                 
+                             called the cycle length. For the                  
+                             traffic light, the cycle length is                
+                             three.                                            
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-r                         
+                             epeating-pattern-cycles-t                         
+                             hrough-a-fixed-set-of-a2d                         
+                             cfecf.mp3 to .wav                                 
+                    INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_18                         
+                             43340241_3821361000.mp4'                          
+                    INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_19                         
+                             3125524_878409920.mp4'                            
+[06/08/26 13:18:05] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_39                         
+                             31103706_3144449042.mp4'                          
+                    INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_39                         
+                             24987713_3290365852.mp4'                          
+[06/08/26 13:18:06] INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_14                         
+                             45132846_3761447596.mp4'                          
+                    INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_22                         
+                             9131566_2068965404.mp4'                           
+                    INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_35                         
+                             85970359_940476655.mp4'                           
+[06/08/26 13:18:07] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             66153637_3841920927.mp4'                          
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_3635737488.mp4'                          
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_861955386.mp4'                           
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_95                         
+                             2167764_2291016431.mp4'                           
+[06/08/26 13:18:09] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:18:14] INFO     Transcription:  To find which element   base.py:98
+                             appears at position n, we divide n by             
+                             the cycle length and look at the                  
+                             remainder. The remainder tells us                 
+                             exactly where we are within the current           
+                             cycle. A remainder of one points to the           
+                             first element, a remainder of two to              
+                             the second, and so on. If the remainder           
+                             is zero, we have landed exactly on the            
+                             last element of the cycle.                        
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\to-                         
+                             find-which-element-appear                         
+                             s-at-position-n-we-3fd0d6                         
+                             ea.mp3 to .wav                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\div\speci                        
+                             al{dvisvgm:raw </g>} to                           
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\dd605f9c5961                        
+                             627f.tex                                          
+[06/08/26 13:18:16] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\div' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{cycl                        
+                             e                                                 
+                             length}\special{dvisvgm:ra                        
+                             w </g>} to                                        
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\04320df7b3de                        
+                             aac0.tex                                          
+[06/08/26 13:18:17] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\text{cycle                   
+                             length}' (id: unique000). Using                   
+                             fallback to root group.                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\rightarrow' (id: unique000).                    
+                             Using fallback to root group.                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{rema                        
+                             inder}\special{dvisvgm:raw                        
+                              </g>} to                                         
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\c909fff7fb63                        
+                             8312.tex                                          
+[06/08/26 13:18:18] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{remainder}' (id:                           
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_22                         
+                             0630401_1945956544.mp4'                           
+[06/08/26 13:18:19] INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_16                         
+                             8538282_1602134386.mp4'                           
+                    INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             65435905_3591647121.mp4'                          
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_50                         
+                             9694469_783930886.mp4'                            
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_28                         
+                             22095975_451846137.mp4'                           
+                    INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_24                         
+                             77333113_1927384610.mp4'                          
+[06/08/26 13:18:20] INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_29                         
+                             71599977_2612186172.mp4'                          
+                    INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_27                         
+                             96437424_1864748670.mp4'                          
+                    INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_34                         
+                             55985397_3133740537.mp4'                          
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_1020185886.mp4'                          
+[06/08/26 13:18:21] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_19                         
+                             83251322_771110638.mp4'                           
+[06/08/26 13:18:22] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_32                         
+                             00428631_3263686599.mp4'                          
+                    INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_26                         
+                             2524805_4080545930.mp4'                           
+[06/08/26 13:18:23] INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             67171725_585012003.mp4'                           
+[06/08/26 13:18:24] INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_93                         
+                             3237731_3094907301.mp4'                           
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_42                         
+                             51110434_3294096276.mp4'                          
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_33                         
+                             94500337_3148189212.mp4'                          
+[06/08/26 13:18:25] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_76                         
+                             1803664_4137328913.mp4'                           
+                    INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_926503531.mp4'                           
+                    INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_1136192596.mp4'                          
+                    INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_95                         
+                             2167764_22364073.mp4'                             
+                    INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_17                         
+                             89289030_3901634525.mp4'                          
+[06/08/26 13:18:27] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:18:30] INFO     Transcription:  For the traffic light,  base.py:98
+                             position 40. Divide 40 by 3. 40 divided           
+                             by 3 gives 13 with a remainder of 1.              
+                             Remainter 1 means we are at the first             
+                             element, red.                                     
+[06/08/26 13:18:31] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\for                         
+                             -the-traffic-light-positi                         
+                             on-forty-divide-forty-551                         
+                             ed9c8.mp3 to .wav                                 
+                    INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_22                         
+                             04198666_2793353113.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Posi                        
+                             tion: }                                           
+                             40\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\fa1c09916c4c                        
+                             30db.tex                                          
+[06/08/26 13:18:32] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{Position: } 40' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_92                         
+                             292525_1086011772.mp4'                            
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_10                         
+                             18258614_3144275513.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}40 \div                           
+                             3\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e566185fb3f2                        
+                             fdff.tex                                          
+[06/08/26 13:18:34] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '40 \div 3'                    
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_42                         
+                             90305844_956004317.mp4'                           
+                    INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_13                         
+                             78578506_445545693.mp4'                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}= 13                              
+                             \text{ remainder }                                
+                             1\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\21510de1bf6e                        
+                             060d.tex                                          
+[06/08/26 13:18:35] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '= 13 \text{                   
+                             remainder } 1' (id: unique000).                   
+                             Using fallback to root group.                     
+                    INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_31                         
+                             31005244_2186288324.mp4'                          
+[06/08/26 13:18:36] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_91                         
+                             7219683_3600231275.mp4'                           
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_18                         
+                             71159112_3972918685.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{rem                         
+                             } 1 \rightarrow                                   
+                             \text{RED}\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\4a0b3788a832                        
+                             a673.tex                                          
+[06/08/26 13:18:37] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\text{rem }                   
+                             1 \rightarrow \text{RED}' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:18:38] INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_16                         
+                             90802188_343046987.mp4'                           
+                    INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_33                         
+                             87408904_3713266327.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Posi                        
+                             tion 40} =                                        
+                             \text{Red}\special{dvisvgm                        
+                             :raw </g>} to                                     
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\5219ae756da3                        
+                             0415.tex                                          
+[06/08/26 13:18:39] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{Position 40} =                             
+                             \text{Red}' (id: unique000).                      
+                             Using fallback to root group.                     
+                    INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_14                         
+                             7764091_3010254115.mp4'                           
+[06/08/26 13:18:40] INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_36                         
+                             90602684_2498637781.mp4'                          
+                    INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_33                         
+                             94500337_791119076.mp4'                           
+                    INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_51                         
+                             0529943_3271920565.mp4'                           
+                    INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_1368113411.mp4'                          
+                    INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_2096219389.mp4'                          
+[06/08/26 13:18:41] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_15                         
+                             46636312_1049342105.mp4'                          
+[06/08/26 13:18:43] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:18:48] INFO     Transcription:  A pattern repeats,      base.py:98
+                             circle, square, triangle, then repeats.           
+                             What shape appears at position 29?                
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-p                         
+                             attern-repeats-circle-squ                         
+                             are-triangle-then-de393d8                         
+                             6.mp3 to .wav                                     
+[06/08/26 13:18:49] INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_10                         
+                             70650444_4115664445.mp4'                          
+                    INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_19                         
+                             59483977_1275424352.mp4'                          
+                    INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_34                         
+                             12591869_2490510134.mp4'                          
+[06/08/26 13:18:50] INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_38                         
+                             40013660_1130783650.mp4'                          
+                    INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_15                         
+                             27618053_2144954997.mp4'                          
+                    INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_39                         
+                             82259676_1052834468.mp4'                          
+[06/08/26 13:18:51] INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_29                         
+                             79869044_670517144.mp4'                           
+[06/08/26 13:18:53] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:18:56] INFO     Transcription:  Cycle length is 3.      base.py:98
+                             Divide 29 by 3. Nine groups of 3 with a           
+                             remainder of 2. Remain 2 corresponds to           
+                             the second element, square. The shape             
+                             at position 29 is a square.                       
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\cyc                         
+                             le-length-is-three-divide                         
+                             -twenty-nine-by-three-c1c                         
+                             30f72.mp3 to .wav                                 
+                    INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_14                         
+                             07352271_2762222731.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Cycl                        
+                             e length} =                                       
+                             3\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e76d4cec8080                        
+                             906f.tex                                          
+[06/08/26 13:18:58] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\text{Cycle                   
+                             length} = 3' (id: unique000).                     
+                             Using fallback to root group.                     
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_10                         
+                             50200647_1750197957.mp4'                          
+                    INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_36                         
+                             5616391_514338476.mp4'                            
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}29 \div 3                         
+                             = 9 \text{ remainder }                            
+                             2\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\453230c2dec2                        
+                             2e99.tex                                          
+[06/08/26 13:19:00] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '29 \div 3 =                   
+                             9 \text{ remainder } 2' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_13                         
+                             64439956_3469567973.mp4'                          
+[06/08/26 13:19:01] INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_17                         
+                             71134103_2437483671.mp4'                          
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_24                         
+                             16305135_2804399570.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{rem                         
+                             } 2 \rightarrow \text{2nd}                        
+                             \rightarrow\text{Square}\s                        
+                             pecial{dvisvgm:raw </g>}                          
+                             to                                                
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\62774855a752                        
+                             03a5.tex                                          
+[06/08/26 13:19:03] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\text{rem }                   
+                             2 \rightarrow \text{2nd}                          
+                             \rightarrow\text{Square}' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_87                         
+                             637750_4083103038.mp4'                            
+[06/08/26 13:19:04] INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_54                         
+                             8481359_3687259400.mp4'                           
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}\text{Posi                        
+                             tion 29} =                                        
+                             \text{Square}\special{dvis                        
+                             vgm:raw </g>} to                                  
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\de31f65bdbb3                        
+                             2c93.tex                                          
+[06/08/26 13:19:05] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\text{Position 29} =                             
+                             \text{Square}' (id: unique000).                   
+                             Using fallback to root group.                     
+[06/08/26 13:19:06] INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_20                         
+                             03315800_2106411089.mp4'                          
+                    INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_21                         
+                             43992969_3214703561.mp4'                          
+[06/08/26 13:19:07] INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_14                         
+                             33877407_3012644843.mp4'                          
+[06/08/26 13:19:08] INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_15                         
+                             88577233_978513740.mp4'                           
+                    INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_1932531448.mp4'                          
+                    INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_3026816548.mp4'                          
+                    INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_11                         
+                             17470482_1330165816.mp4'                          
+[06/08/26 13:19:10] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:19:13] INFO     Transcription:  A repeating pattern     base.py:98
+                             cycles through a fixed set of elements            
+                             before starting again. The remainder              
+                             tells us exactly where we are within              
+                             the current cycle. If the remainder is            
+                             zero, we have landed exactly on the               
+                             last element of the cycle.                        
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\a-r                         
+                             epeating-pattern-cycles-t                         
+                             hrough-a-fixed-set-of-ebf                         
+                             d512d.mp3 to .wav                                 
+[06/08/26 13:19:14] INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_22                         
+                             63287494_1475051626.mp4'                          
+[06/08/26 13:19:15] INFO     Animation 98 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_16                         
+                             28414621_2321879717.mp4'                          
+[06/08/26 13:19:16] INFO     Animation 99 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_62                         
+                             1907872_1299888426.mp4'                           
+                    INFO     Animation 100 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_59                         
+                             5280212_237733880.mp4'                            
+[06/08/26 13:19:17] INFO     Animation 101 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_21                         
+                             44987897_1277646090.mp4'                          
+[06/08/26 13:19:18] INFO     Animation 102 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_42                         
+                             71965523_3221034017.mp4'                          
+[06/08/26 13:19:19] INFO     Animation 103 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_39                         
+                             32249147_3052497902.mp4'                          
+[06/08/26 13:19:20] INFO     Animation 104 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_15                         
+                             71450998_3861933031.mp4'                          
+                    INFO     Animation 105 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_25                         
+                             14011427_3794025218.mp4'                          
+                    INFO     Animation 106 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\parti                         
+                             al_movie_files\RepeatingP                         
+                             atternsScene\948293694_30                         
+                             52040169_1884216954.mp4'                          
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 13:19:25] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\repeat                         
+                             ing_patterns\480p15\Repea                         
+                             tingPatternsScene.mp4'                            
+                                                                               
+                    INFO     The partial movie         scene_file_writer.py:874
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 8 oldest                          
+                             file(s). You can change                           
+                             this behaviour by                                 
+                             changing max_files_cached                         
+                             in config.                                        
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\repeati                         
+                             ng_patterns\480p15\Repeat                         
+                             ingPatternsScene.srt                              
+                    INFO     Rendered RepeatingPatternsScene       scene.py:278
+                             Played 107 animations                             
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+Animation 1: FadeIn(Text('Expressions Using Letter Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 4: FadeOut(Text('Expressions Using Letter Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                      
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/14.16 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/14.16 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 14.16/14.16 [00:03<00:00,  3.60sec/s]
+Transcribe: 100%|##########| 14.16/14.16 [00:03<00:00,  3.60sec/s]
+
+Animation 9: FadeIn(Circle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 11: FadeIn(Circle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                         
+
+Animation 13: FadeIn(Circle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                         
+
+Animation 14: FadeIn(CurvedArrow):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 16: FadeIn(Text('40th?')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                          
+
+Animation 18: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 21: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 24: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/12.17 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.17 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.17/12.17 [00:01<00:00,  6.63sec/s]
+Transcribe: 100%|##########| 12.17/12.17 [00:01<00:00,  6.63sec/s]
+
+Animation 25: FadeIn(VGroup of 6 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 27: FadeIn(Brace), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                         
+
+Animation 29: FadeIn(Text('3')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                      
+
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 35: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/21.55 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/21.55 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 21.55/21.55 [00:02<00:00,  7.85sec/s]
+Transcribe: 100%|##########| 21.55/21.55 [00:02<00:00,  7.84sec/s]
+
+Animation 36: FadeIn(MathTex('n')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                         
+
+Animation 37: FadeIn(MathTex('\\div')), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 38: FadeIn(MathTex('\\rightarrow')), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 40: FadeIn(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 41: FadeIn(Arrow):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                  
+
+Animation 43: _MethodAnimation(Circle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                             
+
+Animation 44: FadeIn(Text('rem 1')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                          
+
+Animation 46: _MethodAnimation(Circle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                             
+
+Animation 47: FadeIn(Text('rem 2')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                          
+
+Animation 49: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 50: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 53: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 53: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 71.71it/s]
+                                                                                                    
+
+Animation 56: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 57: FadeIn(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                           
+
+Transcribe:   0%|          | 0/13.92 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/13.92 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.92/13.92 [00:01<00:00,  6.97sec/s]
+Transcribe: 100%|##########| 13.92/13.92 [00:01<00:00,  6.97sec/s]
+
+Animation 59: FadeIn(MathTex('\\text{Position: } 40')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                              
+
+Animation 61: _MethodAnimation(MathTex('\\text{Position: } 40')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 63: _MethodAnimation(MathTex('\\text{Position: } 40')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 65: _MethodAnimation(Circle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                             
+
+Animation 66: _MethodAnimation(MathTex('\\text{Position: } 40')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                              
+
+Animation 68: FadeIn(MathTex('\\text{Position 40} = \\text{Red}')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                          
+
+Animation 71: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 74: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/7.1 [00:00<?, ?sec/s]
+                                                    
+
+Transcribe:   0%|          | 0/7.1 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 7.1/7.1 [00:01<00:00,  4.80sec/s]
+Transcribe: 100%|##########| 7.1/7.1 [00:01<00:00,  4.80sec/s]
+
+Animation 75: FadeIn(Text('What shape appears at position 29?')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                       
+
+Animation 77: FadeIn(VGroup of 6 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 78: FadeIn(Text('29th?')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                          
+
+Animation 80: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 81: _MethodAnimation(VGroup of 6 submobjects), etc.:   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 81: _MethodAnimation(VGroup of 6 submobjects), etc.:  93%|#########3| 14/15 [00:00<00:00, 125.23it/s]
+                                                                                                               
+
+Transcribe:   0%|          | 0/12.17 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.17 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.17/12.17 [00:02<00:00,  5.95sec/s]
+Transcribe: 100%|##########| 12.17/12.17 [00:02<00:00,  5.95sec/s]
+
+Animation 83: FadeIn(MathTex('\\text{Cycle length} = 3')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                 
+
+Animation 85: _MethodAnimation(MathTex('\\text{Cycle length} = 3')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                 
+
+Animation 87: _MethodAnimation(Square):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                             
+
+Animation 88: _MethodAnimation(MathTex('\\text{Cycle length} = 3')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                                 
+
+Animation 90: _MethodAnimation(MathTex('\\text{Cycle length} = 3')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 90: _MethodAnimation(MathTex('\\text{Cycle length} = 3')), etc.: 100%|##########| 11/11 [00:00<00:00, 107.79it/s]
+                                                                                                                           
+
+Animation 93: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 93: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 62.65it/s]
+                                                                                                    
+
+Animation 96: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/12.77 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.77 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 12.77/12.77 [00:02<00:00,  5.78sec/s]
+Transcribe: 100%|##########| 12.77/12.77 [00:02<00:00,  5.78sec/s]
+
+Animation 97: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 97: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 96.41it/s]
+                                                                                              
+
+Animation 99: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 101: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 101: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 97.68it/s]
+                                                                                               
+
+Animation 104: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 104: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 35.91it/s]
+Animation 104: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 38.01it/s]
+                                                                                                     

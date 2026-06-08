@@ -1,0 +1,104 @@
+1
+00:00:00,000 --> 00:00:02,300
+Expressions Using Letter Numbers.
+
+2
+00:00:04,400 --> 00:00:08,174
+Think about traffic lights — they cycle through red, amber, and
+
+3
+00:00:08,274 --> 00:00:11,926
+green, then repeat. If someone asks what colour is showing at
+
+4
+00:00:12,026 --> 00:00:15,678
+the fortieth change, you would not count all forty. You would
+
+5
+00:00:15,778 --> 00:00:18,508
+spot the repeating cycle, and use it cleverly.
+
+6
+00:00:20,600 --> 00:00:25,907
+A repeating pattern cycles through a fixed set of elements before starting
+
+7
+00:00:26,007 --> 00:00:30,656
+again. The number of elements in one complete cycle is called the
+
+8
+00:00:30,756 --> 00:00:35,260
+cycle length. For the traffic light, the cycle length is three.
+
+9
+00:00:37,333 --> 00:00:41,770
+To find which element appears at position n, we divide n by the cycle
+
+10
+00:00:41,870 --> 00:00:46,899
+length, and look at the remainder. The remainder tells us exactly where we are
+
+11
+00:00:46,999 --> 00:00:51,831
+within the current cycle. A remainder of one points to the first element, a
+
+12
+00:00:51,931 --> 00:00:56,302
+remainder of two to the second, and so on. If the remainder is zero,
+
+13
+00:00:56,402 --> 00:00:59,985
+we have landed exactly on the last element of the cycle.
+
+14
+00:01:02,866 --> 00:01:06,782
+For the traffic light — position forty. Divide forty by
+
+15
+00:01:06,882 --> 00:01:11,310
+three. Forty divided by three gives thirteen, with a remainder
+
+16
+00:01:11,410 --> 00:01:14,742
+of one. Remainder one means we are at the first
+
+17
+00:01:14,842 --> 00:01:18,174
+element — red. The fortieth position shows red.
+
+18
+00:01:20,333 --> 00:01:23,813
+A pattern repeats — circle, square, triangle —
+
+19
+00:01:23,913 --> 00:01:28,249
+then repeats. What shape appears at position twenty-nine?
+
+20
+00:01:29,866 --> 00:01:34,710
+Cycle length is three. Divide twenty-nine by three — nine groups of
+
+21
+00:01:34,810 --> 00:01:39,948
+three, with a remainder of two. Remainder two corresponds to the second
+
+22
+00:01:40,048 --> 00:01:44,670
+element — square. The shape at position twenty-nine is a square.
+
+23
+00:01:47,133 --> 00:01:51,301
+A repeating pattern cycles through a fixed set of elements before
+
+24
+00:01:51,401 --> 00:01:55,635
+starting again. The remainder tells us exactly where we are within
+
+25
+00:01:55,735 --> 00:01:59,509
+the current cycle. If the remainder is zero, we have landed
+
+26
+00:01:59,609 --> 00:02:02,201
+exactly on the last element of the cycle.
+

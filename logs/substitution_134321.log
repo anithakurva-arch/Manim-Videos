@@ -1,0 +1,1131 @@
+Manim Community v0.20.1
+
+[06/08/26 13:43:33] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\hel                         
+                             lo-students-e058bfc4.mp3                          
+                             to .wav                                           
+WARNING: bookmark 'bk_hello' not found
+[06/08/26 13:43:39] INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\668060172_1731901696_22                         
+                             3132457.mp4'                                      
+                    INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\1263443165_749635571_37                         
+                             34590779.mp4'                                     
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\1263443165_3585970359_4                         
+                             227897544.mp4'                                    
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\1263443165_368555939_39                         
+                             67248062.mp4'                                     
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\1263443165_2514011427_3                         
+                             278671325.mp4'                                    
+[06/08/26 13:43:40] INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3052040169_39                         
+                             68961708.mp4'                                     
+MARGIN WARNING: badge_concept
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3798881226_69                         
+                             0584945.mp4'                                      
+[06/08/26 13:43:42] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:44:21] INFO     Transcription:  Suppose your pocket     base.py:98
+                             money each week is calculated as 5                
+                             times the number of chores completed              
+                             plus 10 rupees. If you completed 6                
+                             chores this week, you simply replace              
+                             the unknown with 6 and calculate. This            
+                             process, replacing a letter number with           
+                             a specific value to find the result, is           
+                             called substitution.                              
+[06/08/26 13:44:22] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sup                         
+                             pose-your-pocket-money-ea                         
+                             ch-week-is-calculated-0e8                         
+                             15011.mp3 to .wav                                 
+[06/08/26 13:44:26] INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_4078310229_54                         
+                             2369123.mp4'                                      
+[06/08/26 13:44:27] INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_873579220_778                         
+                             39426.mp4'                                        
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:44:28] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'c' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '10' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_11017894_2641                         
+                             54153.mp4'                                        
+                    INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_686102994_368                         
+                             7161057.mp4'                                      
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:44:29] INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_4102227496_36                         
+                             87161057.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}= 5 \times                        
+                             6 + 10 =                                          
+                             40\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\5124ac8fd613                        
+                             e7b7.tex                                          
+[06/08/26 13:44:31] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '= 5 \times                    
+                             6 + 10 = 40' (id: unique000).                     
+                             Using fallback to root group.                     
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2653590256_19                         
+                             35211818.mp4'                                     
+[06/08/26 13:44:32] INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2924883763_18                         
+                             49129964.mp4'                                     
+[06/08/26 13:44:33] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_173936599_106                         
+                             2684345.mp4'                                      
+[06/08/26 13:44:37] INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2960622901_30                         
+                             47199751.mp4'                                     
+[06/08/26 13:44:38] INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3362682803_29                         
+                             21799718.mp4'                                     
+[06/08/26 13:44:39] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:45:31] INFO     Transcription:  To evaluate an          base.py:98
+                             expression by substitution, follow                
+                             three steps. Write the expression                 
+                             clearly. Replace every letter number              
+                             with its given value. Then simplify               
+                             using the correct order of operations.            
+                             Brackets first, then multiplication and           
+                             division, then addition and                       
+                             subtraction. Showing each step clearly            
+                             matters. It allows you to check your              
+                             working and justify your reasoning. A             
+                             correct result with no working shown              
+                             cannot be verified.                               
+[06/08/26 13:45:32] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\to-                         
+                             evaluate-an-expression-by                         
+                             -substitution-follow-15f0                         
+                             b4ed.mp3 to .wav                                  
+                    INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1453272379_22                         
+                             45831186.mp4'                                     
+[06/08/26 13:45:34] INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_961903025_307                         
+                             4824357.mp4'                                      
+[06/08/26 13:45:35] INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_792431578_921                         
+                             255044.mp4'                                       
+[06/08/26 13:45:39] INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1608962218_13                         
+                             14630197.mp4'                                     
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3320291772_82                         
+                             1151805.mp4'                                      
+[06/08/26 13:45:40] INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2776246897_57                         
+                             5577042.mp4'                                      
+[06/08/26 13:45:41] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2861235104_81                         
+                             8164540.mp4'                                      
+[06/08/26 13:45:44] INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2378639711_38                         
+                             12343915.mp4'                                     
+[06/08/26 13:45:45] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3427873308_40                         
+                             77351270.mp4'                                     
+[06/08/26 13:45:46] INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3017556484_36                         
+                             54143393.mp4'                                     
+[06/08/26 13:45:47] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_365744232_219                         
+                             2661539.mp4'                                      
+                    INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1425141679_70                         
+                             3845554.mp4'                                      
+[06/08/26 13:45:48] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:46:14] INFO     Transcription:  For example, to         base.py:98
+                             evaluate 5x-3 when x equals 4, replace            
+                             x with 4. 5 times 4 minus 3 equals 20             
+                             minus 3, which equals 17.                         
+[06/08/26 13:46:15] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\for                         
+                             -example-to-evaluate-five                         
+                             -x-minus-three-when-x-541                         
+                             eeff8.mp3 to .wav                                 
+                    INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3750843216_27                         
+                             4084119.mp4'                                      
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_4223741095_10                         
+                             38564282.mp4'                                     
+[06/08/26 13:46:16] INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_984743751_389                         
+                             9923556.mp4'                                      
+                    INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1433622820_33                         
+                             16329932.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_599861440_331                         
+                             6329932.mp4'                                      
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_887195957_318                         
+                             9810619.mp4'                                      
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '20' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:46:17] INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3022336978_79                         
+                             3366175.mp4'                                      
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}17\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a62c397c89d8                        
+                             09bf.tex                                          
+[06/08/26 13:46:18] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '17' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1133843114_39                         
+                             97145868.mp4'                                     
+[06/08/26 13:46:19] INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2659937050_25                         
+                             16338381.mp4'                                     
+                    INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2046886367_92                         
+                             7411673.mp4'                                      
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2514011427_51                         
+                             7939000.mp4'                                      
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3052040169_41                         
+                             80480787.mp4'                                     
+MARGIN WARNING: badge_q
+                    INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2812216769_26                         
+                             51153749.mp4'                                     
+[06/08/26 13:46:22] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:46:48] INFO     Transcription:  Evaluate the expression base.py:98
+                             4p plus 3q minus 2 when p equals 5 and            
+                             q equals 3.                                       
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\eva                         
+                             luate-the-expression-four                         
+                             -p-plus-three-q-minus-557                         
+                             06bdb.mp3 to .wav                                 
+                    INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1897818075_49                         
+                             2861577.mp4'                                      
+[06/08/26 13:46:52] INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_145166996_221                         
+                             1219502.mp4'                                      
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4p\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\507f1eed3e24                        
+                             0095.tex                                          
+[06/08/26 13:46:53] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4p' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3q\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\41c415eb010c                        
+                             54a8.tex                                          
+[06/08/26 13:46:55] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3q' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2437667621_20                         
+                             72353882.mp4'                                     
+[06/08/26 13:46:58] INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1431366325_21                         
+                             95562996.mp4'                                     
+[06/08/26 13:46:59] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2804376750_30                         
+                             64245976.mp4'                                     
+[06/08/26 13:47:00] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_317402712_242                         
+                             3199964.mp4'                                      
+                    INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_384613381_357                         
+                             8156643.mp4'                                      
+[06/08/26 13:47:02] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:47:41] INFO     Transcription:  Replace P with 5 and Q  base.py:98
+                             with 3. 4 times 5 plus 3 times 3 minus            
+                             2. 20 plus 9 minus 2. The answer is 27.           
+                             Now write each step clearly. The                  
+                             substitution first, then the                      
+                             multiplication, then the addition and             
+                             subtraction. This justifies every part            
+                             of your working.                                  
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\rep                         
+                             lace-p-with-five-and-q-wi                         
+                             th-three-four-times-b4d20                         
+                             eae.mp3 to .wav                                   
+[06/08/26 13:47:42] INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1251304281_30                         
+                             39496813.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4(5) +                            
+                             3(3) -                                            
+                             2\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\ce198e4ab4b3                        
+                             deeb.tex                                          
+[06/08/26 13:47:43] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4(5) + 3(3)                   
+                             - 2' (id: unique000). Using                       
+                             fallback to root group.                           
+[06/08/26 13:47:44] INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2216336767_38                         
+                             070622.mp4'                                       
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3793061275_24                         
+                             89993892.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}20 + 9 -                          
+                             2\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\5e0bdd4add2d                        
+                             e3ae.tex                                          
+[06/08/26 13:47:46] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '20 + 9 - 2'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 13:47:47] INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3003836494_31                         
+                             47378226.mp4'                                     
+[06/08/26 13:47:48] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2157782805_33                         
+                             07167049.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}29 -                              
+                             2\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\07f25df86a28                        
+                             87ae.tex                                          
+[06/08/26 13:47:50] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '29 - 2'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1390341009_34                         
+                             33741466.mp4'                                     
+[06/08/26 13:47:51] INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1046691359_22                         
+                             85137216.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}=                                 
+                             27\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d0fc9fdaf7e7                        
+                             22a9.tex                                          
+[06/08/26 13:47:53] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '= 27' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1012384824_40                         
+                             33116941.mp4'                                     
+[06/08/26 13:47:54] INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2828566548_94                         
+                             809898.mp4'                                       
+[06/08/26 13:47:56] INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2265537861_21                         
+                             19148772.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}p\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\c73cb848e3c2                        
+                             79e2.tex                                          
+[06/08/26 13:47:58] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'p' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:47:59] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}q\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\0aaa488ad4bc                        
+                             2243.tex                                          
+[06/08/26 13:48:00] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'q' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+MARGIN WARNING: legend
+[06/08/26 13:48:02] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2957549580_29                         
+                             30627002.mp4'                                     
+[06/08/26 13:48:03] INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3903189632_27                         
+                             77546123.mp4'                                     
+[06/08/26 13:48:04] INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3932249147_41                         
+                             23840862.mp4'                                     
+[06/08/26 13:48:06] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2750945224_20                         
+                             44326499.mp4'                                     
+                    INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2514011427_92                         
+                             6503531.mp4'                                      
+                    INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3052040169_11                         
+                             36192596.mp4'                                     
+MARGIN WARNING: badge_sum
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3518250448_22                         
+                             364073.mp4'                                       
+[06/08/26 13:48:08] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:48:43] INFO     Transcription:  Substitution means      base.py:98
+                             replacing each letter number with its             
+                             given numerical value. Apply the                  
+                             correct order of operations after                 
+                             substituting. Show every step clearly             
+                             to justify and verify the result.                 
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sub                         
+                             stitution-means-replacing                         
+                             -each-letter-number-f77fd                         
+                             708.mp3 to .wav                                   
+[06/08/26 13:48:44] INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2251585074_66                         
+                             9323728.mp4'                                      
+[06/08/26 13:48:48] INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2916999383_38                         
+                             66763005.mp4'                                     
+[06/08/26 13:48:49] INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_995647194_233                         
+                             9076700.mp4'                                      
+[06/08/26 13:48:54] INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_1324819132_41                         
+                             90659799.mp4'                                     
+[06/08/26 13:48:55] INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_250144921_133                         
+                             3189986.mp4'                                      
+[06/08/26 13:48:59] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3891145456_21                         
+                             40252865.mp4'                                     
+[06/08/26 13:49:00] INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2611461461_30                         
+                             58857373.mp4'                                     
+[06/08/26 13:49:01] INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3932249147_20                         
+                             91764577.mp4'                                     
+[06/08/26 13:49:02] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2037585405_86                         
+                             3677268.mp4'                                      
+                    INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_2514011427_38                         
+                             80155220.mp4'                                     
+                    INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\partial_mov                         
+                             ie_files\SubstitutionScen                         
+                             e\948293694_3052040169_15                         
+                             72572698.mp4'                                     
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 13:49:11] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+[06/08/26 13:49:12] INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\substi                         
+                             tution\480p15\Substitutio                         
+                             nScene.mp4'                                       
+                                                                               
+                    INFO     Rendered SubstitutionScene            scene.py:278
+                             Played 77 animations                              
+
+FAILED BOOKMARKS: ['bk_hello']
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+Animation 0: FadeIn(Text('Substitution in Algebraic Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 0: FadeIn(Text('Substitution in Algebraic Expressions')):  58%|#####8    | 7/12 [00:00<00:00, 63.33it/s]
+                                                                                                                  
+
+Animation 3: FadeOut(Text('Substitution in Algebraic Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 3: FadeOut(Text('Substitution in Algebraic Expressions')):  92%|#########1| 11/12 [00:00<00:00, 100.65it/s]
+                                                                                                                     
+
+Animation 6: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/19.46 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/19.46 [00:07<?, ?sec/s]
+Transcribe: 100%|##########| 19.46/19.46 [00:37<00:00,  1.92s/sec]
+Transcribe: 100%|##########| 19.46/19.46 [00:37<00:00,  1.92s/sec]
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 7: FadeIn(VGroup of 2 submobjects): 100%|##########| 11/11 [00:00<00:00, 107.36it/s]
+                                                                                              
+
+Animation 9: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 10: _MethodAnimation(MathTex('c')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 11: ReplacementTransform(MathTex('c')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 12: FadeIn(MathTex('= 5 \\times 6 + 10 = 40')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                               
+
+Animation 14: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 15: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 15: FadeIn(VGroup of 2 submobjects):  36%|###6      | 4/11 [00:00<00:00, 37.89it/s]
+Animation 15: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 46.05it/s]
+                                                                                              
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/28.06 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/28.06 [00:09<?, ?sec/s]
+Transcribe: 100%|##########| 28.06/28.06 [00:48<00:00,  1.71s/sec]
+Transcribe: 100%|##########| 28.06/28.06 [00:48<00:00,  1.71s/sec]
+
+Animation 17: FadeOut(VGroup of 2 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 18: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 20: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 22: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 24: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 26: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 26: FadeOut(VGroup of 2 submobjects), etc.:  62%|######2   | 5/8 [00:00<00:00, 49.89it/s]
+                                                                                                   
+
+Animation 27: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.16 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/11.16 [00:08<?, ?sec/s]
+Transcribe: 100%|##########| 11.16/11.16 [00:24<00:00,  2.19s/sec]
+Transcribe: 100%|##########| 11.16/11.16 [00:24<00:00,  2.19s/sec]
+
+Animation 29: FadeOut(VGroup of 2 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 30: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 32: _MethodAnimation(MathTex('x')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 33: ReplacementTransform(MathTex('x')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                       
+
+Animation 35: FadeIn(VGroup of 4 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 36: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 38: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                            
+
+Animation 41: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/7.25 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/7.25 [00:08<?, ?sec/s]
+Transcribe: 100%|##########| 7.25/7.25 [00:25<00:00,  3.46s/sec]
+Transcribe: 100%|##########| 7.25/7.25 [00:25<00:00,  3.46s/sec]
+
+Animation 43: FadeIn(Text('Evaluate: 4p + 3q - 2,  p = 5,  q = 3')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                           
+
+Animation 44: FadeIn(VGroup of 5 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 45: FadeIn(Text('p = 5,   q = 3')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+
+Animation 47: _MethodAnimation(VGroup of 5 submobjects), etc.:   0%|          | 0/15 [00:00<?, ?it/s]
+Animation 47: _MethodAnimation(VGroup of 5 submobjects), etc.:  93%|#########3| 14/15 [00:00<00:00, 125.99it/s]
+                                                                                                               
+
+Animation 48: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 48: FadeOut(VGroup of 2 submobjects), etc.:  88%|########7 | 7/8 [00:00<00:00, 67.81it/s]
+                                                                                                   
+
+Transcribe:   0%|          | 0/19.25 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/19.25 [00:06<?, ?sec/s]
+Transcribe: 100%|##########| 19.25/19.25 [00:30<00:00,  1.61s/sec]
+Transcribe: 100%|##########| 19.25/19.25 [00:30<00:00,  1.61s/sec]
+
+Animation 50: FadeIn(MathTex('4(5) + 3(3) - 2')):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                        
+
+Animation 52: _MethodAnimation(MathTex('4(5) + 3(3) - 2')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 52: _MethodAnimation(MathTex('4(5) + 3(3) - 2')), etc.:  73%|#######2  | 8/11 [00:00<00:00, 77.59it/s]
+                                                                                                                
+
+Animation 54: _MethodAnimation(MathTex('4(5) + 3(3) - 2')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                        
+
+Animation 56: _MethodAnimation(MathTex('4(5) + 3(3) - 2')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                        
+
+Animation 58: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 59: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 62: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 62: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 20.83it/s]
+Animation 62: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 20.94it/s]
+Animation 62: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 24.02it/s]
+Animation 62: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 25.13it/s]
+                                                                                                     
+
+Animation 65: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/12.55 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/12.55 [00:12<?, ?sec/s]
+Transcribe: 100%|##########| 12.55/12.55 [00:33<00:00,  2.67s/sec]
+Transcribe: 100%|##########| 12.55/12.55 [00:33<00:00,  2.67s/sec]
+
+Animation 67: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 67: FadeIn(VGroup of 2 submobjects):  27%|##7       | 3/11 [00:00<00:00, 29.48it/s]
+Animation 67: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 28.60it/s]
+Animation 67: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 31.83it/s]
+                                                                                              
+
+Animation 69: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 69: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 45.00it/s]
+                                                                                             
+
+Animation 71: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 71: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 62.80it/s]
+                                                                                             
+
+Animation 74: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 74: FadeOut(VGroup of 2 submobjects), etc.:  42%|####1     | 5/12 [00:00<00:00, 41.97it/s]
+Animation 74: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 38.95it/s]
+                                                                                                     

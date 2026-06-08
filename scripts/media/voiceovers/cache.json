@@ -1,0 +1,2028 @@
+[
+  {
+    "input_text": "<bookmark mark=\"bk_title\"/>Expressions Using Letter Numbers.",
+    "input_data": {
+      "input_text": "Expressions Using Letter Numbers.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "expressions-using-letter-numbers-33cf64a1.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 200000,
+        "text_offset": 0,
+        "word_length": 12,
+        "text": " Expressions",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 8199999,
+        "text_offset": 12,
+        "word_length": 6,
+        "text": " using",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 11800000,
+        "text_offset": 18,
+        "word_length": 7,
+        "text": " letter",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 15400000,
+        "text_offset": 25,
+        "word_length": 9,
+        "text": " numbers.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " Expressions using letter numbers.",
+    "final_audio": "expressions-using-letter-numbers-33cf64a1.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_traffic\"/>Think about traffic lights \u2014 they cycle through red, amber, and green, then repeat. <bookmark mark=\"bk_forty\"/>If someone asks what colour is showing at the fortieth change, you would not count all forty. <bookmark mark=\"bk_clever\"/>You would spot the repeating cycle, and use it cleverly.",
+    "input_data": {
+      "input_text": "Think about traffic lights \u2014 they cycle through red, amber, and green, then repeat. If someone asks what colour is showing at the fortieth change, you would not count all forty. You would spot the repeating cycle, and use it cleverly.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "think-about-traffic-lights-they-cycle-through-red-71a534fa.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 1200000,
+        "text_offset": 0,
+        "word_length": 6,
+        "text": " Think",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 2400000,
+        "text_offset": 6,
+        "word_length": 6,
+        "text": " about",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 5000000,
+        "text_offset": 12,
+        "word_length": 8,
+        "text": " traffic",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 9200000,
+        "text_offset": 20,
+        "word_length": 8,
+        "text": " lights.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 19200000,
+        "text_offset": 28,
+        "word_length": 5,
+        "text": " They",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 20400000,
+        "text_offset": 33,
+        "word_length": 6,
+        "text": " cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 24400000,
+        "text_offset": 39,
+        "word_length": 8,
+        "text": " through",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 27200000,
+        "text_offset": 47,
+        "word_length": 5,
+        "text": " red,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 32599999,
+        "text_offset": 52,
+        "word_length": 7,
+        "text": " amber,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 37400000,
+        "text_offset": 59,
+        "word_length": 4,
+        "text": " and",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 38400000,
+        "text_offset": 63,
+        "word_length": 7,
+        "text": " green,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 45400000,
+        "text_offset": 70,
+        "word_length": 5,
+        "text": " then",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 46600000,
+        "text_offset": 75,
+        "word_length": 8,
+        "text": " repeat.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 58400000,
+        "text_offset": 83,
+        "word_length": 3,
+        "text": " If",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 59400000,
+        "text_offset": 86,
+        "word_length": 8,
+        "text": " someone",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 62400000,
+        "text_offset": 94,
+        "word_length": 5,
+        "text": " asks",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 65400000,
+        "text_offset": 99,
+        "word_length": 5,
+        "text": " what",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 68000000,
+        "text_offset": 104,
+        "word_length": 6,
+        "text": " color",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 71400000,
+        "text_offset": 110,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 73400000,
+        "text_offset": 113,
+        "word_length": 8,
+        "text": " showing",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 76000000,
+        "text_offset": 121,
+        "word_length": 3,
+        "text": " at",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 77800000,
+        "text_offset": 124,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 80399999,
+        "text_offset": 128,
+        "word_length": 5,
+        "text": " 40th",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 84400000,
+        "text_offset": 133,
+        "word_length": 8,
+        "text": " change,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 93400000,
+        "text_offset": 141,
+        "word_length": 4,
+        "text": " you",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 94400000,
+        "text_offset": 145,
+        "word_length": 6,
+        "text": " would",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 95600000,
+        "text_offset": 151,
+        "word_length": 4,
+        "text": " not",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 97200000,
+        "text_offset": 155,
+        "word_length": 6,
+        "text": " count",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 100000000,
+        "text_offset": 161,
+        "word_length": 4,
+        "text": " all",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 102600000,
+        "text_offset": 165,
+        "word_length": 4,
+        "text": " 40.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 113800000,
+        "text_offset": 169,
+        "word_length": 4,
+        "text": " You",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 114800000,
+        "text_offset": 173,
+        "word_length": 6,
+        "text": " would",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 116000000,
+        "text_offset": 179,
+        "word_length": 5,
+        "text": " spot",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 118800000,
+        "text_offset": 184,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 120800000,
+        "text_offset": 188,
+        "word_length": 10,
+        "text": " repeating",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 123800000,
+        "text_offset": 198,
+        "word_length": 6,
+        "text": " cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 128000000,
+        "text_offset": 204,
+        "word_length": 4,
+        "text": " and",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 132200000,
+        "text_offset": 208,
+        "word_length": 4,
+        "text": " use",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 134200000,
+        "text_offset": 212,
+        "word_length": 3,
+        "text": " it",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 135600000,
+        "text_offset": 215,
+        "word_length": 10,
+        "text": " cleverly.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " Think about traffic lights. They cycle through red, amber, and green, then repeat. If someone asks what color is showing at the 40th change, you would not count all 40. You would spot the repeating cycle and use it cleverly.",
+    "final_audio": "think-about-traffic-lights-they-cycle-through-red-71a534fa.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_repeating\"/>A repeating pattern cycles through a fixed set of elements before starting again. <bookmark mark=\"bk_cycle_length\"/>The number of elements in one complete cycle is called the cycle length. <bookmark mark=\"bk_three\"/>For the traffic light, the cycle length is three.",
+    "input_data": {
+      "input_text": "A repeating pattern cycles through a fixed set of elements before starting again. The number of elements in one complete cycle is called the cycle length. For the traffic light, the cycle length is three.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "a-repeating-pattern-cycles-through-a-fixed-set-of-a2dcfecf.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 200000,
+        "text_offset": 0,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 1200000,
+        "text_offset": 2,
+        "word_length": 10,
+        "text": " repeating",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 7000000,
+        "text_offset": 12,
+        "word_length": 8,
+        "text": " pattern",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 12600000,
+        "text_offset": 20,
+        "word_length": 7,
+        "text": " cycles",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 19200000,
+        "text_offset": 27,
+        "word_length": 3,
+        "text": " to",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 23200000,
+        "text_offset": 30,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 24400000,
+        "text_offset": 32,
+        "word_length": 6,
+        "text": " fixed",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 27599999,
+        "text_offset": 38,
+        "word_length": 4,
+        "text": " set",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 30800000,
+        "text_offset": 42,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 32000000,
+        "text_offset": 45,
+        "word_length": 9,
+        "text": " elements",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 34800000,
+        "text_offset": 54,
+        "word_length": 7,
+        "text": " before",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 43800000,
+        "text_offset": 61,
+        "word_length": 9,
+        "text": " starting",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 48600000,
+        "text_offset": 70,
+        "word_length": 7,
+        "text": " again.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 64800000,
+        "text_offset": 77,
+        "word_length": 4,
+        "text": " The",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 65800000,
+        "text_offset": 81,
+        "word_length": 7,
+        "text": " number",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 69800000,
+        "text_offset": 88,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 70800000,
+        "text_offset": 91,
+        "word_length": 9,
+        "text": " elements",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 74000000,
+        "text_offset": 100,
+        "word_length": 3,
+        "text": " in",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 77000000,
+        "text_offset": 103,
+        "word_length": 4,
+        "text": " one",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 79800000,
+        "text_offset": 107,
+        "word_length": 9,
+        "text": " complete",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 84600000,
+        "text_offset": 116,
+        "word_length": 6,
+        "text": " cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 89200000,
+        "text_offset": 122,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 95800000,
+        "text_offset": 125,
+        "word_length": 7,
+        "text": " called",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 98600000,
+        "text_offset": 132,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 100800000,
+        "text_offset": 136,
+        "word_length": 6,
+        "text": " cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 104400000,
+        "text_offset": 142,
+        "word_length": 8,
+        "text": " length.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 118200000,
+        "text_offset": 150,
+        "word_length": 4,
+        "text": " For",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 119200000,
+        "text_offset": 154,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 120399999,
+        "text_offset": 158,
+        "word_length": 8,
+        "text": " traffic",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 123200000,
+        "text_offset": 166,
+        "word_length": 7,
+        "text": " light,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 130000000,
+        "text_offset": 173,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 130800000,
+        "text_offset": 177,
+        "word_length": 6,
+        "text": " cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 133800000,
+        "text_offset": 183,
+        "word_length": 7,
+        "text": " length",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 136400000,
+        "text_offset": 190,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 139400000,
+        "text_offset": 193,
+        "word_length": 7,
+        "text": " three.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " a repeating pattern cycles to a fixed set of elements before starting again. The number of elements in one complete cycle is called the cycle length. For the traffic light, the cycle length is three.",
+    "final_audio": "a-repeating-pattern-cycles-through-a-fixed-set-of-a2dcfecf.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_divide\"/>To find which element appears at position n, we divide n by the cycle length, and look at the remainder. <bookmark mark=\"bk_remainder_tells\"/>The remainder tells us exactly where we are within the current cycle. <bookmark mark=\"bk_rem_one\"/>A remainder of one points to the first element, a remainder of two to the second, and so on. <bookmark mark=\"bk_rem_zero\"/>If the remainder is zero, we have landed exactly on the last element of the cycle.",
+    "input_data": {
+      "input_text": "To find which element appears at position n, we divide n by the cycle length, and look at the remainder. The remainder tells us exactly where we are within the current cycle. A remainder of one points to the first element, a remainder of two to the second, and so on. If the remainder is zero, we have landed exactly on the last element of the cycle.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "to-find-which-element-appears-at-position-n-we-3fd0d6ea.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 0,
+        "text_offset": 0,
+        "word_length": 3,
+        "text": " To",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 2800000,
+        "text_offset": 3,
+        "word_length": 5,
+        "text": " find",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 5400000,
+        "text_offset": 8,
+        "word_length": 6,
+        "text": " which",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 8600000,
+        "text_offset": 14,
+        "word_length": 8,
+        "text": " element",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 12800000,
+        "text_offset": 22,
+        "word_length": 8,
+        "text": " appears",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 17000000,
+        "text_offset": 30,
+        "word_length": 3,
+        "text": " at",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 21200000,
+        "text_offset": 33,
+        "word_length": 9,
+        "text": " position",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 24600000,
+        "text_offset": 42,
+        "word_length": 3,
+        "text": " n,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 33600000,
+        "text_offset": 45,
+        "word_length": 3,
+        "text": " we",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 34400000,
+        "text_offset": 48,
+        "word_length": 7,
+        "text": " divide",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 37800000,
+        "text_offset": 55,
+        "word_length": 2,
+        "text": " n",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 42200000,
+        "text_offset": 57,
+        "word_length": 3,
+        "text": " by",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 44200000,
+        "text_offset": 60,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 45599999,
+        "text_offset": 64,
+        "word_length": 6,
+        "text": " cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 49000000,
+        "text_offset": 70,
+        "word_length": 7,
+        "text": " length",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 56200000,
+        "text_offset": 77,
+        "word_length": 4,
+        "text": " and",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 57200000,
+        "text_offset": 81,
+        "word_length": 5,
+        "text": " look",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 59400000,
+        "text_offset": 86,
+        "word_length": 3,
+        "text": " at",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 61000000,
+        "text_offset": 89,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 62000000,
+        "text_offset": 93,
+        "word_length": 11,
+        "text": " remainder.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 75400000,
+        "text_offset": 104,
+        "word_length": 4,
+        "text": " The",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 76400000,
+        "text_offset": 108,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 79800000,
+        "text_offset": 118,
+        "word_length": 6,
+        "text": " tells",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 84000000,
+        "text_offset": 124,
+        "word_length": 3,
+        "text": " us",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 85800000,
+        "text_offset": 127,
+        "word_length": 8,
+        "text": " exactly",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 90399999,
+        "text_offset": 135,
+        "word_length": 6,
+        "text": " where",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 94600000,
+        "text_offset": 141,
+        "word_length": 3,
+        "text": " we",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 96199999,
+        "text_offset": 144,
+        "word_length": 4,
+        "text": " are",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 98200000,
+        "text_offset": 148,
+        "word_length": 7,
+        "text": " within",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 100800000,
+        "text_offset": 155,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 102400000,
+        "text_offset": 159,
+        "word_length": 8,
+        "text": " current",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 104800000,
+        "text_offset": 167,
+        "word_length": 7,
+        "text": " cycle.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 118600000,
+        "text_offset": 174,
+        "word_length": 2,
+        "text": " A",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 119600000,
+        "text_offset": 176,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 123000000,
+        "text_offset": 186,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 126199999,
+        "text_offset": 189,
+        "word_length": 4,
+        "text": " one",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 129000000,
+        "text_offset": 193,
+        "word_length": 7,
+        "text": " points",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 132600000,
+        "text_offset": 200,
+        "word_length": 3,
+        "text": " to",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 135200000,
+        "text_offset": 203,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 136000000,
+        "text_offset": 207,
+        "word_length": 6,
+        "text": " first",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 138400000,
+        "text_offset": 213,
+        "word_length": 9,
+        "text": " element,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 148600000,
+        "text_offset": 222,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 149600000,
+        "text_offset": 224,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 152400000,
+        "text_offset": 234,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 155600000,
+        "text_offset": 237,
+        "word_length": 4,
+        "text": " two",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 159000000,
+        "text_offset": 241,
+        "word_length": 3,
+        "text": " to",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 161600000,
+        "text_offset": 244,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 163000000,
+        "text_offset": 248,
+        "word_length": 8,
+        "text": " second,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 169600000,
+        "text_offset": 256,
+        "word_length": 4,
+        "text": " and",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 170600000,
+        "text_offset": 260,
+        "word_length": 3,
+        "text": " so",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 172600000,
+        "text_offset": 263,
+        "word_length": 4,
+        "text": " on.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 183400000,
+        "text_offset": 267,
+        "word_length": 3,
+        "text": " If",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 184400000,
+        "text_offset": 270,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 185400000,
+        "text_offset": 274,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 188400000,
+        "text_offset": 284,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 191400000,
+        "text_offset": 287,
+        "word_length": 6,
+        "text": " zero,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 197000000,
+        "text_offset": 293,
+        "word_length": 3,
+        "text": " we",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 198000000,
+        "text_offset": 296,
+        "word_length": 5,
+        "text": " have",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 199000000,
+        "text_offset": 301,
+        "word_length": 7,
+        "text": " landed",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 201600000,
+        "text_offset": 308,
+        "word_length": 8,
+        "text": " exactly",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 206200000,
+        "text_offset": 316,
+        "word_length": 3,
+        "text": " on",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 210400000,
+        "text_offset": 319,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 211600000,
+        "text_offset": 323,
+        "word_length": 5,
+        "text": " last",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 213800000,
+        "text_offset": 328,
+        "word_length": 8,
+        "text": " element",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 218200000,
+        "text_offset": 336,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 220200000,
+        "text_offset": 339,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 221400000,
+        "text_offset": 343,
+        "word_length": 7,
+        "text": " cycle.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " To find which element appears at position n, we divide n by the cycle length and look at the remainder. The remainder tells us exactly where we are within the current cycle. A remainder of one points to the first element, a remainder of two to the second, and so on. If the remainder is zero, we have landed exactly on the last element of the cycle.",
+    "final_audio": "to-find-which-element-appears-at-position-n-we-3fd0d6ea.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_pos40\"/>For the traffic light \u2014 position forty. <bookmark mark=\"bk_div40\"/>Divide forty by three. <bookmark mark=\"bk_result40\"/>Forty divided by three gives thirteen, with a remainder of one. <bookmark mark=\"bk_rem1_red\"/>Remainder one means we are at the first element \u2014 red. <bookmark mark=\"bk_answer40\"/>The fortieth position shows red.",
+    "input_data": {
+      "input_text": "For the traffic light \u2014 position forty. Divide forty by three. Forty divided by three gives thirteen, with a remainder of one. Remainder one means we are at the first element \u2014 red. The fortieth position shows red.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "for-the-traffic-light-position-forty-divide-forty-551ed9c8.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 1600000,
+        "text_offset": 0,
+        "word_length": 4,
+        "text": " for",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 3200000,
+        "text_offset": 4,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 5000000,
+        "text_offset": 8,
+        "word_length": 8,
+        "text": " traffic",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 9600000,
+        "text_offset": 16,
+        "word_length": 7,
+        "text": " light,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 21000000,
+        "text_offset": 23,
+        "word_length": 9,
+        "text": " position",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 24200000,
+        "text_offset": 32,
+        "word_length": 4,
+        "text": " 40,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 36400000,
+        "text_offset": 36,
+        "word_length": 7,
+        "text": " divide",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 38800000,
+        "text_offset": 43,
+        "word_length": 3,
+        "text": " 40",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 43200000,
+        "text_offset": 46,
+        "word_length": 3,
+        "text": " by",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 45199999,
+        "text_offset": 49,
+        "word_length": 3,
+        "text": " 3.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 57000000,
+        "text_offset": 52,
+        "word_length": 3,
+        "text": " 40",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 58800000,
+        "text_offset": 55,
+        "word_length": 8,
+        "text": " divided",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 63200000,
+        "text_offset": 63,
+        "word_length": 3,
+        "text": " by",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 66400000,
+        "text_offset": 66,
+        "word_length": 2,
+        "text": " 3",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 67600000,
+        "text_offset": 68,
+        "word_length": 6,
+        "text": " gives",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 69600000,
+        "text_offset": 74,
+        "word_length": 3,
+        "text": " 13",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 74400000,
+        "text_offset": 77,
+        "word_length": 5,
+        "text": " with",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 80399999,
+        "text_offset": 82,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 81600000,
+        "text_offset": 84,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 84800000,
+        "text_offset": 94,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 87800000,
+        "text_offset": 97,
+        "word_length": 3,
+        "text": " 1.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 99200000,
+        "text_offset": 100,
+        "word_length": 10,
+        "text": " Remainter",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 102400000,
+        "text_offset": 110,
+        "word_length": 2,
+        "text": " 1",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 104600000,
+        "text_offset": 112,
+        "word_length": 6,
+        "text": " means",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 107200000,
+        "text_offset": 118,
+        "word_length": 3,
+        "text": " we",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 109400000,
+        "text_offset": 121,
+        "word_length": 4,
+        "text": " are",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 110200000,
+        "text_offset": 125,
+        "word_length": 3,
+        "text": " at",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 111400000,
+        "text_offset": 128,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 113400000,
+        "text_offset": 132,
+        "word_length": 6,
+        "text": " first",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 114800000,
+        "text_offset": 138,
+        "word_length": 9,
+        "text": " element,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 122800000,
+        "text_offset": 147,
+        "word_length": 5,
+        "text": " red.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 131199999,
+        "text_offset": 152,
+        "word_length": 4,
+        "text": " The",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 133000000,
+        "text_offset": 156,
+        "word_length": 5,
+        "text": " 40th",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 137400000,
+        "text_offset": 161,
+        "word_length": 9,
+        "text": " position",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 139800000,
+        "text_offset": 170,
+        "word_length": 6,
+        "text": " shows",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 143600000,
+        "text_offset": 176,
+        "word_length": 5,
+        "text": " red.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " for the traffic light, position 40, divide 40 by 3. 40 divided by 3 gives 13 with a remainder of 1. Remainter 1 means we are at the first element, red. The 40th position shows red.",
+    "final_audio": "for-the-traffic-light-position-forty-divide-forty-551ed9c8.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_question\"/>A pattern repeats \u2014 circle, square, triangle \u2014 then repeats. <bookmark mark=\"bk_q29\"/>What shape appears at position twenty-nine?",
+    "input_data": {
+      "input_text": "A pattern repeats \u2014 circle, square, triangle \u2014 then repeats. What shape appears at position twenty-nine?",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "a-pattern-repeats-circle-square-triangle-then-de393d86.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 0,
+        "text_offset": 0,
+        "word_length": 2,
+        "text": " A",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 2600000,
+        "text_offset": 2,
+        "word_length": 8,
+        "text": " pattern",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 5800000,
+        "text_offset": 10,
+        "word_length": 9,
+        "text": " repeats,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 15400000,
+        "text_offset": 19,
+        "word_length": 8,
+        "text": " circle,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 22000000,
+        "text_offset": 27,
+        "word_length": 8,
+        "text": " square,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 29800000,
+        "text_offset": 35,
+        "word_length": 10,
+        "text": " triangle.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 39800000,
+        "text_offset": 45,
+        "word_length": 5,
+        "text": " Then",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 41400000,
+        "text_offset": 50,
+        "word_length": 9,
+        "text": " repeats.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 55199999,
+        "text_offset": 59,
+        "word_length": 5,
+        "text": " What",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 56600000,
+        "text_offset": 64,
+        "word_length": 6,
+        "text": " shape",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 59400000,
+        "text_offset": 70,
+        "word_length": 8,
+        "text": " appears",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 64200000,
+        "text_offset": 78,
+        "word_length": 3,
+        "text": " at",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 66400000,
+        "text_offset": 81,
+        "word_length": 9,
+        "text": " position",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 69400000,
+        "text_offset": 90,
+        "word_length": 4,
+        "text": " 29?",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " A pattern repeats, circle, square, triangle. Then repeats. What shape appears at position 29?",
+    "final_audio": "a-pattern-repeats-circle-square-triangle-then-de393d86.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_s1\"/>Cycle length is three. <bookmark mark=\"bk_s2\"/>Divide twenty-nine by three \u2014 nine groups of three, with a remainder of two. <bookmark mark=\"bk_s3\"/>Remainder two corresponds to the second element \u2014 square. <bookmark mark=\"bk_s4\"/>The shape at position twenty-nine is a square.",
+    "input_data": {
+      "input_text": "Cycle length is three. Divide twenty-nine by three \u2014 nine groups of three, with a remainder of two. Remainder two corresponds to the second element \u2014 square. The shape at position twenty-nine is a square.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "cycle-length-is-three-divide-twenty-nine-by-three-c1c30f72.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 2800000,
+        "text_offset": 0,
+        "word_length": 6,
+        "text": " Cycle",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 4800000,
+        "text_offset": 6,
+        "word_length": 7,
+        "text": " length",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 7000000,
+        "text_offset": 13,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 10800000,
+        "text_offset": 16,
+        "word_length": 3,
+        "text": " 3.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 23200000,
+        "text_offset": 19,
+        "word_length": 7,
+        "text": " Divide",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 25600000,
+        "text_offset": 26,
+        "word_length": 3,
+        "text": " 29",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 30400000,
+        "text_offset": 29,
+        "word_length": 3,
+        "text": " by",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 32799999,
+        "text_offset": 32,
+        "word_length": 3,
+        "text": " 3.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 43200000,
+        "text_offset": 35,
+        "word_length": 5,
+        "text": " Nine",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 44400000,
+        "text_offset": 40,
+        "word_length": 7,
+        "text": " groups",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 47200000,
+        "text_offset": 47,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 49600000,
+        "text_offset": 50,
+        "word_length": 2,
+        "text": " 3",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 52600000,
+        "text_offset": 52,
+        "word_length": 5,
+        "text": " with",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 56200000,
+        "text_offset": 57,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 57200000,
+        "text_offset": 59,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 59600000,
+        "text_offset": 69,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 62200000,
+        "text_offset": 72,
+        "word_length": 3,
+        "text": " 2.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 74800000,
+        "text_offset": 75,
+        "word_length": 7,
+        "text": " Remain",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 77600000,
+        "text_offset": 82,
+        "word_length": 2,
+        "text": " 2",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 81400000,
+        "text_offset": 84,
+        "word_length": 12,
+        "text": " corresponds",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 89600000,
+        "text_offset": 96,
+        "word_length": 3,
+        "text": " to",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 94400000,
+        "text_offset": 99,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 95399999,
+        "text_offset": 103,
+        "word_length": 7,
+        "text": " second",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 98400000,
+        "text_offset": 110,
+        "word_length": 9,
+        "text": " element,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 108000000,
+        "text_offset": 119,
+        "word_length": 8,
+        "text": " square.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 120200000,
+        "text_offset": 127,
+        "word_length": 4,
+        "text": " The",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 120800000,
+        "text_offset": 131,
+        "word_length": 6,
+        "text": " shape",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 124000000,
+        "text_offset": 137,
+        "word_length": 3,
+        "text": " at",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 125399999,
+        "text_offset": 140,
+        "word_length": 9,
+        "text": " position",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 128600000,
+        "text_offset": 149,
+        "word_length": 3,
+        "text": " 29",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 134800000,
+        "text_offset": 152,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 140400000,
+        "text_offset": 155,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 141400000,
+        "text_offset": 157,
+        "word_length": 8,
+        "text": " square.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " Cycle length is 3. Divide 29 by 3. Nine groups of 3 with a remainder of 2. Remain 2 corresponds to the second element, square. The shape at position 29 is a square.",
+    "final_audio": "cycle-length-is-three-divide-twenty-nine-by-three-c1c30f72.mp3"
+  },
+  {
+    "input_text": "<bookmark mark=\"bk_sum1\"/>A repeating pattern cycles through a fixed set of elements before starting again. <bookmark mark=\"bk_sum2\"/>The remainder tells us exactly where we are within the current cycle. <bookmark mark=\"bk_sum3\"/>If the remainder is zero, we have landed exactly on the last element of the cycle.",
+    "input_data": {
+      "input_text": "A repeating pattern cycles through a fixed set of elements before starting again. The remainder tells us exactly where we are within the current cycle. If the remainder is zero, we have landed exactly on the last element of the cycle.",
+      "service": "openai",
+      "config": {
+        "voice": "shimmer",
+        "model": "gpt-4o-mini-tts",
+        "speed": 1.0
+      }
+    },
+    "original_audio": "a-repeating-pattern-cycles-through-a-fixed-set-of-ebfd512d.mp3",
+    "word_boundaries": [
+      {
+        "audio_offset": 200000,
+        "text_offset": 0,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 1400000,
+        "text_offset": 2,
+        "word_length": 10,
+        "text": " repeating",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 6800000,
+        "text_offset": 12,
+        "word_length": 8,
+        "text": " pattern",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 12000000,
+        "text_offset": 20,
+        "word_length": 7,
+        "text": " cycles",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 20400000,
+        "text_offset": 27,
+        "word_length": 8,
+        "text": " through",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 23800000,
+        "text_offset": 35,
+        "word_length": 2,
+        "text": " a",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 26600000,
+        "text_offset": 37,
+        "word_length": 6,
+        "text": " fixed",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 28400000,
+        "text_offset": 43,
+        "word_length": 4,
+        "text": " set",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 32200000,
+        "text_offset": 47,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 33200000,
+        "text_offset": 50,
+        "word_length": 9,
+        "text": " elements",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 36000000,
+        "text_offset": 59,
+        "word_length": 7,
+        "text": " before",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 40400000,
+        "text_offset": 66,
+        "word_length": 9,
+        "text": " starting",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 44600000,
+        "text_offset": 75,
+        "word_length": 7,
+        "text": " again.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 57000000,
+        "text_offset": 82,
+        "word_length": 4,
+        "text": " The",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 58000000,
+        "text_offset": 86,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 62800000,
+        "text_offset": 96,
+        "word_length": 6,
+        "text": " tells",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 66000000,
+        "text_offset": 102,
+        "word_length": 3,
+        "text": " us",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 67800000,
+        "text_offset": 105,
+        "word_length": 8,
+        "text": " exactly",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 73000000,
+        "text_offset": 113,
+        "word_length": 6,
+        "text": " where",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 76400000,
+        "text_offset": 119,
+        "word_length": 3,
+        "text": " we",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 78000000,
+        "text_offset": 122,
+        "word_length": 4,
+        "text": " are",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 80200000,
+        "text_offset": 126,
+        "word_length": 7,
+        "text": " within",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 84200000,
+        "text_offset": 133,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 86199999,
+        "text_offset": 137,
+        "word_length": 8,
+        "text": " current",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 88800000,
+        "text_offset": 145,
+        "word_length": 7,
+        "text": " cycle.",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 102000000,
+        "text_offset": 152,
+        "word_length": 3,
+        "text": " If",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 103200000,
+        "text_offset": 155,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 104200000,
+        "text_offset": 159,
+        "word_length": 10,
+        "text": " remainder",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 108000000,
+        "text_offset": 169,
+        "word_length": 3,
+        "text": " is",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 110600000,
+        "text_offset": 172,
+        "word_length": 6,
+        "text": " zero,",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 119600000,
+        "text_offset": 178,
+        "word_length": 3,
+        "text": " we",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 120600000,
+        "text_offset": 181,
+        "word_length": 5,
+        "text": " have",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 121800000,
+        "text_offset": 186,
+        "word_length": 7,
+        "text": " landed",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 125000000,
+        "text_offset": 193,
+        "word_length": 8,
+        "text": " exactly",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 130200000,
+        "text_offset": 201,
+        "word_length": 3,
+        "text": " on",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 134200000,
+        "text_offset": 204,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 135400000,
+        "text_offset": 208,
+        "word_length": 5,
+        "text": " last",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 137600000,
+        "text_offset": 213,
+        "word_length": 8,
+        "text": " element",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 142200000,
+        "text_offset": 221,
+        "word_length": 3,
+        "text": " of",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 144600000,
+        "text_offset": 224,
+        "word_length": 4,
+        "text": " the",
+        "boundary_type": "Word"
+      },
+      {
+        "audio_offset": 145800000,
+        "text_offset": 228,
+        "word_length": 7,
+        "text": " cycle.",
+        "boundary_type": "Word"
+      }
+    ],
+    "transcribed_text": " a repeating pattern cycles through a fixed set of elements before starting again. The remainder tells us exactly where we are within the current cycle. If the remainder is zero, we have landed exactly on the last element of the cycle.",
+    "final_audio": "a-repeating-pattern-cycles-through-a-fixed-set-of-ebfd512d.mp3"
+  }
+]

@@ -1,0 +1,1748 @@
+Manim Community v0.20.1
+
+[06/08/26 12:58:31] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:58:35] INFO     Transcription:  revisiting arithmetic   base.py:98
+                             expressions.                                      
+[06/08/26 12:58:36] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\rev                         
+                             isiting-arithmetic-expres                         
+                             sions-47847c4b.mp3 to                             
+                             .wav                                              
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\668060172_2617917520_63                         
+                             1829896.mp4'                                      
+[06/08/26 12:58:40] INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\668060172_72669756_1666                         
+                             280314.mp4'                                       
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\1263443165_2924848042_3                         
+                             25520790.mp4'                                     
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\1263443165_3585970359_3                         
+                             142820406.mp4'                                    
+[06/08/26 12:58:41] INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\1263443165_1570087800_3                         
+                             380529470.mp4'                                    
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\1263443165_2514011427_3                         
+                             968961708.mp4'                                    
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_31                         
+                             96764103.mp4'                                     
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_952167764_181                         
+                             4444762.mp4'                                      
+[06/08/26 12:58:43] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:58:53] INFO     Transcription:  Suppose you buy three   base.py:98
+                             notebooks at 12 rupees each, and then             
+                             two more at the same price. You could             
+                             calculate three times 12 and two times            
+                             12 separately, then add them. Or you              
+                             could say five times 12 directly. Both            
+                             give 60. This is exactly how arithmetic           
+                             expressions work. They can always be              
+                             rewritten without changing their value.           
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sup                         
+                             pose-you-buy-three-notebo                         
+                             oks-at-twelve-rupees-fd22                         
+                             d191.mp3 to .wav                                  
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3783742733_25                         
+                             13012035.mp4'                                     
+[06/08/26 12:58:56] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3 \times                          
+                             12\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\c2abaa4a8b2c                        
+                             fdcf.tex                                          
+[06/08/26 12:58:58] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3 \times                      
+                             12' (id: unique000). Using                        
+                             fallback to root group.                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2 \times                          
+                             12\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e358d42ff91b                        
+                             f946.tex                                          
+[06/08/26 12:59:00] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2 \times                      
+                             12' (id: unique000). Using                        
+                             fallback to root group.                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}60\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\228f2bc20cb5                        
+                             ba47.tex                                          
+[06/08/26 12:59:01] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '60' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_99315273_3345                         
+                             306079.mp4'                                       
+[06/08/26 12:59:02] INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_544911680_285                         
+                             9103946.mp4'                                      
+[06/08/26 12:59:05] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5 \times                          
+                             12\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\bfbd672dd7a8                        
+                             494f.tex                                          
+[06/08/26 12:59:06] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5 \times                      
+                             12' (id: unique000). Using                        
+                             fallback to root group.                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '60' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:59:07] INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3206898659_16                         
+                             34790008.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_551743270_655                         
+                             281587.mp4'                                       
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3025619545_16                         
+                             67048967.mp4'                                     
+[06/08/26 12:59:11] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_705434428_411                         
+                             3617335.mp4'                                      
+[06/08/26 12:59:12] INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1902991772_40                         
+                             29203795.mp4'                                     
+                    INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3585970359_25                         
+                             51794015.mp4'                                     
+[06/08/26 12:59:14] INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2050859680_36                         
+                             24496209.mp4'                                     
+                    INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_17                         
+                             81992728.mp4'                                     
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_82                         
+                             6264514.mp4'                                      
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_952167764_292                         
+                             2360132.mp4'                                      
+[06/08/26 12:59:16] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:59:20] INFO     Transcription:  Every arithmetic        base.py:98
+                             expression is made up of individual               
+                             terms, separated by addition or                   
+                             subtraction. The swapping property lets           
+                             us change the order of terms. The                 
+                             grouping property lets us change how              
+                             terms are bracketed.                              
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\eve                         
+                             ry-arithmetic-expression-                         
+                             is-made-up-of-883b1bfa.mp                         
+                             3 to .wav                                         
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}12\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\2666d57eb243                        
+                             94a1.tex                                          
+[06/08/26 12:59:23] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '12' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2574897244_34                         
+                             24752791.mp4'                                     
+                    INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_585511287_190                         
+                             8844162.mp4'                                      
+[06/08/26 12:59:25] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_43685767_6678                         
+                             07681.mp4'                                        
+[06/08/26 12:59:26] INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1276283603_64                         
+                             0652351.mp4'                                      
+[06/08/26 12:59:28] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '12' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\rightarrow' (id: unique000).                    
+                             Using fallback to root group.                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '12' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:59:29] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1013285742_81                         
+                             1116082.mp4'                                      
+                    INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_957225123_145                         
+                             7591102.mp4'                                      
+[06/08/26 12:59:32] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(12+7)\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\411a39b14f18                        
+                             428a.tex                                          
+[06/08/26 12:59:34] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(12+7)'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '12' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(7+5)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\509e0df0f1d8                        
+                             75c2.tex                                          
+[06/08/26 12:59:35] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(7+5)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+WARNING: 'grp_block' overlapped. Shifted UP 1.12
+[06/08/26 12:59:36] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3259128945_18                         
+                             88038060.mp4'                                     
+                    INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_172480509_231                         
+                             0705461.mp4'                                      
+[06/08/26 12:59:38] INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2860880937_30                         
+                             84624933.mp4'                                     
+[06/08/26 12:59:39] INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_688034890_425                         
+                             0049685.mp4'                                      
+                    INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3585970359_35                         
+                             4069477.mp4'                                      
+[06/08/26 12:59:40] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2446349053_29                         
+                             60277608.mp4'                                     
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_26                         
+                             63895486.mp4'                                     
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_36                         
+                             35737488.mp4'                                     
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_952167764_311                         
+                             7085859.mp4'                                      
+[06/08/26 12:59:42] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 12:59:46] INFO     Transcription:  The distributive        base.py:98
+                             property takes this further.                      
+                             Multiplying a number by a sum is the              
+                             same as multiplying it by each part               
+                             separately. So 4 times the quantity 7             
+                             plus 3 equals 4 times 7 plus 4 times 3,           
+                             which equals 28 plus 12, which equals             
+                             40.                                               
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -distributive-property-ta                         
+                             kes-this-further-891592d2                         
+                             .mp3 to .wav                                      
+[06/08/26 12:59:49] INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_4117560952_13                         
+                             53462071.mp4'                                     
+                    INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_753858185_756                         
+                             355172.mp4'                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\23eede080f3b                        
+                             7031.tex                                          
+[06/08/26 12:59:51] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>})\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a10c1a4dab77                        
+                             a163.tex                                          
+[06/08/26 12:59:52] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2104192577_22                         
+                             54543198.mp4'                                     
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1240709938_23                         
+                             50709149.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times                          
+                             7\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\152a19ae8fee                        
+                             32ea.tex                                          
+[06/08/26 12:59:54] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times 7'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4 \times                          
+                             3\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\ea7b21089ed4                        
+                             1304.tex                                          
+[06/08/26 12:59:55] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4 \times 3'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_230072289_357                         
+                             8924371.mp4'                                      
+[06/08/26 12:59:56] INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2730078939_28                         
+                             42134452.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}28\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\45e20c880faf                        
+                             4db1.tex                                          
+[06/08/26 12:59:57] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '28' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '12' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 12:59:58] INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_4075392939_23                         
+                             48656539.mp4'                                     
+                    INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_4030649481_13                         
+                             04679482.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}40\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a8297b75544a                        
+                             2f04.tex                                          
+[06/08/26 12:59:59] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '40' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:00:00] INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2539491903_90                         
+                             5558588.mp4'                                      
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_356091243_233                         
+                             7517808.mp4'                                      
+                    INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3394500337_12                         
+                             90269264.mp4'                                     
+[06/08/26 13:00:01] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_548780851_133                         
+                             6405753.mp4'                                      
+                    INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_13                         
+                             48132078.mp4'                                     
+                    INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_17                         
+                             33404615.mp4'                                     
+                    INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_952167764_695                         
+                             343170.mp4'                                       
+[06/08/26 13:00:03] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:00:05] INFO     Transcription:  Brackets indicate which base.py:98
+                             part of the expression should be                  
+                             evaluated first. Using them carefully,            
+                             keeps our rewriting accurate and                  
+                             unambiguous.                                      
+[06/08/26 13:00:06] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\bra                         
+                             ckets-indicate-which-part                         
+                             -of-the-expression-ff26dc                         
+                             13.mp3 to .wav                                    
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1251304281_19                         
+                             4494669.mp4'                                      
+[06/08/26 13:00:07] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}11\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\eda5d0159efb                        
+                             e1d3.tex                                          
+[06/08/26 13:00:08] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '11' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:00:10] INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_505153007_324                         
+                             9658343.mp4'                                      
+[06/08/26 13:00:12] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(3\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\12c245c6bbfa                        
+                             c504.tex                                          
+[06/08/26 13:00:14] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(3' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4)\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\b3e365bf3338                        
+                             be66.tex                                          
+[06/08/26 13:00:15] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4)' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}14\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\24f2e64ac9f3                        
+                             7faa.tex                                          
+[06/08/26 13:00:17] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '14' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 13:00:19] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_386874176_335                         
+                             4498908.mp4'                                      
+                    INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2115944367_14                         
+                             55802058.mp4'                                     
+[06/08/26 13:00:21] INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3751310527_99                         
+                             1116354.mp4'                                      
+[06/08/26 13:00:22] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1562272275_34                         
+                             68587443.mp4'                                     
+                    INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3585970359_25                         
+                             45981312.mp4'                                     
+[06/08/26 13:00:23] INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2151081930_16                         
+                             377779.mp4'                                       
+                    INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_35                         
+                             74810141.mp4'                                     
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_25                         
+                             38851301.mp4'                                     
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1546636312_88                         
+                             7873282.mp4'                                      
+[06/08/26 13:00:25] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:00:29] INFO     Transcription:  rewrite and simplify    base.py:98
+                             six times the quantity nine plus four             
+                             using the distributive property. Then             
+                             verify your answer.                               
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\rew                         
+                             rite-and-simplify-six-tim                         
+                             es-the-quantity-nine-0177                         
+                             37d2.mp3 to .wav                                  
+[06/08/26 13:00:30] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1361534548_24                         
+                             11802214.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\times'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}9\special{                        
+                             dvisvgm:raw </g>} to                              
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\ba198b4403f2                        
+                             9ddd.tex                                          
+[06/08/26 13:00:32] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '9' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1332108538_23                         
+                             888597.mp4'                                       
+[06/08/26 13:00:34] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3947874158_11                         
+                             50282913.mp4'                                     
+[06/08/26 13:00:35] INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1389800098_33                         
+                             65407734.mp4'                                     
+                    INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3585970359_95                         
+                             5165925.mp4'                                      
+                    INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3982259676_35                         
+                             23458474.mp4'                                     
+[06/08/26 13:00:36] INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3563686881_42                         
+                             2333439.mp4'                                      
+                    INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_41                         
+                             99513383.mp4'                                     
+[06/08/26 13:00:37] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:00:40] INFO     Transcription:  Distribute 6 times 9    base.py:98
+                             plus 6 times 4 equals 54 plus 24 equals           
+                             78. Verify 6 times 13 equals 78. The              
+                             result is verified.                               
+[06/08/26 13:00:41] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\dis                         
+                             tribute-six-times-nine-pl                         
+                             us-six-times-four-bef8baa                         
+                             1.mp3 to .wav                                     
+                    INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1251304281_31                         
+                             83392778.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6 \times                          
+                             9\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\ba6f201bdd13                        
+                             f49a.tex                                          
+[06/08/26 13:00:42] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6 \times 9'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6 \times                          
+                             4\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\8e9772f2582e                        
+                             38d3.tex                                          
+[06/08/26 13:00:44] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6 \times 4'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3692318530_36                         
+                             8689283.mp4'                                      
+                    INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3240364192_40                         
+                             99915627.mp4'                                     
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}54\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\ee6f14d0d1f4                        
+                             fbe1.tex                                          
+[06/08/26 13:00:45] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '54' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}24\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\78d9578fd7bb                        
+                             14f2.tex                                          
+[06/08/26 13:00:47] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '24' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3766976990_21                         
+                             31485386.mp4'                                     
+                    INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_423349157_286                         
+                             2322716.mp4'                                      
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}78\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\934c1c84e3ee                        
+                             44a6.tex                                          
+[06/08/26 13:00:48] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '78' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_791352235_152                         
+                             9816215.mp4'                                      
+[06/08/26 13:00:49] INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1708968016_30                         
+                             56485287.mp4'                                     
+                    INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2350968606_24                         
+                             99272206.mp4'                                     
+                    INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1426501405_63                         
+                             6846538.mp4'                                      
+                    INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_4225634499_39                         
+                             80456855.mp4'                                     
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6 \times                          
+                             13\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\fabcfa77053b                        
+                             8b14.tex                                          
+[06/08/26 13:00:50] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6 \times                      
+                             13' (id: unique000). Using                        
+                             fallback to root group.                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '78' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2035871196_32                         
+                             42326101.mp4'                                     
+[06/08/26 13:00:52] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1896097670_71                         
+                             2896205.mp4'                                      
+[06/08/26 13:00:53] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1062701054_87                         
+                             2533321.mp4'                                      
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3932249147_28                         
+                             58775280.mp4'                                     
+                    INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1652352670_18                         
+                             71450735.mp4'                                     
+                    INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_29                         
+                             40496047.mp4'                                     
+                    INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_20                         
+                             97878870.mp4'                                     
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1117470482_34                         
+                             93660709.mp4'                                     
+[06/08/26 13:00:56] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 13:00:59] INFO     Transcription:  Every expression is a   base.py:98
+                             sum of terms that can be reordered or             
+                             regrouped freely. The distributive                
+                             property multiply across every term               
+                             inside the brackets. Rewriting using              
+                             these properties never changes the                
+                             value of an expression.                           
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\eve                         
+                             ry-expression-is-a-sum-of                         
+                             -terms-that-can-be-513c7d                         
+                             34.mp3 to .wav                                    
+[06/08/26 13:01:02] INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_159178433_278                         
+                             2222581.mp4'                                      
+                    INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_1334991060_18                         
+                             06922612.mp4'                                     
+[06/08/26 13:01:05] INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3010243436_42                         
+                             57015531.mp4'                                     
+[06/08/26 13:01:06] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3408184742_23                         
+                             88505202.mp4'                                     
+[06/08/26 13:01:09] INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2354939293_38                         
+                             46088352.mp4'                                     
+                    INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_753710547_391                         
+                             0495742.mp4'                                      
+[06/08/26 13:01:10] INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3932249147_24                         
+                             96591249.mp4'                                     
+[06/08/26 13:01:11] INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_376892273_336                         
+                             4669122.mp4'                                      
+                    INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_2514011427_11                         
+                             31318239.mp4'                                     
+                    INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\partial_movie_files\                         
+                             ArithmeticExpressionsScen                         
+                             e\948293694_3052040169_35                         
+                             02444114.mp4'                                     
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 13:01:16] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Arithm                         
+                             etic_Expressions_Scene\48                         
+                             0p15\ArithmeticExpression                         
+                             sScene.mp4'                                       
+                                                                               
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Arithme                         
+                             tic_Expressions_Scene\480                         
+                             p15\ArithmeticExpressions                         
+                             Scene.srt                                         
+                    INFO     Rendered ArithmeticExpressionsScene   scene.py:278
+                             Played 98 animations                              
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/3.41 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/3.41 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 3.41/3.41 [00:03<00:00,  1.15s/sec]
+Transcribe: 100%|##########| 3.41/3.41 [00:03<00:00,  1.15s/sec]
+
+Animation 1: FadeIn(Text('Revisiting Arithmetic\nExpressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                                       
+
+Animation 4: FadeOut(Text('Revisiting Arithmetic\nExpressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 4: FadeOut(Text('Revisiting Arithmetic\nExpressions')):  58%|#####8    | 7/12 [00:00<00:00, 65.90it/s]
+                                                                                                                
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/21.72 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/21.72 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 21.72/21.72 [00:03<00:00,  6.79sec/s]
+Transcribe: 100%|##########| 21.72/21.72 [00:03<00:00,  6.79sec/s]
+
+Animation 9: FadeIn(VGroup of 2 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 11: FadeIn(VGroup of 2 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 12: FadeIn(MathTex('=')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                         
+
+Animation 14: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 14: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 47.46it/s]
+                                                                                             
+
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 24.28it/s]
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 22.55it/s]
+Animation 17: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 23.67it/s]
+                                                                                                    
+
+Animation 20: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/13.7 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/13.7 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.7/13.7 [00:02<00:00,  4.97sec/s]
+Transcribe: 100%|##########| 13.7/13.7 [00:02<00:00,  4.97sec/s]
+
+Animation 21: FadeIn(VGroup of 5 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 22: Create(Underline), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                            
+
+Animation 23: FadeIn(Text('Terms')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                          
+
+Animation 25: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 27: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 29: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 53.80it/s]
+                                                                                                    
+
+Animation 35: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/17.06 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/17.06 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 17.06/17.06 [00:02<00:00,  7.10sec/s]
+Transcribe: 100%|##########| 17.06/17.06 [00:02<00:00,  7.09sec/s]
+
+Animation 36: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 36: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 90.89it/s]
+                                                                                              
+
+Animation 38: FadeIn(VGroup of 7 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 39: Create(Arrow), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                         
+
+Animation 40: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 42: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 44: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 47: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 47: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 81.06it/s]
+                                                                                                    
+
+Animation 50: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/10.01 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/10.01 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 10.01/10.01 [00:01<00:00,  5.65sec/s]
+Transcribe: 100%|##########| 10.01/10.01 [00:01<00:00,  5.65sec/s]
+
+Animation 52: FadeIn(VGroup of 3 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 53: FadeIn(VGroup of 3 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 55: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 55: FadeIn(VGroup of 2 submobjects):  82%|########1 | 9/11 [00:00<00:00, 87.81it/s]
+                                                                                             
+
+Animation 58: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 58: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 65.13it/s]
+                                                                                                    
+
+Animation 61: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/8.95 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/8.95 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 8.95/8.95 [00:01<00:00,  5.66sec/s]
+Transcribe: 100%|##########| 8.95/8.95 [00:01<00:00,  5.66sec/s]
+
+Animation 62: FadeIn(Text('Rewrite and simplify using the distributive property:')):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                                                          
+
+Animation 63: FadeIn(VGroup of 7 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 64: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 67: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 68: FadeOut(Text('Rewrite and simplify using the distributive property:')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 68: FadeOut(Text('Rewrite and simplify using the distributive property:')), etc.: 100%|##########| 9/9 [00:00<00:00, 83.12it/s]
+                                                                                                                                         
+
+Transcribe:   0%|          | 0/14.86 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/14.86 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 14.86/14.86 [00:01<00:00,  8.47sec/s]
+Transcribe: 100%|##########| 14.86/14.86 [00:01<00:00,  8.47sec/s]
+
+Animation 71: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 73: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 75: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 76: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 78: FadeOut(VGroup of 3 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                           
+
+Animation 79: FadeOut(SurroundingRectangle):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 80: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 81: FadeIn(Text('The result is verified.')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                   
+
+Animation 84: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 84: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 116.46it/s]
+                                                                                                      
+
+Animation 87: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/13.66 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/13.66 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.66/13.66 [00:02<00:00,  5.87sec/s]
+Transcribe: 100%|##########| 13.66/13.66 [00:02<00:00,  5.87sec/s]
+
+Animation 88: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 88: FadeIn(VGroup of 2 submobjects): 100%|##########| 11/11 [00:00<00:00, 107.28it/s]
+                                                                                               
+
+Animation 90: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 90: FadeIn(VGroup of 2 submobjects):  82%|########1 | 9/11 [00:00<00:00, 78.01it/s]
+                                                                                             
+
+Animation 92: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 92: FadeIn(VGroup of 2 submobjects):  91%|######### | 10/11 [00:00<00:00, 91.64it/s]
+                                                                                              
+
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 35.52it/s]
+Animation 95: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 36.23it/s]
+                                                                                                    

@@ -1,0 +1,119 @@
+Manim Community v0.20.1
+
+[06/04/26 15:48:56] WARNING  TimeInterpolator received weird      tracker.py:30
+                             input, there may be something wrong               
+                             with the word boundaries.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\hel                         
+                             lo-students-imagine-you-r                         
+                             e-counting-your-pocket-64                         
+                             344095.mp3 to .wav                                
+                    INFO     Animation 0 : Using cached    cairo_renderer.py:94
+                             data (hash :                                      
+                             3723463965_1546741997_6318298                     
+                             96)                                               
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
++--------------------- Traceback (most recent call last) ---------------------+
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\cli\render\c |
+| ommands.py:125 in render                                                    |
+|                                                                             |
+|   122             try:                                                      |
+|   123                 with tempconfig({}):                                  |
+|   124                     scene = SceneClass()                              |
+| > 125                     scene.render()                                    |
+|   126             except Exception:                                         |
+|   127                 error_console.print_exception()                       |
+|   128                 sys.exit(1)                                           |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\scene\scene. |
+| py:259 in render                                                            |
+|                                                                             |
+|    256         """                                                          |
+|    257         self.setup()                                                 |
+|    258         try:                                                         |
+| >  259             self.construct()                                         |
+|    260         except EndSceneEarlyException:                               |
+|    261             pass                                                     |
+|    262         except RerunSceneException:                                  |
+|                                                                             |
+| C:\Users\Coschool\manimations\scripts\script_1__cc_03_introducti_jtjn.py:14 |
+| in construct                                                                |
+|                                                                             |
+|    11                                                                       |
+|    12         # Hook Section                                                |
+|    13         with self.voiceover(text="Hello students! <bookmark mark='A'/ |
+| >  14             coin_icon = SVGMobject("coin").scale(0.5).set_color("#FF9 |
+|    15             cup_icon = SVGMobject("cup").scale(0.5).set_color("#7464C |
+|    16                                                                       |
+|    17             # Create simple geometric representations instead of SVG  |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:150 in __init__                                              |
+|                                                                             |
+|   147             path_string_config = {}                                   |
+|   148         self.path_string_config = path_string_config                  |
+|   149                                                                       |
+| > 150         self.init_svg_mobject(use_svg_cache=use_svg_cache)            |
+|   151                                                                       |
+|   152         self.set_style(                                               |
+|   153             fill_color=fill_color,                                    |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:177 in init_svg_mobject                                      |
+|                                                                             |
+|   174                 self.id_to_vgroup_dict = mob.id_to_vgroup_dict        |
+|   175                 return                                                |
+|   176                                                                       |
+| > 177         self.generate_mobject()                                       |
+|   178         if use_svg_cache:                                             |
+|   179             SVG_HASH_TO_MOB_MAP[hash_val] = self.copy()               |
+|   180                                                                       |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:198 in generate_mobject                                      |
+|                                                                             |
+|   195                                                                       |
+|   196     def generate_mobject(self) -> None:                               |
+|   197         """Parse the SVG and translate its elements to submobjects."" |
+| > 198         file_path = self.get_file_path()                              |
+|   199         element_tree = ET.parse(file_path)                            |
+|   200         new_tree = self.modify_xml_tree(element_tree)  # type: ignore |
+|   201         # Create a temporary svg file to dump modified svg to be pars |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\mobject\svg\ |
+| svg_mobject.py:217 in get_file_path                                         |
+|                                                                             |
+|   214         """Search for an existing file based on the specified file na |
+|   215         if self.file_name is None:                                    |
+|   216             raise ValueError("Must specify file for SVGMobject")      |
+| > 217         return get_full_vector_image_path(self.file_name)             |
+|   218                                                                       |
+|   219     def modify_xml_tree(self, element_tree: ET.ElementTree) -> ET.Ele |
+|   220         """Modifies the SVG element tree to include default           |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\utils\images |
+| .py:36 in get_full_vector_image_path                                        |
+|                                                                             |
+|   33                                                                        |
+|   34                                                                        |
+|   35 def get_full_vector_image_path(image_file_name: str | PurePath) -> Pat |
+| > 36     return seek_full_path_from_defaults(                               |
+|   37         image_file_name,                                               |
+|   38         default_dir=config.get_dir("assets_dir"),                      |
+|   39         extensions=[".svg"],                                           |
+|                                                                             |
+| C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim\utils\file_o |
+| ps.py:181 in seek_full_path_from_defaults                                   |
+|                                                                             |
+|   178         f"From: {Path.cwd()}, could not find {file_name} at either "  |
+|   179         f"of these locations: {list(map(str, possible_paths))}"       |
+|   180     )                                                                 |
+| > 181     raise OSError(error)                                              |
+|   182                                                                       |
+|   183                                                                       |
+|   184 def modify_atime(file_path: str) -> None:                             |
++-----------------------------------------------------------------------------+
+OSError: From: C:\Users\Coschool\manimations\scripts, could not find coin at 
+either of these locations: ['coin', 'coin', 'coin.svg']

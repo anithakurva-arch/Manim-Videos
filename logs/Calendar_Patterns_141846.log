@@ -1,0 +1,1607 @@
+Manim Community v0.20.1
+
+[06/08/26 14:18:55] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:18:59] INFO     Transcription:  Pick patterns and       base.py:98
+                             reveal relationships.                             
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\pic                         
+                             k-patterns-and-reveal-rel                         
+                             ationships-a9ca6376.mp3                           
+                             to .wav                                           
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\668060172_3142                         
+                             935987_631829896.mp4'                             
+[06/08/26 14:19:10] INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\668060172_3486                         
+                             145122_1666280314.mp4'                            
+[06/08/26 14:19:11] INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\1263443165_401                         
+                             8485819_3985352318.mp4'                           
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\1263443165_358                         
+                             5970359_1353417321.mp4'                           
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\1263443165_372                         
+                             9921968_3050056908.mp4'                           
+[06/08/26 14:19:12] INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\1263443165_251                         
+                             4011427_3968961708.mp4'                           
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_3196764103.mp4'                            
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9521                         
+                             67764_1814444762.mp4'                             
+[06/08/26 14:19:14] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:19:20] INFO     Transcription:  Here is something       base.py:98
+                             curious. Look at any number on a                  
+                             calendar. The numbers directly above              
+                             and below it have a special                       
+                             relationship. The sum of those two                
+                             numbers always equals twice the chosen            
+                             number. But is this always true for               
+                             every single number? We cannot check              
+                             every case. So instead, we use letter             
+                             numbers to prove it for all cases at              
+                             once.                                             
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\her                         
+                             e-is-something-curious-lo                         
+                             ok-at-any-number-on-a-314                         
+                             59099.mp3 to .wav                                 
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1172                         
+                             922528_2513012035.mp4'                            
+[06/08/26 14:19:43] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1458                         
+                             450647_3345306079.mp4'                            
+[06/08/26 14:19:44] INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1335                         
+                             792462_3628034219.mp4'                            
+                    INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3246                         
+                             577837_3032286774.mp4'                            
+MARGIN WARNING: claim_card
+[06/08/26 14:19:49] INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3777                         
+                             884561_205261642.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '9' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '23' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}32\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e15e0f881d00                        
+                             6ff3.tex                                          
+[06/08/26 14:19:52] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '32' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2 \times                          
+                             16\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\fda0dc72198a                        
+                             e384.tex                                          
+[06/08/26 14:19:53] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2 \times                      
+                             16' (id: unique000). Using                        
+                             fallback to root group.                           
+WARNING: 'check_row' overlapped. Shifted UP 1.86
+                    INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_5764                         
+                             14941_851495652.mp4'                              
+[06/08/26 14:19:54] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3758                         
+                             475777_1960943703.mp4'                            
+MARGIN WARNING: prove_card
+WARNING: 'prove_card' overlapped. Shifted UP 3.55
+WARNING: 'prove_card' overlapped. Shifted UP 0.52
+[06/08/26 14:19:58] INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3024                         
+                             906783_4103680941.mp4'                            
+                    INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3176                         
+                             700651_591644814.mp4'                             
+[06/08/26 14:19:59] INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3585                         
+                             970359_3977850963.mp4'                            
+                    INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2935                         
+                             766666_1367437672.mp4'                            
+[06/08/26 14:20:00] INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_1781992728.mp4'                            
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_826264514.mp4'                             
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9521                         
+                             67764_2922360132.mp4'                             
+[06/08/26 14:20:02] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:20:15] INFO     Transcription:  Let N represent any     base.py:98
+                             number on the calendar. In a standard             
+                             weekly calendar with seven days in each           
+                             row, moving up one row means the number           
+                             is seven less. So the number directly             
+                             above N is N minus seven. The number              
+                             directly below is N plus seven.                   
+[06/08/26 14:20:17] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\let                         
+                             -n-represent-any-number-o                         
+                             n-the-calendar-in-a-26942                         
+                             004.mp3 to .wav                                   
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{-}8\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\2bbb641d6a5d                        
+                             fa1d.tex                                          
+[06/08/26 14:20:21] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{-}8' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{-}7\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\703d6b00ad94                        
+                             9a35.tex                                          
+[06/08/26 14:20:24] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{-}7' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{-}6\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\a227844f1d96                        
+                             c26e.tex                                          
+[06/08/26 14:20:26] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{-}6' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{-}1\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\3ae51165798a                        
+                             202f.tex                                          
+[06/08/26 14:20:28] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{-}1' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:20:29] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{+}1\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e600fa26eaad                        
+                             a0ff.tex                                          
+[06/08/26 14:20:32] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{+}1' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:20:33] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{+}6\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\08fb9d8c6da7                        
+                             ce73.tex                                          
+[06/08/26 14:20:35] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{+}6' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{+}7\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d10b53e8e24d                        
+                             32df.tex                                          
+[06/08/26 14:20:38] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{+}7' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n{+}8\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\d060df316488                        
+                             624b.tex                                          
+[06/08/26 14:20:40] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n{+}8' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:20:41] INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2223                         
+                             09699_3424752791.mp4'                             
+[06/08/26 14:20:47] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:20:48] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4040                         
+                             808391_3923214759.mp4'                            
+                    INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2074                         
+                             7804_3839155922.mp4'                              
+[06/08/26 14:20:53] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n -                               
+                             7\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\565042b4c1b2                        
+                             197d.tex                                          
+[06/08/26 14:20:55] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n - 7' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+WARNING: 'above_lbl' overlapped. Shifted UP 1.26
+WARNING: 'above_lbl' overlapped. Shifted UP 0.33
+[06/08/26 14:20:56] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3285                         
+                             346203_2160639790.mp4'                            
+[06/08/26 14:20:57] INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4167                         
+                             688647_2356727840.mp4'                            
+[06/08/26 14:20:58] INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2501                         
+                             147705_753416470.mp4'                             
+[06/08/26 14:21:02] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n +                               
+                             7\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\affe63b4f1b1                        
+                             e855.tex                                          
+[06/08/26 14:21:04] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n + 7' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+WARNING: 'below_lbl' overlapped. Shifted UP 2.26
+WARNING: 'below_lbl' overlapped. Shifted UP 0.33
+WARNING: 'below_lbl' overlapped. Shifted UP 0.55
+[06/08/26 14:21:05] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3287                         
+                             106436_1219665499.mp4'                            
+[06/08/26 14:21:06] INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2369                         
+                             564597_1313937314.mp4'                            
+[06/08/26 14:21:07] INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2414                         
+                             48044_1506975712.mp4'                             
+                    INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3585                         
+                             970359_1507445818.mp4'                            
+[06/08/26 14:21:09] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2700                         
+                             927313_4284679646.mp4'                            
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_4180480787.mp4'                            
+                    INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_2663895486.mp4'                            
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9521                         
+                             67764_2775757392.mp4'                             
+[06/08/26 14:21:11] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:21:26] INFO     Transcription:  The sum of these two is base.py:98
+                             the quantity n minus 7 plus the                   
+                             quantity n plus 7. Opening the                    
+                             brackets, n minus 7 plus n plus 7. The            
+                             minus 7 and plus 7 cancel. The result             
+                             is 2n, exactly twice the chosen number.           
+[06/08/26 14:21:27] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -sum-of-these-two-is-the-                         
+                             quantity-n-minus-seven-58                         
+                             67a62d.mp3 to .wav                                
+[06/08/26 14:21:31] INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2053                         
+                             691331_196337384.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:21:32] INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3214                         
+                             703638_4030949307.mp4'                            
+[06/08/26 14:21:33] INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1222                         
+                             900609_4275849815.mp4'                            
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:21:34] INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1592                         
+                             578186_3106949699.mp4'                            
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4066                         
+                             446135_2894295717.mp4'                            
+[06/08/26 14:21:35] INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9981                         
+                             38589_1043351022.mp4'                             
+[06/08/26 14:21:40] INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1930                         
+                             123251_1913368305.mp4'                            
+[06/08/26 14:21:41] INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3360                         
+                             650828_555439498.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:21:42] INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2545                         
+                             377836_23420430.mp4'                              
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3284                         
+                             65360_3331841451.mp4'                             
+[06/08/26 14:21:43] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2106                         
+                             539234_3772479157.mp4'                            
+[06/08/26 14:21:44] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3585                         
+                             970359_989695086.mp4'                             
+[06/08/26 14:21:46] INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1280                         
+                             454504_2487726521.mp4'                            
+                    INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_3301071013.mp4'                            
+                    INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_1348132078.mp4'                            
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9521                         
+                             67764_3737700526.mp4'                             
+[06/08/26 14:21:48] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:22:01] INFO     Transcription:  Because we used N to    base.py:98
+                             stand for any number, this proof holds            
+                             for every valid position on the                   
+                             calendar. That is the power of                    
+                             expressing a relationship                         
+                             algebraically.                                    
+[06/08/26 14:22:03] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\bec                         
+                             ause-we-used-n-to-stand-f                         
+                             or-any-number-this-07835a                         
+                             a8.mp3 to .wav                                    
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4194                         
+                             963078_3633011079.mp4'                            
+[06/08/26 14:22:09] INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1749                         
+                             381901_59914117.mp4'                              
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(n-7)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\56653c507e65                        
+                             18d5.tex                                          
+[06/08/26 14:22:11] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(n-7)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(n+7)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\80f790261e7d                        
+                             794b.tex                                          
+[06/08/26 14:22:13] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(n+7)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:22:19] INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1804                         
+                             526187_3889519765.mp4'                            
+[06/08/26 14:22:21] INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3723                         
+                             723331_190313845.mp4'                             
+[06/08/26 14:22:28] INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2583                         
+                             322699_1370070767.mp4'                            
+[06/08/26 14:22:30] INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2297                         
+                             182165_3396413374.mp4'                            
+[06/08/26 14:22:31] INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3585                         
+                             970359_3003104153.mp4'                            
+[06/08/26 14:22:34] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_8335                         
+                             70088_570205739.mp4'                              
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_1170691571.mp4'                            
+                    INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_3574810141.mp4'                            
+                    INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1546                         
+                             636312_3522709232.mp4'                            
+[06/08/26 14:22:36] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:22:48] INFO     Transcription:  For any number n on the base.py:98
+                             calendar, show algebraically that the             
+                             sum of the numbers immediately to its             
+                             left and right equals 2n.                         
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\for                         
+                             -any-number-n-on-the-cale                         
+                             ndar-show-7503654f.mp3 to                         
+                             .wav                                              
+[06/08/26 14:22:54] INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3948                         
+                             276477_57059887.mp4'                              
+[06/08/26 14:22:59] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3551                         
+                             498217_146947058.mp4'                             
+[06/08/26 14:23:08] INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1747                         
+                             382249_3433583390.mp4'                            
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n-1\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\2015fc02581a                        
+                             c828.tex                                          
+[06/08/26 14:23:11] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n-1' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n+1\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\796b69ec2a00                        
+                             35f5.tex                                          
+[06/08/26 14:23:13] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n+1' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:23:14] INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2802                         
+                             497577_3712378604.mp4'                            
+[06/08/26 14:23:15] INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_8308                         
+                             51293_3554612623.mp4'                             
+[06/08/26 14:23:16] INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3585                         
+                             970359_2491767868.mp4'                            
+[06/08/26 14:23:17] INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3982                         
+                             259676_1166667863.mp4'                            
+[06/08/26 14:23:19] INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3393                         
+                             808850_1355862973.mp4'                            
+[06/08/26 14:23:20] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_1699355697.mp4'                            
+[06/08/26 14:23:22] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:23:38] INFO     Transcription:  The number to the left  base.py:98
+                             is n minus 1. The number to the right             
+                             is n plus 1. Some equals n minus 1 plus           
+                             n plus 1. Rearranging, 2n plus the                
+                             quantity minus 1 plus 1. Minus 1 plus 1           
+                             equals 0. Some equals 2n.                         
+[06/08/26 14:23:40] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\the                         
+                             -number-to-the-left-is-n-                         
+                             minus-one-the-number-fa67                         
+                             ea4d.mp3 to .wav                                  
+[06/08/26 14:23:44] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n-1' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:23:51] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n+1' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:23:52] INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3200                         
+                             469258_3475750810.mp4'                            
+[06/08/26 14:23:53] INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2235                         
+                             433677_2598023793.mp4'                            
+[06/08/26 14:23:57] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(n-1)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\83c08a7ec410                        
+                             43a8.tex                                          
+[06/08/26 14:24:00] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(n-1)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(n+1)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\9ddfbff70c02                        
+                             4e57.tex                                          
+[06/08/26 14:24:02] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(n+1)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:24:04] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2071                         
+                             884578_838694499.mp4'                             
+[06/08/26 14:24:05] INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2093                         
+                             919601_932028033.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}(-1+1)\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\603c4c59e82c                        
+                             a669.tex                                          
+[06/08/26 14:24:07] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(-1+1)'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 14:24:08] INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4161                         
+                             406943_2312837196.mp4'                            
+[06/08/26 14:24:09] INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9668                         
+                             01068_1885187226.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:24:10] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '0' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:24:11] INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_5948                         
+                             73901_2492724618.mp4'                             
+[06/08/26 14:24:12] INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4099                         
+                             60404_2342561100.mp4'                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+WARNING: StepManager at safe limit (4).
+[06/08/26 14:24:13] INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2188                         
+                             9968_2803694206.mp4'                              
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1586                         
+                             884821_3166597036.mp4'                            
+[06/08/26 14:24:14] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1182                         
+                             296143_3151088690.mp4'                            
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3932                         
+                             249147_3497840344.mp4'                            
+[06/08/26 14:24:15] INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1473                         
+                             456278_2925176356.mp4'                            
+                    INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_3666718337.mp4'                            
+                    INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_2940496047.mp4'                            
+                    INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1117                         
+                             470482_3445551653.mp4'                            
+[06/08/26 14:24:17] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:24:20] INFO     Transcription:  Use a letter number to  base.py:98
+                             represent any position in a calendar              
+                             arrangement. Express surrounding                  
+                             positions in terms of that letter                 
+                             number. Algebraic simplification proves           
+                             the relationship holds for all valid              
+                             positions.                                        
+[06/08/26 14:24:21] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\use                         
+                             -a-letter-number-to-repre                         
+                             sent-any-position-in-a-e9                         
+                             311d74.mp3 to .wav                                
+                    INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_4093                         
+                             498621_3713718028.mp4'                            
+[06/08/26 14:24:24] INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1878                         
+                             849584_816012766.mp4'                             
+[06/08/26 14:24:25] INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9141                         
+                             28132_4106064665.mp4'                             
+[06/08/26 14:24:27] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2975                         
+                             296441_3098457178.mp4'                            
+                    INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_1327                         
+                             367502_2252948127.mp4'                            
+[06/08/26 14:24:30] INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_9547                         
+                             55531_3554780762.mp4'                             
+[06/08/26 14:24:31] INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3944                         
+                             12693_2542110196.mp4'                             
+[06/08/26 14:24:32] INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3932                         
+                             249147_2361904330.mp4'                            
+[06/08/26 14:24:34] INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3890                         
+                             416582_2737523687.mp4'                            
+                    INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_2514                         
+                             011427_1131318239.mp4'                            
+                    INFO     Animation 98 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\partia                         
+                             l_movie_files\CalendarPat                         
+                             ternsScene\948293694_3052                         
+                             040169_3502444114.mp4'                            
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 14:24:41] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Calend                         
+                             ar_Patterns\480p15\Calend                         
+                             arPatternsScene.mp4'                              
+                                                                               
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Calenda                         
+                             r_Patterns\480p15\Calenda                         
+                             rPatternsScene.srt                                
+                    INFO     Rendered CalendarPatternsScene        scene.py:278
+                             Played 99 animations                              
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/3.6 [00:00<?, ?sec/s]
+                                                    
+
+Transcribe:   0%|          | 0/3.6 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 3.6/3.6 [00:03<00:00,  1.08sec/s]
+Transcribe: 100%|##########| 3.6/3.6 [00:03<00:00,  1.08sec/s]
+
+Animation 1: FadeIn(Text('Pick Patterns and\nReveal Relationships')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 1: FadeIn(Text('Pick Patterns and\nReveal Relationships')):  75%|#######5  | 9/12 [00:00<00:00, 84.63it/s]
+                                                                                                                    
+
+Animation 4: FadeOut(Text('Pick Patterns and\nReveal Relationships')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 4: FadeOut(Text('Pick Patterns and\nReveal Relationships')):  83%|########3 | 10/12 [00:00<00:00, 98.37it/s]
+                                                                                                                      
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/22.8 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/22.8 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 22.8/22.8 [00:02<00:00,  7.68sec/s]
+Transcribe: 100%|##########| 22.8/22.8 [00:02<00:00,  7.68sec/s]
+
+Animation 9: FadeIn(VGroup of 9 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 10: Create(Arrow), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 12: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 13: FadeIn(VGroup of 7 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 15: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 18: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 61.55it/s]
+                                                                                                    
+
+Animation 21: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/16.15 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/16.15 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 16.15/16.15 [00:09<00:00,  1.66sec/s]
+Transcribe: 100%|##########| 16.15/16.15 [00:09<00:00,  1.66sec/s]
+
+Animation 22: FadeIn(VGroup of 9 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+Animation 22: FadeIn(VGroup of 9 submobjects):  43%|####2     | 6/14 [00:00<00:00, 57.81it/s]
+Animation 22: FadeIn(VGroup of 9 submobjects):  86%|########5 | 12/14 [00:00<00:00, 14.67it/s]
+                                                                                              
+
+Animation 23: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 25: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 26: _MethodAnimation(VGroup of 2 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 26: _MethodAnimation(VGroup of 2 submobjects):  83%|########3 | 5/6 [00:00<00:00, 48.37it/s]
+                                                                                                      
+
+Animation 28: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 28: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 82.97it/s]
+                                                                                            
+
+Animation 29: _MethodAnimation(VGroup of 2 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+Animation 29: _MethodAnimation(VGroup of 2 submobjects): 100%|##########| 6/6 [00:00<00:00, 57.75it/s]
+                                                                                                      
+
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 36.34it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 19.54it/s]
+Animation 32: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 19.65it/s]
+                                                                                                     
+
+Animation 35: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/17.62 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/17.62 [00:03<?, ?sec/s]
+Transcribe: 100%|##########| 17.62/17.62 [00:12<00:00,  1.39sec/s]
+Transcribe: 100%|##########| 17.62/17.62 [00:12<00:00,  1.39sec/s]
+
+Animation 36: FadeIn(Text('Sum:')):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                         
+
+Animation 37: FadeIn(VGroup of 11 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 37: FadeIn(VGroup of 11 submobjects):  75%|#######5  | 9/12 [00:00<00:00, 85.17it/s]
+                                                                                              
+
+Animation 39: FadeIn(VGroup of 8 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 41: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                       
+
+Animation 42: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 42: FadeIn(VGroup of 2 submobjects):  88%|########7 | 7/8 [00:00<00:00, 60.37it/s]
+                                                                                            
+
+Animation 44: FadeIn(VGroup of 2 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 45: Create(SurroundingRectangle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 48: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 48: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 31.17it/s]
+Animation 48: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 31.57it/s]
+Animation 48: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 31.13it/s]
+                                                                                                     
+
+Animation 51: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/10.61 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/10.61 [00:04<?, ?sec/s]
+Transcribe: 100%|##########| 10.61/10.61 [00:12<00:00,  1.17s/sec]
+Transcribe: 100%|##########| 10.61/10.61 [00:12<00:00,  1.17s/sec]
+
+Animation 53: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 53: FadeIn(VGroup of 2 submobjects):  36%|###6      | 4/11 [00:00<00:00, 31.54it/s]
+Animation 53: FadeIn(VGroup of 2 submobjects):  73%|#######2  | 8/11 [00:00<00:00, 31.09it/s]
+                                                                                             
+
+Animation 54: FadeIn(VGroup of 6 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 54: FadeIn(VGroup of 6 submobjects):  75%|#######5  | 9/12 [00:00<00:00, 78.83it/s]
+                                                                                             
+
+Animation 56: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 56: FadeIn(VGroup of 2 submobjects):  56%|#####5    | 5/9 [00:00<00:00, 40.37it/s]
+                                                                                            
+
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  17%|#6        | 2/12 [00:00<00:00, 17.30it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 17.87it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 18.14it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 15.08it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 15.78it/s]
+Animation 59: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 16.92it/s]
+                                                                                                     
+
+Animation 62: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/8.66 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/8.66 [00:03<?, ?sec/s]
+Transcribe: 100%|##########| 8.66/8.66 [00:10<00:00,  1.23s/sec]
+Transcribe: 100%|##########| 8.66/8.66 [00:10<00:00,  1.24s/sec]
+
+Animation 63: FadeIn(Text('Show algebraically:')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                        
+
+Animation 64: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 64: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 48.93it/s]
+                                                                                             
+
+Animation 65: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 65: FadeIn(VGroup of 3 submobjects): 100%|##########| 11/11 [00:00<00:00, 106.03it/s]
+                                                                                               
+
+Animation 66: FadeIn(MathTex('n-1')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 69: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 69: FadeOut(VGroup of 2 submobjects), etc.:  38%|###7      | 3/8 [00:00<00:00, 25.23it/s]
+Animation 69: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 6/8 [00:00<00:00, 27.25it/s]
+                                                                                                   
+
+Animation 70: FadeOut(Text('Show algebraically:')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 70: FadeOut(Text('Show algebraically:')), etc.:  33%|###3      | 3/9 [00:00<00:00, 27.08it/s]
+Animation 70: FadeOut(Text('Show algebraically:')), etc.:  67%|######6   | 6/9 [00:00<00:00, 27.06it/s]
+Animation 70: FadeOut(Text('Show algebraically:')), etc.: 100%|##########| 9/9 [00:00<00:00, 25.41it/s]
+                                                                                                       
+
+Transcribe:   0%|          | 0/16.56 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/16.56 [00:04<?, ?sec/s]
+Transcribe: 100%|##########| 16.56/16.56 [00:15<00:00,  1.09sec/s]
+Transcribe: 100%|##########| 16.56/16.56 [00:15<00:00,  1.09sec/s]
+
+Animation 72: FadeIn(VGroup of 4 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 72: FadeIn(VGroup of 4 submobjects):  64%|######3   | 7/11 [00:00<00:00, 66.76it/s]
+                                                                                             
+
+Animation 74: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 74: _MethodAnimation(VGroup of 4 submobjects), etc.:  45%|####5     | 5/11 [00:00<00:00, 34.92it/s]
+Animation 74: _MethodAnimation(VGroup of 4 submobjects), etc.:  82%|########1 | 9/11 [00:00<00:00, 31.52it/s]
+                                                                                                             
+
+Animation 76: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 76: _MethodAnimation(VGroup of 4 submobjects), etc.:  45%|####5     | 5/11 [00:00<00:00, 43.57it/s]
+Animation 76: _MethodAnimation(VGroup of 4 submobjects), etc.: 100%|##########| 11/11 [00:00<00:00, 46.03it/s]
+                                                                                                              
+
+Animation 78: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 78: _MethodAnimation(VGroup of 4 submobjects), etc.:  36%|###6      | 4/11 [00:00<00:00, 36.81it/s]
+Animation 78: _MethodAnimation(VGroup of 4 submobjects), etc.:  91%|######### | 10/11 [00:00<00:00, 47.63it/s]
+                                                                                                              
+
+Animation 80: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 80: _MethodAnimation(VGroup of 4 submobjects), etc.:  91%|######### | 10/11 [00:00<00:00, 98.24it/s]
+                                                                                                              
+
+Animation 81: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 84: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 84: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 59.43it/s]
+                                                                                                    
+
+Animation 87: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/14.57 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/14.57 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 14.57/14.57 [00:02<00:00,  6.13sec/s]
+Transcribe: 100%|##########| 14.57/14.57 [00:02<00:00,  6.13sec/s]
+
+Animation 89: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 89: FadeIn(VGroup of 2 submobjects):  64%|######3   | 7/11 [00:00<00:00, 64.43it/s]
+                                                                                             
+
+Animation 91: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 91: FadeIn(VGroup of 2 submobjects):  82%|########1 | 9/11 [00:00<00:00, 89.62it/s]
+                                                                                             
+
+Animation 93: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 93: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 59.08it/s]
+                                                                                             
+
+Animation 96: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 96: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 31.27it/s]
+Animation 96: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 29.35it/s]
+Animation 96: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 30.62it/s]
+                                                                                                     
