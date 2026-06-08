@@ -138,9 +138,9 @@
     "file": "repeating_patterns.py",
     "class": "RepeatingPatternsScene",
     "status": "success",
-    "elapsed": 109.7,
+    "elapsed": 55.9,
     "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\repeating_patterns\\480p15\\RepeatingPatternsScene.mp4",
-    "log": "C:\\Users\\Coschool\\manimations\\logs\\repeating_patterns_131736.log",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\repeating_patterns_145105.log",
     "error": ""
   },
   "simplification.py": {
@@ -156,9 +156,9 @@
     "file": "simplify_brackets.py",
     "class": "SimplifyBracketsScene",
     "status": "success",
-    "elapsed": 132.4,
+    "elapsed": 53.7,
     "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\simplify_brackets\\480p15\\SimplifyBracketsScene.mp4",
-    "log": "C:\\Users\\Coschool\\manimations\\logs\\simplify_brackets_134106.log",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\simplify_brackets_145203.log",
     "error": ""
   },
   "substitution.py": {
@@ -222,6 +222,24 @@
     "elapsed": 280.9,
     "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Letter_Numbers_Scene\\480p15\\LetterNumbersScene.mp4",
     "log": "C:\\Users\\Coschool\\manimations\\logs\\Letter_Numbers_Scene_144257.log",
+    "error": ""
+  },
+  "Matchstick_Pattern_Scene.py": {
+    "file": "Matchstick_Pattern_Scene.py",
+    "class": "MatchstickPatternScene",
+    "status": "success",
+    "elapsed": 201.4,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Matchstick_Pattern_Scene\\480p15\\MatchstickPatternScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Matchstick_Pattern_Scene_144741.log",
+    "error": ""
+  },
+  "Simplify_Like_Terms.py": {
+    "file": "Simplify_Like_Terms.py",
+    "class": "SimplifyLikeTermsScene",
+    "status": "success",
+    "elapsed": 235.7,
+    "video": "C:\\Users\\Coschool\\manimations\\media\\videos\\Simplify_Like_Terms\\480p15\\SimplifyLikeTermsScene.mp4",
+    "log": "C:\\Users\\Coschool\\manimations\\logs\\Simplify_Like_Terms_145259.log",
     "error": ""
   }
 }

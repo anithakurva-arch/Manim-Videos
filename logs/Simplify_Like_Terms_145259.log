@@ -1,0 +1,1382 @@
+Manim Community v0.20.1
+
+[06/08/26 14:53:06] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sim                         
+                             plification-of-algebraic-                         
+                             expressions-05ebfa70.mp3                          
+                             to .wav                                           
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\668060172_1                         
+                             673952342_631829896.mp4'                          
+[06/08/26 14:53:09] INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\668060172_1                         
+                             736268565_1666280314.mp4'                         
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\1263443165_                         
+                             2559751136_4012731371.mp4                         
+                             '                                                 
+                    INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\1263443165_                         
+                             3585970359_757012760.mp4'                         
+[06/08/26 14:53:10] INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\1263443165_                         
+                             131190976_3356244212.mp4'                         
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\1263443165_                         
+                             2514011427_3968961708.mp4                         
+                             '                                                 
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_3196764103.mp4'                         
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             52167764_1814444762.mp4'                          
+[06/08/26 14:53:12] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:53:20] INFO     Transcription:  Suppose you have three  base.py:98
+                             pencils, two rulers, and four more                
+                             pencils on your desk. You would                   
+                             naturally say you have seven pencils              
+                             and two rulers. You would not keep them           
+                             as a long, messy list. Algebraic                  
+                             expressions work exactly the same way.            
+                             We group what belongs together and                
+                             leave the rest as it is.                          
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sup                         
+                             pose-you-have-three-penci                         
+                             ls-two-rulers-and-four-44                         
+                             748249.mp3 to .wav                                
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             783742733_2513012035.mp4'                         
+[06/08/26 14:53:29] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             262890628_3345306079.mp4'                         
+                    INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             380096476_1267907996.mp4'                         
+[06/08/26 14:53:34] INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             659062594_843074814.mp4'                          
+[06/08/26 14:53:35] INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             096876826_289993567.mp4'                          
+[06/08/26 14:53:38] INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             927132086_1501911509.mp4'                         
+[06/08/26 14:53:39] INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             745554582_2414716015.mp4'                         
+                    INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             585970359_3914370919.mp4'                         
+[06/08/26 14:53:41] INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             473057155_1622879594.mp4'                         
+                    INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_1781992728.mp4'                         
+                    INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_826264514.mp4'                          
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             52167764_2922360132.mp4'                          
+[06/08/26 14:53:43] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:53:46] INFO     Transcription:  An algebraic expression base.py:98
+                             is in its simplified form when all like           
+                             terms have been combined and no further           
+                             grouping is possible.                             
+[06/08/26 14:53:47] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\an-                         
+                             algebraic-expression-is-i                         
+                             n-its-simplified-form-70a                         
+                             6a52c.mp3 to .wav                                 
+[06/08/26 14:53:48] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2y' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_4                         
+                             245157681_3424752791.mp4'                         
+                    INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             955696597_1232629840.mp4'                         
+[06/08/26 14:53:50] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}8x\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\b5495be07988                        
+                             6831.tex                                          
+[06/08/26 14:53:54] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2y' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_6                         
+                             43437770_749510968.mp4'                           
+[06/08/26 14:53:56] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             22305364_3818293920.mp4'                          
+[06/08/26 14:53:57] INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             639298877_584614694.mp4'                          
+[06/08/26 14:53:58] INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             585970359_1767815150.mp4'                         
+[06/08/26 14:53:59] INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             939450225_1237129189.mp4'                         
+                    INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_1276206285.mp4'                         
+                    INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_517939000.mp4'                          
+                    INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             52167764_823864291.mp4'                           
+[06/08/26 14:54:02] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:54:18] INFO     Transcription:  Like terms are terms    base.py:98
+                             that involve the same letter number. So           
+                             3x and 5x are like terms, both involve            
+                             x. But 3x and 5y are unlike terms. They           
+                             involve different letter numbers, just            
+                             as pencils and rulers cannot be merged            
+                             into a single count.                              
+[06/08/26 14:54:19] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\lik                         
+                             e-terms-are-terms-that-in                         
+                             volve-the-same-letter-784                         
+                             44d8f.mp3 to .wav                                 
+[06/08/26 14:54:24] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:54:29] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:54:41] INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             935197547_3414452857.mp4'                         
+[06/08/26 14:54:42] INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             77730461_3785112373.mp4'                          
+[06/08/26 14:54:43] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}5y\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\f458a28b0255                        
+                             0dfa.tex                                          
+[06/08/26 14:54:46] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5y' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:54:47] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             238947368_2163916754.mp4'                         
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             923095255_896378199.mp4'                          
+[06/08/26 14:54:48] INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             286025768_3529549978.mp4'                         
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             585970359_3199115935.mp4'                         
+[06/08/26 14:54:50] INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             431039606_2669846393.mp4'                         
+                    INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_861955386.mp4'                          
+                    INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_2290873885.mp4'                         
+                    INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             52167764_2435103590.mp4'                          
+[06/08/26 14:54:52] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:54:57] INFO     Transcription:  To simplify, we add or  base.py:98
+                             subtract the coefficients, the numbers            
+                             in front of like terms only. 3x plus 5x           
+                             becomes 8x. But 3x plus 5y stays as 3x            
+                             plus 5y. Unlike terms cannot be                   
+                             combined further.                                 
+[06/08/26 14:54:58] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\to-                         
+                             simplify-we-add-or-subtra                         
+                             ct-the-coefficients-b3005                         
+                             858.mp3 to .wav                                   
+[06/08/26 14:55:00] INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             06011207_1091042499.mp4'                          
+[06/08/26 14:55:01] INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             073220132_2131205453.mp4'                         
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '8' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'x' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             68345531_1778579014.mp4'                          
+[06/08/26 14:55:04] INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_4                         
+                             225971154_3379786542.mp4'                         
+[06/08/26 14:55:06] INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             180696580_2086721901.mp4'                         
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5y' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:55:07] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part                                
+                             '\rightarrow' (id: unique000).                    
+                             Using fallback to root group.                     
+[06/08/26 14:55:09] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3x +                              
+                             5y\special{dvisvgm:raw                            
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\cc9fc6afbcad                        
+                             a77b.tex                                          
+[06/08/26 14:55:16] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x + 5y'                      
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5y' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3x + 5y'                      
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 14:55:18] INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_4                         
+                             058335726_1947291004.mp4'                         
+[06/08/26 14:55:24] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             195476164_918938473.mp4'                          
+[06/08/26 14:55:26] INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             877727563_3492800637.mp4'                         
+[06/08/26 14:55:27] INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             585970359_2809414577.mp4'                         
+[06/08/26 14:55:28] INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             984476876_2737473146.mp4'                         
+                    INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_1733404615.mp4'                         
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_926503531.mp4'                          
+[06/08/26 14:55:29] INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             546636312_1710652287.mp4'                         
+[06/08/26 14:55:31] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:55:34] INFO     Transcription:  Simplify the            base.py:98
+                             expression, 6a plus 4b minus 2a plus 9b           
+                             minus 3.                                          
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\sim                         
+                             plify-the-expression-six-                         
+                             a-plus-four-b-minus-88a45                         
+                             ff1.mp3 to .wav                                   
+                    INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             251304281_2086123231.mp4'                         
+[06/08/26 14:55:35] INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             36577820_2078357169.mp4'                          
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}6a\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\3653949a17f3                        
+                             89de.tex                                          
+[06/08/26 14:55:38] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4b\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\3a18c6ce6819                        
+                             3d36.tex                                          
+[06/08/26 14:55:41] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4b' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}9b\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\0495bf42bd47                        
+                             7bbe.tex                                          
+[06/08/26 14:55:43] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '9b' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:55:44] INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             353289965_1493114875.mp4'                         
+                    INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             594135284_4002343242.mp4'                         
+                    INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             427089605_1064498726.mp4'                         
+[06/08/26 14:55:47] INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             339571702_2341684400.mp4'                         
+[06/08/26 14:55:48] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             279366013_22781452.mp4'                           
+                    INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             585970359_782717222.mp4'                          
+[06/08/26 14:55:49] INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             982259676_4189925547.mp4'                         
+                    INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             931455593_862359098.mp4'                          
+[06/08/26 14:55:50] INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_394201553.mp4'                          
+[06/08/26 14:55:51] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:55:59] INFO     Transcription:  Group the A terms, 6A   base.py:98
+                             minus 2A equals 4A. Group the B terms,            
+                             4B plus 9B equals 13B. The number term            
+                             stays minus 3. The simplified                     
+                             expression is 4A plus 13B minus 3.                
+                             Notice that three kinds of terms                  
+                             appeared here. Two pairs of like terms            
+                             were combined, and the number term                
+                             stayed separate. Because it is unlike             
+                             both the A terms and the B terms.                 
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\gro                         
+                             up-the-a-terms-six-a-minu                         
+                             s-two-a-equals-four-a-bca                         
+                             a8dd6.mp3 to .wav                                 
+[06/08/26 14:56:00] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             251304281_530124851.mp4'                          
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '6a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}4a\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\7879fbe40d33                        
+                             f862.tex                                          
+[06/08/26 14:56:02] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             107298017_1213113033.mp4'                         
+[06/08/26 14:56:03] INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             132690585_1610591772.mp4'                         
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4b' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '9b' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}13b\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\c69024af5463                        
+                             6b41.tex                                          
+[06/08/26 14:56:05] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '13b' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_4                         
+                             122190519_2850363424.mp4'                         
+                    INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_4                         
+                             218891620_4029743866.mp4'                         
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}-3\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\c38cd2ad5902                        
+                             b568.tex                                          
+[06/08/26 14:56:08] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-3' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:56:10] INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             885761129_755471443.mp4'                          
+                    INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             56788335_848119903.mp4'                           
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4a' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:56:11] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '13b' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_7                         
+                             56344286_1314593145.mp4'                          
+[06/08/26 14:56:12] INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             378832909_2478406971.mp4'                         
+                    INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             552670083_3115203505.mp4'                         
+[06/08/26 14:56:16] INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             792927955_99458950.mp4'                           
+[06/08/26 14:56:17] INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_9                         
+                             17209102_2093699060.mp4'                          
+[06/08/26 14:56:18] INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             932249147_3371992376.mp4'                         
+[06/08/26 14:56:20] INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             031114593_3370434421.mp4'                         
+                    INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_3910809440.mp4'                         
+                    INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_3962858055.mp4'                         
+[06/08/26 14:56:21] INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             117470482_2853539669.mp4'                         
+[06/08/26 14:56:22] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:56:26] INFO     Transcription:  Like terms share the    base.py:98
+                             same letter number part and can be                
+                             combined. Unlike terms have different             
+                             letter number parts and cannot be                 
+                             combined. Simplified form means all               
+                             like terms have been collected into               
+                             single terms.                                     
+[06/08/26 14:56:27] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\lik                         
+                             e-terms-share-the-same-le                         
+                             tter-number-part-and-3f73                         
+                             bd7b.mp3 to .wav                                  
+[06/08/26 14:56:30] INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             630392800_1674723780.mp4'                         
+[06/08/26 14:56:31] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             037147774_3456020664.mp4'                         
+[06/08/26 14:56:33] INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             031947214_1901044388.mp4'                         
+[06/08/26 14:56:34] INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             966523915_4007952212.mp4'                         
+[06/08/26 14:56:37] INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             985634562_2197807154.mp4'                         
+[06/08/26 14:56:38] INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             077320351_4081529656.mp4'                         
+[06/08/26 14:56:39] INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             932249147_4016213279.mp4'                         
+[06/08/26 14:56:42] INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_1                         
+                             843513036_4265301710.mp4'                         
+                    INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_2                         
+                             514011427_847996738.mp4'                          
+                    INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\part                         
+                             ial_movie_files\SimplifyL                         
+                             ikeTermsScene\948293694_3                         
+                             052040169_1932531448.mp4'                         
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 14:56:52] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Simpli                         
+                             fy_Like_Terms\480p15\Simp                         
+                             lifyLikeTermsScene.mp4'                           
+                                                                               
+[06/08/26 14:56:53] INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Simplif                         
+                             y_Like_Terms\480p15\Simpl                         
+                             ifyLikeTermsScene.srt                             
+                    INFO     Rendered SimplifyLikeTermsScene       scene.py:278
+                             Played 91 animations                              
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+
+Animation 1: FadeIn(Text('Simplification of\nAlgebraic Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 1: FadeIn(Text('Simplification of\nAlgebraic Expressions')):  83%|########3 | 10/12 [00:00<00:00, 92.86it/s]
+                                                                                                                      
+
+Animation 4: FadeOut(Text('Simplification of\nAlgebraic Expressions')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 4: FadeOut(Text('Simplification of\nAlgebraic Expressions')):  92%|#########1| 11/12 [00:00<00:00, 107.49it/s]
+                                                                                                                        
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/19.2 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/19.2 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 19.2/19.2 [00:05<00:00,  3.53sec/s]
+Transcribe: 100%|##########| 19.2/19.2 [00:05<00:00,  3.53sec/s]
+
+Animation 9: FadeIn(VGroup of 2 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+Animation 9: FadeIn(VGroup of 2 submobjects):  64%|######4   | 9/14 [00:00<00:00, 87.84it/s]
+                                                                                            
+
+Animation 11: Create(Arrow), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                         
+
+Animation 13: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 13: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 86.62it/s]
+                                                                                            
+
+Animation 16: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 16: FadeOut(VGroup of 2 submobjects), etc.:  42%|####1     | 5/12 [00:00<00:00, 46.27it/s]
+Animation 16: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 41.71it/s]
+                                                                                                     
+
+Animation 19: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/7.56 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/7.56 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 7.56/7.56 [00:02<00:00,  3.49sec/s]
+Transcribe: 100%|##########| 7.56/7.56 [00:02<00:00,  3.49sec/s]
+
+Animation 20: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 21: Create(Arrow):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                  
+
+Animation 22: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 23: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 23: FadeIn(VGroup of 2 submobjects):  78%|#######7  | 7/9 [00:00<00:00, 59.65it/s]
+                                                                                            
+
+Animation 26: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 26: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 35.12it/s]
+Animation 26: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 41.12it/s]
+                                                                                                    
+
+Animation 29: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/16.75 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/16.75 [00:02<?, ?sec/s]
+Transcribe: 100%|##########| 16.75/16.75 [00:09<00:00,  1.76sec/s]
+Transcribe: 100%|##########| 16.75/16.75 [00:09<00:00,  1.76sec/s]
+
+Animation 30: FadeIn(VGroup of 4 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 30: FadeIn(VGroup of 4 submobjects):  83%|########3 | 10/12 [00:00<00:00, 99.59it/s]
+                                                                                              
+
+Animation 32: FadeIn(VGroup of 4 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 32: FadeIn(VGroup of 4 submobjects):  92%|#########1| 11/12 [00:00<00:00, 107.41it/s]
+                                                                                               
+
+Animation 33: Create(Line):   0%|          | 0/5 [00:00<?, ?it/s]
+                                                                 
+
+Animation 36: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 36: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 29.70it/s]
+Animation 36: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 44.08it/s]
+                                                                                                    
+
+Animation 39: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/16.37 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/16.37 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 16.37/16.37 [00:04<00:00,  3.86sec/s]
+Transcribe: 100%|##########| 16.37/16.37 [00:04<00:00,  3.86sec/s]
+
+Animation 40: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 40: FadeIn(VGroup of 2 submobjects):  56%|#####5    | 5/9 [00:00<00:00, 41.99it/s]
+                                                                                            
+
+Animation 42: FadeIn(VGroup of 8 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 43: Create(Brace), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                        
+
+Animation 45: FadeIn(VGroup of 6 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 45: FadeIn(VGroup of 6 submobjects):  67%|######6   | 8/12 [00:00<00:00, 71.75it/s]
+                                                                                             
+
+Animation 46: FadeIn(Text('Unlike terms cannot be combined further.')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                                             
+
+Animation 49: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 49: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 29.67it/s]
+Animation 49: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 26.66it/s]
+Animation 49: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 24.88it/s]
+Animation 49: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 25.59it/s]
+                                                                                                     
+
+Animation 52: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/6.65 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/6.65 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 6.65/6.65 [00:02<00:00,  2.93sec/s]
+Transcribe: 100%|##########| 6.65/6.65 [00:02<00:00,  2.93sec/s]
+
+Animation 54: FadeIn(Text('Simplify:')):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                              
+
+Animation 55: FadeIn(VGroup of 9 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 56: _MethodAnimation(MathTex('6a')), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 57: _MethodAnimation(MathTex('4b')), etc.:   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                          
+
+Animation 58: FadeIn(Text('a terms')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                  
+
+Animation 61: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 61: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 8/8 [00:00<00:00, 69.59it/s]
+                                                                                                   
+
+Animation 62: FadeOut(Text('Simplify:')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 62: FadeOut(Text('Simplify:')), etc.: 100%|##########| 9/9 [00:00<00:00, 86.91it/s]
+                                                                                             
+
+Transcribe:   0%|          | 0/26.11 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/26.11 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 26.11/26.11 [00:04<00:00,  5.84sec/s]
+Transcribe: 100%|##########| 26.11/26.11 [00:04<00:00,  5.84sec/s]
+
+Animation 65: FadeIn(VGroup of 5 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 67: _MethodAnimation(VGroup of 5 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 69: _MethodAnimation(VGroup of 5 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                                     
+
+Animation 71: _MethodAnimation(VGroup of 5 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 71: _MethodAnimation(VGroup of 5 submobjects), etc.:  73%|#######2  | 8/11 [00:00<00:00, 74.64it/s]
+                                                                                                             
+
+Animation 72: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 74: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 74: FadeIn(VGroup of 2 submobjects):  67%|######6   | 6/9 [00:00<00:00, 56.99it/s]
+                                                                                            
+
+Animation 77: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 77: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 32.90it/s]
+Animation 77: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 30.24it/s]
+Animation 77: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 30.03it/s]
+                                                                                                     
+
+Animation 80: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/13.1 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/13.1 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.1/13.1 [00:02<00:00,  4.74sec/s]
+Transcribe: 100%|##########| 13.1/13.1 [00:02<00:00,  4.74sec/s]
+
+Animation 81: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 81: FadeIn(VGroup of 2 submobjects):  73%|#######2  | 8/11 [00:00<00:00, 65.77it/s]
+                                                                                             
+
+Animation 83: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 83: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 58.13it/s]
+                                                                                             
+
+Animation 85: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 85: FadeIn(VGroup of 2 submobjects):  45%|####5     | 5/11 [00:00<00:00, 43.08it/s]
+                                                                                             
+
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:  17%|#6        | 2/12 [00:00<00:00, 19.62it/s]
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:  42%|####1     | 5/12 [00:00<00:00, 22.73it/s]
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:  67%|######6   | 8/12 [00:00<00:00, 19.44it/s]
+Animation 88: FadeOut(VGroup of 2 submobjects), etc.:  92%|#########1| 11/12 [00:00<00:00, 20.70it/s]
+                                                                                                     

@@ -1,0 +1,1702 @@
+Manim Community v0.20.1
+
+[06/08/26 14:47:57] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:48:02] INFO     Transcription:  Generalizing patterns   base.py:98
+                             with letter numbers.                              
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\gen                         
+                             eralising-patterns-with-l                         
+                             etter-numbers-62d1a91a.mp                         
+                             3 to .wav                                         
+                    INFO     Animation 0 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\668060                         
+                             172_3757453219_631829896.                         
+                             mp4'                                              
+[06/08/26 14:48:09] INFO     Animation 1 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\668060                         
+                             172_1380160219_1666280314                         
+                             .mp4'                                             
+                    INFO     Animation 2 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\126344                         
+                             3165_1859855296_225369777                         
+                             0.mp4'                                            
+[06/08/26 14:48:10] INFO     Animation 3 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\126344                         
+                             3165_3585970359_270877930                         
+                             0.mp4'                                            
+                    INFO     Animation 4 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\126344                         
+                             3165_1465670610_315391325                         
+                             .mp4'                                             
+                    INFO     Animation 5 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\126344                         
+                             3165_2514011427_396896170                         
+                             8.mp4'                                            
+                    INFO     Animation 6 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_3196764103                         
+                             .mp4'                                             
+                    INFO     Animation 7 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_952167764_1814444762.                         
+                             mp4'                                              
+[06/08/26 14:48:13] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:48:18] INFO     Transcription:  Look at this matchstick base.py:98
+                             pattern. One triangle uses three                  
+                             sticks. Two triangles play                        
+                             side-by-side, use five sticks. Three              
+                             triangles use seven sticks. Notice how            
+                             the count grows with each step. But how           
+                             do we describe this for any number of             
+                             triangles without drawing or counting             
+                             each time?                                        
+[06/08/26 14:48:19] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\loo                         
+                             k-at-this-matchstick-patt                         
+                             ern-one-triangle-uses-38f                         
+                             c12a4.mp3 to .wav                                 
+                    INFO     Animation 8 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3783742733_2513012035                         
+                             .mp4'                                             
+[06/08/26 14:48:20] INFO     Animation 9 : Partial     scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3362329887_3345306079                         
+                             .mp4'                                             
+[06/08/26 14:48:21] INFO     Animation 10 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2463526099_1163568433                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=1:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:48:22] INFO     Animation 11 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_763545991_286918464.m                         
+                             p4'                                               
+                    INFO     Animation 12 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_545594992_3318580674.                         
+                             mp4'                                              
+[06/08/26 14:48:23] INFO     Animation 13 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3373506566_675186453.                         
+                             mp4'                                              
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=2:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '5' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 14 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2131986717_3146055727                         
+                             .mp4'                                             
+                    INFO     Animation 15 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3922844391_1695836348                         
+                             .mp4'                                             
+[06/08/26 14:48:24] INFO     Animation 16 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2340500414_1402869259                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=3:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 17 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1984454118_4190267746                         
+                             .mp4'                                             
+[06/08/26 14:48:25] INFO     Animation 18 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2395243679_780897261.                         
+                             mp4'                                              
+                    INFO     Animation 19 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1822999011_415852951.                         
+                             mp4'                                              
+[06/08/26 14:48:28] INFO     Animation 20 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2034429521_3191242410                         
+                             .mp4'                                             
+[06/08/26 14:48:29] INFO     Animation 21 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_4135317561_1397759277                         
+                             .mp4'                                             
+[06/08/26 14:48:30] INFO     Animation 22 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3585970359_2097564584                         
+                             .mp4'                                             
+[06/08/26 14:48:32] INFO     Animation 23 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_8796011_2771194210.mp                         
+                             4'                                                
+                    INFO     Animation 24 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_3459823501                         
+                             .mp4'                                             
+                    INFO     Animation 25 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_36849975.m                         
+                             p4'                                               
+                    INFO     Animation 26 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_952167764_2870174442.                         
+                             mp4'                                              
+[06/08/26 14:48:33] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:48:40] INFO     Transcription:  We let N stand for the  base.py:98
+                             step number. The number of triangles.             
+                             The first triangle needs three sticks.            
+                             Every triangle after that shares one              
+                             side with the previous one. So it only            
+                             needs two new sticks. That shared side            
+                             is always there. It is the mathematical           
+                             reason the rule holds at every step.              
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\we-                         
+                             let-n-stand-for-the-step-                         
+                             number-the-number-of-453d                         
+                             1a31.mp3 to .wav                                  
+                    INFO     Animation 27 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1251304281_1917490061                         
+                             .mp4'                                             
+[06/08/26 14:48:41] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:48:44] INFO     Animation 28 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2931448064_4141513120                         
+                             .mp4'                                             
+[06/08/26 14:48:45] INFO     Animation 29 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_123240714_660042375.m                         
+                             p4'                                               
+                    INFO     Animation 30 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_826268009_3534861704.                         
+                             mp4'                                              
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:48:46] INFO     Animation 31 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_732024287_1123306036.                         
+                             mp4'                                              
+[06/08/26 14:48:47] INFO     Animation 32 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3932747315_2732008221                         
+                             .mp4'                                             
+                    INFO     Animation 33 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3494243966_1792358872                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+2' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:48:50] INFO     Animation 34 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1989116570_638387077.                         
+                             mp4'                                              
+                    INFO     Animation 35 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_993502760_3815823022.                         
+                             mp4'                                              
+[06/08/26 14:48:52] INFO     Animation 36 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2075716208_1789384148                         
+                             .mp4'                                             
+[06/08/26 14:48:53] INFO     Animation 37 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_741817049_3955407788.                         
+                             mp4'                                              
+                    INFO     Animation 38 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3585970359_3752361028                         
+                             .mp4'                                             
+[06/08/26 14:48:54] INFO     Animation 39 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3606368291_1401146318                         
+                             .mp4'                                             
+                    INFO     Animation 40 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_2290873885                         
+                             .mp4'                                             
+                    INFO     Animation 41 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_91963716.m                         
+                             p4'                                               
+                    INFO     Animation 42 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_952167764_2066424876.                         
+                             mp4'                                              
+[06/08/26 14:48:56] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:49:00] INFO     Transcription:  So, the total number of base.py:98
+                             sticks for n triangles is 3 plus 2                
+                             times the quantity n minus 1.                     
+                             Simplifying, 3 plus 2n minus 2 gives us           
+                             2n plus 1.                                        
+[06/08/26 14:49:01] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\so-                         
+                             the-total-number-of-stick                         
+                             s-for-n-triangles-is-967c                         
+                             d6fe.mp3 to .wav                                  
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '(' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part ')' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 43 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1582735487_466891614.                         
+                             mp4'                                              
+                    INFO     Animation 44 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1997129876_770888932.                         
+                             mp4'                                              
+                    INFO     Animation 45 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2160544126_2883282552                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '-' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:49:02] INFO     Animation 46 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3392312208_1427566589                         
+                             .mp4'                                             
+                    INFO     Animation 47 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2483554427_1205861506                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 48 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3089496734_3008888037                         
+                             .mp4'                                             
+                    INFO     Animation 49 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1453026935_1325678851                         
+                             .mp4'                                             
+[06/08/26 14:49:03] INFO     Animation 50 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3310144112_3456079794                         
+                             .mp4'                                             
+                    INFO     Animation 51 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3394500337_1047473617                         
+                             .mp4'                                             
+                    INFO     Animation 52 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2977660708_3459658201                         
+                             .mp4'                                             
+                    INFO     Animation 53 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_926503531.                         
+                             mp4'                                              
+                    INFO     Animation 54 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_1136192596                         
+                             .mp4'                                             
+                    INFO     Animation 55 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_952167764_22364073.mp                         
+                             4'                                                
+[06/08/26 14:49:05] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:49:13] INFO     Transcription:  Once we have the        base.py:98
+                             general rule, we can find any term                
+                             instantly. For step 10, 2 times 10 plus           
+                             1 equals 21 sticks. For step 50, 2                
+                             times 50 plus 1 equals 101 sticks.                
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\onc                         
+                             e-we-have-the-general-rul                         
+                             e-we-can-find-any-term-0a                         
+                             6ab2af.mp3 to .wav                                
+                    INFO     Animation 56 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1416307998_4253742368                         
+                             .mp4'                                             
+[06/08/26 14:49:15] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2n +                              
+                             1\special{dvisvgm:raw                             
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\6677f7be380a                        
+                             0006.tex                                          
+[06/08/26 14:49:17] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2n + 1'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 14:49:18] INFO     Animation 57 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2497768333_3408761535                         
+                             .mp4'                                             
+                    INFO     Animation 58 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1387025220_4011093683                         
+                             .mp4'                                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n =                               
+                             10:\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\e360d1ab5320                        
+                             98f4.tex                                          
+[06/08/26 14:49:20] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n = 10:'                      
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2(10)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\447dc1cc6726                        
+                             ecdf.tex                                          
+[06/08/26 14:49:23] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(10)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}21\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\41830fc39290                        
+                             3a68.tex                                          
+[06/08/26 14:49:25] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '21' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:49:27] INFO     Animation 59 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1552116828_2697689740                         
+                             .mp4'                                             
+[06/08/26 14:49:28] INFO     Animation 60 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_4064717784_1605933422                         
+                             .mp4'                                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n =                               
+                             50:\special{dvisvgm:raw                           
+                             </g>} to                                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\41056f463adc                        
+                             6a49.tex                                          
+[06/08/26 14:49:30] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n = 50:'                      
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}2(50)\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\5be26f235af1                        
+                             f66e.tex                                          
+[06/08/26 14:49:32] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '2(50)' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '1' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}101\specia                        
+                             l{dvisvgm:raw </g>} to                            
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\8ba642191056                        
+                             d384.tex                                          
+[06/08/26 14:49:34] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '101' (id:                     
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:49:35] INFO     Animation 61 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1450740114_2537616678                         
+                             .mp4'                                             
+[06/08/26 14:49:36] INFO     Animation 62 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1856730493_70590376.m                         
+                             p4'                                               
+[06/08/26 14:49:37] INFO     Animation 63 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3585970359_507941453.                         
+                             mp4'                                              
+[06/08/26 14:49:38] INFO     Animation 64 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2495962620_863677268.                         
+                             mp4'                                              
+                    INFO     Animation 65 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_3880155220                         
+                             .mp4'                                             
+                    INFO     Animation 66 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_1572572698                         
+                             .mp4'                                             
+                    INFO     Animation 67 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1546636312_3968805434                         
+                             .mp4'                                             
+[06/08/26 14:49:43] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:49:53] INFO     Transcription:  In a similar pattern,   base.py:98
+                             squares are built in a row, and each              
+                             new square shares one side with the               
+                             previous one. One square needs four               
+                             sticks. Write the general rule for n              
+                             squares and find the number of sticks             
+                             for step 12.                                      
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\in-                         
+                             a-similar-pattern-squares                         
+                             -are-built-in-a-row-e4daf                         
+                             03b.mp3 to .wav                                   
+[06/08/26 14:49:54] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=1:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 68 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_4176050450_3769239334                         
+                             .mp4'                                             
+                    INFO     Animation 69 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2638887540_2889516815                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=2:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '7' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 70 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_4265983723_2619774214                         
+                             .mp4'                                             
+[06/08/26 14:49:55] INFO     Animation 71 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3774010515_2522981055                         
+                             .mp4'                                             
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=3:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '10' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Animation 72 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1179567524_2929862300                         
+                             .mp4'                                             
+[06/08/26 14:49:56] INFO     Animation 73 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2592914281_357601014.                         
+                             mp4'                                              
+                    INFO     Animation 74 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_122131213_2573265218.                         
+                             mp4'                                              
+[06/08/26 14:49:59] INFO     Animation 75 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1771378340_3614669564                         
+                             .mp4'                                             
+[06/08/26 14:50:00] INFO     Animation 76 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_4180454568_3322744740                         
+                             .mp4'                                             
+                    INFO     Animation 77 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3585970359_1221788576                         
+                             .mp4'                                             
+[06/08/26 14:50:01] INFO     Animation 78 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3982259676_3564317634                         
+                             .mp4'                                             
+[06/08/26 14:50:03] INFO     Animation 79 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2858776705_3062639503                         
+                             .mp4'                                             
+                    INFO     Animation 80 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_3710407543                         
+                             .mp4'                                             
+[06/08/26 14:50:04] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:50:11] INFO     Transcription:  Each new square after   base.py:98
+                             the first adds three sticks. General              
+                             rule, 3n plus 1. Check, 3 times 1 plus            
+                             1 equals 4. Correct. For step 12, 3               
+                             times 12 plus 1 equals 37 sticks.                 
+                    INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\eac                         
+                             h-new-square-after-the-fi                         
+                             rst-adds-three-sticks-230                         
+                             1cbab.mp3 to .wav                                 
+                    INFO     Animation 81 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2251585074_4253211268                         
+                             .mp4'                                             
+[06/08/26 14:50:13] INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}+3\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\4b7673e9fbf6                        
+                             b6c2.tex                                          
+[06/08/26 14:50:15] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '+3' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:50:16] INFO     Animation 82 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3827598787_1067332386                         
+                             .mp4'                                             
+                    INFO     Animation 83 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_422774079_655916254.m                         
+                             p4'                                               
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3n + 1'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 14:50:17] INFO     Animation 84 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_67995068_4102746827.m                         
+                             p4'                                               
+[06/08/26 14:50:18] INFO     Animation 85 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_833656367_921408395.m                         
+                             p4'                                               
+                    INFO     Animation 86 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2067131929_3639407138                         
+                             .mp4'                                             
+[06/08/26 14:50:20] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=1:' (id:                    
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3(1)+1\spe                        
+                             cial{dvisvgm:raw </g>} to                         
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\919084bd105f                        
+                             5021.tex                                          
+[06/08/26 14:50:22] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(1)+1'                       
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '4' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '\checkmark'                   
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+[06/08/26 14:50:23] INFO     Animation 87 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_15661005_2107198549.m                         
+                             p4'                                               
+[06/08/26 14:50:24] INFO     Animation 88 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1703947006_1814179749                         
+                             .mp4'                                             
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}n=12:\spec                        
+                             ial{dvisvgm:raw </g>} to                          
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\bf6341b564eb                        
+                             a5d3.tex                                          
+[06/08/26 14:50:26] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part 'n=12:' (id:                   
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}3(12)+1\sp                        
+                             ecial{dvisvgm:raw </g>} to                        
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\efc81a26935b                        
+                             a4c3.tex                                          
+[06/08/26 14:50:28] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '3(12)+1'                      
+                             (id: unique000). Using fallback                   
+                             to root group.                                    
+                    ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '=' (id:                       
+                             unique000). Using fallback to                     
+                             root group.                                       
+                    INFO     Writing                    tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                           
+                             id='unique000'>}37\special                        
+                             {dvisvgm:raw </g>} to                             
+                             C:\Users\Coschool\manimati                        
+                             ons\media\Tex\5f778d991bb6                        
+                             c74c.tex                                          
+[06/08/26 14:50:30] ERROR    MathTex: Could not find SVG     tex_mobject.py:532
+                             group for tex part '37' (id:                      
+                             unique000). Using fallback to                     
+                             root group.                                       
+[06/08/26 14:50:32] INFO     Animation 89 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_224422234_4289858770.                         
+                             mp4'                                              
+                    INFO     Animation 90 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2681633244_3323536718                         
+                             .mp4'                                             
+[06/08/26 14:50:33] INFO     Animation 91 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2214893751_3785182331                         
+                             .mp4'                                             
+[06/08/26 14:50:34] INFO     Animation 92 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3932249147_1672272524                         
+                             .mp4'                                             
+[06/08/26 14:50:35] INFO     Animation 93 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2180740524_47811106.m                         
+                             p4'                                               
+                    INFO     Animation 94 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_1932531448                         
+                             .mp4'                                             
+                    INFO     Animation 95 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_3026816548                         
+                             .mp4'                                             
+[06/08/26 14:50:36] INFO     Animation 96 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1117470482_1330165816                         
+                             .mp4'                                             
+[06/08/26 14:50:37] INFO     HTTP Request: POST                 _client.py:1025
+                             https://api.openai.com/v1/audio/sp                
+                             eech "HTTP/1.1 200 OK"                            
+Detected language: english
+[06/08/26 14:50:41] INFO     Transcription:  Observe how the pattern base.py:98
+                             grows at each step before writing the             
+                             rule. Express the rule using a letter             
+                             number for the position. The rule holds           
+                             because the same reasoning applies at             
+                             every step.                                       
+[06/08/26 14:50:42] INFO     Automatically converted   scene_file_writer.py:394
+                             C:\Users\Coschool\manimat                         
+                             ions\media\voiceovers\obs                         
+                             erve-how-the-pattern-grow                         
+                             s-at-each-step-before-37f                         
+                             d8075.mp3 to .wav                                 
+                    INFO     Animation 97 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2251585074_426786916.                         
+                             mp4'                                              
+[06/08/26 14:50:43] INFO     Animation 98 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2139077284_1017799397                         
+                             .mp4'                                             
+[06/08/26 14:50:44] INFO     Animation 99 : Partial    scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_742621379_2986693135.                         
+                             mp4'                                              
+[06/08/26 14:50:45] INFO     Animation 100 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_1190921413_4209244573                         
+                             .mp4'                                             
+[06/08/26 14:50:46] INFO     Animation 101 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_407068799_3276416184.                         
+                             mp4'                                              
+[06/08/26 14:50:49] INFO     Animation 102 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3845840893_3390017137                         
+                             .mp4'                                             
+[06/08/26 14:50:50] INFO     Animation 103 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2994802387_1356362614                         
+                             .mp4'                                             
+[06/08/26 14:50:51] INFO     Animation 104 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3932249147_22291092.m                         
+                             p4'                                               
+[06/08/26 14:50:53] INFO     Animation 105 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2747339490_2502238732                         
+                             .mp4'                                             
+                    INFO     Animation 106 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_2514011427_1884216954                         
+                             .mp4'                                             
+                    INFO     Animation 107 : Partial   scene_file_writer.py:601
+                             movie file written in                             
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \partial_movie_files\Matc                         
+                             hstickPatternScene\948293                         
+                             694_3052040169_3714705837                         
+                             .mp4'                                             
+                    INFO     Combining to Movie file.  scene_file_writer.py:753
+[06/08/26 14:51:01] WARNING  Some options were not     scene_file_writer.py:819
+                             used: {'shortest': '1',                           
+                             'metadata':                                       
+                             'comment=Rendered with                            
+                             Manim Community v0.20.1'}                         
+                    INFO                               scene_file_writer.py:904
+                             File ready at                                     
+                             'C:\Users\Coschool\manima                         
+                             tions\media\videos\Matchs                         
+                             tick_Pattern_Scene\480p15                         
+                             \MatchstickPatternScene.m                         
+                             p4'                                               
+                                                                               
+                    INFO     The partial movie         scene_file_writer.py:874
+                             directory is full (> 100                          
+                             files). Therefore, manim                          
+                             has removed the 9 oldest                          
+                             file(s). You can change                           
+                             this behaviour by                                 
+                             changing max_files_cached                         
+                             in config.                                        
+                    INFO     Subcaption file has been  scene_file_writer.py:899
+                             written as                                        
+                             C:\Users\Coschool\manimat                         
+                             ions\media\videos\Matchst                         
+                             ick_Pattern_Scene\480p15\                         
+                             MatchstickPatternScene.sr                         
+                             t                                                 
+                    INFO     Rendered MatchstickPatternScene       scene.py:278
+                             Played 108 animations                             
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\manim_voiceover\__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/4.8 [00:00<?, ?sec/s]
+                                                    
+
+Transcribe:   0%|          | 0/4.8 [00:01<?, ?sec/s]
+Transcribe: 100%|##########| 4.8/4.8 [00:04<00:00,  1.06sec/s]
+Transcribe: 100%|##########| 4.8/4.8 [00:04<00:00,  1.06sec/s]
+
+Animation 1: FadeIn(Text('Generalising Patterns\nwith Letter-Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 1: FadeIn(Text('Generalising Patterns\nwith Letter-Numbers')):  83%|########3 | 10/12 [00:00<00:00, 89.84it/s]
+                                                                                                                        
+
+Animation 4: FadeOut(Text('Generalising Patterns\nwith Letter-Numbers')):   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 4: FadeOut(Text('Generalising Patterns\nwith Letter-Numbers')):  75%|#######5  | 9/12 [00:00<00:00, 86.50it/s]
+                                                                                                                        
+
+Animation 7: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                   
+C:\Users\Coschool\manimations\.venv311\Lib\site-packages\stable_whisper\whisper_word_level\original_whisper.py:249: UserWarning: FP16 is not supported on CPU; using FP32 instead
+  warnings.warn("FP16 is not supported on CPU; using FP32 instead")
+
+Transcribe:   0%|          | 0/18.96 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/18.96 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 18.96/18.96 [00:03<00:00,  5.72sec/s]
+Transcribe: 100%|##########| 18.96/18.96 [00:03<00:00,  5.72sec/s]
+
+Animation 9: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 9: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 80.52it/s]
+                                                                                           
+
+Animation 11: Create(VGroup of 3 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 12: FadeIn(VGroup of 3 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 14: Create(VGroup of 5 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 15: FadeIn(VGroup of 3 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 17: Create(VGroup of 7 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 18: FadeIn(VGroup of 3 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 20: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 20: FadeIn(VGroup of 2 submobjects):  56%|#####5    | 5/9 [00:00<00:00, 49.03it/s]
+                                                                                            
+
+Animation 23: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 23: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 29.30it/s]
+Animation 23: FadeOut(VGroup of 2 submobjects), etc.:  58%|#####8    | 7/12 [00:00<00:00, 33.40it/s]
+Animation 23: FadeOut(VGroup of 2 submobjects), etc.:  92%|#########1| 11/12 [00:00<00:00, 28.80it/s]
+                                                                                                     
+
+Animation 26: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/21.17 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/21.17 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 21.17/21.17 [00:03<00:00,  6.14sec/s]
+Transcribe: 100%|##########| 21.17/21.17 [00:03<00:00,  6.14sec/s]
+
+Animation 28: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 30: Create(VGroup of 3 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 31: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 33: Create(VGroup of 5 submobjects):   0%|          | 0/14 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 34: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 36: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 36: FadeIn(VGroup of 2 submobjects): 100%|##########| 9/9 [00:00<00:00, 78.42it/s]
+                                                                                            
+
+Animation 39: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 39: FadeOut(VGroup of 2 submobjects), etc.:  33%|###3      | 4/12 [00:00<00:00, 36.47it/s]
+Animation 39: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 40.57it/s]
+                                                                                                    
+
+Animation 42: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.71 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/11.71 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 11.71/11.71 [00:03<00:00,  3.77sec/s]
+Transcribe: 100%|##########| 11.71/11.71 [00:03<00:00,  3.77sec/s]
+
+Animation 43: FadeIn(VGroup of 8 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 44: _MethodAnimation(MathTex('2')), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                         
+
+Animation 46: FadeIn(VGroup of 6 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 48: FadeIn(VGroup of 4 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 49: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 52: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 52: FadeOut(VGroup of 2 submobjects), etc.:  83%|########3 | 10/12 [00:00<00:00, 97.88it/s]
+                                                                                                     
+
+Animation 55: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/14.52 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/14.52 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 14.52/14.52 [00:02<00:00,  5.49sec/s]
+Transcribe: 100%|##########| 14.52/14.52 [00:02<00:00,  5.49sec/s]
+
+Animation 57: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 59: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 61: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 64: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 64: FadeOut(VGroup of 2 submobjects), etc.:  42%|####1     | 5/12 [00:00<00:00, 45.78it/s]
+Animation 64: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 53.92it/s]
+                                                                                                     
+
+Animation 67: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/13.46 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/13.46 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 13.46/13.46 [00:03<00:00,  4.34sec/s]
+Transcribe: 100%|##########| 13.46/13.46 [00:03<00:00,  4.34sec/s]
+
+Animation 68: Create(VGroup of 4 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 69: FadeIn(VGroup of 3 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 70: Create(VGroup of 7 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                     
+
+Animation 71: FadeIn(VGroup of 3 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 72: Create(VGroup of 10 submobjects):   0%|          | 0/12 [00:00<?, ?it/s]
+                                                                                      
+
+Animation 73: FadeIn(VGroup of 3 submobjects):   0%|          | 0/6 [00:00<?, ?it/s]
+                                                                                    
+
+Animation 75: FadeIn(VGroup of 2 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 75: FadeIn(VGroup of 2 submobjects):  89%|########8 | 8/9 [00:00<00:00, 74.45it/s]
+                                                                                            
+
+Animation 78: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/8 [00:00<?, ?it/s]
+Animation 78: FadeOut(VGroup of 2 submobjects), etc.:  38%|###7      | 3/8 [00:00<00:00, 26.19it/s]
+Animation 78: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 6/8 [00:00<00:00, 26.78it/s]
+                                                                                                   
+
+Animation 79: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/9 [00:00<?, ?it/s]
+Animation 79: FadeOut(VGroup of 4 submobjects), etc.:  44%|####4     | 4/9 [00:00<00:00, 38.07it/s]
+Animation 79: FadeOut(VGroup of 4 submobjects), etc.:  89%|########8 | 8/9 [00:00<00:00, 31.75it/s]
+                                                                                                   
+
+Transcribe:   0%|          | 0/16.2 [00:00<?, ?sec/s]
+                                                     
+
+Transcribe:   0%|          | 0/16.2 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 16.2/16.2 [00:04<00:00,  3.59sec/s]
+Transcribe: 100%|##########| 16.2/16.2 [00:04<00:00,  3.59sec/s]
+
+Animation 82: FadeIn(VGroup of 3 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 82: FadeIn(VGroup of 3 submobjects):  82%|########1 | 9/11 [00:00<00:00, 81.01it/s]
+                                                                                             
+
+Animation 84: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 84: _MethodAnimation(VGroup of 3 submobjects), etc.:  91%|######### | 10/11 [00:00<00:00, 88.77it/s]
+                                                                                                              
+
+Animation 85: Create(SurroundingRectangle):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 87: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 87: _MethodAnimation(VGroup of 3 submobjects), etc.:  73%|#######2  | 8/11 [00:00<00:00, 75.32it/s]
+                                                                                                             
+
+Animation 89: _MethodAnimation(VGroup of 3 submobjects), etc.:   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 89: _MethodAnimation(VGroup of 3 submobjects), etc.:  55%|#####4    | 6/11 [00:00<00:00, 59.92it/s]
+                                                                                                             
+
+Animation 90: Create(SurroundingRectangle):   0%|          | 0/9 [00:00<?, ?it/s]
+                                                                                 
+
+Animation 93: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 93: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 51.77it/s]
+Animation 93: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 44.82it/s]
+                                                                                                     
+
+Animation 96: FadeIn(VGroup of 2 submobjects):   0%|          | 0/8 [00:00<?, ?it/s]
+                                                                                    
+
+Transcribe:   0%|          | 0/11.95 [00:00<?, ?sec/s]
+                                                      
+
+Transcribe:   0%|          | 0/11.95 [00:00<?, ?sec/s]
+Transcribe: 100%|##########| 11.95/11.95 [00:02<00:00,  4.12sec/s]
+Transcribe: 100%|##########| 11.95/11.95 [00:02<00:00,  4.12sec/s]
+
+Animation 98: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 98: FadeIn(VGroup of 2 submobjects):  55%|#####4    | 6/11 [00:00<00:00, 59.45it/s]
+                                                                                             
+
+Animation 100: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 100: FadeIn(VGroup of 2 submobjects):  82%|########1 | 9/11 [00:00<00:00, 89.94it/s]
+                                                                                              
+
+Animation 102: FadeIn(VGroup of 2 submobjects):   0%|          | 0/11 [00:00<?, ?it/s]
+Animation 102: FadeIn(VGroup of 2 submobjects):  82%|########1 | 9/11 [00:00<00:00, 79.31it/s]
+                                                                                              
+
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/12 [00:00<?, ?it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:  25%|##5       | 3/12 [00:00<00:00, 28.59it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:  50%|#####     | 6/12 [00:00<00:00, 27.54it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.:  75%|#######5  | 9/12 [00:00<00:00, 25.88it/s]
+Animation 105: FadeOut(VGroup of 2 submobjects), etc.: 100%|##########| 12/12 [00:00<00:00, 25.83it/s]
+                                                                                                      
