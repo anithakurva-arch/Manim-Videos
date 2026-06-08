@@ -50,10 +50,11 @@ media/
 audio_output/
 logs/
 generated_scripts/
-.fonts/
 coin.svg
 run_results.json
 uv.lock
+New folder/
+python files/
 
 # Test files
 test.py
