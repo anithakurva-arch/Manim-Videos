@@ -138,6 +138,37 @@
         background: var(--good);
       }
 
+      .message {
+        display: grid;
+        gap: 4px;
+        margin: 14px 0 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px 12px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .message.good {
+        border-color: #b9dfd0;
+        background: #eefaf5;
+        color: var(--good);
+      }
+
+      .message.warn {
+        border-color: #f0d493;
+        background: #fff8e8;
+        color: var(--warn);
+      }
+
+      .message.bad {
+        border-color: #fac6c0;
+        background: #fff1ef;
+        color: var(--bad);
+      }
+
       .layout {
         display: grid;
         grid-template-columns: 360px minmax(0, 1fr);
@@ -437,6 +468,7 @@
         </div>
         <div class="pill"><span class="dot"></span> Max regenerations: {{ max_regenerations }}</div>
       </header>
+      <div id="statusBanner" class="message">UI loaded. Upload an Excel file to begin.</div>
 
       <div class="callouts">
         <div class="callout">
@@ -546,6 +578,7 @@
               <button id="validateScript">Step 3: Validate Script</button>
               <button id="runApproved">Generate until Approved</button>
               <button class="secondary" id="downloadApproved" disabled>Download Approved</button>
+              <button class="secondary" id="testUi">Test UI</button>
             </div>
             <div class="workflow-map">
               <div class="step-box">
@@ -653,7 +686,23 @@
         statusList: document.getElementById("statusList"),
         downloadNote: document.getElementById("downloadNote"),
         promptLibrary: document.getElementById("promptLibrary"),
+        statusBanner: document.getElementById("statusBanner"),
+        testUi: document.getElementById("testUi"),
       };
+
+      window.addEventListener("error", (event) => {
+        showMessage(`JavaScript error: ${event.message}`, "bad");
+      });
+
+      window.addEventListener("unhandledrejection", (event) => {
+        showMessage(`Request error: ${event.reason?.message || event.reason || "Unknown error"}`, "bad");
+      });
+
+      function showMessage(message, kind = "") {
+        if (!els.statusBanner) return;
+        els.statusBanner.className = `message ${kind}`.trim();
+        els.statusBanner.textContent = message;
+      }
 
       function savedKey() {
         return localStorage.getItem("conceptual_generator_api_key") || "";
@@ -681,6 +730,7 @@
       }
 
       async function apiPost(url, payload) {
+        showMessage(`Calling ${url}...`, "warn");
         const response = await fetch(url, {
           method: "POST",
           headers: apiHeaders(),
@@ -688,6 +738,7 @@
         });
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Request failed.");
+        showMessage(`${url} completed.`, "good");
         return data;
       }
 
@@ -832,6 +883,7 @@
           const data = await apiGet("/api/prompts");
           state.prompts = data.prompts || [];
           renderPromptLibrary();
+          showMessage("UI ready. Upload an Excel file to begin.", "good");
         } catch (error) {
           els.promptLibrary.innerHTML = `
             <div class="prompt-card">
@@ -840,6 +892,7 @@
               <p>${escapeHtml(error.message)}</p>
             </div>
           `;
+          showMessage(`Prompt library failed: ${error.message}`, "bad");
         }
       }
 
@@ -911,23 +964,24 @@
 
       els.saveKey.addEventListener("click", () => {
         const key = els.apiKey.value.trim();
-        if (!key) return alert("Paste your API key first.");
+        if (!key) return showMessage("Paste your API key first.", "warn");
         localStorage.setItem("conceptual_generator_api_key", key);
         els.apiKey.value = "";
-        alert("API key saved in this browser.");
+        showMessage("API key saved in this browser.", "good");
       });
 
       els.clearKey.addEventListener("click", () => {
         localStorage.removeItem("conceptual_generator_api_key");
         els.apiKey.value = "";
-        alert("API key cleared.");
+        showMessage("API key cleared.", "warn");
       });
 
       els.parseExcel.addEventListener("click", async () => {
-        if (!els.excelFile.files.length) return alert("Choose an Excel file first.");
+        if (!els.excelFile.files.length) return showMessage("Choose an Excel file first.", "warn");
         const form = new FormData();
         form.append("file", els.excelFile.files[0]);
         setBusy(els.parseExcel, true, "Parsing...");
+        showMessage("Uploading and parsing Excel...", "warn");
         try {
           const response = await fetch("/api/parse-excel", { method: "POST", body: form });
           const data = await response.json();
@@ -935,8 +989,9 @@
           state.rows = data.rows || [];
           state.filters = data.filters || {};
           renderFilters();
+          showMessage(`Parsed ${state.rows.length} Learning Outcome rows.`, "good");
         } catch (error) {
-          alert(error.message);
+          showMessage(error.message, "bad");
         } finally {
           setBusy(els.parseExcel, false);
         }
@@ -966,16 +1021,21 @@
         if (button) previewPrompt(button.dataset.prompt);
       });
 
+      els.testUi.addEventListener("click", () => {
+        showMessage("Buttons are connected. JavaScript is running.", "good");
+      });
+
       els.runGrouping.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.outcomes.length) return alert("Select at least one Learning Outcome.");
+        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome.", "warn");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
           const data = await apiPost("/api/group", payload);
           state.grouping = data.grouping;
           setTab("grouping");
+          showMessage("LO grouping completed.", "good");
         } catch (error) {
-          alert(error.message);
+          showMessage(error.message, "bad");
         } finally {
           setBusy(els.runGrouping, false);
         }
@@ -983,7 +1043,7 @@
 
       els.generateScript.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.learningOutcomes) return alert("Select Learning Outcomes first.");
+        if (!payload.learningOutcomes) return showMessage("Select Learning Outcomes first.", "warn");
         setBusy(els.generateScript, true, "Generating...");
         try {
           const data = await apiPost("/api/generate", payload);
@@ -993,15 +1053,16 @@
           state.history = [{ attempt: 1, status: "Generated", script: state.script }];
           renderStatus();
           setTab("script");
+          showMessage("Script generated. Run validation next.", "good");
         } catch (error) {
-          alert(error.message);
+          showMessage(error.message, "bad");
         } finally {
           setBusy(els.generateScript, false);
         }
       });
 
       els.validateScript.addEventListener("click", async () => {
-        if (!state.script) return alert("Generate a script first.");
+        if (!state.script) return showMessage("Generate a script first.", "warn");
         setBusy(els.validateScript, true, "Validating...");
         try {
           const data = await apiPost("/api/validate", contextPayload({ script: state.script }));
@@ -1014,8 +1075,9 @@
           };
           renderStatus();
           setTab("validation");
+          showMessage(`Validation completed: ${data.status}.`, data.status === "Approved" ? "good" : "warn");
         } catch (error) {
-          alert(error.message);
+          showMessage(error.message, "bad");
         } finally {
           setBusy(els.validateScript, false);
         }
@@ -1023,7 +1085,7 @@
 
       els.runApproved.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.learningOutcomes) return alert("Select Learning Outcomes first.");
+        if (!payload.learningOutcomes) return showMessage("Select Learning Outcomes first.", "warn");
         setBusy(els.runApproved, true, "Running capped workflow...");
         try {
           const data = await apiPost("/api/run-approved", payload);
@@ -1034,17 +1096,19 @@
           renderStatus();
           setTab(data.approved ? "script" : "validation");
           if (!data.approved) {
-            alert(`Stopped after ${data.attemptsUsed} attempts. No infinite loop was allowed. Review validation before retrying.`);
+            showMessage(`Stopped after ${data.attemptsUsed} attempts. No infinite loop was allowed. Review validation before retrying.`, "bad");
+          } else {
+            showMessage(`Approved after ${data.attemptsUsed} attempt(s).`, "good");
           }
         } catch (error) {
-          alert(error.message);
+          showMessage(error.message, "bad");
         } finally {
           setBusy(els.runApproved, false);
         }
       });
 
       els.downloadApproved.addEventListener("click", () => {
-        if (state.status !== "Approved") return alert("Only Approved scripts can be downloaded.");
+        if (state.status !== "Approved") return showMessage("Only Approved scripts can be downloaded.", "warn");
         const payload = {
           status: state.status,
           grouping: state.grouping,
@@ -1053,6 +1117,7 @@
           history: state.history.map(({ attempt, status }) => ({ attempt, status })),
         };
         saveTextFile("approved_conceptual_script.json", JSON.stringify(payload, null, 2), "application/json");
+        showMessage("Approved script downloaded.", "good");
       });
 
       if (savedKey()) {
