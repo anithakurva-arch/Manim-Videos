@@ -21,6 +21,29 @@ PROMPT_FILES = {
     "validation": "validation_prompt.txt",
 }
 
+PROMPT_META = {
+    "lo_grouping": {
+        "title": "LO Grouping Prompt",
+        "stage": "Step 1",
+        "purpose": "Groups selected Learning Outcomes into 2-minute conceptual script clusters.",
+    },
+    "script_generation": {
+        "title": "Generation Prompt Conceptual Script",
+        "stage": "Step 2",
+        "purpose": "Generates voice-over-ready conceptual scripts from grouped Learning Outcomes.",
+    },
+    "learning_design": {
+        "title": "Learning Design Final",
+        "stage": "Blueprint",
+        "purpose": "Defines the instructional framework used inside script generation.",
+    },
+    "validation": {
+        "title": "Validation Prompt v2 Updated",
+        "stage": "Step 3",
+        "purpose": "Validates scripts and drives capped regeneration until approval.",
+    },
+}
+
 app = Flask(__name__)
 
 
@@ -226,6 +249,39 @@ def api():
             "default_model": DEFAULT_MODEL,
             "prompts": sorted(PROMPT_FILES),
             "media_storage": "local-only; media/ is intentionally not tracked in Git",
+        }
+    )
+
+
+@app.get("/api/prompts")
+def prompts_route():
+    prompts = []
+    for key, meta in PROMPT_META.items():
+        text = load_prompt(key)
+        prompts.append(
+            {
+                "key": key,
+                "title": meta["title"],
+                "stage": meta["stage"],
+                "purpose": meta["purpose"],
+                "characters": len(text),
+            }
+        )
+    return jsonify({"prompts": prompts})
+
+
+@app.get("/api/prompts/<name>")
+def prompt_detail_route(name):
+    if name not in PROMPT_FILES:
+        return jsonify({"error": "Unknown prompt."}), 404
+    meta = PROMPT_META[name]
+    return jsonify(
+        {
+            "key": name,
+            "title": meta["title"],
+            "stage": meta["stage"],
+            "purpose": meta["purpose"],
+            "text": load_prompt(name),
         }
     )
 
