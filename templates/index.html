@@ -499,8 +499,8 @@
                 <input id="apiKey" type="password" autocomplete="off" placeholder="sk-...">
               </div>
               <div class="row">
-                <button id="saveKey">Save key</button>
-                <button class="secondary" id="clearKey">Clear</button>
+                <button type="button" id="saveKey">Save key</button>
+                <button type="button" class="secondary" id="clearKey">Clear</button>
               </div>
               <p class="note">The key is saved in this browser only and is sent to the backend only when you click a generation or validation button.</p>
             </div>
@@ -513,7 +513,7 @@
                 <label for="excelFile">Excel file</label>
                 <input id="excelFile" type="file" accept=".xlsx,.xlsm,.xltx,.xltm">
               </div>
-              <button id="parseExcel">Upload and parse</button>
+              <button type="button" id="parseExcel">Upload and parse</button>
               <p class="note">Accepted columns include Grade/Class, Chapter/Topic, Subtopic/Sub Topic, and Learning Outcome/LO/Learning Objective. Subject is optional and defaults to Mathematics.</p>
             </div>
           </section>
@@ -534,8 +534,8 @@
                 <select id="subtopicSelect"></select>
               </div>
               <div class="row">
-                <button class="secondary" id="selectVisible">Select visible</button>
-                <button class="secondary" id="clearSelection">Clear selection</button>
+                <button type="button" class="secondary" id="selectVisible">Select visible</button>
+                <button type="button" class="secondary" id="clearSelection">Clear selection</button>
               </div>
             </div>
           </section>
@@ -562,12 +562,12 @@
             <h2>Workflow Breakpoints</h2>
             <p class="note">Each button is a deliberate API breakpoint. Nothing loops forever. Automatic regeneration stops after {{ max_regenerations }} attempts.</p>
             <div class="row">
-              <button id="runGrouping">Step 1: Group LOs</button>
-              <button id="generateScript">Step 2: Generate Script</button>
-              <button id="validateScript">Step 3: Validate Script</button>
-              <button id="runApproved">Generate until Approved</button>
-              <button class="secondary" id="downloadApproved" disabled>Download Approved</button>
-              <button class="secondary" id="testUi">Test UI</button>
+              <button type="button" id="runGrouping">Step 1: Group LOs</button>
+              <button type="button" id="generateScript">Step 2: Generate Script</button>
+              <button type="button" id="validateScript">Step 3: Validate Script</button>
+              <button type="button" id="runApproved">Generate until Approved</button>
+              <button type="button" class="secondary" id="downloadApproved" disabled>Download Approved</button>
+              <button type="button" class="secondary" id="testUi">Test UI</button>
             </div>
             <div class="workflow-map">
               <div class="step-box">
@@ -607,11 +607,11 @@
             <section class="panel">
               <h2>Stage Output</h2>
               <div class="tabs">
-                <button class="tab active" data-tab="grouping">Grouping</button>
-                <button class="tab" data-tab="script">Script</button>
-                <button class="tab" data-tab="validation">Validation</button>
-                <button class="tab" data-tab="history">Revisions</button>
-                <button class="tab" data-tab="prompt">Prompt Preview</button>
+                <button type="button" class="tab active" data-tab="grouping">Grouping</button>
+                <button type="button" class="tab" data-tab="script">Script</button>
+                <button type="button" class="tab" data-tab="validation">Validation</button>
+                <button type="button" class="tab" data-tab="history">Revisions</button>
+                <button type="button" class="tab" data-tab="prompt">Prompt Preview</button>
               </div>
               <div id="outputBox" class="output">No output yet.</div>
             </section>
@@ -892,7 +892,7 @@
             <strong>${escapeHtml(prompt.title)}</strong>
             <p>${escapeHtml(prompt.purpose)}</p>
             <p>${Number(prompt.characters).toLocaleString()} characters</p>
-            <button class="secondary prompt-open" data-prompt="${escapeHtml(prompt.key)}">Preview</button>
+            <button type="button" class="secondary prompt-open" data-prompt="${escapeHtml(prompt.key)}">Preview</button>
           `;
           els.promptLibrary.appendChild(card);
         });
@@ -1157,6 +1157,7 @@
       loadPromptLibrary();
       renderStatus();
       setTab("grouping");
+      showMessage("JavaScript ready. Buttons are connected.", "good");
     </script>
   </body>
 </html>
