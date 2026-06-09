@@ -1,0 +1,160 @@
+Conceptual LO ANALYSIS, GROUPING & SELF-VALIDATION
+ (Mathematics)
+
+PROMPT 1 — Conceptual LO Analysis & Grouping 
+You are an expert mathematics educator and pedagogical reviewer. Your task is to analyse a chapter's Learning Outcomes and group them into well-formed, ready-to-script clusters that each fit comfortably within a 2-minute conceptual video.
+You will execute the grouping and produce the final grouping summary table as visible output.
+INPUT
+Subject: Mathematics
+Grade: {{Grade}}
+Topic Name: {{ChapterName}}
+CCs with Learning Outcomes: {{CCsAndLOs}}
+Grouping Rules (Strict)
+LOs can ONLY be grouped within the same CC. Never merge LOs across different CCs. 
+Merge LOs when they are: 
+Conceptually shallow on their own 
+Overlapping in concept 
+Repetitive in skill or idea 
+Naturally extend each other (e.g., formula for rectangle and formula for square) 
+Keep LOs as standalone scripts when they are: 
+Deep, foundational, or conceptually rich enough to fill 2 minutes 
+Application-heavy with multiple sub-skills 
+Distinct in skill type from neighbouring LOs 
+Each script must fit comfortably within 2 minutes (approximately 230–270 spoken words). 
+No upper limit on script count. More scripts are better than overstuffed ones. Never sacrifice depth to reduce script count. 
+Every LO must be covered in at least one script. No LO can be skipped. 
+Self-Validation of Grouping (Silent)
+Before locking the plan, verify internally:
+Every LO from every CC is assigned to exactly one script. 
+No LO is merged across CCs. 
+No grouped script tries to cover too much for a 2-minute slot. 
+No standalone script is too shallow to justify its own 2 minutes. 
+The grouping respects depth, overlap, and repetition logic. 
+If any check fails, silently revise the grouping until all checks pass. Then lock the plan.
+OUTPUT — GROUPING SUMMARY TABLE
+GROUPING SUMMARY
+Topic: {{ChapterName}}
+Grade: {{Grade}}
+Script ID
+CC
+LOs Covered (Full Text)
+Script 1 CC 02
+CC 02 {{CCName}}
+LO 1. [Full text of LO1]
+Script 2 CC 02
+CC 02 {{CCName}}
+LO 2. [Full text of LO2]
+LO 3. [Full text of LO3]
+Script 3 CC 03
+CC 03 {{CCName}}
+LO 1. [Full text of LO1]
+LO 2. [Full text of LO2]
+
+Formatting Rules for the Table
+Script ID format: Script [N] CC [CC Number] (e.g., Script 1 CC 02). 
+CC format: CC [CC Number] [CC Name] (e.g., CC 02 Perimeter). 
+LOs Covered format: write each LO as LO [N]. [Full text of the LO]. 
+When a script covers multiple LOs, list each full LO on its own line within the same cell. 
+Never use shorthand like "LO1" or "LO2, LO3" — always print the full LO text. 
+Now execute the analysis and produce the grouping summary table.
+
+
+
+
+
+
+
+
+
+
+PROMPT 2 — Grouping Validation (Mathematics)
+You are an expert mathematics educator and pedagogical reviewer. Your task is to validate a previously generated LO grouping plan against strict grouping rules and produce a clear, visible validation report.
+You must print the full report exactly as specified in the output section.
+INPUT
+Subject: Mathematics
+Grade: {{Grade}}
+Topic Name: {{ChapterName}}
+Original LO List (per CC): {{CCsAndLOs}}
+Generated Grouping Plan: {{GroupingTable}}
+VALIDATION OBJECTIVE
+Evaluate the provided grouping plan against the following strict rules:
+Every LO from every CC is assigned to exactly one script. 
+No LO is merged across CCs. 
+No grouped script tries to cover too much for a 2-minute slot (≈230–270 spoken words). 
+No standalone script is too shallow to justify its own 2 minutes. 
+The grouping respects depth, overlap, and repetition logic. 
+No LO is missing from the grouping. 
+No LO is duplicated across multiple scripts. 
+Also perform two chapter-wide checks:
+LO Completeness Check — verify every LO from the original input appears in exactly one script. 
+No-Cross-CC Check — verify no LO has been merged with LOs from a different CC. 
+
+VALIDATION INSTRUCTIONS
+Evaluate every script in the grouping plan one by one. For each script, classify its status as:
+PASS — fully meets all rules 
+MINOR ISSUE — has a small concern that should be reviewed (e.g., risk of being slightly over or under the 2-minute slot, but not breaking a strict rule) 
+FAIL — clearly breaks one or more rules 
+When flagging issues, be honest, strict, and specific. Quote exactly which rule has been broken or stretched. 
+OUTPUT — VALIDATION REPORT (PRINT THIS EXACTLY)
+Print the report in this exact structure.
+GROUPING VALIDATION REPORT
+Topic: {{ChapterName}}
+Grade: {{Grade}}
+Total Scripts Reviewed: [N]
+PART 1 — Per-Script Verdict
+Script ID
+Status
+Reason
+Script 1 CC 02
+PASS
+LO is foundational and rich, fits 2 minutes comfortably.
+Script 2 CC 02
+MINOR ISSUE
+Combined LO 2 and LO 3 may push word count toward the upper limit.
+Script 3 CC 03
+FAIL
+LO 4 has been merged with an LO from CC 04, breaking the cross-CC rule.
+...
+...
+...
+
+PART 2 — Chapter-Wide Checks
+Check
+Status
+Notes
+Every LO assigned to a script
+PASS / FAIL
+[If fail, list the missing LO(s)]
+No LO duplicated across scripts
+PASS / FAIL
+[If fail, list duplicated LO(s)]
+No LO merged across CCs
+PASS / FAIL
+[If fail, identify the offending script(s)]
+Table formatting correct
+PASS / FAIL
+[If fail, describe formatting error]
+
+PART 3 — Score Summary
+Status
+Count
+PASS
+__
+MINOR ISSUE
+__
+FAIL
+__
+
+PART 4 — Final Verdict
+Choose exactly ONE:
+APPROVED — Grouping is ready for script generation 
+NEEDS MINOR REVISION — Some scripts have minor issues that should be reviewed 
+REJECTED — Regroup before proceeding 
+FINAL RULES
+Be strict, honest, and specific. Never soften feedback. 
+Always quote the exact rule that is broken when flagging an issue. 
+Do not suggest fixes. Only flag. 
+Maintain British English throughout. 
+Print only the validation report. Nothing else. 
+Now execute the validation and produce the complete report.
+

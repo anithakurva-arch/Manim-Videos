@@ -1,0 +1,165 @@
+Learning Design— Mathematics Concept Videos 
+(Under 2 Minutes)
+
+Document Purpose
+This document defines the Learning Design framework used to create short-format under 2 minutes conceptual mathematics videos for secondary school students. It serves as the instructional blueprint that guides script development, ensuring every video delivers clear, focused, and pedagogically sound learning.
+
+What is a Learning Design 
+The Learning Design is the core instructional document that structures how a concept is taught through a short conceptual video.
+It is not a script, a content outline, or a video summary.
+It is a structured framework that defines what learners should understand, organises how concepts unfold progressively, anticipates learner difficulties, integrates visuals, narration, and reasoning, and ensures conceptual clarity within a strict time budget.
+
+Purpose of the Learning Design 
+The Learning Design ensures that learning progresses logically from observation to understanding, builds conceptual clarity step by step, reduces misconceptions before they form, supports independent understanding through audiovisual instruction, and connects mathematics to meaningful real-life contexts.
+
+Core Questions the Learning Design Answers 
+Before designing a video, the following questions must be answered:
+What should learners understand — defines the focal idea
+Why is this concept important — frames real-life relevance
+What makes this concept difficult — anticipates barriers
+How should this be taught — drives instructional strategy
+How should learners progress from observation to application — shapes the segment flow
+
+Concept Discovery (Pre-Design Step) 
+Before structuring the design, identify the conceptual heart of the lesson:
+Core conceptual insight — the one big idea learners must take away
+Conceptual barrier — what may prevent understanding
+Most likely misconception — what learners typically get wrong
+Aha moment — the breakthrough experience the video should create
+Concept Discovery ensures the video is purpose-driven, not content-driven.
+
+Structure of a Learning Design 
+Every Learning Design must contain the following sections:
+Metadata — basic information about the video
+Concept Overview — scope and focus of learning
+Learning Objectives — expected outcomes
+Segment Structure — instructional sequencing
+Segment Details — learning process per segment
+
+5.1 Metadata
+Subject — Mathematics
+Grade Level — target grade
+Topic — chapter name
+Subtopic — specific focus area
+Duration — under 2 minutes
+
+5.2 Concept Overview
+Concept Scope — what learners will understand by the end
+Key Ideas — core concepts, definitions, formulas
+Real-Life Relevance — where this concept applies in daily life
+Learning Outcome — the expected conceptual understanding
+
+5.3 Learning Objectives
+Type — Purpose
+Conceptual — what learners must understand
+Procedural — what learners must be able to do
+Analytical — what reasoning learners must develop
+
+5.4 Segment Structure
+The concept is divided into short instructional segments. Each segment serves a distinct purpose in the learning journey:
+Hook / Observation — create curiosity and connect to real-life context
+Concept Meaning — build intuitive understanding of what the concept is
+Visual Representation — reveal conceptual relationships visually
+Derivation / Logic — show how and why the concept works
+Guided Application — demonstrate the concept through a worked example
+Summary / Closure — reinforce the core insight and conclude meaningfully
+Note: not every segment is required for every video. Use only the segments that genuinely serve the Learning Outcomes while keeping the video under 2 minutes.
+
+5.5 Segment Details
+For each segment used, define:
+Visuals — diagrams, animations, or representations that reveal the concept
+Narration — spoken guidance that supports reasoning and attention
+On-Screen Text — minimal labels, formulas, or keywords for reinforcement
+Instructional Focus — the intended conceptual outcome of the segment
+
+Design Principles 
+6.1 Conceptual Progression
+Learning should move logically through observation, understanding, reasoning, application. Each stage must deepen understanding rather than merely add information.
+
+6.2 Explanation & Reasoning
+Explanations must reveal relationships, not just procedures.
+Reasoning should emerge naturally through logical flow.
+Avoid memorisation-first teaching.
+Always answer how does it work, why does it work, where can it be applied.
+
+6.3 Misconception Handling
+Identify common learner difficulties in advance.
+Use contrasts and visuals to correct misunderstandings.
+Strengthen conceptual clarity by addressing misconceptions during explanation, not after.
+
+6.4 Cognitive Load & Pacing
+Focus on one core idea per segment.
+Reveal information gradually.
+Synchronise narration with visuals.
+Keep narration concise, conversational, and clear.
+Avoid stacking multiple ideas in one sentence.
+
+6.5 Visual Design Principles
+Visuals must actively teach, not decorate.
+Concept Focus — visuals should highlight the central idea
+Progressive Reveal — show information step by step
+Visual Hierarchy — guide learner focus intentionally
+Minimal Labels — avoid text overload
+Purposeful Animation — animate only to clarify
+
+6.6 Language & Clarity
+Use short, simple sentences.
+Choose everyday words over heavy academic vocabulary.
+Use technical terms only when needed and explain them clearly.
+Maintain a warm, teacherly tone — never robotic or stiff.
+
+Scope Management for Short Videos 
+Prioritise one major learning outcome.
+Limit procedural detail.
+Allocate enough time for understanding before application.
+Avoid unrelated subtopics or extra examples.
+Golden rule: depth over breadth. One concept taught well beats five concepts touched briefly.
+
+The Learning Journey 
+Start — curiosity, hmm interesting
+Middle — clarity, oh that is what it means
+End — confidence, I can use this now
+
+What a Strong Learning Design Achieves 
+Build intuitive understanding before formal definitions
+Develop conceptual clarity through structured reasoning
+Connect ideas to real-life situations
+Apply concepts independently afterwards
+Experience a clear aha moment of understanding
+
+What to Avoid 
+Introducing formulas without conceptual understanding
+Overcrowded visuals or dense on-screen text
+Long narration without supporting visuals
+Multiple major concepts in one segment
+Memorisation-first teaching
+Abrupt transitions between ideas
+Decorative visuals with no teaching purpose
+Excessive examples in short videos
+Unexplained jumps in reasoning
+Dense calculations without visual breakdown
+
+Core Quality Indicators 
+Conceptual Clarity — logical progression from observation to application
+Structured Reasoning — ideas unfold step by step
+Misconception Reduction — common confusions are addressed
+Learner Engagement — curiosity is created and maintained
+Visual-Pedagogical Alignment — visuals teach, not decorate
+Cognitive Load Management — pacing remains manageable
+Real-Life Relevance — learning connects meaningfully to daily life
+Independent Learning Support — learners can apply the concept on their own
+
+Final Principle 
+A Learning Design is not just content organisation.
+It is the design of a meaningful learning experience that enables independent understanding through audiovisual instruction.
+The focus must always remain on learner understanding, conceptual clarity, instructional effectiveness.
+The Learning Design exists to make difficult ideas easy, abstract ideas tangible, and short videos truly transformative.
+This document serves as the foundational framework for all under-2-minute conceptual mathematics videos.
+
+Important Note on Flexibility for Under-2-Minute Videos
+For short-format videos under 2 minutes, it is not mandatory to include every element described in this Learning Design.
+Use only what is required to serve the topic, the Learning Outcomes, and the time limit.
+The Learning Design is flexible by intent — designed to guide, not constrain. The final video must:
+include only the segments that genuinely serve the Learning Outcomes,
+fit comfortably within 2 minutes,
+and still feel pedagogically complete and meaningful.

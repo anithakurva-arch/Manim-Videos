@@ -1,0 +1,480 @@
+VALIDATION PROMPT — MATHEMATICS CONCEPTUAL SCRIPT
+Framework: Hallucination-Risk-Aware Validation with LD Alignment, Internal Consistency, and Feedback Depth Mandates
+
+OBJECTIVE
+Your task is to evaluate the provided under-2-minute mathematics voice-over script against:
+
+1.  The specified Learning Outcomes (LO)
+2.  The Learning Design Document (LD) — treated as the instructional blueprint
+3.  The provided textbook PDF — treated as the source of mathematical truth
+
+You must verify:
+
+•   Full alignment with the Learning Outcomes — nothing beyond their scope
+•   Mathematical accuracy verified against the textbook PDF
+•   Terminology, definitions, formulas, and notation matching the textbook
+•   Pedagogical clarity, language simplicity, and grade-appropriate tone
+•   Audio-visual integration (spoken formulas, no abbreviations, smooth natural narration)
+•   Production-readiness within strict time and format constraints
+•   Internal logical consistency (examples and analogies must not contradict each other)
+•   Learning Design scope compliance (depth over breadth, one major outcome per video)
+•   Learning Journey arc integrity (curiosity → clarity → confidence)
+
+Your verdict decides whether the script goes to production or is regenerated.
+
+AUDIO-ONLY SCRIPT ASSUMPTION (CRITICAL)
+This script is an AUDIO-ONLY voice-over transcript. Visuals, animations, 
+diagrams, and on-screen text are handled separately by the production team 
+and are NOT this script's responsibility.
+
+Therefore, the validator MUST:
+Evaluate the script purely as spoken narration. 
+Assume the learner is listening only — judge clarity, pacing, and pedagogy based on audio comprehension alone. 
+Worked examples and application segments must be phrased through spoken narration only (e.g., "Imagine a four-sided shape where..." rather than visual references). 
+Mathematical concepts must be fully understandable through spoken words alone, without relying on visuals to carry meaning. 
+Do not suggest or recommend visual-observation phrases such as "Look at...", "Watch as...", "Notice how...", "See this...", "On screen...", or "As you can see...". 
+Do not recommend diagram references, animation cues, on-screen text, storyboarding language, or any other visual-direction cues. 
+Do not flag the absence of visual cues, visual narration, diagram references, or on-screen elements.
+EVALUATION RULES
+Internal evaluation (do NOT print in the output):
+
+For each of the 15 internal sections (93 total criteria), silently classify each criterion as:
+
+•   Met: fully satisfies the criterion
+•   Partially Met: minor fix needed
+•   Not Met: requires regeneration
+•   Skipped: not applicable due to LO flexibility
+
+Mandatory practices:
+
+•   Always quote the exact script line being evaluated when flagging an issue.
+•   Always cross-reference the textbook PDF when checking math accuracy, definitions, terminology, or formulas.
+•   If the script deviates from the textbook, quote both the script line AND the textbook line or page where the correct version appears.
+•   Do not soften feedback. Be honest, strict, and specific.
+•   Use British English standards throughout.
+•   When word count is over 270, only recommend trimming. Never recommend adding new content unless paired with a larger trim elsewhere that keeps total word count within range.
+•   When word count is within range but close to the ceiling (260–270), recommend tightening for safety margin, not expanding.
+
+MANDATORY FEEDBACK DEPTH RULE (NEW)
+For every criterion marked 'Not Met' or 'Partially Met', the validator must output two mandatory components in addition to the script quote:
+
+1.  WHY it fails: The pedagogical, mathematical, logical, or production consequence of the error on the learner's understanding, the video's instructional integrity. This must cite the relevant LD section or mathematical principle where applicable. Generic statements ('this is unclear') are prohibited.
+
+2.  WHAT to fix: A specific, actionable revision — either an exact rewritten line, a structural change directive, or a scope reduction instruction. The fix must be implementable by a scriptwriter without guesswork. Generic fixes ('improve clarity', 'add example') are prohibited.
+
+If a criterion is marked 'Skipped', provide a one-sentence justification referencing the LO type.
+
+FLEXIBILITY PRINCIPLE (CRITICAL — APPLY BEFORE VALIDATING)
+The generation SOP is intentionally LO-driven and flexible. Not every script must contain every segment. Before marking any segment-related criterion as Not Met, verify whether the segment was genuinely required by the LO:
+
+•   Hook paragraph and Summary block are mandatory in every script.
+•   Concept paragraph is required when the LO involves defining or explaining.
+•   Reasoning paragraph is required when the LO involves justification or logical understanding.
+•   Question and Solution (worked example) is required when the LO contains procedural verbs: identify, calculate, solve, construct, prove, apply, or demonstrate. For these LOs, the worked example CANNOT be skipped.
+•   For describe, recognise, classify, or compare LOs (without procedural verbs), the worked example may be skipped or replaced with an illustrative scenario.
+
+If a segment is missing because the LO does not require it, mark related criteria as 'Skipped' with a brief justification. Do not penalise the script for correctly adapting to the LO type.
+
+INPUT PARAMETERS
+Field
+Value
+Grade
+{{GRADE}}
+Subject
+Mathematics
+Topic
+{{TOPIC}}
+Subtopic
+{{SUBTOPIC}}
+Learning Outcomes
+{{LEARNING_OUTCOMES}}
+Script
+{{SCRIPT_TO_REVIEW}}
+Textbook
+{{ATTACHED_TEXTBOOK_PDF}}
+
+
+TEXTBOOK CROSS-VERIFICATION INSTRUCTIONS
+Before evaluating, locate the relevant chapter and subtopic in the attached textbook PDF.
+
+While reviewing the script, actively check:
+
+•   Are the definitions in the script worded and structured in line with the textbook?
+•   Are the formulas, identities, or theorems stated exactly as in the textbook?
+•   Are mathematical terms identical to the textbook's terminology?
+•   Is the reasoning consistent with the textbook's explanation or derivation?
+•   Are diagram labels (such as triangle ABC, angle 1, side AB) consistent with the textbook?
+
+If anything diverges from the textbook, flag it under Critical Issues with:
+
+•   A direct quote from the script
+•   The corresponding textbook line or page reference
+•   A specific recommendation
+
+INTERNAL CHECKLIST (RUN SILENTLY — DO NOT PRINT)
+Silently evaluate the script across all 15 internal sections covering 93 criteria. The sections are:
+#
+Section
+Criteria Count
+1
+Learning Outcome Alignment
+5
+1.5
+Learning Design Scope Compliance
+3
+2
+Textbook Alignment and Mathematical Accuracy
+8
+2.5
+Internal Logical Consistency
+3
+3
+Pedagogical Soundness
+9
+3.5
+Reasoning Quality
+3
+3.6
+Misconception Anticipation
+3
+3.7
+Derivation Depth
+3
+4
+Structure and Time Compliance
+6
+4.5
+Cognitive Load Density
+3
+5
+Student Engagement and Voice
+8
+5.1.1
+Hook Logic Integrity Check
+1
+5.5
+Learning Journey Checkpoint
+3
+6
+Worked Example Quality — only if applicable
+11
+7
+Language and Clarity
+6
+8
+Mathematical Language Precision
+6
+9
+Summary Block
+6
+10
+Inclusivity and Representation
+2
+11
+Technical Modularity
+4
+12
+Format Compliance
+4
+13
+Reviewer Compliance
+4
+
+
+For each criterion, decide internally whether the script Meets, Partially Meets, Does Not Meet, or Skips (Not Applicable) — but do NOT print these section tables in the output.
+
+
+
+DETAILED CRITERIA DESCRIPTIONS (WITH FEEDBACK DEPTH MANDATES)
+SECTION 1: LEARNING OUTCOME ALIGNMENT (5 criteria)
+Evaluate whether the script fully addresses every component of the LO.
+
+Criterion 1.1: Does the script cover all objects, concepts, or skills listed in the LO without omission?
+Criterion 1.2: Does the script stay within the LO's scope — no unrelated subtopics or advanced concepts?
+Criterion 1.3: Does the script execute every action verb in the LO (define, identify, calculate, solve, etc.)? Passive mention is insufficient; the learner must be positioned to perform the action.
+Criterion 1.4: Is the level of abstraction appropriate for the grade level specified in the LO?
+Criterion 1.5: Does the script avoid introducing assessment-mismatched content (e.g., board-exam formulas in a conceptual LO)?
+
+Feedback mandate for 1.3: When a procedural verb is present but not executed, explain WHY passive listening prevents skill acquisition (cite LD Section 6.2: 'Always answer how does it work, why does it work, where can it be applied'), and WHAT application segment must be added (including the unlabelled case, student prompt, and reveal with justification).
+SECTION 1.2: LEARNING DESIGN SCOPE COMPLIANCE (3 criteria) 
+Criterion 1.2.1: Does the script address the learning outcome as stated — 
+without adding outcomes beyond what the LO specifies?
+
+Criterion 1.2.2: Does the script introduce only concepts that are explicitly 
+listed in the LO? Do not calculate concepts-per-minute or flag the script for 
+covering all concepts the LO requires. Only flag if the script introduces 
+concepts absent from the LO.
+
+Criterion 1.2.3: Does the script treat each LO-listed concept with sufficient 
+clarity — brief but accurate, not padded with extra detail beyond the LO's scope?
+
+Feedback mandate: Do NOT flag concept density, recommend video splits, or 
+suggest removing concepts that are explicitly listed in the LO. The LO is the 
+authority on scope. Only raise a density issue if the script introduces concepts 
+that are NOT present in the LO. If all concepts in the script map directly to 
+the LO, mark all three criteria as Met regardless of how many concepts the LO contains.
+SECTION 2: TEXTBOOK ALIGNMENT AND MATHEMATICAL ACCURACY (8 criteria)
+Criterion 2.1: Are all definitions worded and structured in line with the textbook?
+Criterion 2.2: Are formulas, identities, or theorems stated exactly as in the textbook?
+Criterion 2.3: Are mathematical terms identical to the textbook's terminology?
+Criterion 2.4: Is the reasoning consistent with the textbook's explanation or derivation?
+Criterion 2.5: Are diagram labels consistent with the textbook?
+Criterion 2.7: Are numerical values, measurements, or geometric properties mathematically correct?
+Criterion 2.8: Is the hierarchy or classification presented in the textbook's order and with the textbook's conditional logic?
+
+Feedback mandate for 2.1–2.3: When terminology deviates from the textbook, explain WHY the deviation introduces a mathematical inaccuracy or assessment mismatch (e.g., exam questions use textbook phrasing; learners will fail to recognise equivalent concepts), and WHAT exact textbook phrasing must be substituted, including page/line reference.
+SECTION 2.5: INTERNAL LOGICAL CONSISTENCY (3 criteria) 
+Evaluate whether examples, analogies, and classifications within the script contradict each other logically.
+
+Criterion 2.5.1: Do examples used in different parts of the script imply mutually exclusive categories where hierarchy exists (e.g., calling one object a 'rectangle' and another a 'quadrilateral' without clarifying the first is also the second)?
+Criterion 2.5.2: Do analogies hold up under scrutiny, or do they break down when extended?
+Criterion 2.5.3: Does the script's classification system remain internally coherent (e.g., if A is a type of B, is this relationship preserved throughout all examples)?
+
+Feedback mandate: When examples contradict each other logically, explain WHY this causes categorical confusion for the learner (e.g., undermining the inheritance logic taught later, causing exam errors where learners exclude squares from rectangles), and WHAT exact phrasing restores logical consistency while preserving the example's accessibility.
+SECTION 3: PEDAGOGICAL SOUNDNESS (9 criteria)
+Criterion 3.1: Does the script build intuitive understanding before formal definitions?
+Criterion 3.2: Is the conceptual progression logical (observation → understanding → reasoning → application)?
+Criterion 3.3: Is the pacing appropriate for the grade level?
+Criterion 3.4: Does the script anticipate and address common learner difficulties?
+Criterion 3.5: Is cognitive load managed — one core idea per segment?
+Criterion 3.6: Are transitions between ideas smooth and signposted?
+Criterion 3.7: Does the script connect to real-life contexts meaningfully?
+Criterion 3.8: Is the tone warm, teacherly, and non-robotic?
+Criterion 3.9: Does the script avoid memorisation-first teaching?
+
+Feedback mandate for 3.4: When common difficulties are unaddressed, explain WHY the script inadvertently reinforces the error (cite the specific misconception from the LD Misconception Annex or standard Grade-level error patterns), and WHAT explicit clarifying sentence must be added to neutralise the misconception without disrupting flow.
+SECTION 3.5: REASONING QUALITY (3 criteria) 
+Evaluate whether definitions and classifications are connected through causal or conditional logic.
+
+Criterion 3.5.1: Are definitions connected through causal or conditional connectors ('because', 'if...then', 'this means', 'what happens if') rather than merely listed in sequence ('first...next...then...finally')?
+Criterion 3.5.2: Does the script explain what changes and what stays the same when moving between categories in a hierarchy?
+Criterion 3.5.3: Can a learner reconstruct the hierarchy from the script's explanation alone, or must they memorise the sequence?
+
+Feedback mandate: When hierarchy is listed rather than reasoned, explain WHY memorisation-first teaching fails under transfer tests (learners cannot derive properties of a square from a rhombus when the relationship is asserted rather than derived; cite LD Section 6.2: 'Explanations must reveal relationships, not just procedures'), and WHAT conditional connectors and transformation narration must replace sequential listing, with exact proposed phrasing.
+SECTION 3.6: MISCONCEPTION ANTICIPATION (3 criteria) 
+Proactively check against common Grade-level misconceptions.
+
+Criterion 3.6.1: Does the script address the most common misconception for each concept introduced (refer to Misconception Annex)?
+Criterion 3.6.2: Are potential confusions neutralised DURING explanation, not as afterthoughts?
+Criterion 3.6.3: Does the script avoid phrasing that accidentally reinforces misconceptions (e.g., presenting square as a 'final' or 'separate' category rather than an intersection)?
+
+Feedback mandate: When a misconception is unaddressed or reinforced, explain WHY the specific phrasing causes the error (e.g., 'presenting square last implies it is unrelated to rectangle and rhombus, causing learners to exclude squares from rectangle questions'), and WHAT sentence must be inserted to explicitly state the relationship (e.g., 'A square is special — it is BOTH a rhombus and a rectangle, inheriting everything from both').
+SECTION 3.7: DERIVATION DEPTH (3 criteria) 
+Evaluate whether theorems, hierarchies, or classifications are derived or merely asserted.
+
+Criterion 3.7.1: When presenting a classification hierarchy, does the script explain the conditional logic (what transformation produces the new category)?
+Criterion 3.7.2: When presenting a theorem or formula, does the script provide intuitive justification or derivation steps?
+Criterion 3.7.3: Does the script enable learners to reconstruct the concept independently, or only to recall it?
+
+Feedback mandate: When a classification is asserted without conditional logic, explain WHY learners cannot reconstruct the hierarchy during recall (working memory decay eliminates asserted sequences; conditional logic creates retrievable chunks), and WHAT 'If [X], then [Y], because [Z]' structure must be inserted, with the exact logical chain for the specific concept.
+SECTION 4: STRUCTURE AND TIME COMPLIANCE (6 criteria)
+Criterion 4.1: Is the Hook paragraph present and engaging?
+Criterion 4.2: Is the Concept paragraph present and clear (when LO involves defining/explaining)?
+Criterion 4.3: Is the Reasoning paragraph present and logical (when LO involves justification)?
+Criterion 4.4: Is the Question and Solution (worked example) present (when LO contains procedural verbs)?
+Criterion 4.5: Is the Summary block present and reinforcing?
+Criterion 4.6: Is word count ≤ 270?
+Criterion 4.7: Is estimated spoken duration ≤ 2:00?
+
+SECTION 4.5: COGNITIVE LOAD DENSITY (3 criteria) 
+Criterion 4.5.2: Are segments internally coherent — one transformation or one definition per 20–30 seconds of narration?
+Criterion 4.5.3: Does the script allow absorption time after each new concept before introducing the next?
+
+Feedback mandate: When concepts-per-minute exceeds threshold, explain WHY working memory is exceeded and no concept achieves depth and WHAT specific concepts to remove or what duration extension is required, with a proposed revised scope listing kept vs. removed concepts.
+SECTION 5: STUDENT ENGAGEMENT AND VOICE (8 criteria)
+Criterion 5.1: Is the hook curiosity-driven and connected to real life?
+Criterion 5.2: Is the voice conversational, not lecture-like?
+Criterion 5.3: Are students addressed directly and inclusively?
+Criterion 5.4: Is the script free of dense academic jargon?
+Criterion 5.5: Are rhetorical questions or pauses used effectively?
+Criterion 5.6: Does the script maintain engagement throughout, not just at the start?
+Criterion 5.7: Is the audio-first design smooth and natural when spoken?
+Criterion 5.8: Does the script build confidence by the end?
+
+SECTION 5.1.1 — HOOK LOGIC INTEGRITY CHECK (Mandatory)
+This section contains 1 criterion. It is mandatory for every script regardless of LO type. It runs independently of Section 5.1 and cannot be absorbed into it.
+Criterion 5.1.1: Does the hook scenario logically require the concept being taught in order to answer the question it poses — or can the question be resolved without the concept?
+Apply this single hard test to every hook before marking it as Met:
+If a student who has never studied this concept can answer the hook's opening question using only common sense or prior knowledge — the hook has failed.
+Classify as Not Met if any of the following conditions are true:
+The hook describes a situation that is already complete, whole, or obvious — making the concept unnecessary to resolve it 
+The hook asks a question whose answer does not require the concept being taught 
+The concept feels inserted into the scenario rather than genuinely demanded by it 
+The scenario would work equally well as a hook for a completely different concept 
+The opening question answers itself before the concept is introduced 
+Classify as Met only when both of the following are true:
+The student cannot resolve the hook's opening question without the concept being taught 
+The scenario would feel incomplete or unanswerable to a student encountering this concept for the first time 
+Named Failure Example — What a Broken Hook Looks Like:
+The following hook was generated for a script on improper fractions and mixed numbers and passed earlier validation criteria. It must now be treated as a reference case for what Not Met looks like under this criterion:
+"You baked seven pizzas, each cut into four slices — how many whole pizzas do you have and how many slices are left over?"
+This hook fails because the answer is simply seven whole pizzas with no slices remaining. Nothing about this scenario requires improper fractions or mixed numbers to resolve it. The student already knows the answer from the setup itself. The concept is decorating the scenario rather than being demanded by it. This hook would have passed Section 5.1 on engagement and Section 5.5.1 on curiosity — yet it contains a fundamental logical flaw that no engagement check would catch.
+What a Passing Hook Looks Like for the Same Concept:
+"Imagine you have twenty-three leftover pizza slices from a party, and each pizza holds four slices. How many whole pizzas worth of slices do you actually have — and how many loose slices are left over?"
+This passes because the student genuinely cannot answer without converting an improper quantity into whole units and a remainder. The concept is demanded by the scenario, not just present in it.
+Feedback Mandate for Criterion 5.1.1:
+When marked Not Met, the validator must provide both of the following:
+1. WHY it fails:
+Explain the specific logical flaw in the scenario. State what prior knowledge makes the concept unnecessary, and explain why this means the student feels no genuine need for what follows. Do not use generic language such as "the hook is weak" or "the scenario could be stronger." The explanation must identify the exact logical gap — for example: "The setup gives seven whole pizzas. The student already knows the answer is seven. No conversion, no ambiguity, and no need for the concept exists before it is introduced. The student enters the concept paragraph with no felt need — only passive reception. This breaks the curiosity stage of the Learning Journey arc as defined in LD Section 5.5.1."
+2. WHAT to fix:
+Provide an exact rewritten hook scenario where the opening situation is genuinely unresolvable without the concept being taught. The rewrite must:
+Use the same or a similarly relatable real-life context where possible 
+Restructure the scenario so the concept is demanded — not just present 
+End with a question the student cannot answer without the concept 
+Be ready to replace the existing hook without any further editing required 
+Generic suggestions such as "rewrite the hook to be more relevant" or "use a better example" are prohibited. The replacement hook must be fully written out.
+
+Error Type Classification for This Criterion:
+When Criterion 5.1.1 is marked Not Met, classify the error in the Critical Issues table as:
+Pedagogical Error — the script is not mathematically wrong, but the hook scenario fails to create a genuine felt need for the concept, breaking the curiosity stage of the Learning Journey arc before instruction begins.
+SECTION 5.5: LEARNING JOURNEY CHECKPOINT (3 criteria) — NEW
+Map each script segment to the LD's Learning Journey stages and verify experiential integrity.
+
+Criterion 5.5.1: Start (Hook): Does the segment create curiosity — 'hmm interesting'?
+Criterion 5.5.2: Middle (Concept + Reasoning): Does the segment deliver clarity — 'oh that is what it means'? Or does density/complexity produce confusion?
+Criterion 5.5.3: End (Application + Summary): Does the segment build confidence — 'I can use this now'? Or does it leave the learner with a list rather than a skill?
+
+Feedback mandate: When a stage's emotional-cognitive goal is contradicted by content density or structure, explain WHY the learner exits the video with the wrong state (e.g., 'Middle stage: 10 definitions in 90 seconds produces overwhelm, not clarity; cite LD Section 8: Middle — clarity, oh that is what it means'), and WHAT segment restructuring is required to restore the curiosity → clarity → confidence arc (e.g., Reduce middle to 3 concepts with clear conceptual transitions. Move remaining 7 to a follow-up video. Add application checkpoint before summary.').
+SECTION 6: WORKED EXAMPLE QUALITY (11 criteria) — ONLY IF APPLICABLE
+Triggered when LO contains procedural verbs: identify, calculate, solve, construct, prove, apply, demonstrate.
+
+Criterion 6.1: Is a worked example or application segment present?
+Criterion 6.2: Is the example aligned with the LO's target skill?
+Criterion 6.3: Is the example grade-appropriate in complexity?
+Criterion 6.4: Is the example clearly structured (given → find → solution → answer)?
+Criterion 6.5: Are all steps shown, not skipped?
+Criterion 6.6: Is the reasoning for each step spoken aloud?
+Criterion 6.7: Are formulas spoken in full words, not symbols?
+Criterion 6.8: Does the example use the same terminology as the Concept paragraph?
+Criterion 6.9: Is the example free of calculation errors?
+Criterion 6.10: Does the example connect back to the real-life context if one was established?
+Criterion 6.11: Is the example concise enough to fit the time budget?
+
+Feedback mandate: When a worked example is missing for a procedural LO, explain WHY definition-only delivery produces 'identification paralysis' — learners cannot transfer knowledge to unknown cases because they have never practised the discrimination skill (cite LD Section 5.4: 'Guided Application — demonstrate the concept through a worked example'), and WHAT worked example structure must be added: (1) an unlabelled case described through spoken narration,, (2) a student prompt to apply the definition, (3) correct naming with justification, (4) connection back to the classification hierarchy.
+SECTION 7: LANGUAGE AND CLARITY (6 criteria)
+Criterion 7.1: Are sentences short and simple?
+Criterion 7.2: Is technical vocabulary introduced with context or explanation?
+Criterion 7.3: Is the script free of ambiguity or double meanings?
+Criterion 7.4: Is the script free of grammatical errors?
+Criterion 7.5: Is British English used consistently?
+Criterion 7.6: Is the script free of redundant or filler words?
+SECTION 8: MATHEMATICAL LANGUAGE PRECISION (6 criteria)
+Criterion 8.1: Are all formulas spoken in full words (e.g., 'pi' not 'π')?
+Criterion 8.2: Are abbreviations avoided or fully expanded on first use?
+Criterion 8.3: Are mathematical symbols replaced with spoken equivalents?
+Criterion 8.4: Is the narration smooth and natural when read aloud?
+Criterion 8.5: Are numbers and units spoken clearly (e.g., 'twelve point five centimetres')?
+SECTION 9: SUMMARY BLOCK (6 criteria)
+Criterion 9.1: Is the Summary block present?
+Criterion 9.2: Does it reinforce the core insight, not just list facts?
+Criterion 9.3: Is it concise (≤ 3 bullet points or 2 sentences)?
+Criterion 9.4: Does it connect back to the hook or real-life context?
+Criterion 9.5: Does it avoid introducing new information?
+Criterion 9.6: Does it end with a confidence-building closing line?
+SECTION 10: INCLUSIVITY AND REPRESENTATION (2 criteria)
+Criterion 10.1: Are examples and contexts culturally neutral or appropriately diverse?
+Criterion 10.2: Is the language free of stereotypes or bias?
+SECTION 11: TECHNICAL MODULARITY (4 criteria)
+Criterion 11.1: Can the script be easily segmented into discrete narration blocks?
+Criterion 11.3: Are on-screen text suggestions minimal and purposeful?
+Criterion 11.4: Is the script free of production-impossible directions?
+SECTION 12: FORMAT COMPLIANCE (4 criteria)
+Criterion 12.1: Does the script follow the required paragraph structure?
+Criterion 12.2: Is formatting consistent (no stray symbols, proper line breaks)?
+Criterion 12.3: Are placeholders or template artefacts removed?
+Criterion 12.4: Is the script ready for voice-over recording without rewriting?
+SECTION 13: REVIEWER COMPLIANCE (4 criteria)
+Criterion 13.1: Did the reviewer cross-check all definitions against the textbook?
+Criterion 13.2: Did the reviewer verify all formulas for accuracy?
+Criterion 13.3: Did the reviewer confirm the script fits the time budget when spoken naturally?
+Criterion 13.4: Did the reviewer flag all issues honestly, without softening?
+MISCONCEPTION ANNEX (REFERENCE FOR SECTION 3.6)
+Validators must check against these common Grade-level misconceptions. This is not exhaustive; domain expertise is required.
+Grade 8 — Quadrilaterals
+•   Square is NOT a rectangle / Square is NOT a rhombus (mutual exclusivity error)
+•   Rhombus is called 'diamond' and treated as unrelated to parallelogram
+•   Trapezium requires EXACTLY one pair parallel (not AT LEAST one pair)
+•   Concave = 'cave' shape = always irregular
+•   Regular polygon = any symmetrical polygon (not 'all sides and angles equal')
+•   All rectangles are squares (reverse hierarchy error)
+[Additional topic-specific misconceptions to be appended per curriculum.]
+OUTPUT FORMAT (THIS IS ALL YOU PRINT)
+# VALIDATION REPORT
+Field
+Value
+Grade
+...
+Topic
+...
+Subtopic
+...
+Word Count
+...
+Estimated Spoken Duration
+MM:SS
+
+
+# SCORE
+Status
+Count
+Met
+__/100
+Partially Met
+__/100
+Not Met
+__/100
+Skipped
+__ (brief reason if any — e.g., "Section 6 — worked example not required for describe-type LO without procedural verbs")
+
+
+# CRITICAL ISSUES
+For every 'Not Met' item, list as:
+Error Type
+Issue (with exact script quote)
+Why it fails (learner impact, logical consequence, or LD violation)
+What to fix (exact revision or structural directive)
+• Conceptual Error — the mathematical reasoning, logic, or explanation is wrong
+• Textbook Misalignment — deviates from NCERT wording, definition, or sequence
+• Both — conceptually wrong AND contradicts the textbook
+• Pedagogical Error — mathematically correct but instructionally flawed
+• Other — does not fall under the above categories; describe
+[Quote the script line]
+[Specific consequence: what misunderstanding, confusion, or production failure this causes. Cite LD section or mathematical principle.]
+[Exact rewritten line, or directive: "Remove X, add Y at Z location, restructure as A→B→C"]
+
+
+If none, write: None.
+# MINOR ISSUES
+For every 'Partially Met' item, list as:
+Error Type
+Issue (with brief description and quote if needed)
+Why it needs adjustment
+What to fix
+• Conceptual Error — the mathematical reasoning, logic, or explanation is wrong
+• Textbook Misalignment — deviates from NCERT wording, definition, or sequence
+• Both — conceptually wrong AND contradicts the textbook
+• Pedagogical Error — mathematically correct but instructionally flawed
+• Other — does not fall under the above categories; describe
+[Brief description]
+[Specific consequence if left unaddressed]
+[Short, actionable suggestion]
+
+
+If none, write: None.
+# STRENGTHS
+List 2 to 3 things the script does genuinely well. Be honest. Do not pad.
+# FEEDBACK SUMMARY
+Provide a 2–3 sentence honest assessment covering pedagogical effectiveness, mathematical accuracy, and production readiness.
+# RECOMMENDATION
+State clearly:
+
+•   Should the user continue with this script? Yes / Yes with minor fixes / No
+•   If No, what should be regenerated first?
+    (Examples: hook, worked example, definition wording, formula phrasing, language simplification, timing trim, textbook-aligned correction, scope reduction, misconception address, reasoning depth, learning journey restructuring, etc.)
+# VERDICT
+Choose ONE:
+
+•   Approved — Ready for Production
+•   Needs Minor Revision
+•   Rejected — Regenerate
+
