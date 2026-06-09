@@ -93,6 +93,30 @@ def find_column(headers, candidates):
     return None
 
 
+def find_header_row(rows):
+    best_index = None
+    best_score = -1
+    for index, row in enumerate(rows[:25]):
+        headers = [str(cell or "").strip() for cell in row]
+        score = 0
+        if find_column(headers, GRADE_COLUMNS) is not None:
+            score += 1
+        if find_column(headers, CHAPTER_COLUMNS) is not None:
+            score += 1
+        if find_column(headers, SUBTOPIC_COLUMNS) is not None:
+            score += 1
+        if find_column(headers, LO_COLUMNS) is not None:
+            score += 3
+        if find_column(headers, SUBJECT_COLUMNS) is not None:
+            score += 1
+        if score > best_score:
+            best_index = index
+            best_score = score
+    if best_score >= 4:
+        return best_index
+    return None
+
+
 def row_value(row, index):
     if index is None or index >= len(row):
         return ""
@@ -100,46 +124,109 @@ def row_value(row, index):
     return "" if value is None else str(value).strip()
 
 
+GRADE_COLUMNS = ["Grade", "Class", "Grade Level", "Class Level"]
+SUBJECT_COLUMNS = ["Subject", "Subject Name"]
+CHAPTER_COLUMNS = ["Chapter", "Chapter Name", "Topic", "Topic Name", "Unit", "Unit Name"]
+SUBTOPIC_COLUMNS = ["Subtopic", "Subtopic Name", "Sub Topic", "Sub-Topic", "Concept", "Concept Name"]
+CC_COLUMNS = ["CC", "C.C.", "Competency Code", "Concept Code", "Content Code", "Chapter Code"]
+CC_NAME_COLUMNS = ["CC Name", "Competency", "Competency Name", "Concept", "Concept Name", "Content"]
+LO_COLUMNS = [
+    "Learning Outcome",
+    "Learning Outcomes",
+    "LO",
+    "LO Text",
+    "Outcome",
+    "Learning Objective",
+    "Learning Objectives",
+    "LearningOutcomes",
+    "LearningOutcomesText",
+]
+
+
 def parse_excel(file_storage):
     workbook = load_workbook(BytesIO(file_storage.read()), data_only=True)
-    sheet = workbook.active
-    rows = list(sheet.iter_rows(values_only=True))
+    sheet = None
+    rows = []
+    header_index = None
+    for candidate_sheet in workbook.worksheets:
+        candidate_rows = list(candidate_sheet.iter_rows(values_only=True))
+        candidate_header_index = find_header_row(candidate_rows)
+        if candidate_header_index is not None:
+            sheet = candidate_sheet
+            rows = candidate_rows
+            header_index = candidate_header_index
+            break
+
+    if sheet is None:
+        sheet = workbook.active
+        rows = list(sheet.iter_rows(values_only=True))
+
     if not rows:
         return []
 
-    headers = [str(cell or "").strip() for cell in rows[0]]
+    if header_index is None:
+        header_index = find_header_row(rows)
+    if header_index is None:
+        preview_headers = [str(cell or "").strip() for cell in rows[0] if str(cell or "").strip()]
+        raise ValueError(
+            "Could not find the header row. Expected columns like Grade, Chapter, Subtopic, and Learning Outcome. "
+            + "First row detected: "
+            + (", ".join(preview_headers) if preview_headers else "blank")
+        )
+
+    headers = [str(cell or "").strip() for cell in rows[header_index]]
     columns = {
-        "grade": find_column(headers, ["Grade", "Class"]),
-        "subject": find_column(headers, ["Subject"]),
-        "chapter": find_column(headers, ["Chapter", "Chapter Name", "Topic", "Topic Name"]),
-        "subtopic": find_column(headers, ["Subtopic", "Subtopic Name"]),
-        "cc": find_column(headers, ["CC", "Competency Code", "Concept Code"]),
-        "cc_name": find_column(headers, ["CC Name", "Competency", "Competency Name", "Concept"]),
-        "lo": find_column(headers, ["Learning Outcome", "Learning Outcomes", "LO", "LO Text", "Outcome"]),
+        "grade": find_column(headers, GRADE_COLUMNS),
+        "subject": find_column(headers, SUBJECT_COLUMNS),
+        "chapter": find_column(headers, CHAPTER_COLUMNS),
+        "subtopic": find_column(headers, SUBTOPIC_COLUMNS),
+        "cc": find_column(headers, CC_COLUMNS),
+        "cc_name": find_column(headers, CC_NAME_COLUMNS),
+        "lo": find_column(headers, LO_COLUMNS),
     }
 
-    required = ["grade", "subject", "chapter", "subtopic", "lo"]
+    required = ["grade", "chapter", "subtopic", "lo"]
     missing = [name for name in required if columns[name] is None]
     if missing:
-        raise ValueError("Missing required column(s): " + ", ".join(missing))
+        detected = [header for header in headers if header]
+        raise ValueError(
+            "Missing required column(s): "
+            + ", ".join(missing)
+            + ". Detected headers: "
+            + (", ".join(detected) if detected else "none")
+        )
 
     parsed = []
-    for index, row in enumerate(rows[1:], start=2):
+    last_values = {
+        "grade": "",
+        "subject": "Mathematics",
+        "chapter": "",
+        "subtopic": "",
+        "cc": "CC 01",
+        "cc_name": "Learning Outcomes",
+    }
+    for index, row in enumerate(rows[header_index + 1 :], start=header_index + 2):
         lo_text = row_value(row, columns["lo"])
         if not lo_text:
             continue
+        for field in last_values:
+            value = row_value(row, columns.get(field))
+            if value:
+                last_values[field] = value
         parsed.append(
             {
                 "row": index,
-                "grade": row_value(row, columns["grade"]),
-                "subject": row_value(row, columns["subject"]),
-                "chapter": row_value(row, columns["chapter"]),
-                "subtopic": row_value(row, columns["subtopic"]),
-                "cc": row_value(row, columns["cc"]) or "CC 01",
-                "cc_name": row_value(row, columns["cc_name"]) or "Learning Outcomes",
+                "grade": last_values["grade"],
+                "subject": last_values["subject"] or "Mathematics",
+                "chapter": last_values["chapter"],
+                "subtopic": last_values["subtopic"],
+                "cc": last_values["cc"] or "CC 01",
+                "cc_name": last_values["cc_name"] or "Learning Outcomes",
                 "lo": lo_text,
             }
         )
+    if not parsed:
+        raise ValueError("No Learning Outcome rows found below the detected header row.")
     return parsed
 
 
