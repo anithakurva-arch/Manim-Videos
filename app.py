@@ -93,6 +93,16 @@ def find_column(headers, candidates):
     return None
 
 
+def find_columns(headers, candidates):
+    normalised = {normalise_header(header): index for index, header in enumerate(headers)}
+    matches = []
+    for candidate in candidates:
+        key = normalise_header(candidate)
+        if key in normalised and normalised[key] not in matches:
+            matches.append(normalised[key])
+    return matches
+
+
 def find_header_row(rows):
     best_index = None
     best_score = -1
@@ -118,19 +128,37 @@ def find_header_row(rows):
 
 
 def row_value(row, index):
+    if isinstance(index, (list, tuple)):
+        for item in index:
+            value = row_value(row, item)
+            if value:
+                return value
+        return ""
     if index is None or index >= len(row):
         return ""
     value = row[index]
     return "" if value is None else str(value).strip()
 
 
-GRADE_COLUMNS = ["Grade", "Class", "Grade Level", "Class Level"]
-SUBJECT_COLUMNS = ["Subject", "Subject Name"]
-CHAPTER_COLUMNS = ["Chapter", "Chapter Name", "Topic", "Topic Name", "Unit", "Unit Name"]
-SUBTOPIC_COLUMNS = ["Subtopic", "Subtopic Name", "Sub Topic", "Sub-Topic", "Concept", "Concept Name"]
-CC_COLUMNS = ["CC", "C.C.", "Competency Code", "Concept Code", "Content Code", "Chapter Code"]
-CC_NAME_COLUMNS = ["CC Name", "Competency", "Competency Name", "Concept", "Concept Name", "Content"]
+GRADE_COLUMNS = ["gradeName", "Grade Name", "Grade", "Class", "Grade Level", "Class Level"]
+SUBJECT_COLUMNS = ["subjectName", "Subject Name", "Subject"]
+CHAPTER_COLUMNS = ["topicName", "Topic Name", "Chapter Name", "Chapter", "Topic", "Unit Name", "Unit"]
+SUBTOPIC_COLUMNS = [
+    "subTopicName",
+    "Subtopic Name",
+    "Sub Topic",
+    "Sub-Topic",
+    "Subtopic",
+    "KnowledgeCellName",
+    "Knowledge Cell Name",
+    "Concept Name",
+    "Concept",
+]
+CC_COLUMNS = ["KnowledgeCellId", "Knowledge Cell Id", "CC", "C.C.", "Competency Code", "Concept Code", "Content Code", "Chapter Code"]
+CC_NAME_COLUMNS = ["KnowledgeCellName", "Knowledge Cell Name", "CC Name", "Competency Name", "Competency", "Concept Name", "Concept", "Content"]
 LO_COLUMNS = [
+    "LearningOutcomeName",
+    "Learning Outcome Name",
     "Learning Outcome",
     "Learning Outcomes",
     "LO",
@@ -176,17 +204,17 @@ def parse_excel(file_storage):
 
     headers = [str(cell or "").strip() for cell in rows[header_index]]
     columns = {
-        "grade": find_column(headers, GRADE_COLUMNS),
-        "subject": find_column(headers, SUBJECT_COLUMNS),
-        "chapter": find_column(headers, CHAPTER_COLUMNS),
-        "subtopic": find_column(headers, SUBTOPIC_COLUMNS),
-        "cc": find_column(headers, CC_COLUMNS),
-        "cc_name": find_column(headers, CC_NAME_COLUMNS),
-        "lo": find_column(headers, LO_COLUMNS),
+        "grade": find_columns(headers, GRADE_COLUMNS),
+        "subject": find_columns(headers, SUBJECT_COLUMNS),
+        "chapter": find_columns(headers, CHAPTER_COLUMNS),
+        "subtopic": find_columns(headers, SUBTOPIC_COLUMNS),
+        "cc": find_columns(headers, CC_COLUMNS),
+        "cc_name": find_columns(headers, CC_NAME_COLUMNS),
+        "lo": find_columns(headers, LO_COLUMNS),
     }
 
     required = ["grade", "chapter", "subtopic", "lo"]
-    missing = [name for name in required if columns[name] is None]
+    missing = [name for name in required if not columns[name]]
     if missing:
         detected = [header for header in headers if header]
         raise ValueError(
