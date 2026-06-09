@@ -235,6 +235,8 @@ def filters_for(rows):
         return sorted({row[key] for row in items if row.get(key)})
 
     grades = unique("grade", rows)
+    all_chapters = unique("chapter", rows)
+    all_subtopics = unique("subtopic", rows)
     chapters_by_grade = {}
     subtopics_by_chapter = {}
     for grade in grades:
@@ -247,6 +249,8 @@ def filters_for(rows):
             )
     return {
         "grades": grades,
+        "allChapters": all_chapters,
+        "allSubtopics": all_subtopics,
         "chaptersByGrade": chapters_by_grade,
         "subtopicsByChapter": subtopics_by_chapter,
     }
@@ -371,6 +375,17 @@ def prompt_detail_route(name):
             "text": load_prompt(name),
         }
     )
+
+
+@app.post("/api/validate-key")
+def validate_key_route():
+    try:
+        api_key = get_api_key()
+        client = OpenAI(api_key=api_key)
+        client.models.list()
+    except Exception as exc:
+        return jsonify({"valid": False, "error": "API key validation failed: " + str(exc)}), 400
+    return jsonify({"valid": True, "message": "API key is valid."})
 
 
 @app.post("/api/parse-excel")

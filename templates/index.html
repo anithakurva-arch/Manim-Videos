@@ -540,19 +540,8 @@
             </div>
           </section>
 
-          <section class="panel">
-            <h2>4. Settings</h2>
-            <div class="stack">
-              <div class="field">
-                <label for="modelName">Model</label>
-                <input id="modelName" value="{{ default_model }}">
-              </div>
-              <div class="field">
-                <label for="textbookReference">Textbook reference or notes (optional)</label>
-                <textarea id="textbookReference" placeholder="Paste relevant textbook notes or leave blank for Phase 1 validation."></textarea>
-              </div>
-            </div>
-          </section>
+          <input id="modelName" type="hidden" value="{{ default_model }}">
+          <input id="textbookReference" type="hidden" value="">
         </aside>
 
         <section class="stack">
@@ -742,6 +731,22 @@
         return data;
       }
 
+      async function validateApiKey(key) {
+        const response = await fetch("/api/validate-key", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-OpenAI-Key": key,
+          },
+          body: JSON.stringify({}),
+        });
+        const data = await response.json();
+        if (!response.ok || !data.valid) {
+          throw new Error(data.error || "API key is not valid.");
+        }
+        return data;
+      }
+
       async function apiGet(url) {
         const response = await fetch(url);
         const data = await response.json();
@@ -783,17 +788,32 @@
 
       function renderChapterOptions() {
         const grade = els.gradeSelect.value;
+        const current = els.chapterSelect.value;
+        const sourceRows = grade ? state.rows.filter((row) => row.grade === grade) : state.rows;
+        const chapters = Array.from(new Set(sourceRows.map((row) => row.chapter).filter(Boolean))).sort();
         els.chapterSelect.innerHTML = "";
         option(els.chapterSelect, "");
-        ((state.filters.chaptersByGrade || {})[grade] || []).forEach((chapter) => option(els.chapterSelect, chapter));
+        chapters.forEach((chapter) => option(els.chapterSelect, chapter));
+        if (chapters.includes(current)) {
+          els.chapterSelect.value = current;
+        }
         renderSubtopicOptions();
       }
 
       function renderSubtopicOptions() {
-        const key = `${els.gradeSelect.value}||${els.chapterSelect.value}`;
+        const grade = els.gradeSelect.value;
+        const chapter = els.chapterSelect.value;
+        const current = els.subtopicSelect.value;
+        const sourceRows = state.rows.filter((row) => {
+          return (!grade || row.grade === grade) && (!chapter || row.chapter === chapter);
+        });
+        const subtopics = Array.from(new Set(sourceRows.map((row) => row.subtopic).filter(Boolean))).sort();
         els.subtopicSelect.innerHTML = "";
         option(els.subtopicSelect, "");
-        ((state.filters.subtopicsByChapter || {})[key] || []).forEach((subtopic) => option(els.subtopicSelect, subtopic));
+        subtopics.forEach((subtopic) => option(els.subtopicSelect, subtopic));
+        if (subtopics.includes(current)) {
+          els.subtopicSelect.value = current;
+        }
         renderLearningOutcomes();
       }
 
@@ -962,12 +982,23 @@
         URL.revokeObjectURL(url);
       }
 
-      els.saveKey.addEventListener("click", () => {
+      els.saveKey.addEventListener("click", async () => {
         const key = els.apiKey.value.trim();
         if (!key) return showMessage("Paste your API key first.", "warn");
-        localStorage.setItem("conceptual_generator_api_key", key);
-        els.apiKey.value = "";
-        showMessage("API key saved in this browser.", "good");
+        setBusy(els.saveKey, true, "Validating...");
+        showMessage("Validating API key...", "warn");
+        try {
+          await validateApiKey(key);
+          localStorage.setItem("conceptual_generator_api_key", key);
+          els.apiKey.value = "";
+          els.apiKey.placeholder = "Saved and valid in this browser";
+          showMessage("API key is valid and saved in this browser.", "good");
+        } catch (error) {
+          localStorage.removeItem("conceptual_generator_api_key");
+          showMessage(error.message, "bad");
+        } finally {
+          setBusy(els.saveKey, false);
+        }
       });
 
       els.clearKey.addEventListener("click", () => {
