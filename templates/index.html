@@ -525,7 +525,7 @@
           <strong id="metricRows">0</strong>
         </div>
         <div class="callout">
-          <span>Selected LOs</span>
+          <span>Visible LOs</span>
           <strong id="metricSelected">0</strong>
         </div>
         <div class="callout">
@@ -582,7 +582,7 @@
                 <label for="subtopicSelect">Subtopic</label>
                 <select id="subtopicSelect"></select>
               </div>
-              <div class="row">
+              <div class="row hidden">
                 <button type="button" class="secondary" id="selectVisible">Select visible</button>
                 <button type="button" class="secondary" id="clearSelection">Clear selection</button>
               </div>
@@ -608,7 +608,7 @@
 
           <div class="panel">
             <h2>Generate Script</h2>
-            <p class="note">Select Learning Outcomes, group them into 2-minute script sets, then generate and validate scripts before animation.</p>
+            <p class="note">Choose Grade, Chapter, and Subtopic filters. The app groups all visible Learning Outcomes into 2-minute script sets, then generates and validates scripts before animation.</p>
             <div class="action-row">
               <button type="button" class="primary-action" id="runApproved">Generate + Validate Scripts</button>
               <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
@@ -616,7 +616,7 @@
             </div>
             <div class="action-row">
               <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
-              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all selected Learning Outcomes.</span>
+              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all visible Learning Outcomes.</span>
             </div>
             <details style="margin-top: 12px;">
               <summary>Advanced manual script steps</summary>
@@ -944,6 +944,12 @@
         }).filter(Boolean);
       }
 
+      function activeRows() {
+        const selected = selectedRows();
+        if (selected.length) return selected;
+        return visibleRows().map(({ row }) => row);
+      }
+
       function visibleRows() {
         const grade = els.gradeSelect.value;
         const chapter = els.chapterSelect.value;
@@ -1022,11 +1028,11 @@
 
       function updateMetrics() {
         els.metricRows.textContent = state.rows.length;
-        els.metricSelected.textContent = selectedRows().length;
+        els.metricSelected.textContent = visibleRows().length;
       }
 
       function contextPayload(extra = {}) {
-        const selected = selectedRows();
+        const selected = activeRows();
         const first = selected[0] || {};
         return {
           grade: els.gradeSelect.value || first.grade || "",
@@ -1321,10 +1327,9 @@
           state.status = "Idle";
           state.history = [];
           renderFilters();
-          selectAllVisibleOutcomes();
           const filterSummary = [els.gradeSelect.value, els.chapterSelect.value, els.subtopicSelect.value].filter(Boolean).join(" / ");
           renderStatus();
-          showMessage(`Parsed ${state.rows.length} Learning Outcome(s). Chapter filter now includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}.`, "good");
+          showMessage(`Parsed ${state.rows.length} Learning Outcome(s). Chapter filter includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}. Generation will use all visible LOs.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1372,12 +1377,12 @@
           duration: els.animationDuration.value.trim() || "90 seconds",
           contentType: els.animationContentType.value,
         });
-        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome first.", "warn");
+        if (!payload.outcomes.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         setBusy(els.generateBulkPython, true, "Generating everything...");
         try {
           const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders());
           saveBlobFile("bulk_validated_animation_package.zip", zipBlob);
-          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} selected Learning Outcome(s). Python filenames are unique.`, "good");
+          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} visible Learning Outcome(s). Python filenames are unique.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1459,7 +1464,7 @@
 
       els.runGrouping.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome.", "warn");
+        if (!payload.outcomes.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
           const data = await apiPost("/api/group", payload);
@@ -1478,7 +1483,7 @@
 
       els.generateScript.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.learningOutcomes) return showMessage("Select at least one Learning Outcome first.", "warn");
+        if (!payload.learningOutcomes) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         if (!state.grouping) return showMessage("Run Group LOs first. Script generation uses the validated grouping output.", "warn");
         if (state.groupingStatus === "Rejected") return showMessage("Grouping validation rejected the grouping. Regroup before script generation.", "bad");
         setBusy(els.generateScript, true, "Generating...");
@@ -1524,8 +1529,8 @@
       });
 
       els.runApproved.addEventListener("click", async () => {
-        const selected = selectedRows();
-        if (!selected.length) return showMessage("Select at least one Learning Outcome first.", "warn");
+        const selected = activeRows();
+        if (!selected.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         setBusy(els.runApproved, true, "Grouping LOs...");
         try {
           const groupingData = await apiPost("/api/group", contextPayload());
