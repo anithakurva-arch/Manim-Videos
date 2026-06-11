@@ -7,16 +7,19 @@
     <style>
       :root {
         color-scheme: light;
-        --bg: #f6f7fb;
-        --surface: #ffffff;
-        --surface-soft: #f0f3f8;
-        --text: #1f2533;
-        --muted: #626b7c;
-        --line: #d9dee9;
-        --accent: #7464ce;
-        --accent-dark: #5d4db8;
-        --orange: #ff9302;
-        --good: #15845d;
+        --bg: #fbf7ff;
+        --surface: #fffefa;
+        --surface-soft: #eef8ff;
+        --text: #253047;
+        --muted: #687086;
+        --line: #dfd9ee;
+        --accent: #7b67d8;
+        --accent-dark: #604bbf;
+        --orange: #ffae73;
+        --mint: #c9f3df;
+        --sky: #d9efff;
+        --rose: #ffe2eb;
+        --good: #17805d;
         --warn: #9b6500;
         --bad: #b42318;
       }
@@ -27,7 +30,7 @@
 
       body {
         margin: 0;
-        background: var(--bg);
+        background: linear-gradient(135deg, #fbf7ff 0%, #eef8ff 52%, #fff8e8 100%);
         color: var(--text);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
@@ -55,7 +58,7 @@
       }
 
       button.secondary {
-        background: #fff;
+        background: #fffefa;
         color: var(--accent);
         border-color: var(--accent);
       }
@@ -85,7 +88,7 @@
         gap: 16px;
         align-items: flex-start;
         padding-bottom: 18px;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid #d8d0ea;
       }
 
       h1,
@@ -124,7 +127,7 @@
         padding: 7px 10px;
         border-radius: 999px;
         border: 1px solid var(--line);
-        background: #fff;
+        background: #fffefa;
         color: var(--muted);
         font-size: 13px;
         font-weight: 700;
@@ -135,7 +138,7 @@
         width: 8px;
         height: 8px;
         border-radius: 999px;
-        background: var(--good);
+        background: #57c99d;
       }
 
       .message {
@@ -144,7 +147,7 @@
         margin: 14px 0 0;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fff;
+        background: #fffefa;
         padding: 10px 12px;
         color: var(--muted);
         font-size: 13px;
@@ -181,6 +184,7 @@
         border-radius: 8px;
         background: var(--surface);
         padding: 16px;
+        box-shadow: 0 10px 28px rgba(83, 72, 130, 0.08);
       }
 
       .stack {
@@ -223,6 +227,39 @@
         align-items: center;
       }
 
+      .action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 12px;
+      }
+
+      .primary-action {
+        min-height: 44px;
+        padding: 10px 16px;
+        font-size: 15px;
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcff;
+        padding: 10px 12px;
+      }
+
+      summary {
+        color: var(--accent);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      details .stack,
+      details .row {
+        margin-top: 10px;
+      }
+
       .callouts {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -233,8 +270,20 @@
       .callout {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: var(--surface);
+        background: linear-gradient(180deg, #fffefa 0%, #f5fbff 100%);
         padding: 12px;
+      }
+
+      .callout:nth-child(2) {
+        background: linear-gradient(180deg, #fffefa 0%, var(--mint) 100%);
+      }
+
+      .callout:nth-child(3) {
+        background: linear-gradient(180deg, #fffefa 0%, var(--rose) 100%);
+      }
+
+      .callout:nth-child(4) {
+        background: linear-gradient(180deg, #fffefa 0%, var(--sky) 100%);
       }
 
       .callout span {
@@ -464,9 +513,9 @@
       <header>
         <div>
           <h1>Conceptual Script Generator</h1>
-          <p class="subtitle">Phase 1: Excel upload, LO grouping, script generation, validation, capped regeneration, and approved-script download.</p>
+          <p class="subtitle">Upload outcomes, generate an approved script, then turn it into animation storyboard and Manim Python code.</p>
         </div>
-        <div class="pill"><span class="dot"></span> Max regenerations: {{ max_regenerations }}</div>
+        <div class="pill"><span class="dot"></span> Script + Animation<span id="maxRegenerationsLabel" class="hidden">{{ max_regenerations|default(3) }}</span></div>
       </header>
       <div id="statusBanner" class="message">UI loaded. Upload an Excel file to begin.</div>
 
@@ -480,29 +529,29 @@
           <strong id="metricSelected">0</strong>
         </div>
         <div class="callout">
-          <span>API breakpoints</span>
-          <strong>Manual</strong>
+          <span>Script status</span>
+          <strong>Ready</strong>
         </div>
         <div class="callout">
-          <span>Download gate</span>
-          <strong>Approved only</strong>
+          <span>Animation</span>
+          <strong>Claude</strong>
         </div>
       </div>
 
       <div class="layout">
         <aside class="stack">
           <section class="panel">
-            <h2>1. API Key</h2>
+            <h2>1. Claude API Key</h2>
             <div class="stack">
               <div class="field">
-                <label for="apiKey">OpenAI API key</label>
-                <input id="apiKey" type="password" autocomplete="off" placeholder="sk-...">
+                <label for="claudeKey">Claude API key</label>
+                <input id="claudeKey" type="password" autocomplete="off" placeholder="sk-ant-...">
               </div>
               <div class="row">
-                <button type="button" id="saveKey">Save key</button>
-                <button type="button" class="secondary" id="clearKey">Clear</button>
+                <button type="button" id="saveClaudeKey">Validate Claude key</button>
+                <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
               </div>
-              <p class="note">The key is saved in this browser only and is sent to the backend only when you click a generation or validation button.</p>
+              <p class="note">Claude is used for LO grouping, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
             </div>
           </section>
 
@@ -540,7 +589,6 @@
             </div>
           </section>
 
-          <input id="modelName" type="hidden" value="{{ default_model }}">
           <input id="textbookReference" type="hidden" value="">
         </aside>
 
@@ -559,36 +607,72 @@
           </div>
 
           <div class="panel">
-            <h2>Workflow Breakpoints</h2>
-            <p class="note">Each button is a deliberate API breakpoint. Nothing loops forever. Automatic regeneration stops after {{ max_regenerations }} attempts.</p>
-            <div class="row">
-              <button type="button" id="runGrouping">Step 1: Group LOs</button>
-              <button type="button" id="generateScript">Step 2: Generate Script</button>
-              <button type="button" id="validateScript">Step 3: Validate Script</button>
-              <button type="button" id="runApproved">Generate until Approved</button>
-              <button type="button" class="secondary" id="downloadApproved" disabled>Download Approved</button>
-              <button type="button" class="secondary" id="testUi">Test UI</button>
+            <h2>Generate Script</h2>
+            <p class="note">Select Learning Outcomes, then generate an approved conceptual script in one step.</p>
+            <div class="action-row">
+              <button type="button" class="primary-action" id="runApproved">Generate Approved Script</button>
+              <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
+              <button type="button" class="secondary" id="useApprovedScript">Send to Animation</button>
             </div>
-            <div class="workflow-map">
-              <div class="step-box">
-                <span class="badge">Step 1</span>
-                <h3>LO Grouping</h3>
-                <p class="note">Selected Learning Outcomes are grouped into 2-minute conceptual script clusters.</p>
-              </div>
-              <div class="step-box">
-                <span class="badge">Step 2</span>
-                <h3>Script Generation</h3>
-                <p class="note">The generation prompt and Learning Design prompt create the conceptual script.</p>
-              </div>
-              <div class="step-box">
-                <span class="badge">Step 3</span>
-                <h3>Validation and Revision</h3>
-                <p class="note">Validation decides the status. Revision stops after {{ max_regenerations }} attempts.</p>
-              </div>
+            <div class="action-row">
+              <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
+              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all selected Excel rows.</span>
             </div>
+            <details style="margin-top: 12px;">
+              <summary>Advanced manual script steps</summary>
+              <div class="row">
+                <button type="button" class="secondary" id="runGrouping">Group LOs</button>
+                <button type="button" class="secondary" id="generateScript">Generate Draft</button>
+                <button type="button" class="secondary" id="validateScript">Validate Draft</button>
+                <button type="button" class="secondary hidden" id="testUi">Test UI</button>
+              </div>
+            </details>
           </div>
 
           <div class="panel">
+            <h2>Phase 2 Animation</h2>
+            <p class="note">Use the approved script or paste a transcript, then create storyboard and Python animation code.</p>
+            <div class="stack">
+              <div class="field">
+                <label for="animationTitle">Animation title</label>
+                <input id="animationTitle" type="text" placeholder="Area of a Rectangle">
+              </div>
+              <div class="field">
+                <label for="animationTranscript">Transcript for animation</label>
+                <textarea id="animationTranscript" placeholder="Paste transcript here, or use the latest approved/generated script."></textarea>
+              </div>
+            </div>
+            <div class="action-row">
+              <button type="button" id="generateStoryboard">Generate Storyboard</button>
+              <button type="button" id="generatePython">Generate Python Code</button>
+              <button type="button" class="secondary" id="downloadStoryboard" disabled>Download Storyboard</button>
+              <button type="button" class="secondary" id="downloadPython" disabled>Download Python</button>
+            </div>
+            <details style="margin-top: 12px;">
+              <summary>Advanced animation options</summary>
+              <div class="stack">
+                <div class="field">
+                  <label for="animationDuration">Duration</label>
+                  <input id="animationDuration" type="text" value="90 seconds">
+                </div>
+                <div class="field">
+                  <label for="animationContentType">Content type</label>
+                  <select id="animationContentType">
+                    <option>Concept Video</option>
+                    <option>Microlearning</option>
+                    <option>Problem Walkthrough</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="claudeModel">Claude model</label>
+                  <input id="claudeModel" type="text" value="{{ default_claude_model|default('claude-sonnet-4-5') }}">
+                </div>
+                <button type="button" class="secondary" id="generateAnimationPackage">Generate Full Package</button>
+              </div>
+            </details>
+          </div>
+
+          <div class="panel hidden">
             <div class="row" style="justify-content: space-between;">
               <h2>Master Prompt Library</h2>
               <span class="badge">Backend controlled</span>
@@ -607,11 +691,14 @@
             <section class="panel">
               <h2>Stage Output</h2>
               <div class="tabs">
-                <button type="button" class="tab active" data-tab="grouping">Grouping</button>
+                <button type="button" class="tab active hidden" data-tab="grouping">Grouping</button>
                 <button type="button" class="tab" data-tab="script">Script</button>
-                <button type="button" class="tab" data-tab="validation">Validation</button>
-                <button type="button" class="tab" data-tab="history">Revisions</button>
-                <button type="button" class="tab" data-tab="prompt">Prompt Preview</button>
+                <button type="button" class="tab hidden" data-tab="validation">Validation</button>
+                <button type="button" class="tab hidden" data-tab="history">Revisions</button>
+                <button type="button" class="tab hidden" data-tab="prompt">Prompt Preview</button>
+                <button type="button" class="tab" data-tab="storyboard">Storyboard</button>
+                <button type="button" class="tab" data-tab="python">Python</button>
+                <button type="button" class="tab hidden" data-tab="package">Package</button>
               </div>
               <div id="outputBox" class="output">No output yet.</div>
             </section>
@@ -636,7 +723,10 @@
     </main>
 
     <script>
-      const MAX_REGENERATIONS = {{ max_regenerations }};
+      const DEFAULT_MAX_REGENERATIONS = 3;
+      const DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-5";
+      const RENDER_API_ORIGIN = "https://manim-videos-5663.onrender.com";
+      const MAX_REGENERATIONS = readTemplateNumber("{{ max_regenerations|default(3) }}", DEFAULT_MAX_REGENERATIONS);
       const state = {
         rows: [],
         filters: {},
@@ -647,13 +737,17 @@
         history: [],
         prompts: [],
         promptPreview: "",
+        storyboard: "",
+        pythonCode: "",
+        animationPackage: "",
+        claudeKey: "",
         activeTab: "grouping",
       };
 
       const els = {
-        apiKey: document.getElementById("apiKey"),
-        saveKey: document.getElementById("saveKey"),
-        clearKey: document.getElementById("clearKey"),
+        claudeKey: document.getElementById("claudeKey"),
+        saveClaudeKey: document.getElementById("saveClaudeKey"),
+        clearClaudeKey: document.getElementById("clearClaudeKey"),
         excelFile: document.getElementById("excelFile"),
         parseExcel: document.getElementById("parseExcel"),
         gradeSelect: document.getElementById("gradeSelect"),
@@ -661,7 +755,7 @@
         subtopicSelect: document.getElementById("subtopicSelect"),
         selectVisible: document.getElementById("selectVisible"),
         clearSelection: document.getElementById("clearSelection"),
-        modelName: document.getElementById("modelName"),
+        claudeModel: document.getElementById("claudeModel"),
         textbookReference: document.getElementById("textbookReference"),
         loList: document.getElementById("loList"),
         metricRows: document.getElementById("metricRows"),
@@ -677,7 +771,29 @@
         promptLibrary: document.getElementById("promptLibrary"),
         statusBanner: document.getElementById("statusBanner"),
         testUi: document.getElementById("testUi"),
+        maxRegenerationsLabel: document.getElementById("maxRegenerationsLabel"),
+        animationTitle: document.getElementById("animationTitle"),
+        animationDuration: document.getElementById("animationDuration"),
+        animationContentType: document.getElementById("animationContentType"),
+        animationTranscript: document.getElementById("animationTranscript"),
+        useApprovedScript: document.getElementById("useApprovedScript"),
+        generateStoryboard: document.getElementById("generateStoryboard"),
+        generatePython: document.getElementById("generatePython"),
+        generateAnimationPackage: document.getElementById("generateAnimationPackage"),
+        downloadStoryboard: document.getElementById("downloadStoryboard"),
+        downloadPython: document.getElementById("downloadPython"),
+        generateBulkPython: document.getElementById("generateBulkPython"),
       };
+
+      function readTemplateNumber(value, fallback) {
+        const parsed = Number(String(value || "").trim());
+        return Number.isFinite(parsed) ? parsed : fallback;
+      }
+
+      function readTemplateString(value, fallback) {
+        const text = String(value || "").trim();
+        return text && !text.includes("{") ? text : fallback;
+      }
 
       window.addEventListener("error", (event) => {
         showMessage(`JavaScript error: ${event.message}`, "bad");
@@ -693,8 +809,8 @@
         els.statusBanner.textContent = message;
       }
 
-      function savedKey() {
-        return localStorage.getItem("conceptual_generator_api_key") || "";
+      function currentClaudeKey() {
+        return state.claudeKey;
       }
 
       function setBusy(button, busy, label) {
@@ -709,21 +825,22 @@
         }
       }
 
-      function apiHeaders() {
-        const key = savedKey();
-        if (!key) throw new Error("Save your OpenAI API key first.");
+      function claudeHeaders() {
+        const key = currentClaudeKey();
+        if (!key) throw new Error("Validate your Claude API key first.");
         return {
           "Content-Type": "application/json",
-          "X-OpenAI-Key": key,
         };
       }
 
-      async function apiPost(url, payload) {
+      async function apiPost(url, payload, headers = claudeHeaders()) {
+        const endpoint = apiUrl(url);
+        const claudeKey = currentClaudeKey();
         showMessage(`Calling ${url}...`, "warn");
-        const response = await fetch(url, {
+        const response = await fetch(endpoint, {
           method: "POST",
-          headers: apiHeaders(),
-          body: JSON.stringify(payload),
+          headers,
+          body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
         });
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Request failed.");
@@ -731,27 +848,57 @@
         return data;
       }
 
-      async function validateApiKey(key) {
-        const response = await fetch("/api/validate-key", {
+      async function apiPostBlob(url, payload, headers = claudeHeaders()) {
+        const endpoint = apiUrl(url);
+        const claudeKey = currentClaudeKey();
+        showMessage(`Calling ${url}...`, "warn");
+        const response = await fetch(endpoint, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-OpenAI-Key": key,
-          },
-          body: JSON.stringify({}),
+          headers,
+          body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+        });
+        if (!response.ok) {
+          const contentType = response.headers.get("content-type") || "";
+          if (contentType.includes("application/json")) {
+            const data = await response.json();
+            throw new Error(data.error || "Request failed.");
+          }
+          throw new Error(await response.text() || "Request failed.");
+        }
+        showMessage(`${url} completed.`, "good");
+        return response.blob();
+      }
+
+      async function validateClaudeKey(key) {
+        const form = new FormData();
+        form.append("claude_api_key", key);
+        const response = await fetch(apiUrl("/api/validate-claude-key"), {
+          method: "POST",
+          body: form,
         });
         const data = await response.json();
         if (!response.ok || !data.valid) {
-          throw new Error(data.error || "API key is not valid.");
+          throw new Error(data.error || "Claude API key is not valid.");
         }
         return data;
       }
 
       async function apiGet(url) {
-        const response = await fetch(url);
+        const response = await fetch(apiUrl(url));
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || "Request failed.");
         return data;
+      }
+
+      function apiUrl(path) {
+        const renderHost = new URL(RENDER_API_ORIGIN).hostname;
+        const localFlaskPorts = new Set(["5000", "8000"]);
+        const isRender = window.location.hostname === renderHost;
+        const isLocalFlask =
+          ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname) &&
+          localFlaskPorts.has(window.location.port);
+        const base = isRender || isLocalFlask ? window.location.origin : RENDER_API_ORIGIN;
+        return new URL(path, base).toString();
       }
 
       function option(select, value) {
@@ -759,6 +906,12 @@
         item.value = value;
         item.textContent = value || "Select";
         select.appendChild(item);
+      }
+
+      function selectFirstValue(select) {
+        const firstValue = Array.from(select.options).find((item) => item.value)?.value || "";
+        select.value = firstValue;
+        return firstValue;
       }
 
       function selectedRows() {
@@ -783,6 +936,7 @@
         els.gradeSelect.innerHTML = "";
         option(els.gradeSelect, "");
         (state.filters.grades || []).forEach((grade) => option(els.gradeSelect, grade));
+        selectFirstValue(els.gradeSelect);
         renderChapterOptions();
       }
 
@@ -796,6 +950,8 @@
         chapters.forEach((chapter) => option(els.chapterSelect, chapter));
         if (chapters.includes(current)) {
           els.chapterSelect.value = current;
+        } else {
+          selectFirstValue(els.chapterSelect);
         }
         renderSubtopicOptions();
       }
@@ -813,6 +969,8 @@
         subtopics.forEach((subtopic) => option(els.subtopicSelect, subtopic));
         if (subtopics.includes(current)) {
           els.subtopicSelect.value = current;
+        } else {
+          selectFirstValue(els.subtopicSelect);
         }
         renderLearningOutcomes();
       }
@@ -829,7 +987,7 @@
             item.innerHTML = `
               <input class="lo-check" type="checkbox" data-index="${index}">
               <span class="lo-text">
-                <span class="lo-meta">${escapeHtml(row.grade)} · ${escapeHtml(row.chapter)} · ${escapeHtml(row.subtopic)} · ${escapeHtml(row.cc)}</span>
+                <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)} &middot; ${escapeHtml(row.subtopic)} &middot; ${escapeHtml(row.cc)}</span>
                 ${escapeHtml(row.lo)}
               </span>
             `;
@@ -853,10 +1011,35 @@
           subtopic: els.subtopicSelect.value || first.subtopic || "",
           outcomes: selected,
           learningOutcomes: selected.map((row, index) => `LO ${index + 1}. ${row.lo}`).join("\n"),
-          model: els.modelName.value.trim(),
+          claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
           textbookReference: els.textbookReference.value.trim(),
           ...extra,
         };
+      }
+
+      function phase2Payload(extra = {}) {
+        const base = contextPayload();
+        const transcript = els.animationTranscript.value.trim() || state.script || "";
+        return {
+          transcript,
+          title: els.animationTitle.value.trim() || base.chapter || "Concept Animation",
+          subject: "Mathematics",
+          grade: base.grade,
+          duration: els.animationDuration.value.trim() || "90 seconds",
+          contentType: els.animationContentType.value,
+          claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
+          ...extra,
+        };
+      }
+
+      function renderAnimationDownloads() {
+        els.downloadStoryboard.disabled = !state.storyboard;
+        els.downloadPython.disabled = !state.pythonCode;
+      }
+
+      function selectAllVisibleOutcomes() {
+        document.querySelectorAll(".lo-check").forEach((input) => input.checked = true);
+        updateMetrics();
       }
 
       function setTab(tab) {
@@ -868,6 +1051,9 @@
           validation: state.validation || "No validation report yet.",
           history: state.history.length ? JSON.stringify(state.history.map(({ attempt, status }) => ({ attempt, status })), null, 2) : "No revision history yet.",
           prompt: state.promptPreview || "Select a prompt from the Master Prompt Library.",
+          storyboard: state.storyboard || "No storyboard generated yet.",
+          python: state.pythonCode || "No Python code generated yet.",
+          package: state.animationPackage || "No full package generated yet.",
         };
         els.outputBox.textContent = content[tab] || "";
       }
@@ -974,6 +1160,10 @@
 
       function saveTextFile(filename, text, type = "text/plain") {
         const blob = new Blob([text], { type });
+        saveBlobFile(filename, blob);
+      }
+
+      function saveBlobFile(filename, blob) {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
@@ -982,51 +1172,62 @@
         URL.revokeObjectURL(url);
       }
 
-      els.saveKey.addEventListener("click", async () => {
-        const key = els.apiKey.value.trim();
-        if (!key) return showMessage("Paste your API key first.", "warn");
-        setBusy(els.saveKey, true, "Validating...");
-        showMessage("Validating API key...", "warn");
+      els.saveClaudeKey.addEventListener("click", async () => {
+        const key = els.claudeKey.value.trim();
+        if (!key) return showMessage("Paste your Claude API key first.", "warn");
+        setBusy(els.saveClaudeKey, true, "Validating...");
+        showMessage("Validating Claude API key...", "warn");
         try {
-          await validateApiKey(key);
-          localStorage.setItem("conceptual_generator_api_key", key);
-          els.apiKey.value = "";
-          els.apiKey.placeholder = "Saved and valid in this browser";
-          showMessage("API key is valid and saved in this browser.", "good");
+          await validateClaudeKey(key);
+          state.claudeKey = key;
+          els.claudeKey.value = "";
+          els.claudeKey.placeholder = "Validated for this page";
+          showMessage("Claude API key is valid for this open page.", "good");
         } catch (error) {
-          localStorage.removeItem("conceptual_generator_api_key");
+          state.claudeKey = "";
           showMessage(error.message, "bad");
         } finally {
-          setBusy(els.saveKey, false);
+          setBusy(els.saveClaudeKey, false);
         }
       });
 
-      els.clearKey.addEventListener("click", () => {
-        localStorage.removeItem("conceptual_generator_api_key");
-        els.apiKey.value = "";
-        showMessage("API key cleared.", "warn");
+      els.clearClaudeKey.addEventListener("click", () => {
+        state.claudeKey = "";
+        els.claudeKey.value = "";
+        els.claudeKey.placeholder = "sk-ant-...";
+        showMessage("Claude API key cleared.", "warn");
       });
 
-      els.parseExcel.addEventListener("click", async () => {
+      async function parseSelectedExcel() {
         if (!els.excelFile.files.length) return showMessage("Choose an Excel file first.", "warn");
         const form = new FormData();
         form.append("file", els.excelFile.files[0]);
         setBusy(els.parseExcel, true, "Parsing...");
         showMessage("Uploading and parsing Excel...", "warn");
         try {
-          const response = await fetch("/api/parse-excel", { method: "POST", body: form });
+          const response = await fetch(apiUrl("/api/parse-excel"), { method: "POST", body: form });
           const data = await response.json();
           if (!response.ok) throw new Error(data.error || "Could not parse Excel.");
           state.rows = data.rows || [];
           state.filters = data.filters || {};
           renderFilters();
-          showMessage(`Parsed ${state.rows.length} Learning Outcome rows.`, "good");
+          selectAllVisibleOutcomes();
+          const filterSummary = [els.gradeSelect.value, els.chapterSelect.value, els.subtopicSelect.value].filter(Boolean).join(" / ");
+          showMessage(`Parsed ${state.rows.length} rows and selected the visible Learning Outcomes${filterSummary ? `: ${filterSummary}` : ""}.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.parseExcel, false);
         }
+      }
+
+      els.excelFile.addEventListener("change", () => {
+        if (els.excelFile.files.length) {
+          parseSelectedExcel();
+        }
       });
+
+      els.parseExcel.addEventListener("click", parseSelectedExcel);
 
       els.gradeSelect.addEventListener("change", renderChapterOptions);
       els.chapterSelect.addEventListener("change", renderSubtopicOptions);
@@ -1034,8 +1235,7 @@
       els.loList.addEventListener("change", updateMetrics);
 
       els.selectVisible.addEventListener("click", () => {
-        document.querySelectorAll(".lo-check").forEach((input) => input.checked = true);
-        updateMetrics();
+        selectAllVisibleOutcomes();
       });
 
       els.clearSelection.addEventListener("click", () => {
@@ -1054,6 +1254,95 @@
 
       els.testUi.addEventListener("click", () => {
         showMessage("Buttons are connected. JavaScript is running.", "good");
+      });
+
+      els.generateBulkPython.addEventListener("click", async () => {
+        const payload = contextPayload({
+          duration: els.animationDuration.value.trim() || "90 seconds",
+          contentType: els.animationContentType.value,
+        });
+        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome first.", "warn");
+        setBusy(els.generateBulkPython, true, "Generating everything...");
+        try {
+          const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders());
+          saveBlobFile("bulk_validated_animation_package.zip", zipBlob);
+          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} selected row(s). Python filenames are unique.`, "good");
+        } catch (error) {
+          showMessage(error.message, "bad");
+        } finally {
+          setBusy(els.generateBulkPython, false);
+        }
+      });
+
+      els.useApprovedScript.addEventListener("click", () => {
+        const script = state.script.trim();
+        if (!script) return showMessage("Generate or approve a script first, or paste a transcript manually.", "warn");
+        els.animationTranscript.value = script;
+        showMessage("Latest script copied into Phase 2 transcript.", "good");
+      });
+
+      els.generateStoryboard.addEventListener("click", async () => {
+        const payload = phase2Payload();
+        if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        setBusy(els.generateStoryboard, true, "Generating storyboard...");
+        try {
+          const data = await apiPost("/api/animation/storyboard", payload, claudeHeaders());
+          state.storyboard = data.storyboard || "";
+          renderAnimationDownloads();
+          setTab("storyboard");
+          showMessage("Storyboard and position-table package generated with Claude.", "good");
+        } catch (error) {
+          showMessage(error.message, "bad");
+        } finally {
+          setBusy(els.generateStoryboard, false);
+        }
+      });
+
+      els.generatePython.addEventListener("click", async () => {
+        const payload = phase2Payload({ storyboard: state.storyboard });
+        if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        setBusy(els.generatePython, true, "Generating Python...");
+        try {
+          const data = await apiPost("/api/animation/code", payload, claudeHeaders());
+          state.pythonCode = data.code || "";
+          renderAnimationDownloads();
+          setTab("python");
+          showMessage("Manim Python code generated with Claude.", "good");
+        } catch (error) {
+          showMessage(error.message, "bad");
+        } finally {
+          setBusy(els.generatePython, false);
+        }
+      });
+
+      els.generateAnimationPackage.addEventListener("click", async () => {
+        const payload = phase2Payload({ storyboard: state.storyboard });
+        if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        setBusy(els.generateAnimationPackage, true, "Generating package...");
+        try {
+          const data = await apiPost("/api/animation/package", payload, claudeHeaders());
+          state.animationPackage = data.package || "";
+          state.pythonCode = data.code || state.pythonCode;
+          renderAnimationDownloads();
+          setTab("package");
+          showMessage("Full animation package generated with Claude.", "good");
+        } catch (error) {
+          showMessage(error.message, "bad");
+        } finally {
+          setBusy(els.generateAnimationPackage, false);
+        }
+      });
+
+      els.downloadStoryboard.addEventListener("click", () => {
+        if (!state.storyboard) return showMessage("Generate a storyboard first.", "warn");
+        saveTextFile("animation_storyboard.txt", state.storyboard, "text/plain");
+        showMessage("Storyboard downloaded.", "good");
+      });
+
+      els.downloadPython.addEventListener("click", () => {
+        if (!state.pythonCode) return showMessage("Generate Python code first.", "warn");
+        saveTextFile("animation_scene.py", state.pythonCode, "text/x-python");
+        showMessage("Python file downloaded.", "good");
       });
 
       els.runGrouping.addEventListener("click", async () => {
@@ -1151,12 +1440,14 @@
         showMessage("Approved script downloaded.", "good");
       });
 
-      if (savedKey()) {
-        els.apiKey.placeholder = "Saved in this browser";
+      if (els.maxRegenerationsLabel) {
+        els.maxRegenerationsLabel.textContent = MAX_REGENERATIONS;
       }
+      els.claudeModel.value = readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL);
+      renderAnimationDownloads();
       loadPromptLibrary();
       renderStatus();
-      setTab("grouping");
+      setTab("script");
       showMessage("JavaScript ready. Buttons are connected.", "good");
     </script>
   </body>

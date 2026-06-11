@@ -1,10 +1,12 @@
 import json
 import re
+import urllib.error
+import urllib.request
+import zipfile
 from io import BytesIO
 from pathlib import Path
 
 from flask import Flask, Response, jsonify, render_template, request
-from openai import OpenAI
 from openpyxl import load_workbook
 
 
@@ -12,13 +14,14 @@ BASE_DIR = Path(__file__).parent.resolve()
 SCRIPTS_DIR = BASE_DIR / "scripts"
 PROMPTS_DIR = BASE_DIR / "backend_prompts"
 MAX_REGENERATIONS = 3
-DEFAULT_MODEL = "gpt-4.1-mini"
+DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-5"
 
 PROMPT_FILES = {
     "script_generation": "conceptual_script_generation.txt",
     "learning_design": "learning_design.txt",
     "lo_grouping": "lo_grouping.txt",
     "validation": "validation_prompt.txt",
+    "animation_phase": "animation_phase_master_prompt.txt",
 }
 
 PROMPT_META = {
@@ -42,9 +45,22 @@ PROMPT_META = {
         "stage": "Step 3",
         "purpose": "Validates scripts and drives capped regeneration until approval.",
     },
+    "animation_phase": {
+        "title": "Animation Phase Master Prompt",
+        "stage": "Phase 2",
+        "purpose": "Turns approved transcripts into storyboard, position table, and Manim Python code.",
+    },
 }
 
 app = Flask(__name__)
+
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Claude-Key"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    return response
 
 
 def load_prompt(name):
@@ -60,24 +76,53 @@ def fill_prompt(template, **values):
     return output
 
 
-def get_api_key():
-    api_key = request.headers.get("X-OpenAI-Key", "").strip()
+def get_claude_api_key():
+    api_key = request.headers.get("X-Claude-Key", "").strip()
     if not api_key:
         payload = request.get_json(silent=True) or {}
-        api_key = str(payload.get("api_key", "")).strip()
+        api_key = str(payload.get("claude_api_key", "")).strip()
     if not api_key:
-        raise ValueError("Missing API key. Save your key in the app before running AI stages.")
+        api_key = str(request.form.get("claude_api_key", "")).strip()
+    if not api_key:
+        raise ValueError("Missing Claude API key. Save your Claude key before running Phase 2.")
     return api_key
 
 
-def call_openai(prompt, api_key, model=None, max_output_tokens=5000):
-    client = OpenAI(api_key=api_key)
-    response = client.responses.create(
-        model=model or DEFAULT_MODEL,
-        input=prompt,
-        max_output_tokens=max_output_tokens,
+def call_claude(prompt, api_key, model=None, max_output_tokens=16000):
+    body = json.dumps(
+        {
+            "model": model or DEFAULT_CLAUDE_MODEL,
+            "max_tokens": max_output_tokens,
+            "messages": [{"role": "user", "content": prompt}],
+        }
+    ).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=body,
+        headers={
+            "content-type": "application/json",
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01",
+        },
+        method="POST",
     )
-    return response.output_text
+    try:
+        with urllib.request.urlopen(req, timeout=300) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise ValueError(f"Claude API request failed: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise ValueError(f"Claude API request failed: {exc.reason}") from exc
+
+    text_parts = []
+    for block in data.get("content", []):
+        if block.get("type") == "text":
+            text_parts.append(block.get("text", ""))
+    output = "\n".join(text_parts).strip()
+    if not output:
+        raise ValueError("Claude returned an empty response.")
+    return output
 
 
 def normalise_header(value):
@@ -347,9 +392,146 @@ def validation_prompt(grade, chapter, subtopic, outcomes_text, script, textbook_
     )
 
 
+def animation_metadata(payload):
+    title = str(payload.get("title") or payload.get("chapter") or "Concept Animation").strip()
+    return {
+        "title": title,
+        "subject": str(payload.get("subject") or "Mathematics").strip(),
+        "grade": str(payload.get("grade") or "").strip(),
+        "duration": str(payload.get("duration") or "90 seconds").strip(),
+        "content_type": str(payload.get("contentType") or "Concept Video").strip(),
+    }
+
+
+def animation_prompt(payload, mode):
+    transcript = str(payload.get("transcript") or "").strip()
+    if not transcript:
+        raise ValueError("Paste a transcript or use the approved script first.")
+
+    meta = animation_metadata(payload)
+    master_prompt = load_prompt("animation_phase")
+    stage_instruction = {
+        "storyboard": (
+            "Run only STEP 0, STEP 1, STEP 2, STEP 3a, STEP 3b, and the pre-code/audit planning items "
+            "needed for the storyboard. Do not output Python code."
+        ),
+        "code": (
+            "Using the transcript and storyboard below, output STEP 4 only: raw production-ready Python code. "
+            "Do not wrap the code in markdown fences. Do not include prose before or after the Python."
+        ),
+        "package": (
+            "Run the full pipeline in the final output order: STEP 0, STEP 1, STEP 2, STEP 3a, STEP 3b, "
+            "STEP 4, STEP 5, and STEP 6."
+        ),
+    }[mode]
+
+    storyboard = str(payload.get("storyboard") or "").strip()
+    storyboard_block = f"\n\nEXISTING STORYBOARD PACKAGE:\n{storyboard}\n" if storyboard else ""
+    return (
+        f"{master_prompt}\n\n"
+        "USER INPUT FOR THIS RUN:\n"
+        f'INPUT:\n"""\n{transcript}\n"""\n\n'
+        "METADATA:\n"
+        f"Title: {meta['title']}\n"
+        f"Subject: {meta['subject']}\n"
+        f"Grade: {meta['grade']}\n"
+        f"Duration: {meta['duration']}\n"
+        f"Content Type: {meta['content_type']}\n"
+        f"{storyboard_block}\n"
+        "EXECUTION MODE:\n"
+        f"{stage_instruction}"
+    )
+
+
+def extract_python_code(text):
+    fenced = re.search(r"```(?:python)?\s*(.*?)```", text, flags=re.IGNORECASE | re.DOTALL)
+    return fenced.group(1).strip() if fenced else text.strip()
+
+
+def slugify_filename(value, fallback="animation"):
+    slug = re.sub(r"[^a-zA-Z0-9]+", "_", str(value or "").strip().lower()).strip("_")
+    return slug[:80] or fallback
+
+
+def unique_python_filename(outcome, used_names):
+    parts = [
+        outcome.get("grade"),
+        outcome.get("chapter"),
+        outcome.get("subtopic"),
+        outcome.get("cc"),
+        f"row_{outcome.get('row')}" if outcome.get("row") else "",
+    ]
+    base = slugify_filename("_".join(str(part) for part in parts if part), "animation_scene")
+    filename = f"{base}.py"
+    counter = 2
+    while filename in used_names:
+        filename = f"{base}_{counter}.py"
+        counter += 1
+    used_names.add(filename)
+    return filename
+
+
+def animation_title_for_outcome(outcome):
+    return " - ".join(
+        str(part)
+        for part in [outcome.get("chapter"), outcome.get("subtopic"), outcome.get("cc")]
+        if part
+    ) or "Concept Animation"
+
+
+def bulk_groups_from_outcomes(outcomes):
+    grouped = {}
+    for outcome in outcomes:
+        key = (
+            outcome.get("grade") or "",
+            outcome.get("subject") or "Mathematics",
+            outcome.get("chapter") or "",
+            outcome.get("subtopic") or "",
+            outcome.get("cc") or "",
+            outcome.get("cc_name") or "",
+        )
+        if key not in grouped:
+            grouped[key] = {
+                "grade": key[0],
+                "subject": key[1],
+                "chapter": key[2],
+                "subtopic": key[3],
+                "cc": key[4],
+                "cc_name": key[5],
+                "rows": [],
+                "outcomes": [],
+            }
+        grouped[key]["rows"].append(outcome.get("row"))
+        grouped[key]["outcomes"].append(outcome)
+    return list(grouped.values())
+
+
+def group_filename_seed(group):
+    rows = [str(row) for row in group.get("rows", []) if row]
+    return {
+        "grade": group.get("grade"),
+        "chapter": group.get("chapter"),
+        "subtopic": group.get("subtopic"),
+        "cc": group.get("cc"),
+        "row": rows[0] if rows else None,
+    }
+
+
+def bulk_learning_outcomes_text(outcomes):
+    return "\n".join(
+        f"LO {index}. {outcome.get('lo', '')}"
+        for index, outcome in enumerate(outcomes, start=1)
+        if outcome.get("lo")
+    )
+
+
 @app.get("/")
 def index():
-    return render_template("index.html", max_regenerations=MAX_REGENERATIONS, default_model=DEFAULT_MODEL)
+    return render_template(
+        "index.html",
+        max_regenerations=MAX_REGENERATIONS,
+        default_claude_model=DEFAULT_CLAUDE_MODEL,
+    )
 
 
 @app.get("/health")
@@ -363,9 +545,9 @@ def api():
         {
             "service": "Conceptual Script Generator",
             "status": "ok",
-            "phase": 1,
+            "phase": "1+2",
             "max_regenerations": MAX_REGENERATIONS,
-            "default_model": DEFAULT_MODEL,
+            "default_claude_model": DEFAULT_CLAUDE_MODEL,
             "prompts": sorted(PROMPT_FILES),
             "media_storage": "local-only; media/ is intentionally not tracked in Git",
         }
@@ -406,14 +588,14 @@ def prompt_detail_route(name):
 
 
 @app.post("/api/validate-key")
-def validate_key_route():
+@app.post("/api/validate-claude-key")
+def validate_claude_key_route():
     try:
-        api_key = get_api_key()
-        client = OpenAI(api_key=api_key)
-        client.models.list()
+        api_key = get_claude_api_key()
+        call_claude("Reply with only OK.", api_key, max_output_tokens=16)
     except Exception as exc:
-        return jsonify({"valid": False, "error": "API key validation failed: " + str(exc)}), 400
-    return jsonify({"valid": True, "message": "API key is valid."})
+        return jsonify({"valid": False, "error": "Claude API key validation failed: " + str(exc)}), 400
+    return jsonify({"valid": True, "message": "Claude API key is valid."})
 
 
 @app.post("/api/parse-excel")
@@ -443,7 +625,7 @@ def group_route():
         CCsAndLOs=ccs_and_los,
     )
     try:
-        text = call_openai(prompt, get_api_key(), payload.get("model"))
+        text = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=5000)
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
     return jsonify({"grouping": text, "promptUsed": "lo_grouping"})
@@ -462,7 +644,7 @@ def generate_route():
         outcomes_text,
     )
     try:
-        script = call_openai(prompt, get_api_key(), payload.get("model"), max_output_tokens=3500)
+        script = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=8000)
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
     return jsonify({"script": script, "attempt": 1})
@@ -484,7 +666,7 @@ def validate_route():
         payload.get("textbookReference", ""),
     )
     try:
-        report = call_openai(prompt, get_api_key(), payload.get("model"), max_output_tokens=5000)
+        report = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=8000)
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
     return jsonify({"report": report, "status": extract_verdict(report)})
@@ -516,7 +698,7 @@ def revise_route():
         + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
     )
     try:
-        script = call_openai(prompt, get_api_key(), payload.get("model"), max_output_tokens=3500)
+        script = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=8000)
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
     return jsonify({"script": script, "attempt": attempt})
@@ -529,8 +711,11 @@ def run_approved_route():
     if not outcomes_text:
         return jsonify({"error": "Missing grouped Learning Outcomes."}), 400
 
-    api_key = get_api_key()
-    model = payload.get("model")
+    try:
+        api_key = get_claude_api_key()
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    model = payload.get("claudeModel")
     grade = payload.get("grade", "")
     chapter = payload.get("chapter", "")
     subtopic = payload.get("subtopic", "")
@@ -552,12 +737,12 @@ def run_approved_route():
                 + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
             )
         try:
-            script = call_openai(prompt, api_key, model, max_output_tokens=3500)
-            report = call_openai(
+            script = call_claude(prompt, api_key, model, max_output_tokens=8000)
+            report = call_claude(
                 validation_prompt(grade, chapter, subtopic, outcomes_text, script, textbook_reference),
                 api_key,
                 model,
-                max_output_tokens=5000,
+                max_output_tokens=8000,
             )
         except Exception as exc:
             return jsonify({"error": str(exc), "history": history}), 400
@@ -577,6 +762,238 @@ def run_approved_route():
             "validationReport": report,
             "history": history,
         }
+    )
+
+
+@app.post("/api/animation/storyboard")
+def animation_storyboard_route():
+    payload = request.get_json(force=True)
+    try:
+        prompt = animation_prompt(payload, "storyboard")
+        storyboard = call_claude(
+            prompt,
+            get_claude_api_key(),
+            payload.get("claudeModel"),
+            max_output_tokens=int(payload.get("maxTokens") or 16000),
+        )
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    return jsonify(
+        {
+            "storyboard": storyboard,
+            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+            "promptUsed": "animation_phase",
+        }
+    )
+
+
+@app.post("/api/animation/code")
+def animation_code_route():
+    payload = request.get_json(force=True)
+    try:
+        prompt = animation_prompt(payload, "code")
+        raw_code = call_claude(
+            prompt,
+            get_claude_api_key(),
+            payload.get("claudeModel"),
+            max_output_tokens=int(payload.get("maxTokens") or 24000),
+        )
+        code = extract_python_code(raw_code)
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    return jsonify(
+        {
+            "code": code,
+            "raw": raw_code,
+            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+            "promptUsed": "animation_phase",
+        }
+    )
+
+
+@app.post("/api/animation/package")
+def animation_package_route():
+    payload = request.get_json(force=True)
+    try:
+        prompt = animation_prompt(payload, "package")
+        package = call_claude(
+            prompt,
+            get_claude_api_key(),
+            payload.get("claudeModel"),
+            max_output_tokens=int(payload.get("maxTokens") or 30000),
+        )
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    return jsonify(
+        {
+            "package": package,
+            "code": extract_python_code(package),
+            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+            "promptUsed": "animation_phase",
+        }
+    )
+
+
+@app.post("/api/bulk/python-scripts")
+def bulk_python_scripts_route():
+    payload = request.get_json(force=True)
+    outcomes = payload.get("outcomes") or []
+    if not outcomes:
+        return jsonify({"error": "Select at least one Learning Outcome for bulk generation."}), 400
+
+    try:
+        api_key = get_claude_api_key()
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    model = payload.get("claudeModel")
+    duration = payload.get("duration") or "90 seconds"
+    content_type = payload.get("contentType") or "Concept Video"
+    groups = bulk_groups_from_outcomes(outcomes)
+    max_items = int(payload.get("maxItems") or len(groups))
+    selected_groups = groups[:max_items]
+
+    used_names = set()
+    manifest = []
+    archive_buffer = BytesIO()
+
+    with zipfile.ZipFile(archive_buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for index, group in enumerate(selected_groups, start=1):
+            grade = str(group.get("grade") or payload.get("grade") or "").strip()
+            chapter = str(group.get("chapter") or payload.get("chapter") or "").strip()
+            subtopic = str(group.get("subtopic") or payload.get("subtopic") or "").strip()
+            title = animation_title_for_outcome(group)
+            outcomes_text = bulk_learning_outcomes_text(group["outcomes"])
+            filename = unique_python_filename(group_filename_seed(group), used_names)
+            stem = filename[:-3]
+            if not outcomes_text:
+                manifest.append({"index": index, "status": "skipped", "title": title, "error": "Missing Learning Outcome text."})
+                continue
+
+            try:
+                grouped_los = call_claude(
+                    fill_prompt(
+                        load_prompt("lo_grouping"),
+                        Grade=grade,
+                        ChapterName=chapter,
+                        CCsAndLOs=format_ccs_and_los(group["outcomes"]),
+                    ),
+                    api_key,
+                    model,
+                    max_output_tokens=8000,
+                )
+
+                transcript = ""
+                validation_report = ""
+                status = "Not Started"
+                for attempt in range(1, MAX_REGENERATIONS + 1):
+                    if attempt == 1:
+                        transcript_prompt = script_prompt(grade, chapter, subtopic, grouped_los)
+                    else:
+                        transcript_prompt = (
+                            script_prompt(grade, chapter, subtopic, grouped_los)
+                            + "\n\nThe previous transcript was not approved. Regenerate using this validation report.\n\n"
+                            + f"Previous Transcript:\n{transcript}\n\nValidation Report:\n{validation_report}\n\n"
+                            + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
+                        )
+                    transcript = call_claude(transcript_prompt, api_key, model, max_output_tokens=8000)
+                    validation_report = call_claude(
+                        validation_prompt(grade, chapter, subtopic, grouped_los, transcript, payload.get("textbookReference", "")),
+                        api_key,
+                        model,
+                        max_output_tokens=8000,
+                    )
+                    status = extract_verdict(validation_report)
+                    if status == "Approved":
+                        break
+
+                archive.writestr(f"{stem}_grouped_los.txt", grouped_los)
+                archive.writestr(f"{stem}_validated_transcript.txt", transcript)
+                archive.writestr(f"{stem}_validation_report.txt", validation_report)
+
+                if status != "Approved":
+                    manifest.append(
+                        {
+                            "index": index,
+                            "status": "validation_failed",
+                            "validation_status": status,
+                            "title": title,
+                            "rows": group.get("rows"),
+                            "transcript": f"{stem}_validated_transcript.txt",
+                            "validation_report": f"{stem}_validation_report.txt",
+                        }
+                    )
+                    continue
+
+                storyboard = call_claude(
+                    animation_prompt(
+                        {
+                            "transcript": transcript,
+                            "title": title,
+                            "subject": group.get("subject") or "Mathematics",
+                            "grade": grade,
+                            "duration": duration,
+                            "contentType": content_type,
+                        },
+                        "storyboard",
+                    ),
+                    api_key,
+                    model,
+                    max_output_tokens=16000,
+                )
+                code_response = call_claude(
+                    animation_prompt(
+                        {
+                            "transcript": transcript,
+                            "title": title,
+                            "subject": group.get("subject") or "Mathematics",
+                            "grade": grade,
+                            "duration": duration,
+                            "contentType": content_type,
+                            "storyboard": storyboard,
+                        },
+                        "code",
+                    ),
+                    api_key,
+                    model,
+                    max_output_tokens=24000,
+                )
+                archive.writestr(f"{stem}_storyboard.txt", storyboard)
+                archive.writestr(filename, extract_python_code(code_response) + "\n")
+                manifest.append(
+                    {
+                        "index": index,
+                        "status": "generated",
+                        "validation_status": status,
+                        "filename": filename,
+                        "title": title,
+                        "grade": grade,
+                        "chapter": chapter,
+                        "subtopic": subtopic,
+                        "rows": group.get("rows"),
+                        "grouped_los": f"{stem}_grouped_los.txt",
+                        "validated_transcript": f"{stem}_validated_transcript.txt",
+                        "validation_report": f"{stem}_validation_report.txt",
+                        "storyboard": f"{stem}_storyboard.txt",
+                    }
+                )
+            except Exception as exc:
+                manifest.append(
+                    {
+                        "index": index,
+                        "status": "failed",
+                        "title": title,
+                        "rows": group.get("rows"),
+                        "error": str(exc),
+                    }
+                )
+
+        archive.writestr("manifest.json", json.dumps({"items": manifest}, ensure_ascii=False, indent=2))
+
+    archive_buffer.seek(0)
+    return Response(
+        archive_buffer.getvalue(),
+        mimetype="application/zip",
+        headers={"Content-Disposition": "attachment; filename=bulk_python_scripts.zip"},
     )
 
 

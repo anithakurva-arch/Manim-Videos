@@ -1,0 +1,951 @@
+INPUT:
+"""
+[PASTE RAW TRANSCRIPT HERE]
+"""
+
+METADATA (optional):
+Title: <e.g., Area of a Rectangle>
+Subject: <e.g., Mathematics>
+Grade: <e.g., Grade 7>
+Duration: <e.g., 90 seconds>
+Content Type: <Concept Video | Microlearning | Problem Walkthrough>
+
+ARCHITECTURE
+
+THREE LAYERS — executed in order:
+
+LAYER 1 -> LAYOUT: compute exact (x, y) for every element
+           Output: POSITION TABLE (Step 3b)
+LAYER 2 -> ANIMATION: self.play() calls using Layer 1 positions
+LAYER 3 -> AUDIO: bookmarks sync animations to voiceover
+
+TWO TRACKS — never cross:
+
+TRACK A: raw transcript -> audio script -> self.voiceover(text=...)
+TRACK B: raw transcript -> storyboard -> position table -> animations
+
+✅ Bookmarks in TRACK A bridge to TRACK B via wait_until_bookmark()
+❌ Storyboard NEVER derived from audio script
+❌ Audio script NEVER derived from storyboard
+
+DESIGN SYSTEM
+
+COLORS:
+LAVENDER_BG  = "#E7E5F3"
+PURPLE       = "#7464CE"
+ORANGE_HL    = "#FF9302"
+PALE_PURPLE  = "#9495D7"
+WHITE        = "#FFFFFF"
+
+FONTS:
+All Text()    -> font="Poppins"
+All MathTex() -> tex_template=TexFontTemplates.gnu_freesans_tx
+
+FONT SIZES:
+Title topic:     52          Title hook:      28
+Heading badge:   28          Question body:   26
+Formula:         36          Solution step:   28
+Final answer:    40          Dimension label: 22
+Unknown "?":     36 BOLD     Legend:          20
+Caption:         22          Summary bullet:  26
+Concept card:    26
+
+GRADE-LEVEL VISUAL STYLE:
+
+Grade 6-7 -> Concrete & Visual
+  stroke_width >= 3.0 for all shapes
+  font_size >= 32 for all labels
+  Heavy ReplacementTransform for shape-to-formula connections
+  ORANGE_HL used generously
+  Maximum 2 elements in motion simultaneously
+
+Grade 8-9 -> Relational & Dynamic
+  ValueTracker + always_redraw() for any variable concept
+  Show cause-and-effect between changing values
+  Graphs and number lines preferred over static shapes
+
+Grade 10+ -> Abstract & Precise
+  ParametricFunction for curves
+  TransformMatchingTex for algebraic symbolic steps
+  Formal notation without visual scaffolding
+
+SLIDE TYPES:
+Title:   PURPLE bg, white text, topic name ONLY — no badge, no subtitle
+Content: LAVENDER_BG, heading badge top-left
+Summary: LAVENDER_BG, bullet points only — NO white card boxes
+
+LAYOUT GRID (CRITICAL — ALL POSITIONS DEFINED HERE)
+
+Frame: 14.22 x 8.00 units
+Safe area: x in [-6.11, +6.11], y in [-3.25, +3.25]
+
+NAMED SLOTS (use these exact coordinates):
+
+SLOT_HEADER      = UL corner, buff=0.3
+SLOT_TITLE       = ORIGIN
+SLOT_TITLE_TOP   = UP * 0.5
+SLOT_TITLE_BOT   = DOWN * 0.8
+SLOT_QUESTION    = UP * 2.5
+SLOT_FIGURE_C    = ORIGIN
+SLOT_FIGURE_R    = RIGHT * 3.0
+SLOT_STEPS       = UP * 2.0 + LEFT * 3.5
+SLOT_STEPS_SOLO  = UP * 2.0 + LEFT * 1.0
+SLOT_LEGEND      = DR corner, buff=0.4
+SLOT_CONCEPT     = UP * 0.5
+SLOT_CAPTION     = DOWN * 2.5
+SLOT_ANSWER      = (computed: below last step)
+SLOT_SUMM_1      = UP * 1.5
+SLOT_SUMM_2      = ORIGIN
+SLOT_SUMM_3      = DOWN * 1.5
+
+COEXISTENCE RULES:
+
+Title slide:     SLOT_TITLE only
+Question phase:  SLOT_HEADER + SLOT_QUESTION + SLOT_FIGURE_C
+Solution phase:  SLOT_HEADER + SLOT_FIGURE_R + SLOT_STEPS + SLOT_LEGEND
+Concept phase:   SLOT_HEADER + SLOT_CONCEPT (+ SLOT_CAPTION optional)
+Summary phase:   SLOT_SUMM_1 + SLOT_SUMM_2 + SLOT_SUMM_3 only
+
+✅ Elements in different slots NEVER overlap
+❌ Two elements NEVER share the same slot
+
+DIMENSION ARROW PLACEMENT:
+Bottom arrow: shape.get_bottom()[1] - 0.4  (label: DOWN, buff=0.15)
+Right arrow:  shape.get_right()[0]  + 0.4  (label: RIGHT, buff=0.15)
+Top arrow:    shape.get_top()[1]    + 0.4  (label: UP, buff=0.15)
+Left arrow:   shape.get_left()[0]   - 0.4  (label: LEFT, buff=0.15)
+
+✅ Arrows OUTSIDE shape, labels OUTSIDE arrows
+❌ NEVER place arrow between shape and another arrow
+❌ NEVER let two arrows share the same edge
+
+FIGURE TRANSITION (Question -> Solution):
+self.play(
+    figure_group.animate.move_to(SLOT_FIGURE_R),
+    run_time=1.0,
+)
+
+✅ Animate shift — NEVER redraw
+✅ ALL labels/arrows shift WITH figure in same self.play()
+
+IRON LAW — BACKGROUND COLOR IS NOT A WIPE (CRITICAL — NO EXCEPTIONS)
+
+self.camera.background_color = X is NOT a scene clear.
+It only repaints the background.
+All previously added mobjects remain FULLY VISIBLE.
+Nothing disappears unless explicitly FadeOut'd.
+
+CONSEQUENCES:
+❌ Does NOT remove any mobject from the scene
+❌ Does NOT clear the screen
+❌ Does NOT act as a slide transition
+✅ ALWAYS use clear_and_transition() before changing slide type
+✅ ALWAYS FadeOut all active_mobs BEFORE changing background
+
+IRON LAW — ONE SLIDE TYPE = ONE VOICEOVER BLOCK
+
+TITLE SLIDE    -> its own with self.voiceover() block
+CONCEPT SLIDE  -> its own with self.voiceover() block
+QUESTION SLIDE -> its own with self.voiceover() block
+SOLUTION SLIDE -> its own with self.voiceover() block
+SUMMARY SLIDE  -> its own with self.voiceover() block
+
+❌ NEVER put two different slide types in one voiceover block
+
+MANDATORY SCENE CLEAR SEQUENCE:
+STEP 1: self.play(*[FadeOut(m) for m in active_mobs], run_time=0.8)
+STEP 2: self.wait(0.2)
+STEP 3: self.camera.background_color = NEW_COLOR
+STEP 4: self.wait(0.1)
+STEP 5: NOW safe to FadeIn new content
+
+❌ NEVER skip STEP 1
+❌ NEVER skip STEP 2
+❌ NEVER do STEP 3 before STEP 1
+
+IRON LAW — NEVER USE `or` ON MANIM VECTOR ARGUMENTS
+
+Manim position arguments are numpy arrays.
+
+❌ NEVER write: value = arg or default
+❌ NEVER write: value = arg if arg else default
+✅ ALWAYS write: value = arg if arg is not None else default
+✅ ALWAYS write: value = default if arg is None else arg
+
+IRON LAW — NEVER POSITION HIGHLIGHTS BY ARITHMETIC ON MathTex.width
+
+MathTex renders as a compiled texture.
+
+❌ NEVER:
+overlay.move_to(expr.get_right() + LEFT * x)
+overlay.move_to(expr.get_left()  + RIGHT * x)
+
+✅ ALWAYS use one of:
+METHOD A — split expression into separate MathTex objects
+METHOD B — use MathTex subobject indexing
+
+IRON LAW — NEVER BUILD WIDE SOLUTION ROWS AS SINGLE VGROUPS
+
+Any solution row containing MORE THAN 4 MathTex objects arranged horizontally
+WILL overflow or overlap adjacent rows.
+
+MANDATORY WIDTH BUDGET PER ROW:
+Safe area width = 12.22 units total
+LEFT zone (steps) = max 6.0 units available
+
+❌ NEVER arrange more than 4 MathTex objects in one horizontal VGroup inside a StepManager step at font_size=28
+❌ NEVER put two full expressions side-by-side in one add_step() row
+✅ ALWAYS split wide rows into stacked sub-rows
+✅ ALWAYS embed checkmarks INSIDE their row VGroup
+✅ Count objects before writing: if count > 4 -> split immediately
+
+FONT SIZE RULE FOR SIDE-BY-SIDE EXPRESSIONS:
+max_expression_width = 5.5 units per side
+safe_font_size = 28 for expressions with 3+ terms
+safe_font_size = 32 for expressions with 1-2 terms
+
+If expression has 5+ MathTex objects arranged RIGHT:
+  use font_size=26 or 28
+  NEVER 34 or above
+
+IRON LAW — EVERY MOB ADDED TO SCENE MUST HAVE EXACTLY ONE FADEOUT OWNER
+
+A mobject that is FadeIn'd but not owned by a FadeOut mechanism becomes a ghost.
+
+GHOST CONDITIONS:
+❌ mob added to active_mobs but removed before clear_and_transition() without FadeOut
+❌ mob FadeIn'd after mgr.add_step() but not added to mgr.steps
+❌ mob removed from active_mobs without self.play(FadeOut(mob)) first
+
+FADEOUT OWNERSHIP RULES:
+✅ If mob is in mgr.steps -> owned by mgr.fadeout_all() OR clear_and_transition()
+✅ If mob is in active_mobs and not in mgr.steps -> owned by clear_and_transition()
+✅ If doing manual phase fadeout -> build explicit list of ALL phase mobs and FadeOut every one
+
+DOUBLE-TRACKING PREVENTION:
+If you call mgr.fadeout_all() manually mid-segment:
+  STEP 1: mgr.fadeout_all()
+  STEP 2: remove those step mobs from active_mobs immediately
+  STEP 3: only then continue
+
+If you do NOT call mgr.fadeout_all() manually:
+  keep step mobs in active_mobs and let clear_and_transition() handle all
+
+IRON LAW — VGROUP CHILD OWNERSHIP TRACE
+
+Before writing any VGroup(...), ask:
+"Will this child mob ever be FadeOut'd, ReplacementTransform'd, or repositioned independently?"
+
+IF YES -> do NOT put it in a VGroup
+IF NO  -> safe to include
+
+✅ VGroup is ONLY for mobs that live and die together
+❌ NEVER put slot/ghost/placeholder tiles in a VGroup with other tiles
+
+IRON LAW — BRACE / ANNOTATION BUILT AFTER TARGET IS ON SCREEN
+
+MANDATORY ORDER:
+1. Create target
+2. Move target to final position
+3. check_safe_margins(target)
+4. self.play(FadeIn(target))
+5. Build Brace(target, direction)
+6. Position brace label
+7. self.play(FadeIn(brace_group))
+
+❌ NEVER build Brace before target is positioned
+❌ NEVER build Brace outside the voiceover block where target is shown
+✅ ALWAYS use UP direction for tile-row braces
+
+IRON LAW — CROSS-METHOD STATE PASSING IS FORBIDDEN UNLESS EVERY MOB IS ACCOUNTED FOR
+
+If a method stores mobs in self._xxx, the receiving method MUST fully fade inherited mobs first.
+
+MANDATORY PATTERN:
+inherited = list(self._previous_active)
+self.play(*[FadeOut(m) for m in inherited], run_time=0.7)
+self.wait(0.2)
+self.camera.background_color = LAVENDER_BG
+self.wait(0.1)
+active = []
+
+✅ store ONLY mobs visibly present at method end
+❌ NEVER store already-faded mobs in self._xxx
+
+IRON LAW — NEVER USE .animate.scale() ON A MOB THAT WILL BE REUSED OR REPOSITIONED
+
+❌ NEVER chain .animate.scale() then move_to()/next_to() later on same mob
+❌ NEVER store a scaled mob in self._xxx for later use
+
+✅ If you need a smaller version later:
+1. FadeOut old mob
+2. Create NEW mob at smaller font_size
+3. Position new mob
+4. FadeIn new mob
+
+IRON LAW — SLOT / PLACEHOLDER TILES ARE ALWAYS STANDALONE
+
+Any missing / empty / ghost / slot tile MUST be standalone.
+
+✅ create slot as standalone
+✅ slot.move_to(target_position)
+✅ active_mobs.append(slot)
+✅ swap with self.play(FadeOut(slot), FadeIn(new_tile))
+✅ active_mobs.remove(slot); active_mobs.append(new_tile)
+
+❌ NEVER put slot in a VGroup
+❌ NEVER include slot in brace target VGroup
+
+
+IRON LAW — NO OVERLAP ANYWHERE, INCLUDING INSIDE FIGURES
+
+Any two visible mobjects whose intended semantics are distinct must never occupy overlapping screen area in the same frame, unless one is the explicit fill/background of that exact same target shape.
+
+CONSEQUENCES:
+❌ NEVER allow internal tile overlap inside a strip, ribbon, bar model, array, or partitioned shape
+❌ NEVER allow two different tilings of the same base shape to be visible simultaneously in overlapping positions
+❌ NEVER create highlight boxes, outlines, or overlays with guessed widths/heights that can extend into adjacent units
+❌ NEVER use arrange(RIGHT, buff=0) as proof of safe non-overlap for unit partitions unless all child widths are derived from one shared base geometry
+❌ NEVER leave old geometry on screen while fading in replacement geometry over the same region
+
+✅ EVERY partitioned figure must be derived from one shared base shape
+✅ EVERY unit cell width/height must be computed from the parent figure's exact geometry
+✅ EVERY overlay/highlight must be anchored to an existing target cell with matching bounds
+✅ EVERY transition between partitions must use one of: FadeOut old partition, then FadeIn new partition
+
+ReplacementTransform only when source and target cells are position-matched and remain non-overlapping through the full motion
+✅ BEFORE any figure is shown, run a child-level overlap audit, not just a slot-level audit
+✅ If overlap is detected at child level, adjust BEFORE writing code
+
+MANDATORY STRIP / TILE CONSTRUCTION RULE:
+For any strip, ribbon, or row partitioned into n equal parts:
+Create one base shape with fixed width and height
+Compute cell_width = base_shape.width / n
+Record x_left = base_strip.get_left()
+Compute cell_center_x = x_left + cell_width * (i + 0.5) for each i
+Build every cell from those exact coordinates
+Reuse that same geometry for highlights, used-parts fills, and later phases
+
+SAFE PATTERN:
+
+base_strip = Rectangle(...)
+
+x_left = base_strip.get_left()
+
+cell_width = base_strip.width / n
+
+cell_center_x = x_left + cell_width * (i + 0.5)
+
+❌ UNSAFE PATTERN:
+
+hand-picked child widths
+
+arrange(RIGHT, buff=0) with separately created rectangles of assumed size
+
+rebuilding the same strip later with slightly different geometry
+
+highlights created as new guessed rectangles instead of copies of target cells
+
+IRON LAW — HIGHLIGHTS MUST BE COPIES OR BOUND-MATCHED TARGETS
+
+If a region of a figure must be highlighted, the highlight must be created from the target cell itself, or from a shape whose width, height, and center are copied from that target cell.
+
+✅ Safe:
+
+highlight = target_cell.copy().set_fill(ORANGE_HL, opacity=0.45)
+
+highlight = Rectangle(width=target.width, height=target.height, ...).move_to(target)
+
+❌ Unsafe:
+
+Rectangle(width=0.7, height=0.6, ...) placed by eye
+
+guessed overlay dimensions
+
+stretch-to-fit highlight after placement
+
+
+STEP 0 — DIRECTOR'S NOTE (<=120 words)
+
+Internal only. NOT spoken. Cover:
+- Topic & Goal
+- Pacing Plan
+- Visual Hooks
+- 3-5 key emphasis terms
+
+CONCEPT CATEGORY:
+Cat 1 — Geometric
+Cat 2 — Proportional
+Cat 3 — Algebraic
+
+ANCHOR TEST — include anchor ONLY when all are true:
+✅ teaches the concept
+✅ concept involves transformation / relationship / part-whole
+✅ anchor competes fairly against pure text/algebra
+
+ALL THREE YES -> INCLUDE anchor
+ANY ONE NO    -> SKIP anchor
+
+State:
+"CATEGORY: [1/2/3] ANCHOR: [INCLUDED/SKIPPED] — [reason]"
+
+ANCHOR REPLACEMENT RULES:
+Sequential substitution -> StepManager
+Identity verification   -> Two-column LHS/RHS layout
+Property statement      -> Centered formula with bracket annotations
+Definition              -> Highlighted MathTex with side legend
+Value lookup            -> Boxed result with ORANGE_HL emphasis
+
+SOLUTION ROW PRE-CHECK:
+For each solution step state:
+  Object count: [N] MathTex objects
+  Width safe? YES / NO -> split planned
+  Checkmarks: embedded / standalone
+  Phase count: [N] phases with cleanup lists
+
+STEP 1 — RAW TRANSCRIPT SUMMARY
+
+Output the RAW transcript as numbered verbatim sentences grouped by segment.
+Do NOT add, remove, modify, or rephrase any word.
+
+STEP 2 — AUDIO SCRIPT (TRACK A)
+
+Transform transcript into TTS-ready script for shimmer voice.
+
+ALLOWED:
+✅ symbols -> spoken words
+✅ commas / dashes / ellipses for pacing
+✅ break long sentences
+✅ embed bookmarks
+
+FORBIDDEN:
+❌ add or remove words
+❌ paraphrase
+❌ add greetings or encouragement
+❌ speak legend definitions unless transcript itself includes them
+
+FRACTIONS — MANDATORY FORMAT:
+ALL fractions -> "X over Y"
+❌ NEVER say half / quarter / thirds / eighths
+EXCEPTION: if transcript itself writes fraction in words, keep it
+
+BOOKMARK PLACEMENT:
+✅ 2-3 words BEFORE trigger word
+❌ NEVER directly after a digit
+❌ NEVER directly after punctuation
+❌ NEVER before weak words
+
+STEP 3 — STORYBOARD + POSITION TABLE (TRACK B)
+
+3a. STORYBOARD
+
+Per segment:
+
+| Scene | Visuals | Narration (verbatim) | On-Screen | Focus | Bookmark |
+
+Rules:
+✅ ONE visual action per row
+✅ 4-8 raw transcript words per narration cell
+✅ multi-row per segment mandatory
+✅ narration = raw transcript words only
+✅ every question has a figure
+✅ every solution step = separate row
+❌ no invented content
+
+ANCHOR DECISION:
+State: [ANCHOR: INCLUDED/SKIPPED — reason]
+If skipped: [FALLBACK: text card / StepManager / two-column]
+
+LEGEND ROW:
+If formula has variables, legend appears in separate row at SLOT_LEGEND
+Narration: [silent]
+
+3b. POSITION TABLE (MANDATORY — BEFORE ANY CODE)
+
+POSITION TABLE — <Segment Name>
+
+| Element          | Slot           | Exact Position              |
+|------------------|----------------|-----------------------------|
+| heading_badge    | SLOT_HEADER    | .to_corner(UL, buff=0.3)    |
+| question_text    | SLOT_QUESTION  | UP * 2.5                    |
+| figure           | SLOT_FIGURE_C  | ORIGIN                      |
+| bottom_arrow     | —              | figure.bottom - 0.4         |
+| right_arrow      | —              | figure.right + 0.4          |
+| bottom_label     | —              | arrow.center + DOWN*0.15    |
+| right_label      | —              | arrow.center + RIGHT*0.15   |
+| figure (shifted) | SLOT_FIGURE_R  | RIGHT * 3.0                 |
+| step_1           | SLOT_STEPS     | UP*2.0 + LEFT*3.5           |
+| step_2           | —              | below step_1, buff=0.3      |
+| legend           | SLOT_LEGEND    | .to_corner(DR, buff=0.4)    |
+| final_answer     | —              | below last step             |
+
+COLLISION CHECK:
+□ No two elements share same slot
+□ Steps x <= -0.5, figure x >= +0.5
+□ Legend not overlapping figure or arrows
+□ All elements within safe area
+□ Stack height <= 5.0 units
+
+If ANY collision detected -> adjust BEFORE writing code
+
+STEP 4 — PYTHON CODE
+
+Output ONLY raw Python. No markdown fences.
+Production-ready for Manim CE v0.19.0 with manim-voiceover + GPT-4o-mini-tts.
+
+MANDATORY CODE STRUCTURE:
+
+class TopicScene(VoiceoverScene):
+    def construct(self):
+        self._setup_tts()
+        self.show_title()
+        self.show_concept()
+        self.show_question()
+        self.show_solution()
+        self.show_summary()
+
+    def _setup_tts(self): ...
+    def show_title(self): ...
+    def show_concept(self): ...
+    def show_question(self): ...
+    def show_solution(self): ...
+    def show_summary(self): ...
+
+✅ Each segment = one helper method
+✅ Each method has local active_mobs = []
+✅ Each method ends with clear_and_transition()
+✅ construct() has ZERO self.play() calls
+✅ Max 80 lines per method — split if longer
+
+TITLE TEMPLATE:
+
+def show_title(self):
+    active_mobs = []
+    with self.voiceover(
+        text='<bookmark mark="bk_hello"/>Hello students!'
+    ) as tracker:
+        self.wait_until_bookmark("bk_hello")
+        self.camera.background_color = PURPLE
+        topic = Text("Topic Name", font="Poppins",
+                     font_size=52, color=WHITE, weight=BOLD)
+        topic.move_to(ORIGIN)
+        self.play(FadeIn(topic), run_time=0.8)
+        active_mobs.append(topic)
+    self.wait(0.4)
+    clear_and_transition(self, active_mobs, LAVENDER_BG)
+    active_mobs.clear()
+
+✅ Topic name ONLY
+❌ No subtitle
+❌ No hook line
+❌ No badge
+
+CONCEPT TEMPLATE:
+
+def show_concept(self):
+    active_mobs = []
+    badge = create_heading_badge("Concept")
+    self.play(FadeIn(badge), run_time=0.5)
+    active_mobs.append(badge)
+
+    with self.voiceover(text='...') as tracker:
+        self.wait_until_bookmark("bk_concept1")
+        # choose pattern A/B/C/D/E/F or card
+        card = make_concept_card(
+            "Exact transcript sentence here.",
+            position=UP * 0.5
+        )
+        self.play(FadeIn(card), run_time=0.7)
+        active_mobs.append(card)
+
+    clear_and_transition(self, active_mobs, LAVENDER_BG)
+    active_mobs.clear()
+
+VISUAL GUARANTEE:
+✅ Every voiceover sentence has at least 1 visible element
+❌ Screen never blank during speech
+
+PRE-CODE SENTENCE AUDIT:
+For each sentence:
+□ action verb? YES/NO
+□ pattern assigned? A/B/C/D/E/F/Card
+□ physical animation planned? YES/NO
+□ text is caption only? YES/NO
+
+If any action-verb sentence is left as Card -> STOP and reassign.
+
+CONCEPT ANIMATION PATTERNS
+
+PATTERN A — OBJECT + ACTION
+1. Create object
+2. Animate action physically
+3. FadeIn label/fraction after action
+4. Caption at DOWN*2.5, font_size=22
+
+PATTERN B — CAUSE -> EFFECT
+1. Animate cause
+2. Arrow appears
+3. Effect symbol FadeIn
+4. Caption below
+
+PATTERN C — SIDE BY SIDE CONTRAST
+1. Left = failing case
+2. Right = passing case
+3. Rule caption below
+
+PATTERN D — NUMBER ROLE ANNOTATION
+1. fraction already visible
+2. highlight relevant part
+3. outward Arrow
+4. label FadeIn
+5. revert color
+
+PATTERN E — CONCEPT ECHO
+1. Show SMALL VERSION of the main concept visual
+2. Arrow connects visual to outcome label
+3. Outcome label FadeIn
+4. Closing caption below
+
+PATTERN F — SEQUENTIAL EXPRESSION BUILDING
+1. Build expression as separate MathTex objects
+2. FadeIn full expression
+3. Highlight terms sequentially
+4. Replace specific term in place
+5. Show result on next line
+
+❌ NEVER use whole-expression MathTex when parts need highlighting
+❌ NEVER position highlight overlays by width arithmetic
+
+QUESTION TEMPLATE:
+
+def show_question(self):
+    active_mobs = []
+    badge = create_heading_badge("Question")
+    self.play(FadeIn(badge), run_time=0.5)
+    active_mobs.append(badge)
+
+    with self.voiceover(text='...') as tracker:
+        self.wait_until_bookmark("bk_q")
+        q_text = Text("Full question exactly as in transcript.",
+                      font="Poppins", font_size=26, color=PURPLE)
+        q_text.move_to(UP * 2.5)
+        self.play(FadeIn(q_text), run_time=0.7)
+        active_mobs.append(q_text)
+
+        self.wait_until_bookmark("bk_fig")
+        shape = Rectangle(width=3, height=2, color=PURPLE, stroke_width=2.5)
+        shape.move_to(ORIGIN)
+        self.play(Create(shape), run_time=1.0)
+        active_mobs.append(shape)
+
+    self._active_from_question = list(active_mobs)
+    self._fig_group = shape
+
+SOLUTION TEMPLATE:
+
+STACK HEIGHT PRE-COMPUTATION:
+If estimated stack height > 5.0 units:
+1. reduce font_size by 4
+2. reduce buff to 0.25
+3. split into phases
+
+STEPMANAGER SAFE LIMITS:
+(32, 0.4) -> max 3 steps
+(28, 0.3) -> max 4 steps
+(24, 0.25) -> max 5 steps
+(20, 0.2) -> max 6 steps
+
+STEP WIDTH LIMITS:
+font_size=32 -> max 3 MathTex objects
+font_size=28 -> max 4
+font_size=24 -> max 5
+font_size=20 -> max 6
+
+def show_solution(self):
+    active_mobs = list(self._active_from_question)
+
+    fig = self._fig_group
+    self.play(fig.animate.move_to(RIGHT * 3.0), run_time=1.0)
+
+    badge = create_heading_badge("Solution")
+    badge_old = active_mobs[0]
+    self.play(FadeOut(badge_old), FadeIn(badge), run_time=0.5)
+    active_mobs[0] = badge
+
+    texts_to_clear = [
+        m for m in active_mobs
+        if m is not badge and m is not self._fig_group
+    ]
+    if texts_to_clear:
+        self.play(*[FadeOut(t) for t in texts_to_clear], run_time=0.5)
+        for t in texts_to_clear:
+            active_mobs.remove(t)
+    self.wait(0.2)
+
+    with self.voiceover(text='...') as tracker:
+        mgr = StepManager(
+            self,
+            start_anchor=UP*2.0 + LEFT*3.5,
+            font_size=28,
+            buff=0.3
+        )
+
+        self.wait_until_bookmark("bk_s1")
+        s1 = math_obj(r"A = l \times w", font_size=28)
+        mgr.add_step(s1)
+        active_mobs.append(s1)
+
+        self.wait_until_bookmark("bk_s2")
+        s2 = math_obj(r"= 10 \times 5", font_size=28)
+        mgr.add_step(s2)
+        active_mobs.append(s2)
+
+        self.wait_until_bookmark("bk_s3")
+        s3 = math_obj(r"= 50 \text{ cm}^2", font_size=28)
+        s3.set_color(ORANGE_HL)
+        mgr.add_step(s3)
+        active_mobs.append(s3)
+
+    self.wait(0.6)
+    clear_and_transition(self, active_mobs, LAVENDER_BG)
+    active_mobs.clear()
+
+SOLUTION RULES:
+✅ ALWAYS use StepManager
+✅ one add_step() per calculation step
+✅ previous steps dim to opacity=0.4
+✅ final answer in ORANGE_HL
+✅ fade all question texts before StepManager starts
+❌ NEVER show solution as one static text block
+❌ NEVER create standalone checkmark outside step VGroup
+
+SUMMARY TEMPLATE:
+
+def show_summary(self):
+    active_mobs = []
+    self.camera.background_color = LAVENDER_BG
+    badge = create_heading_badge("Summary")
+    self.play(FadeIn(badge), run_time=0.5)
+    active_mobs.append(badge)
+
+    summary_points = [
+        "Exact sentence one from transcript.",
+        "Exact sentence two from transcript.",
+        "Exact sentence three from transcript.",
+    ]
+    positions = [UP * 1.5, ORIGIN, DOWN * 1.5]
+
+    with self.voiceover(text='...') as tracker:
+        for i, (txt, pos) in enumerate(zip(summary_points, positions)):
+            self.wait_until_bookmark(f"bk_sum{i+1}")
+            bullet = make_bullet_point(txt, position=pos)
+            self.play(FadeIn(bullet), run_time=0.7)
+            active_mobs.append(bullet)
+
+    self.wait(0.6)
+    clear_and_transition(self, active_mobs, LAVENDER_BG)
+    active_mobs.clear()
+
+SUMMARY RULES:
+✅ Use make_bullet_point()
+✅ NO white rounded boxes
+✅ bullet dot = ORANGE_HL
+✅ text = PURPLE
+✅ three bullets at fixed positions
+✅ transcript text must remain character-identical
+❌ NEVER use make_concept_card() in summary
+❌ NEVER paraphrase summary
+
+UNIVERSAL CODE RULES
+
+ANIMATIONS:
+✅ FadeIn for text, formulas, labels, badges, bullets
+✅ Create for shapes and DoubleArrows
+❌ NEVER use Write()
+
+FRACTIONS:
+✅ ALWAYS use make_fraction()
+❌ NEVER use \frac or \dfrac
+
+UNICODE SAFETY:
+❌ NEVER put Greek letters, superscripts, sqrt, fractions, checkmarks inside Text()
+✅ Use MathTex() for math symbols
+✅ Mixed content -> VGroup(Text(), MathTex()).arrange(RIGHT)
+
+POSITIONING:
+✅ all move_to()/shift() before first FadeIn
+✅ in-scene moves only via .animate.shift() or .animate.move_to()
+✅ labels move with parent in same self.play()
+✅ check_safe_margins() after positioning
+✅ check_y_gap() before each new FadeIn
+❌ NEVER .shift() then .animate.shift() on same object
+
+LEGENDS:
+✅ every formula with single-letter variables -> make_legend()
+✅ legend separate from formula animation
+✅ legend at SLOT_LEGEND
+✅ audio NEVER speaks legend definitions
+
+PHASE TRANSITIONS WITHIN A SEGMENT:
+All Phase 1 annotation mobs MUST FadeOut before Phase 2 content appears.
+
+MANDATORY PATTERN:
+self.wait_until_bookmark("bk_phase2")
+self.play(
+    FadeOut(annotation_1),
+    FadeOut(annotation_2),
+    FadeOut(label_1),
+    run_time=0.4,
+)
+for item in [annotation_1, annotation_2, label_1]:
+    if item in active_mobs:
+        active_mobs.remove(item)
+
+❌ NEVER let Phase 1 labels remain visible during Phase 2 in same region
+
+STEP 5 — OVERLAP AUDIT (run mentally before outputting code)
+
+POSITION AUDIT:
+□ every element uses the position table
+□ no two elements share a slot
+□ steps stay left, figure stays right
+□ all elements within safe area
+□ arrows outside shape
+□ labels outside arrows
+□ stack height <= 5.0 units
+□ no conclusion text inside active stack path
+
+CHILD OVERLAP AUDIT:
+□ No two sibling tiles overlap
+□ No overlay or highlight exceeds its target cell bounds
+□ No old and new partition coexist in the same region during transitions
+□ Every highlight matches its target cell exactly
+□ Figure remains non-overlapping during transitions, not just at rest
+
+VISUAL AUDIT:
+□ every voiceover sentence -> at least one visible element
+□ screen never blank during speech
+□ every action sentence assigned Pattern A/B/C/D/E/F
+□ no action sentence left as static text only
+□ multi-term expressions use split MathTex
+□ summary uses bullets, not cards
+□ title card shows topic name only
+□ question text displayed verbatim
+□ figure shifts right in solution — never redrawn
+□ question text fully fades before StepManager starts
+□ phase-1 labels are faded before phase-2 content
+
+AUDIO AUDIT:
+□ every fraction spoken as X over Y
+□ no legend definitions spoken
+□ every bookmark has matching wait_until_bookmark()
+□ no bookmark after digit or punctuation
+
+ANIMATION AUDIT:
+□ FadeIn for text, Create for shapes
+□ no Write()
+□ StepManager used for solution
+□ previous steps dimmed
+□ final answer orange
+□ ReplacementTransform used for chains
+□ all fractions use make_fraction()
+□ background color change always preceded by FadeOut all
+□ no `or` on numpy/manim vectors
+□ no width-arithmetic overlays on MathTex
+
+SOLUTION WIDTH AUDIT:
+□ count MathTex objects in every step
+□ no row exceeds width limit
+□ no two full expressions in one add_step row
+□ all checkmarks embedded inside row VGroups
+□ standalone annotations explicitly owned and faded
+□ every phase has explicit cleanup list
+□ completed phase leaves zero stale mobs
+
+SLIDE TRANSITION AUDIT:
+□ each slide type has separate voiceover block
+□ clear_and_transition() used at every slide change
+□ active_mobs.clear() after every transition
+□ no mobject survives across slide type boundary
+
+VGROUP CHILD OWNERSHIP AUDIT:
+□ any independently animated child stays standalone
+□ no slot tile inside any VGroup
+□ no brace target contains placeholder tile
+□ every mob has exactly one FadeOut path
+
+BRACE CONSTRUCTION AUDIT:
+□ brace created after target FadeIn
+□ brace built inside relevant voiceover block
+□ brace direction UP for tile rows
+□ brace target contains only filled tiles
+
+CROSS-METHOD STATE AUDIT:
+□ self._xxx contains only currently visible mobs
+□ receiving method fully fades inherited mobs first
+□ no scaled mob passed across methods
+
+SCALE SAFETY AUDIT:
+□ no .animate.scale() on persistent mob
+□ size changes done with FadeOut old + FadeIn new mob
+
+API KEY AUDIT:
+□ zero API key strings in source
+□ load_dotenv() called before OpenAIService
+□ .env in .gitignore
+
+STEP 6 — RENDER
+
+manim render -ql file.py Scene
+manim render -qh file.py Scene
+manim render -qk file.py Scene
+
+APPENDIX A — BOILERPLATE
+Include:
+- os, urllib.request, manimpango
+- dotenv load_dotenv()
+- manim imports
+- manim_voiceover imports
+- OpenAIService
+- color constants
+- _setup_poppins()
+- bookmark-safe patch for VoiceoverTracker
+- TTS_INSTRUCTIONS
+
+APPENDIX B — HELPER FUNCTIONS
+Include ALL:
+- create_heading_badge()
+- create_dimension()
+- create_unknown()
+- math_obj()
+- math_obj_cosec()
+- make_fraction()
+- make_overline_label()
+- safe_math()
+- make_legend()
+- make_concept_card()
+- make_bullet_point()
+- clear_and_transition()
+- check_safe_margins()
+- clamp_to_safe_area()
+- fit_stack_to_safe_area()
+- check_y_gap()
+- has_overlap()
+- resolve_overlaps()
+- safe_fadein()
+- safe_create()
+- make_strip_with_cells()
+- check_strip_non_overlap()
+- highlight_cells()
+- StepManager
+
+FINAL OUTPUT ORDER:
+STEP 0 -> Director's Note
+STEP 1 -> Raw Transcript Summary
+STEP 2 -> Audio Script
+STEP 3a -> Storyboard
+STEP 3b -> Position Table
+STEP 4 -> Raw Python Code only
+STEP 5 -> Overlap Audit checklist
+STEP 6 -> Render commands
+
