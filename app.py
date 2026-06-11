@@ -609,16 +609,25 @@ def grouped_script_blocks(grouping_text):
     text = str(grouping_text or "").strip()
     if not text:
         return []
-    matches = list(re.finditer(r"(?im)^\s*(Script\s+\d+\s+CC\s+[A-Za-z0-9._-]+.*?)\s*$", text))
+    matches = list(
+        re.finditer(
+            r"(?im)(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?",
+            text,
+        )
+    )
     if not matches:
         return [{"title": "Script 1", "learningOutcomes": text}]
 
     blocks = []
     for index, match in enumerate(matches):
-        start = match.start()
+        start = text.rfind("\n", 0, match.start()) + 1
         end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
         block = text[start:end].strip()
         title = match.group(1).strip()
+        if " CC " not in title:
+            cc_match = re.search(r"\bCC\s+[A-Za-z0-9._-]+", block)
+            if cc_match:
+                title = f"{title} {cc_match.group(0)}"
         if block:
             blocks.append({"title": title, "learningOutcomes": block})
     return blocks

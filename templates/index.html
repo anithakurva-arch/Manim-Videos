@@ -301,7 +301,7 @@
 
       .split {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1.8fr) minmax(300px, 0.85fr);
         gap: 14px;
       }
 
@@ -426,8 +426,8 @@
       }
 
       .output {
-        min-height: 320px;
-        max-height: 620px;
+        min-height: 560px;
+        max-height: 820px;
         overflow: auto;
         white-space: pre-wrap;
         border: 1px solid var(--line);
@@ -565,7 +565,7 @@
                 <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
                 <button type="button" class="danger" id="stopClaudeKey" disabled>Stop</button>
               </div>
-              <p class="note">Claude is used for LO grouping, grouping validation, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
+              <p class="note">Claude Opus 4.6 is used for every process: LO grouping, script generation, validation, regeneration, storyboard, and Manim Python code. The key is validated for this open page only.</p>
             </div>
           </section>
 
@@ -1278,6 +1278,24 @@
         })).filter((group) => group.learningOutcomes || group.title);
       }
 
+      function groupedScriptsFromText(text) {
+        const source = String(text || "").trim();
+        if (!source) return [];
+        const matches = Array.from(source.matchAll(/(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?/gim));
+        if (!matches.length) return [];
+        return matches.map((match, index) => {
+          const lineStart = source.lastIndexOf("\n", match.index) + 1;
+          const nextStart = index + 1 < matches.length ? matches[index + 1].index : source.length;
+          const learningOutcomes = source.slice(lineStart, nextStart).trim();
+          let title = match[1].trim();
+          if (!title.includes(" CC ")) {
+            const ccMatch = learningOutcomes.match(/\bCC\s+[A-Za-z0-9._-]+/);
+            if (ccMatch) title = `${title} ${ccMatch[0]}`;
+          }
+          return { title, learningOutcomes, subtopic: els.subtopicSelect.value || "" };
+        }).filter((group) => group.learningOutcomes);
+      }
+
       function seedGroupedScriptRuns(groups, status = "Grouped") {
         state.scriptRuns = groups.map((group, index) => ({
           index,
@@ -1416,6 +1434,7 @@
               state.scriptRuns[index] = {
                 ...state.scriptRuns[index],
                 status: "Failed",
+                attemptsUsed: Math.max(1, Number(state.scriptRuns[index].attemptsUsed || 1)),
                 validationReport: error.message,
               };
               renderStatus();
@@ -1426,6 +1445,7 @@
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
               status: "Failed",
+              attemptsUsed: Math.max(1, Number(state.scriptRuns[index].attemptsUsed || 1)),
               validationReport: error.message,
             };
             renderStatus();
@@ -1853,12 +1873,16 @@
           state.groupingValidation = data.groupingValidation || "";
           state.groupingStatus = data.groupingStatus || "Needs Review";
           state.groupedScripts = groupedScriptsWithContext(data.groups || []);
+          const fallbackGroups = groupedScriptsFromText(state.grouping);
+          if (fallbackGroups.length > state.groupedScripts.length) {
+            state.groupedScripts = groupedScriptsWithContext(fallbackGroups);
+          }
           if (!state.groupedScripts.length && state.grouping) {
             state.groupedScripts = groupedScriptsWithContext([{ title: "Script 1", learningOutcomes: state.grouping }]);
           }
           seedGroupedScriptRuns(state.groupedScripts, state.groupingStatus === "Rejected" ? "Rejected" : "Grouped");
           setTab("grouping");
-          showMessage(`LO grouping completed for ${payload.outcomes.length} visible Learning Outcome(s). Review the grouped LO sets, then generate scripts.`, "good");
+          showMessage(`LO grouping completed for ${payload.outcomes.length} visible Learning Outcome(s). Detected ${state.groupedScripts.length} grouped script(s). Review the grouped LO sets, then generate scripts.`, "good");
         } catch (error) {
           if (isAbortError(error)) {
             markRunningScriptsStopped();
