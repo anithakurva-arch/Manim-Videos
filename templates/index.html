@@ -621,7 +621,7 @@
 
           <div class="panel">
             <h2>LO Grouping and Scripts</h2>
-            <p class="note">Choose Grade, Chapter, and Subtopic filters. Group all visible Learning Outcomes first, then generate all grouped scripts and validate all scripts one by one.</p>
+            <p class="note">Choose Grade, Chapter, and Subtopic filters. Group all visible Learning Outcomes first, then generate and validate all grouped scripts in one run.</p>
             <div class="workflow-map">
               <div class="step-box">
                 <span class="badge">Step 1</span>
@@ -636,13 +636,13 @@
               <div class="step-box">
                 <span class="badge">Step 3</span>
                 <strong>Generate and validate</strong>
-                <p class="note">One click generates all scripts; one click validates all scripts and retries failed ones.</p>
+                <p class="note">One click generates the queue and validates each script as soon as it is ready.</p>
               </div>
             </div>
             <div class="action-row">
               <button type="button" class="primary-action" id="runGrouping">Group LOs</button>
-              <button type="button" class="primary-action" id="runApproved" disabled>Generate All Scripts</button>
-              <button type="button" class="primary-action" id="validateScripts" disabled>Validate All Scripts</button>
+              <button type="button" class="primary-action" id="runApproved" disabled>Generate + Validate All Scripts</button>
+              <button type="button" class="primary-action hidden" id="validateScripts" disabled>Validate All Scripts</button>
               <button type="button" class="secondary hidden" id="regenerateFailed" disabled>Regenerate Failed Scripts</button>
               <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
               <button type="button" class="secondary" id="useApprovedScript" disabled>Send to Phase 2</button>
@@ -1122,6 +1122,10 @@
         return state.scriptRuns.some((item) => item.script && item.status !== "Approved");
       }
 
+      function workflowIsRunning() {
+        return state.scriptRuns.some((item) => ["Generating", "Validating", "Regenerating"].includes(item.status));
+      }
+
       function groupingAllowsScriptGeneration() {
         return Boolean(state.grouping) && state.groupingStatus !== "Rejected" && state.groupedScripts.length > 0;
       }
@@ -1138,7 +1142,9 @@
           els.validateScripts.disabled = !scriptsReadyForValidation();
         }
         if (els.regenerateFailed && !els.regenerateFailed.dataset.busy) {
-          els.regenerateFailed.disabled = failedScriptRuns().length === 0;
+          const canRegenerate = failedScriptRuns().length > 0 && !workflowIsRunning();
+          els.regenerateFailed.disabled = !canRegenerate;
+          els.regenerateFailed.classList.toggle("hidden", !canRegenerate);
         }
       }
 
@@ -1227,37 +1233,74 @@
         setTab("grouping");
       }
 
+      async function generateOneScript(index) {
+        const group = state.scriptRuns[index];
+        if (!group) return;
+        state.scriptRuns[index] = {
+          ...group,
+          status: "Generating",
+        };
+        renderStatus();
+        showMessage(`Generating script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
+        const data = await apiPost("/api/generate", buildGroupedScriptPayload(group));
+        state.scriptRuns[index] = {
+          ...state.scriptRuns[index],
+          status: "Generated",
+          attemptsUsed: Math.max(Number(state.scriptRuns[index].attemptsUsed || 0), data.attempt || 1),
+          script: data.script || "",
+          validationReport: "",
+          history: [
+            ...(state.scriptRuns[index].history || []),
+            { attempt: data.attempt || 1, status: "Generated", script: data.script || "" },
+          ],
+        };
+        renderStatus();
+        state.script = combinedGeneratedScriptText();
+        state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+        state.history = state.scriptRuns.flatMap((item) => item.history || []);
+      }
+
+      async function validateOneScript(index) {
+        if (!state.scriptRuns[index] || !state.scriptRuns[index].script) return;
+        state.scriptRuns[index] = {
+          ...state.scriptRuns[index],
+          status: "Validating",
+        };
+        renderStatus();
+        const attemptsUsed = Math.max(1, Number(state.scriptRuns[index].attemptsUsed || 1));
+        showMessage(`Validating script ${index + 1} of ${state.scriptRuns.length}: ${state.scriptRuns[index].title || `Script ${index + 1}`}`, "warn");
+        const validationData = await apiPost("/api/validate", buildScriptValidationPayload(state.scriptRuns[index]));
+        const status = validationData.status || "Needs Review";
+        state.scriptRuns[index] = {
+          ...state.scriptRuns[index],
+          status,
+          validationReport: validationData.report || "",
+          attemptsUsed,
+          history: [
+            ...(state.scriptRuns[index].history || []),
+            {
+              attempt: attemptsUsed,
+              status,
+              script: state.scriptRuns[index].script || "",
+              validationReport: validationData.report || "",
+            },
+          ],
+        };
+        renderStatus();
+        state.script = combinedGeneratedScriptText();
+        state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+        state.history = state.scriptRuns.flatMap((item) => item.history || []);
+      }
+
       async function generateScriptRuns(indexes) {
         const targets = indexes.filter((index) => state.scriptRuns[index]);
         if (!targets.length) return;
         state.status = "Generating";
         renderStatus();
         for (const index of targets) {
-          const group = state.scriptRuns[index];
-          state.scriptRuns[index] = {
-            ...group,
-            status: "Generating",
-          };
-          renderStatus();
-          showMessage(`Generating script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
-          const data = await apiPost("/api/generate", buildGroupedScriptPayload(group));
-          state.scriptRuns[index] = {
-            ...state.scriptRuns[index],
-            status: "Generated",
-            attemptsUsed: Math.max(Number(state.scriptRuns[index].attemptsUsed || 0), data.attempt || 1),
-            script: data.script || "",
-            validationReport: "",
-            history: [
-              ...(state.scriptRuns[index].history || []),
-              { attempt: data.attempt || 1, status: "Generated", script: data.script || "" },
-            ],
-          };
-          renderStatus();
+          await generateOneScript(index);
         }
-        state.script = combinedGeneratedScriptText();
-        state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
         state.status = "Generated";
-        state.history = state.scriptRuns.flatMap((item) => item.history || []);
         renderStatus();
         setTab("script");
       }
@@ -1268,77 +1311,44 @@
         state.status = "Validating";
         renderStatus();
         for (const index of targets) {
-          let status = state.scriptRuns[index].status || "Generated";
-          let attemptsUsed = Math.max(1, Number(state.scriptRuns[index].attemptsUsed || 1));
+          await validateOneScript(index);
+        }
+        state.script = combinedGeneratedScriptText();
+        state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+        state.status = allScriptRunsApproved() ? "Approved" : "Needs Review";
+        state.history = state.scriptRuns.flatMap((item) => item.history || []);
+        renderStatus();
+        setTab(allScriptRunsApproved() ? "script" : "validation");
+      }
 
-          while (attemptsUsed <= MAX_REGENERATIONS) {
-            state.scriptRuns[index] = {
-              ...state.scriptRuns[index],
-              status: "Validating",
-              attemptsUsed,
-            };
-            renderStatus();
-            showMessage(`Validating script ${index + 1} of ${state.scriptRuns.length}, attempt ${attemptsUsed}: ${state.scriptRuns[index].title || `Script ${index + 1}`}`, "warn");
-            const validationData = await apiPost("/api/validate", buildScriptValidationPayload(state.scriptRuns[index]));
-            status = validationData.status || "Needs Review";
-            state.scriptRuns[index] = {
-              ...state.scriptRuns[index],
-              status,
-              validationReport: validationData.report || "",
-              attemptsUsed,
-              history: [
-                ...(state.scriptRuns[index].history || []),
-                {
-                  attempt: attemptsUsed,
-                  status,
-                  script: state.scriptRuns[index].script || "",
-                  validationReport: validationData.report || "",
-                },
-              ],
-            };
-            renderStatus();
-
-            if (status === "Approved") break;
-            if (!scriptNeedsRegeneration(status) || attemptsUsed >= MAX_REGENERATIONS) {
+      async function generateAndValidatePipeline(indexes) {
+        const targets = indexes.filter((index) => state.scriptRuns[index]);
+        if (!targets.length) return;
+        state.status = "Running";
+        renderStatus();
+        const validationTasks = [];
+        for (const index of targets) {
+          try {
+            await generateOneScript(index);
+            const validationTask = validateOneScript(index).catch((error) => {
               state.scriptRuns[index] = {
                 ...state.scriptRuns[index],
-                status: "Max Attempts Reached",
+                status: "Failed",
+                validationReport: error.message,
               };
               renderStatus();
-              break;
-            }
-
-            attemptsUsed += 1;
-            state.scriptRuns[index] = {
-              ...state.scriptRuns[index],
-              status: "Regenerating",
-              attemptsUsed,
-            };
-            renderStatus();
-            showMessage(`Regenerating script ${index + 1} of ${state.scriptRuns.length}, attempt ${attemptsUsed}: ${state.scriptRuns[index].title || `Script ${index + 1}`}`, "warn");
-            const revisionData = await apiPost("/api/revise", {
-              ...buildGroupedScriptPayload(state.scriptRuns[index]),
-              script: state.scriptRuns[index].script || "",
-              validationReport: state.scriptRuns[index].validationReport || "",
-              attempt: attemptsUsed,
             });
+            validationTasks.push(validationTask);
+          } catch (error) {
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
-              status: "Generated",
-              script: revisionData.script || "",
-              attemptsUsed: revisionData.attempt || attemptsUsed,
-              history: [
-                ...(state.scriptRuns[index].history || []),
-                {
-                  attempt: revisionData.attempt || attemptsUsed,
-                  status: "Regenerated",
-                  script: revisionData.script || "",
-                },
-              ],
+              status: "Failed",
+              validationReport: error.message,
             };
             renderStatus();
           }
         }
+        if (validationTasks.length) await Promise.all(validationTasks);
         state.script = combinedGeneratedScriptText();
         state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
         state.status = allScriptRunsApproved() ? "Approved" : "Needs Review";
@@ -1438,7 +1448,7 @@
       function badgeClass(status) {
         if (status === "Approved") return "good";
         if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed") return "bad";
-        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Generating" || status === "Validating" || status === "Regenerating" || status === "Regenerated" || status === "Generated" || status === "Queued" || status === "Grouped") return "warn";
+        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Running" || status === "Generating" || status === "Validating" || status === "Regenerating" || status === "Regenerated" || status === "Generated" || status === "Queued" || status === "Grouped") return "warn";
         return "";
       }
 
@@ -1790,14 +1800,18 @@
       });
 
       els.runApproved.addEventListener("click", async () => {
-        setBusy(els.runApproved, true, "Generating all...");
+        setBusy(els.runApproved, true, "Running all...");
         try {
           if (!groupingAllowsScriptGeneration()) return showMessage("Run Group LOs first. Script generation uses the grouping output.", "warn");
           if (!state.scriptRuns.length) seedGroupedScriptRuns(state.groupedScripts, "Grouped");
-          await generateScriptRuns(state.scriptRuns.map((_, index) => index));
-          showMessage(`Generated all ${state.scriptRuns.length} script(s) one by one. Click Validate All Scripts once to validate and auto-regenerate failed scripts.`, "good");
+          await generateAndValidatePipeline(state.scriptRuns.map((_, index) => index));
+          if (allScriptRunsApproved()) {
+            showMessage(`Generated and validated all ${state.scriptRuns.length} script(s). All scripts are Approved.`, "good");
+          } else {
+            showMessage("Generation and validation finished. Review each status row; use Regenerate Failed Scripts for remaining failures.", "warn");
+          }
         } catch (error) {
-          const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating");
+          const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating" || item.status === "Validating");
           if (runningIndex >= 0) {
             state.scriptRuns[runningIndex] = {
               ...state.scriptRuns[runningIndex],
@@ -1851,14 +1865,37 @@
         if (!failedIndexes.length) return showMessage("No failed scripts need regeneration.", "good");
         setBusy(els.regenerateFailed, true, "Regenerating...");
         try {
-          await validateScriptRuns(failedIndexes);
+          for (const index of failedIndexes) {
+            const group = state.scriptRuns[index];
+            state.scriptRuns[index] = {
+              ...group,
+              status: "Regenerating",
+            };
+            renderStatus();
+            showMessage(`Regenerating failed script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
+            const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group));
+            state.scriptRuns[index] = {
+              ...state.scriptRuns[index],
+              status: data.approved ? "Approved" : "Max Attempts Reached",
+              attemptsUsed: data.attemptsUsed || state.scriptRuns[index].attemptsUsed || 0,
+              script: data.script || state.scriptRuns[index].script || "",
+              validationReport: data.validationReport || state.scriptRuns[index].validationReport || "",
+              history: data.history || state.scriptRuns[index].history || [],
+            };
+            renderStatus();
+          }
+          state.script = combinedGeneratedScriptText();
+          state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+          state.status = allScriptRunsApproved() ? "Approved" : "Max Attempts Reached";
+          state.history = state.scriptRuns.flatMap((item) => item.history || []);
+          setTab(allScriptRunsApproved() ? "script" : "validation");
           if (allScriptRunsApproved()) {
             showMessage(`All ${state.scriptRuns.length} grouped script(s) are Approved. Use Send to Phase 2 when ready.`, "good");
           } else {
             showMessage("Some scripts still did not reach Approved status. Review validation before sending to Phase 2.", "bad");
           }
         } catch (error) {
-          const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating");
+          const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Regenerating");
           if (runningIndex >= 0) {
             state.scriptRuns[runningIndex] = {
               ...state.scriptRuns[runningIndex],

@@ -65,6 +65,9 @@ app = Flask(__name__)
 @app.errorhandler(Exception)
 def json_error_handler(exc):
     if isinstance(exc, HTTPException):
+        original = getattr(exc, "original_exception", None)
+        if original:
+            return jsonify({"error": str(original) or original.__class__.__name__}), exc.code
         return jsonify({"error": exc.description or exc.name}), exc.code
     return jsonify({"error": str(exc) or exc.__class__.__name__}), 500
 
