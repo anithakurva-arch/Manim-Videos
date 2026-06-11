@@ -8,6 +8,7 @@ from pathlib import Path
 
 from flask import Flask, Response, jsonify, render_template, request
 from openpyxl import load_workbook
+from werkzeug.exceptions import HTTPException
 
 
 BASE_DIR = Path(__file__).parent.resolve()
@@ -59,6 +60,13 @@ PROMPT_META = {
 }
 
 app = Flask(__name__)
+
+
+@app.errorhandler(Exception)
+def json_error_handler(exc):
+    if isinstance(exc, HTTPException):
+        return jsonify({"error": exc.description or exc.name}), exc.code
+    return jsonify({"error": str(exc) or exc.__class__.__name__}), 500
 
 
 @app.after_request
@@ -715,22 +723,16 @@ def group_route():
     try:
         api_key = get_claude_api_key()
         text = call_claude(prompt, api_key, payload.get("claudeModel"), max_output_tokens=5000)
-        validation = call_claude(
-            grouping_validation_prompt(grade, chapter, ccs_and_los, text),
-            api_key,
-            payload.get("claudeModel"),
-            max_output_tokens=5000,
-        )
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
     return jsonify(
         {
             "grouping": text,
-            "groupingValidation": validation,
-            "groupingStatus": grouping_validation_status(validation),
+            "groupingValidation": "",
+            "groupingStatus": "Grouped",
             "groups": grouped_script_blocks(text),
             "promptUsed": "lo_grouping",
-            "validationPromptUsed": "grouping_validation",
+            "validationPromptUsed": "",
         }
     )
 
