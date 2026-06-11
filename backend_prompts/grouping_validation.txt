@@ -1,0 +1,103 @@
+PROMPT 2 - Grouping Validation (Mathematics)
+You are an expert mathematics educator and pedagogical reviewer. Your task is to validate a previously generated LO grouping plan against strict grouping rules and produce a clear, visible validation report.
+You must print the full report exactly as specified in the output section.
+
+INPUT
+Subject: Mathematics
+Grade: {{Grade}}
+Topic Name: {{ChapterName}}
+Original LO List (per CC): {{CCsAndLOs}}
+Generated Grouping Plan: {{GroupingTable}}
+
+VALIDATION OBJECTIVE
+Evaluate the provided grouping plan against the following strict rules:
+
+Every LO from every CC is assigned to exactly one script.
+No LO is merged across CCs.
+No grouped script tries to cover too much for a 2-minute slot (approximately 230-270 spoken words).
+No standalone script is too shallow to justify its own 2 minutes.
+The grouping respects depth, overlap, and repetition logic.
+No LO is missing from the grouping.
+No LO is duplicated across multiple scripts.
+
+Also perform two chapter-wide checks:
+
+LO Completeness Check - verify every LO from the original input appears in exactly one script.
+No-Cross-CC Check - verify no LO has been merged with LOs from a different CC.
+
+VALIDATION INSTRUCTIONS
+Evaluate every script in the grouping plan one by one. For each script, classify its status as:
+
+PASS - fully meets all rules
+MINOR ISSUE - has a small concern that should be reviewed, such as risk of being slightly over or under the 2-minute slot, but not breaking a strict rule
+FAIL - clearly breaks one or more rules
+
+When flagging issues, be honest, strict, and specific. Quote exactly which rule has been broken or stretched.
+
+OUTPUT - VALIDATION REPORT (PRINT THIS EXACTLY)
+Print the report in this exact structure.
+
+GROUPING VALIDATION REPORT
+Topic: {{ChapterName}}
+Grade: {{Grade}}
+Total Scripts Reviewed: [N]
+
+PART 1 - Per-Script Verdict
+Script ID
+Status
+Reason
+Script 1 CC 02
+PASS
+LO is foundational and rich, fits 2 minutes comfortably.
+Script 2 CC 02
+MINOR ISSUE
+Combined LO 2 and LO 3 may push word count toward the upper limit.
+Script 3 CC 03
+FAIL
+LO 4 has been merged with an LO from CC 04, breaking the cross-CC rule.
+...
+...
+...
+
+PART 2 - Chapter-Wide Checks
+Check
+Status
+Notes
+Every LO assigned to a script
+PASS / FAIL
+[If fail, list the missing LO(s)]
+No LO duplicated across scripts
+PASS / FAIL
+[If fail, list duplicated LO(s)]
+No LO merged across CCs
+PASS / FAIL
+[If fail, identify the offending script(s)]
+Table formatting correct
+PASS / FAIL
+[If fail, describe formatting error]
+
+PART 3 - Score Summary
+Status
+Count
+PASS
+__
+MINOR ISSUE
+__
+FAIL
+__
+
+PART 4 - Final Verdict
+Choose exactly ONE:
+
+APPROVED - Grouping is ready for script generation
+NEEDS MINOR REVISION - Some scripts have minor issues that should be reviewed
+REJECTED - Regroup before proceeding
+
+FINAL RULES
+Be strict, honest, and specific. Never soften feedback.
+Always quote the exact rule that is broken when flagging an issue.
+Do not suggest fixes. Only flag.
+Maintain British English throughout.
+Print only the validation report. Nothing else.
+
+Now execute the validation and produce the complete report.

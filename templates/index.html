@@ -513,7 +513,7 @@
       <header>
         <div>
           <h1>Conceptual Script Generator</h1>
-          <p class="subtitle">Upload chapters, generate approved scripts, then turn them into animation storyboard and Manim Python code.</p>
+          <p class="subtitle">Upload outcomes, group LOs, generate approved scripts, then turn them into animation storyboard and Manim Python code.</p>
         </div>
         <div class="pill"><span class="dot"></span> Script + Animation<span id="maxRegenerationsLabel" class="hidden">{{ max_regenerations|default(3) }}</span></div>
       </header>
@@ -525,7 +525,7 @@
           <strong id="metricRows">0</strong>
         </div>
         <div class="callout">
-          <span>Selected items</span>
+          <span>Selected LOs</span>
           <strong id="metricSelected">0</strong>
         </div>
         <div class="callout">
@@ -551,7 +551,7 @@
                 <button type="button" id="saveClaudeKey">Validate Claude key</button>
                 <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
               </div>
-              <p class="note">Claude is used for item grouping, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
+              <p class="note">Claude is used for LO grouping, grouping validation, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
             </div>
           </section>
 
@@ -563,7 +563,7 @@
                 <input id="excelFile" type="file" accept=".xlsx,.xlsm,.xltx,.xltm">
               </div>
               <button type="button" id="parseExcel">Upload and parse</button>
-              <p class="note">Required column: Chapter/Topic. Optional columns include Grade/Class, Subject, Subtopic/Sub Topic, and Learning Outcome.</p>
+              <p class="note">Required columns include Chapter/Topic and Learning Outcome/LO. Grade/Class, Subject, and Subtopic/Sub Topic are optional.</p>
             </div>
           </section>
 
@@ -595,20 +595,20 @@
         <section class="stack">
           <div class="panel">
             <div class="row" style="justify-content: space-between;">
-              <h2>Script Items</h2>
+              <h2>Learning Outcomes</h2>
               <span class="badge" id="subjectBadge">Mathematics</span>
             </div>
             <div id="loList" class="lo-list">
               <div class="lo-item">
                 <div></div>
-                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to select chapters or topics.</div>
+                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to select Learning Outcomes.</div>
               </div>
             </div>
           </div>
 
           <div class="panel">
             <h2>Generate Script</h2>
-            <p class="note">Select chapters or topics, then generate and validate scripts before sending them to animation.</p>
+            <p class="note">Select Learning Outcomes, group them into 2-minute script sets, then generate and validate scripts before animation.</p>
             <div class="action-row">
               <button type="button" class="primary-action" id="runApproved">Generate + Validate Scripts</button>
               <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
@@ -616,12 +616,12 @@
             </div>
             <div class="action-row">
               <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
-              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all selected script items.</span>
+              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all selected Learning Outcomes.</span>
             </div>
             <details style="margin-top: 12px;">
               <summary>Advanced manual script steps</summary>
               <div class="row">
-                <button type="button" class="secondary" id="runGrouping">Group Items</button>
+                <button type="button" class="secondary" id="runGrouping">Group LOs</button>
                 <button type="button" class="secondary" id="generateScript">Generate Script</button>
                 <button type="button" class="secondary" id="validateScript">Validate Script</button>
                 <button type="button" class="secondary hidden" id="testUi">Test UI</button>
@@ -731,6 +731,9 @@
         rows: [],
         filters: {},
         grouping: "",
+        groupingValidation: "",
+        groupingStatus: "",
+        groupedScripts: [],
         script: "",
         validation: "",
         status: "Idle",
@@ -999,7 +1002,7 @@
         const rows = visibleRows();
         els.loList.innerHTML = "";
         if (!rows.length) {
-          els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No script items match the current filters.</div></div>';
+          els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No Learning Outcomes match the current filters.</div></div>';
         } else {
           rows.forEach(({ row, index }) => {
             const item = document.createElement("label");
@@ -1007,7 +1010,7 @@
             item.innerHTML = `
               <input class="lo-check" type="checkbox" data-index="${index}">
               <span class="lo-text">
-                <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)}${row.subtopic ? ` &middot; ${escapeHtml(row.subtopic)}` : ""} &middot; ${escapeHtml(row.source === "learning_outcome" ? "Learning outcome" : "Chapter item")}</span>
+                <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)}${row.subtopic ? ` &middot; ${escapeHtml(row.subtopic)}` : ""} &middot; ${escapeHtml(row.cc)}</span>
                 ${escapeHtml(row.lo)}
               </span>
             `;
@@ -1030,7 +1033,7 @@
           chapter: els.chapterSelect.value || first.chapter || "",
           subtopic: els.subtopicSelect.value || first.subtopic || "",
           outcomes: selected,
-          learningOutcomes: selected.map((row, index) => `Item ${index + 1}. ${row.lo}`).join("\n"),
+          learningOutcomes: selected.map((row, index) => `LO ${index + 1}. ${row.lo}`).join("\n"),
           claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
           textbookReference: els.textbookReference.value.trim(),
           ...extra,
@@ -1075,9 +1078,20 @@
           chapter: row.chapter || "",
           subtopic: row.subtopic || "",
           outcomes: [row],
-          learningOutcomes: `Item 1. ${row.lo}`,
+          learningOutcomes: `LO 1. ${row.lo}`,
           claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
           textbookReference: els.textbookReference.value.trim(),
+        };
+      }
+
+      function buildGroupedScriptPayload(group) {
+        const base = contextPayload();
+        return {
+          ...base,
+          outcomes: [],
+          learningOutcomes: group.learningOutcomes || group.title || "",
+          chapter: base.chapter || group.title || "",
+          subtopic: "",
         };
       }
 
@@ -1109,7 +1123,9 @@
         const content = {
           grouping: state.grouping || "No grouping output yet.",
           script: state.script || "No script generated yet.",
-          validation: scriptRunValidation || state.validation || "No validation report yet.",
+          validation: state.groupingValidation
+            ? `${state.groupingValidation}\n\n--- SCRIPT VALIDATION ---\n\n${scriptRunValidation || state.validation || "No script validation report yet."}`
+            : (scriptRunValidation || state.validation || "No validation report yet."),
           history: scriptRunHistory || (state.history.length ? JSON.stringify(state.history.map(({ attempt, status }) => ({ attempt, status })), null, 2) : "No revision history yet."),
           prompt: state.promptPreview || "Select a prompt from the Master Prompt Library.",
           storyboard: state.storyboard || "No storyboard generated yet.",
@@ -1296,6 +1312,10 @@
           state.rows = data.rows || [];
           state.filters = data.filters || {};
           state.scriptRuns = [];
+          state.grouping = "";
+          state.groupingValidation = "";
+          state.groupingStatus = "";
+          state.groupedScripts = [];
           state.script = "";
           state.validation = "";
           state.status = "Idle";
@@ -1304,7 +1324,7 @@
           selectAllVisibleOutcomes();
           const filterSummary = [els.gradeSelect.value, els.chapterSelect.value, els.subtopicSelect.value].filter(Boolean).join(" / ");
           renderStatus();
-          showMessage(`Parsed ${state.rows.length} script item(s). Chapter filter now includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}.`, "good");
+          showMessage(`Parsed ${state.rows.length} Learning Outcome(s). Chapter filter now includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1352,12 +1372,12 @@
           duration: els.animationDuration.value.trim() || "90 seconds",
           contentType: els.animationContentType.value,
         });
-        if (!payload.outcomes.length) return showMessage("Select at least one script item first.", "warn");
+        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome first.", "warn");
         setBusy(els.generateBulkPython, true, "Generating everything...");
         try {
           const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders());
           saveBlobFile("bulk_validated_animation_package.zip", zipBlob);
-          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} selected script item(s). Python filenames are unique.`, "good");
+          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} selected Learning Outcome(s). Python filenames are unique.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1439,13 +1459,16 @@
 
       els.runGrouping.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.outcomes.length) return showMessage("Select at least one script item.", "warn");
+        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome.", "warn");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
           const data = await apiPost("/api/group", payload);
           state.grouping = data.grouping;
+          state.groupingValidation = data.groupingValidation || "";
+          state.groupingStatus = data.groupingStatus || "Needs Review";
+          state.groupedScripts = data.groups || [];
           setTab("grouping");
-          showMessage("Item grouping completed.", "good");
+          showMessage(`LO grouping completed. Grouping validation: ${state.groupingStatus}.`, state.groupingStatus === "Rejected" ? "bad" : "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1455,10 +1478,15 @@
 
       els.generateScript.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.learningOutcomes) return showMessage("Select at least one script item first.", "warn");
+        if (!payload.learningOutcomes) return showMessage("Select at least one Learning Outcome first.", "warn");
+        if (!state.grouping) return showMessage("Run Group LOs first. Script generation uses the validated grouping output.", "warn");
+        if (state.groupingStatus === "Rejected") return showMessage("Grouping validation rejected the grouping. Regroup before script generation.", "bad");
         setBusy(els.generateScript, true, "Generating...");
         try {
-          const data = await apiPost("/api/generate", payload);
+          const data = await apiPost("/api/generate", {
+            ...payload,
+            learningOutcomes: state.grouping || payload.learningOutcomes,
+          });
           state.script = data.script;
           state.validation = "";
           state.status = "Generated";
@@ -1497,10 +1525,35 @@
 
       els.runApproved.addEventListener("click", async () => {
         const selected = selectedRows();
-        if (!selected.length) return showMessage("Select at least one script item first.", "warn");
-        state.scriptRuns = selected.map((row, index) => ({
+        if (!selected.length) return showMessage("Select at least one Learning Outcome first.", "warn");
+        setBusy(els.runApproved, true, "Grouping LOs...");
+        try {
+          const groupingData = await apiPost("/api/group", contextPayload());
+          state.grouping = groupingData.grouping || "";
+          state.groupingValidation = groupingData.groupingValidation || "";
+          state.groupingStatus = groupingData.groupingStatus || "Needs Review";
+          state.groupedScripts = groupingData.groups || [];
+          setTab("grouping");
+          if (state.groupingStatus === "Rejected") {
+            state.scriptRuns = [];
+            renderStatus();
+            showMessage("Grouping validation rejected the grouping. Regroup before script generation.", "bad");
+            return;
+          }
+        } catch (error) {
+          showMessage(error.message, "bad");
+          return;
+        } finally {
+          setBusy(els.runApproved, false);
+        }
+
+        const groupedScripts = state.groupedScripts.length
+          ? state.groupedScripts
+          : [{ title: "Script 1", learningOutcomes: state.grouping || contextPayload().learningOutcomes }];
+        state.scriptRuns = groupedScripts.map((group, index) => ({
           index,
-          title: scriptItemTitle(row),
+          title: group.title || `Script ${index + 1}`,
+          learningOutcomes: group.learningOutcomes || "",
           status: "Queued",
           attemptsUsed: 0,
           script: "",
@@ -1513,15 +1566,15 @@
         renderStatus();
         setBusy(els.runApproved, true, "Generating scripts...");
         try {
-          for (let index = 0; index < selected.length; index += 1) {
-            const row = selected[index];
+          for (let index = 0; index < groupedScripts.length; index += 1) {
+            const group = groupedScripts[index];
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
               status: "Generating",
             };
             renderStatus();
-            showMessage(`Generating and validating script ${index + 1} of ${selected.length}: ${scriptItemTitle(row)}`, "warn");
-            const data = await apiPost("/api/run-approved", buildSingleItemPayload(row));
+            showMessage(`Generating and validating script ${index + 1} of ${groupedScripts.length}: ${group.title || `Script ${index + 1}`}`, "warn");
+            const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group));
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
               status: data.approved ? "Approved" : "Max Attempts Reached",
@@ -1541,7 +1594,7 @@
           if (!allScriptRunsApproved()) {
             showMessage("Some scripts did not reach Approved status. Review the status list before sending to animation.", "bad");
           } else {
-            showMessage(`All ${selected.length} selected script item(s) are Approved.`, "good");
+            showMessage(`All ${groupedScripts.length} grouped script(s) are Approved.`, "good");
           }
         } catch (error) {
           const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating");

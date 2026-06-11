@@ -20,6 +20,7 @@ PROMPT_FILES = {
     "script_generation": "conceptual_script_generation.txt",
     "learning_design": "learning_design.txt",
     "lo_grouping": "lo_grouping.txt",
+    "grouping_validation": "grouping_validation.txt",
     "validation": "validation_prompt.txt",
     "animation_phase": "animation_phase_master_prompt.txt",
 }
@@ -28,12 +29,17 @@ PROMPT_META = {
     "lo_grouping": {
         "title": "LO Grouping Prompt",
         "stage": "Step 1",
-        "purpose": "Groups selected chapters, topics, or outcomes into 2-minute conceptual script clusters.",
+        "purpose": "Groups selected Learning Outcomes into 2-minute conceptual script clusters.",
+    },
+    "grouping_validation": {
+        "title": "Grouping Validation Prompt",
+        "stage": "Step 1 QA",
+        "purpose": "Validates LO grouping against completeness, no-duplication, and no-cross-CC rules.",
     },
     "script_generation": {
         "title": "Generation Prompt Conceptual Script",
         "stage": "Step 2",
-        "purpose": "Generates voice-over-ready conceptual scripts from grouped chapters, topics, or outcomes.",
+        "purpose": "Generates voice-over-ready conceptual scripts from grouped Learning Outcomes.",
     },
     "learning_design": {
         "title": "Learning Design Final",
@@ -159,15 +165,15 @@ def find_header_row(rows):
         if find_column(headers, CHAPTER_COLUMNS) is not None:
             score += 3
         if find_column(headers, SUBTOPIC_COLUMNS) is not None:
-            score += 2
+            score += 1
         if find_column(headers, LO_COLUMNS) is not None:
-            score += 2
+            score += 3
         if find_column(headers, SUBJECT_COLUMNS) is not None:
             score += 1
         if score > best_score:
             best_index = index
             best_score = score
-    if best_score >= 3:
+    if best_score >= 6:
         return best_index
     return None
 
@@ -265,8 +271,8 @@ def parse_excel(file_storage):
         if header_index is None:
             preview_headers = [str(cell or "").strip() for cell in preview_rows[0] if str(cell or "").strip()]
             raise ValueError(
-                "Could not find the header row. Expected at least a Chapter/Topic column. "
-                + "Optional columns include Grade/Class, Subject, Subtopic/Sub Topic, and Learning Outcome. "
+                "Could not find the header row. Expected columns like Chapter/Topic and Learning Outcome. "
+                + "Optional columns include Grade/Class, Subject, and Subtopic/Sub Topic. "
                 + "First row detected: "
                 + (", ".join(preview_headers) if preview_headers else "blank")
             )
@@ -282,7 +288,7 @@ def parse_excel(file_storage):
             "lo": find_columns(headers, LO_COLUMNS),
         }
 
-        required = ["chapter"]
+        required = ["chapter", "lo"]
         missing = [name for name in required if not columns[name]]
         if missing:
             detected = [header for header in headers if header]
@@ -302,8 +308,7 @@ def parse_excel(file_storage):
             "cc": "CC 01",
             "cc_name": "",
         }
-        has_learning_outcomes = bool(columns["lo"])
-        seen_script_items = set()
+        seen_learning_outcomes = set()
         for row_number, row in enumerate(selected_sheet.iter_rows(values_only=True), start=1):
             if row_number <= header_index + 1:
                 continue
@@ -313,22 +318,19 @@ def parse_excel(file_storage):
                     last_values[field] = value
             if not last_values["chapter"]:
                 continue
-            lo_text = row_value(row, columns["lo"]) if has_learning_outcomes else ""
-            if not lo_text:
-                lo_text = last_values["subtopic"] or last_values["cc_name"] or last_values["chapter"]
+            lo_text = row_value(row, columns["lo"])
             if not lo_text:
                 continue
-            if not has_learning_outcomes:
-                item_key = (
-                    last_values["grade"],
-                    last_values["subject"],
-                    last_values["chapter"],
-                    last_values["subtopic"],
-                    lo_text,
-                )
-                if item_key in seen_script_items:
-                    continue
-                seen_script_items.add(item_key)
+            item_key = (
+                last_values["grade"],
+                last_values["subject"],
+                last_values["chapter"],
+                last_values["subtopic"],
+                lo_text,
+            )
+            if item_key in seen_learning_outcomes:
+                continue
+            seen_learning_outcomes.add(item_key)
             parsed.append(
                 {
                     "row": row_number,
@@ -337,13 +339,13 @@ def parse_excel(file_storage):
                     "chapter": last_values["chapter"],
                     "subtopic": last_values["subtopic"],
                     "cc": last_values["cc"] or "CC 01",
-                    "cc_name": last_values["cc_name"] or "Script Item",
+                    "cc_name": last_values["cc_name"] or "Learning Outcomes",
                     "lo": lo_text,
-                    "source": "learning_outcome" if has_learning_outcomes else "chapter",
+                    "source": "learning_outcome",
                 }
             )
         if not parsed:
-            raise ValueError("No chapter or topic rows found below the detected header row.")
+            raise ValueError("No Learning Outcome rows found below the detected header row.")
         return parsed
     finally:
         workbook.close()
@@ -379,13 +381,13 @@ def format_ccs_and_los(outcomes):
     grouped = {}
     for outcome in outcomes:
         cc = outcome.get("cc") or "CC 01"
-        cc_name = outcome.get("cc_name") or "Script Items"
+        cc_name = outcome.get("cc_name") or "Learning Outcomes"
         grouped.setdefault((cc, cc_name), []).append(outcome.get("lo", ""))
 
     blocks = []
     for (cc, cc_name), los in grouped.items():
         lines = [f"{cc} {cc_name}"]
-        lines.extend(f"Item {index}. {lo}" for index, lo in enumerate(los, start=1))
+        lines.extend(f"LO {index}. {lo}" for index, lo in enumerate(los, start=1))
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
 
@@ -424,7 +426,7 @@ def script_prompt(grade, chapter, subtopic, outcomes_text):
 
 def validation_prompt(grade, chapter, subtopic, outcomes_text, script, textbook_reference=""):
     textbook_reference = textbook_reference or (
-        "No textbook PDF has been attached in Phase 1. Validate against the selected chapter/topic items, "
+        "No textbook PDF has been attached in Phase 1. Validate against the selected Learning Outcomes, "
         "the Learning Design, and mathematical correctness. Do not invent page references."
     )
     return fill_prompt(
@@ -565,10 +567,50 @@ def group_filename_seed(group):
 
 def bulk_learning_outcomes_text(outcomes):
     return "\n".join(
-        f"Item {index}. {outcome.get('lo', '')}"
+        f"LO {index}. {outcome.get('lo', '')}"
         for index, outcome in enumerate(outcomes, start=1)
         if outcome.get("lo")
     )
+
+
+def grouping_validation_prompt(grade, chapter, ccs_and_los, grouping_table):
+    return fill_prompt(
+        load_prompt("grouping_validation"),
+        Grade=grade,
+        ChapterName=chapter,
+        CCsAndLOs=ccs_and_los,
+        GroupingTable=grouping_table,
+    )
+
+
+def grouping_validation_status(report):
+    verdict = str(report or "").upper()
+    if "REJECTED" in verdict:
+        return "Rejected"
+    if "NEEDS MINOR REVISION" in verdict:
+        return "Needs Minor Revision"
+    if "APPROVED" in verdict:
+        return "Approved"
+    return "Needs Review"
+
+
+def grouped_script_blocks(grouping_text):
+    text = str(grouping_text or "").strip()
+    if not text:
+        return []
+    matches = list(re.finditer(r"(?im)^\s*(Script\s+\d+\s+CC\s+[A-Za-z0-9._-]+.*?)\s*$", text))
+    if not matches:
+        return [{"title": "Script 1", "learningOutcomes": text}]
+
+    blocks = []
+    for index, match in enumerate(matches):
+        start = match.start()
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+        block = text[start:end].strip()
+        title = match.group(1).strip()
+        if block:
+            blocks.append({"title": title, "learningOutcomes": block})
+    return blocks
 
 
 @app.get("/")
@@ -660,7 +702,7 @@ def group_route():
     payload = request.get_json(force=True)
     outcomes = payload.get("outcomes") or []
     if not outcomes:
-        return jsonify({"error": "Select at least one script item."}), 400
+        return jsonify({"error": "Select at least one Learning Outcome."}), 400
     grade = payload.get("grade", "")
     chapter = payload.get("chapter", "")
     ccs_and_los = format_ccs_and_los(outcomes)
@@ -671,10 +713,26 @@ def group_route():
         CCsAndLOs=ccs_and_los,
     )
     try:
-        text = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=5000)
+        api_key = get_claude_api_key()
+        text = call_claude(prompt, api_key, payload.get("claudeModel"), max_output_tokens=5000)
+        validation = call_claude(
+            grouping_validation_prompt(grade, chapter, ccs_and_los, text),
+            api_key,
+            payload.get("claudeModel"),
+            max_output_tokens=5000,
+        )
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
-    return jsonify({"grouping": text, "promptUsed": "lo_grouping"})
+    return jsonify(
+        {
+            "grouping": text,
+            "groupingValidation": validation,
+            "groupingStatus": grouping_validation_status(validation),
+            "groups": grouped_script_blocks(text),
+            "promptUsed": "lo_grouping",
+            "validationPromptUsed": "grouping_validation",
+        }
+    )
 
 
 @app.post("/api/generate")
@@ -682,7 +740,7 @@ def generate_route():
     payload = request.get_json(force=True)
     outcomes_text = payload.get("learningOutcomes", "").strip()
     if not outcomes_text:
-        return jsonify({"error": "Missing selected chapter/topic items."}), 400
+        return jsonify({"error": "Missing grouped Learning Outcomes."}), 400
     prompt = script_prompt(
         payload.get("grade", ""),
         payload.get("chapter", ""),
@@ -702,7 +760,7 @@ def validate_route():
     script = payload.get("script", "").strip()
     outcomes_text = payload.get("learningOutcomes", "").strip()
     if not script or not outcomes_text:
-        return jsonify({"error": "Missing script or selected chapter/topic items for validation."}), 400
+        return jsonify({"error": "Missing script or Learning Outcomes for validation."}), 400
     prompt = validation_prompt(
         payload.get("grade", ""),
         payload.get("chapter", ""),
@@ -729,7 +787,7 @@ def revise_route():
     previous_script = payload.get("script", "").strip()
     report = payload.get("validationReport", "").strip()
     if not outcomes_text or not previous_script or not report:
-        return jsonify({"error": "Missing script, selected chapter/topic items, or validation report."}), 400
+        return jsonify({"error": "Missing script, Learning Outcomes, or validation report."}), 400
 
     prompt = (
         script_prompt(
@@ -755,7 +813,7 @@ def run_approved_route():
     payload = request.get_json(force=True)
     outcomes_text = payload.get("learningOutcomes", "").strip()
     if not outcomes_text:
-        return jsonify({"error": "Missing selected chapter/topic items."}), 400
+        return jsonify({"error": "Missing grouped Learning Outcomes."}), 400
 
     try:
         api_key = get_claude_api_key()
@@ -885,7 +943,7 @@ def bulk_python_scripts_route():
     payload = request.get_json(force=True)
     outcomes = payload.get("outcomes") or []
     if not outcomes:
-        return jsonify({"error": "Select at least one script item for bulk generation."}), 400
+        return jsonify({"error": "Select at least one Learning Outcome for bulk generation."}), 400
 
     try:
         api_key = get_claude_api_key()
@@ -912,7 +970,7 @@ def bulk_python_scripts_route():
             filename = unique_python_filename(group_filename_seed(group), used_names)
             stem = filename[:-3]
             if not outcomes_text:
-                manifest.append({"index": index, "status": "skipped", "title": title, "error": "Missing chapter/topic text."})
+                manifest.append({"index": index, "status": "skipped", "title": title, "error": "Missing Learning Outcome text."})
                 continue
 
             try:
