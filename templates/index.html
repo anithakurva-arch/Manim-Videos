@@ -380,6 +380,19 @@
         margin-top: 2px;
       }
 
+      .lo-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        background: #f5f2ff;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
       .lo-text {
         font-size: 13px;
         line-height: 1.45;
@@ -601,27 +614,45 @@
             <div id="loList" class="lo-list">
               <div class="lo-item">
                 <div></div>
-                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to select Learning Outcomes.</div>
+                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to show Learning Outcomes.</div>
               </div>
             </div>
           </div>
 
           <div class="panel">
-            <h2>Generate Script</h2>
-            <p class="note">Choose Grade, Chapter, and Subtopic filters. The app groups all visible Learning Outcomes into 2-minute script sets, then generates and validates scripts before animation.</p>
-            <div class="action-row">
-              <button type="button" class="primary-action" id="runApproved">Generate + Validate Scripts</button>
-              <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
-              <button type="button" class="secondary" id="useApprovedScript">Send to Animation</button>
+            <h2>LO Grouping and Scripts</h2>
+            <p class="note">Choose Grade, Chapter, and Subtopic filters. Group all visible Learning Outcomes first, then generate and validate scripts from the approved grouping.</p>
+            <div class="workflow-map">
+              <div class="step-box">
+                <span class="badge">Step 1</span>
+                <strong>Upload and filter</strong>
+                <p class="note">The visible LO list is the source set.</p>
+              </div>
+              <div class="step-box">
+                <span class="badge">Step 2</span>
+                <strong>Group LOs</strong>
+                <p class="note">Uses the LO grouping prompt and validation prompt.</p>
+              </div>
+              <div class="step-box">
+                <span class="badge">Step 3</span>
+                <strong>Generate scripts</strong>
+                <p class="note">Each grouped script is generated, validated, and retried.</p>
+              </div>
             </div>
             <div class="action-row">
+              <button type="button" class="primary-action" id="runGrouping">Group LOs</button>
+              <button type="button" class="primary-action" id="runApproved" disabled>Generate + Validate Scripts</button>
+              <button type="button" class="secondary" id="regenerateFailed" disabled>Regenerate Failed Scripts</button>
+              <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
+              <button type="button" class="secondary" id="useApprovedScript" disabled>Send to Phase 2</button>
+            </div>
+            <div class="action-row hidden">
               <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
               <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all visible Learning Outcomes.</span>
             </div>
             <details style="margin-top: 12px;">
               <summary>Advanced manual script steps</summary>
               <div class="row">
-                <button type="button" class="secondary" id="runGrouping">Group LOs</button>
                 <button type="button" class="secondary" id="generateScript">Generate Script</button>
                 <button type="button" class="secondary" id="validateScript">Validate Script</button>
                 <button type="button" class="secondary hidden" id="testUi">Test UI</button>
@@ -691,7 +722,7 @@
             <section class="panel">
               <h2>Stage Output</h2>
               <div class="tabs">
-                <button type="button" class="tab active hidden" data-tab="grouping">Grouping</button>
+                <button type="button" class="tab active" data-tab="grouping">Grouping</button>
                 <button type="button" class="tab" data-tab="script">Script</button>
                 <button type="button" class="tab" data-tab="validation">Validation</button>
                 <button type="button" class="tab" data-tab="history">Revisions</button>
@@ -768,6 +799,7 @@
         generateScript: document.getElementById("generateScript"),
         validateScript: document.getElementById("validateScript"),
         runApproved: document.getElementById("runApproved"),
+        regenerateFailed: document.getElementById("regenerateFailed"),
         downloadApproved: document.getElementById("downloadApproved"),
         outputBox: document.getElementById("outputBox"),
         statusList: document.getElementById("statusList"),
@@ -820,11 +852,13 @@
       function setBusy(button, busy, label) {
         if (!button) return;
         if (busy) {
+          button.dataset.busy = "true";
           button.dataset.label = button.textContent;
           button.textContent = label || "Working...";
           button.disabled = true;
         } else {
           button.textContent = button.dataset.label || button.textContent;
+          delete button.dataset.busy;
           button.disabled = false;
         }
       }
@@ -925,10 +959,10 @@
         return new URL(path, base).toString();
       }
 
-      function option(select, value) {
+      function option(select, value, label = "") {
         const item = document.createElement("option");
         item.value = value;
-        item.textContent = value || "Select";
+        item.textContent = label || value || "All";
         select.appendChild(item);
       }
 
@@ -945,8 +979,6 @@
       }
 
       function activeRows() {
-        const selected = selectedRows();
-        if (selected.length) return selected;
         return visibleRows().map(({ row }) => row);
       }
 
@@ -963,19 +995,17 @@
 
       function renderFilters() {
         els.gradeSelect.innerHTML = "";
-        option(els.gradeSelect, "");
+        option(els.gradeSelect, "", "All grades");
         (state.filters.grades || []).forEach((grade) => option(els.gradeSelect, grade));
         els.gradeSelect.value = "";
         renderChapterOptions();
       }
 
       function renderChapterOptions() {
-        const grade = els.gradeSelect.value;
         const current = els.chapterSelect.value;
-        const sourceRows = grade ? state.rows.filter((row) => row.grade === grade) : state.rows;
-        const chapters = Array.from(new Set(sourceRows.map((row) => row.chapter).filter(Boolean))).sort();
+        const chapters = Array.from(new Set(state.rows.map((row) => row.chapter).filter(Boolean))).sort();
         els.chapterSelect.innerHTML = "";
-        option(els.chapterSelect, "");
+        option(els.chapterSelect, "", "All chapters");
         chapters.forEach((chapter) => option(els.chapterSelect, chapter));
         if (chapters.includes(current)) {
           els.chapterSelect.value = current;
@@ -994,7 +1024,7 @@
         });
         const subtopics = Array.from(new Set(sourceRows.map((row) => row.subtopic).filter(Boolean))).sort();
         els.subtopicSelect.innerHTML = "";
-        option(els.subtopicSelect, "");
+        option(els.subtopicSelect, "", "All subtopics");
         subtopics.forEach((subtopic) => option(els.subtopicSelect, subtopic));
         if (subtopics.includes(current)) {
           els.subtopicSelect.value = current;
@@ -1011,10 +1041,10 @@
           els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No Learning Outcomes match the current filters.</div></div>';
         } else {
           rows.forEach(({ row, index }) => {
-            const item = document.createElement("label");
+            const item = document.createElement("div");
             item.className = "lo-item";
             item.innerHTML = `
-              <input class="lo-check" type="checkbox" data-index="${index}">
+              <span class="lo-index">${index + 1}</span>
               <span class="lo-text">
                 <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)}${row.subtopic ? ` &middot; ${escapeHtml(row.subtopic)}` : ""} &middot; ${escapeHtml(row.cc)}</span>
                 ${escapeHtml(row.lo)}
@@ -1029,6 +1059,7 @@
       function updateMetrics() {
         els.metricRows.textContent = state.rows.length;
         els.metricSelected.textContent = visibleRows().length;
+        renderWorkflowControls();
       }
 
       function contextPayload(extra = {}) {
@@ -1039,7 +1070,10 @@
           chapter: els.chapterSelect.value || first.chapter || "",
           subtopic: els.subtopicSelect.value || first.subtopic || "",
           outcomes: selected,
-          learningOutcomes: selected.map((row, index) => `LO ${index + 1}. ${row.lo}`).join("\n"),
+          learningOutcomes: selected.map((row, index) => {
+            const parts = [row.grade, row.chapter, row.subtopic, row.cc].filter(Boolean).join(" / ");
+            return `LO ${index + 1}${parts ? ` (${parts})` : ""}. ${row.lo}`;
+          }).join("\n"),
           claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
           textbookReference: els.textbookReference.value.trim(),
           ...extra,
@@ -1074,8 +1108,29 @@
         return state.scriptRuns.filter((item) => item.status === "Approved" && item.script);
       }
 
+      function failedScriptRuns() {
+        return state.scriptRuns.filter((item) => item.status && item.status !== "Approved" && item.status !== "Grouped" && item.status !== "Queued" && item.status !== "Generating");
+      }
+
       function allScriptRunsApproved() {
         return state.scriptRuns.length > 0 && state.scriptRuns.every((item) => item.status === "Approved");
+      }
+
+      function groupingAllowsScriptGeneration() {
+        return Boolean(state.grouping) && state.groupingStatus !== "Rejected" && state.groupedScripts.length > 0;
+      }
+
+      function renderWorkflowControls() {
+        const hasVisibleRows = activeRows().length > 0;
+        if (els.runGrouping && !els.runGrouping.dataset.busy) {
+          els.runGrouping.disabled = !hasVisibleRows;
+        }
+        if (els.runApproved && !els.runApproved.dataset.busy) {
+          els.runApproved.disabled = !groupingAllowsScriptGeneration();
+        }
+        if (els.regenerateFailed && !els.regenerateFailed.dataset.busy) {
+          els.regenerateFailed.disabled = failedScriptRuns().length === 0;
+        }
       }
 
       function buildSingleItemPayload(row) {
@@ -1097,7 +1152,7 @@
           outcomes: [],
           learningOutcomes: group.learningOutcomes || group.title || "",
           chapter: base.chapter || group.title || "",
-          subtopic: "",
+          subtopic: base.subtopic || group.subtopic || "",
         };
       }
 
@@ -1105,6 +1160,80 @@
         return approvedScriptRuns()
           .map((item, index) => `SCRIPT ${index + 1}: ${item.title}\n\n${item.script}`)
           .join("\n\n---\n\n");
+      }
+
+      function groupedScriptsWithContext(groups) {
+        const fallbackSubtopic = els.subtopicSelect.value;
+        return (groups || []).map((group, index) => ({
+          title: group.title || `Script ${index + 1}`,
+          learningOutcomes: group.learningOutcomes || "",
+          subtopic: group.subtopic || fallbackSubtopic || "",
+        })).filter((group) => group.learningOutcomes || group.title);
+      }
+
+      function seedGroupedScriptRuns(groups, status = "Grouped") {
+        state.scriptRuns = groups.map((group, index) => ({
+          index,
+          title: group.title || `Script ${index + 1}`,
+          learningOutcomes: group.learningOutcomes || "",
+          subtopic: group.subtopic || "",
+          status,
+          attemptsUsed: 0,
+          script: "",
+          validationReport: "",
+          history: [],
+        }));
+        state.script = "";
+        state.validation = "";
+        state.history = [];
+        state.status = status;
+        renderStatus();
+      }
+
+      function clearGeneratedWorkflow() {
+        state.grouping = "";
+        state.groupingValidation = "";
+        state.groupingStatus = "";
+        state.groupedScripts = [];
+        state.scriptRuns = [];
+        state.script = "";
+        state.validation = "";
+        state.status = "Idle";
+        state.history = [];
+        renderStatus();
+        setTab("grouping");
+      }
+
+      async function generateScriptRuns(indexes) {
+        const targets = indexes.filter((index) => state.scriptRuns[index]);
+        if (!targets.length) return;
+        state.status = "Running";
+        renderStatus();
+        for (const index of targets) {
+          const group = state.scriptRuns[index];
+          state.scriptRuns[index] = {
+            ...group,
+            status: "Generating",
+          };
+          renderStatus();
+          showMessage(`Generating and validating script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
+          const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group));
+          state.scriptRuns[index] = {
+            ...state.scriptRuns[index],
+            status: data.approved ? "Approved" : "Max Attempts Reached",
+            attemptsUsed: data.attemptsUsed || 0,
+            script: data.script || "",
+            validationReport: data.validationReport || "",
+            history: data.history || [],
+          };
+          renderStatus();
+        }
+        state.script = combinedApprovedScriptText();
+        state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+        state.status = allScriptRunsApproved() ? "Approved" : "Max Attempts Reached";
+        state.history = state.scriptRuns.flatMap((item) => item.history || []);
+        renderStatus();
+        setTab(allScriptRunsApproved() ? "script" : "validation");
       }
 
       function selectAllVisibleOutcomes() {
@@ -1198,7 +1327,7 @@
       function badgeClass(status) {
         if (status === "Approved") return "good";
         if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed") return "bad";
-        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Generating" || status === "Queued") return "warn";
+        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Generating" || status === "Queued" || status === "Grouped") return "warn";
         return "";
       }
 
@@ -1211,7 +1340,7 @@
             row.innerHTML = `
               <div>
                 <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
-                <div class="note">Attempts used: ${Number(item.attemptsUsed || 0)} / ${MAX_REGENERATIONS}</div>
+                <div class="note">${escapeHtml(item.subtopic ? `Subtopic: ${item.subtopic}. ` : "")}Attempts used: ${Number(item.attemptsUsed || 0)} / ${MAX_REGENERATIONS}</div>
               </div>
               <span class="badge ${badgeClass(item.status)}">${escapeHtml(item.status || "Queued")}</span>
             `;
@@ -1223,6 +1352,7 @@
           els.downloadNote.textContent = approved
             ? "All selected scripts are Approved and ready for animation."
             : "Send to Animation is locked until every selected script is Approved.";
+          renderWorkflowControls();
           return;
         }
 
@@ -1254,6 +1384,7 @@
         els.downloadNote.textContent = approved
           ? "Download is available because the latest script is Approved."
           : "Download is locked until the latest selected workflow is Approved.";
+        renderWorkflowControls();
       }
 
       function escapeHtml(value) {
@@ -1345,9 +1476,18 @@
 
       els.parseExcel.addEventListener("click", parseSelectedExcel);
 
-      els.gradeSelect.addEventListener("change", renderChapterOptions);
-      els.chapterSelect.addEventListener("change", renderSubtopicOptions);
-      els.subtopicSelect.addEventListener("change", renderLearningOutcomes);
+      els.gradeSelect.addEventListener("change", () => {
+        renderChapterOptions();
+        clearGeneratedWorkflow();
+      });
+      els.chapterSelect.addEventListener("change", () => {
+        renderSubtopicOptions();
+        clearGeneratedWorkflow();
+      });
+      els.subtopicSelect.addEventListener("change", () => {
+        renderLearningOutcomes();
+        clearGeneratedWorkflow();
+      });
       els.loList.addEventListener("change", updateMetrics);
 
       els.selectVisible.addEventListener("click", () => {
@@ -1393,9 +1533,9 @@
       els.useApprovedScript.addEventListener("click", () => {
         const script = combinedApprovedScriptText() || state.script.trim();
         if (!script) return showMessage("Generate or approve a script first, or paste a transcript manually.", "warn");
-        if (state.scriptRuns.length && !allScriptRunsApproved()) return showMessage("Approve every selected script before sending to animation.", "warn");
+        if (state.scriptRuns.length && !allScriptRunsApproved()) return showMessage("Approve every grouped script before sending to Phase 2.", "warn");
         els.animationTranscript.value = script;
-        showMessage("Approved script content copied into Phase 2 transcript.", "good");
+        showMessage("Approved grouped script content copied into Phase 2 transcript.", "good");
       });
 
       els.generateStoryboard.addEventListener("click", async () => {
@@ -1467,17 +1607,24 @@
         if (!payload.outcomes.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
+          state.scriptRuns = [];
+          renderStatus();
           const data = await apiPost("/api/group", payload);
-          state.grouping = data.grouping;
+          state.grouping = data.grouping || "";
           state.groupingValidation = data.groupingValidation || "";
           state.groupingStatus = data.groupingStatus || "Needs Review";
-          state.groupedScripts = data.groups || [];
+          state.groupedScripts = groupedScriptsWithContext(data.groups || []);
+          if (!state.groupedScripts.length && state.grouping) {
+            state.groupedScripts = groupedScriptsWithContext([{ title: "Script 1", learningOutcomes: state.grouping }]);
+          }
+          seedGroupedScriptRuns(state.groupedScripts, state.groupingStatus === "Rejected" ? "Rejected" : "Grouped");
           setTab("grouping");
-          showMessage(`LO grouping completed. Grouping validation: ${state.groupingStatus}.`, state.groupingStatus === "Rejected" ? "bad" : "good");
+          showMessage(`LO grouping completed for ${payload.outcomes.length} visible Learning Outcome(s). Grouping validation: ${state.groupingStatus}.`, state.groupingStatus === "Rejected" ? "bad" : "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.runGrouping, false);
+          renderWorkflowControls();
         }
       });
 
@@ -1529,77 +1676,15 @@
       });
 
       els.runApproved.addEventListener("click", async () => {
-        const selected = activeRows();
-        if (!selected.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
-        setBusy(els.runApproved, true, "Grouping LOs...");
-        try {
-          const groupingData = await apiPost("/api/group", contextPayload());
-          state.grouping = groupingData.grouping || "";
-          state.groupingValidation = groupingData.groupingValidation || "";
-          state.groupingStatus = groupingData.groupingStatus || "Needs Review";
-          state.groupedScripts = groupingData.groups || [];
-          setTab("grouping");
-          if (state.groupingStatus === "Rejected") {
-            state.scriptRuns = [];
-            renderStatus();
-            showMessage("Grouping validation rejected the grouping. Regroup before script generation.", "bad");
-            return;
-          }
-        } catch (error) {
-          showMessage(error.message, "bad");
-          return;
-        } finally {
-          setBusy(els.runApproved, false);
-        }
-
-        const groupedScripts = state.groupedScripts.length
-          ? state.groupedScripts
-          : [{ title: "Script 1", learningOutcomes: state.grouping || contextPayload().learningOutcomes }];
-        state.scriptRuns = groupedScripts.map((group, index) => ({
-          index,
-          title: group.title || `Script ${index + 1}`,
-          learningOutcomes: group.learningOutcomes || "",
-          status: "Queued",
-          attemptsUsed: 0,
-          script: "",
-          validationReport: "",
-          history: [],
-        }));
-        state.script = "";
-        state.validation = "";
-        state.status = "Running";
-        renderStatus();
         setBusy(els.runApproved, true, "Generating scripts...");
         try {
-          for (let index = 0; index < groupedScripts.length; index += 1) {
-            const group = groupedScripts[index];
-            state.scriptRuns[index] = {
-              ...state.scriptRuns[index],
-              status: "Generating",
-            };
-            renderStatus();
-            showMessage(`Generating and validating script ${index + 1} of ${groupedScripts.length}: ${group.title || `Script ${index + 1}`}`, "warn");
-            const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group));
-            state.scriptRuns[index] = {
-              ...state.scriptRuns[index],
-              status: data.approved ? "Approved" : "Max Attempts Reached",
-              attemptsUsed: data.attemptsUsed || 0,
-              script: data.script || "",
-              validationReport: data.validationReport || "",
-              history: data.history || [],
-            };
-            renderStatus();
-          }
-          state.script = combinedApprovedScriptText();
-          state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
-          state.status = allScriptRunsApproved() ? "Approved" : "Max Attempts Reached";
-          state.history = state.scriptRuns.flatMap((item) => item.history || []);
-          renderStatus();
-          setTab(allScriptRunsApproved() ? "script" : "validation");
+          if (!groupingAllowsScriptGeneration()) return showMessage("Run Group LOs first. Script generation uses the validated grouping output.", "warn");
+          if (!state.scriptRuns.length) seedGroupedScriptRuns(state.groupedScripts, "Grouped");
+          await generateScriptRuns(state.scriptRuns.map((_, index) => index));
           if (!allScriptRunsApproved()) {
             showMessage("Some scripts did not reach Approved status. Review the status list before sending to animation.", "bad");
           } else {
-            showMessage(`All ${groupedScripts.length} grouped script(s) are Approved.`, "good");
+            showMessage(`All ${state.scriptRuns.length} grouped script(s) are Approved. Use Send to Phase 2 when ready.`, "good");
           }
         } catch (error) {
           const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating");
@@ -1613,6 +1698,37 @@
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.runApproved, false);
+          renderWorkflowControls();
+        }
+      });
+
+      els.regenerateFailed.addEventListener("click", async () => {
+        const failedIndexes = state.scriptRuns
+          .map((item, index) => ({ item, index }))
+          .filter(({ item }) => item.status !== "Approved")
+          .map(({ index }) => index);
+        if (!failedIndexes.length) return showMessage("No failed scripts need regeneration.", "good");
+        setBusy(els.regenerateFailed, true, "Regenerating...");
+        try {
+          await generateScriptRuns(failedIndexes);
+          if (allScriptRunsApproved()) {
+            showMessage(`All ${state.scriptRuns.length} grouped script(s) are Approved. Use Send to Phase 2 when ready.`, "good");
+          } else {
+            showMessage("Some scripts still did not reach Approved status. Review validation before sending to Phase 2.", "bad");
+          }
+        } catch (error) {
+          const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating");
+          if (runningIndex >= 0) {
+            state.scriptRuns[runningIndex] = {
+              ...state.scriptRuns[runningIndex],
+              status: "Failed",
+            };
+            renderStatus();
+          }
+          showMessage(error.message, "bad");
+        } finally {
+          setBusy(els.regenerateFailed, false);
+          renderWorkflowControls();
         }
       });
 
@@ -1644,7 +1760,7 @@
       renderAnimationDownloads();
       loadPromptLibrary();
       renderStatus();
-      setTab("script");
+      setTab("grouping");
       showMessage("JavaScript ready. Buttons are connected.", "good");
     </script>
   </body>
