@@ -833,6 +833,26 @@
         };
       }
 
+      function plainTextFromHtml(text) {
+        return String(text || "")
+          .replace(/<script[\s\S]*?<\/script>/gi, " ")
+          .replace(/<style[\s\S]*?<\/style>/gi, " ")
+          .replace(/<[^>]+>/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      async function readJsonResponse(response, fallbackMessage = "Request failed.") {
+        const contentType = response.headers.get("content-type") || "";
+        if (contentType.includes("application/json")) {
+          return response.json();
+        }
+        const text = await response.text();
+        const readable = plainTextFromHtml(text).slice(0, 500);
+        const status = response.status ? `HTTP ${response.status}` : "Network response";
+        throw new Error(readable || `${fallbackMessage} (${status}).`);
+      }
+
       async function apiPost(url, payload, headers = claudeHeaders()) {
         const endpoint = apiUrl(url);
         const claudeKey = currentClaudeKey();
@@ -842,7 +862,7 @@
           headers,
           body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
         });
-        const data = await response.json();
+        const data = await readJsonResponse(response);
         if (!response.ok) throw new Error(data.error || "Request failed.");
         showMessage(`${url} completed.`, "good");
         return data;
@@ -860,10 +880,10 @@
         if (!response.ok) {
           const contentType = response.headers.get("content-type") || "";
           if (contentType.includes("application/json")) {
-            const data = await response.json();
+            const data = await readJsonResponse(response);
             throw new Error(data.error || "Request failed.");
           }
-          throw new Error(await response.text() || "Request failed.");
+          await readJsonResponse(response);
         }
         showMessage(`${url} completed.`, "good");
         return response.blob();
@@ -876,7 +896,7 @@
           method: "POST",
           body: form,
         });
-        const data = await response.json();
+        const data = await readJsonResponse(response, "Claude API key validation failed.");
         if (!response.ok || !data.valid) {
           throw new Error(data.error || "Claude API key is not valid.");
         }
@@ -885,7 +905,7 @@
 
       async function apiGet(url) {
         const response = await fetch(apiUrl(url));
-        const data = await response.json();
+        const data = await readJsonResponse(response);
         if (!response.ok) throw new Error(data.error || "Request failed.");
         return data;
       }
@@ -1206,7 +1226,7 @@
         showMessage("Uploading and parsing Excel...", "warn");
         try {
           const response = await fetch(apiUrl("/api/parse-excel"), { method: "POST", body: form });
-          const data = await response.json();
+          const data = await readJsonResponse(response, "Could not parse Excel.");
           if (!response.ok) throw new Error(data.error || "Could not parse Excel.");
           state.rows = data.rows || [];
           state.filters = data.filters || {};

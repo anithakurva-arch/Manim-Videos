@@ -217,90 +217,102 @@ LO_COLUMNS = [
 
 
 def parse_excel(file_storage):
-    workbook = load_workbook(BytesIO(file_storage.read()), data_only=True)
-    sheet = None
-    rows = []
+    workbook = load_workbook(BytesIO(file_storage.read()), read_only=True, data_only=True)
+    selected_sheet = None
+    preview_rows = []
     header_index = None
-    for candidate_sheet in workbook.worksheets:
-        candidate_rows = list(candidate_sheet.iter_rows(values_only=True))
-        candidate_header_index = find_header_row(candidate_rows)
-        if candidate_header_index is not None:
-            sheet = candidate_sheet
-            rows = candidate_rows
-            header_index = candidate_header_index
-            break
+    try:
+        for candidate_sheet in workbook.worksheets:
+            candidate_preview = []
+            for row_index, row in enumerate(candidate_sheet.iter_rows(values_only=True)):
+                if row_index >= 25:
+                    break
+                candidate_preview.append(row)
+            candidate_header_index = find_header_row(candidate_preview)
+            if candidate_header_index is not None:
+                selected_sheet = candidate_sheet
+                preview_rows = candidate_preview
+                header_index = candidate_header_index
+                break
 
-    if sheet is None:
-        sheet = workbook.active
-        rows = list(sheet.iter_rows(values_only=True))
+        if selected_sheet is None:
+            selected_sheet = workbook.active
+            preview_rows = []
+            for row_index, row in enumerate(selected_sheet.iter_rows(values_only=True)):
+                if row_index >= 25:
+                    break
+                preview_rows.append(row)
+            header_index = find_header_row(preview_rows)
 
-    if not rows:
-        return []
+        if not preview_rows:
+            return []
 
-    if header_index is None:
-        header_index = find_header_row(rows)
-    if header_index is None:
-        preview_headers = [str(cell or "").strip() for cell in rows[0] if str(cell or "").strip()]
-        raise ValueError(
-            "Could not find the header row. Expected columns like Grade, Chapter, Subtopic, and Learning Outcome. "
-            + "First row detected: "
-            + (", ".join(preview_headers) if preview_headers else "blank")
-        )
+        if header_index is None:
+            preview_headers = [str(cell or "").strip() for cell in preview_rows[0] if str(cell or "").strip()]
+            raise ValueError(
+                "Could not find the header row. Expected columns like Grade, Chapter, Subtopic, and Learning Outcome. "
+                + "First row detected: "
+                + (", ".join(preview_headers) if preview_headers else "blank")
+            )
 
-    headers = [str(cell or "").strip() for cell in rows[header_index]]
-    columns = {
-        "grade": find_columns(headers, GRADE_COLUMNS),
-        "subject": find_columns(headers, SUBJECT_COLUMNS),
-        "chapter": find_columns(headers, CHAPTER_COLUMNS),
-        "subtopic": find_columns(headers, SUBTOPIC_COLUMNS),
-        "cc": find_columns(headers, CC_COLUMNS),
-        "cc_name": find_columns(headers, CC_NAME_COLUMNS),
-        "lo": find_columns(headers, LO_COLUMNS),
-    }
+        headers = [str(cell or "").strip() for cell in preview_rows[header_index]]
+        columns = {
+            "grade": find_columns(headers, GRADE_COLUMNS),
+            "subject": find_columns(headers, SUBJECT_COLUMNS),
+            "chapter": find_columns(headers, CHAPTER_COLUMNS),
+            "subtopic": find_columns(headers, SUBTOPIC_COLUMNS),
+            "cc": find_columns(headers, CC_COLUMNS),
+            "cc_name": find_columns(headers, CC_NAME_COLUMNS),
+            "lo": find_columns(headers, LO_COLUMNS),
+        }
 
-    required = ["grade", "chapter", "subtopic", "lo"]
-    missing = [name for name in required if not columns[name]]
-    if missing:
-        detected = [header for header in headers if header]
-        raise ValueError(
-            "Missing required column(s): "
-            + ", ".join(missing)
-            + ". Detected headers: "
-            + (", ".join(detected) if detected else "none")
-        )
+        required = ["grade", "chapter", "subtopic", "lo"]
+        missing = [name for name in required if not columns[name]]
+        if missing:
+            detected = [header for header in headers if header]
+            raise ValueError(
+                "Missing required column(s): "
+                + ", ".join(missing)
+                + ". Detected headers: "
+                + (", ".join(detected) if detected else "none")
+            )
 
-    parsed = []
-    last_values = {
-        "grade": "",
-        "subject": "Mathematics",
-        "chapter": "",
-        "subtopic": "",
-        "cc": "CC 01",
-        "cc_name": "Learning Outcomes",
-    }
-    for index, row in enumerate(rows[header_index + 1 :], start=header_index + 2):
-        lo_text = row_value(row, columns["lo"])
-        if not lo_text:
-            continue
-        for field in last_values:
-            value = row_value(row, columns.get(field))
-            if value:
-                last_values[field] = value
-        parsed.append(
-            {
-                "row": index,
-                "grade": last_values["grade"],
-                "subject": last_values["subject"] or "Mathematics",
-                "chapter": last_values["chapter"],
-                "subtopic": last_values["subtopic"],
-                "cc": last_values["cc"] or "CC 01",
-                "cc_name": last_values["cc_name"] or "Learning Outcomes",
-                "lo": lo_text,
-            }
-        )
-    if not parsed:
-        raise ValueError("No Learning Outcome rows found below the detected header row.")
-    return parsed
+        parsed = []
+        last_values = {
+            "grade": "",
+            "subject": "Mathematics",
+            "chapter": "",
+            "subtopic": "",
+            "cc": "CC 01",
+            "cc_name": "Learning Outcomes",
+        }
+        for row_number, row in enumerate(selected_sheet.iter_rows(values_only=True), start=1):
+            if row_number <= header_index + 1:
+                continue
+            lo_text = row_value(row, columns["lo"])
+            if not lo_text:
+                continue
+            for field in last_values:
+                value = row_value(row, columns.get(field))
+                if value:
+                    last_values[field] = value
+            parsed.append(
+                {
+                    "row": row_number,
+                    "grade": last_values["grade"],
+                    "subject": last_values["subject"] or "Mathematics",
+                    "chapter": last_values["chapter"],
+                    "subtopic": last_values["subtopic"],
+                    "cc": last_values["cc"] or "CC 01",
+                    "cc_name": last_values["cc_name"] or "Learning Outcomes",
+                    "lo": lo_text,
+                }
+            )
+        if not parsed:
+            raise ValueError("No Learning Outcome rows found below the detected header row.")
+        return parsed
+    finally:
+        workbook.close()
 
 
 def filters_for(rows):
