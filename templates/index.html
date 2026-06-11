@@ -563,6 +563,7 @@
               <div class="row">
                 <button type="button" id="saveClaudeKey">Validate Claude key</button>
                 <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
+                <button type="button" class="danger" id="stopClaudeKey" disabled>Stop</button>
               </div>
               <p class="note">Claude is used for LO grouping, grouping validation, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
             </div>
@@ -575,7 +576,10 @@
                 <label for="excelFile">Excel file</label>
                 <input id="excelFile" type="file" accept=".xlsx,.xlsm,.xltx,.xltm">
               </div>
-              <button type="button" id="parseExcel">Upload and parse</button>
+              <div class="row">
+                <button type="button" id="parseExcel">Upload and parse</button>
+                <button type="button" class="danger" id="stopExcelUpload" disabled>Stop</button>
+              </div>
               <p class="note">Required columns include Chapter/Topic and Learning Outcome/LO. Grade/Class, Subject, and Subtopic/Sub Topic are optional.</p>
             </div>
           </section>
@@ -646,6 +650,7 @@
               <button type="button" class="secondary hidden" id="regenerateFailed" disabled>Regenerate Failed Scripts</button>
               <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
               <button type="button" class="secondary" id="useApprovedScript" disabled>Send to Phase 2</button>
+              <button type="button" class="danger" id="stopScriptWorkflow" disabled>Stop</button>
             </div>
             <div class="action-row hidden">
               <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
@@ -679,6 +684,7 @@
               <button type="button" id="generatePython">Generate Python Code</button>
               <button type="button" class="secondary" id="downloadStoryboard" disabled>Download Storyboard</button>
               <button type="button" class="secondary" id="downloadPython" disabled>Download Python</button>
+              <button type="button" class="danger" id="stopAnimationWorkflow" disabled>Stop</button>
             </div>
             <details style="margin-top: 12px;">
               <summary>Advanced animation options</summary>
@@ -697,7 +703,7 @@
                 </div>
                 <div class="field">
                   <label for="claudeModel">Claude model</label>
-                  <input id="claudeModel" type="text" value="{{ default_claude_model|default('claude-sonnet-4-5') }}">
+                  <input id="claudeModel" type="text" value="{{ default_claude_model|default('claude-opus-4-6') }}">
                 </div>
                 <button type="button" class="secondary" id="generateAnimationPackage">Generate Full Package</button>
               </div>
@@ -756,7 +762,7 @@
 
     <script>
       const DEFAULT_MAX_REGENERATIONS = 3;
-      const DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-5";
+      const DEFAULT_CLAUDE_MODEL = "claude-opus-4-6";
       const RENDER_API_ORIGIN = "https://manim-videos-5663.onrender.com";
       const MAX_REGENERATIONS = readTemplateNumber("{{ max_regenerations|default(3) }}", DEFAULT_MAX_REGENERATIONS);
       const state = {
@@ -776,6 +782,13 @@
         pythonCode: "",
         animationPackage: "",
         claudeKey: "",
+        controllers: {
+          key: null,
+          excel: null,
+          scripts: null,
+          animation: null,
+          bulk: null,
+        },
         scriptRuns: [],
         activeTab: "grouping",
       };
@@ -784,8 +797,10 @@
         claudeKey: document.getElementById("claudeKey"),
         saveClaudeKey: document.getElementById("saveClaudeKey"),
         clearClaudeKey: document.getElementById("clearClaudeKey"),
+        stopClaudeKey: document.getElementById("stopClaudeKey"),
         excelFile: document.getElementById("excelFile"),
         parseExcel: document.getElementById("parseExcel"),
+        stopExcelUpload: document.getElementById("stopExcelUpload"),
         gradeSelect: document.getElementById("gradeSelect"),
         chapterSelect: document.getElementById("chapterSelect"),
         subtopicSelect: document.getElementById("subtopicSelect"),
@@ -802,6 +817,7 @@
         runApproved: document.getElementById("runApproved"),
         validateScripts: document.getElementById("validateScripts"),
         regenerateFailed: document.getElementById("regenerateFailed"),
+        stopScriptWorkflow: document.getElementById("stopScriptWorkflow"),
         downloadApproved: document.getElementById("downloadApproved"),
         outputBox: document.getElementById("outputBox"),
         statusList: document.getElementById("statusList"),
@@ -818,6 +834,7 @@
         generateStoryboard: document.getElementById("generateStoryboard"),
         generatePython: document.getElementById("generatePython"),
         generateAnimationPackage: document.getElementById("generateAnimationPackage"),
+        stopAnimationWorkflow: document.getElementById("stopAnimationWorkflow"),
         downloadStoryboard: document.getElementById("downloadStoryboard"),
         downloadPython: document.getElementById("downloadPython"),
         generateBulkPython: document.getElementById("generateBulkPython"),
@@ -865,6 +882,64 @@
         }
       }
 
+      function setStopButton(section, enabled) {
+        const buttons = {
+          key: els.stopClaudeKey,
+          excel: els.stopExcelUpload,
+          scripts: els.stopScriptWorkflow,
+          animation: els.stopAnimationWorkflow,
+          bulk: els.stopScriptWorkflow,
+        };
+        const button = buttons[section];
+        if (button) button.disabled = !enabled;
+      }
+
+      function beginSection(section) {
+        stopSection(section, false);
+        const controller = new AbortController();
+        state.controllers[section] = controller;
+        setStopButton(section, true);
+        return controller.signal;
+      }
+
+      function endSection(section) {
+        state.controllers[section] = null;
+        setStopButton(section, false);
+      }
+
+      function stopSection(section, announce = true) {
+        const controller = state.controllers[section];
+        if (controller) controller.abort();
+        state.controllers[section] = null;
+        setStopButton(section, false);
+        if (announce) showMessage(`${sectionLabel(section)} stopped.`, "warn");
+      }
+
+      function sectionLabel(section) {
+        return {
+          key: "Claude key validation",
+          excel: "Excel upload",
+          scripts: "Script workflow",
+          animation: "Animation workflow",
+          bulk: "Bulk package workflow",
+        }[section] || "Workflow";
+      }
+
+      function isAbortError(error) {
+        return error && (error.name === "AbortError" || String(error.message || "").toLowerCase().includes("abort"));
+      }
+
+      function markRunningScriptsStopped() {
+        state.scriptRuns = state.scriptRuns.map((item) => {
+          if (["Generating", "Validating", "Regenerating", "Running"].includes(item.status)) {
+            return { ...item, status: "Stopped", validationReport: item.validationReport || "Stopped by user." };
+          }
+          return item;
+        });
+        state.status = "Stopped";
+        renderStatus();
+      }
+
       function claudeHeaders() {
         const key = currentClaudeKey();
         if (!key) throw new Error("Validate your Claude API key first.");
@@ -893,7 +968,7 @@
         throw new Error(readable || `${fallbackMessage} (${status}).`);
       }
 
-      async function apiPost(url, payload, headers = claudeHeaders()) {
+      async function apiPost(url, payload, headers = claudeHeaders(), options = {}) {
         const endpoint = apiUrl(url);
         const claudeKey = currentClaudeKey();
         showMessage(`Calling ${url}...`, "warn");
@@ -901,6 +976,7 @@
           method: "POST",
           headers,
           body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+          signal: options.signal,
         });
         const data = await readJsonResponse(response);
         if (!response.ok) throw new Error(data.error || "Request failed.");
@@ -908,7 +984,7 @@
         return data;
       }
 
-      async function apiPostBlob(url, payload, headers = claudeHeaders()) {
+      async function apiPostBlob(url, payload, headers = claudeHeaders(), options = {}) {
         const endpoint = apiUrl(url);
         const claudeKey = currentClaudeKey();
         showMessage(`Calling ${url}...`, "warn");
@@ -916,6 +992,7 @@
           method: "POST",
           headers,
           body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+          signal: options.signal,
         });
         if (!response.ok) {
           const contentType = response.headers.get("content-type") || "";
@@ -929,12 +1006,13 @@
         return response.blob();
       }
 
-      async function validateClaudeKey(key) {
+      async function validateClaudeKey(key, signal) {
         const form = new FormData();
         form.append("claude_api_key", key);
         const response = await fetch(apiUrl("/api/validate-claude-key"), {
           method: "POST",
           body: form,
+          signal,
         });
         const data = await readJsonResponse(response, "Claude API key validation failed.");
         if (!response.ok || !data.valid) {
@@ -1233,7 +1311,7 @@
         setTab("grouping");
       }
 
-      async function generateOneScript(index) {
+      async function generateOneScript(index, signal) {
         const group = state.scriptRuns[index];
         if (!group) return;
         state.scriptRuns[index] = {
@@ -1242,7 +1320,7 @@
         };
         renderStatus();
         showMessage(`Generating script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
-        const data = await apiPost("/api/generate", buildGroupedScriptPayload(group));
+        const data = await apiPost("/api/generate", buildGroupedScriptPayload(group), claudeHeaders(), { signal });
         state.scriptRuns[index] = {
           ...state.scriptRuns[index],
           status: "Generated",
@@ -1260,7 +1338,7 @@
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
       }
 
-      async function validateOneScript(index) {
+      async function validateOneScript(index, signal) {
         if (!state.scriptRuns[index] || !state.scriptRuns[index].script) return;
         state.scriptRuns[index] = {
           ...state.scriptRuns[index],
@@ -1269,7 +1347,7 @@
         renderStatus();
         const attemptsUsed = Math.max(1, Number(state.scriptRuns[index].attemptsUsed || 1));
         showMessage(`Validating script ${index + 1} of ${state.scriptRuns.length}: ${state.scriptRuns[index].title || `Script ${index + 1}`}`, "warn");
-        const validationData = await apiPost("/api/validate", buildScriptValidationPayload(state.scriptRuns[index]));
+        const validationData = await apiPost("/api/validate", buildScriptValidationPayload(state.scriptRuns[index]), claudeHeaders(), { signal });
         const status = validationData.status || "Needs Review";
         state.scriptRuns[index] = {
           ...state.scriptRuns[index],
@@ -1292,26 +1370,28 @@
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
       }
 
-      async function generateScriptRuns(indexes) {
+      async function generateScriptRuns(indexes, signal) {
         const targets = indexes.filter((index) => state.scriptRuns[index]);
         if (!targets.length) return;
         state.status = "Generating";
         renderStatus();
         for (const index of targets) {
-          await generateOneScript(index);
+          if (signal?.aborted) throw new DOMException("Stopped", "AbortError");
+          await generateOneScript(index, signal);
         }
         state.status = "Generated";
         renderStatus();
         setTab("script");
       }
 
-      async function validateScriptRuns(indexes) {
+      async function validateScriptRuns(indexes, signal) {
         const targets = indexes.filter((index) => state.scriptRuns[index] && state.scriptRuns[index].script);
         if (!targets.length) return;
         state.status = "Validating";
         renderStatus();
         for (const index of targets) {
-          await validateOneScript(index);
+          if (signal?.aborted) throw new DOMException("Stopped", "AbortError");
+          await validateOneScript(index, signal);
         }
         state.script = combinedGeneratedScriptText();
         state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
@@ -1321,16 +1401,18 @@
         setTab(allScriptRunsApproved() ? "script" : "validation");
       }
 
-      async function generateAndValidatePipeline(indexes) {
+      async function generateAndValidatePipeline(indexes, signal) {
         const targets = indexes.filter((index) => state.scriptRuns[index]);
         if (!targets.length) return;
         state.status = "Running";
         renderStatus();
         const validationTasks = [];
         for (const index of targets) {
+          if (signal?.aborted) throw new DOMException("Stopped", "AbortError");
           try {
-            await generateOneScript(index);
-            const validationTask = validateOneScript(index).catch((error) => {
+            await generateOneScript(index, signal);
+            const validationTask = validateOneScript(index, signal).catch((error) => {
+              if (isAbortError(error)) return;
               state.scriptRuns[index] = {
                 ...state.scriptRuns[index],
                 status: "Failed",
@@ -1340,6 +1422,7 @@
             });
             validationTasks.push(validationTask);
           } catch (error) {
+            if (isAbortError(error)) throw error;
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
               status: "Failed",
@@ -1447,7 +1530,7 @@
 
       function badgeClass(status) {
         if (status === "Approved") return "good";
-        if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed") return "bad";
+        if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed" || status === "Stopped") return "bad";
         if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Running" || status === "Generating" || status === "Validating" || status === "Regenerating" || status === "Regenerated" || status === "Generated" || status === "Queued" || status === "Grouped") return "warn";
         return "";
       }
@@ -1534,19 +1617,21 @@
       els.saveClaudeKey.addEventListener("click", async () => {
         const key = els.claudeKey.value.trim();
         if (!key) return showMessage("Paste your Claude API key first.", "warn");
+        const signal = beginSection("key");
         setBusy(els.saveClaudeKey, true, "Validating...");
         showMessage("Validating Claude API key...", "warn");
         try {
-          await validateClaudeKey(key);
+          await validateClaudeKey(key, signal);
           state.claudeKey = key;
           els.claudeKey.value = "";
           els.claudeKey.placeholder = "Validated for this page";
           showMessage("Claude API key is valid for this open page.", "good");
         } catch (error) {
           state.claudeKey = "";
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Claude API key validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.saveClaudeKey, false);
+          endSection("key");
         }
       });
 
@@ -1557,14 +1642,19 @@
         showMessage("Claude API key cleared.", "warn");
       });
 
+      els.stopClaudeKey.addEventListener("click", () => {
+        stopSection("key");
+      });
+
       async function parseSelectedExcel() {
         if (!els.excelFile.files.length) return showMessage("Choose an Excel file first.", "warn");
+        const signal = beginSection("excel");
         const form = new FormData();
         form.append("file", els.excelFile.files[0]);
         setBusy(els.parseExcel, true, "Parsing...");
         showMessage("Uploading and parsing Excel...", "warn");
         try {
-          const response = await fetch(apiUrl("/api/parse-excel"), { method: "POST", body: form });
+          const response = await fetch(apiUrl("/api/parse-excel"), { method: "POST", body: form, signal });
           const data = await readJsonResponse(response, "Could not parse Excel.");
           if (!response.ok) throw new Error(data.error || "Could not parse Excel.");
           state.rows = data.rows || [];
@@ -1583,9 +1673,10 @@
           renderStatus();
           showMessage(`Parsed ${state.rows.length} Learning Outcome(s). Chapter filter includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}. Generation will use all visible LOs.`, "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Excel upload stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.parseExcel, false);
+          endSection("excel");
         }
       }
 
@@ -1596,6 +1687,10 @@
       });
 
       els.parseExcel.addEventListener("click", parseSelectedExcel);
+
+      els.stopExcelUpload.addEventListener("click", () => {
+        stopSection("excel");
+      });
 
       els.gradeSelect.addEventListener("change", () => {
         renderChapterOptions();
@@ -1633,21 +1728,33 @@
         showMessage("Buttons are connected. JavaScript is running.", "good");
       });
 
+      els.stopScriptWorkflow.addEventListener("click", () => {
+        stopSection("scripts");
+        stopSection("bulk", false);
+        markRunningScriptsStopped();
+      });
+
+      els.stopAnimationWorkflow.addEventListener("click", () => {
+        stopSection("animation");
+      });
+
       els.generateBulkPython.addEventListener("click", async () => {
         const payload = contextPayload({
           duration: els.animationDuration.value.trim() || "90 seconds",
           contentType: els.animationContentType.value,
         });
         if (!payload.outcomes.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
+        const signal = beginSection("bulk");
         setBusy(els.generateBulkPython, true, "Generating everything...");
         try {
-          const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders());
+          const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders(), { signal });
           saveBlobFile("bulk_validated_animation_package.zip", zipBlob);
           showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} visible Learning Outcome(s). Python filenames are unique.`, "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Bulk package workflow stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.generateBulkPython, false);
+          endSection("bulk");
         }
       });
 
@@ -1662,52 +1769,58 @@
       els.generateStoryboard.addEventListener("click", async () => {
         const payload = phase2Payload();
         if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        const signal = beginSection("animation");
         setBusy(els.generateStoryboard, true, "Generating storyboard...");
         try {
-          const data = await apiPost("/api/animation/storyboard", payload, claudeHeaders());
+          const data = await apiPost("/api/animation/storyboard", payload, claudeHeaders(), { signal });
           state.storyboard = data.storyboard || "";
           renderAnimationDownloads();
           setTab("storyboard");
           showMessage("Storyboard and position-table package generated with Claude.", "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Storyboard generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.generateStoryboard, false);
+          endSection("animation");
         }
       });
 
       els.generatePython.addEventListener("click", async () => {
         const payload = phase2Payload({ storyboard: state.storyboard });
         if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        const signal = beginSection("animation");
         setBusy(els.generatePython, true, "Generating Python...");
         try {
-          const data = await apiPost("/api/animation/code", payload, claudeHeaders());
+          const data = await apiPost("/api/animation/code", payload, claudeHeaders(), { signal });
           state.pythonCode = data.code || "";
           renderAnimationDownloads();
           setTab("python");
           showMessage("Manim Python code generated with Claude.", "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Python generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.generatePython, false);
+          endSection("animation");
         }
       });
 
       els.generateAnimationPackage.addEventListener("click", async () => {
         const payload = phase2Payload({ storyboard: state.storyboard });
         if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        const signal = beginSection("animation");
         setBusy(els.generateAnimationPackage, true, "Generating package...");
         try {
-          const data = await apiPost("/api/animation/package", payload, claudeHeaders());
+          const data = await apiPost("/api/animation/package", payload, claudeHeaders(), { signal });
           state.animationPackage = data.package || "";
           state.pythonCode = data.code || state.pythonCode;
           renderAnimationDownloads();
           setTab("package");
           showMessage("Full animation package generated with Claude.", "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Animation package generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.generateAnimationPackage, false);
+          endSection("animation");
         }
       });
 
@@ -1726,6 +1839,7 @@
       els.runGrouping.addEventListener("click", async () => {
         const payload = contextPayload();
         if (!payload.outcomes.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
+        const signal = beginSection("scripts");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
           state.grouping = "";
@@ -1734,7 +1848,7 @@
           state.groupedScripts = [];
           state.scriptRuns = [];
           renderStatus();
-          const data = await apiPost("/api/group", payload);
+          const data = await apiPost("/api/group", payload, claudeHeaders(), { signal });
           state.grouping = data.grouping || "";
           state.groupingValidation = data.groupingValidation || "";
           state.groupingStatus = data.groupingStatus || "Needs Review";
@@ -1746,9 +1860,15 @@
           setTab("grouping");
           showMessage(`LO grouping completed for ${payload.outcomes.length} visible Learning Outcome(s). Review the grouped LO sets, then generate scripts.`, "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          if (isAbortError(error)) {
+            markRunningScriptsStopped();
+            showMessage("LO grouping stopped.", "warn");
+          } else {
+            showMessage(error.message, "bad");
+          }
         } finally {
           setBusy(els.runGrouping, false);
+          endSection("scripts");
           renderWorkflowControls();
         }
       });
@@ -1757,12 +1877,13 @@
         const payload = contextPayload();
         if (!payload.learningOutcomes) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         if (!state.grouping) return showMessage("Run Group LOs first. Script generation uses the grouping output.", "warn");
+        const signal = beginSection("scripts");
         setBusy(els.generateScript, true, "Generating...");
         try {
           const data = await apiPost("/api/generate", {
             ...payload,
             learningOutcomes: state.grouping || payload.learningOutcomes,
-          });
+          }, claudeHeaders(), { signal });
           state.script = data.script;
           state.validation = "";
           state.status = "Generated";
@@ -1771,17 +1892,19 @@
           setTab("script");
           showMessage("Script generated. Run validation next.", "good");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Script generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.generateScript, false);
+          endSection("scripts");
         }
       });
 
       els.validateScript.addEventListener("click", async () => {
         if (!state.script) return showMessage("Generate a script first.", "warn");
+        const signal = beginSection("scripts");
         setBusy(els.validateScript, true, "Validating...");
         try {
-          const data = await apiPost("/api/validate", contextPayload({ script: state.script }));
+          const data = await apiPost("/api/validate", contextPayload({ script: state.script }), claudeHeaders(), { signal });
           state.validation = data.report;
           state.status = data.status;
           state.history[state.history.length - 1] = {
@@ -1793,24 +1916,31 @@
           setTab("validation");
           showMessage(`Validation completed: ${data.status}.`, data.status === "Approved" ? "good" : "warn");
         } catch (error) {
-          showMessage(error.message, "bad");
+          showMessage(isAbortError(error) ? "Script validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.validateScript, false);
+          endSection("scripts");
         }
       });
 
       els.runApproved.addEventListener("click", async () => {
+        const signal = beginSection("scripts");
         setBusy(els.runApproved, true, "Running all...");
         try {
           if (!groupingAllowsScriptGeneration()) return showMessage("Run Group LOs first. Script generation uses the grouping output.", "warn");
           if (!state.scriptRuns.length) seedGroupedScriptRuns(state.groupedScripts, "Grouped");
-          await generateAndValidatePipeline(state.scriptRuns.map((_, index) => index));
+          await generateAndValidatePipeline(state.scriptRuns.map((_, index) => index), signal);
           if (allScriptRunsApproved()) {
             showMessage(`Generated and validated all ${state.scriptRuns.length} script(s). All scripts are Approved.`, "good");
           } else {
             showMessage("Generation and validation finished. Review each status row; use Regenerate Failed Scripts for remaining failures.", "warn");
           }
         } catch (error) {
+          if (isAbortError(error)) {
+            markRunningScriptsStopped();
+            showMessage("Script workflow stopped.", "warn");
+            return;
+          }
           const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating" || item.status === "Validating");
           if (runningIndex >= 0) {
             state.scriptRuns[runningIndex] = {
@@ -1822,6 +1952,7 @@
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.runApproved, false);
+          endSection("scripts");
           renderWorkflowControls();
         }
       });
@@ -1832,15 +1963,21 @@
           .filter(({ item }) => item.script && item.status !== "Approved")
           .map(({ index }) => index);
         if (!indexes.length) return showMessage("Generate scripts before validation.", "warn");
+        const signal = beginSection("scripts");
         setBusy(els.validateScripts, true, "Validating all...");
         try {
-          await validateScriptRuns(indexes);
+          await validateScriptRuns(indexes, signal);
           if (allScriptRunsApproved()) {
             showMessage(`All ${state.scriptRuns.length} script(s) are Approved. Use Send to Phase 2 when ready.`, "good");
           } else {
             showMessage("Validation finished. Some scripts still did not reach Approved after automatic regeneration; review each status row.", "warn");
           }
         } catch (error) {
+          if (isAbortError(error)) {
+            markRunningScriptsStopped();
+            showMessage("Script validation stopped.", "warn");
+            return;
+          }
           const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Validating" || item.status === "Regenerating");
           if (runningIndex >= 0) {
             state.scriptRuns[runningIndex] = {
@@ -1852,6 +1989,7 @@
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.validateScripts, false);
+          endSection("scripts");
           renderWorkflowControls();
         }
       });
@@ -1863,9 +2001,11 @@
           .filter(({ item }) => failedStatuses.has(item.status))
           .map(({ index }) => index);
         if (!failedIndexes.length) return showMessage("No failed scripts need regeneration.", "good");
+        const signal = beginSection("scripts");
         setBusy(els.regenerateFailed, true, "Regenerating...");
         try {
           for (const index of failedIndexes) {
+            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
             const group = state.scriptRuns[index];
             state.scriptRuns[index] = {
               ...group,
@@ -1873,7 +2013,7 @@
             };
             renderStatus();
             showMessage(`Regenerating failed script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
-            const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group));
+            const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group), claudeHeaders(), { signal });
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
               status: data.approved ? "Approved" : "Max Attempts Reached",
@@ -1895,6 +2035,11 @@
             showMessage("Some scripts still did not reach Approved status. Review validation before sending to Phase 2.", "bad");
           }
         } catch (error) {
+          if (isAbortError(error)) {
+            markRunningScriptsStopped();
+            showMessage("Regeneration stopped.", "warn");
+            return;
+          }
           const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Regenerating");
           if (runningIndex >= 0) {
             state.scriptRuns[runningIndex] = {
@@ -1906,6 +2051,7 @@
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.regenerateFailed, false);
+          endSection("scripts");
           renderWorkflowControls();
         }
       });

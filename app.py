@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).parent.resolve()
 SCRIPTS_DIR = BASE_DIR / "scripts"
 PROMPTS_DIR = BASE_DIR / "backend_prompts"
 MAX_REGENERATIONS = 3
-DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-5"
+DEFAULT_CLAUDE_MODEL = "claude-opus-4-6"
 
 PROMPT_FILES = {
     "script_generation": "conceptual_script_generation.txt",
