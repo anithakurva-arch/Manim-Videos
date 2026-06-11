@@ -513,7 +513,7 @@
       <header>
         <div>
           <h1>Conceptual Script Generator</h1>
-          <p class="subtitle">Upload outcomes, generate an approved script, then turn it into animation storyboard and Manim Python code.</p>
+          <p class="subtitle">Upload chapters, generate approved scripts, then turn them into animation storyboard and Manim Python code.</p>
         </div>
         <div class="pill"><span class="dot"></span> Script + Animation<span id="maxRegenerationsLabel" class="hidden">{{ max_regenerations|default(3) }}</span></div>
       </header>
@@ -525,7 +525,7 @@
           <strong id="metricRows">0</strong>
         </div>
         <div class="callout">
-          <span>Selected LOs</span>
+          <span>Selected items</span>
           <strong id="metricSelected">0</strong>
         </div>
         <div class="callout">
@@ -551,7 +551,7 @@
                 <button type="button" id="saveClaudeKey">Validate Claude key</button>
                 <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
               </div>
-              <p class="note">Claude is used for LO grouping, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
+              <p class="note">Claude is used for item grouping, script generation, validation, storyboard, and Manim Python code. The key is validated for this open page only.</p>
             </div>
           </section>
 
@@ -563,7 +563,7 @@
                 <input id="excelFile" type="file" accept=".xlsx,.xlsm,.xltx,.xltm">
               </div>
               <button type="button" id="parseExcel">Upload and parse</button>
-              <p class="note">Accepted columns include Grade/Class, Chapter/Topic, Subtopic/Sub Topic, and Learning Outcome/LO/Learning Objective. Subject is optional and defaults to Mathematics.</p>
+              <p class="note">Required column: Chapter/Topic. Optional columns include Grade/Class, Subject, Subtopic/Sub Topic, and Learning Outcome.</p>
             </div>
           </section>
 
@@ -595,35 +595,35 @@
         <section class="stack">
           <div class="panel">
             <div class="row" style="justify-content: space-between;">
-              <h2>Learning Outcomes</h2>
+              <h2>Script Items</h2>
               <span class="badge" id="subjectBadge">Mathematics</span>
             </div>
             <div id="loList" class="lo-list">
               <div class="lo-item">
                 <div></div>
-                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to select Learning Outcomes.</div>
+                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to select chapters or topics.</div>
               </div>
             </div>
           </div>
 
           <div class="panel">
             <h2>Generate Script</h2>
-            <p class="note">Select Learning Outcomes, then generate an approved conceptual script in one step.</p>
+            <p class="note">Select chapters or topics, then generate and validate scripts before sending them to animation.</p>
             <div class="action-row">
-              <button type="button" class="primary-action" id="runApproved">Generate Approved Script</button>
+              <button type="button" class="primary-action" id="runApproved">Generate + Validate Scripts</button>
               <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
               <button type="button" class="secondary" id="useApprovedScript">Send to Animation</button>
             </div>
             <div class="action-row">
               <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
-              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all selected Excel rows.</span>
+              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all selected script items.</span>
             </div>
             <details style="margin-top: 12px;">
               <summary>Advanced manual script steps</summary>
               <div class="row">
-                <button type="button" class="secondary" id="runGrouping">Group LOs</button>
-                <button type="button" class="secondary" id="generateScript">Generate Draft</button>
-                <button type="button" class="secondary" id="validateScript">Validate Draft</button>
+                <button type="button" class="secondary" id="runGrouping">Group Items</button>
+                <button type="button" class="secondary" id="generateScript">Generate Script</button>
+                <button type="button" class="secondary" id="validateScript">Validate Script</button>
                 <button type="button" class="secondary hidden" id="testUi">Test UI</button>
               </div>
             </details>
@@ -693,8 +693,8 @@
               <div class="tabs">
                 <button type="button" class="tab active hidden" data-tab="grouping">Grouping</button>
                 <button type="button" class="tab" data-tab="script">Script</button>
-                <button type="button" class="tab hidden" data-tab="validation">Validation</button>
-                <button type="button" class="tab hidden" data-tab="history">Revisions</button>
+                <button type="button" class="tab" data-tab="validation">Validation</button>
+                <button type="button" class="tab" data-tab="history">Revisions</button>
                 <button type="button" class="tab hidden" data-tab="prompt">Prompt Preview</button>
                 <button type="button" class="tab" data-tab="storyboard">Storyboard</button>
                 <button type="button" class="tab" data-tab="python">Python</button>
@@ -741,6 +741,7 @@
         pythonCode: "",
         animationPackage: "",
         claudeKey: "",
+        scriptRuns: [],
         activeTab: "grouping",
       };
 
@@ -947,8 +948,7 @@
         return state.rows.map((row, index) => ({ row, index })).filter(({ row }) => {
           return (!grade || row.grade === grade)
             && (!chapter || row.chapter === chapter)
-            && (!subtopic || row.subtopic === subtopic)
-            && row.subject.toLowerCase() === "mathematics";
+            && (!subtopic || row.subtopic === subtopic);
         });
       }
 
@@ -956,7 +956,7 @@
         els.gradeSelect.innerHTML = "";
         option(els.gradeSelect, "");
         (state.filters.grades || []).forEach((grade) => option(els.gradeSelect, grade));
-        selectFirstValue(els.gradeSelect);
+        els.gradeSelect.value = "";
         renderChapterOptions();
       }
 
@@ -971,7 +971,7 @@
         if (chapters.includes(current)) {
           els.chapterSelect.value = current;
         } else {
-          selectFirstValue(els.chapterSelect);
+          els.chapterSelect.value = "";
         }
         renderSubtopicOptions();
       }
@@ -990,7 +990,7 @@
         if (subtopics.includes(current)) {
           els.subtopicSelect.value = current;
         } else {
-          selectFirstValue(els.subtopicSelect);
+          els.subtopicSelect.value = "";
         }
         renderLearningOutcomes();
       }
@@ -999,7 +999,7 @@
         const rows = visibleRows();
         els.loList.innerHTML = "";
         if (!rows.length) {
-          els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No Mathematics Learning Outcomes match the current filters.</div></div>';
+          els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No script items match the current filters.</div></div>';
         } else {
           rows.forEach(({ row, index }) => {
             const item = document.createElement("label");
@@ -1007,7 +1007,7 @@
             item.innerHTML = `
               <input class="lo-check" type="checkbox" data-index="${index}">
               <span class="lo-text">
-                <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)} &middot; ${escapeHtml(row.subtopic)} &middot; ${escapeHtml(row.cc)}</span>
+                <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)}${row.subtopic ? ` &middot; ${escapeHtml(row.subtopic)}` : ""} &middot; ${escapeHtml(row.source === "learning_outcome" ? "Learning outcome" : "Chapter item")}</span>
                 ${escapeHtml(row.lo)}
               </span>
             `;
@@ -1030,7 +1030,7 @@
           chapter: els.chapterSelect.value || first.chapter || "",
           subtopic: els.subtopicSelect.value || first.subtopic || "",
           outcomes: selected,
-          learningOutcomes: selected.map((row, index) => `LO ${index + 1}. ${row.lo}`).join("\n"),
+          learningOutcomes: selected.map((row, index) => `Item ${index + 1}. ${row.lo}`).join("\n"),
           claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
           textbookReference: els.textbookReference.value.trim(),
           ...extra,
@@ -1057,6 +1057,36 @@
         els.downloadPython.disabled = !state.pythonCode;
       }
 
+      function scriptItemTitle(row) {
+        return [row.grade, row.chapter, row.subtopic, row.lo].filter(Boolean).join(" / ");
+      }
+
+      function approvedScriptRuns() {
+        return state.scriptRuns.filter((item) => item.status === "Approved" && item.script);
+      }
+
+      function allScriptRunsApproved() {
+        return state.scriptRuns.length > 0 && state.scriptRuns.every((item) => item.status === "Approved");
+      }
+
+      function buildSingleItemPayload(row) {
+        return {
+          grade: row.grade || "",
+          chapter: row.chapter || "",
+          subtopic: row.subtopic || "",
+          outcomes: [row],
+          learningOutcomes: `Item 1. ${row.lo}`,
+          claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
+          textbookReference: els.textbookReference.value.trim(),
+        };
+      }
+
+      function combinedApprovedScriptText() {
+        return approvedScriptRuns()
+          .map((item, index) => `SCRIPT ${index + 1}: ${item.title}\n\n${item.script}`)
+          .join("\n\n---\n\n");
+      }
+
       function selectAllVisibleOutcomes() {
         document.querySelectorAll(".lo-check").forEach((input) => input.checked = true);
         updateMetrics();
@@ -1065,11 +1095,22 @@
       function setTab(tab) {
         state.activeTab = tab;
         document.querySelectorAll(".tab").forEach((button) => button.classList.toggle("active", button.dataset.tab === tab));
+        const scriptRunValidation = state.scriptRuns.length
+          ? state.scriptRuns.map((item) => `${item.title}\nStatus: ${item.status}\n\n${item.validationReport || "No validation report yet."}`).join("\n\n---\n\n")
+          : "";
+        const scriptRunHistory = state.scriptRuns.length
+          ? JSON.stringify(state.scriptRuns.map((item) => ({
+              title: item.title,
+              status: item.status,
+              attemptsUsed: item.attemptsUsed,
+              attempts: (item.history || []).map(({ attempt, status }) => ({ attempt, status })),
+            })), null, 2)
+          : "";
         const content = {
           grouping: state.grouping || "No grouping output yet.",
           script: state.script || "No script generated yet.",
-          validation: state.validation || "No validation report yet.",
-          history: state.history.length ? JSON.stringify(state.history.map(({ attempt, status }) => ({ attempt, status })), null, 2) : "No revision history yet.",
+          validation: scriptRunValidation || state.validation || "No validation report yet.",
+          history: scriptRunHistory || (state.history.length ? JSON.stringify(state.history.map(({ attempt, status }) => ({ attempt, status })), null, 2) : "No revision history yet."),
           prompt: state.promptPreview || "Select a prompt from the Master Prompt Library.",
           storyboard: state.storyboard || "No storyboard generated yet.",
           python: state.pythonCode || "No Python code generated yet.",
@@ -1134,12 +1175,35 @@
 
       function badgeClass(status) {
         if (status === "Approved") return "good";
-        if (status === "Rejected" || status === "Max Attempts Reached") return "bad";
-        if (status === "Needs Minor Revision" || status === "Needs Review") return "warn";
+        if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed") return "bad";
+        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Generating" || status === "Queued") return "warn";
         return "";
       }
 
       function renderStatus() {
+        if (state.scriptRuns.length) {
+          els.statusList.innerHTML = "";
+          state.scriptRuns.forEach((item, index) => {
+            const row = document.createElement("div");
+            row.className = "status-row";
+            row.innerHTML = `
+              <div>
+                <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
+                <div class="note">Attempts used: ${Number(item.attemptsUsed || 0)} / ${MAX_REGENERATIONS}</div>
+              </div>
+              <span class="badge ${badgeClass(item.status)}">${escapeHtml(item.status || "Queued")}</span>
+            `;
+            els.statusList.appendChild(row);
+          });
+          const approved = allScriptRunsApproved();
+          els.downloadApproved.disabled = !approved;
+          els.useApprovedScript.disabled = !approved;
+          els.downloadNote.textContent = approved
+            ? "All selected scripts are Approved and ready for animation."
+            : "Send to Animation is locked until every selected script is Approved.";
+          return;
+        }
+
         const attempts = state.history.length;
         els.statusList.innerHTML = `
           <div class="status-row">
@@ -1164,6 +1228,7 @@
         });
         const approved = state.status === "Approved";
         els.downloadApproved.disabled = !approved;
+        els.useApprovedScript.disabled = !approved;
         els.downloadNote.textContent = approved
           ? "Download is available because the latest script is Approved."
           : "Download is locked until the latest selected workflow is Approved.";
@@ -1230,10 +1295,16 @@
           if (!response.ok) throw new Error(data.error || "Could not parse Excel.");
           state.rows = data.rows || [];
           state.filters = data.filters || {};
+          state.scriptRuns = [];
+          state.script = "";
+          state.validation = "";
+          state.status = "Idle";
+          state.history = [];
           renderFilters();
           selectAllVisibleOutcomes();
           const filterSummary = [els.gradeSelect.value, els.chapterSelect.value, els.subtopicSelect.value].filter(Boolean).join(" / ");
-          showMessage(`Parsed ${state.rows.length} rows and selected the visible Learning Outcomes${filterSummary ? `: ${filterSummary}` : ""}.`, "good");
+          renderStatus();
+          showMessage(`Parsed ${state.rows.length} script item(s). Chapter filter now includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1281,12 +1352,12 @@
           duration: els.animationDuration.value.trim() || "90 seconds",
           contentType: els.animationContentType.value,
         });
-        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome first.", "warn");
+        if (!payload.outcomes.length) return showMessage("Select at least one script item first.", "warn");
         setBusy(els.generateBulkPython, true, "Generating everything...");
         try {
           const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders());
           saveBlobFile("bulk_validated_animation_package.zip", zipBlob);
-          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} selected row(s). Python filenames are unique.`, "good");
+          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} selected script item(s). Python filenames are unique.`, "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1295,10 +1366,11 @@
       });
 
       els.useApprovedScript.addEventListener("click", () => {
-        const script = state.script.trim();
+        const script = combinedApprovedScriptText() || state.script.trim();
         if (!script) return showMessage("Generate or approve a script first, or paste a transcript manually.", "warn");
+        if (state.scriptRuns.length && !allScriptRunsApproved()) return showMessage("Approve every selected script before sending to animation.", "warn");
         els.animationTranscript.value = script;
-        showMessage("Latest script copied into Phase 2 transcript.", "good");
+        showMessage("Approved script content copied into Phase 2 transcript.", "good");
       });
 
       els.generateStoryboard.addEventListener("click", async () => {
@@ -1367,13 +1439,13 @@
 
       els.runGrouping.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.outcomes.length) return showMessage("Select at least one Learning Outcome.", "warn");
+        if (!payload.outcomes.length) return showMessage("Select at least one script item.", "warn");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
           const data = await apiPost("/api/group", payload);
           state.grouping = data.grouping;
           setTab("grouping");
-          showMessage("LO grouping completed.", "good");
+          showMessage("Item grouping completed.", "good");
         } catch (error) {
           showMessage(error.message, "bad");
         } finally {
@@ -1383,7 +1455,7 @@
 
       els.generateScript.addEventListener("click", async () => {
         const payload = contextPayload();
-        if (!payload.learningOutcomes) return showMessage("Select Learning Outcomes first.", "warn");
+        if (!payload.learningOutcomes) return showMessage("Select at least one script item first.", "warn");
         setBusy(els.generateScript, true, "Generating...");
         try {
           const data = await apiPost("/api/generate", payload);
@@ -1424,23 +1496,62 @@
       });
 
       els.runApproved.addEventListener("click", async () => {
-        const payload = contextPayload();
-        if (!payload.learningOutcomes) return showMessage("Select Learning Outcomes first.", "warn");
-        setBusy(els.runApproved, true, "Running capped workflow...");
+        const selected = selectedRows();
+        if (!selected.length) return showMessage("Select at least one script item first.", "warn");
+        state.scriptRuns = selected.map((row, index) => ({
+          index,
+          title: scriptItemTitle(row),
+          status: "Queued",
+          attemptsUsed: 0,
+          script: "",
+          validationReport: "",
+          history: [],
+        }));
+        state.script = "";
+        state.validation = "";
+        state.status = "Running";
+        renderStatus();
+        setBusy(els.runApproved, true, "Generating scripts...");
         try {
-          const data = await apiPost("/api/run-approved", payload);
-          state.script = data.script;
-          state.validation = data.validationReport;
-          state.status = data.approved ? "Approved" : "Max Attempts Reached";
-          state.history = data.history || [];
+          for (let index = 0; index < selected.length; index += 1) {
+            const row = selected[index];
+            state.scriptRuns[index] = {
+              ...state.scriptRuns[index],
+              status: "Generating",
+            };
+            renderStatus();
+            showMessage(`Generating and validating script ${index + 1} of ${selected.length}: ${scriptItemTitle(row)}`, "warn");
+            const data = await apiPost("/api/run-approved", buildSingleItemPayload(row));
+            state.scriptRuns[index] = {
+              ...state.scriptRuns[index],
+              status: data.approved ? "Approved" : "Max Attempts Reached",
+              attemptsUsed: data.attemptsUsed || 0,
+              script: data.script || "",
+              validationReport: data.validationReport || "",
+              history: data.history || [],
+            };
+            renderStatus();
+          }
+          state.script = combinedApprovedScriptText();
+          state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+          state.status = allScriptRunsApproved() ? "Approved" : "Max Attempts Reached";
+          state.history = state.scriptRuns.flatMap((item) => item.history || []);
           renderStatus();
-          setTab(data.approved ? "script" : "validation");
-          if (!data.approved) {
-            showMessage(`Stopped after ${data.attemptsUsed} attempts. No infinite loop was allowed. Review validation before retrying.`, "bad");
+          setTab(allScriptRunsApproved() ? "script" : "validation");
+          if (!allScriptRunsApproved()) {
+            showMessage("Some scripts did not reach Approved status. Review the status list before sending to animation.", "bad");
           } else {
-            showMessage(`Approved after ${data.attemptsUsed} attempt(s).`, "good");
+            showMessage(`All ${selected.length} selected script item(s) are Approved.`, "good");
           }
         } catch (error) {
+          const runningIndex = state.scriptRuns.findIndex((item) => item.status === "Generating");
+          if (runningIndex >= 0) {
+            state.scriptRuns[runningIndex] = {
+              ...state.scriptRuns[runningIndex],
+              status: "Failed",
+            };
+            renderStatus();
+          }
           showMessage(error.message, "bad");
         } finally {
           setBusy(els.runApproved, false);
@@ -1448,12 +1559,20 @@
       });
 
       els.downloadApproved.addEventListener("click", () => {
-        if (state.status !== "Approved") return showMessage("Only Approved scripts can be downloaded.", "warn");
+        if (state.scriptRuns.length && !allScriptRunsApproved()) return showMessage("Only Approved scripts can be downloaded.", "warn");
+        if (!state.scriptRuns.length && state.status !== "Approved") return showMessage("Only Approved scripts can be downloaded.", "warn");
         const payload = {
           status: state.status,
           grouping: state.grouping,
-          script: state.script,
+          script: combinedApprovedScriptText() || state.script,
           validationReport: state.validation,
+          scripts: state.scriptRuns.map((item) => ({
+            title: item.title,
+            status: item.status,
+            attemptsUsed: item.attemptsUsed,
+            script: item.script,
+            validationReport: item.validationReport,
+          })),
           history: state.history.map(({ attempt, status }) => ({ attempt, status })),
         };
         saveTextFile("approved_conceptual_script.json", JSON.stringify(payload, null, 2), "application/json");
