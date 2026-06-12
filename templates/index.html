@@ -813,6 +813,8 @@
         grouping: "",
         groupingValidation: "",
         groupingStatus: "",
+        groupingExpectedCount: 0,
+        groupingComplete: true,
         groupedScripts: [],
         script: "",
         validation: "",
@@ -1308,7 +1310,12 @@
       }
 
       function groupingAllowsScriptGeneration() {
-        return Boolean(state.grouping) && state.groupingStatus !== "Rejected" && state.groupedScripts.length > 0;
+        return Boolean(state.grouping) && state.groupingStatus !== "Rejected" && state.groupingStatus !== "Incomplete" && state.groupingComplete && state.groupedScripts.length > 0;
+      }
+
+      function highestScriptNumberInText(text) {
+        const numbers = Array.from(String(text || "").matchAll(/\bScript\s+(\d+)\b/gi)).map((match) => Number(match[1]));
+        return numbers.length ? Math.max(...numbers) : 0;
       }
 
       function renderWorkflowControls() {
@@ -1384,10 +1391,39 @@
       function groupedScriptsFromText(text) {
         const source = String(text || "").trim();
         if (!source) return [];
-        const markerMatches = Array.from(source.matchAll(/START_SCRIPT_GROUP\s*([\s\S]*?)\s*END_SCRIPT_GROUP/gim));
-        if (markerMatches.length) {
-          return markerMatches.map((match, index) => {
-            const block = match[1] || "";
+
+        function scriptKey(title) {
+          const match = String(title || "").match(/\bScript\s+(\d+)\b/i);
+          if (match) return `script-${String(Number(match[1])).padStart(4, "0")}`;
+          return String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, "") || `script-${Math.random()}`;
+        }
+
+        function scriptNumber(group) {
+          const match = String(group.title || "").match(/\bScript\s+(\d+)\b/i);
+          return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+        }
+
+        function orderedUnique(groups) {
+          const byKey = new Map();
+          const keys = [];
+          groups.forEach((group) => {
+            const key = scriptKey(group.title);
+            if (!byKey.has(key)) {
+              keys.push(key);
+              byKey.set(key, group);
+              return;
+            }
+            const existing = byKey.get(key);
+            if (String(group.learningOutcomes || "").length > String(existing.learningOutcomes || "").length) {
+              byKey.set(key, group);
+            }
+          });
+          return keys.map((key) => byKey.get(key)).sort((a, b) => scriptNumber(a) - scriptNumber(b));
+        }
+
+        const markerMatches = Array.from(source.matchAll(/START_SCRIPT_GROUP\s*([\s\S]*?)(?=START_SCRIPT_GROUP|$)/gim));
+        const markerGroups = markerMatches.map((match, index) => {
+            const block = String(match[1] || "").replace(/\s*END_SCRIPT_GROUP[\s\S]*$/i, "").trim();
             const titleMatch = block.match(/^\s*TITLE:\s*(.+?)\s*$/im);
             const ccMatch = block.match(/^\s*CC:\s*(.+?)\s*$/im);
             const losMatch = block.match(/^\s*LOS:\s*([\s\S]*)$/im);
@@ -1395,13 +1431,14 @@
             const learningOutcomes = [title, ccMatch?.[1]?.trim(), losMatch?.[1]?.trim()].filter(Boolean).join("\n");
             return { title, learningOutcomes, subtopic: els.subtopicSelect.value || "" };
           }).filter((group) => group.learningOutcomes);
-        }
-        const matches = Array.from(source.matchAll(/(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?/gim));
-        if (!matches.length) return [];
-        return matches.map((match, index) => {
-          const lineStart = source.lastIndexOf("\n", match.index) + 1;
-          const nextStart = index + 1 < matches.length ? matches[index + 1].index : source.length;
-          const learningOutcomes = source.slice(lineStart, nextStart).trim();
+
+        const summarySource = source.split(/^\s*GROUPING SCRIPT BLOCKS\s*$/im)[0] || source;
+        const matches = Array.from(summarySource.matchAll(/(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?/gim));
+        if (!matches.length) return markerGroups;
+        const summaryGroups = matches.map((match, index) => {
+          const lineStart = summarySource.lastIndexOf("\n", match.index) + 1;
+          const nextStart = index + 1 < matches.length ? matches[index + 1].index : summarySource.length;
+          const learningOutcomes = summarySource.slice(lineStart, nextStart).trim();
           let title = match[1].trim();
           if (!title.includes(" CC ")) {
             const ccMatch = learningOutcomes.match(/\bCC\s+[A-Za-z0-9._-]+/);
@@ -1409,6 +1446,7 @@
           }
           return { title, learningOutcomes, subtopic: els.subtopicSelect.value || "" };
         }).filter((group) => group.learningOutcomes);
+        return orderedUnique([...markerGroups, ...summaryGroups]);
       }
 
       function seedGroupedScriptRuns(groups, status = "Grouped") {
@@ -1465,6 +1503,8 @@
         state.grouping = "";
         state.groupingValidation = "";
         state.groupingStatus = "";
+        state.groupingExpectedCount = 0;
+        state.groupingComplete = true;
         state.groupedScripts = [];
         state.scriptRuns = [];
         state.script = "";
@@ -1831,6 +1871,8 @@
           state.grouping = "";
           state.groupingValidation = "";
           state.groupingStatus = "";
+          state.groupingExpectedCount = 0;
+          state.groupingComplete = true;
           state.groupedScripts = [];
           state.script = "";
           state.validation = "";
@@ -2028,9 +2070,18 @@
           if (!state.groupedScripts.length && state.grouping) {
             state.groupedScripts = groupedScriptsWithContext([{ title: "Script 1", learningOutcomes: state.grouping }]);
           }
+          state.groupingExpectedCount = highestScriptNumberInText(state.grouping);
+          state.groupingComplete = !state.groupingExpectedCount || state.groupedScripts.length >= state.groupingExpectedCount;
+          if (!state.groupingComplete) {
+            state.groupingStatus = "Incomplete";
+          }
           seedGroupedScriptRuns(state.groupedScripts, state.groupingStatus === "Rejected" ? "Rejected" : "Grouped");
           setTab("grouping");
-          showMessage(`LO grouping completed for ${payload.outcomes.length} visible Learning Outcome(s). Detected ${state.groupedScripts.length} grouped script(s). Review the grouped LO sets, then generate scripts.`, "good");
+          if (!state.groupingComplete) {
+            showMessage(`Grouping output is incomplete: detected ${state.groupedScripts.length} script row(s), but the response references Script ${state.groupingExpectedCount}. Click Group LOs again before generation.`, "bad");
+          } else {
+            showMessage(`LO grouping completed for ${payload.outcomes.length} visible Learning Outcome(s). Detected ${state.groupedScripts.length} grouped script(s). Review the grouped LO sets, then generate scripts.`, "good");
+          }
         } catch (error) {
           if (isAbortError(error)) {
             markRunningScriptsStopped();

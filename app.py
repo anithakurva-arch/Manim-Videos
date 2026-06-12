@@ -790,13 +790,36 @@ def grouped_script_blocks(grouping_text):
     if not text:
         return []
 
+    def script_key(title):
+        match = re.search(r"\bScript\s+(\d+)\b", str(title or ""), re.I)
+        if match:
+            return f"script-{int(match.group(1)):04d}"
+        return re.sub(r"[^a-z0-9]+", "", str(title or "").lower()) or str(len(text))
+
+    def ordered_unique(blocks):
+        by_key = {}
+        order = []
+        for block in blocks:
+            key = script_key(block.get("title"))
+            if key not in by_key:
+                order.append(key)
+                by_key[key] = block
+            elif len(block.get("learningOutcomes", "")) > len(by_key[key].get("learningOutcomes", "")):
+                by_key[key] = block
+        return [by_key[key] for key in order]
+
+    def script_number(block):
+        match = re.search(r"\bScript\s+(\d+)\b", str(block.get("title", "")), re.I)
+        return int(match.group(1)) if match else 10**9
+
     marker_blocks = re.findall(
-        r"(?is)START_SCRIPT_GROUP\s*(.*?)\s*END_SCRIPT_GROUP",
+        r"(?is)START_SCRIPT_GROUP\s*(.*?)(?=START_SCRIPT_GROUP|\Z)",
         text,
     )
+    parsed_marker_blocks = []
     if marker_blocks:
-        blocks = []
         for index, block in enumerate(marker_blocks, start=1):
+            block = re.sub(r"(?is)\s*END_SCRIPT_GROUP.*$", "", block).strip()
             title_match = re.search(r"(?im)^\s*TITLE:\s*(.+?)\s*$", block)
             title = title_match.group(1).strip() if title_match else f"Script {index}"
             cc_match = re.search(r"(?im)^\s*CC:\s*(.+?)\s*$", block)
@@ -808,32 +831,33 @@ def grouped_script_blocks(grouping_text):
                 parts.append(los_match.group(1).strip())
             learning_outcomes = "\n".join(part for part in parts if part).strip()
             if learning_outcomes:
-                blocks.append({"title": title, "learningOutcomes": learning_outcomes})
-        if blocks:
-            return blocks
+                parsed_marker_blocks.append({"title": title, "learningOutcomes": learning_outcomes})
 
+    summary_text = re.split(r"(?im)^\s*GROUPING SCRIPT BLOCKS\s*$", text, maxsplit=1)[0]
     matches = list(
         re.finditer(
             r"(?im)(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?",
-            text,
+            summary_text,
         )
     )
     if not matches:
-        return [{"title": "Script 1", "learningOutcomes": text}]
+        return parsed_marker_blocks or [{"title": "Script 1", "learningOutcomes": text}]
 
-    blocks = []
+    parsed_summary_blocks = []
     for index, match in enumerate(matches):
-        start = text.rfind("\n", 0, match.start()) + 1
-        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
-        block = text[start:end].strip()
+        start = summary_text.rfind("\n", 0, match.start()) + 1
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(summary_text)
+        block = summary_text[start:end].strip()
         title = match.group(1).strip()
         if " CC " not in title:
             cc_match = re.search(r"\bCC\s+[A-Za-z0-9._-]+", block)
             if cc_match:
                 title = f"{title} {cc_match.group(0)}"
         if block:
-            blocks.append({"title": title, "learningOutcomes": block})
-    return blocks
+            parsed_summary_blocks.append({"title": title, "learningOutcomes": block})
+
+    combined = ordered_unique(parsed_marker_blocks + parsed_summary_blocks)
+    return sorted(combined, key=script_number)
 
 
 @app.get("/")
@@ -933,7 +957,7 @@ def group_result(payload):
         ChapterName=chapter,
         CCsAndLOs=ccs_and_los,
     )
-    text = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=5000)
+    text = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=24000)
     return {
         "grouping": text,
         "groupingValidation": "",
