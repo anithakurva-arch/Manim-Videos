@@ -9,7 +9,7 @@ INPUT
 Subject: Mathematics
 Grade: {{Grade}}
 Topic Name: {{ChapterName}}
-CCs with Learning Outcomes: {{CCsAndLOs}}
+Source groups with Learning Outcomes: {{CCsAndLOs}}
 
 SOURCE OF TRUTH RULE
 The LO numbers in the input are fixed source identifiers from the uploaded Excel rows.
@@ -19,7 +19,7 @@ Every grouped script must contain only LO numbers and LO text that appear in the
 If an LO is not present in the input, it must not appear in the grouping.
 
 Grouping Rules (Strict)
-LOs can ONLY be grouped within the same CC. Never merge LOs across different CCs.
+LOs can ONLY be grouped within the same source group from the input. Never merge LOs across different source groups.
 Merge LOs when they are:
 Conceptually shallow on their own
 Overlapping in concept
@@ -32,14 +32,16 @@ Application-heavy with multiple sub-skills
 Distinct in skill type from neighbouring LOs
 
 Each script must fit comfortably within 2 minutes, approximately 230-270 spoken words.
+Each script may contain at most 3 Learning Outcomes. Prefer 1-2 LOs unless the LOs are very shallow and tightly connected.
 No upper limit on script count. More scripts are better than overstuffed ones. Never sacrifice depth to reduce script count.
 Every LO must be covered in at least one script. No LO can be skipped.
 
 Self-Validation of Grouping (Silent)
 Before locking the plan, verify internally:
-Every LO from every CC is assigned to exactly one script.
-No LO is merged across CCs.
+Every LO from every source group is assigned to exactly one script.
+No LO is merged across source groups.
 No grouped script tries to cover too much for a 2-minute slot.
+No grouped script contains more than 3 Learning Outcomes.
 No standalone script is too shallow to justify its own 2 minutes.
 The grouping respects depth, overlap, and repetition logic.
 If any check fails, silently revise the grouping until all checks pass. Then lock the plan.
@@ -50,26 +52,22 @@ Topic: {{ChapterName}}
 Grade: {{Grade}}
 
 Script ID
-CC
 LOs Covered (Full Text)
 
-Script 1 CC 02
-CC 02 {{CCName}}
+Script 1
 LO 1. [Full text of LO1]
 
-Script 2 CC 02
-CC 02 {{CCName}}
+Script 2
 LO 2. [Full text of LO2]
 LO 3. [Full text of LO3]
 
-Script 3 CC 03
-CC 03 {{CCName}}
+Script 3
 LO 1. [Full text of LO1]
 LO 2. [Full text of LO2]
 
 Formatting Rules for the Table
-Script ID format: Script [N] CC [CC Number], for example Script 1 CC 02.
-CC format: CC [CC Number] [CC Name], for example CC 02 Perimeter.
+Script ID format: Script [N], for example Script 1.
+Do not print CC labels, CC numbers, source-group names, or invented headings such as Introduction.
 LOs Covered format: write each LO as LO [N]. [Full text of the LO].
 When a script covers multiple LOs, list each full LO on its own line within the same cell.
 Never use shorthand like LO1 or LO2, LO3. Always print the full LO text.
@@ -82,15 +80,13 @@ Do not skip it.
 
 GROUPING SCRIPT BLOCKS
 START_SCRIPT_GROUP
-TITLE: Script 1 CC 02
-CC: CC 02 {{CCName}}
+TITLE: Script 1
 LOS:
 LO 1. [Full text of LO1]
 END_SCRIPT_GROUP
 
 START_SCRIPT_GROUP
-TITLE: Script 2 CC 02
-CC: CC 02 {{CCName}}
+TITLE: Script 2
 LOS:
 LO 2. [Full text of LO2]
 LO 3. [Full text of LO3]
@@ -99,7 +95,8 @@ END_SCRIPT_GROUP
 Rules for GROUPING SCRIPT BLOCKS:
 Print one START_SCRIPT_GROUP ... END_SCRIPT_GROUP block for every grouped script.
 Every grouped script from the visible summary must appear exactly once in this block copy.
-The TITLE value must use Script [N] CC [CC Number].
+The TITLE value must use Script [N] only.
+Do not include any CC line in the machine-readable copy.
 The LOS section must include the full LO text, one LO per line.
 The LO number in each LOS line must stay exactly the same as the input LO number.
 

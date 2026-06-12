@@ -1422,10 +1422,11 @@
           rows.forEach(({ row, index }) => {
             const item = document.createElement("div");
             item.className = "lo-item";
+            const meta = [row.grade, row.chapter, row.subtopic, row.cc].filter(Boolean).map(escapeHtml).join(" &middot; ");
             item.innerHTML = `
               <span class="lo-index">${index + 1}</span>
               <span class="lo-text">
-                <span class="lo-meta">${escapeHtml(row.grade)} &middot; ${escapeHtml(row.chapter)}${row.subtopic ? ` &middot; ${escapeHtml(row.subtopic)}` : ""} &middot; ${escapeHtml(row.cc)}</span>
+                <span class="lo-meta">${meta}</span>
                 ${escapeHtml(row.lo)}
               </span>
             `;
@@ -1650,6 +1651,22 @@
         const source = String(text || "").trim();
         if (!source) return [];
 
+        function cleanScriptTitle(title, fallbackIndex) {
+          const match = String(title || "").match(/\bScript\s+(\d+)\b/i);
+          return match ? `Script ${Number(match[1])}` : `Script ${fallbackIndex}`;
+        }
+
+        function cleanLearningOutcomeText(value) {
+          const lines = String(value || "").split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+          const loLines = lines.filter((line) => /^LO\s*\d+\s*[.:]/i.test(line));
+          if (loLines.length) return loLines.join("\n");
+          return lines
+            .filter((line) => !/^CC\s+/i.test(line))
+            .filter((line) => !/^Source\s+Group\b/i.test(line))
+            .filter((line) => !/^Script\s+\d+/i.test(line))
+            .join("\n");
+        }
+
         function scriptKey(title) {
           const match = String(title || "").match(/\bScript\s+(\d+)\b/i);
           if (match) return `script-${String(Number(match[1])).padStart(4, "0")}`;
@@ -1683,10 +1700,9 @@
         const markerGroups = markerMatches.map((match, index) => {
             const block = String(match[1] || "").replace(/\s*END_SCRIPT_GROUP[\s\S]*$/i, "").trim();
             const titleMatch = block.match(/^\s*TITLE:\s*(.+?)\s*$/im);
-            const ccMatch = block.match(/^\s*CC:\s*(.+?)\s*$/im);
             const losMatch = block.match(/^\s*LOS:\s*([\s\S]*)$/im);
-            const title = titleMatch ? titleMatch[1].trim() : `Script ${index + 1}`;
-            const learningOutcomes = [title, ccMatch?.[1]?.trim(), losMatch?.[1]?.trim()].filter(Boolean).join("\n");
+            const title = cleanScriptTitle(titleMatch?.[1], index + 1);
+            const learningOutcomes = cleanLearningOutcomeText(losMatch?.[1] || "");
             return { title, learningOutcomes, subtopic: els.subtopicSelect.value || "" };
           }).filter((group) => group.learningOutcomes);
 
@@ -1696,12 +1712,8 @@
         const summaryGroups = matches.map((match, index) => {
           const lineStart = summarySource.lastIndexOf("\n", match.index) + 1;
           const nextStart = index + 1 < matches.length ? matches[index + 1].index : summarySource.length;
-          const learningOutcomes = summarySource.slice(lineStart, nextStart).trim();
-          let title = match[1].trim();
-          if (!title.includes(" CC ")) {
-            const ccMatch = learningOutcomes.match(/\bCC\s+[A-Za-z0-9._-]+/);
-            if (ccMatch) title = `${title} ${ccMatch[0]}`;
-          }
+          const learningOutcomes = cleanLearningOutcomeText(summarySource.slice(lineStart, nextStart));
+          const title = cleanScriptTitle(match[1], index + 1);
           return { title, learningOutcomes, subtopic: els.subtopicSelect.value || "" };
         }).filter((group) => group.learningOutcomes);
         return orderedUnique([...markerGroups, ...summaryGroups]);
@@ -1725,12 +1737,6 @@
         state.status = status;
         renderStatus();
         renderGroupedScriptsList();
-      }
-
-      function extractCcText(group) {
-        const text = String(group.learningOutcomes || "");
-        const ccLine = text.match(/^\s*CC:\s*(.+?)\s*$/im) || text.match(/^\s*(CC\s+[^\n]+)$/im);
-        return ccLine ? ccLine[1].trim() : "";
       }
 
       function loLinesForGroup(group) {
@@ -1763,7 +1769,6 @@
               <tr>
                 <th>#</th>
                 <th>Script</th>
-                <th>CC</th>
                 <th>Learning Outcomes</th>
                 <th>Status</th>
                 ${includeAttempts ? "<th>Attempts</th>" : ""}
@@ -1776,7 +1781,6 @@
                   <tr>
                     <td>${index + 1}</td>
                     <td>${escapeHtml(item.title || `Script ${index + 1}`)}</td>
-                    <td>${escapeHtml(extractCcText(item) || item.subtopic || "-")}</td>
                     <td><div class="lo-lines">${loLines.map((line) => `<span class="lo-chip">${escapeHtml(line)}</span>`).join("")}</div></td>
                     <td><span class="badge ${badgeClass(item.status)}">${escapeHtml(item.status || "Grouped")}</span></td>
                     ${includeAttempts ? `<td>${Number(item.attemptsUsed || 0)} / ${MAX_REGENERATIONS}</td>` : ""}

@@ -22,6 +22,7 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 PROMPTS_DIR = BASE_DIR / "backend_prompts"
 MAX_REGENERATIONS = 3
 DEFAULT_CLAUDE_MODEL = "claude-opus-4-6"
+MAX_LOS_PER_GROUPED_SCRIPT = 3
 
 PROMPT_FILES = {
     "script_generation": "conceptual_script_generation.txt",
@@ -403,7 +404,7 @@ def parse_sheet_rows(row_iterator_factory, preview_pairs=None):
         "subject": "Mathematics",
         "chapter": "",
         "subtopic": "",
-        "cc": "CC 01",
+        "cc": "",
         "cc_name": "",
     }
     seen_learning_outcomes = set()
@@ -454,8 +455,8 @@ def parse_sheet_rows(row_iterator_factory, preview_pairs=None):
                 "subject": last_values["subject"] or "Mathematics",
                 "chapter": last_values["chapter"],
                 "subtopic": last_values["subtopic"],
-                "cc": last_values["cc"] or "CC 01",
-                "cc_name": last_values["cc_name"] or "Learning Outcomes",
+                "cc": last_values["cc"],
+                "cc_name": last_values["cc_name"],
                 "lo": lo_text,
                 "source": "learning_outcome",
             }
@@ -571,13 +572,13 @@ def filters_for(rows):
 def format_ccs_and_los(outcomes):
     grouped = {}
     for index, outcome in enumerate(outcomes, start=1):
-        cc = outcome.get("cc") or "CC 01"
-        cc_name = outcome.get("cc_name") or "Learning Outcomes"
-        grouped.setdefault((cc, cc_name), []).append((index, outcome))
+        source_key = outcome.get("cc") or outcome.get("subtopic") or outcome.get("chapter") or "Visible Learning Outcomes"
+        source_name = outcome.get("cc_name") or outcome.get("subtopic") or "Learning Outcomes"
+        grouped.setdefault((source_key, source_name), []).append((index, outcome))
 
     blocks = []
-    for (cc, cc_name), items in grouped.items():
-        lines = [f"{cc} {cc_name}"]
+    for group_index, ((source_key, source_name), items) in enumerate(grouped.items(), start=1):
+        lines = [f"Source Group {group_index}: {source_key} {source_name}".strip()]
         lines.extend(
             f"LO {index}. {outcome.get('lo', '')}"
             for index, outcome in items
@@ -871,40 +872,92 @@ def source_exact_grouped_scripts(groups, outcomes):
         if str(outcome.get("lo") or "").strip()
     }
     exact_groups = []
-    used_numbers = set()
+    assigned_numbers = set()
+
+    def clean_script_title(title, fallback_index):
+        match = re.search(r"\bScript\s+(\d+)\b", str(title or ""), re.I)
+        if match:
+            return f"Script {int(match.group(1))}"
+        return f"Script {fallback_index}"
+
+    pending_exact_groups = []
     for group_index, group in enumerate(groups, start=1):
         text = str(group.get("learningOutcomes") or "")
         numbers = []
         for match in re.finditer(r"\bLO\s*0*(\d+)\b", text, re.I):
             number = int(match.group(1))
-            if number in source_by_number and number not in numbers:
+            if number in source_by_number and number not in numbers and number not in assigned_numbers:
                 numbers.append(number)
 
         if numbers:
             matched = [source_by_number[number] for number in numbers]
-            used_numbers.update(numbers)
-            ccs = [f"{outcome.get('cc') or 'CC 01'} {outcome.get('cc_name') or 'Learning Outcomes'}".strip() for outcome in matched]
-            cc_line = ccs[0] if len(set(ccs)) == 1 else "Multiple CCs"
-            title = group.get("title") or f"Script {group_index}"
+            assigned_numbers.update(numbers)
+            title = clean_script_title(group.get("title"), group_index)
             lo_lines = [
                 f"LO {number}. {source_by_number[number].get('lo', '')}"
                 for number in numbers
             ]
-            exact_groups.append(
+            pending_exact_groups.append(
                 {
                     **group,
                     "title": title,
-                    "learningOutcomes": "\n".join([title, cc_line, *lo_lines]).strip(),
+                    "learningOutcomes": "\n".join(lo_lines).strip(),
                     "sourceRows": [outcome.get("row") for outcome in matched],
                     "loNumbers": numbers,
-                    "cc": matched[0].get("cc") if matched else "",
-                    "cc_name": matched[0].get("cc_name") if matched else "",
+                    "cc": "",
+                    "cc_name": "",
                     "subtopic": matched[0].get("subtopic") if matched else group.get("subtopic", ""),
                 }
             )
         else:
-            exact_groups.append(group)
+            pending_exact_groups.append({**group, "title": clean_script_title(group.get("title"), group_index), "cc": "", "cc_name": ""})
 
+    missing_numbers = [number for number in source_by_number if number not in assigned_numbers]
+    if missing_numbers:
+        pending_exact_groups.append(
+            {
+                "title": f"Script {len(pending_exact_groups) + 1}",
+                "learningOutcomes": "\n".join(
+                    f"LO {number}. {source_by_number[number].get('lo', '')}"
+                    for number in missing_numbers
+                ),
+                "sourceRows": [source_by_number[number].get("row") for number in missing_numbers],
+                "loNumbers": missing_numbers,
+                "cc": "",
+                "cc_name": "",
+                "subtopic": source_by_number[missing_numbers[0]].get("subtopic") if missing_numbers else "",
+            }
+        )
+
+    for group in pending_exact_groups:
+        numbers = list(group.get("loNumbers") or [])
+        if not numbers:
+            exact_groups.append(group)
+            continue
+        for start in range(0, len(numbers), MAX_LOS_PER_GROUPED_SCRIPT):
+            chunk = numbers[start:start + MAX_LOS_PER_GROUPED_SCRIPT]
+            matched = [source_by_number[number] for number in chunk if number in source_by_number]
+            if not matched:
+                continue
+            exact_groups.append(
+                {
+                    **group,
+                    "title": f"Script {len(exact_groups) + 1}",
+                    "learningOutcomes": "\n".join(
+                        f"LO {number}. {source_by_number[number].get('lo', '')}"
+                        for number in chunk
+                        if number in source_by_number
+                    ).strip(),
+                    "sourceRows": [outcome.get("row") for outcome in matched],
+                    "loNumbers": chunk,
+                    "cc": "",
+                    "cc_name": "",
+                    "subtopic": matched[0].get("subtopic") if matched else group.get("subtopic", ""),
+                }
+            )
+
+    for index, group in enumerate(exact_groups, start=1):
+        group["title"] = f"Script {index}"
     return exact_groups
 
 
