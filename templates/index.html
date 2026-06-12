@@ -1497,6 +1497,22 @@
         };
       }
 
+      function phase2StoryboardItems() {
+        const readyRuns = phase2ReadyScriptRuns();
+        if (readyRuns.length) {
+          return readyRuns.map((item, index) => ({
+            index,
+            title: item.title || `Script ${index + 1}`,
+            transcript: item.script || "",
+            status: item.status || "",
+          })).filter((item) => item.transcript.trim());
+        }
+        const payload = phase2Payload();
+        return payload.transcript
+          ? [{ index: 0, title: payload.title || "Storyboard", transcript: payload.transcript, status: "" }]
+          : [];
+      }
+
       function renderAnimationDownloads() {
         els.downloadStoryboard.disabled = !state.storyboard;
         els.downloadPython.disabled = !state.pythonCode;
@@ -2440,17 +2456,38 @@
       });
 
       els.generateStoryboard.addEventListener("click", async () => {
-        const payload = phase2Payload();
-        if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        const basePayload = phase2Payload();
+        const storyboardItems = phase2StoryboardItems();
+        if (!storyboardItems.length) return showMessage("Paste a transcript or use the latest script first.", "warn");
         const signal = beginSection("animation");
         setActiveProcess("storyboard");
-        setBusy(els.generateStoryboard, true, "Generating storyboard...");
+        setBusy(els.generateStoryboard, true, "Generating storyboards...");
         try {
-          const data = await apiPost("/api/animation/storyboard", payload, claudeHeaders(), { signal });
-          state.storyboard = data.storyboard || "";
+          const storyboards = [];
+          state.storyboard = "";
           renderAnimationDownloads();
           setTab("storyboard");
-          showMessage("Storyboard and position-table package generated with Claude.", "good");
+          for (const [position, item] of storyboardItems.entries()) {
+            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
+            showMessage(`Generating storyboard ${position + 1} of ${storyboardItems.length}: ${item.title}`, "warn");
+            const data = await apiPost("/api/animation/storyboard", {
+              ...basePayload,
+              title: item.title,
+              transcript: item.transcript,
+            }, claudeHeaders(), { signal });
+            storyboards.push({
+              title: item.title,
+              storyboard: data.storyboard || "",
+            });
+            state.storyboard = storyboards
+              .map((entry, index) => `## STORYBOARD ${index + 1}: ${entry.title}\n\n${entry.storyboard}`)
+              .join("\n\n---\n\n");
+            renderAnimationDownloads();
+            setTab("storyboard");
+          }
+          renderAnimationDownloads();
+          setTab("storyboard");
+          showMessage(`Generated ${storyboards.length} storyboard package(s), one API call per script.`, "good");
         } catch (error) {
           showMessage(isAbortError(error) ? "Storyboard generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
