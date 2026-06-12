@@ -1,10 +1,12 @@
 import json
 import re
+import tempfile
 import urllib.error
 import urllib.request
 import zipfile
 from io import BytesIO
 from pathlib import Path
+import xml.etree.ElementTree as ET
 
 from flask import Flask, Response, jsonify, render_template, request
 from openpyxl import load_workbook
@@ -248,136 +250,271 @@ LO_COLUMNS = [
 ]
 
 
-def parse_excel(file_storage):
-    workbook = load_workbook(BytesIO(file_storage.read()), read_only=True, data_only=True)
-    selected_sheet = None
-    preview_rows = []
-    header_index = None
-    try:
-        for candidate_sheet in workbook.worksheets:
-            candidate_preview = []
-            for row_index, row in enumerate(candidate_sheet.iter_rows(values_only=True)):
-                if row_index >= 25:
-                    break
-                candidate_preview.append(row)
-            candidate_header_index = find_header_row(candidate_preview)
-            if candidate_header_index is not None:
-                selected_sheet = candidate_sheet
-                preview_rows = candidate_preview
-                header_index = candidate_header_index
+def local_xml_name(tag):
+    return tag.rsplit("}", 1)[-1]
+
+
+def cell_column_index(cell_ref):
+    letters = "".join(char for char in str(cell_ref or "") if char.isalpha())
+    if not letters:
+        return None
+    index = 0
+    for char in letters.upper():
+        index = index * 26 + (ord(char) - ord("A") + 1)
+    return index - 1
+
+
+def load_xlsx_shared_strings(archive):
+    if "xl/sharedStrings.xml" not in archive.namelist():
+        return []
+    shared_strings = []
+    with archive.open("xl/sharedStrings.xml") as shared_xml:
+        for event, elem in ET.iterparse(shared_xml, events=("end",)):
+            if local_xml_name(elem.tag) != "si":
+                continue
+            text = "".join(node.text or "" for node in elem.iter() if local_xml_name(node.tag) == "t")
+            shared_strings.append(text)
+            elem.clear()
+    return shared_strings
+
+
+def read_xlsx_cell(cell, shared_strings):
+    cell_type = cell.attrib.get("t")
+    if cell_type == "inlineStr":
+        return "".join(node.text or "" for node in cell.iter() if local_xml_name(node.tag) == "t").strip()
+
+    raw_value = ""
+    for child in cell:
+        if local_xml_name(child.tag) == "v":
+            raw_value = child.text or ""
+            break
+    if not raw_value:
+        return ""
+    if cell_type == "s":
+        try:
+            return shared_strings[int(raw_value)].strip()
+        except (IndexError, TypeError, ValueError):
+            return raw_value.strip()
+    if cell_type == "b":
+        return "TRUE" if raw_value == "1" else "FALSE"
+    return raw_value.strip()
+
+
+def iter_xlsx_sheet_rows(workbook_path, sheet_path, shared_strings):
+    with zipfile.ZipFile(workbook_path) as archive:
+        with archive.open(sheet_path) as sheet_xml:
+            fallback_row_number = 0
+            for event, elem in ET.iterparse(sheet_xml, events=("end",)):
+                if local_xml_name(elem.tag) != "row":
+                    continue
+                fallback_row_number += 1
+                row_number = int(elem.attrib.get("r") or fallback_row_number)
+                row_values = []
+                for cell in elem:
+                    if local_xml_name(cell.tag) != "c":
+                        continue
+                    column_index = cell_column_index(cell.attrib.get("r"))
+                    if column_index is None:
+                        column_index = len(row_values)
+                    if column_index >= len(row_values):
+                        row_values.extend([""] * (column_index - len(row_values) + 1))
+                    row_values[column_index] = read_xlsx_cell(cell, shared_strings)
+                yield row_number, tuple(row_values)
+                elem.clear()
+
+
+def preview_sheet_rows(row_iterator_factory, limit=25):
+    preview = []
+    for row_number, row in row_iterator_factory():
+        preview.append((row_number, row))
+        if len(preview) >= limit:
+            break
+    return preview
+
+
+def parse_sheet_rows(row_iterator_factory, preview_pairs=None):
+    if preview_pairs is None:
+        preview_pairs = preview_sheet_rows(row_iterator_factory)
+    preview_rows = [row for row_number, row in preview_pairs]
+    if not preview_rows:
+        return []
+
+    header_position = find_header_row(preview_rows)
+    if header_position is None:
+        preview_headers = [str(cell or "").strip() for cell in preview_rows[0] if str(cell or "").strip()]
+        raise ValueError(
+            "Could not find the header row. Expected columns like Chapter/Topic and Learning Outcome. "
+            + "Optional columns include Grade/Class, Subject, and Subtopic/Sub Topic. "
+            + "First row detected: "
+            + (", ".join(preview_headers) if preview_headers else "blank")
+        )
+
+    header_row_number, header_row = preview_pairs[header_position]
+    headers = [str(cell or "").strip() for cell in header_row]
+    columns = {
+        "grade": find_columns(headers, GRADE_COLUMNS),
+        "subject": find_columns(headers, SUBJECT_COLUMNS),
+        "chapter": find_columns(headers, CHAPTER_COLUMNS),
+        "subtopic": find_columns(headers, SUBTOPIC_COLUMNS),
+        "cc": find_columns(headers, CC_COLUMNS),
+        "cc_name": find_columns(headers, CC_NAME_COLUMNS),
+        "lo": find_columns(headers, LO_COLUMNS),
+    }
+
+    required = ["chapter", "lo"]
+    missing = [name for name in required if not columns[name]]
+    if missing:
+        detected = [header for header in headers if header]
+        raise ValueError(
+            "Missing required column(s): "
+            + ", ".join(missing)
+            + ". Detected headers: "
+            + (", ".join(detected) if detected else "none")
+        )
+
+    parsed = []
+    last_values = {
+        "grade": "All Grades",
+        "subject": "Mathematics",
+        "chapter": "",
+        "subtopic": "",
+        "cc": "CC 01",
+        "cc_name": "",
+    }
+    seen_learning_outcomes = set()
+    relevant_column_indexes = sorted(
+        {
+            index
+            for indexes in columns.values()
+            for index in indexes
+            if index is not None
+        }
+    )
+    blank_relevant_rows = 0
+    for row_number, row in row_iterator_factory():
+        if row_number <= header_row_number:
+            continue
+        row_has_relevant_value = any(row_value(row, index) for index in relevant_column_indexes)
+        if not row_has_relevant_value:
+            blank_relevant_rows += 1
+            if parsed and blank_relevant_rows >= 100:
                 break
-
-        if selected_sheet is None:
-            selected_sheet = workbook.active
-            preview_rows = []
-            for row_index, row in enumerate(selected_sheet.iter_rows(values_only=True)):
-                if row_index >= 25:
-                    break
-                preview_rows.append(row)
-            header_index = find_header_row(preview_rows)
-
-        if not preview_rows:
-            return []
-
-        if header_index is None:
-            preview_headers = [str(cell or "").strip() for cell in preview_rows[0] if str(cell or "").strip()]
-            raise ValueError(
-                "Could not find the header row. Expected columns like Chapter/Topic and Learning Outcome. "
-                + "Optional columns include Grade/Class, Subject, and Subtopic/Sub Topic. "
-                + "First row detected: "
-                + (", ".join(preview_headers) if preview_headers else "blank")
-            )
-
-        headers = [str(cell or "").strip() for cell in preview_rows[header_index]]
-        columns = {
-            "grade": find_columns(headers, GRADE_COLUMNS),
-            "subject": find_columns(headers, SUBJECT_COLUMNS),
-            "chapter": find_columns(headers, CHAPTER_COLUMNS),
-            "subtopic": find_columns(headers, SUBTOPIC_COLUMNS),
-            "cc": find_columns(headers, CC_COLUMNS),
-            "cc_name": find_columns(headers, CC_NAME_COLUMNS),
-            "lo": find_columns(headers, LO_COLUMNS),
-        }
-
-        required = ["chapter", "lo"]
-        missing = [name for name in required if not columns[name]]
-        if missing:
-            detected = [header for header in headers if header]
-            raise ValueError(
-                "Missing required column(s): "
-                + ", ".join(missing)
-                + ". Detected headers: "
-                + (", ".join(detected) if detected else "none")
-            )
-
-        parsed = []
-        last_values = {
-            "grade": "All Grades",
-            "subject": "Mathematics",
-            "chapter": "",
-            "subtopic": "",
-            "cc": "CC 01",
-            "cc_name": "",
-        }
-        seen_learning_outcomes = set()
-        relevant_column_indexes = sorted(
+            if not parsed and blank_relevant_rows >= 1000:
+                break
+            continue
+        blank_relevant_rows = 0
+        for field in last_values:
+            value = row_value(row, columns.get(field))
+            if value:
+                last_values[field] = value
+        if not last_values["chapter"]:
+            continue
+        lo_text = row_value(row, columns["lo"])
+        if not lo_text:
+            continue
+        item_key = (
+            last_values["grade"],
+            last_values["subject"],
+            last_values["chapter"],
+            last_values["subtopic"],
+            lo_text,
+        )
+        if item_key in seen_learning_outcomes:
+            continue
+        seen_learning_outcomes.add(item_key)
+        parsed.append(
             {
-                index
-                for indexes in columns.values()
-                for index in indexes
-                if index is not None
+                "row": row_number,
+                "grade": last_values["grade"] or "All Grades",
+                "subject": last_values["subject"] or "Mathematics",
+                "chapter": last_values["chapter"],
+                "subtopic": last_values["subtopic"],
+                "cc": last_values["cc"] or "CC 01",
+                "cc_name": last_values["cc_name"] or "Learning Outcomes",
+                "lo": lo_text,
+                "source": "learning_outcome",
             }
         )
-        blank_relevant_rows = 0
-        for row_number, row in enumerate(selected_sheet.iter_rows(values_only=True), start=1):
-            if row_number <= header_index + 1:
-                continue
-            row_has_relevant_value = any(row_value(row, index) for index in relevant_column_indexes)
-            if not row_has_relevant_value:
-                blank_relevant_rows += 1
-                if parsed and blank_relevant_rows >= 100:
-                    break
-                if not parsed and blank_relevant_rows >= 1000:
-                    break
-                continue
-            blank_relevant_rows = 0
-            for field in last_values:
-                value = row_value(row, columns.get(field))
-                if value:
-                    last_values[field] = value
-            if not last_values["chapter"]:
-                continue
-            lo_text = row_value(row, columns["lo"])
-            if not lo_text:
-                continue
-            item_key = (
-                last_values["grade"],
-                last_values["subject"],
-                last_values["chapter"],
-                last_values["subtopic"],
-                lo_text,
-            )
-            if item_key in seen_learning_outcomes:
-                continue
-            seen_learning_outcomes.add(item_key)
-            parsed.append(
-                {
-                    "row": row_number,
-                    "grade": last_values["grade"] or "All Grades",
-                    "subject": last_values["subject"] or "Mathematics",
-                    "chapter": last_values["chapter"],
-                    "subtopic": last_values["subtopic"],
-                    "cc": last_values["cc"] or "CC 01",
-                    "cc_name": last_values["cc_name"] or "Learning Outcomes",
-                    "lo": lo_text,
-                    "source": "learning_outcome",
-                }
-            )
-        if not parsed:
-            raise ValueError("No Learning Outcome rows found below the detected header row.")
-        return parsed
+    if not parsed:
+        raise ValueError("No Learning Outcome rows found below the detected header row.")
+    return parsed
+
+
+def xlsx_sheet_paths(workbook_path):
+    with zipfile.ZipFile(workbook_path) as archive:
+        return sorted(
+            [
+                name
+                for name in archive.namelist()
+                if name.startswith("xl/worksheets/") and name.endswith(".xml")
+            ]
+        )
+
+
+def parse_xlsx_fast(workbook_path):
+    with zipfile.ZipFile(workbook_path) as archive:
+        shared_strings = load_xlsx_shared_strings(archive)
+    sheet_paths = xlsx_sheet_paths(workbook_path)
+    if not sheet_paths:
+        raise ValueError("No worksheets found in the uploaded Excel file.")
+
+    first_preview = None
+    first_sheet_path = sheet_paths[0]
+    for sheet_path in sheet_paths:
+        row_factory = lambda path=sheet_path: iter_xlsx_sheet_rows(workbook_path, path, shared_strings)
+        preview_pairs = preview_sheet_rows(row_factory)
+        if first_preview is None:
+            first_preview = preview_pairs
+        if find_header_row([row for row_number, row in preview_pairs]) is not None:
+            return parse_sheet_rows(row_factory, preview_pairs)
+
+    first_factory = lambda path=first_sheet_path: iter_xlsx_sheet_rows(workbook_path, path, shared_strings)
+    return parse_sheet_rows(first_factory, first_preview or [])
+
+
+def iter_openpyxl_sheet_rows(sheet):
+    for row_number, row in enumerate(sheet.iter_rows(values_only=True), start=1):
+        yield row_number, row
+
+
+def parse_excel_openpyxl(workbook_path):
+    workbook = load_workbook(workbook_path, read_only=True, data_only=True)
+    try:
+        for candidate_sheet in workbook.worksheets:
+            row_factory = lambda sheet=candidate_sheet: iter_openpyxl_sheet_rows(sheet)
+            preview_pairs = preview_sheet_rows(row_factory)
+            if find_header_row([row for row_number, row in preview_pairs]) is not None:
+                return parse_sheet_rows(row_factory, preview_pairs)
+        active_factory = lambda: iter_openpyxl_sheet_rows(workbook.active)
+        return parse_sheet_rows(active_factory)
     finally:
         workbook.close()
+
+
+def parse_excel_path(workbook_path):
+    workbook_path = Path(workbook_path)
+    try:
+        return parse_xlsx_fast(workbook_path)
+    except (ET.ParseError, KeyError, OSError, zipfile.BadZipFile):
+        return parse_excel_openpyxl(workbook_path)
+
+
+def parse_excel(file_storage):
+    if isinstance(file_storage, (str, Path)):
+        return parse_excel_path(file_storage)
+
+    temp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx") as temp_file:
+            temp_path = Path(temp_file.name)
+            if hasattr(file_storage, "save"):
+                file_storage.save(temp_file)
+            else:
+                temp_file.write(file_storage.read())
+        return parse_excel_path(temp_path)
+    finally:
+        if temp_path:
+            temp_path.unlink(missing_ok=True)
 
 
 def filters_for(rows):
