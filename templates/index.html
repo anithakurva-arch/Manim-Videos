@@ -797,6 +797,16 @@
       const DEFAULT_CLAUDE_MODEL = "claude-opus-4-6";
       const RENDER_API_ORIGIN = "https://manim-videos-5663.onrender.com";
       const MAX_REGENERATIONS = readTemplateNumber("{{ max_regenerations|default(3) }}", DEFAULT_MAX_REGENERATIONS);
+      const LONG_RUNNING_POSTS = new Map([
+        ["/api/group", "group"],
+        ["/api/generate", "generate"],
+        ["/api/validate", "validate"],
+        ["/api/revise", "revise"],
+        ["/api/run-approved", "run-approved"],
+        ["/api/animation/storyboard", "animation-storyboard"],
+        ["/api/animation/code", "animation-code"],
+        ["/api/animation/package", "animation-package"],
+      ]);
       const state = {
         rows: [],
         filters: {},
@@ -990,18 +1000,78 @@
           .trim();
       }
 
+      function cleanErrorText(text) {
+        const readable = String(text || "").trim();
+        if (!readable) return "";
+        const half = readable.length / 2;
+        if (Number.isInteger(half) && readable.slice(0, half).trim() === readable.slice(half).trim()) {
+          return readable.slice(0, half).trim();
+        }
+        return readable;
+      }
+
       async function readJsonResponse(response, fallbackMessage = "Request failed.") {
         const contentType = response.headers.get("content-type") || "";
         if (contentType.includes("application/json")) {
           return response.json();
         }
         const text = await response.text();
-        const readable = plainTextFromHtml(text).slice(0, 500);
+        const readable = cleanErrorText(plainTextFromHtml(text)).slice(0, 500);
         const status = response.status ? `HTTP ${response.status}` : "Network response";
-        throw new Error(readable || `${fallbackMessage} (${status}).`);
+        throw new Error(readable ? `${status}: ${readable}` : `${fallbackMessage} (${status}).`);
+      }
+
+      function abortableDelay(ms, signal) {
+        return new Promise((resolve, reject) => {
+          if (signal?.aborted) {
+            reject(new DOMException("Stopped", "AbortError"));
+            return;
+          }
+          const timer = setTimeout(resolve, ms);
+          signal?.addEventListener("abort", () => {
+            clearTimeout(timer);
+            reject(new DOMException("Stopped", "AbortError"));
+          }, { once: true });
+        });
+      }
+
+      async function apiPostJob(url, payload, headers, options = {}) {
+        const jobKind = LONG_RUNNING_POSTS.get(url);
+        const claudeKey = currentClaudeKey();
+        showMessage(`Starting ${url} job...`, "warn");
+        const startResponse = await fetch(apiUrl(`/api/jobs/${jobKind}`), {
+          method: "POST",
+          headers,
+          body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+          signal: options.signal,
+        });
+        const startData = await readJsonResponse(startResponse);
+        if (!startResponse.ok) throw new Error(startData.error || "Could not start job.");
+        const jobId = startData.job_id;
+        if (!jobId) throw new Error("Server did not return a job id.");
+
+        let pollCount = 0;
+        while (true) {
+          await abortableDelay(Math.min(1200 + pollCount * 150, 3000), options.signal);
+          pollCount += 1;
+          const statusResponse = await fetch(apiUrl(`/api/jobs/${jobId}`), { signal: options.signal });
+          const statusData = await readJsonResponse(statusResponse);
+          if (!statusResponse.ok) throw new Error(statusData.error || "Could not read job status.");
+          if (statusData.status === "done") {
+            showMessage(`${url} completed.`, "good");
+            return statusData.result || {};
+          }
+          if (statusData.status === "failed") {
+            throw new Error(statusData.error || `${url} failed.`);
+          }
+          showMessage(`${url} is ${statusData.status || "running"}...`, "warn");
+        }
       }
 
       async function apiPost(url, payload, headers = claudeHeaders(), options = {}) {
+        if (LONG_RUNNING_POSTS.has(url)) {
+          return apiPostJob(url, payload, headers, options);
+        }
         const endpoint = apiUrl(url);
         const claudeKey = currentClaudeKey();
         showMessage(`Calling ${url}...`, "warn");

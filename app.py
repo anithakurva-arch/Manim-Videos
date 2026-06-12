@@ -1,9 +1,13 @@
 import json
 import re
 import tempfile
+import threading
+import time
 import urllib.error
 import urllib.request
+import uuid
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
 from io import BytesIO
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -62,6 +66,10 @@ PROMPT_META = {
 }
 
 app = Flask(__name__)
+JOB_EXECUTOR = ThreadPoolExecutor(max_workers=4)
+JOB_LOCK = threading.Lock()
+JOBS = {}
+JOB_TTL_SECONDS = 60 * 60
 
 
 @app.errorhandler(Exception)
@@ -105,6 +113,23 @@ def get_claude_api_key():
     if not api_key:
         raise ValueError("Missing Claude API key. Save your Claude key before running Phase 2.")
     return api_key
+
+
+def claude_api_key_from_payload(payload):
+    api_key = str((payload or {}).get("claude_api_key", "")).strip()
+    if not api_key:
+        raise ValueError("Missing Claude API key. Save your Claude key before running Phase 2.")
+    return api_key
+
+
+def payload_with_request_key(payload):
+    output = dict(payload or {})
+    if not str(output.get("claude_api_key", "")).strip():
+        try:
+            output["claude_api_key"] = get_claude_api_key()
+        except Exception:
+            pass
+    return output
 
 
 def call_claude(prompt, api_key, model=None, max_output_tokens=16000):
@@ -895,12 +920,10 @@ def parse_excel_route():
     return jsonify({"rows": rows, "filters": filters_for(rows)})
 
 
-@app.post("/api/group")
-def group_route():
-    payload = request.get_json(force=True)
+def group_result(payload):
     outcomes = payload.get("outcomes") or []
     if not outcomes:
-        return jsonify({"error": "Select at least one Learning Outcome."}), 400
+        raise ValueError("Select at least one Learning Outcome.")
     grade = payload.get("grade", "")
     chapter = payload.get("chapter", "")
     ccs_and_los = format_ccs_and_los(outcomes)
@@ -910,49 +933,36 @@ def group_route():
         ChapterName=chapter,
         CCsAndLOs=ccs_and_los,
     )
-    try:
-        api_key = get_claude_api_key()
-        text = call_claude(prompt, api_key, payload.get("claudeModel"), max_output_tokens=5000)
-    except Exception as exc:
-        return jsonify({"error": str(exc)}), 400
-    return jsonify(
-        {
-            "grouping": text,
-            "groupingValidation": "",
-            "groupingStatus": "Grouped",
-            "groups": grouped_script_blocks(text),
-            "promptUsed": "lo_grouping",
-            "validationPromptUsed": "",
-        }
-    )
+    text = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=5000)
+    return {
+        "grouping": text,
+        "groupingValidation": "",
+        "groupingStatus": "Grouped",
+        "groups": grouped_script_blocks(text),
+        "promptUsed": "lo_grouping",
+        "validationPromptUsed": "",
+    }
 
 
-@app.post("/api/generate")
-def generate_route():
-    payload = request.get_json(force=True)
+def generate_result(payload):
     outcomes_text = payload.get("learningOutcomes", "").strip()
     if not outcomes_text:
-        return jsonify({"error": "Missing grouped Learning Outcomes."}), 400
+        raise ValueError("Missing grouped Learning Outcomes.")
     prompt = script_prompt(
         payload.get("grade", ""),
         payload.get("chapter", ""),
         payload.get("subtopic", ""),
         outcomes_text,
     )
-    try:
-        script = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=8000)
-    except Exception as exc:
-        return jsonify({"error": str(exc)}), 400
-    return jsonify({"script": script, "attempt": 1})
+    script = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=8000)
+    return {"script": script, "attempt": 1}
 
 
-@app.post("/api/validate")
-def validate_route():
-    payload = request.get_json(force=True)
+def validate_result(payload):
     script = payload.get("script", "").strip()
     outcomes_text = payload.get("learningOutcomes", "").strip()
     if not script or not outcomes_text:
-        return jsonify({"error": "Missing script or Learning Outcomes for validation."}), 400
+        raise ValueError("Missing script or Learning Outcomes for validation.")
     prompt = validation_prompt(
         payload.get("grade", ""),
         payload.get("chapter", ""),
@@ -961,25 +971,20 @@ def validate_route():
         script,
         payload.get("textbookReference", ""),
     )
-    try:
-        report = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=8000)
-    except Exception as exc:
-        return jsonify({"error": str(exc)}), 400
-    return jsonify({"report": report, "status": extract_verdict(report)})
+    report = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=8000)
+    return {"report": report, "status": extract_verdict(report)}
 
 
-@app.post("/api/revise")
-def revise_route():
-    payload = request.get_json(force=True)
+def revise_result(payload):
     attempt = int(payload.get("attempt", 1))
     if attempt > MAX_REGENERATIONS:
-        return jsonify({"error": "Maximum regeneration limit reached.", "max": MAX_REGENERATIONS}), 400
+        raise ValueError("Maximum regeneration limit reached.")
 
     outcomes_text = payload.get("learningOutcomes", "").strip()
     previous_script = payload.get("script", "").strip()
     report = payload.get("validationReport", "").strip()
     if not outcomes_text or not previous_script or not report:
-        return jsonify({"error": "Missing script, Learning Outcomes, or validation report."}), 400
+        raise ValueError("Missing script, Learning Outcomes, or validation report.")
 
     prompt = (
         script_prompt(
@@ -993,24 +998,16 @@ def revise_route():
         + f"Previous Script:\n{previous_script}\n\nValidation Report:\n{report}\n\n"
         + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
     )
-    try:
-        script = call_claude(prompt, get_claude_api_key(), payload.get("claudeModel"), max_output_tokens=8000)
-    except Exception as exc:
-        return jsonify({"error": str(exc)}), 400
-    return jsonify({"script": script, "attempt": attempt})
+    script = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=8000)
+    return {"script": script, "attempt": attempt}
 
 
-@app.post("/api/run-approved")
-def run_approved_route():
-    payload = request.get_json(force=True)
+def run_approved_result(payload):
     outcomes_text = payload.get("learningOutcomes", "").strip()
     if not outcomes_text:
-        return jsonify({"error": "Missing grouped Learning Outcomes."}), 400
+        raise ValueError("Missing grouped Learning Outcomes.")
 
-    try:
-        api_key = get_claude_api_key()
-    except Exception as exc:
-        return jsonify({"error": str(exc)}), 400
+    api_key = claude_api_key_from_payload(payload)
     model = payload.get("claudeModel")
     grade = payload.get("grade", "")
     chapter = payload.get("chapter", "")
@@ -1041,93 +1038,219 @@ def run_approved_route():
                 max_output_tokens=8000,
             )
         except Exception as exc:
-            return jsonify({"error": str(exc), "history": history}), 400
+            raise ValueError(str(exc)) from exc
 
         status = extract_verdict(report)
         history.append({"attempt": attempt, "status": status, "script": script, "validationReport": report})
         if status == "Approved":
             break
 
-    return jsonify(
-        {
-            "status": status,
-            "approved": status == "Approved",
-            "attemptsUsed": len(history),
-            "maxRegenerations": MAX_REGENERATIONS,
-            "script": script,
-            "validationReport": report,
-            "history": history,
-        }
+    return {
+        "status": status,
+        "approved": status == "Approved",
+        "attemptsUsed": len(history),
+        "maxRegenerations": MAX_REGENERATIONS,
+        "script": script,
+        "validationReport": report,
+        "history": history,
+    }
+
+
+@app.post("/api/group")
+def group_route():
+    try:
+        return jsonify(group_result(payload_with_request_key(request.get_json(force=True))))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.post("/api/generate")
+def generate_route():
+    try:
+        return jsonify(generate_result(payload_with_request_key(request.get_json(force=True))))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.post("/api/validate")
+def validate_route():
+    try:
+        return jsonify(validate_result(payload_with_request_key(request.get_json(force=True))))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.post("/api/revise")
+def revise_route():
+    try:
+        return jsonify(revise_result(payload_with_request_key(request.get_json(force=True))))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.post("/api/run-approved")
+def run_approved_route():
+    try:
+        return jsonify(run_approved_result(payload_with_request_key(request.get_json(force=True))))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+def animation_storyboard_result(payload):
+    prompt = animation_prompt(payload, "storyboard")
+    storyboard = call_claude(
+        prompt,
+        claude_api_key_from_payload(payload),
+        payload.get("claudeModel"),
+        max_output_tokens=int(payload.get("maxTokens") or 16000),
     )
+    return {
+        "storyboard": storyboard,
+        "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+        "promptUsed": "animation_phase",
+    }
+
+
+def animation_code_result(payload):
+    prompt = animation_prompt(payload, "code")
+    raw_code = call_claude(
+        prompt,
+        claude_api_key_from_payload(payload),
+        payload.get("claudeModel"),
+        max_output_tokens=int(payload.get("maxTokens") or 24000),
+    )
+    code = extract_python_code(raw_code)
+    return {
+        "code": code,
+        "raw": raw_code,
+        "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+        "promptUsed": "animation_phase",
+    }
+
+
+def animation_package_result(payload):
+    prompt = animation_prompt(payload, "package")
+    package = call_claude(
+        prompt,
+        claude_api_key_from_payload(payload),
+        payload.get("claudeModel"),
+        max_output_tokens=int(payload.get("maxTokens") or 30000),
+    )
+    return {
+        "package": package,
+        "code": extract_python_code(package),
+        "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+        "promptUsed": "animation_phase",
+    }
 
 
 @app.post("/api/animation/storyboard")
 def animation_storyboard_route():
-    payload = request.get_json(force=True)
     try:
-        prompt = animation_prompt(payload, "storyboard")
-        storyboard = call_claude(
-            prompt,
-            get_claude_api_key(),
-            payload.get("claudeModel"),
-            max_output_tokens=int(payload.get("maxTokens") or 16000),
-        )
+        return jsonify(animation_storyboard_result(payload_with_request_key(request.get_json(force=True))))
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
-    return jsonify(
-        {
-            "storyboard": storyboard,
-            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
-            "promptUsed": "animation_phase",
-        }
-    )
 
 
 @app.post("/api/animation/code")
 def animation_code_route():
-    payload = request.get_json(force=True)
     try:
-        prompt = animation_prompt(payload, "code")
-        raw_code = call_claude(
-            prompt,
-            get_claude_api_key(),
-            payload.get("claudeModel"),
-            max_output_tokens=int(payload.get("maxTokens") or 24000),
-        )
-        code = extract_python_code(raw_code)
+        return jsonify(animation_code_result(payload_with_request_key(request.get_json(force=True))))
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
-    return jsonify(
-        {
-            "code": code,
-            "raw": raw_code,
-            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
-            "promptUsed": "animation_phase",
-        }
-    )
 
 
 @app.post("/api/animation/package")
 def animation_package_route():
-    payload = request.get_json(force=True)
     try:
-        prompt = animation_prompt(payload, "package")
-        package = call_claude(
-            prompt,
-            get_claude_api_key(),
-            payload.get("claudeModel"),
-            max_output_tokens=int(payload.get("maxTokens") or 30000),
-        )
+        return jsonify(animation_package_result(payload_with_request_key(request.get_json(force=True))))
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
-    return jsonify(
-        {
-            "package": package,
-            "code": extract_python_code(package),
-            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
-            "promptUsed": "animation_phase",
-        }
-    )
+
+
+JOB_HANDLERS = {
+    "group": group_result,
+    "generate": generate_result,
+    "validate": validate_result,
+    "revise": revise_result,
+    "run-approved": run_approved_result,
+    "animation-storyboard": animation_storyboard_result,
+    "animation-code": animation_code_result,
+    "animation-package": animation_package_result,
+}
+
+
+def compact_job(job):
+    output = {
+        "job_id": job["job_id"],
+        "kind": job["kind"],
+        "status": job["status"],
+        "created_at": job["created_at"],
+        "updated_at": job["updated_at"],
+    }
+    if job["status"] == "done":
+        output["result"] = job.get("result") or {}
+    if job["status"] == "failed":
+        output["error"] = job.get("error") or "Job failed."
+    return output
+
+
+def cleanup_old_jobs():
+    cutoff = time.time() - JOB_TTL_SECONDS
+    with JOB_LOCK:
+        for job_id in [job_id for job_id, job in JOBS.items() if job.get("updated_at", 0) < cutoff]:
+            JOBS.pop(job_id, None)
+
+
+def update_job(job_id, **changes):
+    with JOB_LOCK:
+        job = JOBS.get(job_id)
+        if not job:
+            return
+        job.update(changes)
+        job["updated_at"] = time.time()
+
+
+def run_job(job_id, kind, payload):
+    update_job(job_id, status="running")
+    try:
+        result = JOB_HANDLERS[kind](payload)
+        update_job(job_id, status="done", result=result)
+    except Exception as exc:
+        update_job(job_id, status="failed", error=str(exc) or exc.__class__.__name__)
+
+
+@app.post("/api/jobs/<kind>")
+def start_job_route(kind):
+    if kind not in JOB_HANDLERS:
+        return jsonify({"error": "Unknown job type."}), 404
+    try:
+        payload = payload_with_request_key(request.get_json(force=True))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    cleanup_old_jobs()
+    job_id = uuid.uuid4().hex
+    job = {
+        "job_id": job_id,
+        "kind": kind,
+        "status": "queued",
+        "created_at": time.time(),
+        "updated_at": time.time(),
+    }
+    with JOB_LOCK:
+        JOBS[job_id] = job
+    JOB_EXECUTOR.submit(run_job, job_id, kind, payload)
+    return jsonify(compact_job(job)), 202
+
+
+@app.get("/api/jobs/<job_id>")
+def job_status_route(job_id):
+    cleanup_old_jobs()
+    with JOB_LOCK:
+        job = JOBS.get(job_id)
+        if not job:
+            return jsonify({"error": "Job not found or expired."}), 404
+        return jsonify(compact_job(job))
 
 
 @app.post("/api/bulk/python-scripts")
