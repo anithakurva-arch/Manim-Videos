@@ -874,6 +874,7 @@
         ["/api/validate", "validate"],
         ["/api/revise", "revise"],
         ["/api/run-approved", "run-approved"],
+        ["/api/script-batch", "script-batch"],
         ["/api/animation/storyboard", "animation-storyboard"],
         ["/api/animation/code", "animation-code"],
         ["/api/animation/package", "animation-package"],
@@ -1130,6 +1131,9 @@
           const statusResponse = await fetch(apiUrl(`/api/jobs/${jobId}`), { signal: options.signal });
           const statusData = await readJsonResponse(statusResponse);
           if (!statusResponse.ok) throw new Error(statusData.error || "Could not read job status.");
+          if (statusData.progress && typeof options.onProgress === "function") {
+            options.onProgress(statusData.progress, statusData);
+          }
           if (statusData.status === "done") {
             showMessage(`${url} completed.`, "good");
             return statusData.result || {};
@@ -1437,6 +1441,20 @@
         };
       }
 
+      function buildScriptBatchPayload() {
+        const base = contextPayload();
+        return {
+          ...base,
+          outcomes: [],
+          scripts: state.scriptRuns.map((item, index) => ({
+            index,
+            title: item.title || `Script ${index + 1}`,
+            learningOutcomes: item.learningOutcomes || "",
+            subtopic: item.subtopic || base.subtopic || "",
+          })),
+        };
+      }
+
       function combinedApprovedScriptText() {
         return approvedScriptRuns()
           .map((item, index) => `SCRIPT ${index + 1}: ${item.title}\n\n${item.script}`)
@@ -1448,6 +1466,45 @@
           .filter((item) => item.script)
           .map((item, index) => `SCRIPT ${index + 1}: ${item.title}\nStatus: ${item.status}\nAttempts used: ${Number(item.attemptsUsed || 0)} / ${MAX_REGENERATIONS}\n\n${item.script}`)
           .join("\n\n---\n\n");
+      }
+
+      function applyBatchProgress(progress) {
+        if (!progress) return;
+        if (Array.isArray(progress.scripts)) {
+          state.scriptRuns = progress.scripts.map((item, index) => ({
+            index,
+            title: item.title || `Script ${index + 1}`,
+            learningOutcomes: item.learningOutcomes || "",
+            subtopic: item.subtopic || "",
+            status: item.status || "Queued",
+            attemptsUsed: Number(item.attemptsUsed || 0),
+            script: item.script || "",
+            validationReport: item.validationReport || "",
+            history: item.history || [],
+          }));
+        }
+        state.script = progress.script || combinedGeneratedScriptText();
+        state.validation = progress.validation || state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
+        state.history = state.scriptRuns.flatMap((item) => item.history || []);
+        state.status = progress.phase === "complete" ? (allScriptRunsApproved() ? "Approved" : "Needs Review") : "Running";
+        renderStatus();
+        const current = Number(progress.currentIndex || 0) + 1;
+        const total = Number(progress.total || state.scriptRuns.length || 0);
+        if (total) {
+          showMessage(`Batch ${progress.phase || "running"}: script ${Math.min(current, total)} of ${total}.`, "warn");
+        }
+      }
+
+      function applyBatchResult(data) {
+        if (Array.isArray(data.scripts)) {
+          applyBatchProgress({ ...data, phase: "complete" });
+        }
+        state.script = data.script || combinedGeneratedScriptText();
+        state.validation = data.validation || state.validation;
+        state.status = data.status || (allScriptRunsApproved() ? "Approved" : "Needs Review");
+        state.history = state.scriptRuns.flatMap((item) => item.history || []);
+        renderStatus();
+        setTab(allScriptRunsApproved() ? "script" : "validation");
       }
 
       function groupedScriptsWithContext(groups) {
@@ -2268,7 +2325,20 @@
         try {
           if (!groupingAllowsScriptGeneration()) return showMessage("Run Group LOs first. Script generation uses the grouping output.", "warn");
           if (!state.scriptRuns.length) seedGroupedScriptRuns(state.groupedScripts, "Grouped");
-          await generateAndValidatePipeline(state.scriptRuns.map((_, index) => index), signal);
+          state.scriptRuns = state.scriptRuns.map((item) => ({
+            ...item,
+            status: item.status === "Approved" ? "Approved" : "Queued",
+            attemptsUsed: item.status === "Approved" ? item.attemptsUsed : 0,
+            script: item.status === "Approved" ? item.script : "",
+            validationReport: item.status === "Approved" ? item.validationReport : "",
+            history: item.status === "Approved" ? item.history : [],
+          }));
+          renderStatus();
+          const data = await apiPost("/api/script-batch", buildScriptBatchPayload(), claudeHeaders(), {
+            signal,
+            onProgress: applyBatchProgress,
+          });
+          applyBatchResult(data);
           if (allScriptRunsApproved()) {
             showMessage(`Generated and validated all ${state.scriptRuns.length} script(s). All scripts are Approved.`, "good");
           } else {

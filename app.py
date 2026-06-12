@@ -1080,6 +1080,130 @@ def run_approved_result(payload):
     }
 
 
+def combined_script_text_from_runs(script_runs):
+    return "\n\n---\n\n".join(
+        f"SCRIPT {index}: {item.get('title') or f'Script {index}'}\n"
+        f"Status: {item.get('status') or 'Queued'}\n"
+        f"Attempts used: {int(item.get('attemptsUsed') or 0)} / {MAX_REGENERATIONS}\n\n"
+        f"{item.get('script') or ''}"
+        for index, item in enumerate(script_runs, start=1)
+        if item.get("script")
+    )
+
+
+def combined_validation_text_from_runs(script_runs):
+    return "\n\n---\n\n".join(
+        f"{item.get('title') or f'Script {index}'}\n{item.get('validationReport') or item.get('status') or 'Queued'}"
+        for index, item in enumerate(script_runs, start=1)
+    )
+
+
+def script_batch_result(payload, job_id=None):
+    groups = payload.get("scripts") or payload.get("groups") or []
+    if not groups:
+        raise ValueError("No grouped scripts were supplied for batch generation.")
+
+    api_key = claude_api_key_from_payload(payload)
+    base_payload = {
+        "grade": payload.get("grade", ""),
+        "chapter": payload.get("chapter", ""),
+        "subtopic": payload.get("subtopic", ""),
+        "textbookReference": payload.get("textbookReference", ""),
+        "claudeModel": payload.get("claudeModel"),
+        "claude_api_key": api_key,
+    }
+    script_runs = []
+    for index, group in enumerate(groups):
+        script_runs.append(
+            {
+                "index": index,
+                "title": group.get("title") or f"Script {index + 1}",
+                "learningOutcomes": group.get("learningOutcomes") or "",
+                "subtopic": group.get("subtopic") or base_payload["subtopic"],
+                "status": "Queued",
+                "attemptsUsed": 0,
+                "script": "",
+                "validationReport": "",
+                "history": [],
+            }
+        )
+
+    def publish(current_index=0, phase="queued"):
+        if not job_id:
+            return
+        update_job(
+            job_id,
+            progress={
+                "phase": phase,
+                "currentIndex": current_index,
+                "total": len(script_runs),
+                "scripts": script_runs,
+                "script": combined_script_text_from_runs(script_runs),
+                "validation": combined_validation_text_from_runs(script_runs),
+            },
+        )
+
+    publish(0, "queued")
+    for index, item in enumerate(script_runs):
+        if not item["learningOutcomes"]:
+            item["status"] = "Failed"
+            item["validationReport"] = "Missing grouped Learning Outcomes."
+            publish(index, "failed")
+            continue
+
+        item_payload = {
+            **base_payload,
+            "outcomes": [],
+            "learningOutcomes": item["learningOutcomes"],
+            "chapter": base_payload["chapter"] or item["title"],
+            "subtopic": item["subtopic"] or base_payload["subtopic"],
+        }
+
+        try:
+            item["status"] = "Generating"
+            publish(index, "generating")
+            generated = generate_result(item_payload)
+            item["script"] = generated.get("script", "")
+            item["attemptsUsed"] = max(int(item.get("attemptsUsed") or 0), int(generated.get("attempt") or 1))
+            item["status"] = "Generated"
+            item["history"].append({"attempt": generated.get("attempt") or 1, "status": "Generated", "script": item["script"]})
+            publish(index, "generated")
+
+            item["status"] = "Validating"
+            publish(index, "validating")
+            validation = validate_result({**item_payload, "script": item["script"]})
+            item["status"] = validation.get("status") or "Needs Review"
+            item["validationReport"] = validation.get("report", "")
+            item["history"].append(
+                {
+                    "attempt": item["attemptsUsed"],
+                    "status": item["status"],
+                    "script": item["script"],
+                    "validationReport": item["validationReport"],
+                }
+            )
+            publish(index, "validated")
+        except Exception as exc:
+            item["status"] = "Failed"
+            item["validationReport"] = str(exc) or exc.__class__.__name__
+            item["history"].append({"attempt": item["attemptsUsed"] or 1, "status": "Failed", "validationReport": item["validationReport"]})
+            publish(index, "failed")
+            continue
+
+    approved = all(item.get("status") == "Approved" for item in script_runs)
+    result = {
+        "status": "Approved" if approved else "Needs Review",
+        "approved": approved,
+        "scripts": script_runs,
+        "script": combined_script_text_from_runs(script_runs),
+        "validation": combined_validation_text_from_runs(script_runs),
+        "history": [history_item for item in script_runs for history_item in item.get("history", [])],
+        "total": len(script_runs),
+    }
+    publish(len(script_runs), "complete")
+    return result
+
+
 @app.post("/api/group")
 def group_route():
     try:
@@ -1198,6 +1322,7 @@ JOB_HANDLERS = {
     "validate": validate_result,
     "revise": revise_result,
     "run-approved": run_approved_result,
+    "script-batch": script_batch_result,
     "animation-storyboard": animation_storyboard_result,
     "animation-code": animation_code_result,
     "animation-package": animation_package_result,
@@ -1214,6 +1339,8 @@ def compact_job(job):
     }
     if job["status"] == "done":
         output["result"] = job.get("result") or {}
+    if job.get("progress") is not None:
+        output["progress"] = job.get("progress")
     if job["status"] == "failed":
         output["error"] = job.get("error") or "Job failed."
     return output
@@ -1238,7 +1365,10 @@ def update_job(job_id, **changes):
 def run_job(job_id, kind, payload):
     update_job(job_id, status="running")
     try:
-        result = JOB_HANDLERS[kind](payload)
+        if kind == "script-batch":
+            result = script_batch_result(payload, job_id=job_id)
+        else:
+            result = JOB_HANDLERS[kind](payload)
         update_job(job_id, status="done", result=result)
     except Exception as exc:
         update_job(job_id, status="failed", error=str(exc) or exc.__class__.__name__)
