@@ -320,9 +320,27 @@ def parse_excel(file_storage):
             "cc_name": "",
         }
         seen_learning_outcomes = set()
+        relevant_column_indexes = sorted(
+            {
+                index
+                for indexes in columns.values()
+                for index in indexes
+                if index is not None
+            }
+        )
+        blank_relevant_rows = 0
         for row_number, row in enumerate(selected_sheet.iter_rows(values_only=True), start=1):
             if row_number <= header_index + 1:
                 continue
+            row_has_relevant_value = any(row_value(row, index) for index in relevant_column_indexes)
+            if not row_has_relevant_value:
+                blank_relevant_rows += 1
+                if parsed and blank_relevant_rows >= 100:
+                    break
+                if not parsed and blank_relevant_rows >= 1000:
+                    break
+                continue
+            blank_relevant_rows = 0
             for field in last_values:
                 value = row_value(row, columns.get(field))
                 if value:
