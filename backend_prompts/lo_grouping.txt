@@ -11,6 +11,13 @@ Grade: {{Grade}}
 Topic Name: {{ChapterName}}
 CCs with Learning Outcomes: {{CCsAndLOs}}
 
+SOURCE OF TRUTH RULE
+The LO numbers in the input are fixed source identifiers from the uploaded Excel rows.
+Do not invent, rename, renumber, or paraphrase any Learning Outcome.
+When grouping, refer only to the exact LO numbers from the input, for example LO 7 and LO 8.
+Every grouped script must contain only LO numbers and LO text that appear in the input.
+If an LO is not present in the input, it must not appear in the grouping.
+
 Grouping Rules (Strict)
 LOs can ONLY be grouped within the same CC. Never merge LOs across different CCs.
 Merge LOs when they are:
@@ -66,6 +73,7 @@ CC format: CC [CC Number] [CC Name], for example CC 02 Perimeter.
 LOs Covered format: write each LO as LO [N]. [Full text of the LO].
 When a script covers multiple LOs, list each full LO on its own line within the same cell.
 Never use shorthand like LO1 or LO2, LO3. Always print the full LO text.
+The LO number must stay exactly the same as the input LO number.
 
 MACHINE-READABLE COPY FOR THE APP
 After the visible grouping summary, print a second copy using this exact block format.
@@ -93,5 +101,6 @@ Print one START_SCRIPT_GROUP ... END_SCRIPT_GROUP block for every grouped script
 Every grouped script from the visible summary must appear exactly once in this block copy.
 The TITLE value must use Script [N] CC [CC Number].
 The LOS section must include the full LO text, one LO per line.
+The LO number in each LOS line must stay exactly the same as the input LO number.
 
 Now execute the analysis and produce the grouping summary table.

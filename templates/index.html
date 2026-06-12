@@ -2374,7 +2374,7 @@
           state.groupingStatus = data.groupingStatus || "Needs Review";
           state.groupedScripts = groupedScriptsWithContext(data.groups || []);
           const fallbackGroups = groupedScriptsFromText(state.grouping);
-          if (fallbackGroups.length > state.groupedScripts.length) {
+          if (!state.groupedScripts.length && fallbackGroups.length) {
             state.groupedScripts = groupedScriptsWithContext(fallbackGroups);
           }
           if (!state.groupedScripts.length && state.grouping) {

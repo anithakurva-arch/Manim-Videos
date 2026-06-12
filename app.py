@@ -570,15 +570,19 @@ def filters_for(rows):
 
 def format_ccs_and_los(outcomes):
     grouped = {}
-    for outcome in outcomes:
+    for index, outcome in enumerate(outcomes, start=1):
         cc = outcome.get("cc") or "CC 01"
         cc_name = outcome.get("cc_name") or "Learning Outcomes"
-        grouped.setdefault((cc, cc_name), []).append(outcome.get("lo", ""))
+        grouped.setdefault((cc, cc_name), []).append((index, outcome))
 
     blocks = []
-    for (cc, cc_name), los in grouped.items():
+    for (cc, cc_name), items in grouped.items():
         lines = [f"{cc} {cc_name}"]
-        lines.extend(f"LO {index}. {lo}" for index, lo in enumerate(los, start=1))
+        lines.extend(
+            f"LO {index}. {outcome.get('lo', '')}"
+            for index, outcome in items
+            if outcome.get("lo")
+        )
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
 
@@ -860,6 +864,50 @@ def grouped_script_blocks(grouping_text):
     return sorted(combined, key=script_number)
 
 
+def source_exact_grouped_scripts(groups, outcomes):
+    source_by_number = {
+        index: outcome
+        for index, outcome in enumerate(outcomes, start=1)
+        if str(outcome.get("lo") or "").strip()
+    }
+    exact_groups = []
+    used_numbers = set()
+    for group_index, group in enumerate(groups, start=1):
+        text = str(group.get("learningOutcomes") or "")
+        numbers = []
+        for match in re.finditer(r"\bLO\s*0*(\d+)\b", text, re.I):
+            number = int(match.group(1))
+            if number in source_by_number and number not in numbers:
+                numbers.append(number)
+
+        if numbers:
+            matched = [source_by_number[number] for number in numbers]
+            used_numbers.update(numbers)
+            ccs = [f"{outcome.get('cc') or 'CC 01'} {outcome.get('cc_name') or 'Learning Outcomes'}".strip() for outcome in matched]
+            cc_line = ccs[0] if len(set(ccs)) == 1 else "Multiple CCs"
+            title = group.get("title") or f"Script {group_index}"
+            lo_lines = [
+                f"LO {number}. {source_by_number[number].get('lo', '')}"
+                for number in numbers
+            ]
+            exact_groups.append(
+                {
+                    **group,
+                    "title": title,
+                    "learningOutcomes": "\n".join([title, cc_line, *lo_lines]).strip(),
+                    "sourceRows": [outcome.get("row") for outcome in matched],
+                    "loNumbers": numbers,
+                    "cc": matched[0].get("cc") if matched else "",
+                    "cc_name": matched[0].get("cc_name") if matched else "",
+                    "subtopic": matched[0].get("subtopic") if matched else group.get("subtopic", ""),
+                }
+            )
+        else:
+            exact_groups.append(group)
+
+    return exact_groups
+
+
 @app.get("/")
 def index():
     return render_template(
@@ -958,11 +1006,12 @@ def group_result(payload):
         CCsAndLOs=ccs_and_los,
     )
     text = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=24000)
+    groups = source_exact_grouped_scripts(grouped_script_blocks(text), outcomes)
     return {
         "grouping": text,
         "groupingValidation": "",
         "groupingStatus": "Grouped",
-        "groups": grouped_script_blocks(text),
+        "groups": groups,
         "promptUsed": "lo_grouping",
         "validationPromptUsed": "",
     }
