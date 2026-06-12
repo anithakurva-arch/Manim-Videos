@@ -77,7 +77,7 @@
       }
 
       main {
-        width: min(1280px, calc(100% - 32px));
+        width: min(1760px, calc(100% - 32px));
         margin: 0 auto;
         padding: 24px 0 44px;
       }
@@ -174,7 +174,7 @@
 
       .layout {
         display: grid;
-        grid-template-columns: 360px minmax(0, 1fr);
+        grid-template-columns: 320px minmax(0, 1fr);
         gap: 18px;
         margin-top: 20px;
       }
@@ -301,8 +301,15 @@
 
       .split {
         display: grid;
-        grid-template-columns: minmax(0, 1.8fr) minmax(300px, 0.85fr);
+        grid-template-columns: minmax(0, 2.3fr) minmax(320px, 0.7fr);
         gap: 14px;
+      }
+
+      .landscape-workspace {
+        display: grid;
+        grid-template-columns: minmax(420px, 0.95fr) minmax(560px, 1.35fr);
+        gap: 14px;
+        align-items: start;
       }
 
       .prompt-grid {
@@ -355,7 +362,7 @@
       }
 
       .lo-list {
-        max-height: 360px;
+        max-height: 520px;
         overflow: auto;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -429,7 +436,6 @@
         min-height: 560px;
         max-height: 820px;
         overflow: auto;
-        white-space: pre-wrap;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: #fbfcff;
@@ -437,6 +443,13 @@
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
         font-size: 13px;
         line-height: 1.45;
+        white-space: pre-wrap;
+      }
+
+      .output.table-mode {
+        padding: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        white-space: normal;
       }
 
       .status-list {
@@ -445,9 +458,11 @@
       }
 
       .group-list {
-        display: grid;
-        gap: 8px;
+        overflow: auto;
         margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
       }
 
       .group-item {
@@ -465,6 +480,59 @@
         display: block;
         margin-bottom: 4px;
         font-size: 13px;
+      }
+
+      .group-table,
+      .output-table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .group-table th,
+      .group-table td,
+      .output-table th,
+      .output-table td {
+        border-bottom: 1px solid var(--line);
+        padding: 9px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .group-table th,
+      .output-table th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: #f7fbff;
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      .group-table td:first-child,
+      .output-table td:first-child {
+        width: 52px;
+        color: var(--accent);
+        font-weight: 800;
+      }
+
+      .group-table td:nth-child(2),
+      .output-table td:nth-child(2) {
+        min-width: 170px;
+        font-weight: 800;
+      }
+
+      .lo-lines {
+        display: grid;
+        gap: 5px;
+      }
+
+      .lo-chip {
+        display: block;
+        color: var(--text);
       }
 
       .status-row {
@@ -528,6 +596,7 @@
       @media (max-width: 960px) {
         .layout,
         .split,
+        .landscape-workspace,
         .callouts,
         .prompt-grid,
         .workflow-map {
@@ -633,67 +702,69 @@
         </aside>
 
         <section class="stack">
-          <div class="panel">
-            <div class="row" style="justify-content: space-between;">
-              <h2>Learning Outcomes</h2>
-              <span class="badge" id="subjectBadge">Mathematics</span>
-            </div>
-            <div id="loList" class="lo-list">
-              <div class="lo-item">
-                <div></div>
-                <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to show Learning Outcomes.</div>
+          <div class="landscape-workspace">
+            <div class="panel">
+              <div class="row" style="justify-content: space-between;">
+                <h2>Learning Outcomes</h2>
+                <span class="badge" id="subjectBadge">Mathematics</span>
               </div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h2>LO Grouping and Scripts</h2>
-            <p class="note">Choose Grade, Chapter, and Subtopic filters. Group all visible Learning Outcomes first, then generate and validate all grouped scripts in one run.</p>
-            <div class="workflow-map">
-              <div class="step-box">
-                <span class="badge">Step 1</span>
-                <strong>Upload and filter</strong>
-                <p class="note">The visible LO list is the source set.</p>
-              </div>
-              <div class="step-box">
-                <span class="badge">Step 2</span>
-                <strong>Group LOs</strong>
-                <p class="note">Shows the grouped LO sets before script generation.</p>
-              </div>
-              <div class="step-box">
-                <span class="badge">Step 3</span>
-                <strong>Generate and validate</strong>
-                <p class="note">One click generates the queue and validates each script as soon as it is ready.</p>
-              </div>
-            </div>
-            <div class="action-row">
-              <button type="button" class="primary-action" id="runGrouping">Group LOs</button>
-              <button type="button" class="primary-action" id="runApproved" disabled>Generate + Validate All Scripts</button>
-              <button type="button" class="primary-action hidden" id="validateScripts" disabled>Validate All Scripts</button>
-              <button type="button" class="secondary hidden" id="regenerateFailed" disabled>Regenerate Failed Scripts</button>
-              <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
-              <button type="button" class="secondary" id="useApprovedScript" disabled>Send to Phase 2</button>
-              <button type="button" class="danger" id="stopScriptWorkflow" disabled>Stop</button>
-            </div>
-            <div class="action-row hidden">
-              <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
-              <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all visible Learning Outcomes.</span>
-            </div>
-            <details style="margin-top: 12px;">
-              <summary>Advanced manual script steps</summary>
-              <div class="row">
-                <button type="button" class="secondary" id="generateScript">Generate Script</button>
-                <button type="button" class="secondary" id="validateScript">Validate Script</button>
-                <button type="button" class="secondary hidden" id="testUi">Test UI</button>
-              </div>
-            </details>
-            <div id="groupedScriptsList" class="group-list">
-              <div class="group-item">
-                <div>
-                  <strong>No grouped scripts yet</strong>
-                  <div class="note">Click Group LOs to create the script queue.</div>
+              <div id="loList" class="lo-list">
+                <div class="lo-item">
+                  <div></div>
+                  <div class="lo-text"><span class="lo-meta">Waiting for upload</span>Upload an Excel file to show Learning Outcomes.</div>
                 </div>
-                <span class="badge">Waiting</span>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h2>LO Grouping and Scripts</h2>
+              <p class="note">Choose Grade, Chapter, and Subtopic filters. Group all visible Learning Outcomes first, then generate and validate all grouped scripts in one run.</p>
+              <div class="workflow-map">
+                <div class="step-box">
+                  <span class="badge">Step 1</span>
+                  <strong>Upload and filter</strong>
+                  <p class="note">The visible LO list is the source set.</p>
+                </div>
+                <div class="step-box">
+                  <span class="badge">Step 2</span>
+                  <strong>Group LOs</strong>
+                  <p class="note">Shows the grouped LO sets before script generation.</p>
+                </div>
+                <div class="step-box">
+                  <span class="badge">Step 3</span>
+                  <strong>Generate and validate</strong>
+                  <p class="note">One click generates the queue and validates each script as soon as it is ready.</p>
+                </div>
+              </div>
+              <div class="action-row">
+                <button type="button" class="primary-action" id="runGrouping">Group LOs</button>
+                <button type="button" class="primary-action" id="runApproved" disabled>Generate + Validate All Scripts</button>
+                <button type="button" class="primary-action hidden" id="validateScripts" disabled>Validate All Scripts</button>
+                <button type="button" class="secondary hidden" id="regenerateFailed" disabled>Regenerate Failed Scripts</button>
+                <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
+                <button type="button" class="secondary" id="useApprovedScript" disabled>Send to Phase 2</button>
+                <button type="button" class="danger" id="stopScriptWorkflow" disabled>Stop</button>
+              </div>
+              <div class="action-row hidden">
+                <button type="button" class="primary-action" id="generateBulkPython">Download Everything ZIP</button>
+                <span class="note">Runs grouping, transcript generation, validation, storyboard, and Python for all visible Learning Outcomes.</span>
+              </div>
+              <details style="margin-top: 12px;">
+                <summary>Advanced manual script steps</summary>
+                <div class="row">
+                  <button type="button" class="secondary" id="generateScript">Generate Script</button>
+                  <button type="button" class="secondary" id="validateScript">Validate Script</button>
+                  <button type="button" class="secondary hidden" id="testUi">Test UI</button>
+                </div>
+              </details>
+              <div id="groupedScriptsList" class="group-list">
+                <div class="group-item">
+                  <div>
+                    <strong>No grouped scripts yet</strong>
+                    <div class="note">Click Group LOs to create the script queue.</div>
+                  </div>
+                  <span class="badge">Waiting</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1469,10 +1540,27 @@
         renderGroupedScriptsList();
       }
 
-      function renderGroupedScriptsList() {
-        if (!els.groupedScriptsList) return;
-        if (!state.scriptRuns.length) {
-          els.groupedScriptsList.innerHTML = `
+      function extractCcText(group) {
+        const text = String(group.learningOutcomes || "");
+        const ccLine = text.match(/^\s*CC:\s*(.+?)\s*$/im) || text.match(/^\s*(CC\s+[^\n]+)$/im);
+        return ccLine ? ccLine[1].trim() : "";
+      }
+
+      function loLinesForGroup(group) {
+        const lines = String(group.learningOutcomes || "")
+          .split(/\n+/)
+          .map((line) => line.trim())
+          .filter(Boolean)
+          .filter((line) => !/^START_SCRIPT_GROUP$/i.test(line) && !/^END_SCRIPT_GROUP$/i.test(line))
+          .filter((line) => !/^TITLE:/i.test(line) && !/^CC:/i.test(line) && !/^LOS:/i.test(line))
+          .filter((line) => !line.startsWith(group.title || ""));
+        const loLines = lines.filter((line) => /^LO\s*\d+[.:]/i.test(line));
+        return loLines.length ? loLines : lines.slice(0, 4);
+      }
+
+      function groupedScriptsTableHtml(groups, includeAttempts = true) {
+        if (!groups.length) {
+          return `
             <div class="group-item">
               <div>
                 <strong>No grouped scripts yet</strong>
@@ -1481,22 +1569,44 @@
               <span class="badge">Waiting</span>
             </div>
           `;
-          return;
         }
-        els.groupedScriptsList.innerHTML = "";
-        state.scriptRuns.forEach((item, index) => {
-          const row = document.createElement("div");
-          row.className = "group-item";
-          const loCount = (item.learningOutcomes.match(/\bLO\s+\d+[.:]/gi) || []).length;
-          row.innerHTML = `
-            <div>
-              <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
-              <div class="note">${loCount ? `${loCount} Learning Outcome(s)` : "Grouped Learning Outcomes ready"}</div>
-            </div>
-            <span class="badge ${badgeClass(item.status)}">${escapeHtml(item.status || "Grouped")}</span>
-          `;
-          els.groupedScriptsList.appendChild(row);
-        });
+        return `
+          <table class="group-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Script</th>
+                <th>CC</th>
+                <th>Learning Outcomes</th>
+                <th>Status</th>
+                ${includeAttempts ? "<th>Attempts</th>" : ""}
+              </tr>
+            </thead>
+            <tbody>
+              ${groups.map((item, index) => {
+                const loLines = loLinesForGroup(item);
+                return `
+                  <tr>
+                    <td>${index + 1}</td>
+                    <td>${escapeHtml(item.title || `Script ${index + 1}`)}</td>
+                    <td>${escapeHtml(extractCcText(item) || item.subtopic || "-")}</td>
+                    <td><div class="lo-lines">${loLines.map((line) => `<span class="lo-chip">${escapeHtml(line)}</span>`).join("")}</div></td>
+                    <td><span class="badge ${badgeClass(item.status)}">${escapeHtml(item.status || "Grouped")}</span></td>
+                    ${includeAttempts ? `<td>${Number(item.attemptsUsed || 0)} / ${MAX_REGENERATIONS}</td>` : ""}
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+        `;
+      }
+
+      function renderGroupedScriptsList() {
+        if (!els.groupedScriptsList) return;
+        els.groupedScriptsList.innerHTML = groupedScriptsTableHtml(state.scriptRuns);
+        if (state.activeTab === "grouping") {
+          setTab("grouping");
+        }
       }
 
       function clearGeneratedWorkflow() {
@@ -1654,6 +1764,11 @@
       function setTab(tab) {
         state.activeTab = tab;
         document.querySelectorAll(".tab").forEach((button) => button.classList.toggle("active", button.dataset.tab === tab));
+        els.outputBox.classList.toggle("table-mode", tab === "grouping" && state.scriptRuns.length > 0);
+        if (tab === "grouping" && state.scriptRuns.length > 0) {
+          els.outputBox.innerHTML = groupedScriptsTableHtml(state.scriptRuns);
+          return;
+        }
         const scriptRunValidation = state.scriptRuns.length
           ? state.scriptRuns.map((item) => `${item.title}\nStatus: ${item.status}\n\n${item.validationReport || "No validation report yet."}`).join("\n\n---\n\n")
           : "";
@@ -1677,6 +1792,7 @@
           python: state.pythonCode || "No Python code generated yet.",
           package: state.animationPackage || "No full package generated yet.",
         };
+        els.outputBox.innerHTML = "";
         els.outputBox.textContent = content[tab] || "";
       }
 
