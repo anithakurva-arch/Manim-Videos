@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Conceptual Script Generator</title>
+    <title>Manim Videos</title>
     <style>
       :root {
         color-scheme: light;
@@ -117,6 +117,66 @@
         margin: 8px 0 0;
         color: var(--muted);
         font-size: 14px;
+      }
+
+      .process-line {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(120px, 1fr));
+        gap: 8px;
+        margin-top: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .process-step {
+        position: relative;
+        min-height: 64px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fffefa;
+        padding: 9px 10px;
+      }
+
+      .process-step::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        width: 8px;
+        height: 1px;
+        background: var(--line);
+      }
+
+      .process-step:last-child::after {
+        display: none;
+      }
+
+      .process-step span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        background: #f5f2ff;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .process-step strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.25;
+      }
+
+      .process-step small {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.3;
       }
 
       .pill {
@@ -598,6 +658,7 @@
         .split,
         .landscape-workspace,
         .callouts,
+        .process-line,
         .prompt-grid,
         .workflow-map {
           grid-template-columns: 1fr;
@@ -617,11 +678,53 @@
     <main>
       <header>
         <div>
-          <h1>Conceptual Script Generator</h1>
+          <h1>Manim Videos</h1>
           <p class="subtitle">Upload outcomes, group LOs, generate approved scripts, then turn them into animation storyboard and Manim Python code.</p>
         </div>
         <div class="pill"><span class="dot"></span> Script + Animation<span id="maxRegenerationsLabel" class="hidden">{{ max_regenerations|default(3) }}</span></div>
       </header>
+      <div class="process-line" aria-label="Workflow process">
+        <div class="process-step">
+          <span>1</span>
+          <strong>Validate Key</strong>
+          <small>Claude Opus 4.6</small>
+        </div>
+        <div class="process-step">
+          <span>2</span>
+          <strong>Upload Excel</strong>
+          <small>Read all LO rows</small>
+        </div>
+        <div class="process-step">
+          <span>3</span>
+          <strong>Filter LOs</strong>
+          <small>Grade, chapter, subtopic</small>
+        </div>
+        <div class="process-step">
+          <span>4</span>
+          <strong>Group LOs</strong>
+          <small>Create script sets</small>
+        </div>
+        <div class="process-step">
+          <span>5</span>
+          <strong>Generate Scripts</strong>
+          <small>One API call per group</small>
+        </div>
+        <div class="process-step">
+          <span>6</span>
+          <strong>Validate Scripts</strong>
+          <small>One API call per script</small>
+        </div>
+        <div class="process-step">
+          <span>7</span>
+          <strong>Regenerate Failed</strong>
+          <small>Retry failed rows</small>
+        </div>
+        <div class="process-step">
+          <span>8</span>
+          <strong>Phase 2 Animation</strong>
+          <small>Storyboard + Python</small>
+        </div>
+      </div>
       <div id="statusBanner" class="message">UI loaded. Upload an Excel file to begin.</div>
 
       <div class="callouts">
