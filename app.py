@@ -609,6 +609,29 @@ def grouped_script_blocks(grouping_text):
     text = str(grouping_text or "").strip()
     if not text:
         return []
+
+    marker_blocks = re.findall(
+        r"(?is)START_SCRIPT_GROUP\s*(.*?)\s*END_SCRIPT_GROUP",
+        text,
+    )
+    if marker_blocks:
+        blocks = []
+        for index, block in enumerate(marker_blocks, start=1):
+            title_match = re.search(r"(?im)^\s*TITLE:\s*(.+?)\s*$", block)
+            title = title_match.group(1).strip() if title_match else f"Script {index}"
+            cc_match = re.search(r"(?im)^\s*CC:\s*(.+?)\s*$", block)
+            los_match = re.search(r"(?ims)^\s*LOS:\s*(.+)$", block)
+            parts = [title]
+            if cc_match:
+                parts.append(cc_match.group(1).strip())
+            if los_match:
+                parts.append(los_match.group(1).strip())
+            learning_outcomes = "\n".join(part for part in parts if part).strip()
+            if learning_outcomes:
+                blocks.append({"title": title, "learningOutcomes": learning_outcomes})
+        if blocks:
+            return blocks
+
     matches = list(
         re.finditer(
             r"(?im)(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?",

@@ -444,6 +444,29 @@
         gap: 8px;
       }
 
+      .group-list {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .group-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcff;
+        padding: 10px;
+      }
+
+      .group-item strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 13px;
+      }
+
       .status-row {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -664,6 +687,15 @@
                 <button type="button" class="secondary hidden" id="testUi">Test UI</button>
               </div>
             </details>
+            <div id="groupedScriptsList" class="group-list">
+              <div class="group-item">
+                <div>
+                  <strong>No grouped scripts yet</strong>
+                  <div class="note">Click Group LOs to create the script queue.</div>
+                </div>
+                <span class="badge">Waiting</span>
+              </div>
+            </div>
           </div>
 
           <div class="panel">
@@ -821,6 +853,7 @@
         downloadApproved: document.getElementById("downloadApproved"),
         outputBox: document.getElementById("outputBox"),
         statusList: document.getElementById("statusList"),
+        groupedScriptsList: document.getElementById("groupedScriptsList"),
         downloadNote: document.getElementById("downloadNote"),
         promptLibrary: document.getElementById("promptLibrary"),
         statusBanner: document.getElementById("statusBanner"),
@@ -1281,6 +1314,18 @@
       function groupedScriptsFromText(text) {
         const source = String(text || "").trim();
         if (!source) return [];
+        const markerMatches = Array.from(source.matchAll(/START_SCRIPT_GROUP\s*([\s\S]*?)\s*END_SCRIPT_GROUP/gim));
+        if (markerMatches.length) {
+          return markerMatches.map((match, index) => {
+            const block = match[1] || "";
+            const titleMatch = block.match(/^\s*TITLE:\s*(.+?)\s*$/im);
+            const ccMatch = block.match(/^\s*CC:\s*(.+?)\s*$/im);
+            const losMatch = block.match(/^\s*LOS:\s*([\s\S]*)$/im);
+            const title = titleMatch ? titleMatch[1].trim() : `Script ${index + 1}`;
+            const learningOutcomes = [title, ccMatch?.[1]?.trim(), losMatch?.[1]?.trim()].filter(Boolean).join("\n");
+            return { title, learningOutcomes, subtopic: els.subtopicSelect.value || "" };
+          }).filter((group) => group.learningOutcomes);
+        }
         const matches = Array.from(source.matchAll(/(?:^|\|)\s*(?:#+\s*)?(?:\*\*)?(Script\s+\d+(?:\s+CC\s+[A-Za-z0-9._-]+)?)(?:\*\*)?/gim));
         if (!matches.length) return [];
         return matches.map((match, index) => {
@@ -1313,6 +1358,37 @@
         state.history = [];
         state.status = status;
         renderStatus();
+        renderGroupedScriptsList();
+      }
+
+      function renderGroupedScriptsList() {
+        if (!els.groupedScriptsList) return;
+        if (!state.scriptRuns.length) {
+          els.groupedScriptsList.innerHTML = `
+            <div class="group-item">
+              <div>
+                <strong>No grouped scripts yet</strong>
+                <div class="note">Click Group LOs to create the script queue.</div>
+              </div>
+              <span class="badge">Waiting</span>
+            </div>
+          `;
+          return;
+        }
+        els.groupedScriptsList.innerHTML = "";
+        state.scriptRuns.forEach((item, index) => {
+          const row = document.createElement("div");
+          row.className = "group-item";
+          const loCount = (item.learningOutcomes.match(/\bLO\s+\d+[.:]/gi) || []).length;
+          row.innerHTML = `
+            <div>
+              <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
+              <div class="note">${loCount ? `${loCount} Learning Outcome(s)` : "Grouped Learning Outcomes ready"}</div>
+            </div>
+            <span class="badge ${badgeClass(item.status)}">${escapeHtml(item.status || "Grouped")}</span>
+          `;
+          els.groupedScriptsList.appendChild(row);
+        });
       }
 
       function clearGeneratedWorkflow() {
@@ -1576,6 +1652,7 @@
           els.downloadNote.textContent = approved
             ? "All selected scripts are Approved and ready for animation."
             : "Send to Animation is locked until every selected script is Approved.";
+          renderGroupedScriptsList();
           renderWorkflowControls();
           return;
         }
@@ -1608,6 +1685,7 @@
         els.downloadNote.textContent = approved
           ? "Download is available because the latest script is Approved."
           : "Download is locked until the latest selected workflow is Approved.";
+        renderGroupedScriptsList();
         renderWorkflowControls();
       }
 

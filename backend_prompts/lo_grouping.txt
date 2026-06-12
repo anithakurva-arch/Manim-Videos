@@ -67,4 +67,31 @@ LOs Covered format: write each LO as LO [N]. [Full text of the LO].
 When a script covers multiple LOs, list each full LO on its own line within the same cell.
 Never use shorthand like LO1 or LO2, LO3. Always print the full LO text.
 
+MACHINE-READABLE COPY FOR THE APP
+After the visible grouping summary, print a second copy using this exact block format.
+This copy is required so the app can create one script-generation row per grouped script.
+Do not skip it.
+
+GROUPING SCRIPT BLOCKS
+START_SCRIPT_GROUP
+TITLE: Script 1 CC 02
+CC: CC 02 {{CCName}}
+LOS:
+LO 1. [Full text of LO1]
+END_SCRIPT_GROUP
+
+START_SCRIPT_GROUP
+TITLE: Script 2 CC 02
+CC: CC 02 {{CCName}}
+LOS:
+LO 2. [Full text of LO2]
+LO 3. [Full text of LO3]
+END_SCRIPT_GROUP
+
+Rules for GROUPING SCRIPT BLOCKS:
+Print one START_SCRIPT_GROUP ... END_SCRIPT_GROUP block for every grouped script.
+Every grouped script from the visible summary must appear exactly once in this block copy.
+The TITLE value must use Script [N] CC [CC Number].
+The LOS section must include the full LO text, one LO per line.
+
 Now execute the analysis and produce the grouping summary table.
