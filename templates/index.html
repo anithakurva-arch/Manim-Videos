@@ -711,7 +711,7 @@
       <header>
         <div>
           <h1>Manim Videos</h1>
-          <p class="subtitle">Upload outcomes, group LOs, generate approved scripts, then turn them into animation storyboard and Manim Python code.</p>
+          <p class="subtitle">Upload outcomes, group LOs, generate Phase 2 ready scripts, then turn them into animation storyboard and Manim Python code.</p>
         </div>
         <div class="pill"><span class="dot"></span> Script + Animation<span id="maxRegenerationsLabel" class="hidden">{{ max_regenerations|default(3) }}</span></div>
       </header>
@@ -857,7 +857,7 @@
                 <button type="button" class="primary-action" id="runGrouping">Group LOs</button>
                 <button type="button" class="primary-action" id="runApproved" disabled>Generate + Validate All Scripts</button>
                 <button type="button" class="primary-action hidden" id="validateScripts" disabled>Validate All Scripts</button>
-                <button type="button" class="secondary hidden" id="regenerateFailed" disabled>Regenerate Failed Scripts</button>
+                <button type="button" class="secondary hidden" id="regenerateFailed" disabled>Regenerate Rejected Scripts</button>
                 <button type="button" class="secondary" id="downloadApproved" disabled>Download Script</button>
                 <button type="button" class="secondary" id="useApprovedScript" disabled>Send to Phase 2</button>
                 <button type="button" class="danger" id="stopScriptWorkflow" disabled>Stop</button>
@@ -888,7 +888,7 @@
 
           <div class="panel">
             <h2>Phase 2 Animation</h2>
-            <p class="note">Use the approved script or paste a transcript, then create storyboard and Python animation code.</p>
+            <p class="note">Use the Phase 2 ready script or paste a transcript, then create storyboard and Python animation code.</p>
             <div class="stack">
               <div class="field">
                 <label for="animationTitle">Animation title</label>
@@ -896,7 +896,7 @@
               </div>
               <div class="field">
                 <label for="animationTranscript">Transcript for animation</label>
-                <textarea id="animationTranscript" placeholder="Paste transcript here, or use the latest approved/generated script."></textarea>
+                <textarea id="animationTranscript" placeholder="Paste transcript here, or use the latest Phase 2 ready script."></textarea>
               </div>
             </div>
             <div class="action-row">
@@ -973,7 +973,7 @@
                 </div>
               </div>
               <div class="divider"></div>
-              <p class="note" id="downloadNote">Download is locked until the latest selected workflow is Approved.</p>
+              <p class="note" id="downloadNote">Download is locked until scripts are Approved or marked Needs Minor Revision.</p>
             </section>
           </div>
         </section>
@@ -1484,25 +1484,35 @@
         return [row.grade, row.chapter, row.subtopic, row.lo].filter(Boolean).join(" / ");
       }
 
-      function approvedScriptRuns() {
-        return state.scriptRuns.filter((item) => item.status === "Approved" && item.script);
+      const PHASE2_READY_STATUSES = new Set(["Approved", "Needs Minor Revision"]);
+      const REGENERATION_STATUSES = new Set(["Rejected", "Needs Review", "Max Attempts Reached", "Failed"]);
+
+      function isPhase2ReadyStatus(status) {
+        return PHASE2_READY_STATUSES.has(status);
+      }
+
+      function phase2ReadyScriptRuns() {
+        return state.scriptRuns.filter((item) => isPhase2ReadyStatus(item.status) && item.script);
       }
 
       function failedScriptRuns() {
-        const failedStatuses = new Set(["Rejected", "Needs Minor Revision", "Needs Review", "Max Attempts Reached", "Failed"]);
-        return state.scriptRuns.filter((item) => failedStatuses.has(item.status));
+        return state.scriptRuns.filter((item) => REGENERATION_STATUSES.has(item.status));
       }
 
       function scriptNeedsRegeneration(status) {
-        return ["Rejected", "Needs Minor Revision", "Needs Review", "Failed"].includes(status);
+        return REGENERATION_STATUSES.has(status);
       }
 
       function allScriptRunsApproved() {
         return state.scriptRuns.length > 0 && state.scriptRuns.every((item) => item.status === "Approved");
       }
 
+      function allScriptRunsPhase2Ready() {
+        return state.scriptRuns.length > 0 && state.scriptRuns.every((item) => isPhase2ReadyStatus(item.status));
+      }
+
       function scriptsReadyForValidation() {
-        return state.scriptRuns.some((item) => item.script && item.status !== "Approved");
+        return state.scriptRuns.some((item) => item.script && !isPhase2ReadyStatus(item.status));
       }
 
       function workflowIsRunning() {
@@ -1581,7 +1591,7 @@
       }
 
       function combinedApprovedScriptText() {
-        return approvedScriptRuns()
+        return phase2ReadyScriptRuns()
           .map((item, index) => `SCRIPT ${index + 1}: ${item.title}\n\n${item.script}`)
           .join("\n\n---\n\n");
       }
@@ -1611,11 +1621,13 @@
         state.script = progress.script || combinedGeneratedScriptText();
         state.validation = progress.validation || state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
-        state.status = progress.phase === "complete" ? (allScriptRunsApproved() ? "Approved" : "Needs Review") : "Running";
+        state.status = progress.phase === "complete" ? (allScriptRunsPhase2Ready() ? "Ready for Phase 2" : "Needs Review") : "Running";
         if (["generating", "generated"].includes(progress.phase)) {
           setActiveProcess("generate");
         } else if (["validating", "validated"].includes(progress.phase)) {
           setActiveProcess("validate");
+        } else if (progress.phase === "regenerating") {
+          setActiveProcess("regenerate");
         }
         renderStatus();
         const current = Number(progress.currentIndex || 0) + 1;
@@ -1632,10 +1644,10 @@
         setActiveProcess("");
         state.script = data.script || combinedGeneratedScriptText();
         state.validation = data.validation || state.validation;
-        state.status = data.status || (allScriptRunsApproved() ? "Approved" : "Needs Review");
+        state.status = data.status || (allScriptRunsPhase2Ready() ? "Ready for Phase 2" : "Needs Review");
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
         renderStatus();
-        setTab(allScriptRunsApproved() ? "script" : "validation");
+        setTab(allScriptRunsPhase2Ready() ? "script" : "validation");
       }
 
       function groupedScriptsWithContext(groups) {
@@ -1670,7 +1682,7 @@
         function scriptKey(title) {
           const match = String(title || "").match(/\bScript\s+(\d+)\b/i);
           if (match) return `script-${String(Number(match[1])).padStart(4, "0")}`;
-          return String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, "") || `script-${Math.random()}`;
+          return String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
         }
 
         function scriptNumber(group) {
@@ -1682,7 +1694,7 @@
           const byKey = new Map();
           const keys = [];
           groups.forEach((group) => {
-            const key = scriptKey(group.title);
+            const key = scriptKey(group.title) || `script-${String(keys.length + 1).padStart(4, "0")}`;
             if (!byKey.has(key)) {
               keys.push(key);
               byKey.set(key, group);
@@ -1900,10 +1912,10 @@
         }
         state.script = combinedGeneratedScriptText();
         state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
-        state.status = allScriptRunsApproved() ? "Approved" : "Needs Review";
+        state.status = allScriptRunsPhase2Ready() ? "Ready for Phase 2" : "Needs Review";
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
         renderStatus();
-        setTab(allScriptRunsApproved() ? "script" : "validation");
+        setTab(allScriptRunsPhase2Ready() ? "script" : "validation");
       }
 
       async function generateAndValidatePipeline(indexes, signal) {
@@ -1941,10 +1953,10 @@
         if (validationTasks.length) await Promise.all(validationTasks);
         state.script = combinedGeneratedScriptText();
         state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
-        state.status = allScriptRunsApproved() ? "Approved" : "Needs Review";
+        state.status = allScriptRunsPhase2Ready() ? "Ready for Phase 2" : "Needs Review";
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
         renderStatus();
-        setTab(allScriptRunsApproved() ? "script" : "validation");
+        setTab(allScriptRunsPhase2Ready() ? "script" : "validation");
       }
 
       function selectAllVisibleOutcomes() {
@@ -2063,12 +2075,12 @@
             `;
             els.statusList.appendChild(row);
           });
-          const approved = allScriptRunsApproved();
-          els.downloadApproved.disabled = !approved;
-          els.useApprovedScript.disabled = !approved;
-          els.downloadNote.textContent = approved
-            ? "All selected scripts are Approved and ready for animation."
-            : "Send to Animation is locked until every selected script is Approved.";
+          const phase2Ready = allScriptRunsPhase2Ready();
+          els.downloadApproved.disabled = !phase2Ready;
+          els.useApprovedScript.disabled = !phase2Ready;
+          els.downloadNote.textContent = phase2Ready
+            ? "All selected scripts are Approved or marked Needs Minor Revision and are ready for animation."
+            : "Send to Phase 2 is locked until rejected scripts are regenerated.";
           renderGroupedScriptsList();
           renderWorkflowControls();
           return;
@@ -2096,12 +2108,12 @@
           `;
           els.statusList.appendChild(row);
         });
-        const approved = state.status === "Approved";
-        els.downloadApproved.disabled = !approved;
-        els.useApprovedScript.disabled = !approved;
-        els.downloadNote.textContent = approved
-          ? "Download is available because the latest script is Approved."
-          : "Download is locked until the latest selected workflow is Approved.";
+        const phase2Ready = isPhase2ReadyStatus(state.status);
+        els.downloadApproved.disabled = !phase2Ready;
+        els.useApprovedScript.disabled = !phase2Ready;
+        els.downloadNote.textContent = phase2Ready
+          ? "Download is available because the latest script is ready for Phase 2."
+          : "Download is locked until the latest script is Approved or Needs Minor Revision.";
         renderGroupedScriptsList();
         renderWorkflowControls();
       }
@@ -2118,6 +2130,16 @@
       function saveTextFile(filename, text, type = "text/plain") {
         const blob = new Blob([text], { type });
         saveBlobFile(filename, blob);
+      }
+
+      function slugifyFilename(value, fallback = "animation_scene") {
+        const slug = String(value || "")
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "_")
+          .replace(/^_+|_+$/g, "")
+          .slice(0, 80);
+        return slug || fallback;
       }
 
       function saveBlobFile(filename, blob) {
@@ -2276,11 +2298,17 @@
       });
 
       els.useApprovedScript.addEventListener("click", () => {
+        const readyScripts = phase2ReadyScriptRuns();
         const script = combinedApprovedScriptText() || state.script.trim();
-        if (!script) return showMessage("Generate or approve a script first, or paste a transcript manually.", "warn");
-        if (state.scriptRuns.length && !allScriptRunsApproved()) return showMessage("Approve every grouped script before sending to Phase 2.", "warn");
+        if (!script) return showMessage("Generate and validate scripts first, or paste a transcript manually.", "warn");
+        if (state.scriptRuns.length && !allScriptRunsPhase2Ready()) return showMessage("Regenerate rejected scripts before sending to Phase 2. Needs Minor Revision can continue.", "warn");
         els.animationTranscript.value = script;
-        showMessage("Approved grouped script content copied into Phase 2 transcript.", "good");
+        if (!els.animationTitle.value.trim() || els.animationTitle.value.trim() === "Area of a Rectangle") {
+          els.animationTitle.value = readyScripts.length === 1
+            ? readyScripts[0].title
+            : `${els.chapterSelect.value || "Phase 2 Ready Scripts"} - ${readyScripts.length || 1} Scripts`;
+        }
+        showMessage("Phase 2 ready script content copied into the animation transcript.", "good");
       });
 
       els.generateStoryboard.addEventListener("click", async () => {
@@ -2355,7 +2383,7 @@
 
       els.downloadPython.addEventListener("click", () => {
         if (!state.pythonCode) return showMessage("Generate Python code first.", "warn");
-        saveTextFile("animation_scene.py", state.pythonCode, "text/x-python");
+        saveTextFile(`${slugifyFilename(els.animationTitle.value || "animation_scene")}.py`, state.pythonCode, "text/x-python");
         showMessage("Python file downloaded.", "good");
       });
 
@@ -2455,7 +2483,7 @@
           };
           renderStatus();
           setTab("validation");
-          showMessage(`Validation completed: ${data.status}.`, data.status === "Approved" ? "good" : "warn");
+          showMessage(`Validation completed: ${data.status}.`, isPhase2ReadyStatus(data.status) ? "good" : "warn");
         } catch (error) {
           showMessage(isAbortError(error) ? "Script validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
@@ -2474,11 +2502,11 @@
           if (!state.scriptRuns.length) seedGroupedScriptRuns(state.groupedScripts, "Grouped");
           state.scriptRuns = state.scriptRuns.map((item) => ({
             ...item,
-            status: item.status === "Approved" ? "Approved" : "Queued",
-            attemptsUsed: item.status === "Approved" ? item.attemptsUsed : 0,
-            script: item.status === "Approved" ? item.script : "",
-            validationReport: item.status === "Approved" ? item.validationReport : "",
-            history: item.status === "Approved" ? item.history : [],
+            status: isPhase2ReadyStatus(item.status) ? item.status : "Queued",
+            attemptsUsed: isPhase2ReadyStatus(item.status) ? item.attemptsUsed : 0,
+            script: isPhase2ReadyStatus(item.status) ? item.script : "",
+            validationReport: isPhase2ReadyStatus(item.status) ? item.validationReport : "",
+            history: isPhase2ReadyStatus(item.status) ? item.history : [],
           }));
           renderStatus();
           const data = await apiPost("/api/script-batch", buildScriptBatchPayload(), claudeHeaders(), {
@@ -2486,10 +2514,10 @@
             onProgress: applyBatchProgress,
           });
           applyBatchResult(data);
-          if (allScriptRunsApproved()) {
-            showMessage(`Generated and validated all ${state.scriptRuns.length} script(s). All scripts are Approved.`, "good");
+          if (allScriptRunsPhase2Ready()) {
+            showMessage(`Generated and validated all ${state.scriptRuns.length} script(s). Approved and Needs Minor Revision scripts are ready for Phase 2.`, "good");
           } else {
-            showMessage("Generation and validation finished. Review each status row; use Regenerate Failed Scripts for remaining failures.", "warn");
+            showMessage("Generation and validation finished. Regenerate rejected scripts; Needs Minor Revision can continue to Phase 2.", "warn");
           }
         } catch (error) {
           if (isAbortError(error)) {
@@ -2517,7 +2545,7 @@
       els.validateScripts.addEventListener("click", async () => {
         const indexes = state.scriptRuns
           .map((item, index) => ({ item, index }))
-          .filter(({ item }) => item.script && item.status !== "Approved")
+          .filter(({ item }) => item.script && !isPhase2ReadyStatus(item.status))
           .map(({ index }) => index);
         if (!indexes.length) return showMessage("Generate scripts before validation.", "warn");
         const signal = beginSection("scripts");
@@ -2525,10 +2553,10 @@
         setBusy(els.validateScripts, true, "Validating all...");
         try {
           await validateScriptRuns(indexes, signal);
-          if (allScriptRunsApproved()) {
-            showMessage(`All ${state.scriptRuns.length} script(s) are Approved. Use Send to Phase 2 when ready.`, "good");
+          if (allScriptRunsPhase2Ready()) {
+            showMessage(`All ${state.scriptRuns.length} script(s) are ready for Phase 2.`, "good");
           } else {
-            showMessage("Validation finished. Some scripts still did not reach Approved after automatic regeneration; review each status row.", "warn");
+            showMessage("Validation finished. Regenerate rejected scripts; Needs Minor Revision can continue to Phase 2.", "warn");
           }
         } catch (error) {
           if (isAbortError(error)) {
@@ -2554,12 +2582,11 @@
       });
 
       els.regenerateFailed.addEventListener("click", async () => {
-        const failedStatuses = new Set(["Rejected", "Needs Minor Revision", "Needs Review", "Max Attempts Reached", "Failed"]);
         const failedIndexes = state.scriptRuns
           .map((item, index) => ({ item, index }))
-          .filter(({ item }) => failedStatuses.has(item.status))
+          .filter(({ item }) => REGENERATION_STATUSES.has(item.status))
           .map(({ index }) => index);
-        if (!failedIndexes.length) return showMessage("No failed scripts need regeneration.", "good");
+        if (!failedIndexes.length) return showMessage("No rejected scripts need regeneration.", "good");
         const signal = beginSection("scripts");
         setActiveProcess("regenerate");
         setBusy(els.regenerateFailed, true, "Regenerating...");
@@ -2576,7 +2603,7 @@
             const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group), claudeHeaders(), { signal });
             state.scriptRuns[index] = {
               ...state.scriptRuns[index],
-              status: data.approved ? "Approved" : "Max Attempts Reached",
+              status: data.status || (data.phase2Ready ? "Needs Minor Revision" : "Max Attempts Reached"),
               attemptsUsed: data.attemptsUsed || state.scriptRuns[index].attemptsUsed || 0,
               script: data.script || state.scriptRuns[index].script || "",
               validationReport: data.validationReport || state.scriptRuns[index].validationReport || "",
@@ -2586,13 +2613,13 @@
           }
           state.script = combinedGeneratedScriptText();
           state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
-          state.status = allScriptRunsApproved() ? "Approved" : "Max Attempts Reached";
+          state.status = allScriptRunsPhase2Ready() ? "Ready for Phase 2" : "Max Attempts Reached";
           state.history = state.scriptRuns.flatMap((item) => item.history || []);
-          setTab(allScriptRunsApproved() ? "script" : "validation");
-          if (allScriptRunsApproved()) {
-            showMessage(`All ${state.scriptRuns.length} grouped script(s) are Approved. Use Send to Phase 2 when ready.`, "good");
+          setTab(allScriptRunsPhase2Ready() ? "script" : "validation");
+          if (allScriptRunsPhase2Ready()) {
+            showMessage(`All ${state.scriptRuns.length} grouped script(s) are ready for Phase 2.`, "good");
           } else {
-            showMessage("Some scripts still did not reach Approved status. Review validation before sending to Phase 2.", "bad");
+            showMessage("Some scripts are still rejected or failed. Regenerate them before Phase 2.", "bad");
           }
         } catch (error) {
           if (isAbortError(error)) {
@@ -2618,8 +2645,8 @@
       });
 
       els.downloadApproved.addEventListener("click", () => {
-        if (state.scriptRuns.length && !allScriptRunsApproved()) return showMessage("Only Approved scripts can be downloaded.", "warn");
-        if (!state.scriptRuns.length && state.status !== "Approved") return showMessage("Only Approved scripts can be downloaded.", "warn");
+        if (state.scriptRuns.length && !allScriptRunsPhase2Ready()) return showMessage("Only Approved or Needs Minor Revision scripts can be downloaded.", "warn");
+        if (!state.scriptRuns.length && !isPhase2ReadyStatus(state.status)) return showMessage("Only Approved or Needs Minor Revision scripts can be downloaded.", "warn");
         const payload = {
           status: state.status,
           grouping: state.grouping,
@@ -2635,7 +2662,7 @@
           history: state.history.map(({ attempt, status }) => ({ attempt, status })),
         };
         saveTextFile("approved_conceptual_script.json", JSON.stringify(payload, null, 2), "application/json");
-        showMessage("Approved script downloaded.", "good");
+        showMessage("Phase 2 ready script downloaded.", "good");
       });
 
       if (els.maxRegenerationsLabel) {

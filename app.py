@@ -23,6 +23,7 @@ PROMPTS_DIR = BASE_DIR / "backend_prompts"
 MAX_REGENERATIONS = 3
 DEFAULT_CLAUDE_MODEL = "claude-opus-4-6"
 MAX_LOS_PER_GROUPED_SCRIPT = 3
+PHASE2_READY_STATUSES = {"Approved", "Needs Minor Revision"}
 
 PROMPT_FILES = {
     "script_generation": "conceptual_script_generation.txt",
@@ -603,6 +604,10 @@ def extract_verdict(report):
     return "Needs Review"
 
 
+def is_phase2_ready_status(status):
+    return str(status or "").strip() in PHASE2_READY_STATUSES
+
+
 def script_prompt(grade, chapter, subtopic, outcomes_text):
     generation = fill_prompt(
         load_prompt("script_generation"),
@@ -650,7 +655,7 @@ def animation_metadata(payload):
 def animation_prompt(payload, mode):
     transcript = str(payload.get("transcript") or "").strip()
     if not transcript:
-        raise ValueError("Paste a transcript or use the approved script first.")
+        raise ValueError("Paste a transcript or use a Phase 2 ready script first.")
 
     meta = animation_metadata(payload)
     master_prompt = load_prompt("animation_phase")
@@ -697,15 +702,8 @@ def slugify_filename(value, fallback="animation"):
     return slug[:80] or fallback
 
 
-def unique_python_filename(outcome, used_names):
-    parts = [
-        outcome.get("grade"),
-        outcome.get("chapter"),
-        outcome.get("subtopic"),
-        outcome.get("cc"),
-        f"row_{outcome.get('row')}" if outcome.get("row") else "",
-    ]
-    base = slugify_filename("_".join(str(part) for part in parts if part), "animation_scene")
+def unique_python_filename(title, used_names):
+    base = slugify_filename(title, "animation_scene")
     filename = f"{base}.py"
     counter = 2
     while filename in used_names:
@@ -721,6 +719,10 @@ def animation_title_for_outcome(outcome):
         for part in [outcome.get("chapter"), outcome.get("subtopic"), outcome.get("cc")]
         if part
     ) or "Concept Animation"
+
+
+def script_animation_title(index, group):
+    return f"Script {index} - {animation_title_for_outcome(group)}"
 
 
 def bulk_groups_from_outcomes(outcomes):
@@ -748,17 +750,6 @@ def bulk_groups_from_outcomes(outcomes):
         grouped[key]["rows"].append(outcome.get("row"))
         grouped[key]["outcomes"].append(outcome)
     return list(grouped.values())
-
-
-def group_filename_seed(group):
-    rows = [str(row) for row in group.get("rows", []) if row]
-    return {
-        "grade": group.get("grade"),
-        "chapter": group.get("chapter"),
-        "subtopic": group.get("subtopic"),
-        "cc": group.get("cc"),
-        "row": rows[0] if rows else None,
-    }
 
 
 def bulk_learning_outcomes_text(outcomes):
@@ -1168,12 +1159,13 @@ def run_approved_result(payload):
 
         status = extract_verdict(report)
         history.append({"attempt": attempt, "status": status, "script": script, "validationReport": report})
-        if status == "Approved":
+        if is_phase2_ready_status(status):
             break
 
     return {
         "status": status,
         "approved": status == "Approved",
+        "phase2Ready": is_phase2_ready_status(status),
         "attemptsUsed": len(history),
         "maxRegenerations": MAX_REGENERATIONS,
         "script": script,
@@ -1285,6 +1277,38 @@ def script_batch_result(payload, job_id=None):
                 }
             )
             publish(index, "validated")
+
+            while item["status"] == "Rejected" and item["attemptsUsed"] < MAX_REGENERATIONS:
+                next_attempt = int(item["attemptsUsed"] or 0) + 1
+                item["status"] = "Regenerating"
+                publish(index, "regenerating")
+                revised = revise_result(
+                    {
+                        **item_payload,
+                        "script": item["script"],
+                        "validationReport": item["validationReport"],
+                        "attempt": next_attempt,
+                    }
+                )
+                item["script"] = revised.get("script", "")
+                item["attemptsUsed"] = int(revised.get("attempt") or next_attempt)
+                item["history"].append({"attempt": item["attemptsUsed"], "status": "Regenerated", "script": item["script"]})
+                publish(index, "generated")
+
+                item["status"] = "Validating"
+                publish(index, "validating")
+                validation = validate_result({**item_payload, "script": item["script"]})
+                item["status"] = validation.get("status") or "Needs Review"
+                item["validationReport"] = validation.get("report", "")
+                item["history"].append(
+                    {
+                        "attempt": item["attemptsUsed"],
+                        "status": item["status"],
+                        "script": item["script"],
+                        "validationReport": item["validationReport"],
+                    }
+                )
+                publish(index, "validated")
         except Exception as exc:
             item["status"] = "Failed"
             item["validationReport"] = str(exc) or exc.__class__.__name__
@@ -1293,9 +1317,11 @@ def script_batch_result(payload, job_id=None):
             continue
 
     approved = all(item.get("status") == "Approved" for item in script_runs)
+    phase2_ready = all(is_phase2_ready_status(item.get("status")) for item in script_runs)
     result = {
-        "status": "Approved" if approved else "Needs Review",
+        "status": "Approved" if approved else ("Ready for Phase 2" if phase2_ready else "Needs Review"),
         "approved": approved,
+        "phase2Ready": phase2_ready,
         "scripts": script_runs,
         "script": combined_script_text_from_runs(script_runs),
         "validation": combined_validation_text_from_runs(script_runs),
@@ -1536,9 +1562,9 @@ def bulk_python_scripts_route():
             grade = str(group.get("grade") or payload.get("grade") or "").strip()
             chapter = str(group.get("chapter") or payload.get("chapter") or "").strip()
             subtopic = str(group.get("subtopic") or payload.get("subtopic") or "").strip()
-            title = animation_title_for_outcome(group)
+            title = script_animation_title(index, group)
             outcomes_text = bulk_learning_outcomes_text(group["outcomes"])
-            filename = unique_python_filename(group_filename_seed(group), used_names)
+            filename = unique_python_filename(title, used_names)
             stem = filename[:-3]
             if not outcomes_text:
                 manifest.append({"index": index, "status": "skipped", "title": title, "error": "Missing Learning Outcome text."})
@@ -1578,14 +1604,14 @@ def bulk_python_scripts_route():
                         max_output_tokens=8000,
                     )
                     status = extract_verdict(validation_report)
-                    if status == "Approved":
+                    if is_phase2_ready_status(status):
                         break
 
                 archive.writestr(f"{stem}_grouped_los.txt", grouped_los)
                 archive.writestr(f"{stem}_validated_transcript.txt", transcript)
                 archive.writestr(f"{stem}_validation_report.txt", validation_report)
 
-                if status != "Approved":
+                if not is_phase2_ready_status(status):
                     manifest.append(
                         {
                             "index": index,
@@ -1676,10 +1702,10 @@ def bulk_python_scripts_route():
 def download_route():
     payload = request.get_json(force=True)
     scripts = payload.get("scripts") or []
-    approved = [script for script in scripts if script.get("status") == "Approved"]
-    if len(approved) != len(scripts):
-        return jsonify({"error": "Download is blocked until every selected script is Approved."}), 400
-    body = json.dumps({"approved_scripts": approved}, ensure_ascii=False, indent=2)
+    ready = [script for script in scripts if is_phase2_ready_status(script.get("status"))]
+    if len(ready) != len(scripts):
+        return jsonify({"error": "Download is blocked until every selected script is Approved or Needs Minor Revision."}), 400
+    body = json.dumps({"phase2_ready_scripts": ready}, ensure_ascii=False, indent=2)
     return Response(
         body,
         mimetype="application/json",
