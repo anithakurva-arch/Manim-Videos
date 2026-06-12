@@ -6,15 +6,15 @@
     <title>Manim Videos</title>
     <style>
       :root {
-        color-scheme: light;
-        --bg: #fbf7ff;
-        --surface: #fffefa;
-        --surface-soft: #eef8ff;
-        --text: #253047;
-        --muted: #687086;
-        --line: #dfd9ee;
-        --accent: #7b67d8;
-        --accent-dark: #604bbf;
+        color-scheme: dark;
+        --bg: #000;
+        --surface: #12131a;
+        --surface-soft: #191c25;
+        --text: #f7f3ff;
+        --muted: #b7bdd1;
+        --line: #34384a;
+        --accent: #8f7dff;
+        --accent-dark: #6f5dd9;
         --orange: #ffae73;
         --mint: #c9f3df;
         --sky: #d9efff;
@@ -26,9 +26,9 @@
         --coral-soft: #ffd9df;
         --leaf-soft: #dff6d7;
         --blue-soft: #dceeff;
-        --good: #17805d;
-        --warn: #9b6500;
-        --bad: #b42318;
+        --good: #61d6a5;
+        --warn: #ffd166;
+        --bad: #ff8178;
       }
 
       * {
@@ -37,10 +37,7 @@
 
       body {
         margin: 0;
-        background:
-          radial-gradient(circle at 12% 0%, rgba(255, 226, 235, 0.82), transparent 28%),
-          radial-gradient(circle at 90% 8%, rgba(215, 247, 241, 0.9), transparent 26%),
-          linear-gradient(135deg, #fbf7ff 0%, #eef8ff 52%, #fff8e8 100%);
+        background: #000;
         color: var(--text);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
@@ -68,13 +65,13 @@
       }
 
       button.secondary {
-        background: #fffefa;
+        background: #171923;
         color: var(--accent);
         border-color: var(--accent);
       }
 
       button.secondary:hover {
-        background: #f5f2ff;
+        background: #22253a;
       }
 
       button.danger {
@@ -98,7 +95,7 @@
         gap: 16px;
         align-items: flex-start;
         padding-bottom: 18px;
-        border-bottom: 1px solid #d8d0ea;
+        border-bottom: 1px solid var(--line);
       }
 
       h1,
@@ -143,9 +140,9 @@
         min-height: 64px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: linear-gradient(180deg, #fffefa 0%, var(--lilac) 100%);
+        background: linear-gradient(180deg, #171923 0%, #202337 100%);
         padding: 9px 10px;
-        box-shadow: 0 8px 18px rgba(83, 72, 130, 0.08);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
       }
 
       .process-step::after {
@@ -155,15 +152,15 @@
         right: -8px;
         width: 8px;
         height: 1px;
-        background: #cfc7e5;
+        background: var(--line);
       }
 
-      .process-step:nth-child(1) { background: linear-gradient(180deg, #fffefa 0%, var(--lilac) 100%); }
-      .process-step:nth-child(2) { background: linear-gradient(180deg, #fffefa 0%, var(--sky) 100%); }
-      .process-step:nth-child(3) { background: linear-gradient(180deg, #fffefa 0%, var(--aqua) 100%); }
-      .process-step:nth-child(4) { background: linear-gradient(180deg, #fffefa 0%, var(--mint) 100%); }
-      .process-step:nth-child(5) { background: linear-gradient(180deg, #fffefa 0%, var(--peach) 100%); }
-      .process-step:nth-child(6) { background: linear-gradient(180deg, #fffefa 0%, var(--butter) 100%); }
+      .process-step:nth-child(1) { border-top-color: var(--lilac); }
+      .process-step:nth-child(2) { border-top-color: var(--sky); }
+      .process-step:nth-child(3) { border-top-color: var(--aqua); }
+      .process-step:nth-child(4) { border-top-color: var(--mint); }
+      .process-step:nth-child(5) { border-top-color: var(--peach); }
+      .process-step:nth-child(6) { border-top-color: var(--butter); }
 
       .process-step:last-child::after {
         display: none;
@@ -188,8 +185,8 @@
         width: 24px;
         height: 24px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.76);
-        color: #4f419f;
+        background: #24283a;
+        color: #dcd6ff;
         border: 1px solid rgba(123, 103, 216, 0.28);
         font-size: 12px;
         font-weight: 800;
@@ -218,12 +215,12 @@
         padding: 7px 10px;
         border-radius: 999px;
         border: 1px solid var(--line);
-        background: linear-gradient(180deg, #fffefa 0%, #eef8ff 100%);
+        background: linear-gradient(180deg, #171923 0%, #202637 100%);
         color: var(--muted);
         font-size: 13px;
         font-weight: 700;
         white-space: nowrap;
-        box-shadow: 0 8px 18px rgba(83, 72, 130, 0.08);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
       }
 
       .dot {
@@ -239,7 +236,7 @@
         margin: 14px 0 0;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: rgba(255, 254, 250, 0.92);
+        background: rgba(18, 19, 26, 0.95);
         padding: 10px 12px;
         color: var(--muted);
         font-size: 13px;
@@ -247,20 +244,20 @@
       }
 
       .message.good {
-        border-color: #b9dfd0;
-        background: #eefaf5;
+        border-color: rgba(97, 214, 165, 0.45);
+        background: rgba(31, 92, 67, 0.28);
         color: var(--good);
       }
 
       .message.warn {
-        border-color: #f0d493;
-        background: #fff8e8;
+        border-color: rgba(255, 209, 102, 0.48);
+        background: rgba(119, 80, 0, 0.28);
         color: var(--warn);
       }
 
       .message.bad {
-        border-color: #fac6c0;
-        background: #fff1ef;
+        border-color: rgba(255, 129, 120, 0.55);
+        background: rgba(119, 37, 35, 0.3);
         color: var(--bad);
       }
 
@@ -274,9 +271,9 @@
       .panel {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: rgba(255, 254, 250, 0.94);
+        background: rgba(18, 19, 26, 0.98);
         padding: 16px;
-        box-shadow: 0 10px 28px rgba(83, 72, 130, 0.08);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
       }
 
       .stack {
@@ -302,7 +299,7 @@
         min-height: 38px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fff;
+        background: #0e1017;
         color: var(--text);
         padding: 8px 10px;
       }
@@ -336,7 +333,7 @@
       details {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fbfcff;
+        background: #171923;
         padding: 10px 12px;
       }
 
@@ -362,20 +359,23 @@
       .callout {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: linear-gradient(180deg, #fffefa 0%, #f5fbff 100%);
+        background: linear-gradient(180deg, #151722 0%, #1d2130 100%);
         padding: 12px;
       }
 
       .callout:nth-child(2) {
-        background: linear-gradient(180deg, #fffefa 0%, var(--mint) 100%);
+        border-top-color: var(--mint);
+        background: linear-gradient(180deg, #151722 0%, #1c2a28 100%);
       }
 
       .callout:nth-child(3) {
-        background: linear-gradient(180deg, #fffefa 0%, var(--rose) 100%);
+        border-top-color: var(--rose);
+        background: linear-gradient(180deg, #151722 0%, #2a1d29 100%);
       }
 
       .callout:nth-child(4) {
-        background: linear-gradient(180deg, #fffefa 0%, var(--sky) 100%);
+        border-top-color: var(--sky);
+        background: linear-gradient(180deg, #151722 0%, #1a2636 100%);
       }
 
       .callout span {
@@ -417,7 +417,7 @@
         min-height: 150px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fff;
+        background: #171923;
         padding: 12px;
       }
 
@@ -458,7 +458,7 @@
         overflow: auto;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fff;
+        background: #11131b;
       }
 
       .lo-item {
@@ -486,7 +486,7 @@
         width: 24px;
         height: 24px;
         border-radius: 999px;
-        background: #f5f2ff;
+        background: #24283a;
         color: var(--accent);
         font-size: 12px;
         font-weight: 800;
@@ -525,7 +525,7 @@
       }
 
       .tab {
-        background: #fff;
+        background: #171923;
         color: var(--muted);
         border-color: var(--line);
       }
@@ -542,7 +542,7 @@
         overflow: auto;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fbfcff;
+        background: #0e1017;
         padding: 14px;
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
         font-size: 13px;
@@ -566,7 +566,7 @@
         margin-top: 12px;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fff;
+        background: #11131b;
       }
 
       .group-item {
@@ -576,7 +576,7 @@
         align-items: start;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #fbfcff;
+        background: #151722;
         padding: 10px;
       }
 
@@ -610,7 +610,7 @@
         position: sticky;
         top: 0;
         z-index: 1;
-        background: #f7fbff;
+        background: #1d2130;
         color: var(--muted);
         font-size: 11px;
         text-transform: uppercase;
@@ -659,26 +659,26 @@
         font-size: 12px;
         font-weight: 800;
         color: var(--muted);
-        background: #fff;
+        background: #171923;
         border: 1px solid var(--line);
       }
 
       .badge.good {
         color: var(--good);
-        border-color: #b9dfd0;
-        background: #eefaf5;
+        border-color: rgba(97, 214, 165, 0.45);
+        background: rgba(31, 92, 67, 0.28);
       }
 
       .badge.warn {
         color: var(--warn);
-        border-color: #f0d493;
-        background: #fff8e8;
+        border-color: rgba(255, 209, 102, 0.48);
+        background: rgba(119, 80, 0, 0.28);
       }
 
       .badge.bad {
         color: var(--bad);
-        border-color: #fac6c0;
-        background: #fff1ef;
+        border-color: rgba(255, 129, 120, 0.55);
+        background: rgba(119, 37, 35, 0.3);
       }
 
       .note {
@@ -1909,6 +1909,50 @@
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
       }
 
+      async function regenerateRejectedScript(index, signal) {
+        while (
+          state.scriptRuns[index]
+          && state.scriptRuns[index].status === "Rejected"
+          && Number(state.scriptRuns[index].attemptsUsed || 0) < MAX_REGENERATIONS
+        ) {
+          if (signal?.aborted) throw new DOMException("Stopped", "AbortError");
+          const group = state.scriptRuns[index];
+          const nextAttempt = Number(group.attemptsUsed || 0) + 1;
+          state.scriptRuns[index] = {
+            ...group,
+            status: "Regenerating",
+          };
+          setActiveProcess("regenerate");
+          renderStatus();
+          showMessage(`Regenerating rejected script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
+          const revised = await apiPost("/api/revise", {
+            ...buildScriptValidationPayload(group),
+            validationReport: group.validationReport || "",
+            attempt: nextAttempt,
+          }, claudeHeaders(), { signal });
+          state.scriptRuns[index] = {
+            ...state.scriptRuns[index],
+            status: "Regenerated",
+            attemptsUsed: Number(revised.attempt || nextAttempt),
+            script: revised.script || "",
+            history: [
+              ...(state.scriptRuns[index].history || []),
+              { attempt: revised.attempt || nextAttempt, status: "Regenerated", script: revised.script || "" },
+            ],
+          };
+          renderStatus();
+          setActiveProcess("validate");
+          await validateOneScript(index, signal);
+        }
+        if (state.scriptRuns[index]?.status === "Rejected") {
+          state.scriptRuns[index] = {
+            ...state.scriptRuns[index],
+            status: "Max Attempts Reached",
+          };
+          renderStatus();
+        }
+      }
+
       async function generateScriptRuns(indexes, signal) {
         const targets = indexes.filter((index) => state.scriptRuns[index]);
         if (!targets.length) return;
@@ -1951,6 +1995,15 @@
           try {
             await generateOneScript(index, signal);
             const validationTask = validateOneScript(index, signal).catch((error) => {
+              if (isAbortError(error)) return;
+              state.scriptRuns[index] = {
+                ...state.scriptRuns[index],
+                status: "Failed",
+                attemptsUsed: Math.max(1, Number(state.scriptRuns[index].attemptsUsed || 1)),
+                validationReport: error.message,
+              };
+              renderStatus();
+            }).then(() => regenerateRejectedScript(index, signal)).catch((error) => {
               if (isAbortError(error)) return;
               state.scriptRuns[index] = {
                 ...state.scriptRuns[index],
@@ -2605,11 +2658,11 @@
             history: isPhase2ReadyStatus(item.status) ? item.history : [],
           }));
           renderStatus();
-          const data = await apiPost("/api/script-batch", buildScriptBatchPayload(), claudeHeaders(), {
-            signal,
-            onProgress: applyBatchProgress,
-          });
-          applyBatchResult(data);
+          const runIndexes = state.scriptRuns
+            .map((item, index) => ({ item, index }))
+            .filter(({ item }) => !isPhase2ReadyStatus(item.status))
+            .map(({ index }) => index);
+          await generateAndValidatePipeline(runIndexes, signal);
           if (allScriptRunsPhase2Ready()) {
             showMessage(`Generated and validated all ${state.scriptRuns.length} script(s). Approved and Needs Minor Revision scripts are ready for Phase 2.`, "good");
           } else {
@@ -2689,23 +2742,20 @@
         try {
           for (const index of failedIndexes) {
             if (signal.aborted) throw new DOMException("Stopped", "AbortError");
-            const group = state.scriptRuns[index];
-            state.scriptRuns[index] = {
-              ...group,
-              status: "Regenerating",
-            };
-            renderStatus();
-            showMessage(`Regenerating failed script ${index + 1} of ${state.scriptRuns.length}: ${group.title || `Script ${index + 1}`}`, "warn");
-            const data = await apiPost("/api/run-approved", buildGroupedScriptPayload(group), claudeHeaders(), { signal });
-            state.scriptRuns[index] = {
-              ...state.scriptRuns[index],
-              status: data.status || (data.phase2Ready ? "Needs Minor Revision" : "Max Attempts Reached"),
-              attemptsUsed: data.attemptsUsed || state.scriptRuns[index].attemptsUsed || 0,
-              script: data.script || state.scriptRuns[index].script || "",
-              validationReport: data.validationReport || state.scriptRuns[index].validationReport || "",
-              history: data.history || state.scriptRuns[index].history || [],
-            };
-            renderStatus();
+            if (state.scriptRuns[index].status !== "Rejected" || !state.scriptRuns[index].script) {
+              state.scriptRuns[index] = {
+                ...state.scriptRuns[index],
+                status: "Queued",
+                attemptsUsed: 0,
+                script: "",
+                validationReport: "",
+                history: [],
+              };
+              renderStatus();
+              await generateOneScript(index, signal);
+              await validateOneScript(index, signal);
+            }
+            await regenerateRejectedScript(index, signal);
           }
           state.script = combinedGeneratedScriptText();
           state.validation = state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
