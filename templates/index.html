@@ -131,7 +131,7 @@
 
       .process-line {
         display: grid;
-        grid-template-columns: repeat(8, minmax(120px, 1fr));
+        grid-template-columns: repeat(6, minmax(140px, 1fr));
         gap: 8px;
         margin-top: 14px;
         overflow-x: auto;
@@ -164,11 +164,21 @@
       .process-step:nth-child(4) { background: linear-gradient(180deg, #fffefa 0%, var(--mint) 100%); }
       .process-step:nth-child(5) { background: linear-gradient(180deg, #fffefa 0%, var(--peach) 100%); }
       .process-step:nth-child(6) { background: linear-gradient(180deg, #fffefa 0%, var(--butter) 100%); }
-      .process-step:nth-child(7) { background: linear-gradient(180deg, #fffefa 0%, var(--coral-soft) 100%); }
-      .process-step:nth-child(8) { background: linear-gradient(180deg, #fffefa 0%, var(--blue-soft) 100%); }
 
       .process-step:last-child::after {
         display: none;
+      }
+
+      .process-step.active {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(123, 103, 216, 0.18), 0 14px 30px rgba(83, 72, 130, 0.18);
+        transform: translateY(-2px);
+      }
+
+      .process-step.active span {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
       }
 
       .process-step span {
@@ -706,45 +716,35 @@
         <div class="pill"><span class="dot"></span> Script + Animation<span id="maxRegenerationsLabel" class="hidden">{{ max_regenerations|default(3) }}</span></div>
       </header>
       <div class="process-line" aria-label="Workflow process">
-        <div class="process-step">
+        <div class="process-step" data-process="group">
           <span>1</span>
-          <strong>Validate Key</strong>
-          <small>Claude Opus 4.6</small>
-        </div>
-        <div class="process-step">
-          <span>2</span>
-          <strong>Upload Excel</strong>
-          <small>Read all LO rows</small>
-        </div>
-        <div class="process-step">
-          <span>3</span>
-          <strong>Filter LOs</strong>
-          <small>Grade, chapter, subtopic</small>
-        </div>
-        <div class="process-step">
-          <span>4</span>
           <strong>Group LOs</strong>
           <small>Create script sets</small>
         </div>
-        <div class="process-step">
-          <span>5</span>
+        <div class="process-step" data-process="generate">
+          <span>2</span>
           <strong>Generate Scripts</strong>
           <small>One API call per group</small>
         </div>
-        <div class="process-step">
-          <span>6</span>
+        <div class="process-step" data-process="validate">
+          <span>3</span>
           <strong>Validate Scripts</strong>
           <small>One API call per script</small>
         </div>
-        <div class="process-step">
-          <span>7</span>
+        <div class="process-step" data-process="regenerate">
+          <span>4</span>
           <strong>Regenerate Failed</strong>
           <small>Retry failed rows</small>
         </div>
-        <div class="process-step">
-          <span>8</span>
-          <strong>Phase 2 Animation</strong>
-          <small>Storyboard + Python</small>
+        <div class="process-step" data-process="storyboard">
+          <span>5</span>
+          <strong>Storyboard</strong>
+          <small>Animation planning</small>
+        </div>
+        <div class="process-step" data-process="python">
+          <span>6</span>
+          <strong>Manim Code</strong>
+          <small>Python animation</small>
         </div>
       </div>
       <div id="statusBanner" class="message">UI loaded. Upload an Excel file to begin.</div>
@@ -757,14 +757,6 @@
         <div class="callout">
           <span>Visible LOs</span>
           <strong id="metricSelected">0</strong>
-        </div>
-        <div class="callout">
-          <span>Script status</span>
-          <strong>Ready</strong>
-        </div>
-        <div class="callout">
-          <span>Animation</span>
-          <strong>Claude</strong>
         </div>
       </div>
 
@@ -1063,6 +1055,7 @@
         outputBox: document.getElementById("outputBox"),
         statusList: document.getElementById("statusList"),
         groupedScriptsList: document.getElementById("groupedScriptsList"),
+        processSteps: document.querySelectorAll(".process-step"),
         downloadNote: document.getElementById("downloadNote"),
         promptLibrary: document.getElementById("promptLibrary"),
         statusBanner: document.getElementById("statusBanner"),
@@ -1104,6 +1097,12 @@
         if (!els.statusBanner) return;
         els.statusBanner.className = `message ${kind}`.trim();
         els.statusBanner.textContent = message;
+      }
+
+      function setActiveProcess(name = "") {
+        els.processSteps.forEach((step) => {
+          step.classList.toggle("active", Boolean(name) && step.dataset.process === name);
+        });
       }
 
       function currentClaudeKey() {
@@ -1612,6 +1611,11 @@
         state.validation = progress.validation || state.scriptRuns.map((item) => `${item.title}\n${item.validationReport || item.status}`).join("\n\n---\n\n");
         state.history = state.scriptRuns.flatMap((item) => item.history || []);
         state.status = progress.phase === "complete" ? (allScriptRunsApproved() ? "Approved" : "Needs Review") : "Running";
+        if (["generating", "generated"].includes(progress.phase)) {
+          setActiveProcess("generate");
+        } else if (["validating", "validated"].includes(progress.phase)) {
+          setActiveProcess("validate");
+        }
         renderStatus();
         const current = Number(progress.currentIndex || 0) + 1;
         const total = Number(progress.total || state.scriptRuns.length || 0);
@@ -1624,6 +1628,7 @@
         if (Array.isArray(data.scripts)) {
           applyBatchProgress({ ...data, phase: "complete" });
         }
+        setActiveProcess("");
         state.script = data.script || combinedGeneratedScriptText();
         state.validation = data.validation || state.validation;
         state.status = data.status || (allScriptRunsApproved() ? "Approved" : "Needs Review");
@@ -2278,6 +2283,7 @@
         const payload = phase2Payload();
         if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
         const signal = beginSection("animation");
+        setActiveProcess("storyboard");
         setBusy(els.generateStoryboard, true, "Generating storyboard...");
         try {
           const data = await apiPost("/api/animation/storyboard", payload, claudeHeaders(), { signal });
@@ -2288,6 +2294,7 @@
         } catch (error) {
           showMessage(isAbortError(error) ? "Storyboard generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.generateStoryboard, false);
           endSection("animation");
         }
@@ -2297,6 +2304,7 @@
         const payload = phase2Payload({ storyboard: state.storyboard });
         if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
         const signal = beginSection("animation");
+        setActiveProcess("python");
         setBusy(els.generatePython, true, "Generating Python...");
         try {
           const data = await apiPost("/api/animation/code", payload, claudeHeaders(), { signal });
@@ -2307,6 +2315,7 @@
         } catch (error) {
           showMessage(isAbortError(error) ? "Python generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.generatePython, false);
           endSection("animation");
         }
@@ -2316,6 +2325,7 @@
         const payload = phase2Payload({ storyboard: state.storyboard });
         if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
         const signal = beginSection("animation");
+        setActiveProcess("python");
         setBusy(els.generateAnimationPackage, true, "Generating package...");
         try {
           const data = await apiPost("/api/animation/package", payload, claudeHeaders(), { signal });
@@ -2327,6 +2337,7 @@
         } catch (error) {
           showMessage(isAbortError(error) ? "Animation package generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.generateAnimationPackage, false);
           endSection("animation");
         }
@@ -2348,6 +2359,7 @@
         const payload = contextPayload();
         if (!payload.outcomes.length) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         const signal = beginSection("scripts");
+        setActiveProcess("group");
         setBusy(els.runGrouping, true, "Grouping...");
         try {
           state.grouping = "";
@@ -2388,6 +2400,7 @@
             showMessage(error.message, "bad");
           }
         } finally {
+          setActiveProcess("");
           setBusy(els.runGrouping, false);
           endSection("scripts");
           renderWorkflowControls();
@@ -2399,6 +2412,7 @@
         if (!payload.learningOutcomes) return showMessage("No Learning Outcomes are visible for the current filters.", "warn");
         if (!state.grouping) return showMessage("Run Group LOs first. Script generation uses the grouping output.", "warn");
         const signal = beginSection("scripts");
+        setActiveProcess("generate");
         setBusy(els.generateScript, true, "Generating...");
         try {
           const data = await apiPost("/api/generate", {
@@ -2415,6 +2429,7 @@
         } catch (error) {
           showMessage(isAbortError(error) ? "Script generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.generateScript, false);
           endSection("scripts");
         }
@@ -2423,6 +2438,7 @@
       els.validateScript.addEventListener("click", async () => {
         if (!state.script) return showMessage("Generate a script first.", "warn");
         const signal = beginSection("scripts");
+        setActiveProcess("validate");
         setBusy(els.validateScript, true, "Validating...");
         try {
           const data = await apiPost("/api/validate", contextPayload({ script: state.script }), claudeHeaders(), { signal });
@@ -2439,6 +2455,7 @@
         } catch (error) {
           showMessage(isAbortError(error) ? "Script validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.validateScript, false);
           endSection("scripts");
         }
@@ -2446,6 +2463,7 @@
 
       els.runApproved.addEventListener("click", async () => {
         const signal = beginSection("scripts");
+        setActiveProcess("generate");
         setBusy(els.runApproved, true, "Running all...");
         try {
           if (!groupingAllowsScriptGeneration()) return showMessage("Run Group LOs first. Script generation uses the grouping output.", "warn");
@@ -2485,6 +2503,7 @@
           }
           showMessage(error.message, "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.runApproved, false);
           endSection("scripts");
           renderWorkflowControls();
@@ -2498,6 +2517,7 @@
           .map(({ index }) => index);
         if (!indexes.length) return showMessage("Generate scripts before validation.", "warn");
         const signal = beginSection("scripts");
+        setActiveProcess("validate");
         setBusy(els.validateScripts, true, "Validating all...");
         try {
           await validateScriptRuns(indexes, signal);
@@ -2522,6 +2542,7 @@
           }
           showMessage(error.message, "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.validateScripts, false);
           endSection("scripts");
           renderWorkflowControls();
@@ -2536,6 +2557,7 @@
           .map(({ index }) => index);
         if (!failedIndexes.length) return showMessage("No failed scripts need regeneration.", "good");
         const signal = beginSection("scripts");
+        setActiveProcess("regenerate");
         setBusy(els.regenerateFailed, true, "Regenerating...");
         try {
           for (const index of failedIndexes) {
@@ -2584,6 +2606,7 @@
           }
           showMessage(error.message, "bad");
         } finally {
+          setActiveProcess("");
           setBusy(els.regenerateFailed, false);
           endSection("scripts");
           renderWorkflowControls();
