@@ -512,6 +512,18 @@
         margin-bottom: 12px;
       }
 
+      .output-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0 0 12px;
+      }
+
+      .output-actions button {
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+
       .tab {
         background: #fff;
         color: var(--muted);
@@ -958,6 +970,12 @@
                 <button type="button" class="tab" data-tab="python">Python</button>
                 <button type="button" class="tab hidden" data-tab="package">Package</button>
               </div>
+              <div class="output-actions">
+                <button type="button" class="secondary" id="copyScriptOutput" disabled>Copy Script</button>
+                <button type="button" class="secondary" id="downloadScriptOutput" disabled>Download Script</button>
+                <button type="button" class="secondary" id="copyValidationOutput" disabled>Copy Validation</button>
+                <button type="button" class="secondary" id="downloadValidationOutput" disabled>Download Validation</button>
+              </div>
               <div id="outputBox" class="output">No output yet.</div>
             </section>
 
@@ -1053,6 +1071,10 @@
         stopScriptWorkflow: document.getElementById("stopScriptWorkflow"),
         downloadApproved: document.getElementById("downloadApproved"),
         outputBox: document.getElementById("outputBox"),
+        copyScriptOutput: document.getElementById("copyScriptOutput"),
+        downloadScriptOutput: document.getElementById("downloadScriptOutput"),
+        copyValidationOutput: document.getElementById("copyValidationOutput"),
+        downloadValidationOutput: document.getElementById("downloadValidationOutput"),
         statusList: document.getElementById("statusList"),
         groupedScriptsList: document.getElementById("groupedScriptsList"),
         processSteps: document.querySelectorAll(".process-step"),
@@ -1964,18 +1986,14 @@
         updateMetrics();
       }
 
-      function setTab(tab) {
-        state.activeTab = tab;
-        document.querySelectorAll(".tab").forEach((button) => button.classList.toggle("active", button.dataset.tab === tab));
-        els.outputBox.classList.toggle("table-mode", tab === "grouping" && state.scriptRuns.length > 0);
-        if (tab === "grouping" && state.scriptRuns.length > 0) {
-          els.outputBox.innerHTML = groupedScriptsTableHtml(state.scriptRuns);
-          return;
-        }
-        const scriptRunValidation = state.scriptRuns.length
+      function scriptValidationOutputText() {
+        return state.scriptRuns.length
           ? state.scriptRuns.map((item) => `${item.title}\nStatus: ${item.status}\n\n${item.validationReport || "No validation report yet."}`).join("\n\n---\n\n")
           : "";
-        const scriptRunHistory = state.scriptRuns.length
+      }
+
+      function revisionHistoryOutputText() {
+        return state.scriptRuns.length
           ? JSON.stringify(state.scriptRuns.map((item) => ({
               title: item.title,
               status: item.status,
@@ -1983,20 +2001,50 @@
               attempts: (item.history || []).map(({ attempt, status }) => ({ attempt, status })),
             })), null, 2)
           : "";
-        const content = {
+      }
+
+      function validationOutputText() {
+        const scriptRunValidation = scriptValidationOutputText();
+        return state.groupingValidation
+          ? `${state.groupingValidation}\n\n--- SCRIPT VALIDATION ---\n\n${scriptRunValidation || state.validation || "No script validation report yet."}`
+          : (scriptRunValidation || state.validation || "");
+      }
+
+      function outputContentForTab(tab) {
+        const scriptRunHistory = revisionHistoryOutputText();
+        return {
           grouping: state.grouping || "No grouping output yet.",
           script: state.script || "No script generated yet.",
-          validation: state.groupingValidation
-            ? `${state.groupingValidation}\n\n--- SCRIPT VALIDATION ---\n\n${scriptRunValidation || state.validation || "No script validation report yet."}`
-            : (scriptRunValidation || state.validation || "No validation report yet."),
+          validation: validationOutputText() || "No validation report yet.",
           history: scriptRunHistory || (state.history.length ? JSON.stringify(state.history.map(({ attempt, status }) => ({ attempt, status })), null, 2) : "No revision history yet."),
           prompt: state.promptPreview || "Select a prompt from the Master Prompt Library.",
           storyboard: state.storyboard || "No storyboard generated yet.",
           python: state.pythonCode || "No Python code generated yet.",
           package: state.animationPackage || "No full package generated yet.",
-        };
+        }[tab] || "";
+      }
+
+      function refreshOutputActionButtons() {
+        const hasScript = Boolean((state.script || "").trim());
+        const hasValidation = Boolean(validationOutputText().trim());
+        els.copyScriptOutput.disabled = !hasScript;
+        els.downloadScriptOutput.disabled = !hasScript;
+        els.copyValidationOutput.disabled = !hasValidation;
+        els.downloadValidationOutput.disabled = !hasValidation;
+      }
+
+      function setTab(tab) {
+        state.activeTab = tab;
+        document.querySelectorAll(".tab").forEach((button) => button.classList.toggle("active", button.dataset.tab === tab));
+        els.outputBox.classList.toggle("table-mode", tab === "grouping" && state.scriptRuns.length > 0);
+        if (tab === "grouping" && state.scriptRuns.length > 0) {
+          els.outputBox.innerHTML = groupedScriptsTableHtml(state.scriptRuns);
+          refreshOutputActionButtons();
+          return;
+        }
         els.outputBox.innerHTML = "";
-        els.outputBox.textContent = content[tab] || "";
+        els.outputBox.textContent = outputContentForTab(tab);
+        refreshOutputActionButtons();
       }
 
       function renderPromptLibrary() {
@@ -2083,6 +2131,7 @@
             : "Send to Phase 2 is locked until rejected scripts are regenerated.";
           renderGroupedScriptsList();
           renderWorkflowControls();
+          refreshOutputActionButtons();
           return;
         }
 
@@ -2116,6 +2165,7 @@
           : "Download is locked until the latest script is Approved or Needs Minor Revision.";
         renderGroupedScriptsList();
         renderWorkflowControls();
+        refreshOutputActionButtons();
       }
 
       function escapeHtml(value) {
@@ -2140,6 +2190,31 @@
           .replace(/^_+|_+$/g, "")
           .slice(0, 80);
         return slug || fallback;
+      }
+
+      async function copyTextToClipboard(text, label) {
+        if (!String(text || "").trim()) {
+          showMessage(`${label} is empty.`, "warn");
+          return;
+        }
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.setAttribute("readonly", "");
+            textarea.style.position = "fixed";
+            textarea.style.left = "-9999px";
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            textarea.remove();
+          }
+          showMessage(`${label} copied.`, "good");
+        } catch (error) {
+          showMessage(`Could not copy ${label.toLowerCase()}: ${error.message}`, "bad");
+        }
       }
 
       function saveBlobFile(filename, blob) {
@@ -2379,6 +2454,27 @@
         if (!state.storyboard) return showMessage("Generate a storyboard first.", "warn");
         saveTextFile("animation_storyboard.txt", state.storyboard, "text/plain");
         showMessage("Storyboard downloaded.", "good");
+      });
+
+      els.copyScriptOutput.addEventListener("click", () => {
+        copyTextToClipboard(state.script || "", "Script output");
+      });
+
+      els.downloadScriptOutput.addEventListener("click", () => {
+        if (!state.script) return showMessage("No script output to download.", "warn");
+        saveTextFile(`${slugifyFilename(els.animationTitle.value || els.chapterSelect.value || "generated_script", "generated_script")}.txt`, state.script, "text/plain");
+        showMessage("Script output downloaded.", "good");
+      });
+
+      els.copyValidationOutput.addEventListener("click", () => {
+        copyTextToClipboard(validationOutputText(), "Validation output");
+      });
+
+      els.downloadValidationOutput.addEventListener("click", () => {
+        const validationText = validationOutputText();
+        if (!validationText.trim()) return showMessage("No validation output to download.", "warn");
+        saveTextFile(`${slugifyFilename(els.animationTitle.value || els.chapterSelect.value || "validation_report", "validation_report")}_validation.txt`, validationText, "text/plain");
+        showMessage("Validation output downloaded.", "good");
       });
 
       els.downloadPython.addEventListener("click", () => {
