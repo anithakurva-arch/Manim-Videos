@@ -987,7 +987,7 @@
             </section>
 
             <section class="panel">
-              <h2>Script Status</h2>
+              <h2 id="statusPanelTitle">Script Status</h2>
               <div class="status-list" id="statusList">
                 <div class="status-row">
                   <div>
@@ -1084,6 +1084,7 @@
         copyValidationOutput: document.getElementById("copyValidationOutput"),
         downloadValidationOutput: document.getElementById("downloadValidationOutput"),
         statusList: document.getElementById("statusList"),
+        statusPanelTitle: document.getElementById("statusPanelTitle"),
         groupedScriptsList: document.getElementById("groupedScriptsList"),
         processSteps: document.querySelectorAll(".process-step"),
         downloadNote: document.getElementById("downloadNote"),
@@ -2275,7 +2276,21 @@
         });
       }
 
+      function statusPanelTitle() {
+        if (!state.animationRuns.length) return "Script Status";
+        const hasGeneratingStoryboard = state.animationRuns.some((item) => item.storyboardStatus === "Storyboard Generating");
+        const hasGeneratingCode = state.animationRuns.some((item) => item.codeStatus === "Code Generating");
+        const allStoryboardsDone = state.animationRuns.every((item) => item.storyboardStatus === "Storyboard Done");
+        const codeHasStarted = state.animationRuns.some((item) => item.codeStatus && item.codeStatus !== "Code Not Started");
+        const allCodesDone = state.animationRuns.every((item) => item.codeStatus === "Code Done");
+        if (hasGeneratingStoryboard || !allStoryboardsDone) return "Storyboard Status";
+        if (!codeHasStarted) return "Storyboard Status";
+        if (hasGeneratingCode || !allCodesDone) return "Python Code Status";
+        return "Storyboard and Code Status";
+      }
+
       function renderStatus() {
+        els.statusPanelTitle.textContent = statusPanelTitle();
         if (state.animationRuns.length) {
           els.statusList.innerHTML = "";
           renderAnimationStatusRows();
