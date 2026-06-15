@@ -1466,12 +1466,12 @@
         if (!rows.length) {
           els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No Learning Outcomes match the current filters.</div></div>';
         } else {
-          rows.forEach(({ row, index }) => {
+          rows.forEach(({ row, index }, displayIndex) => {
             const item = document.createElement("div");
             item.className = "lo-item";
             const meta = [row.grade, row.chapter, row.subtopic, row.cc].filter(Boolean).map(escapeHtml).join(" &middot; ");
             item.innerHTML = `
-              <span class="lo-index">${index + 1}</span>
+              <span class="lo-index">${displayIndex + 1}</span>
               <span class="lo-text">
                 <span class="lo-meta">${meta}</span>
                 ${escapeHtml(row.lo)}
