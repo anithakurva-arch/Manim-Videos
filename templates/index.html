@@ -1400,10 +1400,12 @@
       }
 
       function renderFilters() {
+        const currentGrade = els.gradeSelect.value;
         els.gradeSelect.innerHTML = "";
         option(els.gradeSelect, "", "All grades");
-        (state.filters.grades || []).forEach((grade) => option(els.gradeSelect, grade));
-        els.gradeSelect.value = "";
+        const grades = state.filters.grades || [];
+        grades.forEach((grade) => option(els.gradeSelect, grade));
+        els.gradeSelect.value = grades.includes(currentGrade) ? currentGrade : "";
         renderChapterOptions();
       }
 
@@ -2365,7 +2367,7 @@
 
       els.excelFile.addEventListener("change", () => {
         if (els.excelFile.files.length) {
-          parseSelectedExcel();
+          showMessage("Excel file selected. Choose Upload and parse when you are ready.", "warn");
         }
       });
 
