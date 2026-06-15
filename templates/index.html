@@ -1020,6 +1020,7 @@
         ["/api/animation/storyboard", "animation-storyboard"],
         ["/api/animation/code", "animation-code"],
         ["/api/animation/package", "animation-package"],
+        ["/api/animation/batch", "animation-batch"],
       ]);
       const state = {
         rows: [],
@@ -1578,6 +1579,80 @@
         const start = match.index + match[0].length;
         const next = new RegExp(`\\n##\\s*STORYBOARD\\s+${position + 2}\\b`, "i").exec(text.slice(start));
         return text.slice(start, next ? start + next.index : text.length).replace(/^\s*---\s*/m, "").trim();
+      }
+
+      function animationBatchItems(items) {
+        return items.map((item, index) => {
+          const existing = state.animationRuns[index] || {};
+          const sameTitle = !existing.title || existing.title === item.title;
+          const existingRun = sameTitle ? existing : {};
+          return {
+            index,
+            title: item.title || `Script ${index + 1}`,
+            transcript: item.transcript || "",
+            status: item.status || "",
+            storyboard: existingRun.storyboard || storyboardForItem(item, index) || "",
+            code: existingRun.code || "",
+            savedFile: existingRun.savedFile || null,
+            storyboardStatus: existingRun.storyboardStatus || "",
+            codeStatus: existingRun.codeStatus || "",
+            error: existingRun.error || "",
+          };
+        });
+      }
+
+      function combinedStoryboardFromAnimationRuns() {
+        return state.animationRuns
+          .filter((item) => item.storyboard)
+          .map((item, index) => `## STORYBOARD ${index + 1}: ${item.title || `Script ${index + 1}`}\n\n${item.storyboard}`)
+          .join("\n\n---\n\n");
+      }
+
+      function combinedPythonFromAnimationRuns() {
+        return state.animationRuns
+          .filter((item) => item.code)
+          .map((item, index) => `# PYTHON ${index + 1}: ${item.title || `Script ${index + 1}`}\n\n${item.code}`)
+          .join("\n\n# ---\n\n");
+      }
+
+      function applyAnimationProgress(progress) {
+        if (!progress) return;
+        if (Array.isArray(progress.items)) {
+          state.animationRuns = progress.items.map((item, index) => ({
+            index,
+            title: item.title || `Script ${index + 1}`,
+            transcript: item.transcript || "",
+            storyboardStatus: item.storyboardStatus || "Storyboard Queued",
+            codeStatus: item.codeStatus || "Code Not Started",
+            storyboard: item.storyboard || "",
+            code: item.code || "",
+            savedFile: item.savedFile || null,
+            error: item.error || "",
+          }));
+        }
+        state.storyboard = progress.storyboard || combinedStoryboardFromAnimationRuns();
+        state.pythonCode = progress.pythonCode || combinedPythonFromAnimationRuns();
+        state.status = progress.status || (progress.phase === "complete" ? "Generated" : "Running");
+        const isCodePhase = String(progress.phase || "").startsWith("code") || (progress.mode === "code" && state.animationRuns.every((item) => item.storyboardStatus === "Storyboard Done"));
+        if (isCodePhase) {
+          setActiveProcess("python");
+          if (state.pythonCode) setTab("python");
+        } else {
+          setActiveProcess("storyboard");
+          if (state.storyboard) setTab("storyboard");
+        }
+        renderAnimationDownloads();
+        renderStatus();
+      }
+
+      function markRunningAnimationPaused() {
+        state.animationRuns = state.animationRuns.map((item) => {
+          if (item.storyboardStatus === "Storyboard Generating") return { ...item, storyboardStatus: "Storyboard Paused" };
+          if (item.codeStatus === "Code Generating") return { ...item, codeStatus: "Code Paused" };
+          return item;
+        });
+        state.status = "Paused";
+        renderStatus();
       }
 
       function renderAnimationDownloads() {
@@ -2244,6 +2319,8 @@
 
       function badgeClass(status) {
         if (String(status || "").includes("Done")) return "good";
+        if (String(status || "").includes("Failed")) return "bad";
+        if (String(status || "").includes("Paused")) return "warn";
         if (status === "Approved") return "good";
         if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed" || status === "Stopped") return "bad";
         if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Running" || status === "Generating" || status === "Validating" || status === "Regenerating" || status === "Regenerated" || status === "Generated" || status === "Queued" || status === "Grouped" || String(status || "").includes("Queued") || String(status || "").includes("Generating")) return "warn";
@@ -2276,10 +2353,12 @@
             : (isPythonPhase
               ? `Python: ${item.codeStatus || "Code Queued"}`
               : `Storyboard: ${item.storyboardStatus || "Queued"} / Python: ${item.codeStatus || "Queued"}`);
+          const errorDetail = item.error ? `<div class="note">${escapeHtml(item.error).slice(0, 220)}</div>` : "";
           row.innerHTML = `
             <div>
               <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
               <div class="note">${escapeHtml(detail)}</div>
+              ${errorDetail}
             </div>
             <span class="badge ${badgeClass(visibleStatus)}">${escapeHtml(visibleStatus)}</span>
           `;
@@ -2635,58 +2714,38 @@
         setBusy(els.generateStoryboard, true, "Generating storyboards...");
         try {
           state.status = "Running";
-          state.animationRuns = storyboardItems.map((item, index) => ({
-            index,
-            title: item.title || `Script ${index + 1}`,
-            storyboardStatus: "Storyboard Queued",
-            codeStatus: "Code Not Started",
+          state.animationRuns = animationBatchItems(storyboardItems).map((item, index) => ({
+            ...item,
+            storyboardStatus: item.storyboard ? "Storyboard Done" : (item.storyboardStatus || "Storyboard Queued"),
+            codeStatus: item.codeStatus || "Code Not Started",
           }));
-          const storyboards = [];
-          state.storyboard = "";
+          state.storyboard = combinedStoryboardFromAnimationRuns();
           renderAnimationDownloads();
           renderStatus();
           setTab("storyboard");
-          showMessage(`Detected ${storyboardItems.length} script(s). Generating storyboards one by one.`, "warn");
-          for (const [position, item] of storyboardItems.entries()) {
-            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
-            state.animationRuns[position] = {
-              ...state.animationRuns[position],
-              storyboardStatus: "Storyboard Generating",
-            };
-            renderStatus();
-            showMessage(`Generating storyboard ${position + 1} of ${storyboardItems.length}: ${item.title}`, "warn");
-            const data = await apiPost("/api/animation/storyboard", {
-              ...basePayload,
-              title: item.title,
-              transcript: item.transcript,
-            }, claudeHeaders(), { signal });
-            storyboards.push({
-              title: item.title,
-              storyboard: data.storyboard || "",
-            });
-            state.animationRuns[position] = {
-              ...state.animationRuns[position],
-              storyboardStatus: "Storyboard Done",
-            };
-            state.storyboard = storyboards
-              .map((entry, index) => `## STORYBOARD ${index + 1}: ${entry.title}\n\n${entry.storyboard}`)
-              .join("\n\n---\n\n");
-            renderAnimationDownloads();
-            renderStatus();
-            setTab("storyboard");
+          showMessage(`Detected ${storyboardItems.length} script(s). Generating storyboards one by one in one resumable job.`, "warn");
+          const data = await apiPost("/api/animation/batch", {
+            ...basePayload,
+            mode: "storyboard",
+            items: state.animationRuns,
+          }, claudeHeaders(), { signal, onProgress: applyAnimationProgress });
+          applyAnimationProgress(data);
+          renderStatus();
+          renderAnimationDownloads();
+          setTab("storyboard");
+          if (data.status === "Generated") {
+            showMessage(`Generated ${state.animationRuns.filter((item) => item.storyboardStatus === "Storyboard Done").length} storyboard package(s), one API call per script.`, "good");
+          } else {
+            showMessage("Storyboard generation paused at the failed script. Click Generate Storyboard again to resume from there.", "warn");
           }
-          state.status = "Generated";
-          renderStatus();
-          renderAnimationDownloads();
-          setTab("storyboard");
-          showMessage(`Generated ${storyboards.length} storyboard package(s), one API call per script.`, "good");
         } catch (error) {
-          state.animationRuns = state.animationRuns.map((item) => {
-            if (item.storyboardStatus === "Storyboard Generating") return { ...item, storyboardStatus: "Failed" };
-            return item;
-          });
+          markRunningAnimationPaused();
           renderStatus();
-          showMessage(isAbortError(error) ? "Storyboard generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
+          const expired = String(error.message || "").includes("Job not found or expired");
+          showMessage(isAbortError(error)
+            ? "Storyboard generation stopped."
+            : (expired ? "Storyboard job paused or expired. Click Generate Storyboard again to resume from the last saved script." : error.message),
+            isAbortError(error) || expired ? "warn" : "bad");
         } finally {
           setActiveProcess("");
           setBusy(els.generateStoryboard, false);
@@ -2703,93 +2762,41 @@
         setBusy(els.generatePython, true, "Generating...");
         try {
           state.status = "Running";
-          state.animationRuns = codeItems.map((item, index) => ({
-            index,
-            title: item.title || `Script ${index + 1}`,
-            storyboardStatus: "Storyboard Queued",
-            codeStatus: "Code Queued",
+          state.animationRuns = animationBatchItems(codeItems).map((item) => ({
+            ...item,
+            storyboardStatus: item.storyboard ? "Storyboard Done" : (item.storyboardStatus || "Storyboard Queued"),
+            codeStatus: item.code ? "Code Done" : (item.codeStatus || "Code Queued"),
           }));
+          state.storyboard = combinedStoryboardFromAnimationRuns();
+          state.pythonCode = combinedPythonFromAnimationRuns();
           renderStatus();
-          showMessage(`Detected ${codeItems.length} script(s). Generating all storyboards first.`, "warn");
+          renderAnimationDownloads();
+          showMessage(`Detected ${codeItems.length} script(s). Generating all storyboards first, then Python code, in one resumable job.`, "warn");
           setTab("storyboard");
-          const storyboards = [];
-          const generatedCodes = [];
-          const savedPaths = [];
-          for (const [position, item] of codeItems.entries()) {
-            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
-            setActiveProcess("storyboard");
-            state.animationRuns[position] = {
-              ...state.animationRuns[position],
-              storyboardStatus: "Storyboard Generating",
-            };
-            renderStatus();
-            showMessage(`Generating storyboard ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
-            const storyboardData = await apiPost("/api/animation/storyboard", {
-              ...basePayload,
-              title: item.title,
-              transcript: item.transcript,
-            }, claudeHeaders(), { signal });
-            const storyboard = storyboardData.storyboard || "";
-            storyboards.push({
-              title: item.title,
-              storyboard,
-            });
-            state.animationRuns[position] = {
-              ...state.animationRuns[position],
-              storyboardStatus: "Storyboard Done",
-            };
-            state.storyboard = storyboards
-              .map((entry, index) => `## STORYBOARD ${index + 1}: ${entry.title}\n\n${entry.storyboard}`)
-              .join("\n\n---\n\n");
-            renderAnimationDownloads();
-            renderStatus();
-            setTab("storyboard");
-          }
-
-          showMessage(`All ${storyboards.length} storyboard(s) generated. Starting Python code generation.`, "good");
-          setActiveProcess("python");
-          setTab("python");
-
-          for (const [position, item] of codeItems.entries()) {
-            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
-            const storyboard = storyboards[position]?.storyboard || "";
-            state.animationRuns[position] = {
-              ...state.animationRuns[position],
-              codeStatus: "Code Generating",
-            };
-            renderStatus();
-            showMessage(`Generating Python ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
-            const data = await apiPost("/api/animation/code", {
-              ...basePayload,
-              title: item.title,
-              transcript: item.transcript,
-              storyboard,
-            }, claudeHeaders(), { signal });
-            generatedCodes.push(`# PYTHON ${position + 1}: ${item.title}\n\n${data.code || ""}`);
-            if (data.savedFile?.path) savedPaths.push(data.savedFile.path);
-            state.animationRuns[position] = {
-              ...state.animationRuns[position],
-              codeStatus: "Code Done",
-            };
-            state.pythonCode = generatedCodes.join("\n\n# ---\n\n");
-            renderAnimationDownloads();
-            renderStatus();
-            setTab("python");
-          }
-          state.status = "Generated";
+          const data = await apiPost("/api/animation/batch", {
+            ...basePayload,
+            mode: "code",
+            items: state.animationRuns,
+          }, claudeHeaders(), { signal, onProgress: applyAnimationProgress });
+          applyAnimationProgress(data);
           renderStatus();
-          showMessage(savedPaths.length
-            ? `Generated ${generatedCodes.length} Python file(s). Saved: ${savedPaths.join("; ")}`
-            : `Generated ${generatedCodes.length} Python code package(s).`,
-            "good");
+          const savedPaths = state.animationRuns.map((item) => item.savedFile?.path).filter(Boolean);
+          if (data.status === "Generated") {
+            showMessage(savedPaths.length
+              ? `Generated ${state.animationRuns.filter((item) => item.codeStatus === "Code Done").length} Python file(s). Saved: ${savedPaths.join("; ")}`
+              : `Generated ${state.animationRuns.filter((item) => item.codeStatus === "Code Done").length} Python code package(s).`,
+              "good");
+          } else {
+            showMessage("Generation paused at the failed script. Click Generate Python Code again to resume from there.", "warn");
+          }
         } catch (error) {
-          state.animationRuns = state.animationRuns.map((item) => {
-            if (item.storyboardStatus === "Storyboard Generating") return { ...item, storyboardStatus: "Failed" };
-            if (item.codeStatus === "Code Generating") return { ...item, codeStatus: "Failed" };
-            return item;
-          });
+          markRunningAnimationPaused();
           renderStatus();
-          showMessage(isAbortError(error) ? "Python generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
+          const expired = String(error.message || "").includes("Job not found or expired");
+          showMessage(isAbortError(error)
+            ? "Python generation stopped."
+            : (expired ? "Generation job paused or expired. Click Generate Python Code again to resume from the last saved script." : error.message),
+            isAbortError(error) || expired ? "warn" : "bad");
         } finally {
           setActiveProcess("");
           setBusy(els.generatePython, false);

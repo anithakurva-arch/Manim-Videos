@@ -80,7 +80,7 @@ app = Flask(__name__)
 JOB_EXECUTOR = ThreadPoolExecutor(max_workers=4)
 JOB_LOCK = threading.Lock()
 JOBS = {}
-JOB_TTL_SECONDS = 60 * 60
+JOB_TTL_SECONDS = 60 * 60 * 12
 
 
 @app.errorhandler(Exception)
@@ -1564,6 +1564,194 @@ def animation_package_result(payload):
     }
 
 
+def combined_storyboard_text_from_animation_runs(animation_runs):
+    return "\n\n---\n\n".join(
+        f"## STORYBOARD {index}: {item.get('title') or f'Script {index}'}\n\n{item.get('storyboard') or ''}"
+        for index, item in enumerate(animation_runs, start=1)
+        if item.get("storyboard")
+    )
+
+
+def combined_python_text_from_animation_runs(animation_runs):
+    return "\n\n# ---\n\n".join(
+        f"# PYTHON {index}: {item.get('title') or f'Script {index}'}\n\n{item.get('code') or ''}"
+        for index, item in enumerate(animation_runs, start=1)
+        if item.get("code")
+    )
+
+
+def compact_animation_runs(animation_runs):
+    compacted = []
+    for item in animation_runs:
+        output = {
+            "index": item.get("index"),
+            "title": item.get("title"),
+            "transcript": item.get("transcript") or "",
+            "storyboardStatus": item.get("storyboardStatus") or "Storyboard Queued",
+            "codeStatus": item.get("codeStatus") or "Code Not Started",
+        }
+        if item.get("storyboard"):
+            output["storyboard"] = item["storyboard"]
+        if item.get("code"):
+            output["code"] = item["code"]
+        if item.get("savedFile"):
+            output["savedFile"] = item["savedFile"]
+        if item.get("error"):
+            output["error"] = item["error"]
+        compacted.append(output)
+    return compacted
+
+
+def animation_batch_result(payload, job_id=None):
+    raw_items = payload.get("items") or []
+    if not raw_items:
+        raise ValueError("No Phase 2 scripts were supplied for animation generation.")
+
+    mode = str(payload.get("mode") or "code").strip().lower()
+    if mode not in {"storyboard", "code"}:
+        raise ValueError("Animation batch mode must be storyboard or code.")
+
+    api_key = claude_api_key_from_payload(payload)
+    base_payload = {
+        "subject": payload.get("subject") or "Mathematics",
+        "grade": payload.get("grade") or "",
+        "duration": payload.get("duration") or "90 seconds",
+        "contentType": payload.get("contentType") or "Concept Video",
+        "claudeModel": payload.get("claudeModel"),
+        "claude_api_key": api_key,
+    }
+    animation_runs = []
+    for index, item in enumerate(raw_items):
+        storyboard = str(item.get("storyboard") or "").strip()
+        code = str(item.get("code") or "").strip()
+        storyboard_status = item.get("storyboardStatus") or ("Storyboard Done" if storyboard else "Storyboard Queued")
+        code_status = item.get("codeStatus") or ("Code Done" if code else ("Code Queued" if mode == "code" else "Code Not Started"))
+        if storyboard_status in {"Failed", "Paused", "Storyboard Failed", "Storyboard Paused"} and storyboard:
+            storyboard_status = "Storyboard Done"
+        if code_status in {"Failed", "Paused", "Code Failed", "Code Paused"} and code:
+            code_status = "Code Done"
+        animation_runs.append(
+            {
+                "index": item.get("index", index),
+                "title": item.get("title") or f"Script {index + 1}",
+                "transcript": item.get("transcript") or "",
+                "storyboard": storyboard,
+                "code": code,
+                "savedFile": item.get("savedFile"),
+                "storyboardStatus": storyboard_status,
+                "codeStatus": code_status,
+                "error": item.get("error") or "",
+            }
+        )
+
+    disk_used_names = set()
+
+    def saved_files():
+        return [item["savedFile"] for item in animation_runs if item.get("savedFile")]
+
+    def current_result(status="Running", phase="queued", current_index=0, render_job=None):
+        return {
+            "status": status,
+            "mode": mode,
+            "phase": phase,
+            "currentIndex": current_index,
+            "total": len(animation_runs),
+            "items": compact_animation_runs(animation_runs),
+            "storyboard": combined_storyboard_text_from_animation_runs(animation_runs),
+            "pythonCode": combined_python_text_from_animation_runs(animation_runs),
+            "savedFiles": saved_files(),
+            "renderJob": render_job,
+            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+            "promptUsed": "animation_phase",
+        }
+
+    def publish(current_index=0, phase="queued", status="Running"):
+        if not job_id:
+            return
+        update_job(job_id, progress=current_result(status=status, phase=phase, current_index=current_index))
+
+    publish(0, "queued")
+
+    for index, item in enumerate(animation_runs):
+        if item.get("storyboard") and item.get("storyboardStatus") == "Storyboard Done":
+            publish(index, "storyboard-skipped")
+            continue
+        if not str(item.get("transcript") or "").strip():
+            item["storyboardStatus"] = "Storyboard Failed"
+            item["error"] = "Missing transcript for this script."
+            publish(index, "storyboard-failed", "Paused")
+            return current_result(status="Paused", phase="storyboard-failed", current_index=index)
+        try:
+            item["storyboardStatus"] = "Storyboard Generating"
+            item["codeStatus"] = item.get("codeStatus") or ("Code Queued" if mode == "code" else "Code Not Started")
+            item["error"] = ""
+            publish(index, "storyboard", "Running")
+            storyboard = call_claude(
+                animation_prompt(
+                    {
+                        **base_payload,
+                        "title": item["title"],
+                        "transcript": item["transcript"],
+                    },
+                    "storyboard",
+                ),
+                api_key,
+                payload.get("claudeModel"),
+                max_output_tokens=int(payload.get("storyboardMaxTokens") or payload.get("maxTokens") or 16000),
+            )
+            item["storyboard"] = storyboard
+            item["storyboardStatus"] = "Storyboard Done"
+            publish(index, "storyboard-done", "Running")
+        except Exception as exc:
+            item["storyboardStatus"] = "Storyboard Failed"
+            item["error"] = str(exc) or exc.__class__.__name__
+            publish(index, "storyboard-failed", "Paused")
+            return current_result(status="Paused", phase="storyboard-failed", current_index=index)
+
+    if mode == "storyboard":
+        publish(len(animation_runs), "complete", "Generated")
+        return current_result(status="Generated", phase="complete", current_index=len(animation_runs))
+
+    publish(0, "code-queued", "Running")
+    for index, item in enumerate(animation_runs):
+        if item.get("code") and item.get("codeStatus") == "Code Done":
+            publish(index, "code-skipped")
+            continue
+        try:
+            item["codeStatus"] = "Code Generating"
+            item["error"] = ""
+            publish(index, "code", "Running")
+            raw_code = call_claude(
+                animation_prompt(
+                    {
+                        **base_payload,
+                        "title": item["title"],
+                        "transcript": item["transcript"],
+                        "storyboard": item.get("storyboard") or "",
+                    },
+                    "code",
+                ),
+                api_key,
+                payload.get("claudeModel"),
+                max_output_tokens=int(payload.get("codeMaxTokens") or payload.get("maxTokens") or 24000),
+            )
+            code = extract_python_code(raw_code)
+            saved_file = save_generated_python_script(item["title"], code, disk_used_names)
+            item["code"] = code
+            item["savedFile"] = saved_file
+            item["codeStatus"] = "Code Done"
+            publish(index, "code-done", "Running")
+        except Exception as exc:
+            item["codeStatus"] = "Code Failed"
+            item["error"] = str(exc) or exc.__class__.__name__
+            publish(index, "code-failed", "Paused")
+            return current_result(status="Paused", phase="code-failed", current_index=index)
+
+    render_job = launch_start_renderer(saved_files())
+    publish(len(animation_runs), "complete", "Generated")
+    return current_result(status="Generated", phase="complete", current_index=len(animation_runs), render_job=render_job)
+
+
 @app.post("/api/animation/storyboard")
 def animation_storyboard_route():
     try:
@@ -1598,6 +1786,7 @@ JOB_HANDLERS = {
     "animation-storyboard": animation_storyboard_result,
     "animation-code": animation_code_result,
     "animation-package": animation_package_result,
+    "animation-batch": animation_batch_result,
 }
 
 
@@ -1639,6 +1828,8 @@ def run_job(job_id, kind, payload):
     try:
         if kind == "script-batch":
             result = script_batch_result(payload, job_id=job_id)
+        elif kind == "animation-batch":
+            result = animation_batch_result(payload, job_id=job_id)
         else:
             result = JOB_HANDLERS[kind](payload)
         update_job(job_id, status="done", result=result)
