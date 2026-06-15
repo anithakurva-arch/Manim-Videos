@@ -778,22 +778,22 @@
             <h2>1. Model API Key</h2>
             <div class="stack">
               <div class="field">
-                <label for="modelProvider">AI provider</label>
+                <label for="modelProvider">Model</label>
                 <select id="modelProvider">
-                  <option value="claude">Claude</option>
-                  <option value="gemma">Gemma</option>
+                  <option value="claude">claude-opus-4-6</option>
+                  <option value="gemma">google/gemma-4-31b-it</option>
                 </select>
               </div>
               <div class="field">
-                <label for="claudeKey">Claude API key</label>
-                <input id="claudeKey" type="password" autocomplete="off" placeholder="sk-ant-...">
+                <label for="claudeKey">API key</label>
+                <input id="claudeKey" type="password" autocomplete="off" placeholder="Paste API key">
               </div>
               <div class="row">
-                <button type="button" id="saveClaudeKey">Validate Claude key</button>
+                <button type="button" id="saveClaudeKey">Validate API key</button>
                 <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
                 <button type="button" class="danger" id="stopClaudeKey" disabled>Stop</button>
               </div>
-              <div class="field">
+              <div class="field hidden">
                 <label for="gemmaModel">Gemma model</label>
                 <select id="gemmaModel">
                   {% for model in gemma_models|default(['google/gemma-4-31b-it']) %}
@@ -801,15 +801,15 @@
                   {% endfor %}
                 </select>
               </div>
-              <div class="field">
+              <div class="field hidden">
                 <label for="gemmaKey">Gemma API key</label>
                 <input id="gemmaKey" type="password" autocomplete="off" placeholder="Google AI Studio key">
               </div>
-              <div class="row">
+              <div class="row hidden">
                 <button type="button" id="saveGemmaKey">Validate Gemma key</button>
                 <button type="button" class="secondary" id="clearGemmaKey">Clear Gemma</button>
               </div>
-              <p class="note">Choose Claude or Gemma. The selected provider is used for LO grouping, script generation, validation, regeneration, storyboard, and Manim Python code. Keys are validated for this open page only.</p>
+              <p class="note">Choose a model, paste its API key, and validate it. The selected model is used for LO grouping, script generation, validation, regeneration, storyboard, and Manim Python code.</p>
             </div>
           </section>
 
@@ -2588,19 +2588,31 @@
 
       els.saveClaudeKey.addEventListener("click", async () => {
         const key = els.claudeKey.value.trim();
-        if (!key) return showMessage("Paste your Claude API key first.", "warn");
+        const provider = currentModelProvider();
+        const model = provider === "gemma"
+          ? readTemplateString(els.gemmaModel.value, DEFAULT_GEMMA_MODEL)
+          : readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL);
+        if (!key) return showMessage(`Paste your ${provider === "gemma" ? "Gemma" : "Claude"} API key first.`, "warn");
         const signal = beginSection("key");
         setBusy(els.saveClaudeKey, true, "Validating...");
-        showMessage("Validating Claude API key...", "warn");
+        showMessage(`Validating ${model} API key...`, "warn");
         try {
-          await validateClaudeKey(key, signal);
-          state.claudeKey = key;
+          if (provider === "gemma") {
+            await validateGemmaKey(key, model, signal);
+            state.gemmaKey = key;
+            state.claudeKey = "";
+          } else {
+            await validateClaudeKey(key, signal);
+            state.claudeKey = key;
+            state.gemmaKey = "";
+          }
           els.claudeKey.value = "";
           els.claudeKey.placeholder = "Validated for this page";
-          showMessage("Claude API key is valid for this open page.", "good");
+          showMessage(`${model} API key is valid for this open page.`, "good");
         } catch (error) {
-          state.claudeKey = "";
-          showMessage(isAbortError(error) ? "Claude API key validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
+          if (provider === "gemma") state.gemmaKey = "";
+          else state.claudeKey = "";
+          showMessage(isAbortError(error) ? "API key validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setBusy(els.saveClaudeKey, false);
           endSection("key");
@@ -2608,10 +2620,11 @@
       });
 
       els.clearClaudeKey.addEventListener("click", () => {
-        state.claudeKey = "";
+        if (currentModelProvider() === "gemma") state.gemmaKey = "";
+        else state.claudeKey = "";
         els.claudeKey.value = "";
-        els.claudeKey.placeholder = "sk-ant-...";
-        showMessage("Claude API key cleared.", "warn");
+        els.claudeKey.placeholder = "Paste API key";
+        showMessage("API key cleared.", "warn");
       });
 
       els.saveGemmaKey.addEventListener("click", async () => {
@@ -2646,7 +2659,9 @@
 
       els.modelProvider.addEventListener("change", () => {
         const provider = currentModelProvider();
-        showMessage(`${provider === "gemma" ? "Gemma" : "Claude"} selected for the full workflow.`, "warn");
+        els.claudeKey.value = "";
+        els.claudeKey.placeholder = provider === "gemma" ? "OpenRouter API key" : "sk-ant-...";
+        showMessage(`${provider === "gemma" ? DEFAULT_GEMMA_MODEL : DEFAULT_CLAUDE_MODEL} selected for the full workflow.`, "warn");
       });
 
       els.stopClaudeKey.addEventListener("click", () => {

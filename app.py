@@ -237,9 +237,9 @@ def call_gemma(prompt, api_key, model=None, max_output_tokens=16000):
             data=body,
             headers={
                 "content-type": "application/json",
-                "authorization": f"Bearer {api_key}",
-                "http-referer": "https://manim-videos-5663.onrender.com",
-                "x-title": "Manim Videos",
+                "Authorization": f"Bearer {api_key}",
+                "HTTP-Referer": "https://manim-videos-5663.onrender.com",
+                "X-Title": "Manim Videos",
             },
             method="POST",
         )
