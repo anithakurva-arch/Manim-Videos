@@ -1048,6 +1048,7 @@
           bulk: null,
         },
         scriptRuns: [],
+        animationRuns: [],
         activeTab: "grouping",
       };
 
@@ -1927,6 +1928,11 @@
         state.validation = "";
         state.status = "Idle";
         state.history = [];
+        state.storyboard = "";
+        state.pythonCode = "";
+        state.animationPackage = "";
+        state.animationRuns = [];
+        renderAnimationDownloads();
         renderStatus();
         setTab("grouping");
       }
@@ -2236,10 +2242,37 @@
       }
 
       function badgeClass(status) {
+        if (String(status || "").includes("Done")) return "good";
         if (status === "Approved") return "good";
         if (status === "Rejected" || status === "Max Attempts Reached" || status === "Failed" || status === "Stopped") return "bad";
-        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Running" || status === "Generating" || status === "Validating" || status === "Regenerating" || status === "Regenerated" || status === "Generated" || status === "Queued" || status === "Grouped") return "warn";
+        if (status === "Needs Minor Revision" || status === "Needs Review" || status === "Running" || status === "Generating" || status === "Validating" || status === "Regenerating" || status === "Regenerated" || status === "Generated" || status === "Queued" || status === "Grouped" || String(status || "").includes("Queued") || String(status || "").includes("Generating")) return "warn";
         return "";
+      }
+
+      function renderAnimationStatusRows() {
+        if (!state.animationRuns.length) return;
+        const header = document.createElement("div");
+        header.className = "status-row";
+        header.innerHTML = `
+          <div>
+            <strong>Storyboard to code</strong>
+            <div class="note">${state.animationRuns.length} script(s) detected</div>
+          </div>
+          <span class="badge ${badgeClass(state.status)}">${escapeHtml(state.status)}</span>
+        `;
+        els.statusList.appendChild(header);
+        state.animationRuns.forEach((item, index) => {
+          const row = document.createElement("div");
+          row.className = "status-row";
+          row.innerHTML = `
+            <div>
+              <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
+              <div class="note">Storyboard: ${escapeHtml(item.storyboardStatus || "Queued")} / Python: ${escapeHtml(item.codeStatus || "Queued")}</div>
+            </div>
+            <span class="badge ${badgeClass(item.codeStatus || item.storyboardStatus)}">${escapeHtml(item.codeStatus || item.storyboardStatus || "Queued")}</span>
+          `;
+          els.statusList.appendChild(row);
+        });
       }
 
       function renderStatus() {
@@ -2257,6 +2290,7 @@
             `;
             els.statusList.appendChild(row);
           });
+          renderAnimationStatusRows();
           const phase2Ready = allScriptRunsPhase2Ready();
           els.downloadApproved.disabled = !phase2Ready;
           els.useApprovedScript.disabled = !phase2Ready;
@@ -2291,6 +2325,7 @@
           `;
           els.statusList.appendChild(row);
         });
+        renderAnimationStatusRows();
         const phase2Ready = isPhase2ReadyStatus(state.status);
         els.downloadApproved.disabled = !phase2Ready;
         els.useApprovedScript.disabled = !phase2Ready;
@@ -2535,7 +2570,9 @@
           state.storyboard = "";
           state.pythonCode = "";
           state.animationPackage = "";
+          state.animationRuns = [];
           renderAnimationDownloads();
+          renderStatus();
           setTab("storyboard");
           showMessage("Transcript loaded. You can start from storyboard or Python generation.", "good");
         } catch (error) {
@@ -2601,6 +2638,15 @@
         setActiveProcess("python");
         setBusy(els.generatePython, true, "Generating...");
         try {
+          state.status = "Running";
+          state.animationRuns = codeItems.map((item, index) => ({
+            index,
+            title: item.title || `Script ${index + 1}`,
+            storyboardStatus: "Storyboard Queued",
+            codeStatus: "Code Queued",
+          }));
+          renderStatus();
+          showMessage(`Detected ${codeItems.length} script(s). Generating all storyboards first.`, "warn");
           setTab("storyboard");
           const storyboards = [];
           const generatedCodes = [];
@@ -2608,6 +2654,11 @@
           for (const [position, item] of codeItems.entries()) {
             if (signal.aborted) throw new DOMException("Stopped", "AbortError");
             setActiveProcess("storyboard");
+            state.animationRuns[position] = {
+              ...state.animationRuns[position],
+              storyboardStatus: "Storyboard Generating",
+            };
+            renderStatus();
             showMessage(`Generating storyboard ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
             const storyboardData = await apiPost("/api/animation/storyboard", {
               ...basePayload,
@@ -2619,14 +2670,30 @@
               title: item.title,
               storyboard,
             });
+            state.animationRuns[position] = {
+              ...state.animationRuns[position],
+              storyboardStatus: "Storyboard Done",
+            };
             state.storyboard = storyboards
               .map((entry, index) => `## STORYBOARD ${index + 1}: ${entry.title}\n\n${entry.storyboard}`)
               .join("\n\n---\n\n");
             renderAnimationDownloads();
+            renderStatus();
             setTab("storyboard");
+          }
 
+          showMessage(`All ${storyboards.length} storyboard(s) generated. Starting Python code generation.`, "good");
+          setActiveProcess("python");
+          setTab("python");
+
+          for (const [position, item] of codeItems.entries()) {
             if (signal.aborted) throw new DOMException("Stopped", "AbortError");
-            setActiveProcess("python");
+            const storyboard = storyboards[position]?.storyboard || "";
+            state.animationRuns[position] = {
+              ...state.animationRuns[position],
+              codeStatus: "Code Generating",
+            };
+            renderStatus();
             showMessage(`Generating Python ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
             const data = await apiPost("/api/animation/code", {
               ...basePayload,
@@ -2636,15 +2703,28 @@
             }, claudeHeaders(), { signal });
             generatedCodes.push(`# PYTHON ${position + 1}: ${item.title}\n\n${data.code || ""}`);
             if (data.savedFile?.path) savedPaths.push(data.savedFile.path);
+            state.animationRuns[position] = {
+              ...state.animationRuns[position],
+              codeStatus: "Code Done",
+            };
             state.pythonCode = generatedCodes.join("\n\n# ---\n\n");
             renderAnimationDownloads();
+            renderStatus();
             setTab("python");
           }
+          state.status = "Generated";
+          renderStatus();
           showMessage(savedPaths.length
             ? `Generated ${generatedCodes.length} Python file(s). Saved: ${savedPaths.join("; ")}`
             : `Generated ${generatedCodes.length} Python code package(s).`,
             "good");
         } catch (error) {
+          state.animationRuns = state.animationRuns.map((item) => {
+            if (item.storyboardStatus === "Storyboard Generating") return { ...item, storyboardStatus: "Failed" };
+            if (item.codeStatus === "Code Generating") return { ...item, codeStatus: "Failed" };
+            return item;
+          });
+          renderStatus();
           showMessage(isAbortError(error) ? "Python generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setActiveProcess("");
