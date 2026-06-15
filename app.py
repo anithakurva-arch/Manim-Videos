@@ -553,6 +553,40 @@ def parse_excel(file_storage):
             temp_path.unlink(missing_ok=True)
 
 
+def parse_transcript_file(file_storage):
+    filename = str(getattr(file_storage, "filename", "") or "").strip()
+    suffix = Path(filename).suffix.lower()
+    data = file_storage.read()
+    if not data:
+        raise ValueError("Uploaded transcript file is empty.")
+
+    if suffix == ".pdf":
+        try:
+            from pypdf import PdfReader
+        except Exception as exc:
+            raise ValueError("PDF transcript support is not installed. Install pypdf and retry.") from exc
+        reader = PdfReader(BytesIO(data))
+        pages = []
+        for page in reader.pages:
+            text = page.extract_text() or ""
+            if text.strip():
+                pages.append(text.strip())
+        transcript = "\n\n".join(pages).strip()
+        if not transcript:
+            raise ValueError("No readable transcript text was found in the PDF.")
+        return transcript
+
+    if suffix not in {".txt", ".text", ".md", ".markdown", ""}:
+        raise ValueError("Upload a transcript as .txt, .md, or .pdf.")
+
+    for encoding in ("utf-8-sig", "utf-8", "cp1252"):
+        try:
+            return data.decode(encoding).strip()
+        except UnicodeDecodeError:
+            continue
+    raise ValueError("Could not decode the transcript text file.")
+
+
 def filters_for(rows):
     def unique(key, items):
         return sorted({row[key] for row in items if row.get(key)})
@@ -1124,6 +1158,17 @@ def parse_excel_route():
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
     return jsonify({"rows": rows, "filters": filters_for(rows)})
+
+
+@app.post("/api/parse-transcript-file")
+def parse_transcript_file_route():
+    if "file" not in request.files:
+        return jsonify({"error": "Upload a transcript file first."}), 400
+    try:
+        transcript = parse_transcript_file(request.files["file"])
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+    return jsonify({"transcript": transcript})
 
 
 def group_result(payload):

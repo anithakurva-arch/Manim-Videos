@@ -910,6 +910,13 @@
                 <label for="animationTranscript">Transcript for animation</label>
                 <textarea id="animationTranscript" placeholder="Paste transcript here, or use the latest Phase 2 ready script."></textarea>
               </div>
+              <div class="field">
+                <label for="transcriptFile">Upload transcript</label>
+                <input id="transcriptFile" type="file" accept=".txt,.text,.md,.markdown,.pdf,text/plain,application/pdf">
+              </div>
+              <div class="row">
+                <button type="button" class="secondary" id="uploadTranscript">Load Transcript File</button>
+              </div>
             </div>
             <div class="action-row">
               <button type="button" id="generateStoryboard">Generate Storyboard</button>
@@ -1087,6 +1094,8 @@
         animationDuration: document.getElementById("animationDuration"),
         animationContentType: document.getElementById("animationContentType"),
         animationTranscript: document.getElementById("animationTranscript"),
+        transcriptFile: document.getElementById("transcriptFile"),
+        uploadTranscript: document.getElementById("uploadTranscript"),
         useApprovedScript: document.getElementById("useApprovedScript"),
         generateStoryboard: document.getElementById("generateStoryboard"),
         generatePython: document.getElementById("generatePython"),
@@ -1554,6 +1563,19 @@
         }
         const payload = phase2Payload();
         return phase2ItemsFromTranscript(payload);
+      }
+
+      function storyboardForItem(item, position) {
+        const text = String(state.storyboard || "").trim();
+        if (!text) return "";
+        const escapedTitle = String(item.title || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const titlePattern = escapedTitle ? `(?::\\s*${escapedTitle})?` : "";
+        const blockPattern = new RegExp(`(?:^|\\n)##\\s*STORYBOARD\\s+${position + 1}${titlePattern}\\s*\\n`, "i");
+        const match = blockPattern.exec(text);
+        if (!match) return text;
+        const start = match.index + match[0].length;
+        const next = new RegExp(`\\n##\\s*STORYBOARD\\s+${position + 2}\\b`, "i").exec(text.slice(start));
+        return text.slice(start, next ? start + next.index : text.length).replace(/^\s*---\s*/m, "").trim();
       }
 
       function renderAnimationDownloads() {
@@ -2498,6 +2520,37 @@
         showMessage("Phase 2 ready script content copied into the animation transcript.", "good");
       });
 
+      async function uploadTranscriptFile() {
+        if (!els.transcriptFile.files.length) return showMessage("Choose a transcript file first.", "warn");
+        const signal = beginSection("animation");
+        const form = new FormData();
+        form.append("file", els.transcriptFile.files[0]);
+        setBusy(els.uploadTranscript, true, "Loading...");
+        showMessage("Uploading transcript file...", "warn");
+        try {
+          const response = await fetch(apiUrl("/api/parse-transcript-file"), { method: "POST", body: form, signal });
+          const data = await readJsonResponse(response, "Could not read transcript file.");
+          if (!response.ok) throw new Error(data.error || "Could not read transcript file.");
+          els.animationTranscript.value = data.transcript || "";
+          state.storyboard = "";
+          state.pythonCode = "";
+          state.animationPackage = "";
+          renderAnimationDownloads();
+          setTab("storyboard");
+          showMessage("Transcript loaded. You can start from storyboard or Python generation.", "good");
+        } catch (error) {
+          showMessage(isAbortError(error) ? "Transcript upload stopped." : error.message, isAbortError(error) ? "warn" : "bad");
+        } finally {
+          setBusy(els.uploadTranscript, false);
+          endSection("animation");
+        }
+      }
+
+      els.uploadTranscript.addEventListener("click", uploadTranscriptFile);
+      els.transcriptFile.addEventListener("change", () => {
+        if (els.transcriptFile.files.length) uploadTranscriptFile();
+      });
+
       els.generateStoryboard.addEventListener("click", async () => {
         const basePayload = phase2Payload();
         const storyboardItems = phase2StoryboardItems();
@@ -2541,20 +2594,35 @@
       });
 
       els.generatePython.addEventListener("click", async () => {
-        const payload = phase2Payload({ storyboard: state.storyboard });
-        if (!payload.transcript) return showMessage("Paste a transcript or use the latest script first.", "warn");
+        const basePayload = phase2Payload();
+        const codeItems = phase2StoryboardItems();
+        if (!codeItems.length) return showMessage("Paste a transcript, upload a transcript file, or use the latest script first.", "warn");
         const signal = beginSection("animation");
         setActiveProcess("python");
         setBusy(els.generatePython, true, "Generating Python...");
         try {
-          const data = await apiPost("/api/animation/code", payload, claudeHeaders(), { signal });
-          state.pythonCode = data.code || "";
-          renderAnimationDownloads();
           setTab("python");
-          showMessage(data.renderJob?.started
-            ? `Manim Python code saved to ${data.savedFile.path}. Rendering started with start.py. Log: ${data.renderJob.log}`
-            : (data.savedFile?.path ? `Manim Python code generated and saved to ${data.savedFile.path}.` : "Manim Python code generated with Claude."),
-            data.renderJob?.started ? "good" : "warn");
+          const generatedCodes = [];
+          const savedPaths = [];
+          for (const [position, item] of codeItems.entries()) {
+            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
+            showMessage(`Generating Python ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
+            const data = await apiPost("/api/animation/code", {
+              ...basePayload,
+              title: item.title,
+              transcript: item.transcript,
+              storyboard: storyboardForItem(item, position),
+            }, claudeHeaders(), { signal });
+            generatedCodes.push(`# PYTHON ${position + 1}: ${item.title}\n\n${data.code || ""}`);
+            if (data.savedFile?.path) savedPaths.push(data.savedFile.path);
+            state.pythonCode = generatedCodes.join("\n\n# ---\n\n");
+            renderAnimationDownloads();
+            setTab("python");
+          }
+          showMessage(savedPaths.length
+            ? `Generated ${generatedCodes.length} Python file(s). Saved: ${savedPaths.join("; ")}`
+            : `Generated ${generatedCodes.length} Python code package(s).`,
+            "good");
         } catch (error) {
           showMessage(isAbortError(error) ? "Python generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
@@ -2877,14 +2945,15 @@
       });
 
       els.downloadApproved.addEventListener("click", () => {
-        if (state.scriptRuns.length && !allScriptRunsPhase2Ready()) return showMessage("Only Approved or Needs Minor Revision scripts can be downloaded.", "warn");
+        const readyScripts = phase2ReadyScriptRuns();
+        if (state.scriptRuns.length && readyScripts.length !== state.scriptRuns.length) return showMessage("Download includes only validated scripts. Regenerate or validate every script until each one is Approved or Needs Minor Revision.", "warn");
         if (!state.scriptRuns.length && !isPhase2ReadyStatus(state.status)) return showMessage("Only Approved or Needs Minor Revision scripts can be downloaded.", "warn");
         const payload = {
           status: state.status,
           grouping: state.grouping,
           script: combinedApprovedScriptText() || state.script,
           validationReport: state.validation,
-          scripts: state.scriptRuns.map((item) => ({
+          scripts: readyScripts.map((item) => ({
             title: item.title,
             status: item.status,
             attemptsUsed: item.attemptsUsed,
