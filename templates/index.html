@@ -2599,19 +2599,40 @@
         if (!codeItems.length) return showMessage("Paste a transcript, upload a transcript file, or use the latest script first.", "warn");
         const signal = beginSection("animation");
         setActiveProcess("python");
-        setBusy(els.generatePython, true, "Generating Python...");
+        setBusy(els.generatePython, true, "Generating...");
         try {
-          setTab("python");
+          setTab("storyboard");
+          const storyboards = [];
           const generatedCodes = [];
           const savedPaths = [];
           for (const [position, item] of codeItems.entries()) {
             if (signal.aborted) throw new DOMException("Stopped", "AbortError");
+            setActiveProcess("storyboard");
+            showMessage(`Generating storyboard ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
+            const storyboardData = await apiPost("/api/animation/storyboard", {
+              ...basePayload,
+              title: item.title,
+              transcript: item.transcript,
+            }, claudeHeaders(), { signal });
+            const storyboard = storyboardData.storyboard || "";
+            storyboards.push({
+              title: item.title,
+              storyboard,
+            });
+            state.storyboard = storyboards
+              .map((entry, index) => `## STORYBOARD ${index + 1}: ${entry.title}\n\n${entry.storyboard}`)
+              .join("\n\n---\n\n");
+            renderAnimationDownloads();
+            setTab("storyboard");
+
+            if (signal.aborted) throw new DOMException("Stopped", "AbortError");
+            setActiveProcess("python");
             showMessage(`Generating Python ${position + 1} of ${codeItems.length}: ${item.title}`, "warn");
             const data = await apiPost("/api/animation/code", {
               ...basePayload,
               title: item.title,
               transcript: item.transcript,
-              storyboard: storyboardForItem(item, position),
+              storyboard,
             }, claudeHeaders(), { signal });
             generatedCodes.push(`# PYTHON ${position + 1}: ${item.title}\n\n${data.code || ""}`);
             if (data.savedFile?.path) savedPaths.push(data.savedFile.path);
