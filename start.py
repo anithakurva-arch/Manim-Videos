@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 import subprocess
@@ -8,7 +9,7 @@ from pathlib import Path
 from datetime import datetime
 
 BASE_DIR        = Path(__file__).parent.resolve()
-DEFAULT_SCRIPTS = BASE_DIR / "scripts"
+DEFAULT_SCRIPTS = Path(os.environ.get("MANIM_SCRIPTS_DIR", BASE_DIR / "scripts")).expanduser()
 DEFAULT_MEDIA   = BASE_DIR / "media"
 LOG_DIR         = BASE_DIR / "logs"
 RESULTS_FILE    = BASE_DIR / "run_results.json"
@@ -778,7 +779,92 @@ def ask_confirm(scripts, quality):
     return False
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Render Manim Python scripts with auto-repair."
+    )
+    parser.add_argument(
+        "--folder",
+        help="Folder containing Python scripts. Defaults to the launcher scripts folder.",
+    )
+    parser.add_argument(
+        "--files",
+        help="Comma-separated filenames or paths to render. Use all, or omit with --yes, to render every .py file.",
+    )
+    parser.add_argument(
+        "--quality",
+        default="",
+        help="Render quality: 1/2/3/4 or l/m/h/k. Defaults to m in non-interactive mode.",
+    )
+    parser.add_argument(
+        "--yes",
+        action="store_true",
+        help="Run without confirmation prompts.",
+    )
+    parser.add_argument(
+        "--no-open",
+        action="store_true",
+        help="Do not ask to open the videos folder after rendering.",
+    )
+    return parser.parse_args()
+
+
+def resolve_quality(raw):
+    raw = str(raw or "").strip().lower()
+    if not raw:
+        return "m"
+    if raw in QUALITY_MAP:
+        return QUALITY_MAP[raw][0]
+    if raw in ("l", "m", "h", "k"):
+        return raw
+    warn(f"Unrecognised quality '{raw}' -- using default 720p Medium.")
+    return "m"
+
+
+def cli_folder(raw):
+    folder = Path(raw).expanduser().resolve() if raw else DEFAULT_SCRIPTS
+    if not folder.exists():
+        warn(f"Folder does not exist -- creating: {folder}")
+        folder.mkdir(parents=True, exist_ok=True)
+    return folder
+
+
+def cli_files(folder, raw):
+    scripts = sorted(folder.glob("*.py"), key=natural_sort_key)
+    raw = str(raw or "").strip()
+    if not raw or raw.lower() == "all":
+        if not scripts:
+            err(f"No .py files found in:  {folder}")
+            sys.exit(1)
+        info(f"Running ALL {len(scripts)} file(s).")
+        return scripts
+
+    chosen = []
+    for part in re.split(r"[,;]+", raw):
+        part = part.strip().strip('"').strip("'")
+        if not part:
+            continue
+        candidate = Path(part).expanduser()
+        if not candidate.is_absolute():
+            candidate = folder / candidate
+        candidate = candidate.resolve()
+        if candidate.exists() and candidate.suffix.lower() == ".py":
+            if candidate not in chosen:
+                chosen.append(candidate)
+        else:
+            warn(f"Script not found -- skipping: {candidate}")
+
+    if not chosen:
+        err("No valid .py files selected for rendering.")
+        sys.exit(1)
+    info(f"Selected {len(chosen)} file(s):")
+    for script_path in chosen:
+        print(f"    {C.GREEN}--> {script_path.name}{C.RESET}")
+    return chosen
+
+
 def main():
+    args = parse_args()
     DEFAULT_SCRIPTS.mkdir(parents=True, exist_ok=True)
     DEFAULT_MEDIA.mkdir(parents=True, exist_ok=True)
     LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -790,9 +876,15 @@ def main():
         warn("Create it with:  OPENAI_API_KEY=sk-your-key-here")
         blank()
 
-    folder  = ask_folder()
-    scripts = ask_files(folder)
-    quality = ask_quality()
+    if args.yes or args.folder or args.files:
+        folder = cli_folder(args.folder)
+        scripts = cli_files(folder, args.files)
+        quality = resolve_quality(args.quality)
+        info(f"Using non-interactive quality: {quality_label(quality)}")
+    else:
+        folder  = ask_folder()
+        scripts = ask_files(folder)
+        quality = ask_quality()
 
     blank()
     print(f"{C.BOLD}  PRE-SCAN -- AUTO-REPAIR ALL SELECTED SCRIPTS{C.RESET}")
@@ -820,7 +912,9 @@ def main():
            f"{total_svg} SVG placeholder(s) created.")
     blank()
 
-    if not ask_confirm(scripts, quality):
+    if args.yes:
+        info("Confirmation skipped by --yes.")
+    elif not ask_confirm(scripts, quality):
         return
 
     blank()
@@ -869,7 +963,7 @@ def main():
 
     blank()
     div()
-    raw = input("  Open videos folder in explorer? [Y/n]: ").strip().lower()
+    raw = "n" if args.no_open else input("  Open videos folder in explorer? [Y/n]: ").strip().lower()
     if raw in ("", "y", "yes"):
         try:
             if sys.platform == "win32":

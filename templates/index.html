@@ -2432,7 +2432,7 @@
         try {
           const zipBlob = await apiPostBlob("/api/bulk/python-scripts", payload, claudeHeaders(), { signal });
           saveBlobFile("bulk_validated_animation_package.zip", zipBlob);
-          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} visible Learning Outcome(s). Python filenames are unique.`, "good");
+          showMessage(`Bulk ZIP generated after validation for ${payload.outcomes.length} visible Learning Outcome(s). Python files were saved locally and start.py rendering was launched. Render details are in the ZIP manifest.`, "good");
         } catch (error) {
           showMessage(isAbortError(error) ? "Bulk package workflow stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
@@ -2508,7 +2508,10 @@
           state.pythonCode = data.code || "";
           renderAnimationDownloads();
           setTab("python");
-          showMessage("Manim Python code generated with Claude.", "good");
+          showMessage(data.renderJob?.started
+            ? `Manim Python code saved to ${data.savedFile.path}. Rendering started with start.py. Log: ${data.renderJob.log}`
+            : (data.savedFile?.path ? `Manim Python code generated and saved to ${data.savedFile.path}.` : "Manim Python code generated with Claude."),
+            data.renderJob?.started ? "good" : "warn");
         } catch (error) {
           showMessage(isAbortError(error) ? "Python generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
@@ -2530,7 +2533,10 @@
           state.pythonCode = data.code || state.pythonCode;
           renderAnimationDownloads();
           setTab("package");
-          showMessage("Full animation package generated with Claude.", "good");
+          showMessage(data.renderJob?.started
+            ? `Full animation package generated. Python code saved to ${data.savedFile.path}. Rendering started with start.py. Log: ${data.renderJob.log}`
+            : (data.savedFile?.path ? `Full animation package generated. Python code saved to ${data.savedFile.path}.` : "Full animation package generated with Claude."),
+            data.renderJob?.started ? "good" : "warn");
         } catch (error) {
           showMessage(isAbortError(error) ? "Animation package generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {

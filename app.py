@@ -1,5 +1,8 @@
 import json
+import os
 import re
+import subprocess
+import sys
 import tempfile
 import threading
 import time
@@ -20,6 +23,12 @@ from werkzeug.exceptions import HTTPException
 BASE_DIR = Path(__file__).parent.resolve()
 SCRIPTS_DIR = BASE_DIR / "scripts"
 PROMPTS_DIR = BASE_DIR / "backend_prompts"
+GENERATED_SCRIPTS_DIR = Path(
+    os.environ.get("GENERATED_SCRIPTS_DIR")
+    or (r"C:\Users\Coschool\downloads\scripts" if os.name == "nt" else "/tmp/manim_scripts")
+).expanduser()
+RENDER_LAUNCH_LOG_DIR = BASE_DIR / "logs" / "render_launcher"
+DEFAULT_RENDER_QUALITY = "m"
 MAX_REGENERATIONS = 3
 DEFAULT_CLAUDE_MODEL = "claude-opus-4-6"
 MAX_LOS_PER_GROUPED_SCRIPT = 3
@@ -713,6 +722,87 @@ def unique_python_filename(title, used_names):
     return filename
 
 
+def unique_python_path(directory, title, used_names=None):
+    used_names = used_names if used_names is not None else set()
+    base = slugify_filename(title, "animation_scene")
+    counter = 1
+    while True:
+        filename = f"{base}.py" if counter == 1 else f"{base}_{counter}.py"
+        path = directory / filename
+        if filename not in used_names and not path.exists():
+            used_names.add(filename)
+            return path
+        counter += 1
+
+
+def save_generated_python_script(title, code, used_names=None):
+    clean_code = extract_python_code(code)
+    if not clean_code.strip():
+        raise ValueError("Generated Python code was empty.")
+    GENERATED_SCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
+    path = unique_python_path(GENERATED_SCRIPTS_DIR, title, used_names)
+    path.write_text(clean_code.rstrip() + "\n", encoding="utf-8")
+    return {
+        "filename": path.name,
+        "path": str(path),
+    }
+
+
+def launch_start_renderer(saved_files, quality=DEFAULT_RENDER_QUALITY):
+    paths = []
+    for item in saved_files or []:
+        raw_path = item.get("path") if isinstance(item, dict) else item
+        if not raw_path:
+            continue
+        path = Path(raw_path)
+        if path.exists() and path.suffix.lower() == ".py":
+            paths.append(path)
+    if not paths:
+        return {"started": False, "error": "No saved Python scripts to render."}
+
+    RENDER_LAUNCH_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = RENDER_LAUNCH_LOG_DIR / f"start_{int(time.time())}_{uuid.uuid4().hex[:8]}.log"
+    filenames = ",".join(path.name for path in paths)
+    command = [
+        sys.executable,
+        str(BASE_DIR / "start.py"),
+        "--folder",
+        str(GENERATED_SCRIPTS_DIR),
+        "--files",
+        filenames,
+        "--quality",
+        quality or DEFAULT_RENDER_QUALITY,
+        "--yes",
+        "--no-open",
+    ]
+    env = {**os.environ, "MANIM_SCRIPTS_DIR": str(GENERATED_SCRIPTS_DIR)}
+    creationflags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    try:
+        with log_path.open("w", encoding="utf-8") as log_file:
+            process = subprocess.Popen(
+                command,
+                cwd=str(BASE_DIR),
+                stdout=log_file,
+                stderr=subprocess.STDOUT,
+                env=env,
+                creationflags=creationflags,
+            )
+    except Exception as exc:
+        return {
+            "started": False,
+            "files": [path.name for path in paths],
+            "log": str(log_path),
+            "error": str(exc) or exc.__class__.__name__,
+        }
+    return {
+        "started": True,
+        "pid": process.pid,
+        "files": [path.name for path in paths],
+        "log": str(log_path),
+        "quality": quality or DEFAULT_RENDER_QUALITY,
+    }
+
+
 def animation_title_for_outcome(outcome):
     return " - ".join(
         str(part)
@@ -1396,9 +1486,13 @@ def animation_code_result(payload):
         max_output_tokens=int(payload.get("maxTokens") or 24000),
     )
     code = extract_python_code(raw_code)
+    saved_file = save_generated_python_script(payload.get("title") or "animation_scene", code)
+    render_job = launch_start_renderer([saved_file])
     return {
         "code": code,
         "raw": raw_code,
+        "savedFile": saved_file,
+        "renderJob": render_job,
         "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
         "promptUsed": "animation_phase",
     }
@@ -1412,9 +1506,14 @@ def animation_package_result(payload):
         payload.get("claudeModel"),
         max_output_tokens=int(payload.get("maxTokens") or 30000),
     )
+    code = extract_python_code(package)
+    saved_file = save_generated_python_script(payload.get("title") or "animation_scene", code)
+    render_job = launch_start_renderer([saved_file])
     return {
         "package": package,
-        "code": extract_python_code(package),
+        "code": code,
+        "savedFile": saved_file,
+        "renderJob": render_job,
         "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
         "promptUsed": "animation_phase",
     }
@@ -1554,6 +1653,8 @@ def bulk_python_scripts_route():
     selected_groups = groups[:max_items]
 
     used_names = set()
+    disk_used_names = set()
+    saved_files = []
     manifest = []
     archive_buffer = BytesIO()
 
@@ -1659,13 +1760,17 @@ def bulk_python_scripts_route():
                     max_output_tokens=24000,
                 )
                 archive.writestr(f"{stem}_storyboard.txt", storyboard)
-                archive.writestr(filename, extract_python_code(code_response) + "\n")
+                code = extract_python_code(code_response)
+                saved_file = save_generated_python_script(title, code, disk_used_names)
+                saved_files.append(saved_file)
+                archive.writestr(filename, code + "\n")
                 manifest.append(
                     {
                         "index": index,
                         "status": "generated",
                         "validation_status": status,
                         "filename": filename,
+                        "saved_path": saved_file["path"],
                         "title": title,
                         "grade": grade,
                         "chapter": chapter,
@@ -1688,7 +1793,8 @@ def bulk_python_scripts_route():
                     }
                 )
 
-        archive.writestr("manifest.json", json.dumps({"items": manifest}, ensure_ascii=False, indent=2))
+        render_job = launch_start_renderer(saved_files)
+        archive.writestr("manifest.json", json.dumps({"items": manifest, "render_job": render_job}, ensure_ascii=False, indent=2))
 
     archive_buffer.seek(0)
     return Response(
