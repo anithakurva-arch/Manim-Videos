@@ -1416,7 +1416,13 @@
 
       function renderChapterOptions() {
         const current = els.chapterSelect.value;
-        const chapters = Array.from(new Set(state.rows.map((row) => row.chapter).filter(Boolean))).sort();
+        const grade = els.gradeSelect.value;
+        const chapters = Array.from(new Set(
+          state.rows
+            .filter((row) => !grade || row.grade === grade)
+            .map((row) => row.chapter)
+            .filter(Boolean)
+        )).sort();
         els.chapterSelect.innerHTML = "";
         option(els.chapterSelect, "", "All chapters");
         chapters.forEach((chapter) => option(els.chapterSelect, chapter));
@@ -1430,7 +1436,14 @@
 
       function renderSubtopicOptions() {
         const current = els.subtopicSelect.value;
-        const subtopics = Array.from(new Set(state.rows.map((row) => row.subtopic).filter(Boolean))).sort();
+        const grade = els.gradeSelect.value;
+        const chapter = els.chapterSelect.value;
+        const subtopics = Array.from(new Set(
+          state.rows
+            .filter((row) => (!grade || row.grade === grade) && (!chapter || row.chapter === chapter))
+            .map((row) => row.subtopic)
+            .filter(Boolean)
+        )).sort();
         els.subtopicSelect.innerHTML = "";
         option(els.subtopicSelect, "", "All subtopics");
         subtopics.forEach((subtopic) => option(els.subtopicSelect, subtopic));
