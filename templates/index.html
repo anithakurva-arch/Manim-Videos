@@ -1522,6 +1522,26 @@
         };
       }
 
+      function phase2ItemsFromTranscript(payload) {
+        const text = String(payload.transcript || "").trim();
+        if (!text) return [];
+        const matches = Array.from(text.matchAll(/(?:^|\n)\s*SCRIPT\s+(\d+)\s*:\s*([^\n]*)\n/gi));
+        if (matches.length <= 1) {
+          return [{ index: 0, title: payload.title || "Storyboard", transcript: text, status: "" }];
+        }
+        return matches.map((match, index) => {
+          const start = match.index + match[0].length;
+          const end = index + 1 < matches.length ? matches[index + 1].index : text.length;
+          const transcript = text.slice(start, end).replace(/^\s*---\s*/m, "").trim();
+          return {
+            index,
+            title: match[2].trim() || `Script ${match[1]}`,
+            transcript,
+            status: "",
+          };
+        }).filter((item) => item.transcript.trim());
+      }
+
       function phase2StoryboardItems() {
         const readyRuns = phase2ReadyScriptRuns();
         if (readyRuns.length) {
@@ -1533,9 +1553,7 @@
           })).filter((item) => item.transcript.trim());
         }
         const payload = phase2Payload();
-        return payload.transcript
-          ? [{ index: 0, title: payload.title || "Storyboard", transcript: payload.transcript, status: "" }]
-          : [];
+        return phase2ItemsFromTranscript(payload);
       }
 
       function renderAnimationDownloads() {
