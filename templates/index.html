@@ -2276,6 +2276,18 @@
       }
 
       function renderStatus() {
+        if (state.animationRuns.length) {
+          els.statusList.innerHTML = "";
+          renderAnimationStatusRows();
+          els.downloadApproved.disabled = true;
+          els.useApprovedScript.disabled = state.scriptRuns.length ? !allScriptRunsPhase2Ready() : !isPhase2ReadyStatus(state.status);
+          els.downloadNote.textContent = "Storyboard and Python generation progress is shown above.";
+          renderGroupedScriptsList();
+          renderWorkflowControls();
+          refreshOutputActionButtons();
+          return;
+        }
+
         if (state.scriptRuns.length) {
           els.statusList.innerHTML = "";
           state.scriptRuns.forEach((item, index) => {
