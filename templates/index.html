@@ -1388,7 +1388,12 @@
         return visibleRows().map(({ row }) => row);
       }
 
+      function hasRequiredLoFilter() {
+        return Boolean(els.chapterSelect.value || els.subtopicSelect.value);
+      }
+
       function visibleRows() {
+        if (!hasRequiredLoFilter()) return [];
         const grade = els.gradeSelect.value;
         const chapter = els.chapterSelect.value;
         const subtopic = els.subtopicSelect.value;
@@ -1440,6 +1445,11 @@
       function renderLearningOutcomes() {
         const rows = visibleRows();
         els.loList.innerHTML = "";
+        if (state.rows.length && !hasRequiredLoFilter()) {
+          els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">Waiting for filter</span>Select a chapter or subtopic to show Learning Outcomes.</div></div>';
+          updateMetrics();
+          return;
+        }
         if (!rows.length) {
           els.loList.innerHTML = '<div class="lo-item"><div></div><div class="lo-text"><span class="lo-meta">No rows</span>No Learning Outcomes match the current filters.</div></div>';
         } else {
@@ -2356,7 +2366,7 @@
           renderFilters();
           const filterSummary = [els.gradeSelect.value, els.chapterSelect.value, els.subtopicSelect.value].filter(Boolean).join(" / ");
           renderStatus();
-          showMessage(`Parsed ${state.rows.length} Learning Outcome(s). Chapter filter includes all detected chapters${filterSummary ? `: ${filterSummary}` : ""}. Generation will use all visible LOs.`, "good");
+          showMessage(`Parsed ${state.rows.length} Learning Outcome(s). Choose a chapter or subtopic to show matching LOs.`, "good");
         } catch (error) {
           showMessage(isAbortError(error) ? "Excel upload stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
@@ -2367,7 +2377,7 @@
 
       els.excelFile.addEventListener("change", () => {
         if (els.excelFile.files.length) {
-          showMessage("Excel file selected. Choose Upload and parse when you are ready.", "warn");
+          parseSelectedExcel();
         }
       });
 
