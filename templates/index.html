@@ -2252,11 +2252,14 @@
 
       function renderAnimationStatusRows() {
         if (!state.animationRuns.length) return;
+        const panelTitle = statusPanelTitle();
+        const isStoryboardPhase = panelTitle === "Storyboard Status";
+        const isPythonPhase = panelTitle === "Python Code Status";
         const header = document.createElement("div");
         header.className = "status-row";
         header.innerHTML = `
           <div>
-            <strong>Storyboard to code</strong>
+            <strong>${escapeHtml(panelTitle)}</strong>
             <div class="note">${state.animationRuns.length} script(s) detected</div>
           </div>
           <span class="badge ${badgeClass(state.status)}">${escapeHtml(state.status)}</span>
@@ -2265,12 +2268,20 @@
         state.animationRuns.forEach((item, index) => {
           const row = document.createElement("div");
           row.className = "status-row";
+          const visibleStatus = isStoryboardPhase
+            ? (item.storyboardStatus || "Storyboard Queued")
+            : (isPythonPhase ? (item.codeStatus || "Code Queued") : (item.codeStatus || item.storyboardStatus || "Queued"));
+          const detail = isStoryboardPhase
+            ? `Storyboard: ${item.storyboardStatus || "Storyboard Queued"}`
+            : (isPythonPhase
+              ? `Python: ${item.codeStatus || "Code Queued"}`
+              : `Storyboard: ${item.storyboardStatus || "Queued"} / Python: ${item.codeStatus || "Queued"}`);
           row.innerHTML = `
             <div>
               <strong>${escapeHtml(item.title || `Script ${index + 1}`)}</strong>
-              <div class="note">Storyboard: ${escapeHtml(item.storyboardStatus || "Queued")} / Python: ${escapeHtml(item.codeStatus || "Queued")}</div>
+              <div class="note">${escapeHtml(detail)}</div>
             </div>
-            <span class="badge ${badgeClass(item.codeStatus || item.storyboardStatus)}">${escapeHtml(item.codeStatus || item.storyboardStatus || "Queued")}</span>
+            <span class="badge ${badgeClass(visibleStatus)}">${escapeHtml(visibleStatus)}</span>
           `;
           els.statusList.appendChild(row);
         });
