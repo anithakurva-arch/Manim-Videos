@@ -2596,12 +2596,26 @@
         setActiveProcess("storyboard");
         setBusy(els.generateStoryboard, true, "Generating storyboards...");
         try {
+          state.status = "Running";
+          state.animationRuns = storyboardItems.map((item, index) => ({
+            index,
+            title: item.title || `Script ${index + 1}`,
+            storyboardStatus: "Storyboard Queued",
+            codeStatus: "Code Not Started",
+          }));
           const storyboards = [];
           state.storyboard = "";
           renderAnimationDownloads();
+          renderStatus();
           setTab("storyboard");
+          showMessage(`Detected ${storyboardItems.length} script(s). Generating storyboards one by one.`, "warn");
           for (const [position, item] of storyboardItems.entries()) {
             if (signal.aborted) throw new DOMException("Stopped", "AbortError");
+            state.animationRuns[position] = {
+              ...state.animationRuns[position],
+              storyboardStatus: "Storyboard Generating",
+            };
+            renderStatus();
             showMessage(`Generating storyboard ${position + 1} of ${storyboardItems.length}: ${item.title}`, "warn");
             const data = await apiPost("/api/animation/storyboard", {
               ...basePayload,
@@ -2612,16 +2626,28 @@
               title: item.title,
               storyboard: data.storyboard || "",
             });
+            state.animationRuns[position] = {
+              ...state.animationRuns[position],
+              storyboardStatus: "Storyboard Done",
+            };
             state.storyboard = storyboards
               .map((entry, index) => `## STORYBOARD ${index + 1}: ${entry.title}\n\n${entry.storyboard}`)
               .join("\n\n---\n\n");
             renderAnimationDownloads();
+            renderStatus();
             setTab("storyboard");
           }
+          state.status = "Generated";
+          renderStatus();
           renderAnimationDownloads();
           setTab("storyboard");
           showMessage(`Generated ${storyboards.length} storyboard package(s), one API call per script.`, "good");
         } catch (error) {
+          state.animationRuns = state.animationRuns.map((item) => {
+            if (item.storyboardStatus === "Storyboard Generating") return { ...item, storyboardStatus: "Failed" };
+            return item;
+          });
+          renderStatus();
           showMessage(isAbortError(error) ? "Storyboard generation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
         } finally {
           setActiveProcess("");
