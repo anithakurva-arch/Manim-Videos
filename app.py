@@ -31,6 +31,8 @@ RENDER_LAUNCH_LOG_DIR = BASE_DIR / "logs" / "render_launcher"
 DEFAULT_RENDER_QUALITY = "m"
 MAX_REGENERATIONS = 3
 DEFAULT_CLAUDE_MODEL = "claude-opus-4-6"
+DEFAULT_GEMMA_MODEL = "gemma-4-26b-a4b-it"
+GEMMA_MODELS = ["gemma-4-26b-a4b-it", "gemma-4-31b-it"]
 MAX_LOS_PER_GROUPED_SCRIPT = 3
 PHASE2_READY_STATUSES = {"Approved", "Needs Minor Revision"}
 
@@ -96,7 +98,7 @@ def json_error_handler(exc):
 @app.after_request
 def add_cors_headers(response):
     response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Claude-Key"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, X-Claude-Key, X-Gemma-Key"
     response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
     return response
 
@@ -126,6 +128,18 @@ def get_claude_api_key():
     return api_key
 
 
+def get_gemma_api_key():
+    api_key = request.headers.get("X-Gemma-Key", "").strip()
+    if not api_key:
+        payload = request.get_json(silent=True) or {}
+        api_key = str(payload.get("gemma_api_key", "")).strip()
+    if not api_key:
+        api_key = str(request.form.get("gemma_api_key", "")).strip()
+    if not api_key:
+        raise ValueError("Missing Gemma API key. Save your Gemma key before running.")
+    return api_key
+
+
 def claude_api_key_from_payload(payload):
     api_key = str((payload or {}).get("claude_api_key", "")).strip()
     if not api_key:
@@ -133,8 +147,36 @@ def claude_api_key_from_payload(payload):
     return api_key
 
 
+def gemma_api_key_from_payload(payload):
+    api_key = str((payload or {}).get("gemma_api_key", "")).strip()
+    if not api_key:
+        raise ValueError("Missing Gemma API key. Save your Gemma key before running.")
+    return api_key
+
+
+def model_provider_from_payload(payload):
+    provider = str((payload or {}).get("modelProvider") or "claude").strip().lower()
+    return "gemma" if provider == "gemma" else "claude"
+
+
+def model_name_from_payload(payload):
+    provider = model_provider_from_payload(payload)
+    if provider == "gemma":
+        return str((payload or {}).get("gemmaModel") or DEFAULT_GEMMA_MODEL).strip() or DEFAULT_GEMMA_MODEL
+    return str((payload or {}).get("claudeModel") or DEFAULT_CLAUDE_MODEL).strip() or DEFAULT_CLAUDE_MODEL
+
+
 def payload_with_request_key(payload):
     output = dict(payload or {})
+    provider = model_provider_from_payload(output)
+    output["modelProvider"] = provider
+    if provider == "gemma":
+        if not str(output.get("gemma_api_key", "")).strip():
+            try:
+                output["gemma_api_key"] = get_gemma_api_key()
+            except Exception:
+                pass
+        return output
     if not str(output.get("claude_api_key", "")).strip():
         try:
             output["claude_api_key"] = get_claude_api_key()
@@ -178,6 +220,50 @@ def call_claude(prompt, api_key, model=None, max_output_tokens=16000):
     if not output:
         raise ValueError("Claude returned an empty response.")
     return output
+
+
+def call_gemma(prompt, api_key, model=None, max_output_tokens=16000):
+    selected_model = str(model or DEFAULT_GEMMA_MODEL).strip()
+    selected_model = selected_model.removeprefix("models/")
+    body = json.dumps(
+        {
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "generationConfig": {"maxOutputTokens": max_output_tokens},
+        }
+    ).encode("utf-8")
+    req = urllib.request.Request(
+        f"https://generativelanguage.googleapis.com/v1beta/models/{selected_model}:generateContent?key={api_key}",
+        data=body,
+        headers={"content-type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=300) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise ValueError(f"Gemma API request failed: {detail}") from exc
+    except urllib.error.URLError as exc:
+        raise ValueError(f"Gemma API request failed: {exc.reason}") from exc
+
+    text_parts = []
+    for candidate in data.get("candidates", []):
+        content = candidate.get("content") or {}
+        for part in content.get("parts", []):
+            if "text" in part:
+                text_parts.append(part.get("text", ""))
+    output = "\n".join(text_parts).strip()
+    if not output:
+        raise ValueError("Gemma returned an empty response.")
+    return output
+
+
+def call_model(prompt, payload, max_output_tokens=16000):
+    provider = model_provider_from_payload(payload)
+    model = model_name_from_payload(payload)
+    if provider == "gemma":
+        return call_gemma(prompt, gemma_api_key_from_payload(payload), model, max_output_tokens=max_output_tokens)
+    return call_claude(prompt, claude_api_key_from_payload(payload), model, max_output_tokens=max_output_tokens)
 
 
 def normalise_header(value):
@@ -1082,6 +1168,8 @@ def index():
         "index.html",
         max_regenerations=MAX_REGENERATIONS,
         default_claude_model=DEFAULT_CLAUDE_MODEL,
+        default_gemma_model=DEFAULT_GEMMA_MODEL,
+        gemma_models=GEMMA_MODELS,
     )
 
 
@@ -1099,6 +1187,8 @@ def api():
             "phase": "1+2",
             "max_regenerations": MAX_REGENERATIONS,
             "default_claude_model": DEFAULT_CLAUDE_MODEL,
+            "default_gemma_model": DEFAULT_GEMMA_MODEL,
+            "gemma_models": GEMMA_MODELS,
             "prompts": sorted(PROMPT_FILES),
             "media_storage": "local-only; media/ is intentionally not tracked in Git",
         }
@@ -1149,6 +1239,18 @@ def validate_claude_key_route():
     return jsonify({"valid": True, "message": "Claude API key is valid."})
 
 
+@app.post("/api/validate-gemma-key")
+def validate_gemma_key_route():
+    try:
+        payload = request.get_json(silent=True) or {}
+        api_key = get_gemma_api_key()
+        model = str(payload.get("gemmaModel") or request.form.get("gemmaModel") or DEFAULT_GEMMA_MODEL).strip()
+        call_gemma("Reply with only OK.", api_key, model, max_output_tokens=16)
+    except Exception as exc:
+        return jsonify({"valid": False, "error": "Gemma API key validation failed: " + str(exc)}), 400
+    return jsonify({"valid": True, "message": "Gemma API key is valid."})
+
+
 @app.post("/api/parse-excel")
 def parse_excel_route():
     if "file" not in request.files:
@@ -1184,7 +1286,7 @@ def group_result(payload):
         ChapterName=chapter,
         CCsAndLOs=ccs_and_los,
     )
-    text = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=24000)
+    text = call_model(prompt, payload, max_output_tokens=24000)
     groups = source_exact_grouped_scripts(grouped_script_blocks(text), outcomes)
     return {
         "grouping": text,
@@ -1206,7 +1308,7 @@ def generate_result(payload):
         payload.get("subtopic", ""),
         outcomes_text,
     )
-    script = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=8000)
+    script = call_model(prompt, payload, max_output_tokens=8000)
     return {"script": script, "attempt": 1}
 
 
@@ -1223,7 +1325,7 @@ def validate_result(payload):
         script,
         payload.get("textbookReference", ""),
     )
-    report = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=8000)
+    report = call_model(prompt, payload, max_output_tokens=8000)
     return {"report": report, "status": extract_verdict(report)}
 
 
@@ -1250,7 +1352,7 @@ def revise_result(payload):
         + f"Previous Script:\n{previous_script}\n\nValidation Report:\n{report}\n\n"
         + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
     )
-    script = call_claude(prompt, claude_api_key_from_payload(payload), payload.get("claudeModel"), max_output_tokens=8000)
+    script = call_model(prompt, payload, max_output_tokens=8000)
     return {"script": script, "attempt": attempt}
 
 
@@ -1259,8 +1361,6 @@ def run_approved_result(payload):
     if not outcomes_text:
         raise ValueError("Missing grouped Learning Outcomes.")
 
-    api_key = claude_api_key_from_payload(payload)
-    model = payload.get("claudeModel")
     grade = payload.get("grade", "")
     chapter = payload.get("chapter", "")
     subtopic = payload.get("subtopic", "")
@@ -1282,11 +1382,10 @@ def run_approved_result(payload):
                 + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
             )
         try:
-            script = call_claude(prompt, api_key, model, max_output_tokens=8000)
-            report = call_claude(
+            script = call_model(prompt, payload, max_output_tokens=8000)
+            report = call_model(
                 validation_prompt(grade, chapter, subtopic, outcomes_text, script, textbook_reference),
-                api_key,
-                model,
+                payload,
                 max_output_tokens=8000,
             )
         except Exception as exc:
@@ -1332,14 +1431,17 @@ def script_batch_result(payload, job_id=None):
     if not groups:
         raise ValueError("No grouped scripts were supplied for batch generation.")
 
-    api_key = claude_api_key_from_payload(payload)
+    provider = model_provider_from_payload(payload)
     base_payload = {
         "grade": payload.get("grade", ""),
         "chapter": payload.get("chapter", ""),
         "subtopic": payload.get("subtopic", ""),
         "textbookReference": payload.get("textbookReference", ""),
+        "modelProvider": provider,
         "claudeModel": payload.get("claudeModel"),
-        "claude_api_key": api_key,
+        "gemmaModel": payload.get("gemmaModel"),
+        "claude_api_key": payload.get("claude_api_key", ""),
+        "gemma_api_key": payload.get("gemma_api_key", ""),
     }
     script_runs = []
     for index, group in enumerate(groups):
@@ -1509,27 +1611,18 @@ def run_approved_route():
 
 def animation_storyboard_result(payload):
     prompt = animation_prompt(payload, "storyboard")
-    storyboard = call_claude(
-        prompt,
-        claude_api_key_from_payload(payload),
-        payload.get("claudeModel"),
-        max_output_tokens=int(payload.get("maxTokens") or 16000),
-    )
+    storyboard = call_model(prompt, payload, max_output_tokens=int(payload.get("maxTokens") or 16000))
     return {
         "storyboard": storyboard,
-        "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+        "provider": model_provider_from_payload(payload),
+        "model": model_name_from_payload(payload),
         "promptUsed": "animation_phase",
     }
 
 
 def animation_code_result(payload):
     prompt = animation_prompt(payload, "code")
-    raw_code = call_claude(
-        prompt,
-        claude_api_key_from_payload(payload),
-        payload.get("claudeModel"),
-        max_output_tokens=int(payload.get("maxTokens") or 24000),
-    )
+    raw_code = call_model(prompt, payload, max_output_tokens=int(payload.get("maxTokens") or 24000))
     code = extract_python_code(raw_code)
     saved_file = save_generated_python_script(payload.get("title") or "animation_scene", code)
     render_job = launch_start_renderer([saved_file])
@@ -1538,19 +1631,15 @@ def animation_code_result(payload):
         "raw": raw_code,
         "savedFile": saved_file,
         "renderJob": render_job,
-        "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+        "provider": model_provider_from_payload(payload),
+        "model": model_name_from_payload(payload),
         "promptUsed": "animation_phase",
     }
 
 
 def animation_package_result(payload):
     prompt = animation_prompt(payload, "package")
-    package = call_claude(
-        prompt,
-        claude_api_key_from_payload(payload),
-        payload.get("claudeModel"),
-        max_output_tokens=int(payload.get("maxTokens") or 30000),
-    )
+    package = call_model(prompt, payload, max_output_tokens=int(payload.get("maxTokens") or 30000))
     code = extract_python_code(package)
     saved_file = save_generated_python_script(payload.get("title") or "animation_scene", code)
     render_job = launch_start_renderer([saved_file])
@@ -1559,7 +1648,8 @@ def animation_package_result(payload):
         "code": code,
         "savedFile": saved_file,
         "renderJob": render_job,
-        "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+        "provider": model_provider_from_payload(payload),
+        "model": model_name_from_payload(payload),
         "promptUsed": "animation_phase",
     }
 
@@ -1611,14 +1701,17 @@ def animation_batch_result(payload, job_id=None):
     if mode not in {"storyboard", "code"}:
         raise ValueError("Animation batch mode must be storyboard or code.")
 
-    api_key = claude_api_key_from_payload(payload)
+    provider = model_provider_from_payload(payload)
     base_payload = {
         "subject": payload.get("subject") or "Mathematics",
         "grade": payload.get("grade") or "",
         "duration": payload.get("duration") or "90 seconds",
         "contentType": payload.get("contentType") or "Concept Video",
+        "modelProvider": provider,
         "claudeModel": payload.get("claudeModel"),
-        "claude_api_key": api_key,
+        "gemmaModel": payload.get("gemmaModel"),
+        "claude_api_key": payload.get("claude_api_key", ""),
+        "gemma_api_key": payload.get("gemma_api_key", ""),
     }
     animation_runs = []
     for index, item in enumerate(raw_items):
@@ -1661,7 +1754,8 @@ def animation_batch_result(payload, job_id=None):
             "pythonCode": combined_python_text_from_animation_runs(animation_runs),
             "savedFiles": saved_files(),
             "renderJob": render_job,
-            "model": payload.get("claudeModel") or DEFAULT_CLAUDE_MODEL,
+            "provider": provider,
+            "model": model_name_from_payload(payload),
             "promptUsed": "animation_phase",
         }
 
@@ -1686,17 +1780,14 @@ def animation_batch_result(payload, job_id=None):
             item["codeStatus"] = item.get("codeStatus") or ("Code Queued" if mode == "code" else "Code Not Started")
             item["error"] = ""
             publish(index, "storyboard", "Running")
-            storyboard = call_claude(
-                animation_prompt(
-                    {
-                        **base_payload,
-                        "title": item["title"],
-                        "transcript": item["transcript"],
-                    },
-                    "storyboard",
-                ),
-                api_key,
-                payload.get("claudeModel"),
+            storyboard_payload = {
+                **base_payload,
+                "title": item["title"],
+                "transcript": item["transcript"],
+            }
+            storyboard = call_model(
+                animation_prompt(storyboard_payload, "storyboard"),
+                storyboard_payload,
                 max_output_tokens=int(payload.get("storyboardMaxTokens") or payload.get("maxTokens") or 16000),
             )
             item["storyboard"] = storyboard
@@ -1721,18 +1812,15 @@ def animation_batch_result(payload, job_id=None):
             item["codeStatus"] = "Code Generating"
             item["error"] = ""
             publish(index, "code", "Running")
-            raw_code = call_claude(
-                animation_prompt(
-                    {
-                        **base_payload,
-                        "title": item["title"],
-                        "transcript": item["transcript"],
-                        "storyboard": item.get("storyboard") or "",
-                    },
-                    "code",
-                ),
-                api_key,
-                payload.get("claudeModel"),
+            code_payload = {
+                **base_payload,
+                "title": item["title"],
+                "transcript": item["transcript"],
+                "storyboard": item.get("storyboard") or "",
+            }
+            raw_code = call_model(
+                animation_prompt(code_payload, "code"),
+                code_payload,
                 max_output_tokens=int(payload.get("codeMaxTokens") or payload.get("maxTokens") or 24000),
             )
             code = extract_python_code(raw_code)
@@ -1872,16 +1960,18 @@ def job_status_route(job_id):
 
 @app.post("/api/bulk/python-scripts")
 def bulk_python_scripts_route():
-    payload = request.get_json(force=True)
+    payload = payload_with_request_key(request.get_json(force=True))
     outcomes = payload.get("outcomes") or []
     if not outcomes:
         return jsonify({"error": "Select at least one Learning Outcome for bulk generation."}), 400
 
     try:
-        api_key = get_claude_api_key()
+        if model_provider_from_payload(payload) == "gemma":
+            gemma_api_key_from_payload(payload)
+        else:
+            claude_api_key_from_payload(payload)
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
-    model = payload.get("claudeModel")
     duration = payload.get("duration") or "90 seconds"
     content_type = payload.get("contentType") or "Concept Video"
     groups = bulk_groups_from_outcomes(outcomes)
@@ -1908,15 +1998,14 @@ def bulk_python_scripts_route():
                 continue
 
             try:
-                grouped_los = call_claude(
+                grouped_los = call_model(
                     fill_prompt(
                         load_prompt("lo_grouping"),
                         Grade=grade,
                         ChapterName=chapter,
                         CCsAndLOs=format_ccs_and_los(group["outcomes"]),
                     ),
-                    api_key,
-                    model,
+                    payload,
                     max_output_tokens=8000,
                 )
 
@@ -1933,11 +2022,10 @@ def bulk_python_scripts_route():
                             + f"Previous Transcript:\n{transcript}\n\nValidation Report:\n{validation_report}\n\n"
                             + f"This is regeneration attempt {attempt} of {MAX_REGENERATIONS}."
                         )
-                    transcript = call_claude(transcript_prompt, api_key, model, max_output_tokens=8000)
-                    validation_report = call_claude(
+                    transcript = call_model(transcript_prompt, payload, max_output_tokens=8000)
+                    validation_report = call_model(
                         validation_prompt(grade, chapter, subtopic, grouped_los, transcript, payload.get("textbookReference", "")),
-                        api_key,
-                        model,
+                        payload,
                         max_output_tokens=8000,
                     )
                     status = extract_verdict(validation_report)
@@ -1962,37 +2050,24 @@ def bulk_python_scripts_route():
                     )
                     continue
 
-                storyboard = call_claude(
-                    animation_prompt(
-                        {
-                            "transcript": transcript,
-                            "title": title,
-                            "subject": group.get("subject") or "Mathematics",
-                            "grade": grade,
-                            "duration": duration,
-                            "contentType": content_type,
-                        },
-                        "storyboard",
-                    ),
-                    api_key,
-                    model,
+                storyboard_payload = {
+                    **payload,
+                    "transcript": transcript,
+                    "title": title,
+                    "subject": group.get("subject") or "Mathematics",
+                    "grade": grade,
+                    "duration": duration,
+                    "contentType": content_type,
+                }
+                storyboard = call_model(
+                    animation_prompt(storyboard_payload, "storyboard"),
+                    storyboard_payload,
                     max_output_tokens=16000,
                 )
-                code_response = call_claude(
-                    animation_prompt(
-                        {
-                            "transcript": transcript,
-                            "title": title,
-                            "subject": group.get("subject") or "Mathematics",
-                            "grade": grade,
-                            "duration": duration,
-                            "contentType": content_type,
-                            "storyboard": storyboard,
-                        },
-                        "code",
-                    ),
-                    api_key,
-                    model,
+                code_payload = {**storyboard_payload, "storyboard": storyboard}
+                code_response = call_model(
+                    animation_prompt(code_payload, "code"),
+                    code_payload,
                     max_output_tokens=24000,
                 )
                 archive.writestr(f"{stem}_storyboard.txt", storyboard)

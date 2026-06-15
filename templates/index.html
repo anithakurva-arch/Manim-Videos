@@ -775,8 +775,15 @@
       <div class="layout">
         <aside class="stack">
           <section class="panel">
-            <h2>1. Claude API Key</h2>
+            <h2>1. Model API Key</h2>
             <div class="stack">
+              <div class="field">
+                <label for="modelProvider">AI provider</label>
+                <select id="modelProvider">
+                  <option value="claude">Claude</option>
+                  <option value="gemma">Gemma</option>
+                </select>
+              </div>
               <div class="field">
                 <label for="claudeKey">Claude API key</label>
                 <input id="claudeKey" type="password" autocomplete="off" placeholder="sk-ant-...">
@@ -786,7 +793,23 @@
                 <button type="button" class="secondary" id="clearClaudeKey">Clear</button>
                 <button type="button" class="danger" id="stopClaudeKey" disabled>Stop</button>
               </div>
-              <p class="note">Claude Opus 4.6 is used for every process: LO grouping, script generation, validation, regeneration, storyboard, and Manim Python code. The key is validated for this open page only.</p>
+              <div class="field">
+                <label for="gemmaModel">Gemma model</label>
+                <select id="gemmaModel">
+                  {% for model in gemma_models|default(['gemma-4-26b-a4b-it', 'gemma-4-31b-it']) %}
+                  <option value="{{ model }}" {% if model == default_gemma_model %}selected{% endif %}>{{ model }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="field">
+                <label for="gemmaKey">Gemma API key</label>
+                <input id="gemmaKey" type="password" autocomplete="off" placeholder="Google AI Studio key">
+              </div>
+              <div class="row">
+                <button type="button" id="saveGemmaKey">Validate Gemma key</button>
+                <button type="button" class="secondary" id="clearGemmaKey">Clear Gemma</button>
+              </div>
+              <p class="note">Choose Claude or Gemma. The selected provider is used for LO grouping, script generation, validation, regeneration, storyboard, and Manim Python code. Keys are validated for this open page only.</p>
             </div>
           </section>
 
@@ -1008,6 +1031,7 @@
     <script>
       const DEFAULT_MAX_REGENERATIONS = 3;
       const DEFAULT_CLAUDE_MODEL = "claude-opus-4-6";
+      const DEFAULT_GEMMA_MODEL = "{{ default_gemma_model|default('gemma-4-26b-a4b-it') }}";
       const RENDER_API_ORIGIN = "https://manim-videos-5663.onrender.com";
       const MAX_REGENERATIONS = readTemplateNumber("{{ max_regenerations|default(3) }}", DEFAULT_MAX_REGENERATIONS);
       const LONG_RUNNING_POSTS = new Map([
@@ -1041,6 +1065,7 @@
         pythonCode: "",
         animationPackage: "",
         claudeKey: "",
+        gemmaKey: "",
         controllers: {
           key: null,
           excel: null,
@@ -1054,10 +1079,15 @@
       };
 
       const els = {
+        modelProvider: document.getElementById("modelProvider"),
         claudeKey: document.getElementById("claudeKey"),
         saveClaudeKey: document.getElementById("saveClaudeKey"),
         clearClaudeKey: document.getElementById("clearClaudeKey"),
         stopClaudeKey: document.getElementById("stopClaudeKey"),
+        gemmaModel: document.getElementById("gemmaModel"),
+        gemmaKey: document.getElementById("gemmaKey"),
+        saveGemmaKey: document.getElementById("saveGemmaKey"),
+        clearGemmaKey: document.getElementById("clearGemmaKey"),
         excelFile: document.getElementById("excelFile"),
         parseExcel: document.getElementById("parseExcel"),
         stopExcelUpload: document.getElementById("stopExcelUpload"),
@@ -1143,6 +1173,31 @@
         return state.claudeKey;
       }
 
+      function currentGemmaKey() {
+        return state.gemmaKey;
+      }
+
+      function currentModelProvider() {
+        return els.modelProvider?.value === "gemma" ? "gemma" : "claude";
+      }
+
+      function modelCredentialPayload() {
+        const provider = currentModelProvider();
+        const base = {
+          modelProvider: provider,
+          claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
+          gemmaModel: readTemplateString(els.gemmaModel?.value, DEFAULT_GEMMA_MODEL),
+        };
+        if (provider === "gemma") {
+          const key = currentGemmaKey();
+          if (!key) throw new Error("Validate your Gemma API key first.");
+          return { ...base, gemma_api_key: key };
+        }
+        const key = currentClaudeKey();
+        if (!key) throw new Error("Validate your Claude API key first.");
+        return { ...base, claude_api_key: key };
+      }
+
       function setBusy(button, busy, label) {
         if (!button) return;
         if (busy) {
@@ -1192,7 +1247,7 @@
 
       function sectionLabel(section) {
         return {
-          key: "Claude key validation",
+          key: "Model key validation",
           excel: "Excel upload",
           scripts: "Script workflow",
           animation: "Animation workflow",
@@ -1216,8 +1271,7 @@
       }
 
       function claudeHeaders() {
-        const key = currentClaudeKey();
-        if (!key) throw new Error("Validate your Claude API key first.");
+        modelCredentialPayload();
         return {
           "Content-Type": "application/json",
         };
@@ -1269,12 +1323,12 @@
 
       async function apiPostJob(url, payload, headers, options = {}) {
         const jobKind = LONG_RUNNING_POSTS.get(url);
-        const claudeKey = currentClaudeKey();
+        const modelCredentials = modelCredentialPayload();
         showMessage(`Starting ${url} job...`, "warn");
         const startResponse = await fetch(apiUrl(`/api/jobs/${jobKind}`), {
           method: "POST",
           headers,
-          body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+          body: JSON.stringify({ ...payload, ...modelCredentials }),
           signal: options.signal,
         });
         const startData = await readJsonResponse(startResponse);
@@ -1308,12 +1362,12 @@
           return apiPostJob(url, payload, headers, options);
         }
         const endpoint = apiUrl(url);
-        const claudeKey = currentClaudeKey();
+        const modelCredentials = modelCredentialPayload();
         showMessage(`Calling ${url}...`, "warn");
         const response = await fetch(endpoint, {
           method: "POST",
           headers,
-          body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+          body: JSON.stringify({ ...payload, ...modelCredentials }),
           signal: options.signal,
         });
         const data = await readJsonResponse(response);
@@ -1324,12 +1378,12 @@
 
       async function apiPostBlob(url, payload, headers = claudeHeaders(), options = {}) {
         const endpoint = apiUrl(url);
-        const claudeKey = currentClaudeKey();
+        const modelCredentials = modelCredentialPayload();
         showMessage(`Calling ${url}...`, "warn");
         const response = await fetch(endpoint, {
           method: "POST",
           headers,
-          body: JSON.stringify({ ...payload, claude_api_key: claudeKey }),
+          body: JSON.stringify({ ...payload, ...modelCredentials }),
           signal: options.signal,
         });
         if (!response.ok) {
@@ -1355,6 +1409,22 @@
         const data = await readJsonResponse(response, "Claude API key validation failed.");
         if (!response.ok || !data.valid) {
           throw new Error(data.error || "Claude API key is not valid.");
+        }
+        return data;
+      }
+
+      async function validateGemmaKey(key, model, signal) {
+        const form = new FormData();
+        form.append("gemma_api_key", key);
+        form.append("gemmaModel", model || DEFAULT_GEMMA_MODEL);
+        const response = await fetch(apiUrl("/api/validate-gemma-key"), {
+          method: "POST",
+          body: form,
+          signal,
+        });
+        const data = await readJsonResponse(response, "Gemma API key validation failed.");
+        if (!response.ok || !data.valid) {
+          throw new Error(data.error || "Gemma API key is not valid.");
         }
         return data;
       }
@@ -1513,7 +1583,9 @@
             const parts = [row.grade, row.chapter, row.subtopic, row.cc].filter(Boolean).join(" / ");
             return `LO ${index + 1}${parts ? ` (${parts})` : ""}. ${row.lo}`;
           }).join("\n"),
+          modelProvider: currentModelProvider(),
           claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
+          gemmaModel: readTemplateString(els.gemmaModel?.value, DEFAULT_GEMMA_MODEL),
           textbookReference: els.textbookReference.value.trim(),
           ...extra,
         };
@@ -1529,7 +1601,9 @@
           grade: base.grade,
           duration: els.animationDuration.value.trim() || "90 seconds",
           contentType: els.animationContentType.value,
+          modelProvider: currentModelProvider(),
           claudeModel: readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL),
+          gemmaModel: readTemplateString(els.gemmaModel?.value, DEFAULT_GEMMA_MODEL),
           ...extra,
         };
       }
@@ -2540,6 +2614,41 @@
         showMessage("Claude API key cleared.", "warn");
       });
 
+      els.saveGemmaKey.addEventListener("click", async () => {
+        const key = els.gemmaKey.value.trim();
+        const model = readTemplateString(els.gemmaModel.value, DEFAULT_GEMMA_MODEL);
+        if (!key) return showMessage("Paste your Gemma API key first.", "warn");
+        const signal = beginSection("key");
+        setBusy(els.saveGemmaKey, true, "Validating...");
+        showMessage(`Validating Gemma API key with ${model}...`, "warn");
+        try {
+          await validateGemmaKey(key, model, signal);
+          state.gemmaKey = key;
+          els.modelProvider.value = "gemma";
+          els.gemmaKey.value = "";
+          els.gemmaKey.placeholder = "Validated for this page";
+          showMessage("Gemma API key is valid for this open page.", "good");
+        } catch (error) {
+          state.gemmaKey = "";
+          showMessage(isAbortError(error) ? "Gemma API key validation stopped." : error.message, isAbortError(error) ? "warn" : "bad");
+        } finally {
+          setBusy(els.saveGemmaKey, false);
+          endSection("key");
+        }
+      });
+
+      els.clearGemmaKey.addEventListener("click", () => {
+        state.gemmaKey = "";
+        els.gemmaKey.value = "";
+        els.gemmaKey.placeholder = "Google AI Studio key";
+        showMessage("Gemma API key cleared.", "warn");
+      });
+
+      els.modelProvider.addEventListener("change", () => {
+        const provider = currentModelProvider();
+        showMessage(`${provider === "gemma" ? "Gemma" : "Claude"} selected for the full workflow.`, "warn");
+      });
+
       els.stopClaudeKey.addEventListener("click", () => {
         stopSection("key");
       });
@@ -3142,6 +3251,9 @@
         els.maxRegenerationsLabel.textContent = MAX_REGENERATIONS;
       }
       els.claudeModel.value = readTemplateString(els.claudeModel.value, DEFAULT_CLAUDE_MODEL);
+      if (els.gemmaModel) {
+        els.gemmaModel.value = readTemplateString(els.gemmaModel.value, DEFAULT_GEMMA_MODEL);
+      }
       renderAnimationDownloads();
       loadPromptLibrary();
       renderStatus();
