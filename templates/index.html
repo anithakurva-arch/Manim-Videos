@@ -796,7 +796,7 @@
               <div class="field">
                 <label for="gemmaModel">Gemma model</label>
                 <select id="gemmaModel">
-                  {% for model in gemma_models|default(['gemma-4-26b-a4b-it', 'gemma-4-31b-it']) %}
+                  {% for model in gemma_models|default(['google/gemma-4-31b-it']) %}
                   <option value="{{ model }}" {% if model == default_gemma_model %}selected{% endif %}>{{ model }}</option>
                   {% endfor %}
                 </select>
@@ -1031,7 +1031,7 @@
     <script>
       const DEFAULT_MAX_REGENERATIONS = 3;
       const DEFAULT_CLAUDE_MODEL = "claude-opus-4-6";
-      const DEFAULT_GEMMA_MODEL = "{{ default_gemma_model|default('gemma-4-26b-a4b-it') }}";
+      const DEFAULT_GEMMA_MODEL = "{{ default_gemma_model|default('google/gemma-4-31b-it') }}";
       const RENDER_API_ORIGIN = "https://manim-videos-5663.onrender.com";
       const MAX_REGENERATIONS = readTemplateNumber("{{ max_regenerations|default(3) }}", DEFAULT_MAX_REGENERATIONS);
       const LONG_RUNNING_POSTS = new Map([

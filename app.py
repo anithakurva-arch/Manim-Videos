@@ -31,8 +31,8 @@ RENDER_LAUNCH_LOG_DIR = BASE_DIR / "logs" / "render_launcher"
 DEFAULT_RENDER_QUALITY = "m"
 MAX_REGENERATIONS = 3
 DEFAULT_CLAUDE_MODEL = "claude-opus-4-6"
-DEFAULT_GEMMA_MODEL = "gemma-4-26b-a4b-it"
-GEMMA_MODELS = ["gemma-4-26b-a4b-it", "gemma-4-31b-it"]
+DEFAULT_GEMMA_MODEL = "google/gemma-4-31b-it"
+GEMMA_MODELS = ["google/gemma-4-31b-it"]
 MAX_LOS_PER_GROUPED_SCRIPT = 3
 PHASE2_READY_STATUSES = {"Approved", "Needs Minor Revision"}
 
@@ -224,6 +224,44 @@ def call_claude(prompt, api_key, model=None, max_output_tokens=16000):
 
 def call_gemma(prompt, api_key, model=None, max_output_tokens=16000):
     selected_model = str(model or DEFAULT_GEMMA_MODEL).strip()
+    if "/" in selected_model and not selected_model.startswith("models/"):
+        body = json.dumps(
+            {
+                "model": selected_model,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": max_output_tokens,
+            }
+        ).encode("utf-8")
+        req = urllib.request.Request(
+            "https://openrouter.ai/api/v1/chat/completions",
+            data=body,
+            headers={
+                "content-type": "application/json",
+                "authorization": f"Bearer {api_key}",
+                "http-referer": "https://manim-videos-5663.onrender.com",
+                "x-title": "Manim Videos",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=300) as response:
+                data = json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            raise ValueError(f"Gemma API request failed: {detail}") from exc
+        except urllib.error.URLError as exc:
+            raise ValueError(f"Gemma API request failed: {exc.reason}") from exc
+
+        text_parts = []
+        for choice in data.get("choices", []):
+            message = choice.get("message") or {}
+            if message.get("content"):
+                text_parts.append(str(message.get("content") or ""))
+        output = "\n".join(text_parts).strip()
+        if not output:
+            raise ValueError("Gemma returned an empty response.")
+        return output
+
     selected_model = selected_model.removeprefix("models/")
     body = json.dumps(
         {
