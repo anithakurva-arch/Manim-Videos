@@ -946,6 +946,7 @@
               <button type="button" id="generatePython">Generate Python Code</button>
               <button type="button" class="secondary" id="downloadStoryboard" disabled>Download Storyboard</button>
               <button type="button" class="secondary" id="downloadPython" disabled>Download Python</button>
+              <button type="button" class="secondary" id="downloadScriptFiles" disabled>Download Script Files</button>
               <button type="button" class="danger" id="stopAnimationWorkflow" disabled>Stop</button>
             </div>
             <details style="margin-top: 12px;">
@@ -1136,6 +1137,7 @@
         stopAnimationWorkflow: document.getElementById("stopAnimationWorkflow"),
         downloadStoryboard: document.getElementById("downloadStoryboard"),
         downloadPython: document.getElementById("downloadPython"),
+        downloadScriptFiles: document.getElementById("downloadScriptFiles"),
         generateBulkPython: document.getElementById("generateBulkPython"),
       };
 
@@ -1689,6 +1691,42 @@
           .join("\n\n# ---\n\n");
       }
 
+      function generatedPythonFiles() {
+        const used = new Set();
+        const uniqueName = (name) => {
+          const parts = String(name || "animation_scene.py").split(".");
+          const ext = parts.length > 1 ? `.${parts.pop()}` : ".py";
+          const stem = parts.join(".") || "animation_scene";
+          let candidate = `${stem}${ext}`;
+          let counter = 2;
+          while (used.has(candidate)) {
+            candidate = `${stem}_${counter}${ext}`;
+            counter += 1;
+          }
+          used.add(candidate);
+          return candidate;
+        };
+
+        const files = state.animationRuns
+          .filter((item) => String(item.code || "").trim())
+          .map((item, index) => {
+            const savedName = item.savedFile?.filename;
+            const fallback = `${slugifyFilename(item.title || `script_${index + 1}`, `script_${index + 1}`)}.py`;
+            return {
+              filename: uniqueName(savedName || fallback),
+              code: item.code.trimEnd() + "\n",
+            };
+          });
+
+        if (!files.length && String(state.pythonCode || "").trim()) {
+          files.push({
+            filename: uniqueName(`${slugifyFilename(els.animationTitle.value || "animation_scene")}.py`),
+            code: state.pythonCode.trimEnd() + "\n",
+          });
+        }
+        return files;
+      }
+
       function applyAnimationProgress(progress) {
         if (!progress) return;
         if (Array.isArray(progress.items)) {
@@ -1732,6 +1770,7 @@
       function renderAnimationDownloads() {
         els.downloadStoryboard.disabled = !state.storyboard;
         els.downloadPython.disabled = !state.pythonCode;
+        els.downloadScriptFiles.disabled = !generatedPythonFiles().length;
       }
 
       function scriptItemTitle(row) {
@@ -2984,6 +3023,13 @@
         if (!state.pythonCode) return showMessage("Generate Python code first.", "warn");
         saveTextFile(`${slugifyFilename(els.animationTitle.value || "animation_scene")}.py`, state.pythonCode, "text/x-python");
         showMessage("Python file downloaded.", "good");
+      });
+
+      els.downloadScriptFiles.addEventListener("click", () => {
+        const files = generatedPythonFiles();
+        if (!files.length) return showMessage("Generate Python code first.", "warn");
+        files.forEach((file) => saveTextFile(file.filename, file.code, "text/x-python"));
+        showMessage(`Downloading ${files.length} Python script file(s).`, "good");
       });
 
       els.runGrouping.addEventListener("click", async () => {
