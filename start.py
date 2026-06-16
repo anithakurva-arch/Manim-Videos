@@ -214,16 +214,41 @@ def add_shared_prelude_if_needed(script_path, code):
     return prelude + "\n\n" + code.lstrip(), True
 
 
+def add_tts_setup_compat_if_needed(code):
+    if "self._setup_tts(" not in code:
+        return code, False
+    if "def _setup_tts" in code or "_default_setup_tts" in code:
+        return code, False
+    match = re.search(r"(?m)^class\s+\w+\s*\([^)]*Scene[^)]*\)\s*:", code)
+    if not match:
+        return code, False
+    helper = """
+def _default_setup_tts(self):
+    try:
+        self.set_speech_service(OpenAIService(voice="alloy", model="tts-1"))
+    except Exception:
+        pass
+
+
+if not hasattr(VoiceoverScene, "_setup_tts"):
+    VoiceoverScene._setup_tts = _default_setup_tts
+""".strip()
+    return code[:match.start()].rstrip() + "\n\n" + helper + "\n\n" + code[match.start():].lstrip(), True
+
+
 def run_repair_on_script(script_path):
     try:
         original      = script_path.read_text(encoding="utf-8")
         with_prelude, prelude_added = add_shared_prelude_if_needed(script_path, original)
-        fixed, wt, bm = repair_script(with_prelude)
-        total         = len(wt) + len(bm) + (1 if prelude_added else 0)
+        with_tts, tts_added = add_tts_setup_compat_if_needed(with_prelude)
+        fixed, wt, bm = repair_script(with_tts)
+        total         = len(wt) + len(bm) + (1 if prelude_added else 0) + (1 if tts_added else 0)
         if total > 0:
             script_path.write_text(fixed, encoding="utf-8")
             if prelude_added:
                 fix("shared Manim prelude added")
+            if tts_added:
+                fix("_setup_tts compatibility added")
             for f in wt:
                 fix(f"weight= removed at {f}")
             for b in bm:
