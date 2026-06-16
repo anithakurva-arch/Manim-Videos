@@ -940,10 +940,15 @@
               <div class="row">
                 <button type="button" class="secondary" id="uploadTranscript">Load Transcript File</button>
               </div>
+              <div class="field">
+                <label for="pastedPythonScripts">Paste Manim Python scripts</label>
+                <textarea id="pastedPythonScripts" placeholder="Paste one Python script, multiple ```python``` blocks, or output with # PYTHON 1: headings."></textarea>
+              </div>
             </div>
             <div class="action-row">
               <button type="button" id="generateStoryboard">Generate Storyboard</button>
               <button type="button" id="generatePython">Generate Python Code</button>
+              <button type="button" class="secondary" id="savePastedPython">Save/Render Pasted Python</button>
               <button type="button" class="secondary" id="downloadStoryboard" disabled>Download Storyboard</button>
               <button type="button" class="secondary" id="downloadPython" disabled>Download Python</button>
               <button type="button" class="secondary" id="downloadScriptFiles" disabled>Download Script Files</button>
@@ -1128,11 +1133,13 @@
         animationDuration: document.getElementById("animationDuration"),
         animationContentType: document.getElementById("animationContentType"),
         animationTranscript: document.getElementById("animationTranscript"),
+        pastedPythonScripts: document.getElementById("pastedPythonScripts"),
         transcriptFile: document.getElementById("transcriptFile"),
         uploadTranscript: document.getElementById("uploadTranscript"),
         useApprovedScript: document.getElementById("useApprovedScript"),
         generateStoryboard: document.getElementById("generateStoryboard"),
         generatePython: document.getElementById("generatePython"),
+        savePastedPython: document.getElementById("savePastedPython"),
         generateAnimationPackage: document.getElementById("generateAnimationPackage"),
         stopAnimationWorkflow: document.getElementById("stopAnimationWorkflow"),
         downloadStoryboard: document.getElementById("downloadStoryboard"),
@@ -2988,6 +2995,48 @@
         } finally {
           setActiveProcess("");
           setBusy(els.generateAnimationPackage, false);
+          endSection("animation");
+        }
+      });
+
+      els.savePastedPython.addEventListener("click", async () => {
+        const code = els.pastedPythonScripts.value.trim();
+        if (!code) return showMessage("Paste at least one Python script first.", "warn");
+        const signal = beginSection("animation");
+        setActiveProcess("python");
+        setBusy(els.savePastedPython, true, "Saving...");
+        try {
+          const data = await apiPost("/api/python-scripts/paste", {
+            title: els.animationTitle.value.trim() || "pasted_python_script",
+            code,
+          }, claudeHeaders(), { signal });
+          const scripts = Array.isArray(data.scripts) ? data.scripts : [];
+          state.animationRuns = scripts.map((item, index) => ({
+            index,
+            title: item.title || item.savedFile?.filename || `Pasted Script ${index + 1}`,
+            transcript: "",
+            storyboardStatus: "Skipped",
+            codeStatus: "Code Done",
+            storyboard: "",
+            code: item.code || "",
+            savedFile: item.savedFile || data.savedFiles?.[index] || null,
+            error: "",
+          }));
+          state.pythonCode = combinedPythonFromAnimationRuns() || code;
+          state.status = "Generated";
+          renderStatus();
+          renderAnimationDownloads();
+          setTab("python");
+          const savedPaths = (data.savedFiles || []).map((file) => file.path).filter(Boolean);
+          showMessage(data.renderJob?.started
+            ? `Saved ${data.count || savedPaths.length} pasted Python script(s). Rendering started with start.py. Log: ${data.renderJob.log}`
+            : `Saved ${data.count || savedPaths.length} pasted Python script(s). ${data.renderJob?.error || "Rendering did not start."}`,
+            data.renderJob?.started ? "good" : "warn");
+        } catch (error) {
+          showMessage(isAbortError(error) ? "Pasted Python save stopped." : error.message, isAbortError(error) ? "warn" : "bad");
+        } finally {
+          setActiveProcess("");
+          setBusy(els.savePastedPython, false);
           endSection("animation");
         }
       });

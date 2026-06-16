@@ -906,6 +906,78 @@ def save_generated_python_script(title, code, used_names=None):
     }
 
 
+def pasted_python_script_items(payload):
+    supplied_scripts = payload.get("scripts") or []
+    if isinstance(supplied_scripts, list) and supplied_scripts:
+        items = []
+        for index, item in enumerate(supplied_scripts, start=1):
+            if not isinstance(item, dict):
+                continue
+            code = str(item.get("code") or item.get("pythonCode") or "").strip()
+            if code:
+                items.append({
+                    "title": item.get("title") or f"Pasted Script {index}",
+                    "code": code,
+                })
+        if items:
+            return items
+
+    raw_code = str(payload.get("code") or payload.get("pythonCode") or "").strip()
+    if not raw_code:
+        raise ValueError("Paste at least one Python script.")
+
+    fenced_blocks = re.findall(
+        r"```(?:python|py)?\s*(.*?)```",
+        raw_code,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if len(fenced_blocks) > 1:
+        return [
+            {"title": f"Pasted Script {index}", "code": block.strip()}
+            for index, block in enumerate(fenced_blocks, start=1)
+            if block.strip()
+        ]
+
+    section_pattern = re.compile(
+        r"^#\s*PYTHON\s+(\d+)\s*:?\s*(.*?)\s*$",
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
+    matches = list(section_pattern.finditer(raw_code))
+    if len(matches) > 1:
+        items = []
+        for index, match in enumerate(matches):
+            start = match.end()
+            end = matches[index + 1].start() if index + 1 < len(matches) else len(raw_code)
+            code = re.sub(r"^\s*#\s*---\s*$", "", raw_code[start:end], flags=re.MULTILINE).strip()
+            if code:
+                items.append({
+                    "title": match.group(2).strip() or f"Pasted Script {match.group(1)}",
+                    "code": code,
+                })
+        if items:
+            return items
+
+    title = payload.get("title") or "Pasted Python Script"
+    return [{"title": title, "code": extract_python_code(raw_code)}]
+
+
+def save_pasted_python_scripts_result(payload):
+    used_names = set()
+    saved_files = []
+    items = pasted_python_script_items(payload)
+    for item in items:
+        saved_file = save_generated_python_script(item["title"], item["code"], used_names)
+        item["savedFile"] = saved_file
+        saved_files.append(saved_file)
+    render_job = launch_start_renderer(saved_files, payload.get("quality") or DEFAULT_RENDER_QUALITY)
+    return {
+        "savedFiles": saved_files,
+        "scripts": items,
+        "renderJob": render_job,
+        "count": len(saved_files),
+    }
+
+
 def launch_start_renderer(saved_files, quality=DEFAULT_RENDER_QUALITY):
     paths = []
     for item in saved_files or []:
@@ -1898,6 +1970,14 @@ def animation_code_route():
 def animation_package_route():
     try:
         return jsonify(animation_package_result(payload_with_request_key(request.get_json(force=True))))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 400
+
+
+@app.post("/api/python-scripts/paste")
+def paste_python_scripts_route():
+    try:
+        return jsonify(save_pasted_python_scripts_result(request.get_json(force=True)))
     except Exception as exc:
         return jsonify({"error": str(exc)}), 400
 
