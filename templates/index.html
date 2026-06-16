@@ -512,11 +512,24 @@
         margin-bottom: 12px;
       }
 
+      .stage-output-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .stage-output-header h2 {
+        margin: 0;
+      }
+
       .output-actions {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         gap: 8px;
-        margin: 0 0 12px;
       }
 
       .output-actions button {
@@ -949,9 +962,6 @@
               <button type="button" id="generateStoryboard">Generate Storyboard</button>
               <button type="button" id="generatePython">Generate Python Code</button>
               <button type="button" class="secondary" id="savePastedPython">Save/Render Pasted Python</button>
-              <button type="button" class="secondary" id="downloadStoryboard" disabled>Download Storyboard</button>
-              <button type="button" class="secondary" id="downloadPython" disabled>Download Python</button>
-              <button type="button" class="secondary" id="downloadScriptFiles" disabled>Download Script Files</button>
               <button type="button" class="danger" id="stopAnimationWorkflow" disabled>Stop</button>
             </div>
             <details style="margin-top: 12px;">
@@ -995,7 +1005,14 @@
 
           <div class="split">
             <section class="panel">
-              <h2>Stage Output</h2>
+              <div class="stage-output-header">
+                <h2>Stage Output</h2>
+                <div class="output-actions" aria-label="Stage output actions">
+                  <span class="badge" id="outputActionLabel">Grouping</span>
+                  <button type="button" class="secondary" id="copyStageOutput" disabled>Copy</button>
+                  <button type="button" class="secondary" id="downloadStageOutput" disabled>Download</button>
+                </div>
+              </div>
               <div class="tabs">
                 <button type="button" class="tab active" data-tab="grouping">Grouping</button>
                 <button type="button" class="tab" data-tab="script">Script</button>
@@ -1005,12 +1022,6 @@
                 <button type="button" class="tab" data-tab="storyboard">Storyboard</button>
                 <button type="button" class="tab" data-tab="python">Python</button>
                 <button type="button" class="tab hidden" data-tab="package">Package</button>
-              </div>
-              <div class="output-actions">
-                <button type="button" class="secondary" id="copyScriptOutput" disabled>Copy Script</button>
-                <button type="button" class="secondary" id="downloadScriptOutput" disabled>Download Script</button>
-                <button type="button" class="secondary" id="copyValidationOutput" disabled>Copy Validation</button>
-                <button type="button" class="secondary" id="downloadValidationOutput" disabled>Download Validation</button>
               </div>
               <div id="outputBox" class="output">No output yet.</div>
             </section>
@@ -1116,10 +1127,9 @@
         stopScriptWorkflow: document.getElementById("stopScriptWorkflow"),
         downloadApproved: document.getElementById("downloadApproved"),
         outputBox: document.getElementById("outputBox"),
-        copyScriptOutput: document.getElementById("copyScriptOutput"),
-        downloadScriptOutput: document.getElementById("downloadScriptOutput"),
-        copyValidationOutput: document.getElementById("copyValidationOutput"),
-        downloadValidationOutput: document.getElementById("downloadValidationOutput"),
+        outputActionLabel: document.getElementById("outputActionLabel"),
+        copyStageOutput: document.getElementById("copyStageOutput"),
+        downloadStageOutput: document.getElementById("downloadStageOutput"),
         statusList: document.getElementById("statusList"),
         statusPanelTitle: document.getElementById("statusPanelTitle"),
         groupedScriptsList: document.getElementById("groupedScriptsList"),
@@ -1142,9 +1152,6 @@
         savePastedPython: document.getElementById("savePastedPython"),
         generateAnimationPackage: document.getElementById("generateAnimationPackage"),
         stopAnimationWorkflow: document.getElementById("stopAnimationWorkflow"),
-        downloadStoryboard: document.getElementById("downloadStoryboard"),
-        downloadPython: document.getElementById("downloadPython"),
-        downloadScriptFiles: document.getElementById("downloadScriptFiles"),
         generateBulkPython: document.getElementById("generateBulkPython"),
       };
 
@@ -1775,9 +1782,7 @@
       }
 
       function renderAnimationDownloads() {
-        els.downloadStoryboard.disabled = !state.storyboard;
-        els.downloadPython.disabled = !state.pythonCode;
-        els.downloadScriptFiles.disabled = !generatedPythonFiles().length;
+        refreshOutputActionButtons();
       }
 
       function scriptItemTitle(row) {
@@ -2360,13 +2365,80 @@
         }[tab] || "";
       }
 
+      function outputLabelForTab(tab) {
+        return {
+          grouping: "Grouping",
+          script: "Script",
+          validation: "Validation",
+          history: "Revisions",
+          prompt: "Prompt Preview",
+          storyboard: "Storyboard",
+          python: "Python Code",
+          package: "Package",
+        }[tab] || "Output";
+      }
+
+      function stageOutputExportForTab(tab = state.activeTab) {
+        const baseName = slugifyFilename(els.animationTitle.value || els.chapterSelect.value || outputLabelForTab(tab), "stage_output");
+        if (tab === "script") {
+          return {
+            label: "Script",
+            text: state.script || "",
+            filename: `${baseName}_script.txt`,
+            type: "text/plain",
+          };
+        }
+        if (tab === "validation") {
+          return {
+            label: "Validation",
+            text: validationOutputText(),
+            filename: `${baseName}_validation.txt`,
+            type: "text/plain",
+          };
+        }
+        if (tab === "history") {
+          return {
+            label: "Revisions",
+            text: revisionHistoryOutputText() || (state.history.length ? JSON.stringify(state.history.map(({ attempt, status }) => ({ attempt, status })), null, 2) : ""),
+            filename: `${baseName}_revisions.json`,
+            type: "application/json",
+          };
+        }
+        if (tab === "storyboard") {
+          return {
+            label: "Storyboard",
+            text: state.storyboard || "",
+            filename: `${baseName}_storyboard.txt`,
+            type: "text/plain",
+          };
+        }
+        if (tab === "python") {
+          const files = generatedPythonFiles();
+          return {
+            label: "Python Code",
+            text: state.pythonCode || files.map((file) => `# ${file.filename}\n\n${file.code}`).join("\n\n# ---\n\n"),
+            filename: `${baseName}.py`,
+            type: "text/x-python",
+            files,
+          };
+        }
+        return {
+          label: outputLabelForTab(tab),
+          text: "",
+          filename: `${baseName}.txt`,
+          type: "text/plain",
+        };
+      }
+
       function refreshOutputActionButtons() {
-        const hasScript = Boolean((state.script || "").trim());
-        const hasValidation = Boolean(validationOutputText().trim());
-        els.copyScriptOutput.disabled = !hasScript;
-        els.downloadScriptOutput.disabled = !hasScript;
-        els.copyValidationOutput.disabled = !hasValidation;
-        els.downloadValidationOutput.disabled = !hasValidation;
+        const output = stageOutputExportForTab();
+        const hasText = Boolean(String(output.text || "").trim());
+        const hasFiles = Boolean(output.files?.length);
+        els.outputActionLabel.textContent = output.label;
+        els.copyStageOutput.disabled = !hasText;
+        els.downloadStageOutput.disabled = !(hasText || hasFiles);
+        els.copyStageOutput.title = hasText ? `Copy ${output.label}` : `${output.label} output is empty`;
+        els.downloadStageOutput.title = hasText || hasFiles ? `Download ${output.label}` : `${output.label} output is empty`;
       }
 
       function setTab(tab) {
@@ -3041,44 +3113,24 @@
         }
       });
 
-      els.downloadStoryboard.addEventListener("click", () => {
-        if (!state.storyboard) return showMessage("Generate a storyboard first.", "warn");
-        saveTextFile("animation_storyboard.txt", state.storyboard, "text/plain");
-        showMessage("Storyboard downloaded.", "good");
+      els.copyStageOutput.addEventListener("click", () => {
+        const output = stageOutputExportForTab();
+        copyTextToClipboard(output.text || "", `${output.label} output`);
       });
 
-      els.copyScriptOutput.addEventListener("click", () => {
-        copyTextToClipboard(state.script || "", "Script output");
-      });
-
-      els.downloadScriptOutput.addEventListener("click", () => {
-        if (!state.script) return showMessage("No script output to download.", "warn");
-        saveTextFile(`${slugifyFilename(els.animationTitle.value || els.chapterSelect.value || "generated_script", "generated_script")}.txt`, state.script, "text/plain");
-        showMessage("Script output downloaded.", "good");
-      });
-
-      els.copyValidationOutput.addEventListener("click", () => {
-        copyTextToClipboard(validationOutputText(), "Validation output");
-      });
-
-      els.downloadValidationOutput.addEventListener("click", () => {
-        const validationText = validationOutputText();
-        if (!validationText.trim()) return showMessage("No validation output to download.", "warn");
-        saveTextFile(`${slugifyFilename(els.animationTitle.value || els.chapterSelect.value || "validation_report", "validation_report")}_validation.txt`, validationText, "text/plain");
-        showMessage("Validation output downloaded.", "good");
-      });
-
-      els.downloadPython.addEventListener("click", () => {
-        if (!state.pythonCode) return showMessage("Generate Python code first.", "warn");
-        saveTextFile(`${slugifyFilename(els.animationTitle.value || "animation_scene")}.py`, state.pythonCode, "text/x-python");
-        showMessage("Python file downloaded.", "good");
-      });
-
-      els.downloadScriptFiles.addEventListener("click", () => {
-        const files = generatedPythonFiles();
-        if (!files.length) return showMessage("Generate Python code first.", "warn");
-        files.forEach((file) => saveTextFile(file.filename, file.code, "text/x-python"));
-        showMessage(`Downloading ${files.length} Python script file(s).`, "good");
+      els.downloadStageOutput.addEventListener("click", () => {
+        const output = stageOutputExportForTab();
+        if (state.activeTab === "python") {
+          const files = output.files?.length ? output.files : generatedPythonFiles();
+          if (files.length) {
+            files.forEach((file) => saveTextFile(file.filename, file.code, "text/x-python"));
+            showMessage(files.length === 1 ? "Python script file downloaded." : `Downloading ${files.length} Python script file(s).`, "good");
+            return;
+          }
+        }
+        if (!String(output.text || "").trim()) return showMessage(`No ${output.label.toLowerCase()} output to download.`, "warn");
+        saveTextFile(output.filename, output.text, output.type);
+        showMessage(`${output.label} downloaded.`, "good");
       });
 
       els.runGrouping.addEventListener("click", async () => {
