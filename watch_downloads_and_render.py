@@ -93,7 +93,9 @@ def watch(folder, quality, interval, settle_seconds, render_existing):
     WATCH_LOG.parent.mkdir(parents=True, exist_ok=True)
     state = load_state()
 
-    if not render_existing:
+    if render_existing:
+        state = {}
+    else:
         for path, signature in stable_python_files(folder, settle_seconds).items():
             state[str(path.resolve())] = signature
         save_state(state)

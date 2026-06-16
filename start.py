@@ -155,13 +155,75 @@ def repair_script(code):
     return code, wt_fixes, bm_errors
 
 
+def _extract_prelude(code):
+    match = re.search(r"(?m)^class\s+\w+\s*\([^)]*Scene[^)]*\)\s*:", code)
+    if not match:
+        return ""
+    prelude = code[:match.start()].rstrip()
+    if "from manim import" in prelude and "VoiceoverScene" in prelude:
+        return prelude
+    return ""
+
+
+def _needs_shared_prelude(code):
+    starts_with_scene = re.match(r"\s*class\s+\w+\s*\([^)]*Scene[^)]*\)\s*:", code) is not None
+    has_imports = "from manim import" in code[:500] or "import manim" in code[:500]
+    uses_shared_helpers = any(
+        token in code
+        for token in ("VoiceoverScene", "clear_and_transition", "create_heading_badge", "LAVENDER_BG")
+    )
+    return starts_with_scene and not has_imports and uses_shared_helpers
+
+
+def _find_sibling_prelude(script_path):
+    try:
+        for sibling in sorted(script_path.parent.glob("*.py"), key=natural_sort_key):
+            if sibling == script_path:
+                continue
+            try:
+                prelude = _extract_prelude(sibling.read_text(encoding="utf-8", errors="ignore"))
+            except Exception:
+                continue
+            if prelude:
+                return prelude
+    except Exception:
+        return ""
+    return ""
+
+
+def add_shared_prelude_if_needed(script_path, code):
+    if not _needs_shared_prelude(code):
+        return code, False
+    prelude = _find_sibling_prelude(script_path)
+    if not prelude:
+        prelude = "\n".join([
+            "import os",
+            "from dotenv import load_dotenv",
+            "from manim import *",
+            "from manim_voiceover import VoiceoverScene",
+            "from manim_voiceover.services.openai import OpenAIService",
+            "",
+            "load_dotenv()",
+            "",
+            'LAVENDER_BG = "#E7E5F3"',
+            'PURPLE = "#7464CE"',
+            'ORANGE_HL = "#FF9302"',
+            'PALE_PURPLE = "#9495D7"',
+            "",
+        ]).rstrip()
+    return prelude + "\n\n" + code.lstrip(), True
+
+
 def run_repair_on_script(script_path):
     try:
         original      = script_path.read_text(encoding="utf-8")
-        fixed, wt, bm = repair_script(original)
-        total         = len(wt) + len(bm)
+        with_prelude, prelude_added = add_shared_prelude_if_needed(script_path, original)
+        fixed, wt, bm = repair_script(with_prelude)
+        total         = len(wt) + len(bm) + (1 if prelude_added else 0)
         if total > 0:
             script_path.write_text(fixed, encoding="utf-8")
+            if prelude_added:
+                fix("shared Manim prelude added")
             for f in wt:
                 fix(f"weight= removed at {f}")
             for b in bm:
